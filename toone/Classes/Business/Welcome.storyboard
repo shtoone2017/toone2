@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ba9-gj-qEO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="Nkh-yx-k9A">
+            <objects>
+                <viewController id="ba9-gj-qEO" customClass="WelcomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xbt-ta-xCF"/>
+                        <viewControllerLayoutGuide type="bottom" id="nIW-K3-kVo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1ZX-Xx-8kO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMR-nO-uwS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4A-lL-GeG" userLabel="容器">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="667"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_welcome_0" translatesAutoresizingMaskIntoConstraints="NO" id="4qK-Rb-s4N">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="667"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_welcome_1" translatesAutoresizingMaskIntoConstraints="NO" id="nJM-1K-Hrq">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="667"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_welcome_2" translatesAutoresizingMaskIntoConstraints="NO" id="okY-qC-4Mv">
+                                                <rect key="frame" x="200" y="0.0" width="100" height="667"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHy-4p-0Tc">
+                                                <rect key="frame" x="100" y="537" width="300" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="Cgp-En-Gbd"/>
+                                                    <constraint firstAttribute="height" constant="60" id="FQf-cl-htQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <state key="normal" title="点击这里进入应用">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="click:" destination="ba9-gj-qEO" eventType="touchUpInside" id="u4U-Fq-hCg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="6G2-vR-z4M"/>
+                                            <constraint firstItem="4qK-Rb-s4N" firstAttribute="width" secondItem="nJM-1K-Hrq" secondAttribute="width" id="6Jm-gK-sgn"/>
+                                            <constraint firstAttribute="bottom" secondItem="okY-qC-4Mv" secondAttribute="bottom" id="8bP-eT-WHi"/>
+                                            <constraint firstAttribute="bottom" secondItem="kHy-4p-0Tc" secondAttribute="bottom" constant="70" id="BaR-ba-03N"/>
+                                            <constraint firstItem="kHy-4p-0Tc" firstAttribute="centerX" secondItem="okY-qC-4Mv" secondAttribute="centerX" id="Cbd-GH-ylA"/>
+                                            <constraint firstItem="okY-qC-4Mv" firstAttribute="top" secondItem="m4A-lL-GeG" secondAttribute="top" id="O6w-dX-JSV"/>
+                                            <constraint firstAttribute="bottom" secondItem="4qK-Rb-s4N" secondAttribute="bottom" id="Pcr-Z2-jpp"/>
+                                            <constraint firstItem="4qK-Rb-s4N" firstAttribute="top" secondItem="m4A-lL-GeG" secondAttribute="top" id="RB2-Gp-6LR"/>
+                                            <constraint firstItem="nJM-1K-Hrq" firstAttribute="top" secondItem="m4A-lL-GeG" secondAttribute="top" id="SQe-fA-gA2"/>
+                                            <constraint firstItem="4qK-Rb-s4N" firstAttribute="width" secondItem="okY-qC-4Mv" secondAttribute="width" id="TjD-rl-Su3"/>
+                                            <constraint firstItem="nJM-1K-Hrq" firstAttribute="leading" secondItem="4qK-Rb-s4N" secondAttribute="trailing" id="XME-Ad-cX3"/>
+                                            <constraint firstItem="4qK-Rb-s4N" firstAttribute="leading" secondItem="m4A-lL-GeG" secondAttribute="leading" id="YNQ-Bs-py0"/>
+                                            <constraint firstAttribute="trailing" secondItem="okY-qC-4Mv" secondAttribute="trailing" id="cve-k7-x6J"/>
+                                            <constraint firstAttribute="bottom" secondItem="nJM-1K-Hrq" secondAttribute="bottom" id="ljM-Wn-upK"/>
+                                            <constraint firstItem="okY-qC-4Mv" firstAttribute="leading" secondItem="nJM-1K-Hrq" secondAttribute="trailing" id="vdH-Qr-hF1"/>
+                                            <constraint firstItem="nJM-1K-Hrq" firstAttribute="leading" secondItem="4qK-Rb-s4N" secondAttribute="trailing" id="xzN-So-efU"/>
+                                            <constraint firstItem="okY-qC-4Mv" firstAttribute="leading" secondItem="nJM-1K-Hrq" secondAttribute="trailing" id="yfh-qt-Q5c"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.77287463339999996" blue="0.33795529590000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="m4A-lL-GeG" firstAttribute="top" secondItem="XMR-nO-uwS" secondAttribute="top" id="HlT-Pb-Ejd"/>
+                                    <constraint firstItem="m4A-lL-GeG" firstAttribute="leading" secondItem="XMR-nO-uwS" secondAttribute="leading" id="Rwj-Uh-yK2"/>
+                                    <constraint firstItem="m4A-lL-GeG" firstAttribute="centerY" secondItem="XMR-nO-uwS" secondAttribute="centerY" id="eSN-tJ-vJq"/>
+                                    <constraint firstAttribute="bottom" secondItem="m4A-lL-GeG" secondAttribute="bottom" id="ouY-2B-fda"/>
+                                    <constraint firstAttribute="trailing" secondItem="m4A-lL-GeG" secondAttribute="trailing" id="vwN-Z5-dai"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="ba9-gj-qEO" id="dLC-35-ggs"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Xmo-cX-xg7">
+                                <rect key="frame" x="137.5" y="580" width="100" height="37"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="b1z-p0-ffL"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.90714516440000004" green="0.74134692440000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xmo-cX-xg7" firstAttribute="centerX" secondItem="1ZX-Xx-8kO" secondAttribute="centerX" id="8u8-r3-WRF"/>
+                            <constraint firstItem="nIW-K3-kVo" firstAttribute="top" secondItem="XMR-nO-uwS" secondAttribute="bottom" id="B5Z-ae-Pxr"/>
+                            <constraint firstAttribute="trailing" secondItem="XMR-nO-uwS" secondAttribute="trailing" id="Bot-aR-Iqg"/>
+                            <constraint firstItem="nIW-K3-kVo" firstAttribute="top" secondItem="Xmo-cX-xg7" secondAttribute="bottom" constant="50" id="H2y-gV-CW2"/>
+                            <constraint firstItem="XMR-nO-uwS" firstAttribute="leading" secondItem="1ZX-Xx-8kO" secondAttribute="leading" id="qlA-wk-1HN"/>
+                            <constraint firstItem="XMR-nO-uwS" firstAttribute="top" secondItem="1ZX-Xx-8kO" secondAttribute="top" id="yFR-af-nUg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerWidth" destination="6G2-vR-z4M" id="j7O-Sa-szV"/>
+                        <outlet property="pageControl" destination="Xmo-cX-xg7" id="4Rz-BH-uJF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fX-4t-Qan" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765.60000000000002" y="-970.16491754122944"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_welcome_0" width="733" height="1000"/>
+        <image name="bg_welcome_1" width="680" height="991"/>
+        <image name="bg_welcome_2" width="1024" height="1817"/>
+    </resources>
+</document>

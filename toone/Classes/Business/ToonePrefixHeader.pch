@@ -1,0 +1,95 @@
+//
+//  ToonePrefixHeader.pch
+//  toone
+//
+//  Created by 十国 on 16/11/21.
+//  Copyright © 2016年 shtoone. All rights reserved.
+//
+
+#ifndef ToonePrefixHeader_pch
+#define ToonePrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define FuncLog                             NSLog(@"%s",__func__)
+#define EqualToString(string1,string2)      [string1 isEqualToString:string2]
+#define Equal(number1,number2)              [number1 isEqual:number2]
+#define Format(obj)                         [NSString stringWithFormat:@"%@",obj]
+#define FormatInt(obj)                      [NSString stringWithFormat:@"%d",obj]
+#define FormatFloat3(obj)                   [NSString stringWithFormat:@"%.3f",obj]
+#define FormatFloat(obj)                    [NSString stringWithFormat:@"%.0f",obj]
+#define FormatString(obj1,obj2)             [NSString stringWithFormat:@"%@%@",obj1,obj2]
+
+#define Screen_w      [UIScreen mainScreen].bounds.size.width
+#define Screen_h      [UIScreen mainScreen].bounds.size.height
+#define Drawer_w      Screen_w*0.8
+#define BLUECOLOR     [UIColor denimColor]
+#define SGCOLOR(r,g,b,a)        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define Color1                  SGCOLOR(224,243,241,1.0)
+#define Color2                  SGCOLOR(232,232,253,1.0)
+
+#import "UserDefaultsSetting.h"
+#import "UIView+Frame.h"
+#import "UIView+Shape.h"
+#import "CALayer+Animation.h"
+#import "Colours.h"  
+#import "NoCopyTextField.h"
+#import "HTTP.h"
+#import "MBProgressHUD.h"
+#import "SGAnimationType.h"
+#import "CJCalendarViewController.h"
+#import "UIButton+Img_20.h"
+#import "TimeTools.h"
+#import "MJDIYHeader2.h"
+#import "NSString+Separate.h"
+#import "BBFlashCtntLabel.h"
+#import "Tools.h"
+
+
+//zing定义组件
+#import "ExpViewHeader.h"
+
+
+//url    192.168.11.103
+//yf:          192.168.11.119
+//cy:     192.168.10.35
+//QQ:     192.168.191.3
+//kf:     192.168.1.125
+#define baseUrl   @"http://192.168.11.103:8081/zgjjqms/"
+//登录
+#define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
+//试验室列表
+#define sysHome_3    FormatString(baseUrl,@"sysController.do?sysHome&userGroupId=%@&startTime=%@&endTime=%@")
+//拌合站列表
+#define AppHntMain_3 FormatString(baseUrl,@"app.do?AppHntMain&departId=%@&startTime=%@&endTime=%@")
+//压力试验列表
+#define hntkangya_9  FormatString(baseUrl,@"sysController.do?hntkangya&userGroupId=%@&isQualified=%@&startTime=%@&endTime=%@&pageNo=%@&shebeibianhao=%@&isReal=%@&maxPageItems=%@&testId=%@")
+//设备、试验类型
+#define getSyTpAndMc_1 FormatString(baseUrl,@"sysController.do?getSyTpAndMc&userGroupId=%@")
+//万能试验列表
+#define gangjin_9  FormatString(baseUrl,@"sysController.do?gangjin&userGroupId=%@&isQualified=%@&startTime=%@&endTime=%@&pageNo=%@&shebeibianhao=%@&isReal=%@&maxPageItems=%@&testId=%@")
+#define hntkangyaDetail_1   FormatString(baseUrl,@"sysController.do?hntkangyaDetail&SYJID=%@")
+#define gangjinDetail_1   FormatString(baseUrl,@"sysController.do?gangjinDetail&SYJID=%@")
+
+#define hntkangyaPost   FormatString(baseUrl,@"sysController.do?hntkangyaPost")
+
+
+#define sysCountAnalyze_3  FormatString(baseUrl,@"sysController.do?sysCountAnalyze&userGroupId=%@&startTime=%@&endTime=%@")
+//生产查询列表
+#define AppHntXiangxiList_6  FormatString(baseUrl,@"app.do?AppHntXiangxiList&departId=%@&startTime=%@&endTime=%@&pageNo=%@&shebeibianhao=%@&maxPageItems=%@")
+#define getShebeiList_1    FormatString(baseUrl,@"app.do?getShebeiList&userGroupId=%@")
+
+//超标处置列表
+#define AppHntChaobiaoList_8  FormatString(baseUrl,@"app.do?AppHntChaobiaoList&departId=%@&startTime=%@&endTime=%@&dengji=%@&chuzhileixing=%@&pageNo=%@&shebeibianhao=%@&maxPageItems=%@")
+
+//生产数据详情
+#define AppHntXiangxiDetail_1  FormatString(baseUrl,@"app.do?AppHntXiangxiDetail&bianhao=%@")
+
+//超标处置详情
+#define AppHntChaobiaoDetail_1  FormatString(baseUrl,@"app.do?AppHntChaobiaoDetail&bianhao=%@")
+//材料核算
+#define AppHntMaterial_4  FormatString(baseUrl,@"app.do?AppHntMaterial&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@")
+//组织机构
+#define AppDepartTree_4 FormatString(baseUrl,@"app.do?AppDepartTree&updateDepartTime=%@&funtype=%@&userGroupId=%@&type=%@")
+#endif /* ToonePrefixHeader_pch */
