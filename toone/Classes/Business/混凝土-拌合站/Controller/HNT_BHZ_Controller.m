@@ -10,6 +10,7 @@
 #import "HNT_BHZ_Controller.h"
 #import "HNT_BHZ_Model.h"
 #import "HNT_BHZ_Cell.h"
+#import "NodeViewController.h"
 @interface HNT_BHZ_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
@@ -31,15 +32,12 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self addPanGestureRecognizer];
     [self loadUI];
     [self loadData];
-    UserDefaultsSetting * setting = [UserDefaultsSetting shareSetting];
-    [setting addObserver:self forKeyPath:@"departId" options:NSKeyValueObservingOptionNew context:nil];
 }
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    [self loadData];
+-(void)dealloc{
+    FuncLog;
 }
 -(void)loadUI{
     self.containerView.backgroundColor = BLUECOLOR;
@@ -67,7 +65,7 @@
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString * urlString = [NSString stringWithFormat:AppHntMain_3,userGroupId,startTimeStamp,endTimeStamp];
-    __weak typeof(self)  weakSelf = self;
+//    __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
@@ -79,8 +77,8 @@
             }
         }
         
-        weakSelf.datas = datas;
-        [weakSelf.tableView reloadData];
+        self.datas = datas;
+        [self.tableView reloadData];
         // 拿到当前的下拉刷新控件，结束刷新状态
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
@@ -108,10 +106,17 @@
         HNT_BHZ_InnerController * controller = vc;
         controller.departId = (NSString*)sender;
     }
+    __weak typeof(self) weakSelf = self;
+    if ([vc isKindOfClass:[NodeViewController class]]) {
+        NodeViewController * controller = vc;
+        controller.callBlock = ^(){
+            [weakSelf.datas removeAllObjects];
+            [weakSelf.tableView reloadData];
+            [weakSelf loadData];
+        };
+    }
 }
--(void)dealloc{
-    FuncLog;
-}
+
 -(IBAction)searchButtonClick:(UIButton*)sender{
     switch (sender.tag) {
         case 1:{

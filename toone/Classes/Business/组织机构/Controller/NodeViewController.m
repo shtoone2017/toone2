@@ -34,7 +34,9 @@
 -(void)cellClick:(Node *)node didReachToBottom:(BOOL)reached {
     
     if (reached) {
-    
+        if (self.callBlock) {
+            self.callBlock();
+        }
         [self.navigationController  popViewControllerAnimated:YES];
     }
     

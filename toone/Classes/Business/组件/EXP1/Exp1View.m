@@ -60,12 +60,18 @@
     }
     if (sender == self.xib.okButton) {
         if (self.expBlock) {
+            //保存时间
+            [UserDefaultsSetting shareSetting].startTime = self.xib.startTimeButton.currentTitle;
+            [UserDefaultsSetting shareSetting].endTime = self.xib.endTimeButton.currentTitle;
+            [[UserDefaultsSetting shareSetting] saveToSandbox];
+            //执行回调
             self.expBlock(ExpButtonTypeOk,self.xib.startTimeButton.currentTitle,self.xib.endTimeButton.currentTitle);
         }
         [self remove];
     }
     if (sender == self.xib.cancelButton) {
         if (self.expBlock) {
+
             self.expBlock(ExpButtonTypeCancel,nil,nil);
         }
         [self remove];

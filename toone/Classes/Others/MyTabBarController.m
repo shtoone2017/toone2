@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
+    //保存时间
+    [UserDefaultsSetting shareSetting].startTime = [TimeTools time_3_monthsAgo] ;
+    [UserDefaultsSetting shareSetting].endTime   = [TimeTools currentTime] ;
+    [[UserDefaultsSetting shareSetting] saveToSandbox];
 }
 
 - (void)didReceiveMemoryWarning {

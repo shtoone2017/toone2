@@ -11,6 +11,7 @@
 #import "HNT_SYS_FrameModel.h"
 #import "HNT_SYS_Cell.h"
 #import "HNT_SYS_InnerController.h"
+#import "NodeViewController.h"
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
@@ -36,12 +37,9 @@
     [self addPanGestureRecognizer];
     [self loadUI];
     [self loadData];
-
-    UserDefaultsSetting * setting = [UserDefaultsSetting shareSetting];
-    [setting addObserver:self forKeyPath:@"departId" options:NSKeyValueObservingOptionNew context:nil];
 }
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    [self loadData];
+-(void)dealloc{
+    FuncLog;
 }
 -(void)loadUI{
     self.containerView.backgroundColor = BLUECOLOR;
@@ -122,10 +120,17 @@
         HNT_SYS_InnerController * controller = vc;
         controller.userGroupId = (NSString*)sender;
     }
+    __weak typeof(self) weakSelf = self;
+    if ([vc isKindOfClass:[NodeViewController class]]) {
+        NodeViewController * controller = vc;
+        controller.callBlock = ^(){
+            [weakSelf.datas removeAllObjects];
+            [weakSelf.tableView reloadData];
+            [weakSelf loadData];
+        };
+    }
 }
--(void)dealloc{
-    FuncLog;
-}
+
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
         case 1:{

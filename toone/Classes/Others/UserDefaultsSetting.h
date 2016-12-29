@@ -35,4 +35,8 @@
 @property (nonatomic,assign) BOOL  hntchaobiaoSp;
 @property (nonatomic,assign) BOOL  syschaobiaoReal;
 
+
+//存储开始时间和结束时间
+@property (nonatomic,copy) NSString * startTime;
+@property (nonatomic,copy) NSString * endTime;
 @end

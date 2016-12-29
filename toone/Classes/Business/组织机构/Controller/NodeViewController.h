@@ -9,5 +9,5 @@
 #import "ViewController.h"
 
 @interface NodeViewController : ViewController
-
+@property (nonatomic,copy) void(^callBlock)();
 @end

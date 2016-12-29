@@ -44,6 +44,11 @@ static UserDefaultsSetting * setting = nil;
     setting.hntchaobiaoReal = [defaults boolForKey:@"hntchaobiaoRealKey"];
     setting.hntchaobiaoSp = [defaults boolForKey:@"hntchaobiaoSpKey"];
     setting.syschaobiaoReal = [defaults boolForKey:@"syschaobiaoRealKey"];
+    
+    
+    //存储时间
+    setting.startTime = [defaults objectForKey:@"startTimeKey"];
+    setting.endTime   = [defaults objectForKey:@"endTimeKey"];
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -65,6 +70,9 @@ static UserDefaultsSetting * setting = nil;
     [defaults setBool:self.hntchaobiaoSp     forKey:@"hntchaobiaoSpKey"];
     [defaults setBool:self.syschaobiaoReal   forKey:@"syschaobiaoRealKey"];
     
+    //存储时间
+    [defaults setBool:self.endTime     forKey:@"endTimeKey"];
+    [defaults setBool:self.startTime   forKey:@"startTimeKey"];
     [defaults synchronize];
 }
 
