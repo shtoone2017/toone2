@@ -56,7 +56,7 @@
 //cy:     192.168.10.35
 //QQ:     192.168.191.3
 //kf:     192.168.1.125   http://120.26.127.135:8084/zgjj/     @"http://192.168.11.103:8081/zgjjqms/"
-#define baseUrl   @"http://120.26.127.135:8084/zgjj/"
+#define baseUrl   @"http://192.168.11.103:8081/zgjjqms/"
 //登录
 #define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
 //试验室列表
