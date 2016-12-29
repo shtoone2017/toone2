@@ -83,7 +83,9 @@ static HTTP *networking = nil;
         formatter.dateFormat =@"yyyyMMddHHmmss";
         NSString *str = [formatter stringFromDate:[NSDate date]];
         NSString *fileName = [NSString stringWithFormat:@"%@.png", str];
-        [formData appendPartWithFileData:data name:@"file" fileName:fileName mimeType:@"image/png"];
+        if (data != nil) {
+             [formData appendPartWithFileData:data name:@"file" fileName:fileName mimeType:@"image/png"];
+        }
     } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSError * err;
         id jsondata = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&err];

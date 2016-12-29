@@ -37,13 +37,13 @@
     
     //
     
-//    if ([UserDefaultsSetting shareSetting].isLogin) {
-//        self.acountTextField.text = [UserDefaultsSetting shareSetting].acount;
-//        self.passwordTextField.text = [UserDefaultsSetting shareSetting].password;
+    if ([UserDefaultsSetting shareSetting].isLogin) {
+        self.acountTextField.text = [UserDefaultsSetting shareSetting].acount;
+        self.passwordTextField.text = [UserDefaultsSetting shareSetting].password;
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 //            [self loginBtnClick:self.loginButton];
 //        });
-//    }
+    }
 }
 - (void)keyboardWillChange:(NSNotification  *)notification{
 //      NSLog(@"键盘弹出 %@", notification);

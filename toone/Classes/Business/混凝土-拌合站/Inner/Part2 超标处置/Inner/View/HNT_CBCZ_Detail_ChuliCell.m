@@ -30,6 +30,7 @@
 
 @property (nonatomic,strong) UITextField * txf;//当前响应的输入框
 @property (nonatomic,strong) UIImage * filePathImage;
+
 @end
 
 @implementation HNT_CBCZ_Detail_ChuliCell
@@ -176,11 +177,29 @@
     [alertController addAction:archiveAction];
     [self.weakController presentViewController:alertController animated:YES completion:nil];
 }
--(BOOL)textFieldShouldEndEditing:(UITextField *)textField{self.txf = nil;return YES;}
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+
+    if (textField == self.chulifangshi) {
+        self.headMsg.chulifangshi = textField.text;
+    }
+    if (textField == self.chulijieguo) {
+        self.headMsg.chulijieguo = textField.text;
+    }
+    if (textField == self.wentiyuanyin) {
+        self.headMsg.wentiyuanyin = textField.text;
+    }
+    if (textField == self.jianliresult) {
+        self.headMsg.jianliresult = textField.text;
+    }
+    if (textField == self.jianlishenpi) {
+        self.headMsg.jianlishenpi = textField.text;
+    }
+    
+    self.txf = nil
+    ;return YES;
+}
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{self.txf = textField;return YES;}
 - (IBAction)cancelClick:(UIButton *)sender {
-    
-    
     if (self.txf)[self.txf resignFirstResponder];}
 
 - (IBAction)commitClick:(UIButton *)sender {
@@ -193,13 +212,13 @@
             if (!self.chuZhiZhuangTai) {
                 break;
             }
-            if (self.wentiyuanyin.text.length == 0 || self.chulifangshi.text.length == 0 || self.chulishijian.currentTitle.length == 0||self.chulijieguo.text.length == 0  || self.filePathImage == nil) {
+            if (self.wentiyuanyin.text.length == 0 || self.chulifangshi.text.length == 0 || self.chulishijian.currentTitle.length == 0||self.chulijieguo.text.length == 0  ) {
                 [Tools tip:@"信息不完整，无法提交"];
                 break;
             }
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.weakController.view animated:YES];
-            hud.mode = MBProgressHUDModeDeterminate;
-            hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
+//            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:super.superview animated:YES];
+//            hud.mode = MBProgressHUDModeDeterminate;
+//            hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             
             NSString * urlString = FormatString(baseUrl, @"app.do?AppHntChaobiaoChuzhi");
             NSDictionary * dic = @{@"jieguobianhao":self.headMsg.SId,
@@ -210,22 +229,31 @@
                                    @"chuzhijieguo":self.chulijieguo.text,
                                    @"isIos":@"1"
                                    };
-            NSData *data = [Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:30];
+            
+            
+            NSData *  data =[Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:30];
+          
             
             
             [[HTTP shareAFNNetworking] uploadWithUrlstring:urlString parameter:dic data:data success:^(id json) {
                 if ([json[@"success"] boolValue]){
-                    hud.mode = MBProgressHUDModeText;
-                    hud.label.text = @"提交成功,请刷新数据";
+//                    hud.mode = MBProgressHUDModeText;
+//                    hud.label.text = @"提交成功,请刷新数据";
+                    [Tools tip:@"提交成功,请刷新数据"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        [self.weakController.navigationController popViewControllerAnimated:YES];
+                    });
                 }else{
-                    hud.mode = MBProgressHUDModeText;
-                    hud.label.text = @"抱歉，提交失败";
+//                    hud.mode = MBProgressHUDModeText;
+//                    hud.label.text = @"抱歉，提交失败";
+                    [Tools tip:@"抱歉，提交失败"];
                 }
-                [hud hideAnimated:YES afterDelay:2.0];
+//                [hud hideAnimated:YES afterDelay:2.0];
             } failure:^(NSError *error) {
-                hud.mode = MBProgressHUDModeText;
-                hud.label.text = @"网络故障，提交失败";
-                [hud hideAnimated:YES afterDelay:2.0];
+//                hud.mode = MBProgressHUDModeText;
+//                hud.label.text = @"网络故障，提交失败";
+//                [hud hideAnimated:YES afterDelay:2.0];
+                [Tools tip:@"网络故障，提交失败"];
             }];
             break;
         }
@@ -242,10 +270,7 @@
                 [Tools tip:@"信息不完整，无法提交"];
                 break;
             }
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.weakController.view animated:YES];
-            hud.mode = MBProgressHUDModeDeterminate;
-            hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
-            
+
             NSString * urlString = FormatString(baseUrl, @"app.do?AppHntChaobiaoShenpi");
             NSDictionary * dic = @{@"jieguobianhao":self.headMsg.SId,
                                    @"jianliresult":self.jianliresult.text,
@@ -257,17 +282,15 @@
             
             [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dic success:^(id json) {
                 if ([json[@"success"] boolValue]){
-                    hud.mode = MBProgressHUDModeText;
-                    hud.label.text = @"提交成功,请刷新数据";
+                    [Tools tip:@"提交成功,请刷新数据"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        [self.weakController.navigationController popViewControllerAnimated:YES];
+                    });
                 }else{
-                    hud.mode = MBProgressHUDModeText;
-                    hud.label.text = @"抱歉，提交失败";
+                    [Tools tip:@"抱歉，提交失败"];
                 }
-                [hud hideAnimated:YES afterDelay:2.0];
             } failure:^(NSError *error) {
-                hud.mode = MBProgressHUDModeText;
-                hud.label.text = @"网络故障，提交失败";
-                [hud hideAnimated:YES afterDelay:2.0];
+                 [Tools tip:@"网络故障，提交失败"];
             }];
             break;
         }
@@ -275,7 +298,17 @@
 }
 
 - (IBAction)choiceTimeClick:(UIButton *)sender {
+
     [sender setTitle:[TimeTools currentTime] forState:UIControlStateNormal];
+    if (sender == self.chulishijian) {
+        self.headMsg.chulishijian = sender.currentTitle;
+    }
+    if (sender == self.confirmdate) {
+        self.headMsg.confirmdate = sender.currentTitle;
+    }
+    if (sender == self.shenpidate) {
+        self.headMsg.shenpidate = sender.currentTitle;
+    }
      //[self calendarWithTimeString:nil obj:sender];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

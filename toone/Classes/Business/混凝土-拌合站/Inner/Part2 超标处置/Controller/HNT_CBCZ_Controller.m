@@ -207,6 +207,8 @@
     NSString * urlString = [NSString stringWithFormat:AppHntChaobiaoList_8,self.departId,startTimeStamp,endTimeStamp,self.dengji,self.chuzhileixing,self.pageNo,self.shebeibianhao,self.maxPageItems];
 //            NSLog(@"urlString = %@",urlString);
     __weak typeof(self)  weakSelf = self;
+    
+    
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
@@ -351,6 +353,7 @@
             weakSelf.endTime = (NSString*)obj2;
             //重新切换titleButton ， 搜索页码应该回归第一页码
             weakSelf.pageNo = @"1";
+            weakSelf.chuzhileixing = @"";
             switch (buttonTag) {
                 case 10:
                     weakSelf.chuzhileixing = @"";
