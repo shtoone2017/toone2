@@ -108,7 +108,7 @@
     [_passwordTextField resignFirstResponder];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeDeterminate;
-    hud.label.text = NSLocalizedString(@"Loading...", @"HUD loading title");
+    hud.label.text = NSLocalizedString(@"正在登录", @"HUD loading title");
     hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
     if (_acountTextField.text.length == 0 || _passwordTextField.text.length ==0) {
         hud.mode = MBProgressHUDModeIndeterminate;
