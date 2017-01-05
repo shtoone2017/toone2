@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,17 +22,18 @@
                     <connections>
                         <segue destination="fhn-Kh-DR2" kind="relationship" relationship="viewControllers" id="dQu-tz-Dwe"/>
                         <segue destination="Qff-ou-NCO" kind="relationship" relationship="viewControllers" id="dcb-Yr-DZ6"/>
+                        <segue destination="Esn-Nf-7fj" kind="relationship" relationship="viewControllers" id="CNW-20-Xnl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYl-q3-mLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2390" y="869"/>
         </scene>
-        <!--拌和站-->
+        <!--混凝土拌和站-->
         <scene sceneID="arX-PB-IVc">
             <objects>
                 <navigationController id="Qff-ou-NCO" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="拌和站" image="ic_bhz" id="cGo-mG-Rf8"/>
+                    <tabBarItem key="tabBarItem" title="混凝土拌和站" image="ic_bhz" id="cGo-mG-Rf8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xzo-al-fMC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +174,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKu-pg-V2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2126" y="1352"/>
+        </scene>
+        <!--栗子-->
+        <scene sceneID="aAn-l2-hTg">
+            <objects>
+                <navigationController hidesBottomBarWhenPushed="YES" id="Esn-Nf-7fj" customClass="MyNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="栗子" id="vmd-k8-FXD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIA-6o-JWn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tQ0-YT-Khr" kind="relationship" relationship="rootViewController" id="eax-H4-RyV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAM-mU-Obl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3831" y="1924"/>
+        </scene>
+        <!--Exmp2-->
+        <scene sceneID="vqa-mY-pfB">
+            <objects>
+                <viewController id="tQ0-YT-Khr" customClass="Exmp2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EUJ-zl-I4j"/>
+                        <viewControllerLayoutGuide type="bottom" id="VaK-ym-GdM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S3X-S9-btp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NaA-Lr-5q1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3C-eN-q0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3831" y="2897"/>
         </scene>
         <!--Controller-->
         <scene sceneID="Ijg-Tk-BqD">
@@ -540,11 +577,11 @@
             </objects>
             <point key="canvasLocation" x="3014" y="1352"/>
         </scene>
-        <!--试验室-->
+        <!--混凝土试验室-->
         <scene sceneID="fEf-BL-Afi">
             <objects>
                 <navigationController id="fhn-Kh-DR2" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="试验室" image="ic_lab" id="YeJ-1x-asO"/>
+                    <tabBarItem key="tabBarItem" title="混凝土试验室" image="ic_lab" id="YeJ-1x-asO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5n-kS-FPJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
