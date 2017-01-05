@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Exmp2 : UITableViewController
+@interface Exmp2 : UIViewController
 
 @end
