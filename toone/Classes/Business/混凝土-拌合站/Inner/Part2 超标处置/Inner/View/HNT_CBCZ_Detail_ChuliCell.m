@@ -330,29 +330,4 @@
     [self.weakController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-//**************
-//-(void)calendarWithTimeString:(NSString*)timeString  obj:(id)obj{
-//    CJCalendarViewController *calendarController = [[CJCalendarViewController alloc] init];
-//    calendarController.view.frame = self.weakController.view.frame;
-//    calendarController.obj = obj;
-//    calendarController.delegate = self;
-//    NSArray *arr = [timeString componentsSeparatedByCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"- "]];
-//    if (arr.count > 1) {
-//        [calendarController setYear:arr[0] month:arr[1] day:arr[2]];
-//    }
-//    
-//    [self.weakController presentViewController:calendarController animated:YES completion:nil];
-//}
-////可选协议 @optional
-//-(void)CalendarViewController:(CJCalendarViewController *)controller didSelectActionYear:(NSString *)year month:(NSString *)month day:(NSString *)day{
-//    if ([month intValue] <10) {
-//        month = [NSString stringWithFormat:@"0%d",[month intValue]];
-//    }
-//    if ([day intValue] <10) {
-//        day = [NSString stringWithFormat:@"0%d",[day intValue]];
-//    }
-//    [(UIButton*)controller.obj setTitle:[NSString stringWithFormat:@"%@-%@-%@ %@", year, month, day,[TimeTools current_HH_mm_SS]] forState:UIControlStateNormal];
-//    FuncLog;
-//}
 @end

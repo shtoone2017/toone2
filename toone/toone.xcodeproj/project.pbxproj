@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B871C41E1F71D400F9DD53 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */; };
+		18B871C51E1F71D400F9DD53 /* MySegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */; };
+		18B871C81E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */; };
+		18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871CA1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m */; };
+		18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871CB1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib */; };
+		18B871D11E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871CF1E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m */; };
+		18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871D01E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib */; };
+		18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871D41E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m */; };
+		18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871D51E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib */; };
+		18B871DB1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871D91E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m */; };
+		18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DA1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib */; };
+		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
+		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
@@ -98,8 +111,6 @@
 		D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20063D71DFF86800021E293 /* HNT_TJFX_HeaderView.xib */; };
 		D20064801DFF86800021E293 /* HNT_TJFX_TxtView.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063D91DFF86800021E293 /* HNT_TJFX_TxtView.m */; };
 		D20064811DFF86800021E293 /* HNT_TJFX_TxtView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20063DA1DFF86800021E293 /* HNT_TJFX_TxtView.xib */; };
-		D20064821DFF86800021E293 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063DD1DFF86800021E293 /* MySegmentedControl.m */; };
-		D20064831DFF86800021E293 /* MySegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20063DE1DFF86800021E293 /* MySegmentedControl.xib */; };
 		D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063E11DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m */; };
 		D20064851DFF86800021E293 /* SYS_SB_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063E31DFF86800021E293 /* SYS_SB_Model.m */; };
 		D20064861DFF86800021E293 /* SYS_testTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063E51DFF86800021E293 /* SYS_testTypeModel.m */; };
@@ -233,6 +244,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18B871C11E1F71D400F9DD53 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
+		18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
+		18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySegmentedControl.xib; sourceTree = "<group>"; };
+		18B871C61E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_ChuZhi_Controller.h; sourceTree = "<group>"; };
+		18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_ChuZhi_Controller.m; sourceTree = "<group>"; };
+		18B871C91E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ChuLi_Cell.h; sourceTree = "<group>"; };
+		18B871CA1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ChuLi_Cell.m; sourceTree = "<group>"; };
+		18B871CB1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell.xib; sourceTree = "<group>"; };
+		18B871CE1E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ShenPi_Cell.h; sourceTree = "<group>"; };
+		18B871CF1E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ShenPi_Cell.m; sourceTree = "<group>"; };
+		18B871D01E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ShenPi_Cell.xib; sourceTree = "<group>"; };
+		18B871D31E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ChuLi_Controller.h; sourceTree = "<group>"; };
+		18B871D41E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ChuLi_Controller.m; sourceTree = "<group>"; };
+		18B871D51E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Controller.xib; sourceTree = "<group>"; };
+		18B871D81E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ShenPi_Controller.h; sourceTree = "<group>"; };
+		18B871D91E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ShenPi_Controller.m; sourceTree = "<group>"; };
+		18B871DA1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ShenPi_Controller.xib; sourceTree = "<group>"; };
+		18B871DD1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ChuLi_Cell2.h; sourceTree = "<group>"; };
+		18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ChuLi_Cell2.m; sourceTree = "<group>"; };
+		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
 		18DA4FE51E1E15B800229C81 /* Exmp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp2.h; sourceTree = "<group>"; };
 		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -408,9 +439,6 @@
 		D20063D81DFF86800021E293 /* HNT_TJFX_TxtView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_TJFX_TxtView.h; sourceTree = "<group>"; };
 		D20063D91DFF86800021E293 /* HNT_TJFX_TxtView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_TJFX_TxtView.m; sourceTree = "<group>"; };
 		D20063DA1DFF86800021E293 /* HNT_TJFX_TxtView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_TJFX_TxtView.xib; sourceTree = "<group>"; };
-		D20063DC1DFF86800021E293 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
-		D20063DD1DFF86800021E293 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
-		D20063DE1DFF86800021E293 /* MySegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySegmentedControl.xib; sourceTree = "<group>"; };
 		D20063E01DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SYS_typeAndSB_Controller.h; sourceTree = "<group>"; };
 		D20063E11DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_SYS_typeAndSB_Controller.m; sourceTree = "<group>"; };
 		D20063E21DFF86800021E293 /* SYS_SB_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_SB_Model.h; sourceTree = "<group>"; };
@@ -624,6 +652,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B871C01E1F719900F9DD53 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18B871C61E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.h */,
+				18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +672,9 @@
 		8C14C90B1E0BD48300A3F2E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18B871C11E1F71D400F9DD53 /* MySegmentedControl.h */,
+				18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */,
+				18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */,
 				8CE976501E0BF1FF0016A858 /* MySJView.h */,
 				8CE976511E0BF1FF0016A858 /* MySJView.m */,
 				8CE976521E0BF1FF0016A858 /* MySJxib.h */,
@@ -702,6 +742,12 @@
 			children = (
 				8CBD72ED1E07A84C00A0C991 /* HNT_CBCZ_DetailController.h */,
 				8CBD72EE1E07A84C00A0C991 /* HNT_CBCZ_DetailController.m */,
+				18B871D31E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.h */,
+				18B871D41E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m */,
+				18B871D51E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib */,
+				18B871D81E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.h */,
+				18B871D91E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m */,
+				18B871DA1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -721,6 +767,15 @@
 				8CBD72F01E07A9A600A0C991 /* HNT_CBCZ_Detail_ChuliCell.h */,
 				8CBD72F11E07A9A600A0C991 /* HNT_CBCZ_Detail_ChuliCell.m */,
 				8CBD72F21E07A9A600A0C991 /* HNT_CBCZ_Detail_ChuliCell.xib */,
+				18B871C91E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.h */,
+				18B871CA1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m */,
+				18B871CB1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib */,
+				18B871DD1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.h */,
+				18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */,
+				18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */,
+				18B871CE1E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.h */,
+				18B871CF1E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m */,
+				18B871D01E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1371,9 +1426,6 @@
 		D20063DB1DFF86800021E293 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D20063DC1DFF86800021E293 /* MySegmentedControl.h */,
-				D20063DD1DFF86800021E293 /* MySegmentedControl.m */,
-				D20063DE1DFF86800021E293 /* MySegmentedControl.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1501,6 +1553,7 @@
 		D200641A1DFF86800021E293 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				18B871C01E1F719900F9DD53 /* Controller */,
 				8C14C90B1E0BD48300A3F2E7 /* View */,
 				D200641B1DFF86800021E293 /* MyModel.h */,
 				D200641C1DFF86800021E293 /* MyModel.m */,
@@ -1907,14 +1960,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20064671DFF86800021E293 /* DrawerList.plist in Resources */,
+				18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
 				D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */,
+				18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
 				D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */,
-				D20064831DFF86800021E293 /* MySegmentedControl.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
 				D200651E1DFF86B30021E293 /* BarChartViewController.xib in Resources */,
+				18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20064441DFF86800021E293 /* CJMonthDayCollectionCell.xib in Resources */,
 				D200652C1DFF86B30021E293 /* HorizontalBarChartViewController.xib in Resources */,
 				D200653A1DFF86B30021E293 /* NegativeStackedBarChartViewController.xib in Resources */,
@@ -1927,6 +1982,7 @@
 				D200652A1DFF86B30021E293 /* HalfPieChartViewController.xib in Resources */,
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
 				8CBD737D1E09320C00A0C991 /* TheProjectCell.xib in Resources */,
+				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				8CBD72E61E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.xib in Resources */,
 				D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
@@ -1954,11 +2010,13 @@
 				D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
+				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				8CBD73451E091EF600A0C991 /* HNT_CLHS_Cell.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
 				D20064811DFF86800021E293 /* HNT_TJFX_TxtView.xib in Resources */,
 				8CBD72E81E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.xib in Resources */,
 				D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */,
+				18B871C51E1F71D400F9DD53 /* MySegmentedControl.xib in Resources */,
 				D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2061,8 +2119,10 @@
 				D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */,
 				D20065931DFFCC080021E293 /* HNT_SCCX_Model.m in Sources */,
 				D20064411DFF86800021E293 /* CJUseTime.m in Sources */,
+				18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */,
 				D20064851DFF86800021E293 /* SYS_SB_Model.m in Sources */,
 				D20065151DFF86B30021E293 /* BarModel.m in Sources */,
+				18B871C81E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m in Sources */,
 				D20064911DFF86800021E293 /* Exp1_Xib_View.m in Sources */,
 				D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */,
 				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
@@ -2083,7 +2143,10 @@
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
 				8CBD72E51E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.m in Sources */,
 				D20064891DFF86800021E293 /* HNT_SYS_Cell.m in Sources */,
+				18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D20064AA1DFF86800021E293 /* Colours.m in Sources */,
+				18B871DB1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m in Sources */,
+				18B871C41E1F71D400F9DD53 /* MySegmentedControl.m in Sources */,
 				D200658F1DFFC9F10021E293 /* HNT_SCCX_Cell.m in Sources */,
 				D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */,
 				D20065AC1DFFE4B80021E293 /* HNT_BHZ_SB_Model.m in Sources */,
@@ -2117,6 +2180,7 @@
 				D200649E1DFF86800021E293 /* UIView+Frame.m in Sources */,
 				D20064A41DFF86800021E293 /* HTTP.m in Sources */,
 				18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */,
+				18B871D11E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m in Sources */,
 				8CBD737E1E09320C00A0C991 /* TreeTableView.m in Sources */,
 				D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */,
 				D200654B1DFF86B30021E293 /* IntAxisValueFormatter.m in Sources */,
@@ -2138,7 +2202,6 @@
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
 				D20065711DFF9DF40021E293 /* HNT_CBCZ_Controller.m in Sources */,
 				D20064781DFF86800021E293 /* HNT_WNSY_DetailModel.m in Sources */,
-				D20064821DFF86800021E293 /* MySegmentedControl.m in Sources */,
 				D20064701DFF86800021E293 /* HNT_YLSY_Controller.m in Sources */,
 				D20064981DFF86800021E293 /* Exp4View.m in Sources */,
 				D20064991DFF86800021E293 /* CALayer+Animation.m in Sources */,
@@ -2150,6 +2213,7 @@
 				8CBD733F1E091C7E00A0C991 /* HNT_CLHS_ChatCell.m in Sources */,
 				8CBD73391E091B8800A0C991 /* HNT_CLHS_Model.m in Sources */,
 				D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */,
+				18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D200652D1DFF86B30021E293 /* LineChart1ViewController.m in Sources */,
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,
 				8CBD72F71E07B1D200A0C991 /* HNT_CBCZ_Detail_HeadMsg.m in Sources */,

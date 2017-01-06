@@ -10,6 +10,8 @@
 #import "HNT_WNSY_DetailModel.h"
 #import "LineChart1ViewController.h"
 #import "AxisModel.h"
+
+#import "HNT_ChuZhi_Controller.h"
 @interface HNT_WNSY_DetailController ()<UITextFieldDelegate,UIScrollViewDelegate>
 //1.万能试验
 @property (weak, nonatomic) IBOutlet UILabel * SYRQ_Label;//日期
@@ -39,9 +41,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *big_sc_containerHeight;
 @property (weak, nonatomic) IBOutlet UIView *containerView3;
 @property (weak, nonatomic) IBOutlet UIScrollView *big_sc;
-@property (weak, nonatomic) IBOutlet UITextField *txf;
-- (IBAction)submitAndCancelButtonClick:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+
 
 /******************************/
 
@@ -56,29 +56,9 @@
     [super viewDidLoad];
     [self loadUI];
     [self loadData];
-    
-    [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
-}
-- (void)keyboardWillChange:(NSNotification  *)notification{
-    // 1.获取键盘的Y值
-    NSDictionary *dict  = notification.userInfo;
-    CGRect keyboardFrame = [dict[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat keyboardY = keyboardFrame.origin.y;
-    //动画时间
-    CGFloat duration = [dict[UIKeyboardAnimationDurationUserInfoKey]doubleValue];
-    // 2.计算需要移动的距离
-    [UIView animateWithDuration:duration delay:0.0 options:7 << 16 animations:^{
-        self.view.transform = CGAffineTransformMakeTranslation(0, keyboardY - self.view.frame.size.height);
-    } completion:nil];
 }
 -(void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
     FuncLog;
-}
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (scrollView==self.big_sc) {
-        [self.txf resignFirstResponder];
-    }
 }
 -(void)loadUI{
     self.chart_sc.contentSize = CGSizeMake(Screen_w*2, 360);
@@ -89,7 +69,7 @@
         }
         case 2:
         case 4:{
-            self.big_sc_containerHeight.constant = 1030-150-10;
+            self.big_sc_containerHeight.constant = 950-150-10;
             [self.containerView3 removeFromSuperview];
             break;
         }
@@ -123,8 +103,38 @@
                 weakSelf.SCL_Label.text = [model.SCL componentsSeparatedByString:@"&"].firstObject;//伸长率
                 
                 
-                weakSelf.txf.text = model.chuli;
-                
+//                weakSelf.txf.text = model.chuli;
+                switch ([weakSelf.tableViewSigner integerValue]) {
+                    case 1:
+                    case 3:{
+                        if (model.chuli.length >0) {
+                            NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
+                            CGSize maxSize = CGSizeMake(Screen_w-20, MAXFLOAT);
+                            CGSize size = [model.chuli boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+                            CGFloat height = size.height;
+                            if (height > 100) {
+                                height = 100;
+                            }
+                            UILabel * chuZhi_label = [[UILabel alloc] init];
+                            chuZhi_label.frame = CGRectMake(10, 40, Screen_w-20, height);
+                            chuZhi_label.font = [UIFont systemFontOfSize:12.0];
+                            chuZhi_label.text = model.chuli;
+                            chuZhi_label.numberOfLines=0;
+                            [weakSelf.containerView3 addSubview:chuZhi_label];
+                        }
+                        else{
+                            UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                            chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
+                            [chuZhi_btn setTitle:@"尚未处置，点击这里进入处置界面..." forState:UIControlStateNormal];
+                            chuZhi_btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                            [weakSelf.containerView3 addSubview:chuZhi_btn];
+                            [chuZhi_btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                }
                 //处理数据
                 NSArray * arrY = [model.f_LZ separatedWithFirstString:@"&" withSecondCharacter:@","];
                 NSArray * arrX = [model.f_SJ separatedWithFirstString:@"&" withSecondCharacter:@","];
@@ -193,8 +203,6 @@
     [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     sender.titleLabel.font = [UIFont systemFontOfSize:14.0f];
     
-    
-    
     [UIView animateWithDuration:0.2 animations:^{
         self.redLine_x.constant = (sender.tag-1)*70;
         [self.redline.superview layoutIfNeeded];
@@ -208,65 +216,15 @@
         self.SCL_Label.text = [self.model.SCL componentsSeparatedByString:@"&"][sender.tag-1];//伸长率
     }];
 }
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self submitAndCancelButtonClick:self.submitButton];
-    return YES;
+#pragma mark - 进入处置界面
+-(void)goto_chuzhi{
+    [self performSegueWithIdentifier:@"HNT_WNSY_DetailController_chuzhi" sender:nil];
 }
-- (IBAction)submitAndCancelButtonClick:(id)sender {
-    [self.txf resignFirstResponder];
-    if (sender == self.submitButton) {
-        if (!self.txf.enabled) {
-            return;
-        }
-        
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-        
-        hud.mode = MBProgressHUDModeText;
-        if (self.txf.text.length == 0) {
-            hud.label.text = NSLocalizedString(@"您还没有输入处置原因", @"HUD cleanining up title");
-            [hud hideAnimated:YES afterDelay:2.0];
-            return;
-        }
-        
-        hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
-        hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
-        
-        NSString * urlString = hntkangyaPost;
-        NSDictionary * dict = @{@"SYJID":self.SYJID,@"chaobiaoyuanyin":self.txf.text};
-        __weak typeof(self) weakSelf = self;
-        __weak UIButton * weakButton = sender;
-        [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
-            if ([json[@"success"] boolValue]) {
-                dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-                    // Do something useful in the background and update the HUD periodically.
-                    [self doSomeWorkWithProgress];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [hud hideAnimated:YES];
-                        weakSelf.txf.enabled = NO;
-                        weakButton.enabled = NO;
-                    });
-                });
-            }
-        } failure:nil];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    id vc = segue.destinationViewController;
+    if ([vc isKindOfClass:[HNT_ChuZhi_Controller class]]) {
+        HNT_ChuZhi_Controller * controller = vc;
+        controller.SYJID = self.SYJID;
     }
 }
-#pragma  mark - 给指示器添加进度状态
-- (void)doSomeWorkWithProgress {
-    self.canceled = NO;
-    // This just increases the progress indicator in a loop.
-    float progress = 0.0f;
-    while (progress < 1.0f) {
-        if (self.canceled) break;
-        progress += 0.01f;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // Instead we could have also passed a reference to the HUD
-            // to the HUD to myProgressTask as a method parameter.
-            [MBProgressHUD HUDForView:self.navigationController.view].progress = progress;
-        });
-        usleep(3000);
-    }
-}
-
-
-
 @end

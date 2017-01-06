@@ -50,10 +50,10 @@
     self.container2_label.textColor = [UIColor whiteColor];
     self.container1.hidden = NO;
     if(EqualToString(model.chuli, @"0")){
-        self.container1_label.backgroundColor = [UIColor salmonColor];
+        self.container1_label.backgroundColor = [UIColor bananaColor];
         self.container1_label.text = @"未处置";
     }else if(EqualToString(model.chuli, @"1")){
-        self.container1_label.backgroundColor = [UIColor grassColor];
+        self.container1_label.backgroundColor = [UIColor emeraldColor];
         self.container1_label.text = @"已处置";
     }else {
         self.container1.hidden = YES;
@@ -61,14 +61,32 @@
     
     
     self.container2.hidden = NO;
-    if (EqualToString(model.shenhe, @"2")) {
+    if (EqualToString(model.shenhe, @"1")) {
         self.container2_label.text = @"已审核";
-        self.container2.backgroundColor = [UIColor bananaColor];
-    }else if (EqualToString(model.shenhe, @"3")){
-        self.container2_label.text = @"未审核";
         self.container2.backgroundColor = [UIColor emeraldColor];
     }else{
-        self.container2.hidden = YES;
+        self.container2_label.text = @"未审核";
+        self.container2.backgroundColor = [UIColor brickRedColor];
     }
+    
+//    if(EqualToString(model.PDJG, @"不合格")){
+//        self.container1_label.backgroundColor = [UIColor salmonColor];
+//    }else if(EqualToString(model.PDJG, @"合格")){
+//        self.container1_label.backgroundColor = [UIColor grassColor];
+//    }else if(EqualToString(model.PDJG, @"有效")){
+//        self.container1_label.backgroundColor = [UIColor pastelGreenColor];
+//    }else if(EqualToString(model.PDJG, @"无效")){
+//        self.container1_label.backgroundColor = [UIColor brickRedColor];
+//    }
+//    
+//    
+//    
+//    if (EqualToString(model.chuzhi, @"0")) {
+//        self.container2_label.text = @"未处置";
+//        self.container2.backgroundColor = [UIColor bananaColor];
+//    }else if (EqualToString(model.chuzhi, @"1")){
+//        self.container2_label.text = @"已处置";
+//        self.container2.backgroundColor = [UIColor emeraldColor];
+//    }
 }
 @end
