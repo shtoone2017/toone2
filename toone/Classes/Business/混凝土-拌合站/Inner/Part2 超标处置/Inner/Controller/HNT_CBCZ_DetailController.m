@@ -117,13 +117,13 @@
             return 20;
         }else if(indexPath.row == self.datas.count+1){
             if (self.filePathImage) {
-                return 470;
+                return 480;
             }else{
-                return 240;
+                return 250;
             }
         }else if (indexPath.row == self.datas.count+2){
             if (EqualToString(self.shenhe, @"1")) {
-                return 240;
+                return 250;
             }else{
                 return 40;
             }
@@ -155,17 +155,29 @@
         }else if(indexPath.row == self.datas.count+1){
             if (self.filePathImage) {
                 HNT_CBCZ_Detail_ChuLi_Cell2 * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell2"];
+                cell.headMsg = self.headMsg;
                 return cell;
             }else{
                 HNT_CBCZ_Detail_ChuLi_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell"];
+                cell.headMsg = self.headMsg;
                 return cell;
             }
         }else if (indexPath.row == self.datas.count+2){
             if (EqualToString(self.shenhe, @"1")) {
-                HNT_CBCZ_Detail_ShenPi_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_CBCZ_Detail_ShenPi_Cell"];
+                HNT_CBCZ_Detail_ShenPi_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_CBCZ_Detail_ShenPi_Cell"]
+                ;
+                cell.headMsg = self.headMsg;
                 return cell;
             }else{
                 UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+                if ([UserDefaultsSetting shareSetting].hntchaobiaoSp) {
+                    UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                    btn.frame = CGRectMake(0, 0, Screen_w, 40);
+                    [btn setTitle:@"点击这里开始审核..." forState:UIControlStateNormal];
+                    [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+                    btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                    [cell.contentView addSubview:btn];
+                }
                 return cell;
             }
         }
@@ -186,6 +198,14 @@
             return cell;
         }else if(indexPath.row == self.datas.count+1){
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            if ([UserDefaultsSetting shareSetting].hntchaobiaoReal) {
+                UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                btn.frame = CGRectMake(0, 0, Screen_w, 40);
+                [btn setTitle:@"点击这里开始处置..." forState:UIControlStateNormal];
+                [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+                btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                [cell.contentView addSubview:btn];
+            }
             return cell;
         }
     }

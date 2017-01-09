@@ -125,7 +125,7 @@
                         else{
                             UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
                             chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
-                            [chuZhi_btn setTitle:@"尚未处置，点击这里进入处置界面..." forState:UIControlStateNormal];
+                            [chuZhi_btn setTitle:@"尚未处置，点击这里开始处置..." forState:UIControlStateNormal];
                             chuZhi_btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
                             [weakSelf.containerView3 addSubview:chuZhi_btn];
                             [chuZhi_btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];

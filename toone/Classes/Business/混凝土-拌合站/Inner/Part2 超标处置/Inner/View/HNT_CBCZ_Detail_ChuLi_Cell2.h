@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class HNT_CBCZ_Detail_HeadMsg;
 @interface HNT_CBCZ_Detail_ChuLi_Cell2 : UITableViewCell
-
+@property (nonatomic,strong) HNT_CBCZ_Detail_HeadMsg * headMsg;
 @end
