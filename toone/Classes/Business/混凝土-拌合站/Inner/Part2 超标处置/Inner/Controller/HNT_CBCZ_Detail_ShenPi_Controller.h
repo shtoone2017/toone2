@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HNT_CBCZ_Detail_ShenPi_Controller : UIViewController
-
+@property (nonatomic,copy) NSString *  SId;
 @end

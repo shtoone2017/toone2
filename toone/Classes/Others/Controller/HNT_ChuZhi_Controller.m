@@ -9,7 +9,7 @@
 #import "HNT_ChuZhi_Controller.h"
 
 @interface HNT_ChuZhi_Controller ()
-@property (weak, nonatomic) IBOutlet UITextView *txt;
+@property (weak, nonatomic) IBOutlet SGTextView *txt;
 - (IBAction)commit:(UIButton *)sender;
 //指示器MB用
 @property (atomic, assign) BOOL canceled;
@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"处置";
+    self.txt.placeholder = @"必填项，填写处置原因...";
 }
 - (IBAction)commit:(UIButton *)sender {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];

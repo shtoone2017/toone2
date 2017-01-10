@@ -19,6 +19,10 @@
 //#define SGCOLOR(r,g,b,a)        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 //#define Color1                  SGCOLOR(224,243,241,1.0)
 //#define Color2                  SGCOLOR(232,232,253,1.0)
+
+
+#import "HNT_CBCZ_Detail_ChuLi_Controller.h"
+#import "HNT_CBCZ_Detail_ShenPi_Controller.h"
 @interface HNT_CBCZ_DetailController ()
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) HNT_CBCZ_Detail_HeadMsg * headMsg;
@@ -177,6 +181,7 @@
                     [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
                     btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
                     [cell.contentView addSubview:btn];
+                    [btn addTarget:self action:@selector(goto_shenpi) forControlEvents:UIControlEventTouchUpInside];
                 }
                 return cell;
             }
@@ -205,6 +210,7 @@
                 [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
                 btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
                 [cell.contentView addSubview:btn];
+                [btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
             }
             return cell;
         }
@@ -212,6 +218,14 @@
     
     return nil;
 }
-
-
+-(void)goto_chuzhi{
+    HNT_CBCZ_Detail_ChuLi_Controller * vc = [[HNT_CBCZ_Detail_ChuLi_Controller alloc] init];
+    vc.SId = self.headMsg.SId;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(void)goto_shenpi{
+    HNT_CBCZ_Detail_ShenPi_Controller * vc = [[HNT_CBCZ_Detail_ShenPi_Controller alloc] init];
+    vc.SId = self.headMsg.SId;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

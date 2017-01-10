@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755BC21E238BB90033F2E7 /* SGTextView.m */; };
 		18B871C41E1F71D400F9DD53 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */; };
 		18B871C51E1F71D400F9DD53 /* MySegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */; };
 		18B871C81E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */; };
@@ -244,6 +245,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18755BC11E238BB90033F2E7 /* SGTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTextView.h; sourceTree = "<group>"; };
+		18755BC21E238BB90033F2E7 /* SGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTextView.m; sourceTree = "<group>"; };
 		18B871C11E1F71D400F9DD53 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
 		18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
 		18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySegmentedControl.xib; sourceTree = "<group>"; };
@@ -1572,6 +1575,8 @@
 		D20064251DFF86800021E293 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				18755BC11E238BB90033F2E7 /* SGTextView.h */,
+				18755BC21E238BB90033F2E7 /* SGTextView.m */,
 				8CEB5BD21E0A7DAA00A5C4AA /* SGButton.h */,
 				8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */,
 				D20064261DFF86800021E293 /* HTTP.h */,
@@ -2237,6 +2242,7 @@
 				D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */,
 				D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */,
 				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
+				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

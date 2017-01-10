@@ -1641,7 +1641,6 @@
         <!--Chu Zhi Controller-->
         <scene sceneID="KbR-JI-FH1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MOq-nE-5ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="WYx-zy-1Zo" customClass="HNT_ChuZhi_Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L8m-qV-HIl"/>
@@ -1654,7 +1653,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILT-fA-fCE">
                                 <rect key="frame" x="0.0" y="74" width="375" height="150"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXg-2h-7zJ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXg-2h-7zJ" customClass="SGTextView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1702,6 +1701,7 @@
                         <outlet property="txt" destination="VXg-2h-7zJ" id="Dq8-it-jSR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOq-nE-5ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4694" y="-1965"/>
         </scene>
