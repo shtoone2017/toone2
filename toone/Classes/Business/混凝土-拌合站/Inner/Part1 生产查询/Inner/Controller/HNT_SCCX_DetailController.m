@@ -13,7 +13,8 @@
 #import "HNT_SCCX_Detail_Data.h"
 
 
-@interface HNT_SCCX_DetailController ()
+@interface HNT_SCCX_DetailController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tb;
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) HNT_SCCX_Detail_HeadMsg * headMsg;
 @end
@@ -25,13 +26,17 @@
     [self loadUi];
 }
 -(void)loadUi{
-    self.automaticallyAdjustsScrollViewInsets = YES;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_HeadMsgCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_HeadMsgCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_DataCell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_HeadMsgCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_HeadMsgCell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_DataCell"];
 }
 -(NSMutableArray *)datas{
     if (!_datas) {
+        //添加指示器
+        [Tools showActivityToView:self.view];
+        
+        
         NSString * urlString = [NSString stringWithFormat:AppHntXiangxiDetail_1,self.bianhao];
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -47,10 +52,15 @@
                     HNT_SCCX_Detail_HeadMsg * headMsg = [HNT_SCCX_Detail_HeadMsg modelWithDict:json[@"headMsg"]];
                     weakSelf.headMsg = headMsg;
                 }
+                
+                
             }
             //
             weakSelf.datas = datas;
-            [weakSelf.tableView reloadData];
+            [weakSelf.tb reloadData];
+            
+            //移除指示器
+            [Tools removeActivity];
         } failure:^(NSError *error) {
         }];
     }

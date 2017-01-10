@@ -77,7 +77,7 @@
     
     self.lineChart.chartData = @[data01, data02];
     [self.lineChart strokeChart];
-    self.lineChart.delegate = self;
+//    self.lineChart.delegate = self;
     
     
     [self.view addSubview:self.lineChart];

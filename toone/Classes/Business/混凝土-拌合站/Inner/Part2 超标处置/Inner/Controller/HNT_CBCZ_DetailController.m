@@ -11,7 +11,7 @@
 #import "HNT_SCCX_Detail_HeadMsgCell.h"
 #import "HNT_CBCZ_Detail_HeadMsg.h"
 #import "HNT_SCCX_Detail_Data.h"
-//#import "HNT_CBCZ_Detail_ChuliCell.h"
+
 
 #import "HNT_CBCZ_Detail_ChuLi_Cell.h"
 #import "HNT_CBCZ_Detail_ChuLi_Cell2.h"
@@ -23,9 +23,10 @@
 
 #import "HNT_CBCZ_Detail_ChuLi_Controller.h"
 #import "HNT_CBCZ_Detail_ShenPi_Controller.h"
-@interface HNT_CBCZ_DetailController ()
+@interface HNT_CBCZ_DetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) HNT_CBCZ_Detail_HeadMsg * headMsg;
+@property (weak, nonatomic) IBOutlet UITableView *tb;
 @property (nonatomic,strong) UIImage * filePathImage;
 @end
 
@@ -34,42 +35,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUi];
-
-    
-    
-//    [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
 }
 
-//- (void)keyboardWillChange:(NSNotification  *)notification{
-//    // 1.获取键盘的Y值
-//    NSDictionary *dict  = notification.userInfo;
-//    CGRect keyboardFrame = [dict[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-//    CGFloat keyboardY = keyboardFrame.origin.y;
-//    //动画时间
-//    CGFloat duration = [dict[UIKeyboardAnimationDurationUserInfoKey]doubleValue];
-//    // 2.计算需要移动的距离
-//    [UIView animateWithDuration:duration delay:0.0 options:7 << 16 animations:^{
-//        self.view.transform = CGAffineTransformMakeTranslation(0, keyboardY - self.view.frame.size.height);
-//    } completion:nil];
-//}
-
 -(void)dealloc{
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
     FuncLog;
 }
 -(void)loadUi{
-    self.automaticallyAdjustsScrollViewInsets = YES;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_HeadMsgCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_HeadMsgCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_DataCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ChuLi_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell"];
-     [self.tableView registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ChuLi_Cell2" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell2"];
-     [self.tableView registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ShenPi_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ShenPi_Cell"];
+    [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_HeadMsgCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_HeadMsgCell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_DataCell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ChuLi_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell"];
+     [self.tb registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ChuLi_Cell2" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell2"];
+     [self.tb registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ShenPi_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ShenPi_Cell"];
 }
 
 -(NSMutableArray *)datas{
     if (!_datas) {
+        //添加指示器
+        [Tools showActivityToView:self.view];
+        
         NSString * urlString = [NSString stringWithFormat:AppHntChaobiaoDetail_1,self.bianhao];
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -93,7 +79,10 @@
             }
             //
             weakSelf.datas = datas;
-            [weakSelf.tableView reloadData];
+            [weakSelf.tb reloadData];
+          
+            //移除指示器
+            [Tools removeActivity];
         } failure:^(NSError *error) {
         }];
     }

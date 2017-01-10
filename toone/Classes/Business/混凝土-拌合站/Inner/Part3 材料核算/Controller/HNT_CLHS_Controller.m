@@ -43,6 +43,9 @@
 
 #pragma mark - 网络请求
 -(void)loadData{
+    //添加指示器
+    [Tools showActivityToView:self.view];
+    
     
     NSString * departId = self.departId;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
@@ -79,6 +82,9 @@
         //1.
         weakSelf.datas = datas;
         [weakSelf.tableView reloadData];
+        
+        //移除指示器
+        [Tools removeActivity];
     } failure:^(NSError *error) {
     }];
     

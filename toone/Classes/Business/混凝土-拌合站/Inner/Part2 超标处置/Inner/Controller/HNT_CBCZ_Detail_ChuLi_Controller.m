@@ -96,7 +96,7 @@
                            };
     
     
-    NSData *  data =[Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:30];
+    NSData *  data =[Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:200];
     
     
     

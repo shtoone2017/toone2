@@ -8,6 +8,7 @@
 
 #import "HNT_CBCZ_Detail_ChuLi_Cell2.h"
 #import "HNT_CBCZ_Detail_HeadMsg.h"
+#import "UIImageView+WebCache.h"
 @interface HNT_CBCZ_Detail_ChuLi_Cell2()
 @property (nonatomic,weak) IBOutlet UILabel  * chuliren ;//  处置：处理人
 @property (nonatomic,weak) IBOutlet UILabel  * chulishijian ;//  处置：处理时间
@@ -39,18 +40,22 @@
     self.wentiyuanyin.text = headMsg.wentiyuanyin;
     
 
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        if (self.filePathImage == nil) {
-            NSString * urlString = FormatString(baseUrl, headMsg.filePath);
-            NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-            self.filePathImage = [UIImage imageWithData:data];
-        }
-        //
-        if (self.filePathImage) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.filePath.image = self.filePathImage;
-            });
-        }
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        if (self.filePathImage == nil) {
+//            NSString * urlString = FormatString(baseUrl, headMsg.filePath);
+//            NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+//            self.filePathImage = [UIImage imageWithData:data];
+//        }
+//        //
+//        if (self.filePathImage) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.filePath.image = self.filePathImage;
+//            });
+//        }
+//    });
+    
+    NSString * urlString = FormatString(baseUrl, headMsg.filePath);
+    NSURL * url = [NSURL URLWithString:urlString];
+    [self.filePath sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loading.jgeg"] options:SDWebImageRetryFailed];
 }
 @end

@@ -491,7 +491,7 @@
                         <outlet property="text_sc" destination="x5H-gp-hgW" id="ivX-cZ-LKa"/>
                         <outlet property="title_sc" destination="gGE-BJ-wdQ" id="ABF-2f-WqU"/>
                         <segue destination="Tpk-a7-TJC" kind="push" identifier="HNT_CBCZ_Controller" id="Xfr-GH-Ko7"/>
-                        <segue destination="Qjm-u8-317" kind="push" identifier="HNT_CBCZ_DetailController" id="5es-lp-5aN"/>
+                        <segue destination="E9T-TY-ng2" kind="push" identifier="HNT_CBCZ_DetailController" id="ovX-lu-TZO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cga-Ta-oyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -570,7 +570,7 @@
                         <outlet property="sjLabel" destination="nL7-IK-6ti" id="Sa0-LY-x9b"/>
                         <outlet property="tableView" destination="ZFH-o0-mba" id="rDr-h0-kem"/>
                         <segue destination="Tpk-a7-TJC" kind="push" identifier="HNT_SCCX_Controller" id="vmF-3V-RUL"/>
-                        <segue destination="H9I-fo-Rhb" kind="push" identifier="HNT_SCCX_DetailController" id="48l-3w-M8v"/>
+                        <segue destination="flv-bo-0jB" kind="push" identifier="HNT_SCCX_DetailController" id="fnv-9B-Xj0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtI-Yx-ouv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3448,44 +3448,80 @@
             <point key="canvasLocation" x="5186" y="306"/>
         </scene>
         <!--Detail Controller-->
-        <scene sceneID="3Z5-l1-rHW">
+        <scene sceneID="tp7-2q-gdw">
             <objects>
-                <tableViewController id="H9I-fo-Rhb" customClass="HNT_SCCX_DetailController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ACJ-ob-nfA">
+                <viewController id="flv-bo-0jB" customClass="HNT_SCCX_DetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m0d-bs-Lgn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Po4-CH-5kD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SDk-F7-HHV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Noh-PU-Eyo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="flv-bo-0jB" id="dlU-fo-QMQ"/>
+                                    <outlet property="delegate" destination="flv-bo-0jB" id="5tl-VZ-gcB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="H9I-fo-Rhb" id="2ia-28-fYW"/>
-                            <outlet property="delegate" destination="H9I-fo-Rhb" id="YjY-iR-6IT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="7px-3b-Te4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SwB-uu-Gsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="Noh-PU-Eyo" firstAttribute="leading" secondItem="SDk-F7-HHV" secondAttribute="leading" id="QPP-o7-YsM"/>
+                            <constraint firstAttribute="trailing" secondItem="Noh-PU-Eyo" secondAttribute="trailing" id="jAR-bR-rod"/>
+                            <constraint firstItem="Po4-CH-5kD" firstAttribute="top" secondItem="Noh-PU-Eyo" secondAttribute="bottom" id="u3F-Ae-xeW"/>
+                            <constraint firstItem="Noh-PU-Eyo" firstAttribute="top" secondItem="m0d-bs-Lgn" secondAttribute="bottom" id="vz3-oQ-mOA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KIp-J7-N8P"/>
+                    <connections>
+                        <outlet property="tb" destination="Noh-PU-Eyo" id="jMa-OC-XIp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCP-NX-bPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5185" y="1352"/>
+            <point key="canvasLocation" x="4718" y="1352"/>
         </scene>
         <!--Detail Controller-->
-        <scene sceneID="8VB-Dh-ApI">
+        <scene sceneID="Tdg-bh-22R">
             <objects>
-                <tableViewController id="Qjm-u8-317" customClass="HNT_CBCZ_DetailController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="03t-7r-RKe">
+                <viewController id="E9T-TY-ng2" customClass="HNT_CBCZ_DetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d1F-4h-U2o"/>
+                        <viewControllerLayoutGuide type="bottom" id="dPI-t6-uQs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jDL-uq-5Fy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mxT-ah-bkZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="E9T-TY-ng2" id="ql4-Ca-c1w"/>
+                                    <outlet property="delegate" destination="E9T-TY-ng2" id="m5d-V2-hCq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Qjm-u8-317" id="qoK-1r-fQP"/>
-                            <outlet property="delegate" destination="Qjm-u8-317" id="7CL-y4-gqj"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="yWM-D1-Pw1"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HPH-ph-MqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="mxT-ah-bkZ" firstAttribute="top" secondItem="d1F-4h-U2o" secondAttribute="bottom" id="iji-I2-myU"/>
+                            <constraint firstItem="mxT-ah-bkZ" firstAttribute="leading" secondItem="jDL-uq-5Fy" secondAttribute="leading" id="m46-ca-euc"/>
+                            <constraint firstItem="dPI-t6-uQs" firstAttribute="top" secondItem="mxT-ah-bkZ" secondAttribute="bottom" id="qIy-hO-XNZ"/>
+                            <constraint firstAttribute="trailing" secondItem="mxT-ah-bkZ" secondAttribute="trailing" id="tTS-WY-3BW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CQR-pu-I5c"/>
+                    <connections>
+                        <outlet property="tb" destination="mxT-ah-bkZ" id="wwY-t6-ZCU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hh0-if-54U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5185" y="2213"/>
+            <point key="canvasLocation" x="4694" y="2213"/>
         </scene>
         <!--Controller-->
         <scene sceneID="5XO-EF-Pgm">
@@ -3534,9 +3570,9 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WKu-KV-Usy"/>
         <segue reference="4xq-9R-4oK"/>
         <segue reference="OFf-sM-NiC"/>
         <segue reference="2qa-au-FyR"/>
+        <segue reference="Xfr-GH-Ko7"/>
     </inferredMetricsTieBreakers>
 </document>

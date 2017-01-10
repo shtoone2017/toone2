@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HNT_SCCX_DetailController : UITableViewController
+@interface HNT_SCCX_DetailController : UIViewController
 @property (nonatomic,copy) NSString * bianhao;
 @end

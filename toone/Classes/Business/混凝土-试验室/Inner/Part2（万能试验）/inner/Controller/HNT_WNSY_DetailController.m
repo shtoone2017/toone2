@@ -78,6 +78,9 @@
     }
 }
 -(void)loadData{
+    //添加指示器
+    [Tools showActivityToView:self.view];
+    
     NSString * urlString = [NSString stringWithFormat:gangjinDetail_1,self.SYJID];
     __weak __typeof(self)  weakSelf = self;
 //    NSLog(@"urlString = %@",urlString);
@@ -187,6 +190,8 @@
                     [weakSelf.chart_sc addSubview:vc.view];
                     
                 }
+                //移除指示器
+                [Tools removeActivity];
             }
         }
     } failure:^(NSError *error) {

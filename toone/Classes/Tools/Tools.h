@@ -37,4 +37,8 @@
  *  @return 返回的图片文件
  */
 +(NSData *)compressOriginalImage:(UIImage *)image toMaxDataSizeKBytes:(CGFloat)size;
+
+
++(void)showActivityToView:(UIView*)backView;
++(void)removeActivity;
 @end

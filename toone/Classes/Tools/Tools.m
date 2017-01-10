@@ -8,7 +8,6 @@
 //
 
 #import "Tools.h"
-
 @implementation Tools
 
 +(void)tip:(NSString*)msg{
@@ -82,5 +81,28 @@
         }
     }
     return data;
+}
+static DGActivityIndicatorView * activityIndicatorView = nil;
++(void)showActivityToView:(UIView*)backView{
+    __weak UIView * weakView = backView;
+    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor lightGrayColor]];
+    activityIndicatorView.frame = weakView.frame;
+    activityIndicatorView.backgroundColor = [UIColor whiteColor];
+    activityIndicatorView.userInteractionEnabled = NO;
+    [weakView addSubview:activityIndicatorView];
+    
+    [activityIndicatorView startAnimating];
+}
++(void)removeActivity{
+    if (activityIndicatorView) {
+//        [activityIndicatorView removeFromSuperview];
+//        activityIndicatorView = nil;
+        for (UIView * sub in activityIndicatorView.superview.subviews) {
+            if ([sub isKindOfClass:[activityIndicatorView class]]) {
+                [sub removeFromSuperview];
+            }
+        }
+        activityIndicatorView = nil;
+    }
 }
 @end

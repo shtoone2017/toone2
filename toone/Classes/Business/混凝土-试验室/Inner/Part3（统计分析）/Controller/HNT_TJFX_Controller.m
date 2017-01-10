@@ -34,6 +34,9 @@
     [self loadData];
 }
 -(void)loadData{
+    //添加指示器
+    [Tools showActivityToView:self.view];
+    
     for (UIView * subView in self.container1.subviews) {
         if ([subView isKindOfClass:[BarChartViewController class]]) {
             [subView removeFromSuperview];
@@ -110,6 +113,9 @@
             txtView.model = model;
             i++;
         }
+        
+        //移除指示器
+        [Tools removeActivity];
 
     } failure:^(NSError *error) {
     }];

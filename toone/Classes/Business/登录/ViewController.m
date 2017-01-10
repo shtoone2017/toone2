@@ -33,6 +33,8 @@
     _passwordLine.backgroundColor = [UIColor pastelBlueColor];
     _loginButton.layer.cornerRadius = 20.0f;
     
+   
+    
     [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
     
     //
@@ -106,6 +108,7 @@
 - (IBAction)loginBtnClick:(id)sender {
     [_acountTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeDeterminate;
     hud.label.text = NSLocalizedString(@"正在登录", @"HUD loading title");
@@ -142,7 +145,7 @@
                     setting.userRole  = json[@"userRole"];
                     [setting saveToSandbox];
                 });
-
+                
                 //界面跳转
                 dispatch_async(dispatch_get_main_queue(), ^{
                     id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];

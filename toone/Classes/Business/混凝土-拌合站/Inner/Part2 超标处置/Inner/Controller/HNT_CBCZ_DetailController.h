@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HNT_CBCZ_DetailController : UITableViewController
+@interface HNT_CBCZ_DetailController : UIViewController
 @property (nonatomic,copy) NSString * bianhao;
 
 @property (nonatomic,copy) NSString *  chuli ;//  处理
