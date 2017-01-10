@@ -52,7 +52,9 @@
 
 
 //云部署地址
-#define baseUrl   @"http://121.40.150.65:8083/zgjjqms/"
+#define baseUrl    @"http://192.168.11.113:8080/zgjjqms/"
+//@"http://120.26.127.135:8083/xztl/"
+
 //登录
 #define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
 //试验室列表

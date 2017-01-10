@@ -8,7 +8,8 @@
 
 #import "HNT_BHZ_SB_Controller.h"
 #import "HNT_BHZ_SB_Model.h"
-@interface HNT_BHZ_SB_Controller ()
+@interface HNT_BHZ_SB_Controller ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
 @end
 
@@ -16,14 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = YES;
-    
     self.tableView.rowHeight = 40;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_BHZ_SB_Controller"];
 }
 -(NSMutableArray *)datas{
     if (!_datas) {
+        [Tools showActivityToView:self.view];
+        
         NSString * departId = self.departId;
         NSString * urlString = [NSString stringWithFormat:getShebeiList_1,departId];
         __weak typeof(self)  weakSelf = self;
@@ -39,6 +40,7 @@
             }
             weakSelf.datas = datas;
             [weakSelf.tableView reloadData];
+            [Tools removeActivity];
         } failure:^(NSError *error) {
         }];
 

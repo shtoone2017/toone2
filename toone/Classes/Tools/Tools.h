@@ -38,7 +38,8 @@
  */
 +(NSData *)compressOriginalImage:(UIImage *)image toMaxDataSizeKBytes:(CGFloat)size;
 
-
+//显示指示器
 +(void)showActivityToView:(UIView*)backView;
+//移除指示器
 +(void)removeActivity;
 @end

@@ -86,11 +86,11 @@ static DGActivityIndicatorView * activityIndicatorView = nil;
 +(void)showActivityToView:(UIView*)backView{
     __weak UIView * weakView = backView;
     activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor lightGrayColor]];
-    activityIndicatorView.frame = weakView.frame;
+    
     activityIndicatorView.backgroundColor = [UIColor whiteColor];
     activityIndicatorView.userInteractionEnabled = NO;
+    activityIndicatorView.frame = weakView.frame;
     [weakView addSubview:activityIndicatorView];
-    
     [activityIndicatorView startAnimating];
 }
 +(void)removeActivity{

@@ -18,7 +18,7 @@ typedef enum{
 
 typedef void(^typeSBBlock_t)(NSString *,NSString*);
 
-@interface HNT_SYS_typeAndSB_Controller : UITableViewController
+@interface HNT_SYS_typeAndSB_Controller : UIViewController
 
 @property (nonatomic,assign) HNT_SYS_TypeAndSB_t typeAndSB;
 

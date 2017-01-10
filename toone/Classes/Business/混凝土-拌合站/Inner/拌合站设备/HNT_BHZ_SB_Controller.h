@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HNT_BHZ_SB_Controller : UITableViewController
+@interface HNT_BHZ_SB_Controller : UIViewController
 @property (nonatomic,copy) NSString * departId;
 @property (nonatomic,copy) void (^callBlock)(NSString*,NSString*);
 @end

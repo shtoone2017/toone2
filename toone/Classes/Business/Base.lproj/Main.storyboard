@@ -283,7 +283,7 @@
                     <connections>
                         <outlet property="sjLabel" destination="qFb-Pb-6Rx" id="obL-ie-nu1"/>
                         <outlet property="tableView" destination="Ugj-T5-Zk1" id="TPB-rG-HWZ"/>
-                        <segue destination="Tpk-a7-TJC" kind="push" identifier="HNT_CLHS_Controller" id="WKu-KV-Usy"/>
+                        <segue destination="byI-bw-Xq5" kind="push" identifier="HNT_CLHS_Controller" id="yFe-Zp-Q6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWW-19-TKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,8 +490,8 @@
                         <outlet property="tableView3" destination="n1d-1N-c5d" id="21F-tP-dqn"/>
                         <outlet property="text_sc" destination="x5H-gp-hgW" id="ivX-cZ-LKa"/>
                         <outlet property="title_sc" destination="gGE-BJ-wdQ" id="ABF-2f-WqU"/>
-                        <segue destination="Tpk-a7-TJC" kind="push" identifier="HNT_CBCZ_Controller" id="Xfr-GH-Ko7"/>
                         <segue destination="E9T-TY-ng2" kind="push" identifier="HNT_CBCZ_DetailController" id="ovX-lu-TZO"/>
+                        <segue destination="byI-bw-Xq5" kind="push" identifier="HNT_CBCZ_Controller" id="h6h-V1-R2o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cga-Ta-oyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -569,8 +569,8 @@
                     <connections>
                         <outlet property="sjLabel" destination="nL7-IK-6ti" id="Sa0-LY-x9b"/>
                         <outlet property="tableView" destination="ZFH-o0-mba" id="rDr-h0-kem"/>
-                        <segue destination="Tpk-a7-TJC" kind="push" identifier="HNT_SCCX_Controller" id="vmF-3V-RUL"/>
                         <segue destination="flv-bo-0jB" kind="push" identifier="HNT_SCCX_DetailController" id="fnv-9B-Xj0"/>
+                        <segue destination="byI-bw-Xq5" kind="push" identifier="HNT_SCCX_Controller" id="ogj-aY-kSm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtI-Yx-ouv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -984,8 +984,8 @@
                         <outlet property="tableView6" destination="SS2-N4-SHa" id="5u1-Gv-gpy"/>
                         <outlet property="text_sc" destination="5pW-NQ-8aH" id="20C-Yh-uDW"/>
                         <outlet property="title_sc" destination="Aa6-NO-BL7" id="Geh-y9-bmV"/>
-                        <segue destination="RcQ-Uy-inY" kind="show" identifier="HNT_YLSY_Controller" id="4xq-9R-4oK"/>
                         <segue destination="FkJ-Vy-0k5" kind="show" identifier="HNT_YLSY_DetailController" id="cQl-ya-qZs"/>
+                        <segue destination="Z3g-Wo-2k0" kind="push" identifier="HNT_YLSY_Controller" id="WQO-SS-2jJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAM-gC-ufv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3250,8 +3250,8 @@
                         <outlet property="tableView4" destination="5cK-GL-Ax7" id="S5Y-oz-aUC"/>
                         <outlet property="text_sc" destination="GI1-Us-OOm" id="eW2-Tc-L6Y"/>
                         <outlet property="title_sc" destination="1LC-VR-o8V" id="iFJ-mJ-nvz"/>
-                        <segue destination="RcQ-Uy-inY" kind="show" identifier="HNT_WNSY_Controller" id="4k9-Hx-aJM"/>
                         <segue destination="m6t-dR-uHU" kind="show" identifier="HNT_WNSY_DetailController" id="0pD-aM-lvh"/>
+                        <segue destination="Z3g-Wo-2k0" kind="push" identifier="HNT_WNSY_Controller" id="eyg-Cx-bjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe4-Aa-dJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3428,25 +3428,6 @@
             </objects>
             <point key="canvasLocation" x="6919" y="-893"/>
         </scene>
-        <!--type AndSB Controller-->
-        <scene sceneID="fCd-KE-CMU">
-            <objects>
-                <tableViewController id="RcQ-Uy-inY" customClass="HNT_SYS_typeAndSB_Controller" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R8B-w6-4K2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="RcQ-Uy-inY" id="4x9-eF-9Xt"/>
-                            <outlet property="delegate" destination="RcQ-Uy-inY" id="ghR-3l-hpW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="LUV-eC-X3H"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYc-lu-72s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5186" y="306"/>
-        </scene>
         <!--Detail Controller-->
         <scene sceneID="tp7-2q-gdw">
             <objects>
@@ -3523,24 +3504,81 @@
             </objects>
             <point key="canvasLocation" x="4694" y="2213"/>
         </scene>
-        <!--Controller-->
-        <scene sceneID="5XO-EF-Pgm">
+        <!--type AndSB Controller-->
+        <scene sceneID="dbh-a7-E0J">
             <objects>
-                <tableViewController id="Tpk-a7-TJC" customClass="HNT_BHZ_SB_Controller" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EbX-px-B5t">
+                <viewController id="Z3g-Wo-2k0" customClass="HNT_SYS_typeAndSB_Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eSd-nP-ZYJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XXP-88-0rP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tiy-bM-xLD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FqL-CD-cN9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z3g-Wo-2k0" id="VaU-21-1Bb"/>
+                                    <outlet property="delegate" destination="Z3g-Wo-2k0" id="j5F-nv-LI2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Tpk-a7-TJC" id="zjj-gL-0ss"/>
-                            <outlet property="delegate" destination="Tpk-a7-TJC" id="utf-FP-Eex"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="3n9-ul-fC5"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0z2-zR-YS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FqL-CD-cN9" secondAttribute="trailing" id="OS4-5o-hEf"/>
+                            <constraint firstItem="XXP-88-0rP" firstAttribute="top" secondItem="FqL-CD-cN9" secondAttribute="bottom" id="hM9-ae-uiA"/>
+                            <constraint firstItem="FqL-CD-cN9" firstAttribute="top" secondItem="eSd-nP-ZYJ" secondAttribute="bottom" id="jYy-n5-5Li"/>
+                            <constraint firstItem="FqL-CD-cN9" firstAttribute="leading" secondItem="tiy-bM-xLD" secondAttribute="leading" id="uIz-7F-kki"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fXW-57-uHb"/>
+                    <connections>
+                        <outlet property="tableView" destination="FqL-CD-cN9" id="rkq-dQ-SnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCQ-q3-cXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6345" y="305"/>
+            <point key="canvasLocation" x="5078" y="313"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="PKL-19-gtQ">
+            <objects>
+                <viewController id="byI-bw-Xq5" customClass="HNT_BHZ_SB_Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fI8-D0-lbM"/>
+                        <viewControllerLayoutGuide type="bottom" id="1pv-WH-dNv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bOo-Fi-08G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1HF-od-Ex1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="byI-bw-Xq5" id="kYj-z9-Je8"/>
+                                    <outlet property="delegate" destination="byI-bw-Xq5" id="p9p-wt-ttC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1HF-od-Ex1" firstAttribute="leading" secondItem="bOo-Fi-08G" secondAttribute="leading" id="Usp-7Z-fVO"/>
+                            <constraint firstAttribute="trailing" secondItem="1HF-od-Ex1" secondAttribute="trailing" id="efV-rt-WrR"/>
+                            <constraint firstItem="1HF-od-Ex1" firstAttribute="top" secondItem="fI8-D0-lbM" secondAttribute="bottom" id="soz-Oa-boQ"/>
+                            <constraint firstItem="1pv-WH-dNv" firstAttribute="top" secondItem="1HF-od-Ex1" secondAttribute="bottom" id="vb2-Z9-4Nx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Ib-eg-R4v"/>
+                    <connections>
+                        <outlet property="tableView" destination="1HF-od-Ex1" id="Wge-fA-Hnt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rp-c0-2GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6345" y="335"/>
         </scene>
         <!--组织机构-->
         <scene sceneID="kys-gG-Mbh">
@@ -3570,9 +3608,9 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4xq-9R-4oK"/>
         <segue reference="OFf-sM-NiC"/>
+        <segue reference="eyg-Cx-bjM"/>
         <segue reference="2qa-au-FyR"/>
-        <segue reference="Xfr-GH-Ko7"/>
+        <segue reference="yFe-Zp-Q6l"/>
     </inferredMetricsTieBreakers>
 </document>

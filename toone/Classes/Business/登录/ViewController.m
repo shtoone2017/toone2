@@ -160,7 +160,7 @@
         }
     } failure:^(NSError *error) {
         hud.mode = MBProgressHUDModeText;
-        hud.label.text = @"网络连接失败";
+        hud.label.text = @"网络连接异常";
         [hud hideAnimated:YES afterDelay:2.0];
     }];
 

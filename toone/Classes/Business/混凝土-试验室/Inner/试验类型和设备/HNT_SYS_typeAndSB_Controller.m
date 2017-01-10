@@ -9,7 +9,8 @@
 #import "HNT_SYS_typeAndSB_Controller.h"
 #import "SYS_testTypeModel.h"
 #import "SYS_SB_Model.h"
-@interface HNT_SYS_typeAndSB_Controller ()
+@interface HNT_SYS_typeAndSB_Controller ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
 @end
 
@@ -17,8 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = YES;
-    
     self.tableView.rowHeight = 40;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_SYS_typeAndSB_Controller"];
@@ -83,6 +82,7 @@
 #pragma  mark - 试验室-试验类型和设备
 -(NSMutableArray *)datas{
     if (!_datas) {
+        [Tools showActivityToView:self.view];
         NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
         NSString * urlString = [NSString stringWithFormat:getSyTpAndMc_1,userGroupId];
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -122,6 +122,7 @@
                     }
                 }
                 [self.tableView reloadData];
+                [Tools removeActivity];
             }
         } failure:^(NSError *error) {
             

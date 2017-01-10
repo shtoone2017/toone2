@@ -45,7 +45,7 @@
 #pragma mark - 组织机构
 -(void)initWithData {
     NodeMode *nodeMode = [[NodeMode alloc] init];
-    
+    [Tools showActivityToView:self.view];
     __weak typeof(self) weakSelf = self;
     [nodeMode channelBlock:^(NSArray *result) {
         for (int i = 0; i < result.count; i++) {
@@ -95,15 +95,16 @@
         }
         
         
-        TreeTableView *tableview = [[TreeTableView alloc] initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) withData:_channArr];
+        TreeTableView *tableview = [[TreeTableView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), Screen_h-64) withData:_channArr];
         
         tableview.backgroundColor = [UIColor clearColor];
-        tableview.bounces = NO;
         tableview.treeTableCellDelegate = self;
         tableview.separatorStyle = UITableViewCellSelectionStyleNone;
         [self.view addSubview:tableview];
         
         self.treeTableView = tableview;
+        
+        [Tools removeActivity];
         
     }];
     
