@@ -19,7 +19,7 @@
 @property (nonatomic,weak) IBOutlet UILabel  *  gujifangshu ;//  估计方数
 @property (nonatomic,weak) IBOutlet UILabel  *  jiaobanshijian ;//  搅拌时间
 @property (nonatomic,weak) IBOutlet UILabel  *  jiaozuobuwei ;//  浇筑部位
-@property (nonatomic,weak) IBOutlet UILabel  *  peifanghao ;//  配方号
+@property (nonatomic,weak) IBOutlet UILabel  *  peifanghao ;//  配方号  -->施工配比编号
 @property (nonatomic,weak) IBOutlet UILabel  *  qiangdudengji ;//  强度等级
 //@property (nonatomic,weak) IBOutlet UILabel  *  shenhe ;//  审核
 @property (nonatomic,weak) IBOutlet UILabel  *  shuinipingzhong ;//  水泥品种

@@ -53,9 +53,8 @@
 //            });
 //        }
 //    });
-    
     NSString * urlString = FormatString(baseUrl, headMsg.filePath);
     NSURL * url = [NSURL URLWithString:urlString];
-    [self.filePath sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loading.jgeg"] options:SDWebImageRetryFailed];
+    [self.filePath sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loading.jgeg"] options:SDWebImageProgressiveDownload];
 }
 @end

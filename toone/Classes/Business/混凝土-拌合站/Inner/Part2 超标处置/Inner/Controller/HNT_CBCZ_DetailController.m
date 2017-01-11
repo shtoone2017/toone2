@@ -27,7 +27,7 @@
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) HNT_CBCZ_Detail_HeadMsg * headMsg;
 @property (weak, nonatomic) IBOutlet UITableView *tb;
-@property (nonatomic,strong) UIImage * filePathImage;
+@property (nonatomic,assign) BOOL  filePathImageHas;
 @end
 
 @implementation HNT_CBCZ_DetailController
@@ -73,16 +73,26 @@
                     //判断有没有图片
                     NSString * urlString = FormatString(baseUrl, self.headMsg.filePath);
                     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-                    UIImage * filePathImage = [UIImage imageWithData:data];
-                    self.filePathImage = filePathImage;
+                    if (data.length > 100) {
+                        self.filePathImageHas = YES;
+                        data = nil;
+                    }
                 }
             }
             //
             weakSelf.datas = datas;
             [weakSelf.tb reloadData];
-          
-            //移除指示器
-            [Tools removeActivity];
+            
+#pragma mark - 因布局设计有卡顿现象，优化方法如下
+            weakSelf.tb.contentOffset = CGPointMake(0, 220);
+            [UIView animateWithDuration:0.15 animations:^{
+                weakSelf.tb.contentOffset = CGPointMake(0, 0);
+            } completion:^(BOOL finished) {
+                //移除指示器
+                [Tools removeActivity];
+                
+            }];
+            
         } failure:^(NSError *error) {
         }];
     }
@@ -105,25 +115,25 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (EqualToString(self.chuli, @"1")) {
         if (indexPath.row == 0) {
-            return 500;
+            return 425;
         }else if(indexPath.row > 0 && indexPath.row < (self.datas.count+1)){
             return 20;
         }else if(indexPath.row == self.datas.count+1){
-            if (self.filePathImage) {
-                return 480;
+            if (self.filePathImageHas) {
+                return 450;
             }else{
-                return 250;
+                return 220;
             }
         }else if (indexPath.row == self.datas.count+2){
             if (EqualToString(self.shenhe, @"1")) {
-                return 250;
+                return 220;
             }else{
                 return 40;
             }
         }
     }else  if (EqualToString(self.chuli, @"0")){
         if (indexPath.row == 0) {
-            return 500;
+            return 425;
         }else if(indexPath.row > 0 && indexPath.row < (self.datas.count+1)){
             return 20;
         }else if(indexPath.row == self.datas.count+1){
@@ -146,7 +156,7 @@
             cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
             return cell;
         }else if(indexPath.row == self.datas.count+1){
-            if (self.filePathImage) {
+            if (self.filePathImageHas) {
                 HNT_CBCZ_Detail_ChuLi_Cell2 * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_CBCZ_Detail_ChuLi_Cell2"];
                 cell.headMsg = self.headMsg;
                 return cell;

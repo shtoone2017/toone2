@@ -1,41 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HNT_CLHS_ChatCell" rowHeight="880" id="KGk-i7-Jjw" customClass="HNT_CLHS_ChatCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="880"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="875"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="879.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="874"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RT-F6-iFz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际用量图(单位:kg)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzd-jW-s97">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bwI-Cu-JJv"/>
+                                    <constraint firstAttribute="height" constant="35" id="bwI-Cu-JJv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-O4-DiU">
-                                <rect key="frame" x="0.0" y="40" width="320" height="360"/>
+                                <rect key="frame" x="0.0" y="35" width="320" height="365"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="0xC-WJ-Itx"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,26 +44,24 @@
                             <constraint firstItem="dzd-jW-s97" firstAttribute="top" secondItem="3RT-F6-iFz" secondAttribute="top" id="jda-WU-sIP"/>
                             <constraint firstAttribute="height" constant="400" id="pSH-0D-ang"/>
                             <constraint firstItem="KIF-O4-DiU" firstAttribute="top" secondItem="dzd-jW-s97" secondAttribute="bottom" id="pW3-5W-Ej0"/>
+                            <constraint firstAttribute="bottom" secondItem="KIF-O4-DiU" secondAttribute="bottom" id="sj0-1S-FlB"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-Hc-xPS">
                         <rect key="frame" x="0.0" y="410" width="320" height="400"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="材料配比图(单位:kg)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-vs-uYC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Ht7-Wh-CaS"/>
+                                    <constraint firstAttribute="height" constant="35" id="Ht7-Wh-CaS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-c2-Yls">
-                                <rect key="frame" x="0.0" y="40" width="320" height="360"/>
+                                <rect key="frame" x="0.0" y="35" width="320" height="365"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="ju4-ji-Cc9"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,6 +72,7 @@
                             <constraint firstAttribute="trailing" secondItem="k0F-c2-Yls" secondAttribute="trailing" id="GdW-9w-T1q"/>
                             <constraint firstAttribute="height" constant="400" id="UkH-gb-OqH"/>
                             <constraint firstAttribute="trailing" secondItem="y6q-vs-uYC" secondAttribute="trailing" id="ZhE-E1-gs0"/>
+                            <constraint firstAttribute="bottom" secondItem="k0F-c2-Yls" secondAttribute="bottom" id="sZC-4P-rkR"/>
                             <constraint firstItem="y6q-vs-uYC" firstAttribute="leading" secondItem="Byt-Hc-xPS" secondAttribute="leading" id="tz1-6x-9Ns"/>
                         </constraints>
                     </view>
@@ -84,17 +80,17 @@
                         <rect key="frame" x="0.0" y="820" width="320" height="59.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="核算表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3US-DS-yXY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="smt-xD-moQ"/>
+                                    <constraint firstAttribute="height" constant="35" id="smt-xD-moQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-Ox-n55">
-                                <rect key="frame" x="0.0" y="40" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="35" width="320" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="材料名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSZ-MJ-X5a">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
@@ -143,7 +139,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwe-No-aN2">
-                                <rect key="frame" x="240" y="0.0" width="80" height="40"/>
+                                <rect key="frame" x="240" y="0.0" width="80" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="千克/kg">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
