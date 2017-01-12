@@ -42,7 +42,7 @@
     
     NSDateComponents *adcomps = [[NSDateComponents alloc] init];
     
-    [adcomps setYear:-1];
+    [adcomps setYear:0];
     
     [adcomps setMonth:-3];
     
