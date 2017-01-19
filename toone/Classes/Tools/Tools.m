@@ -82,27 +82,27 @@
     }
     return data;
 }
-static DGActivityIndicatorView * activityIndicatorView = nil;
+//static DGActivityIndicatorView * activityIndicatorView = nil;
 +(void)showActivityToView:(UIView*)backView{
-    __weak UIView * weakView = backView;
-    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor lightGrayColor]];
-    
-    activityIndicatorView.backgroundColor = [UIColor whiteColor];
-    activityIndicatorView.userInteractionEnabled = NO;
-    activityIndicatorView.frame = weakView.frame;
-    [weakView addSubview:activityIndicatorView];
-    [activityIndicatorView startAnimating];
+//    __weak UIView * weakView = backView;
+//    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor lightGrayColor]];
+//    
+//    activityIndicatorView.backgroundColor = [UIColor whiteColor];
+//    activityIndicatorView.userInteractionEnabled = NO;
+//    activityIndicatorView.frame = weakView.frame;
+//    [weakView addSubview:activityIndicatorView];
+//    [activityIndicatorView startAnimating];
 }
 +(void)removeActivity{
-    if (activityIndicatorView) {
-//        [activityIndicatorView removeFromSuperview];
+//    if (activityIndicatorView) {
+////        [activityIndicatorView removeFromSuperview];
+////        activityIndicatorView = nil;
+//        for (UIView * sub in activityIndicatorView.superview.subviews) {
+//            if ([sub isKindOfClass:[activityIndicatorView class]]) {
+//                [sub removeFromSuperview];
+//            }
+//        }
 //        activityIndicatorView = nil;
-        for (UIView * sub in activityIndicatorView.superview.subviews) {
-            if ([sub isKindOfClass:[activityIndicatorView class]]) {
-                [sub removeFromSuperview];
-            }
-        }
-        activityIndicatorView = nil;
-    }
+//    }
 }
 @end
