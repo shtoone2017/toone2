@@ -46,15 +46,15 @@
 #import "BBFlashCtntLabel.h"
 #import "Tools.h"
 #import "SGTextView.h"
-//#import "DGActivityIndicatorView.h"
+#import "DGActivityIndicatorView.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 
 
 //云部署地址
-#define baseUrl     @"http://120.26.127.135:8083/xztl/"
+#define baseUrl     @"http://192.168.11.108:8080/zgjjqms/"
 //@"http://120.26.127.135:8083/xztl/"
-//@"http://192.168.11.107:8080/zgjjqms/"
+//@"http://192.168.11.108:8080/zgjjqms/"
 
 
 
