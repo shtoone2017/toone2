@@ -49,6 +49,26 @@ static UserDefaultsSetting * setting = nil;
     //存储时间
     setting.startTime = [defaults objectForKey:@"startTimeKey"];
     setting.endTime   = [defaults objectForKey:@"endTimeKey"];
+    
+    //沥青超标等级
+    setting.dengji = [defaults objectForKey:@"dengjiKey"];
+    //    生产数据查询设备编号
+    setting.shebeibianhao = [defaults objectForKey:@"shebeibianhaoKey"];
+    setting.bianhao = [defaults objectForKey:@"bianhaoKey"];
+    
+    //日产量id
+    setting.dailyid = [defaults objectForKey:@"dailyidKey"];
+    //日产量设备编号
+    setting.dailysbbh = [defaults objectForKey:@"dailysbbhKey"];
+    //待处置编号，设备编号
+    setting.CBbianhao = [defaults objectForKey:@"CBbianhaoKey"];
+    setting.CBshebeibianhao = [defaults objectForKey:@"CBshebeibianhaoKey"];
+    //沥青超标处理
+    setting.chuli = [defaults objectForKey:@"chuliKey"];
+    //生产查询筛选设备编号
+    setting.shebString = [defaults objectForKey:@"shebStringKey"];
+    //    超标处置类型
+    setting.CBczlx = [defaults objectForKey:@"CBczlxKey"];
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -73,6 +93,27 @@ static UserDefaultsSetting * setting = nil;
     //存储时间
     [defaults setBool:self.endTime     forKey:@"endTimeKey"];
     [defaults setBool:self.startTime   forKey:@"startTimeKey"];
+    
+    
+    //沥青超标等级
+    [defaults setObject:self.dengji forKey:@"dengjiKey"];
+    //生产数据查询设备编号
+    [defaults setObject:self.shebeibianhao forKey:@"shebeibianhaoKey"];
+    [defaults setObject:self.bianhao forKey:@"bianhaoKey"];
+    //日产量id
+    [defaults setObject:self.dailyid forKey:@"dailyidKey"];
+    //日产量设备编号
+    [defaults setObject:self.dailysbbh forKey:@"dailysbbhKey"];
+    //待处置编号，设备编号
+    [defaults setObject:self.CBbianhao forKey:@"CBbianhaoKey"];
+    [defaults setObject:self.CBshebeibianhao forKey:@"CBshebeibianhaoKey"];
+    //沥青超标处理
+    [defaults setObject:self.chuli forKey:@"chuliKey"];
+    
+    //生产查询筛选设备编号
+    [defaults setObject:self.shebString forKey:@"shebStringKey"];
+    //超标处置类型
+    [defaults setObject:self.CBczlx forKey:@"CBczlxKey"];
     [defaults synchronize];
 }
 

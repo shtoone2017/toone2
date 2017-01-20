@@ -30,6 +30,11 @@
     [self.button2 setTitle:@"超标处置" forState:UIControlStateNormal];
     [self.button3 setTitle:@"材料核算" forState:UIControlStateNormal];
 }
+-(void)switchToLQBHZ{
+    [self.button1 setTitle:@"生产查询" forState:UIControlStateNormal];
+    [self.button2 setTitle:@"数据统计" forState:UIControlStateNormal];
+    [self.button3 setTitle:@"待处置报警" forState:UIControlStateNormal];
+}
 - (IBAction)buttonClick:(UIButton *)sender {
     self.button1.backgroundColor = BLUECOLOR;
     self.button2.backgroundColor = BLUECOLOR;

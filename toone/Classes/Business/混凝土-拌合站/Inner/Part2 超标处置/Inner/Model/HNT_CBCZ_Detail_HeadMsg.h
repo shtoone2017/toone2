@@ -36,7 +36,12 @@
 @property (nonatomic,copy) NSString *  chulishijian ;//  处置：处理时间
 @property (nonatomic,copy) NSString *  wentiyuanyin ;//  处置：处置原因
 @property (nonatomic,copy) NSString *  filePath ;//  处置：
+@property (nonatomic, copy) NSString *filepath;//路径
 
+@property (nonatomic, copy) NSString *chuzhishijian;//超标处置时间
+@property (nonatomic, copy) NSString *chuzhiren;//超标处置人
+//@property (nonatomic, copy) NSString *chuzhifangshi;//沥青超标处置方式
+@property (nonatomic, copy) NSString *chaobiaoyuanyin;//沥青超标原因
 
 @property (nonatomic,copy) NSString *  confirmdate ;//  审批：确认时间
 @property (nonatomic,copy) NSString *  jianliresult ;//  审批：监理结果

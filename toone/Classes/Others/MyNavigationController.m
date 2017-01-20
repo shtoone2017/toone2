@@ -59,7 +59,8 @@
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
         
 //         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"ic_keyboard_arrow_left_white_24dp"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(back)];
-
+        //隐藏底部
+        viewController.hidesBottomBarWhenPushed = YES;
     }
     viewController.automaticallyAdjustsScrollViewInsets = NO;//关闭自动布局，默认YES
     [super pushViewController:viewController animated:animated];

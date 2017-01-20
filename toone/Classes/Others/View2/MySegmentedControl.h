@@ -16,4 +16,5 @@ typedef  void (^SegBlock_t)(int  tag);
 @property (nonatomic,copy) SegBlock_t segBlock;
 
 -(void)switchToBHZ;
+-(void)switchToLQBHZ;
 @end
