@@ -43,6 +43,7 @@
 		187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C72EA1E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m */; };
 		187C73111E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C72EC1E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m */; };
 		187C73121E30B1810072F33A /* DGActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C72EF1E30B1810072F33A /* DGActivityIndicatorView.m */; };
+		187C73151E31A2A60072F33A /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C73141E31A2A60072F33A /* TestController.m */; };
 		18B871C41E1F71D400F9DD53 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */; };
 		18B871C51E1F71D400F9DD53 /* MySegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */; };
 		18B871C81E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */; };
@@ -351,6 +352,8 @@
 		187C72ED1E30B1810072F33A /* DGActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
 		187C72EE1E30B1810072F33A /* DGActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorView.h; sourceTree = "<group>"; };
 		187C72EF1E30B1810072F33A /* DGActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorView.m; sourceTree = "<group>"; };
+		187C73131E31A2A60072F33A /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
+		187C73141E31A2A60072F33A /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
 		18B871C11E1F71D400F9DD53 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
 		18B871C21E1F71D400F9DD53 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
 		18B871C31E1F71D400F9DD53 /* MySegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySegmentedControl.xib; sourceTree = "<group>"; };
@@ -1235,6 +1238,8 @@
 				D20063751DFF86800021E293 /* Exmp1.m */,
 				D20063761DFF86800021E293 /* Exmp1Cell.h */,
 				D20063771DFF86800021E293 /* Exmp1Cell.m */,
+				187C73131E31A2A60072F33A /* TestController.h */,
+				187C73141E31A2A60072F33A /* TestController.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -2391,6 +2396,7 @@
 				D20064A41DFF86800021E293 /* HTTP.m in Sources */,
 				18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */,
 				18B871D11E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m in Sources */,
+				187C73151E31A2A60072F33A /* TestController.m in Sources */,
 				8CBD737E1E09320C00A0C991 /* TreeTableView.m in Sources */,
 				D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */,
 				D200654B1DFF86B30021E293 /* IntAxisValueFormatter.m in Sources */,
