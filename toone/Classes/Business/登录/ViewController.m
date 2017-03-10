@@ -123,6 +123,7 @@
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
     NSString * urlString = [NSString stringWithFormat:AppLogin_2,_acountTextField.text,_passwordTextField.text];
+    
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
             if ([json[@"success"] boolValue]) {
