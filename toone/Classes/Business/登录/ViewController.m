@@ -39,9 +39,12 @@
     
     //
     
-    if ([UserDefaultsSetting shareSetting].isLogin) {
-        self.acountTextField.text = [UserDefaultsSetting shareSetting].acount;
-        self.passwordTextField.text = [UserDefaultsSetting shareSetting].password;
+//    if ([UserDefaultsSetting shareSetting].isLogin) {
+//        self.acountTextField.text = [UserDefaultsSetting shareSetting].acount;
+//        self.passwordTextField.text = [UserDefaultsSetting shareSetting].password;
+    if ([UserDefaultsSetting_SW shareSetting].isLogin) {
+        self.acountTextField.text = [UserDefaultsSetting_SW shareSetting].acount;
+        self.passwordTextField.text = [UserDefaultsSetting_SW shareSetting].password;
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 //            [self loginBtnClick:self.loginButton];
 //        });
@@ -129,21 +132,29 @@
             if ([json[@"success"] boolValue]) {
                 //数据存储到本地
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
+//                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
+//                    setting.acount = _acountTextField.text;
+//                    setting.password = _passwordTextField.text;
+//                    setting.departId  = json[@"departId"];
+//                    setting.departName  = json[@"departName"];
+//                    setting.userPhoneNum = json[@"userPhoneNum"];
+//                    setting.userFullName = json[@"userFullName"];
+//                    setting.hntchaobiaoReal = json[@"quanxian"][@"hntchaobiaoReal"];
+//                    setting.hntchaobiaoSp = json[@"quanxian"][@"hntchaobiaoSp"];
+//                    setting.syschaobiaoReal = json[@"quanxian"][@"syschaobiaoReal"];
+//                    setting.login = YES;
+//                    
+//                    
+//                    setting.loginDepartId  = json[@"departId"];
+//                    setting.userRole  = json[@"userRole"];
+//                    [setting saveToSandbox];
+                    
+                    UserDefaultsSetting_SW  * setting = [UserDefaultsSetting_SW shareSetting] ;
                     setting.acount = _acountTextField.text;
                     setting.password = _passwordTextField.text;
-                    setting.departId  = json[@"departId"];
-                    setting.departName  = json[@"departName"];
-                    setting.userPhoneNum = json[@"userPhoneNum"];
-                    setting.userFullName = json[@"userFullName"];
-                    setting.hntchaobiaoReal = json[@"quanxian"][@"hntchaobiaoReal"];
-                    setting.hntchaobiaoSp = json[@"quanxian"][@"hntchaobiaoSp"];
-                    setting.syschaobiaoReal = json[@"quanxian"][@"syschaobiaoReal"];
+                    
+                    
                     setting.login = YES;
-                    
-                    
-                    setting.loginDepartId  = json[@"departId"];
-                    setting.userRole  = json[@"userRole"];
                     [setting saveToSandbox];
                 });
                 

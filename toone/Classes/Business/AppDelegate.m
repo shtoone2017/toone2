@@ -18,7 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 
-    if ([UserDefaultsSetting shareSetting].isEnterApplication) {
+//    if ([UserDefaultsSetting shareSetting].isEnterApplication) {
+    if ([UserDefaultsSetting_SW shareSetting].isEnterApplication) {
 //        if ([UserDefaultsSetting shareSetting].isLogin) {
 //            id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
 //            self.window.rootViewController = vc;

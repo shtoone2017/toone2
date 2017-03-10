@@ -35,7 +35,8 @@
 }
 - (IBAction)click:(UIButton *)sender {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
+//        UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
+        UserDefaultsSetting_SW  * setting = [UserDefaultsSetting_SW shareSetting] ;
         setting.enterApplication = YES;
         [setting saveToSandbox];
     });

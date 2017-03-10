@@ -30,6 +30,7 @@
 #define Color2                  SGCOLOR(232,232,253,1.0)
 
 #import "UserDefaultsSetting.h"
+#import "UserDefaultsSetting_SW.h"
 #import "UIView+Frame.h"
 #import "UIView+Shape.h"
 #import "CALayer+Animation.h"
@@ -52,13 +53,13 @@
 
 
 //
-#define baseUrl     @"http://192.168.11.116:8080/jbgsmss/"
+#define baseUrl     @"http://192.168.11.110:8080/jbgsmss/"
 
 
 
 
 //登录
-#define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
+#define AppLogin_2   FormatString(baseUrl,@"app/AppLogin?userName=%@&userPwd=%@&OSType=3")
 //试验室列表
 #define sysHome_3    FormatString(baseUrl,@"sysController.do?sysHome&userGroupId=%@&startTime=%@&endTime=%@")
 //拌合站列表

@@ -96,6 +96,7 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     pan.delegate = self;
     [self.view  addGestureRecognizer:pan];
+    //FuncLog;
 }
 // 和抽屉有关
 -(DrawerController *)drawer{
