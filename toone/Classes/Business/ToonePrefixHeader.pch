@@ -48,18 +48,61 @@
 #import "Tools.h"
 #import "SGTextView.h"
 #import "DGActivityIndicatorView.h"
+#import "RATreeView.h"
 //zing定义组件
 #import "ExpViewHeader.h"
-
+#import "DWURunLoopWorkDistribution.h"
 
 //
-#define baseUrl     @"http://192.168.11.110:8080/jbgsmss/"
+#define baseUrl     @"http://192.168.11.119:8080/jbgsmss/"
 
 
 
-
+//水稳
 //登录
 #define AppLogin_2   FormatString(baseUrl,@"app/AppLogin?userName=%@&userPwd=%@&OSType=3")
+//水稳预警统计
+#define warningStatistics   FormatString(baseUrl,@"app/warningStatistics?")
+//组织机构接口
+#define departTree   FormatString(baseUrl,@"app/departTree?")
+//水稳超标查询
+#define chaoBiaoList   FormatString(baseUrl,@"app/chaoBiaoList?")
+//水稳材料统计
+#define swmaterial   FormatString(baseUrl,@"app/swmaterial?")
+//拌合站设备接口
+#define machineList   FormatString(baseUrl,@"app/machineList?")
+//沥青预警统计
+#define lqWarningStatistics   FormatString(baseUrl,@"appLq/lqWarningStatistics?")
+//沥青超标查询
+#define lqchaoBiaoList   FormatString(baseUrl,@"appLq/lqchaoBiaoList?")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------//
 //试验室列表
 #define sysHome_3    FormatString(baseUrl,@"sysController.do?sysHome&userGroupId=%@&startTime=%@&endTime=%@")
 //拌合站列表

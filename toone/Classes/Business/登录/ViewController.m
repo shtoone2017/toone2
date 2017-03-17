@@ -152,7 +152,9 @@
                     UserDefaultsSetting_SW  * setting = [UserDefaultsSetting_SW shareSetting] ;
                     setting.acount = _acountTextField.text;
                     setting.password = _passwordTextField.text;
-                    
+                    setting.userType = json[@"userType"];
+                    setting.biaoshi = json[@"biaoshi"];
+                    setting.shenehe = json[@"shenehe"];
                     
                     setting.login = YES;
                     [setting saveToSandbox];

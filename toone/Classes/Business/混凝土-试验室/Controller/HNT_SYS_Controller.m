@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
-
-@property (strong, nonatomic)  BBFlashCtntLabel *departName_Label2;
 @end
 
 @implementation HNT_SYS_Controller

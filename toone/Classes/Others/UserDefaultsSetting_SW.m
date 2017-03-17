@@ -37,6 +37,8 @@ static UserDefaultsSetting_SW * setting = nil;
 //水稳本地存贮数据
     setting.biaoshi   = [defaults objectForKey:@"biaoshi_SWKey"];
     setting.userType   = [defaults objectForKey:@"userType_SWKey"];
+    setting.shenehe   = [defaults objectForKey:@"shenehe_SWKey"];
+//    setting.zzjgName   = [defaults objectForKey:@"zzjgName_SWKey"];
     
 }
 -(void)saveToSandbox{
@@ -46,13 +48,15 @@ static UserDefaultsSetting_SW * setting = nil;
     [defaults setBool:self.login            forKey:@"login_SWKey"];
     [defaults setBool:self.enterApplication forKey:@"enterApplication_SWKey"];
     //存储时间
-    [defaults setBool:self.endTime     forKey:@"endTime_SWKey"];
-    [defaults setBool:self.startTime   forKey:@"startTime_SWKey"];
+    [defaults setObject:self.endTime     forKey:@"endTime_SWKey"];
+    [defaults setObject:self.startTime   forKey:@"startTime_SWKey"];
     
     
 //水稳本地存贮数据
-    [defaults setBool:self.biaoshi   forKey:@"biaoshi_SWKey"];
-    [defaults setBool:self.userType   forKey:@"userType_SWKey"];
+    [defaults setObject:self.biaoshi   forKey:@"biaoshi_SWKey"];
+    [defaults setObject:self.userType   forKey:@"userType_SWKey"];
+    [defaults setObject:self.shenehe   forKey:@"shenehe_SWKey"];
+//    [defaults setObject:self.zzjgName   forKey:@"zzjgName_SWKey"];
     
     
     

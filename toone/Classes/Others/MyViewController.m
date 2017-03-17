@@ -128,7 +128,7 @@
 }
 #pragma  mark - dealloc
 -(void)dealloc{
-    FuncLog;
+    //FuncLog;
 }
 
 
