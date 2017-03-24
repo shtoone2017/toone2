@@ -64,7 +64,7 @@
     
     int index = 0;
     for (NSString * key in model.isShow.allKeys) {
-        if (![[model.isShow objectForKey:key] isEqualToString:@"0"]) {
+        if ([[model.isShow objectForKey:key] isEqualToString:@"1"]) {
             SW_CBCZ_View * childrenCell  = [[NSBundle mainBundle] loadNibNamed:@"SW_CBCZ_View" owner:nil options:nil][0];
             childrenCell.frame = CGRectMake(0,index*20, self.containerView.frame.size.width, 20);
             [self.containerView addSubview:childrenCell];

@@ -208,11 +208,11 @@
     if (j == -1) {
         NSString * str = [NSString stringWithFormat:@"%@",_datas[i]];
         CGFloat      f = [str floatValue];
-        label.text     = [NSString stringWithFormat:@"%.f%%",f];
+        label.text     = [NSString stringWithFormat:@"%.f",f];
     }else{
         NSString * str = [NSString stringWithFormat:@"%@",_datas[i][j]];
         CGFloat      f = [str floatValue];
-        label.text     = [NSString stringWithFormat:@"%.f%%",f];
+        label.text     = [NSString stringWithFormat:@"%.f",f];
     }
     
     

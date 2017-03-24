@@ -17,14 +17,12 @@ typedef enum{
 
 typedef void(^successBlock_t)(id json);
 typedef void(^failureBlock_t)(NSError* error);
-typedef void(^bodyBlock_t)();
+//typedef void(^bodyBlock_t)();
 @interface HTTP : NSObject
 
 +(HTTP*)shareAFNNetworking;
 
 -(void)requestMethod:(HTTPRequestMethod)method urlString:(NSString*)urlString parameter:(NSDictionary*)parameter success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlock;
-
-
 
 -(void)uploadWithUrlstring:(NSString*)urlString  parameter:(NSDictionary*)parameter data:(NSData*)data success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlock;
 @end

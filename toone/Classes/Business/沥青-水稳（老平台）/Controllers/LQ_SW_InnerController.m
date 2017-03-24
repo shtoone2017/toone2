@@ -10,7 +10,7 @@
 #import "MySegmentedControl.h"
 #import "SW_CLHS_Controller.h"
 #import "SW_CBCZ_Controller.h"
-#import "HNT_SCCX_Controller.h"
+#import "SW_LSSJ_Controller.h"
 @interface LQ_SW_InnerController ()
 @property (nonatomic,strong) UIViewController * vc;
 @property (nonatomic,assign) int index;
@@ -23,10 +23,10 @@
    
     
     self.index =1;
-    self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_SCCX_Controller"];
-    if ([self.vc isKindOfClass:[HNT_SCCX_Controller class]]) {
-        HNT_SCCX_Controller * controller = (HNT_SCCX_Controller *)self.vc;
-//        controller.departId = self.departId;
+    self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SW_LSSJ_Controller"];
+    if ([self.vc isKindOfClass:[SW_LSSJ_Controller class]]) {
+        SW_LSSJ_Controller * controller = (SW_LSSJ_Controller *)self.vc;
+        controller.conditonDict = self.conditonDict;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
     }
@@ -45,10 +45,10 @@
                 if (weakSelf.index !=1){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
-                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_SCCX_Controller"];
-                    if ([weakSelf.vc isKindOfClass:[HNT_SCCX_Controller class]]) {
-                        HNT_SCCX_Controller * controller = (HNT_SCCX_Controller *)weakSelf.vc;
-//                        controller.departId = weakSelf.departId;
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SW_LSSJ_Controller"];
+                    if ([weakSelf.vc isKindOfClass:[SW_LSSJ_Controller class]]) {
+                        SW_LSSJ_Controller * controller = (SW_LSSJ_Controller *)weakSelf.vc;
+                        controller.conditonDict = weakSelf.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }

@@ -8,7 +8,7 @@
 
 #import "LLQ_CBCZ_Controller.h"
 #import "LQ_SB_Controller.h"
-#import "HNT_CBCZ_DetailController.h"
+#import "LLQ_CBCZ_DetailController.h"
 
 #import "LLQ_CBCZ_Model.h"
 #import "LLQ_CBCZ_Cell.h"
@@ -225,6 +225,12 @@
                     model.dataDict = dict;
                     model.fieldDict = json[@"field"];
                     model.lqisshow = json[@"lqisshow"];
+                    
+                    model.shenhe = dict[@"shenhe"];
+                    model.chuli = dict[@"chuli"];
+                    model.sbbh = dict[@"sbbh"];
+                    model.bianhao = dict[@"bianhao"];
+                    
                     [datas addObject:model];
                 }
             }
@@ -298,24 +304,24 @@
         LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
         LLQ_CBCZ_Model * model = self.datas1[indexPath.row];
-//        cell.model = model;
-        [cell setModel:model indexPath:indexPath];
+        cell.model = model;
+//        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     if (tableView == self.tableView2) {
         LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
         LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
-//        cell.model = model;
-        [cell setModel:model indexPath:indexPath];
+        cell.model = model;
+//        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     if (tableView == self.tableView3) {
         LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
         LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
-//        cell.model = model;
-        [cell setModel:model indexPath:indexPath];
+        cell.model = model;
+//        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     return nil;
@@ -354,21 +360,24 @@
     return 0.1;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    HNT_CBCZ_Model * model;
-//    if (tableView == self.tableView1) {
-//        model = self.datas1[indexPath.row];
-//    }
-//    if (tableView == self.tableView2) {
-//        model = self.datas2[indexPath.row];
-//    }
-//    if (tableView == self.tableView3) {
-//        model = self.datas3[indexPath.row];
-//    }
-//  NSDictionary * dic=@{@"bianhao":model.xinxibianhao,
-//                       @"chuli":model.chuli,
-//                       @"shenhe":model.shenhe};
-//    [self performSegueWithIdentifier:@"HNT_CBCZ_DetailController" sender:dic];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LLQ_CBCZ_Model * model;
+    if (tableView == self.tableView1) {
+        model = self.datas1[indexPath.row];
+    }
+    if (tableView == self.tableView2) {
+        model = self.datas2[indexPath.row];
+    }
+    if (tableView == self.tableView3) {
+        model = self.datas3[indexPath.row];
+    }
+    NSDictionary * dic=@{@"bianhao":model.bianhao,
+                         @"shebeibianhao":model.sbbh,
+                         @"chuli":model.chuli,
+                         @"shenhe":model.shenhe};
+    
+    
+    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
     sender.enabled = NO;
@@ -453,14 +462,22 @@
         };
         
     }
-    
-    if ([vc isKindOfClass:[HNT_CBCZ_DetailController class]]) {
-        HNT_CBCZ_DetailController * controller = vc;
-        controller.bianhao = [sender objectForKey:@"bianhao"];
+    if ([vc isKindOfClass:[LLQ_CBCZ_DetailController class]]) {
+        LLQ_CBCZ_DetailController * controller = vc;
+        /**
+         NSDictionary * dic=@{@"bianhao":model.bianhao,
+         @"shebeibianhao":model.sbbh,
+         @"chuli":model.chuli,
+         @"shenhe":model.shenhe};
+         */
+        //        NSDictionary * dict = (NSDictionary*)sender;
         controller.chuli = [sender objectForKey:@"chuli"];
-        controller.shenhe = [sender objectForKey:@"shenhe"];
+        controller.shenpi = [sender objectForKey:@"shenhe"];
+        controller.bianhao = [sender objectForKey:@"bianhao"];
+        controller.shebeibianhao = [sender objectForKey:@"shebeibianhao"];
         controller.title = @"详情";
     }
+
 }
 -(void)dealloc{
     FuncLog;

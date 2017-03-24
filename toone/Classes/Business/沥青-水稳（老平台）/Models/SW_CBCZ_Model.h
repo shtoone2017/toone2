@@ -12,4 +12,10 @@
 @property (nonatomic ,strong) NSDictionary * dataDict;
 @property (nonatomic ,strong) NSDictionary * fieldDict;
 @property (nonatomic ,strong) NSDictionary * isShow;
+
+@property (nonatomic,copy) NSString * bianhao;
+@property (nonatomic,copy) NSString * sbbh;
+
+@property (nonatomic,copy) NSString * chuli;
+@property (nonatomic,copy) NSString * shenhe;
 @end

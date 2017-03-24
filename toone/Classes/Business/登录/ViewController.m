@@ -154,8 +154,9 @@
                     setting.password = _passwordTextField.text;
                     setting.userType = json[@"userType"];
                     setting.biaoshi = json[@"biaoshi"];
-                    setting.shenehe = json[@"shenehe"];
-                    
+                    setting.shenehe = Format(json[@"shenehe"]);
+                    setting.chuzhi = Format(json[@"chuzhi"]);
+                    setting.userFullName = json[@"userFullName"];
                     setting.login = YES;
                     [setting saveToSandbox];
                 });

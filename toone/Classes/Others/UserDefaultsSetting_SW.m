@@ -38,7 +38,9 @@ static UserDefaultsSetting_SW * setting = nil;
     setting.biaoshi   = [defaults objectForKey:@"biaoshi_SWKey"];
     setting.userType   = [defaults objectForKey:@"userType_SWKey"];
     setting.shenehe   = [defaults objectForKey:@"shenehe_SWKey"];
+    setting.chuzhi   = [defaults objectForKey:@"chuzhi_SWKey"];
 //    setting.zzjgName   = [defaults objectForKey:@"zzjgName_SWKey"];
+    setting.userFullName   = [defaults objectForKey:@"userFullName_SWKey"];
     
 }
 -(void)saveToSandbox{
@@ -56,7 +58,9 @@ static UserDefaultsSetting_SW * setting = nil;
     [defaults setObject:self.biaoshi   forKey:@"biaoshi_SWKey"];
     [defaults setObject:self.userType   forKey:@"userType_SWKey"];
     [defaults setObject:self.shenehe   forKey:@"shenehe_SWKey"];
+    [defaults setObject:self.chuzhi   forKey:@"chuzhi_SWKey"];
 //    [defaults setObject:self.zzjgName   forKey:@"zzjgName_SWKey"];
+    [defaults setObject:self.userFullName   forKey:@"userFullName_SWKey"];
     
     
     

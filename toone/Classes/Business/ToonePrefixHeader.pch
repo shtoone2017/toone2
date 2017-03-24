@@ -12,7 +12,7 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#define FuncLog                             NSLog(@"%s",__func__)
+#define FuncLog                             //NSLog(@"%s",__func__)
 #define EqualToString(string1,string2)      [string1 isEqualToString:string2]
 #define Equal(number1,number2)              [number1 isEqual:number2]
 #define Format(obj)                         [NSString stringWithFormat:@"%@",obj]
@@ -54,7 +54,7 @@
 #import "DWURunLoopWorkDistribution.h"
 
 //
-#define baseUrl     @"http://192.168.11.119:8080/jbgsmss/"
+#define baseUrl     @"http://192.168.11.117:8080/jbgsmss/"
 
 
 
@@ -65,24 +65,46 @@
 #define warningStatistics   FormatString(baseUrl,@"app/warningStatistics?")
 //组织机构接口
 #define departTree   FormatString(baseUrl,@"app/departTree?")
+//水稳历史数据查询
+#define appSwcllist   FormatString(baseUrl,@"app/appSwcllist?")
 //水稳超标查询
 #define chaoBiaoList   FormatString(baseUrl,@"app/chaoBiaoList?")
+//超标查询详情页
+#define chaoBiaoXQ   FormatString(baseUrl,@"app/chaoBiaoXQ?")
+//水稳历史数据查询详情页
+#define appSwclXQ   FormatString(baseUrl,@"app/appSwclXQ?")
+
+//水稳超标处置
+#define appSWChaobiaoChuzhi   FormatString(baseUrl,@"app/appSWChaobiaoChuzhi?")
+//水稳超标审批
+#define appHntChaobiaoShenpi   FormatString(baseUrl,@"app/appHntChaobiaoShenpi?")
+
 //水稳材料统计
 #define swmaterial   FormatString(baseUrl,@"app/swmaterial?")
 //拌合站设备接口
 #define machineList   FormatString(baseUrl,@"app/machineList?")
+//水稳历史数据查询使用部位接口
+#define url_usePosition   FormatString(baseUrl,@"app/usePosition?")
+//沥青历史数据混合料型号接口
+#define appLq_usePosition   FormatString(baseUrl,@"appLq/usePosition?")
 //沥青预警统计
 #define lqWarningStatistics   FormatString(baseUrl,@"appLq/lqWarningStatistics?")
 //沥青超标查询
 #define lqchaoBiaoList   FormatString(baseUrl,@"appLq/lqchaoBiaoList?")
+//沥青材料统计
+#define lqmaterial   FormatString(baseUrl,@"appLq/lqmaterial?")
 
+//沥青超标查询详情页
+#define lqchaoBiaoXQ   FormatString(baseUrl,@"appLq/lqchaoBiaoXQ?")
+//沥青超标处置
+#define appLQChaobiaoChuzhi   FormatString(baseUrl,@"appLq/appLQChaobiaoChuzhi?")
+//沥青超标审批
+#define appLqChaobiaoShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoShenpi?")
+//沥青历史数据查询详情页
+#define liqingxixx   FormatString(baseUrl,@"appLq/liqingxixx?")
 
-
-
-
-
-
-
+//沥青历史数据查询
+#define lqgallclList   FormatString(baseUrl,@"appLq/lqgallclList?")
 
 
 

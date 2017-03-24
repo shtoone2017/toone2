@@ -27,6 +27,8 @@
 @property (nonatomic,copy) NSString * biaoshi;
 //用户类型 业主：1 标段：2 项目部：3 拌合站：5  (如果是业主，标示为空)
 @property (nonatomic,copy) NSString * userType;
-@property (nonatomic,copy) NSNumber * shenehe;
+@property (nonatomic,copy) NSString * shenehe;
+@property (nonatomic,copy) NSString * chuzhi;
 //@property (nonatomic,copy) NSString * zzjgName;
+@property (nonatomic,copy) NSString * userFullName;
 @end

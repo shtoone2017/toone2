@@ -17,6 +17,7 @@ typedef enum{
     ExpButtonTypeEndTimeButton,
     ExpButtonTypeChoiceSBButton,
     ExpButtonTypeChoiceTypeButton,
+    ExpButtonTypeUsePosition,
 } ExpButtonType;
 
 typedef void(^ExpBlock_t) (ExpButtonType,id,id);
