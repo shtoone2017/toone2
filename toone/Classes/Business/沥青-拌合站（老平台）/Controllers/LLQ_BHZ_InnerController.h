@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyViewController.h"
 
-@interface LLQ_BHZ_InnerController : UIViewController
+@interface LLQ_BHZ_InnerController : MyViewController
 @property (nonatomic,strong) NSDictionary * conditonDict;
 @end

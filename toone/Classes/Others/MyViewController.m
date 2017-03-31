@@ -130,6 +130,18 @@
 -(void)dealloc{
     //FuncLog;
 }
+#pragma  mark - 支持横竖屏
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
 @end

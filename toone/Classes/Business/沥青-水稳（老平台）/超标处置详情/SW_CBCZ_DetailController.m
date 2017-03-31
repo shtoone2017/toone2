@@ -18,6 +18,9 @@
 
 #import "SW_CBCZ_Detail_ChuLi_Controller.h"
 #import "SW_CBCZ_Detail_ShenPi_Controller.h"
+
+
+#import "BigChartViewController.h"
 @interface SW_CBCZ_DetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (weak, nonatomic) IBOutlet UITableView *tb;
@@ -31,8 +34,15 @@
     [super viewDidLoad];
     [self loadUi];
     [self loadData];
+    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"big" style:UIBarButtonItemStylePlain target:self action:@selector(big)];
+    
 }
-
+-(void)big{
+    BigChartViewController * big = [[BigChartViewController alloc] init];
+    big.view.frame = CGRectMake(0, 0, Screen_w, Screen_h);
+    [[UIApplication sharedApplication].keyWindow addSubview:big.view];
+}
 -(void)dealloc{
     FuncLog;
 }
@@ -54,8 +64,8 @@
                             };
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
-        NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
+            NSMutableArray * datas = [NSMutableArray array];
             if ([json[@"swData"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"swData"]) {
                     SW_CDCZ_Detail_swData * data = [SW_CDCZ_Detail_swData modelWithDict:dict];
@@ -70,10 +80,12 @@
                 SW_CBCZ_Detail_swjg * swjgModel = [SW_CBCZ_Detail_swjg modelWithDict:json[@"swjg"]];
                 weakSelf.swjgModel = swjgModel;
             }
+            //
+            weakSelf.datas = datas;
+            [weakSelf.tb reloadData];
+            [Tools removeActivity];
         }
-        //
-        weakSelf.datas = datas;
-        [weakSelf.tb reloadData];
+
         
         //#pragma mark - 因布局设计有卡顿现象，优化方法如下
         //            weakSelf.tb.contentOffset = CGPointMake(0, 220);
@@ -81,7 +93,7 @@
         //                weakSelf.tb.contentOffset = CGPointMake(0, 0);
         //            });
         //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-        [Tools removeActivity];
+        
         //            });
     } failure:^(NSError *error) {
         

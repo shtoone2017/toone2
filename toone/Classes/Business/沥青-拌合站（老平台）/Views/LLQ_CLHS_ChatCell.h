@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LLQ_CLHS_ChatCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *sbLabel;
 @property (nonatomic,strong) NSArray * datas1;
 
 @property (nonatomic,strong) NSArray * datas2;

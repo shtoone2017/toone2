@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyViewController.h"
 
-@interface LLQ_CBCZ_DetailController : UIViewController
+@interface LLQ_CBCZ_DetailController : MyViewController
 @property (nonatomic,strong) NSDictionary * conditonDict;
 
 @property (nonatomic,copy) NSString * chuli;

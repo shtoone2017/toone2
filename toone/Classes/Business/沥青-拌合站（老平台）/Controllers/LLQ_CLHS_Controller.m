@@ -22,6 +22,7 @@
 
 //***************
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
+@property (nonatomic,copy) NSString * sbName;//设备
 @end
 
 @implementation LLQ_CLHS_Controller
@@ -113,6 +114,7 @@
         LLQ_CLHS_ChatCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CLHS_ChatCell"];
         cell.datas1 = self.datas1;
         cell.datas2 = self.datas2;
+        cell.sbLabel.text = self.sbName ? self.sbName : @"全部";
         [cell.unitButton addTarget:self action:@selector(choiceUnit:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }else{
@@ -204,9 +206,10 @@
                                     @"biaoshiid":self.conditonDict[@"biaoshiid"],
                                     @"machineType":@"2",
                                     };
-        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
-            [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
+        controller.callBlock = ^(NSString * sbName,NSString*gprsbianhao){
+            [weakBtn setTitle:sbName forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;
+            weakSelf.sbName = sbName;
         };
         
     }

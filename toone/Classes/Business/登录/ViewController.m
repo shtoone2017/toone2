@@ -165,7 +165,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
                     [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"rippleEffect"];
+                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });
             }else{
                 hud.mode = MBProgressHUDModeText;

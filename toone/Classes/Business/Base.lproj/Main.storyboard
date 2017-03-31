@@ -3715,11 +3715,11 @@
             </objects>
             <point key="canvasLocation" x="-634" y="5857"/>
         </scene>
-        <!--拌合站-->
+        <!--沥青-->
         <scene sceneID="RTV-cJ-MIv">
             <objects>
                 <navigationController id="uAq-kk-dww" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="拌合站" image="ic_yaliji" id="KKU-BH-R5e"/>
+                    <tabBarItem key="tabBarItem" title="沥青" image="factory" id="KKU-BH-R5e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="15f-It-ntK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -4258,7 +4258,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rym-cn-0bq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="3hc-s7-Fnc" id="7O9-Kb-WDK"/>
@@ -4269,8 +4269,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="afo-YD-Frx" firstAttribute="top" secondItem="Rym-cn-0bq" secondAttribute="bottom" id="7Zl-pO-UdV"/>
+                            <constraint firstItem="Rym-cn-0bq" firstAttribute="top" secondItem="QAB-C0-a3R" secondAttribute="bottom" id="E8e-Wz-gjY"/>
                             <constraint firstItem="Rym-cn-0bq" firstAttribute="leading" secondItem="drh-Bm-Bxb" secondAttribute="leading" id="Gl5-Yo-w01"/>
-                            <constraint firstItem="Rym-cn-0bq" firstAttribute="top" secondItem="drh-Bm-Bxb" secondAttribute="top" id="ffZ-d9-aA5"/>
                             <constraint firstAttribute="trailing" secondItem="Rym-cn-0bq" secondAttribute="trailing" id="rlN-Qx-ufo"/>
                         </constraints>
                     </view>
@@ -4966,7 +4966,7 @@
             </objects>
             <point key="canvasLocation" x="1972" y="4084"/>
         </scene>
-        <!--水稳组织机构-->
+        <!--组织机构-->
         <scene sceneID="EPp-y1-faW">
             <objects>
                 <viewController id="SZi-5b-Z34" customClass="SW_ZZJG_Controller" sceneMemberID="viewController">
@@ -4979,7 +4979,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="水稳组织机构" id="f1z-cW-Wi5"/>
+                    <navigationItem key="navigationItem" title="组织机构" id="f1z-cW-Wi5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-HV-cQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4989,6 +4989,7 @@
     <resources>
         <image name="99D58PICZNR_1024" width="29" height="29"/>
         <image name="black_SX" width="288" height="113"/>
+        <image name="factory" width="32" height="32"/>
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
         <image name="ic_yaliji" width="32" height="32"/>

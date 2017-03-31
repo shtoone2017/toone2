@@ -15,4 +15,5 @@
 @property (nonatomic, copy) NSString * sgpeibi ;// string 施工配比
 @property (nonatomic, copy) NSString * wucha ;// string 误差
 @property (nonatomic, copy) NSString * yongliang ;// string 实际生产用量
+@property (nonatomic, copy) NSString * cblx ;// 超标类型
 @end

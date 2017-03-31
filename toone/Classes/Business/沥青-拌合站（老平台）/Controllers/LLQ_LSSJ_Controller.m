@@ -113,14 +113,7 @@
     return self.datas.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LLQ_LSSJ_Model * model = self.datas[indexPath.row];
-    int index = 0;
-    for (NSString * key in model.lqisshow.allKeys) {
-        if ([[model.lqisshow objectForKey:key] isEqualToString:@"1"]) {
-            index++;
-        }
-    }
-    return index*20.0;
+    return 8*15.0;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LLQ_LSSJ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_LSSJ_Cell" forIndexPath:indexPath];
@@ -196,7 +189,7 @@
         controller.title = @"选择设备";
         controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
                                     @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                                    @"machineType":@"6",
+                                    @"machineType":@"2",
                                     };
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];

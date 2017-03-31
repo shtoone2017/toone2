@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyViewController.h"
 
-@interface LLQ_CBCZ_Detail_ChuLi_Controller : UIViewController
+@interface LLQ_CBCZ_Detail_ChuLi_Controller : MyViewController
 @property (nonatomic,copy) NSString *  jieguobianhao;
 @end

@@ -202,8 +202,6 @@
 		D200645D1DFF86800021E293 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063721DFF86800021E293 /* AppDelegate.m */; };
 		D200645E1DFF86800021E293 /* Exmp1.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063751DFF86800021E293 /* Exmp1.m */; };
 		D200645F1DFF86800021E293 /* Exmp1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063771DFF86800021E293 /* Exmp1Cell.m */; };
-		D20064641DFF86800021E293 /* DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063801DFF86800021E293 /* DrawerController.m */; };
-		D20064651DFF86800021E293 /* DrawerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20063811DFF86800021E293 /* DrawerController.xib */; };
 		D20064661DFF86800021E293 /* Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063841DFF86800021E293 /* Drawer.m */; };
 		D20064671DFF86800021E293 /* DrawerList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D20063851DFF86800021E293 /* DrawerList.plist */; };
 		D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063881DFF86800021E293 /* DrawerHeaderImgv.m */; };
@@ -372,6 +370,10 @@
 		D21944281E8120E000FC0B38 /* SW_CBCZ_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D219441A1E8120E000FC0B38 /* SW_CBCZ_DetailController.m */; };
 		D21944311E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D219442F1E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.m */; };
 		D21944321E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21944301E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.xib */; };
+		D220E2B31E8CF54F001A1C14 /* BigChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D220E2B11E8CF54F001A1C14 /* BigChartViewController.m */; };
+		D220E2B41E8CF54F001A1C14 /* BigChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D220E2B21E8CF54F001A1C14 /* BigChartViewController.xib */; };
+		D220E2C21E8D00E1001A1C14 /* DrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D220E2C01E8D00E1001A1C14 /* DrawerController.m */; };
+		D220E2C31E8D00E1001A1C14 /* DrawerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D220E2C11E8D00E1001A1C14 /* DrawerController.xib */; };
 		D226DC5D1E8211D90042DCFA /* SW_CBCZ_Detail_swHead.m in Sources */ = {isa = PBXBuildFile; fileRef = D226DC5C1E8211D90042DCFA /* SW_CBCZ_Detail_swHead.m */; };
 		D226DC601E8211F90042DCFA /* SW_CDCZ_Detail_swData.m in Sources */ = {isa = PBXBuildFile; fileRef = D226DC5F1E8211F90042DCFA /* SW_CDCZ_Detail_swData.m */; };
 		D226DC631E82121C0042DCFA /* SW_CBCZ_Detail_swjg.m in Sources */ = {isa = PBXBuildFile; fileRef = D226DC621E82121C0042DCFA /* SW_CBCZ_Detail_swjg.m */; };
@@ -847,9 +849,6 @@
 		D20063771DFF86800021E293 /* Exmp1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp1Cell.m; sourceTree = "<group>"; };
 		D200637B1DFF86800021E293 /* Toone-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toone-Bridging-Header.h"; sourceTree = "<group>"; };
 		D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToonePrefixHeader.pch; sourceTree = "<group>"; };
-		D200637F1DFF86800021E293 /* DrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerController.h; sourceTree = "<group>"; };
-		D20063801DFF86800021E293 /* DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerController.m; sourceTree = "<group>"; };
-		D20063811DFF86800021E293 /* DrawerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerController.xib; sourceTree = "<group>"; };
 		D20063831DFF86800021E293 /* Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawer.h; sourceTree = "<group>"; };
 		D20063841DFF86800021E293 /* Drawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drawer.m; sourceTree = "<group>"; };
 		D20063851DFF86800021E293 /* DrawerList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrawerList.plist; sourceTree = "<group>"; };
@@ -1138,6 +1137,12 @@
 		D219442E1E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_CBCZ_Detail_HeadCell.h; sourceTree = "<group>"; };
 		D219442F1E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SW_CBCZ_Detail_HeadCell.m; sourceTree = "<group>"; };
 		D21944301E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SW_CBCZ_Detail_HeadCell.xib; sourceTree = "<group>"; };
+		D220E2B01E8CF54F001A1C14 /* BigChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigChartViewController.h; sourceTree = "<group>"; };
+		D220E2B11E8CF54F001A1C14 /* BigChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigChartViewController.m; sourceTree = "<group>"; };
+		D220E2B21E8CF54F001A1C14 /* BigChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigChartViewController.xib; sourceTree = "<group>"; };
+		D220E2BF1E8D00E1001A1C14 /* DrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerController.h; sourceTree = "<group>"; };
+		D220E2C01E8D00E1001A1C14 /* DrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerController.m; sourceTree = "<group>"; };
+		D220E2C11E8D00E1001A1C14 /* DrawerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerController.xib; sourceTree = "<group>"; };
 		D226DC5B1E8211D90042DCFA /* SW_CBCZ_Detail_swHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_CBCZ_Detail_swHead.h; sourceTree = "<group>"; };
 		D226DC5C1E8211D90042DCFA /* SW_CBCZ_Detail_swHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SW_CBCZ_Detail_swHead.m; sourceTree = "<group>"; };
 		D226DC5E1E8211F90042DCFA /* SW_CDCZ_Detail_swData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_CDCZ_Detail_swData.h; sourceTree = "<group>"; };
@@ -2514,9 +2519,9 @@
 		D200637E1DFF86800021E293 /* 抽屉 */ = {
 			isa = PBXGroup;
 			children = (
-				D200637F1DFF86800021E293 /* DrawerController.h */,
-				D20063801DFF86800021E293 /* DrawerController.m */,
-				D20063811DFF86800021E293 /* DrawerController.xib */,
+				D220E2BF1E8D00E1001A1C14 /* DrawerController.h */,
+				D220E2C01E8D00E1001A1C14 /* DrawerController.m */,
+				D220E2C11E8D00E1001A1C14 /* DrawerController.xib */,
 				D20063821DFF86800021E293 /* Model */,
 				D20063861DFF86800021E293 /* View */,
 			);
@@ -3340,6 +3345,9 @@
 				D226DC5F1E8211F90042DCFA /* SW_CDCZ_Detail_swData.m */,
 				D226DC611E82121C0042DCFA /* SW_CBCZ_Detail_swjg.h */,
 				D226DC621E82121C0042DCFA /* SW_CBCZ_Detail_swjg.m */,
+				D220E2B01E8CF54F001A1C14 /* BigChartViewController.h */,
+				D220E2B11E8CF54F001A1C14 /* BigChartViewController.m */,
+				D220E2B21E8CF54F001A1C14 /* BigChartViewController.xib */,
 			);
 			path = "超标处置详情";
 			sourceTree = "<group>";
@@ -3716,6 +3724,7 @@
 				D20064441DFF86800021E293 /* CJMonthDayCollectionCell.xib in Resources */,
 				D200652C1DFF86B30021E293 /* HorizontalBarChartViewController.xib in Resources */,
 				D200653A1DFF86B30021E293 /* NegativeStackedBarChartViewController.xib in Resources */,
+				D220E2B41E8CF54F001A1C14 /* BigChartViewController.xib in Resources */,
 				8CEB5BC91E0A6C0D00A5C4AA /* Login.storyboard in Resources */,
 				D235E32B1E84C64900EE4459 /* LLQ_LSSJ_Detail_ChartCell.xib in Resources */,
 				D2E04DDD1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
@@ -3773,7 +3782,6 @@
 				42AC714B1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */,
 				D272EFBF1E7BBE3A00D0991D /* LQ_SW_Cell.xib in Resources */,
-				D20064651DFF86800021E293 /* DrawerController.xib in Resources */,
 				D235E3001E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
 				D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */,
@@ -3783,6 +3791,7 @@
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
+				D220E2C31E8D00E1001A1C14 /* DrawerController.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
 				42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */,
 				D219437C1E81006700FC0B38 /* Exp52_Xib_View.xib in Resources */,
@@ -3928,7 +3937,6 @@
 				42AC71741E30C393007D8F57 /* ProductionDetailsG.m in Sources */,
 				D2E04DDC1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
-				D20064641DFF86800021E293 /* DrawerController.m in Sources */,
 				42AC71561E30C393007D8F57 /* SeniorExcessiveTableConller.m in Sources */,
 				D200651B1DFF86B30021E293 /* AnotherBarChartViewController.m in Sources */,
 				D272EFBD1E7BBE3A00D0991D /* SW_CLHS_Model.m in Sources */,
@@ -3973,6 +3981,7 @@
 				8CBD72E71E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.m in Sources */,
 				D20064421DFF86800021E293 /* CJDecisionView.m in Sources */,
 				42AC71691E30C393007D8F57 /* DayQueryTableViewCell.m in Sources */,
+				D220E2C21E8D00E1001A1C14 /* DrawerController.m in Sources */,
 				D235E3271E84C64900EE4459 /* LLQ_LSSJ_Detail_Chart.m in Sources */,
 				42AC71641E30C393007D8F57 /* DayQueryTableViewController.m in Sources */,
 				187C72F11E30B1810072F33A /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
@@ -4144,6 +4153,7 @@
 				187C72F01E30B1810072F33A /* DGActivityIndicatorAnimation.m in Sources */,
 				187C730D1E30B1810072F33A /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */,
+				D220E2B31E8CF54F001A1C14 /* BigChartViewController.m in Sources */,
 				D2E04DE01E83ADCD009E9C6A /* LLQ_CBCZ_Detail_HeadCell.m in Sources */,
 				42AC71591E30C393007D8F57 /* MaterialViewController.m in Sources */,
 				D200652D1DFF86B30021E293 /* LineChart1ViewController.m in Sources */,
@@ -4278,6 +4288,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -4293,6 +4304,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "67e70f30-ed3e-4d43-88c7-469d8d71dd27";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -4327,6 +4339,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -4337,6 +4350,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "67e70f30-ed3e-4d43-88c7-469d8d71dd27";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};

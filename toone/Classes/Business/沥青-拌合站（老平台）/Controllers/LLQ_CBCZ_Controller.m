@@ -326,36 +326,33 @@
     }
     return nil;
 }
+
+-(CGFloat)rowHeightWithModel:(LLQ_CBCZ_Model*)model{
+    int index = 0;
+    for (NSString * key in model.dataDict.allKeys) {
+        if ([key hasPrefix:@"bhzName"] ||
+            [key hasPrefix:@"clTime"] ||
+            [key hasPrefix:@"clwd"] ||
+            [key hasPrefix:@"lqwd"] ||
+            [key hasPrefix:@"glwd"] ||
+            [key hasPrefix:@"sjtjj"] ||
+            [key hasPrefix:@"sjysb"] ||
+            [key hasPrefix:@"sjlq"] ||
+            (([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
+            index++;
+        }
+    }
+    return index*15.0;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.tableView1) {
-        LLQ_CBCZ_Model * model = self.datas1[indexPath.row];        
-        int index = 0;
-        for (NSString * key in model.lqisshow.allKeys) {
-            if ([[model.lqisshow objectForKey:key] isEqualToString:@"1"]) {
-                index++;
-            }
-        }
-        return index*20.0;
+        return [self rowHeightWithModel:self.datas1[indexPath.row]];
     }
     if (tableView == self.tableView2) {
-        LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
-        int index = 0;
-        for (NSString * key in model.lqisshow.allKeys) {
-            if ([[model.lqisshow objectForKey:key] isEqualToString:@"1"]) {
-                index++;
-            }
-        }
-        return index*20.0;
+        return [self rowHeightWithModel:self.datas2[indexPath.row]];
     }
     if (tableView == self.tableView3) {
-        LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
-        int index = 0;
-        for (NSString * key in model.lqisshow.allKeys) {
-            if ([[model.lqisshow objectForKey:key] isEqualToString:@"1"]) {
-                index++;
-            }
-        }
-        return index*20.0;
+        return [self rowHeightWithModel:self.datas3[indexPath.row]];
     }
     return 0.1;
 }

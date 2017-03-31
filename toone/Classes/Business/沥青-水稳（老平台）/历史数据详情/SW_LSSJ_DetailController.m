@@ -58,12 +58,14 @@
     
     
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
-        NSMutableArray * datas = [NSMutableArray array];
-        NSMutableArray * chartDatas = [NSMutableArray array];
-        NSMutableArray * charts = [NSMutableArray array];
-        NSMutableArray * titles = [NSMutableArray array];
-        NSMutableArray * colors = [NSMutableArray array];
+
         if ([json[@"success"] boolValue]) {
+            NSMutableArray * datas = [NSMutableArray array];
+            NSMutableArray * chartDatas = [NSMutableArray array];
+            NSMutableArray * charts = [NSMutableArray array];
+            NSMutableArray * titles = [NSMutableArray array];
+            NSMutableArray * colors = [NSMutableArray array];
+            
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     SW_LSSJ_Detail_Data * data = [SW_LSSJ_Detail_Data modelWithDict:dict];
@@ -95,28 +97,29 @@
 
                 }
             }
+            [colors addObject:[UIColor redColor]];
+            [colors addObject:[UIColor magentaColor]];
+            [colors addObject:[UIColor greenColor]];
+            [colors addObject:[UIColor blueColor]];
+            [colors addObject:[UIColor yellowColor]];
+            [colors addObject:[UIColor orangeColor]];
+            //
+            weakSelf.datas = datas;
+            weakSelf.chartDatas = chartDatas;
+            weakSelf.titles = titles;
+            weakSelf.charts = charts;
+            weakSelf.colors = colors;
+            [weakSelf.tb reloadData];
+            [Tools removeActivity];
         }
-        [colors addObject:[UIColor redColor]];
-        [colors addObject:[UIColor magentaColor]];
-        [colors addObject:[UIColor greenColor]];
-        [colors addObject:[UIColor blueColor]];
-        [colors addObject:[UIColor yellowColor]];
-        [colors addObject:[UIColor orangeColor]];
-        //
-        weakSelf.datas = datas;
-        weakSelf.chartDatas = chartDatas;
-        weakSelf.titles = titles;
-        weakSelf.charts = charts;
-        weakSelf.colors = colors;
-        [weakSelf.tb reloadData];
-        
+
         //#pragma mark - 因布局设计有卡顿现象，优化方法如下
         //            weakSelf.tb.contentOffset = CGPointMake(0, 220);
         //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
         //                weakSelf.tb.contentOffset = CGPointMake(0, 0);
         //            });
         //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-        [Tools removeActivity];
+        
         //            });
     } failure:^(NSError *error) {
         
@@ -148,7 +151,7 @@
     switch (section) {
         case 0:return @"基本信息";
         case 1:return @"采集数据";
-        case 2:return @"基层合成级配曲线图";
+        case 2:return [NSString stringWithFormat:@"%@%@",self.position,@"合成级配曲线图"];
         case 3:return @"合成后各筛孔尺寸的通过百分率(%)";
     }
     return nil;

@@ -12,11 +12,11 @@
 
 @interface SGDate : NSObject
 /**
- *  <#Description#>
+ *  Description
  *
- *  @param date <#date description#>
+ *  @param date date description
  *
- *  @return <#return value description#>
+ *  @return return value description
  */
 +(NSString*)getDate:(NSDate*)date;
 +(NSString*)getToday;

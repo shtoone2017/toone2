@@ -10,6 +10,7 @@
 #import "SW_CBCZ_Detail_DataCell.h"
 #import "SW_CDCZ_Detail_swData.h"
 @interface SW_CBCZ_Detail_DataCell()
+@property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *lb1;
 @property (weak, nonatomic) IBOutlet UILabel *lb2;
 @property (weak, nonatomic) IBOutlet UILabel *lb3;
@@ -34,6 +35,18 @@
         self.lb4.text = model.sgpeibi;
         self.lb5.text = model.wucha;
         self.lb6.text = model.yongliang;
+    if ([model.cblx intValue]==0 || EqualToString(model.cblx, @"")) {
+        self.img.width = 0;
+        self.img.image = nil;
+    }else{
+        if ([model.cblx intValue]<=3) {
+            self.img.image = [UIImage imageNamed:@"zhengchao.png"];
+            self.lb5.textColor = [UIColor redColor];
+        }else{
+            self.img.image = [UIImage imageNamed:@"fuchao.png"];
+            self.lb5.textColor = [UIColor orangeColor];
+        }
+    }
 }
 
 @end

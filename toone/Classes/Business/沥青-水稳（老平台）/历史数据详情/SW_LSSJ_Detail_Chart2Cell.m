@@ -29,8 +29,8 @@
 }
 -(void)setModel:(SW_LSSJ_Detail_Chart *)model{
     self.lb1.text = model.name;
-    self.lb2.text = model.standPassper;
-    self.lb3.text = model.passper;
+    self.lb2.text = model.passper;
+    self.lb3.text = model.standPassper;
     self.lb4.text = model.wcz;
     self.lb5.text = model.yjz;
     

@@ -54,8 +54,9 @@
                             };
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
-        NSMutableArray * datas = [NSMutableArray array];
+        
         if ([json[@"success"] boolValue]) {
+            NSMutableArray * datas = [NSMutableArray array];
             if ([json[@"lqData"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"lqData"]) {
                     LLQ_CDCZ_Detail_lqData * data = [LLQ_CDCZ_Detail_lqData modelWithDict:dict];
@@ -70,10 +71,13 @@
                 LLQ_CBCZ_Detail_lqjg * swjgModel = [LLQ_CBCZ_Detail_lqjg modelWithDict:json[@"lqjg"]];
                 weakSelf.swjgModel = swjgModel;
             }
+            
+            weakSelf.datas = datas;
+            [weakSelf.tb reloadData];
+            [Tools removeActivity];
         }
         //
-        weakSelf.datas = datas;
-        [weakSelf.tb reloadData];
+
         
         //#pragma mark - 因布局设计有卡顿现象，优化方法如下
         //            weakSelf.tb.contentOffset = CGPointMake(0, 220);
@@ -81,7 +85,7 @@
         //                weakSelf.tb.contentOffset = CGPointMake(0, 0);
         //            });
         //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-        [Tools removeActivity];
+        
         //            });
     } failure:^(NSError *error) {
         

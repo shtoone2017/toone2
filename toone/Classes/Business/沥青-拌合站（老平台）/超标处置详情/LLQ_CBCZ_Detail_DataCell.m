@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb3;
 @property (weak, nonatomic) IBOutlet UILabel *lb4;
 @property (weak, nonatomic) IBOutlet UILabel *lb5;
+@property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *lb6;
 @end
 
@@ -34,6 +35,18 @@
         self.lb4.text = model.sgpeibi;
         self.lb5.text = model.wucha;
         self.lb6.text = model.yongliang;
+    if ([model.cblx intValue]==0 || EqualToString(model.cblx, @"")) {
+        self.img.width = 0;
+        self.img.image = nil;
+    }else{
+        if ([model.cblx intValue]<=3) {
+            self.img.image = [UIImage imageNamed:@"zhengchao.png"];
+            self.lb5.textColor = [UIColor redColor];
+        }else{
+            self.img.image = [UIImage imageNamed:@"fuchao.png"];
+            self.lb5.textColor = [UIColor orangeColor];
+        }
+    }
 }
 
 @end

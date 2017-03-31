@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface DrawerController : UITableViewController
+#import "MyViewController.h"
+@interface DrawerController : MyViewController
 
 
 

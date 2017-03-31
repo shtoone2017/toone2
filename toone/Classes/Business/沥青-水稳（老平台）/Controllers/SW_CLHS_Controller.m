@@ -22,6 +22,7 @@
 
 //***************
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
+@property (nonatomic,copy) NSString * sbName;//设备
 @end
 
 @implementation SW_CLHS_Controller
@@ -112,6 +113,7 @@
         SW_CLHS_ChatCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CLHS_ChatCell"];
         cell.datas1 = self.datas1;
         cell.datas2 = self.datas2;
+        cell.sbLabel.text = self.sbName ? self.sbName : @"全部";
         [cell.unitButton addTarget:self action:@selector(choiceUnit:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }else{
@@ -206,6 +208,7 @@
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;
+            weakSelf.sbName = banhezhanminchen;
         };
         
     }

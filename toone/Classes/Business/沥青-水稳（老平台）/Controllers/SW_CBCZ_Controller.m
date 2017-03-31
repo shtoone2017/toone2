@@ -321,36 +321,27 @@
     }
     return nil;
 }
+-(CGFloat)rowHeightWithModel:(SW_CBCZ_Model*)model{
+    int index = 0;
+    for (NSString * key in model.dataDict.allKeys) {
+        if ([key hasPrefix:@"bzhName"] ||
+            [key hasPrefix:@"clTime"] ||
+            [key hasPrefix:@"zcl"] ||
+            ([key hasPrefix:@"sj"] && [[model.dataDict objectForKey:key] intValue]>=1)) {
+            index++;
+        }
+    }
+    return index*15.0;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.tableView1) {
-        SW_CBCZ_Model * model = self.datas1[indexPath.row];
-        int index = 0;
-        for (NSString * key in model.isShow.allKeys) {
-            if ([[model.isShow objectForKey:key] isEqualToString:@"1"]) {
-                index++;
-            }
-        }
-        return index*20.0;
+        return [self rowHeightWithModel:self.datas1[indexPath.row]];
     }
     if (tableView == self.tableView2) {
-        SW_CBCZ_Model * model = self.datas2[indexPath.row];
-        int index = 0;
-        for (NSString * key in model.isShow.allKeys) {
-            if ([[model.isShow objectForKey:key] isEqualToString:@"1"]) {
-                index++;
-            }
-        }
-        return index*20.0;
+        return [self rowHeightWithModel:self.datas2[indexPath.row]];
     }
     if (tableView == self.tableView3) {
-        SW_CBCZ_Model * model = self.datas3[indexPath.row];
-        int index = 0;
-        for (NSString * key in model.isShow.allKeys) {
-            if ([[model.isShow objectForKey:key] isEqualToString:@"1"]) {
-                index++;
-            }
-        }
-        return index*20.0;
+        return [self rowHeightWithModel:self.datas3[indexPath.row]];
     }
     return 0.1;
 }

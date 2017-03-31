@@ -24,7 +24,7 @@
 
 -(void)setWidth:(CGFloat)width{
     CGRect rect = self.frame;
-    rect.size.height = width;
+    rect.size.width = width;
     self.frame = rect;
 }
 

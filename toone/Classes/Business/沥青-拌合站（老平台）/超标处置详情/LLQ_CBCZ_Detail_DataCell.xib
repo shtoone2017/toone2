@@ -45,12 +45,18 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="误差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7S-Xu-N2H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="误差率" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7S-Xu-N2H">
                                 <rect key="frame" x="264" y="0.0" width="66" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Z3-4X-vMO">
+                                <rect key="frame" x="322" y="3" width="8" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="O6n-8V-8zf"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际用量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaG-0r-XsW">
                                 <rect key="frame" x="330" y="0.0" width="66" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -69,8 +75,11 @@
                             <constraint firstItem="o7S-Xu-N2H" firstAttribute="leading" secondItem="KTF-E9-qBf" secondAttribute="trailing" id="JOO-2r-h0c"/>
                             <constraint firstItem="KTF-E9-qBf" firstAttribute="top" secondItem="b4K-YL-qef" secondAttribute="top" id="NgR-Wp-YWf"/>
                             <constraint firstAttribute="bottom" secondItem="o7S-Xu-N2H" secondAttribute="bottom" id="T2e-1A-zmP"/>
+                            <constraint firstAttribute="bottom" secondItem="3Z3-4X-vMO" secondAttribute="bottom" constant="3" id="ThF-Gu-ltB"/>
                             <constraint firstAttribute="trailing" secondItem="aaG-0r-XsW" secondAttribute="trailing" id="Tvq-b6-MQy"/>
                             <constraint firstItem="XrX-pu-Cw7" firstAttribute="width" secondItem="piS-me-sBh" secondAttribute="width" id="Vdt-2O-7Ax"/>
+                            <constraint firstItem="aaG-0r-XsW" firstAttribute="leading" secondItem="3Z3-4X-vMO" secondAttribute="trailing" id="Ya2-Jo-wUY"/>
+                            <constraint firstItem="3Z3-4X-vMO" firstAttribute="top" secondItem="b4K-YL-qef" secondAttribute="top" constant="3" id="aRD-9z-u3r"/>
                             <constraint firstItem="KTF-E9-qBf" firstAttribute="leading" secondItem="piS-me-sBh" secondAttribute="trailing" id="byW-8I-D8h"/>
                             <constraint firstItem="XrX-pu-Cw7" firstAttribute="leading" secondItem="u7n-Yg-bcv" secondAttribute="trailing" id="ew0-Am-8yA"/>
                             <constraint firstAttribute="bottom" secondItem="u7n-Yg-bcv" secondAttribute="bottom" id="fTD-Vm-kF4"/>
@@ -96,6 +105,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="img" destination="3Z3-4X-vMO" id="6oQ-iF-tpj"/>
                 <outlet property="lb1" destination="u7n-Yg-bcv" id="8GG-dI-7NC"/>
                 <outlet property="lb2" destination="XrX-pu-Cw7" id="mgW-i5-fGu"/>
                 <outlet property="lb3" destination="piS-me-sBh" id="YYY-RL-2Ez"/>

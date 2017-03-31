@@ -113,14 +113,7 @@
     return self.datas.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SW_LSSJ_Model * model = self.datas[indexPath.row];
-    int index = 0;
-    for (NSString * key in model.isShow.allKeys) {
-        if ([[model.isShow objectForKey:key] isEqualToString:@"1"]) {
-            index++;
-        }
-    }
-    return index*20.0;
+    return 5*15.0;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SW_LSSJ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Cell" forIndexPath:indexPath];
@@ -231,6 +224,7 @@
         //        NSDictionary * dict = (NSDictionary*)sender;
         controller.bianhao = [sender objectForKey:@"bianhao"];
         controller.shebeibianhao = [sender objectForKey:@"shebeibianhao"];
+        controller.position = self.usePosition;
         controller.title = @"详情";
     }
 }

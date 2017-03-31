@@ -11,4 +11,5 @@
 @interface SW_LSSJ_DetailController : UIViewController
 @property (nonatomic,copy) NSString * bianhao;
 @property (nonatomic,copy) NSString * shebeibianhao;
+@property (nonatomic,copy) NSString * position;
 @end

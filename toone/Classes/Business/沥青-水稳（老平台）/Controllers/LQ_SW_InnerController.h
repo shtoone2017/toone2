@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LQ_SW_InnerController : UIViewController
+#import "MyViewController.h"
+@interface LQ_SW_InnerController : MyViewController
 @property (nonatomic,strong) NSDictionary * conditonDict;
 @end
