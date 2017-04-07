@@ -28,24 +28,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L94-QT-F8n" userLabel="界面容器">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
                                         <rect key="frame" x="40" y="50" width="240" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="9b4-lY-qYj"/>
                                             <constraint firstAttribute="width" constant="240" id="Xfw-XF-XEx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="混凝土信息管理系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
-                                        <rect key="frame" x="0.0" y="180" width="320" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广东云湛高速新阳段路面施工数据监控信息化管理系统" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
+                                        <rect key="frame" x="20" y="180" width="280" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="PyK-MR-vJD"/>
+                                            <constraint firstAttribute="height" constant="50" id="PyK-MR-vJD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.086274509803921567" green="0.21568627450980393" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nS-7K-nio" userLabel="账号">
-                                        <rect key="frame" x="50" y="230" width="220" height="40"/>
+                                        <rect key="frame" x="50" y="260" width="220" height="40"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL8-X2-6yl" userLabel="小标题">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="8"/>
@@ -99,7 +99,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26f-73-8GQ" userLabel="密码">
-                                        <rect key="frame" x="50" y="300" width="220" height="40"/>
+                                        <rect key="frame" x="50" y="330" width="220" height="40"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAK-2U-LxQ" userLabel="小标题">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="8"/>
@@ -153,7 +153,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-ge-ZfC">
-                                        <rect key="frame" x="60" y="370" width="200" height="40"/>
+                                        <rect key="frame" x="60" y="400" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.062745098039215685" green="0.59215686274509804" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="rWl-rq-d4q"/>
@@ -176,13 +176,13 @@
                                     <constraint firstItem="AH8-ge-ZfC" firstAttribute="top" secondItem="26f-73-8GQ" secondAttribute="bottom" constant="30" id="4pe-cR-skO"/>
                                     <constraint firstItem="2nS-7K-nio" firstAttribute="top" secondItem="u8r-Cb-PxP" secondAttribute="bottom" constant="30" id="6ca-8x-MBX"/>
                                     <constraint firstItem="AH8-ge-ZfC" firstAttribute="centerX" secondItem="L94-QT-F8n" secondAttribute="centerX" id="7CF-L7-hYd"/>
-                                    <constraint firstAttribute="trailing" secondItem="u8r-Cb-PxP" secondAttribute="trailing" id="D6B-S9-KgE"/>
+                                    <constraint firstAttribute="trailing" secondItem="u8r-Cb-PxP" secondAttribute="trailing" constant="20" id="D6B-S9-KgE"/>
                                     <constraint firstItem="3Ya-ql-6ty" firstAttribute="centerX" secondItem="L94-QT-F8n" secondAttribute="centerX" id="TDR-6p-nY9"/>
                                     <constraint firstItem="26f-73-8GQ" firstAttribute="centerX" secondItem="2nS-7K-nio" secondAttribute="centerX" id="Tco-Mh-qQm"/>
                                     <constraint firstItem="26f-73-8GQ" firstAttribute="top" secondItem="2nS-7K-nio" secondAttribute="bottom" constant="30" id="XhD-iF-ydK"/>
                                     <constraint firstItem="3Ya-ql-6ty" firstAttribute="top" secondItem="L94-QT-F8n" secondAttribute="top" constant="50" id="as5-Ef-cf4"/>
                                     <constraint firstItem="u8r-Cb-PxP" firstAttribute="top" secondItem="L94-QT-F8n" secondAttribute="top" constant="180" id="kmD-EL-aY8"/>
-                                    <constraint firstItem="u8r-Cb-PxP" firstAttribute="leading" secondItem="L94-QT-F8n" secondAttribute="leading" id="xfl-CW-FKT"/>
+                                    <constraint firstItem="u8r-Cb-PxP" firstAttribute="leading" secondItem="L94-QT-F8n" secondAttribute="leading" constant="20" id="xfl-CW-FKT"/>
                                     <constraint firstAttribute="height" constant="568" id="zOm-mK-NjP"/>
                                 </constraints>
                             </view>
@@ -230,6 +230,6 @@
     <resources>
         <image name="ic_lock_outline_blue_500_18dp" width="54" height="54"/>
         <image name="ic_person_outline_blue_500_18dp" width="54" height="54"/>
-        <image name="icon_logo" width="16" height="16"/>
+        <image name="icon-logo" width="16" height="16"/>
     </resources>
 </document>

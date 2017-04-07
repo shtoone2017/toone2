@@ -45,7 +45,7 @@
     UIButton * linker = [UIButton buttonWithType:UIButtonTypeCustom];
     linker.frame = CGRectMake(0, 0, Screen_w, 20);
     linker.center = CGPointMake(headerBtn.center.x, CGRectGetMaxY(nameLb.frame)+20);
-    NSString * tell = @"接口未返回tell";
+    NSString * tell = @"HAVE NO DATAS";
     NSString * linkerTitle = [NSString stringWithFormat:@"电话：%@",tell ?tell :@""];
     linker.titleLabel.font = [UIFont systemFontOfSize:14.0];
     [linker setTitle:linkerTitle forState:UIControlStateNormal];

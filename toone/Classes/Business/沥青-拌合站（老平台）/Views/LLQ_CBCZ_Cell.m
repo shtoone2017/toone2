@@ -86,6 +86,10 @@
                 int count = [[model.dataDict objectForKey:dict.allKeys.firstObject] intValue];
                 if(count >=1 && count <= 3){
                     for (int i = 1; i<=count; i++) {
+                        if (count ==2 && i==2) {
+                            break;
+                        }
+                        
                         UIImageView * imgv = [[UIImageView alloc] init];
                         imgv.frame = CGRectMake(0, 0, 15, 15);
                         imgv.image = [UIImage imageNamed:@"Yellow_3D_arrow_top.png"];
@@ -95,6 +99,9 @@
                 
                 if (count >=4 && count <= 6) {
                     for (int i = 4; i<=count; i++) {
+                        if (count ==5 && i==5) {
+                            break;
+                        }
                         UIImageView * imgv = [[UIImageView alloc] init];
                         imgv.frame = CGRectMake(15*(i-4), 0, 15, 15);
                         imgv.image = [UIImage imageNamed:@"Blue_3D_arrow_down.png"];
