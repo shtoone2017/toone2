@@ -13,23 +13,15 @@
 @property (weak, nonatomic) IBOutlet UIView *chartContrainer1;
 @property (weak, nonatomic) IBOutlet UIView *chartContrainer2;
 
+@property (weak, nonatomic) IBOutlet UILabel *hsLabel;
 
 
 
 @end
 @implementation SW_CLHS_ChatCell
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-   
-    
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)setHsTitle:(NSString *)hsTitle{
+    _hsTitle = hsTitle;
+    self.hsLabel.text = hsTitle;
 }
 -(void)setDatas1:(NSArray *)datas1{
     BarChartViewController * chart;

@@ -31,4 +31,7 @@
 @property (nonatomic,copy) NSString * chuzhi;
 //@property (nonatomic,copy) NSString * zzjgName;
 @property (nonatomic,copy) NSString * userFullName;
+
+//获取一个随机种子
+@property (nonatomic,copy) NSString * randomSeed;
 @end

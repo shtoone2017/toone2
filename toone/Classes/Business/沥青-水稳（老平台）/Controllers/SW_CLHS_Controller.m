@@ -36,7 +36,9 @@
 }
 -(void)loadUi{
     self.view.backgroundColor = [UIColor snowColor];
-    self.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",super.startTime,super.endTime];
+    self.sjLabel.numberOfLines = 2;
+    self.sjLabel.textColor = [UIColor blackColor];
+    self.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",self.startTime,self.endTime];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SW_CLHS_ChatCell" bundle:nil] forCellReuseIdentifier:@"SW_CLHS_ChatCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SW_CLHS_Cell" bundle:nil] forCellReuseIdentifier:@"SW_CLHS_Cell"];
@@ -113,7 +115,6 @@
         SW_CLHS_ChatCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CLHS_ChatCell"];
         cell.datas1 = self.datas1;
         cell.datas2 = self.datas2;
-        cell.sbLabel.text = self.sbName ? self.sbName : @"全部";
         [cell.unitButton addTarget:self action:@selector(choiceUnit:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }else{
@@ -121,7 +122,7 @@
         SW_CLHS_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CLHS_Cell"];
         SW_CLHS_Model * data = self.datas[indexPath.row-1];
         cell.data = data;
-        cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+       // cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
         return cell;
     }
     return nil;
@@ -177,7 +178,12 @@
             //
             weakSelf.startTime = (NSString*)obj1;
             weakSelf.endTime = (NSString*)obj2;
-            weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",weakSelf.startTime,weakSelf.endTime];
+      
+            if (weakSelf.sbName) {
+                weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@:\n%@开始~%@结束",weakSelf.sbName,weakSelf.startTime,weakSelf.endTime];
+            }else{
+                weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",weakSelf.startTime,weakSelf.endTime];
+            }
             [weakSelf loadData];
             FuncLog;
         }

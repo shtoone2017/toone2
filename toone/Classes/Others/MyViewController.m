@@ -18,15 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //1.移动手势
-
-    
-
-    
-    //3.获取开始、结束时间
-//    self.startTime = [TimeTools time_3_monthsAgo]; 
-//    self.endTime = [TimeTools currentTime];
-
 }
 -(NSString *)startTime{
     if (!_startTime) {

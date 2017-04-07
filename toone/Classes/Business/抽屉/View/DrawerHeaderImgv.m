@@ -34,7 +34,7 @@
     UILabel * nameLb = [[UILabel alloc] init];
     nameLb.frame = CGRectMake(0, 0, Screen_w, 20);
     nameLb.center = CGPointMake(headerBtn.center.x, CGRectGetMaxY(headerBtn.frame)+20);
-    NSString * acount = [UserDefaultsSetting shareSetting].userFullName;
+    NSString * acount = [UserDefaultsSetting_SW shareSetting].userFullName;
     nameLb.text = [NSString stringWithFormat:@"用户：%@",acount ?acount :@""];
     nameLb.textAlignment = NSTextAlignmentCenter;
     nameLb.font = [UIFont systemFontOfSize:14.0];
@@ -45,7 +45,7 @@
     UIButton * linker = [UIButton buttonWithType:UIButtonTypeCustom];
     linker.frame = CGRectMake(0, 0, Screen_w, 20);
     linker.center = CGPointMake(headerBtn.center.x, CGRectGetMaxY(nameLb.frame)+20);
-    NSString * tell = [UserDefaultsSetting shareSetting].userPhoneNum;
+    NSString * tell = @"接口未返回tell";
     NSString * linkerTitle = [NSString stringWithFormat:@"电话：%@",tell ?tell :@""];
     linker.titleLabel.font = [UIFont systemFontOfSize:14.0];
     [linker setTitle:linkerTitle forState:UIControlStateNormal];

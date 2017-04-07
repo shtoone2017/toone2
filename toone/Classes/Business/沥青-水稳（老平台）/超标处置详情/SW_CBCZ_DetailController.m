@@ -129,7 +129,7 @@
     }
     if (indexPath.section == 2) {
         if (EqualToString(self.chuli, @"1")) {
-            return 440;
+            return 405;
         }else{
             return 40;
         }
@@ -193,13 +193,24 @@
         }else{
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
             if (EqualToString([UserDefaultsSetting_SW shareSetting].shenehe, @"1")) {
-                UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
-                btn.frame = CGRectMake(0, 0, Screen_w, 40);
-                [btn setTitle:@"点击这里开始审核..." forState:UIControlStateNormal];
-                [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
-                btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
-                [cell.contentView addSubview:btn];
-                [btn addTarget:self action:@selector(goto_shenpi) forControlEvents:UIControlEventTouchUpInside];
+                
+                if (!EqualToString(self.chuli, @"1")) {
+                    UILabel * label = [[UILabel alloc] init];
+                    label.frame = CGRectMake(0, 0, Screen_w, 40);
+                    label.text = @"请先处置后再审批...";
+                    label.textAlignment = NSTextAlignmentCenter;
+                    label.font = [UIFont systemFontOfSize:12.0f];
+                    label.textColor = [UIColor blueColor];
+                    [cell.contentView addSubview:label];
+                }else{
+                    UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                    btn.frame = CGRectMake(0, 0, Screen_w, 40);
+                    [btn setTitle:@"点击这里开始审核..." forState:UIControlStateNormal];
+                    [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+                    btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                    [cell.contentView addSubview:btn];
+                    [btn addTarget:self action:@selector(goto_shenpi) forControlEvents:UIControlEventTouchUpInside];
+                }
             }else{
                 UILabel * label = [[UILabel alloc] init];
                 label.frame = CGRectMake(0, 0, Screen_w, 40);

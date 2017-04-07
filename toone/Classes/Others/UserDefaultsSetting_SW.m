@@ -41,7 +41,7 @@ static UserDefaultsSetting_SW * setting = nil;
     setting.chuzhi   = [defaults objectForKey:@"chuzhi_SWKey"];
 //    setting.zzjgName   = [defaults objectForKey:@"zzjgName_SWKey"];
     setting.userFullName   = [defaults objectForKey:@"userFullName_SWKey"];
-    
+    setting.randomSeed = [defaults objectForKey:@"seed_SWKey"];
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -62,12 +62,7 @@ static UserDefaultsSetting_SW * setting = nil;
 //    [defaults setObject:self.zzjgName   forKey:@"zzjgName_SWKey"];
     [defaults setObject:self.userFullName   forKey:@"userFullName_SWKey"];
     
-    
-    
-    
-    
-    
-    
+    [defaults setObject:self.randomSeed   forKey:@"seed_SWKey"];
     [defaults synchronize];
 }
 

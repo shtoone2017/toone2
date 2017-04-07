@@ -39,6 +39,8 @@
         self.img.width = 0;
         self.img.image = nil;
     }else{
+
+        
         if ([model.cblx intValue]<=3) {
             self.img.image = [UIImage imageNamed:@"zhengchao.png"];
             self.lb5.textColor = [UIColor redColor];

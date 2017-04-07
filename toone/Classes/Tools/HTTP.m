@@ -24,6 +24,7 @@ static AFHTTPSessionManager *afnManager = nil;
     });
     return networking;
 }
+
 -(void)requestMethod:(HTTPRequestMethod)method urlString:(NSString*)urlString parameter:(NSDictionary*)parameter success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlock{
      NSString * encodePath = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];//iOS7.0以后url编码
     switch (method) {

@@ -83,42 +83,26 @@
             [self.containerView addSubview:childrenCell];
             childrenCell.label1.text = [NSString stringWithFormat:@"%@ :",[model.fieldDict objectForKey:dict.allKeys.firstObject]];
             if ([dict.allKeys.firstObject hasPrefix:@"sjf"] || [dict.allKeys.firstObject hasPrefix:@"sjg"]) {
-                switch ([[model.dataDict objectForKey:dict.allKeys.firstObject] intValue]) {
-                    case 1:
-                        childrenCell.label2.text = @"上限初级超标";
-                        childrenCell.label2.backgroundColor = [UIColor redColor];
-                        break;
-                    case 2:
-                        childrenCell.label2.text = @"上限中级超标";
-                        childrenCell.label2.backgroundColor = [UIColor redColor];
-                        break;
-                    case 3:
-                        childrenCell.label2.text = @"上限高级超标";
-                        childrenCell.label2.backgroundColor = [UIColor redColor];
-                        break;
-                    case 4:
-                        childrenCell.label2.text = @"下限初级超标";
-                        childrenCell.label2.backgroundColor = [UIColor orangeColor];
-                        break;
-                    case 5:
-                        childrenCell.label2.text = @"下限中级超标";
-                        childrenCell.label2.backgroundColor = [UIColor orangeColor];
-                        break;
-                    case 6:
-                        childrenCell.label2.text = @"下限高级超标";
-                        childrenCell.label2.backgroundColor = [UIColor orangeColor];
-                        break;
-                    default:
-                        break;
+                int count = [[model.dataDict objectForKey:dict.allKeys.firstObject] intValue];
+                if(count >=1 && count <= 3){
+                    for (int i = 1; i<=count; i++) {
+                        UIImageView * imgv = [[UIImageView alloc] init];
+                        imgv.frame = CGRectMake(0, 0, 15, 15);
+                        imgv.image = [UIImage imageNamed:@"Yellow_3D_arrow_top.png"];
+                        [childrenCell.label2 addSubview:imgv];
+                    }
                 }
-                childrenCell.label2.font = [UIFont systemFontOfSize:9];
-                childrenCell.label2.textColor = [UIColor blueColor];
-                childrenCell.label2.y=2.5;
-                childrenCell.label2.width=60;
-                childrenCell.label2.height=10;
-                childrenCell.label2.textAlignment=1;
-                childrenCell.label2.layer.masksToBounds = YES;
-                childrenCell.label2.layer.cornerRadius = 5;
+                
+                if (count >=4 && count <= 6) {
+                    for (int i = 4; i<=count; i++) {
+                        UIImageView * imgv = [[UIImageView alloc] init];
+                        imgv.frame = CGRectMake(15*(i-4), 0, 15, 15);
+                        imgv.image = [UIImage imageNamed:@"Blue_3D_arrow_down.png"];
+                        [childrenCell.label2 addSubview:imgv];
+                    }
+                }
+                
+                childrenCell.label2.text = nil;
             }else{
                 childrenCell.label2.text = [model.dataDict  objectForKey:dict.allKeys.firstObject];
                 childrenCell.label2.backgroundColor = [UIColor clearColor];

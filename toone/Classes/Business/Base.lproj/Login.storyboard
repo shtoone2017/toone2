@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,10 +28,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L94-QT-F8n" userLabel="界面容器">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
-                                        <rect key="frame" x="40" y="60" width="240" height="80"/>
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
+                                        <rect key="frame" x="40" y="50" width="240" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="9b4-lY-qYj"/>
+                                            <constraint firstAttribute="height" constant="120" id="9b4-lY-qYj"/>
                                             <constraint firstAttribute="width" constant="240" id="Xfw-XF-XEx"/>
                                         </constraints>
                                     </imageView>
@@ -180,7 +180,7 @@
                                     <constraint firstItem="3Ya-ql-6ty" firstAttribute="centerX" secondItem="L94-QT-F8n" secondAttribute="centerX" id="TDR-6p-nY9"/>
                                     <constraint firstItem="26f-73-8GQ" firstAttribute="centerX" secondItem="2nS-7K-nio" secondAttribute="centerX" id="Tco-Mh-qQm"/>
                                     <constraint firstItem="26f-73-8GQ" firstAttribute="top" secondItem="2nS-7K-nio" secondAttribute="bottom" constant="30" id="XhD-iF-ydK"/>
-                                    <constraint firstItem="3Ya-ql-6ty" firstAttribute="top" secondItem="L94-QT-F8n" secondAttribute="top" constant="60" id="as5-Ef-cf4"/>
+                                    <constraint firstItem="3Ya-ql-6ty" firstAttribute="top" secondItem="L94-QT-F8n" secondAttribute="top" constant="50" id="as5-Ef-cf4"/>
                                     <constraint firstItem="u8r-Cb-PxP" firstAttribute="top" secondItem="L94-QT-F8n" secondAttribute="top" constant="180" id="kmD-EL-aY8"/>
                                     <constraint firstItem="u8r-Cb-PxP" firstAttribute="leading" secondItem="L94-QT-F8n" secondAttribute="leading" id="xfl-CW-FKT"/>
                                     <constraint firstAttribute="height" constant="568" id="zOm-mK-NjP"/>
@@ -229,7 +229,7 @@
     </scenes>
     <resources>
         <image name="ic_lock_outline_blue_500_18dp" width="54" height="54"/>
-        <image name="ic_logo_login" width="288" height="113"/>
         <image name="ic_person_outline_blue_500_18dp" width="54" height="54"/>
+        <image name="icon_logo" width="16" height="16"/>
     </resources>
 </document>

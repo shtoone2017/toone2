@@ -15,7 +15,6 @@
 @property (nonatomic,weak) IBOutlet UILabel  * lb3 ;//  处理原因：
 @property (nonatomic,weak) IBOutlet UILabel  * lb4 ;//  处理方式：
 @property (nonatomic,weak) IBOutlet UILabel  * lb5 ;//  处理结果：
-@property (nonatomic,weak) IBOutlet UILabel  * lb6 ;//  备注信息：
 @property (nonatomic,weak) IBOutlet UIImageView  * imgv ;//  处置：
 
 @property (nonatomic,strong) UIImage * filePathImage;
@@ -30,7 +29,6 @@
     self.lb3.text = model.wentiyuanyin;
     self.lb4.text = model.chulifangshi;
     self.lb5.text = model.chulijieguo;
-    self.lb6.text = model.beizhu;
 
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        if (self.filePathImage == nil) {

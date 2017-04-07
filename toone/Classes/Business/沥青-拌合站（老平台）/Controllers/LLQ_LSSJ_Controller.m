@@ -38,7 +38,9 @@
     [self loadData];
 }
 -(void)loadUI{
-    self.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",super.startTime,super.endTime];
+    self.sjLabel.numberOfLines = 2;
+    self.sjLabel.textColor = [UIColor blackColor];
+    self.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",self.startTime,self.endTime];
     
     self.view.backgroundColor = [UIColor snowColor];
     self.tableView.tableFooterView = [[UIView alloc] init];
@@ -159,7 +161,7 @@
             weakSelf.endTime = (NSString*)obj2;
             //重新切换titleButton ， 搜索页码应该回归第一页码
             weakSelf.pageNo = @"1";
-            weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",weakSelf.startTime,weakSelf.endTime];
+            weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",weakSelf.startTime,weakSelf.endTime];
             [weakSelf loadData];
             FuncLog;
         }

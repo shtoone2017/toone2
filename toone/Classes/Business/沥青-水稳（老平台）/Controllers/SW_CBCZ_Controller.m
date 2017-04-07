@@ -148,22 +148,32 @@
         case 1://初级
             self.pageNo = self.pageNo1;
             self.chaobiaolx =@"1";
-            if(self.datas1==nil) [self loadData];
+            
+            if(self.datas1==nil) {
+                self.cllx = @"0";
+                [self loadData];
+            }
             break;
         case 2://中级
             self.pageNo = self.pageNo2;
             self.chaobiaolx =@"2";
-            if(self.datas2==nil) [self loadData];
+            if(self.datas2==nil) {
+                self.cllx = @"0";
+                [self loadData];
+            }
             break;
         case 3://高级
             self.pageNo = self.pageNo3;
             self.chaobiaolx =@"3";
-            if(self.datas3==nil) [self loadData];
+            if(self.datas3==nil) {
+                self.cllx = @"0";
+                [self loadData];
+            }
             break;
         default:
             break;
     }
-    self.cllx = @"";
+
 }
 -(void)addTitleButtonAnimaiton:(UIButton*)sender{
     [self.button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -327,6 +337,7 @@
         if ([key hasPrefix:@"bzhName"] ||
             [key hasPrefix:@"clTime"] ||
             [key hasPrefix:@"zcl"] ||
+            [key hasPrefix:@"bianhao"] ||
             ([key hasPrefix:@"sj"] && [[model.dataDict objectForKey:key] intValue]>=1)) {
             index++;
         }
@@ -393,7 +404,7 @@
             weakSelf.endTime = (NSString*)obj2;
             //重新切换titleButton ， 搜索页码应该回归第一页码
             weakSelf.pageNo = @"1";
-            weakSelf.cllx = @"";
+            weakSelf.cllx = @"0";
             switch (buttonTag) {
                 case 10:
                     weakSelf.cllx = @"0";
@@ -465,6 +476,15 @@
 }
 -(void)dealloc{
     FuncLog;
+    [[UserDefaultsSetting_SW shareSetting] removeObserver:self forKeyPath:@"randomSeed"];
 }
-
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting_SW shareSetting] addObserver:self forKeyPath:@"randomSeed" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self loadData];
+}
 @end
