@@ -48,5 +48,11 @@
         }
     }
 }
-
+-(void)setColor:(UIColor *)color{
+    self.lb2.textColor = color;
+    self.lb3.textColor = color;
+    self.lb4.textColor = color;
+    self.lb5.textColor = color;
+    self.lb6.textColor = color;
+}
 @end

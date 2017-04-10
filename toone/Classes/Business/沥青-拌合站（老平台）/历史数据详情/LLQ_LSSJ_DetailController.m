@@ -38,6 +38,7 @@
 }
 -(void)loadUi{
      self.tb.tableFooterView = [[UIView alloc] init];
+    self.tb.separatorColor = [UIColor clearColor];
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_LSSJ_Detail_HeadCell" bundle:nil] forCellReuseIdentifier:@"LLQ_LSSJ_Detail_HeadCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_LSSJ_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"LLQ_LSSJ_Detail_DataCell"];
@@ -162,20 +163,23 @@
     if (indexPath.section == 0) {
         LLQ_LSSJ_Detail_HeadCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_LSSJ_Detail_HeadCell"];
         cell.model = self.headModel;
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
     if (indexPath.section == 1) {
         LLQ_LSSJ_Detail_DataCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_LSSJ_Detail_DataCell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         if (indexPath.row > 0) {
             LLQ_LSSJ_Detail_Data * data = indexPath.row ==0 ? nil :self.datas[indexPath.row-1];
-            cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            //cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            cell.color = [UIColor blackColor];
             cell.model= data;
         }
         return cell;
     }
     if (indexPath.section == 2) {
         LLQ_LSSJ_Detail_ChartCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_LSSJ_Detail_ChartCell"];
-        
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         if (self.titles.count > 0) {
             SGLineDIY * line = [[SGLineDIY alloc] initWithFrame:CGRectMake(0, 0, Screen_w, 180) data:self.charts title:self.titles color:self.colors];
             line.backgroundColor = [UIColor whiteColor];

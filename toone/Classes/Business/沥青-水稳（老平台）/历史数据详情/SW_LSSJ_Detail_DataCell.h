@@ -10,4 +10,5 @@
 @class SW_LSSJ_Detail_Data;
 @interface SW_LSSJ_Detail_DataCell : UITableViewCell
 @property (nonatomic) SW_LSSJ_Detail_Data * model;
+@property (nonatomic,strong) UIColor * color;
 @end

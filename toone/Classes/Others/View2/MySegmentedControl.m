@@ -20,6 +20,8 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
+    self.button2.backgroundColor = BLUECOLOR;
+    self.button3.backgroundColor = BLUECOLOR;
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 3.0;
     self.layer.borderColor = [UIColor whiteColor].CGColor;

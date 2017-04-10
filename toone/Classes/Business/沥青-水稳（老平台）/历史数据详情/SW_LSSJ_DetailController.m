@@ -175,19 +175,23 @@
     if (indexPath.section == 0) {
         SW_LSSJ_Detail_HeadCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Detail_HeadCell"];
         cell.model = self.headModel;
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
     if (indexPath.section == 1) {
         SW_LSSJ_Detail_DataCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Detail_DataCell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         if (indexPath.row > 0) {
             SW_LSSJ_Detail_Data * data = indexPath.row ==0 ? nil :self.datas[indexPath.row-1];
-            cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            //cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            cell.color = [UIColor blackColor];
             cell.model= data;
         }
         return cell;
     }
     if (indexPath.section == 2) {
         SW_LSSJ_Detail_ChartCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Detail_ChartCell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         if (self.titles.count > 0) {
             SGLineDIY * line = [[SGLineDIY alloc] initWithFrame:CGRectMake(0, 0, Screen_w, 180) data:self.charts title:self.titles color:self.colors];
             line.backgroundColor = [UIColor whiteColor];
@@ -199,6 +203,7 @@
     }
     if (indexPath.section == 3) {
         SW_LSSJ_Detail_Chart2Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Detail_Chart2Cell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         if (indexPath.row > 0) {
             SW_LSSJ_Detail_Chart * model = indexPath.row ==0 ? nil :self.chartDatas[indexPath.row-1];
             cell.model= model;

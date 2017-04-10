@@ -47,6 +47,7 @@
     FuncLog;
 }
 -(void)loadUi{
+    self.tb.separatorColor = [UIColor clearColor];
      self.tb.tableFooterView = [[UIView alloc] init];
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"SW_CBCZ_Detail_HeadCell" bundle:nil] forCellReuseIdentifier:@"SW_CBCZ_Detail_HeadCell"];
@@ -146,14 +147,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         SW_CBCZ_Detail_HeadCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Detail_HeadCell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         cell.model = self.headModel;
         return cell;
     }
     if (indexPath.section == 1) {
         SW_CBCZ_Detail_DataCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Detail_DataCell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         if (indexPath.row > 0) {
             SW_CDCZ_Detail_swData * data = indexPath.row ==0 ? nil :self.datas[indexPath.row-1];
-            cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            //cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            cell.color = [UIColor blackColor];
             cell.model= data;
         }
         return cell;
@@ -161,10 +165,12 @@
     if (indexPath.section == 2) {
         if (EqualToString(self.chuli, @"1")) {
             SW_CBCZ_Detail_ChuLi_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Detail_ChuLi_Cell"];
+            cell.selectionStyle = UITableViewCellSeparatorStyleNone;
             cell.model = self.swjgModel;
             return cell;
         }else{
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            cell.selectionStyle = UITableViewCellSeparatorStyleNone;
             if (EqualToString([UserDefaultsSetting_SW shareSetting].chuzhi, @"1")) {
                 UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
                 btn.frame = CGRectMake(0, 0, Screen_w, 40);
@@ -189,9 +195,11 @@
         if (EqualToString(self.shenpi, @"1")) {
             SW_CBCZ_Detail_ShenPi_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Detail_ShenPi_Cell"];
             cell.model = self.swjgModel;
+            cell.selectionStyle = UITableViewCellSeparatorStyleNone;
             return cell;
         }else{
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            cell.selectionStyle = UITableViewCellSeparatorStyleNone;
             if (EqualToString([UserDefaultsSetting_SW shareSetting].shenehe, @"1")) {
                 
                 if (!EqualToString(self.chuli, @"1")) {
