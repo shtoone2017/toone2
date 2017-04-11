@@ -10,10 +10,16 @@
 #import "AFNetworking.h"
 
 
-
-@implementation HTTP
 static HTTP *networking = nil;
 static AFHTTPSessionManager *afnManager = nil;
+@implementation HTTP
+
++(void)requestMethod:(HTTPRequestMethod)method urlString:(NSString*)urlString parameter:(NSDictionary*)parameter success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlock{
+    [self shareAFNNetworking];
+    [networking requestMethod:method urlString:urlString parameter:parameter success:successBlock failure:failureBlock];
+}
+
+
 +(HTTP*)shareAFNNetworking{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

@@ -221,6 +221,8 @@
         if (weakSelf.zzjgCallBackBlock) {
             weakSelf.zzjgCallBackBlock(weakObj);
         }
+        
+        
         [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     

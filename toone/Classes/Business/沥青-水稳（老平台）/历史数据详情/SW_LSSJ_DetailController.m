@@ -38,7 +38,8 @@
     FuncLog;
 }
 -(void)loadUi{
-     self.tb.tableFooterView = [[UIView alloc] init];
+    self.tb.tableFooterView = [[UIView alloc] init];
+    self.tb.separatorColor = [UIColor clearColor];
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_HeadCell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_HeadCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_DataCell"];
