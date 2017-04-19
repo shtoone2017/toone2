@@ -20,7 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    if (self.userGroupId == nil) {//直接跳入试验室
+        self.userGroupId = [UserDefaultsSetting shareSetting].departId;
+        
+        UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
+        btn3.tag  = 3;
+        [btn3 addTarget:self action:@selector(pan) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
+    }
+    
+    
+
     
     self.index =1;
     self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_YLSY_Controller"];

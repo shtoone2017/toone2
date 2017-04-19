@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUi];
+    [self loadData];
 }
 
 -(void)dealloc{
@@ -51,7 +52,7 @@
      [self.tb registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ShenPi_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ShenPi_Cell"];
 }
 
--(NSMutableArray *)datas{
+-(void)loadData{
     if (!_datas) {
         //添加指示器
         [Tools showActivityToView:self.view];
@@ -83,20 +84,20 @@
             weakSelf.datas = datas;
             [weakSelf.tb reloadData];
             
-#pragma mark - 因布局设计有卡顿现象，优化方法如下
-            weakSelf.tb.contentOffset = CGPointMake(0, 220);
-            [UIView animateWithDuration:0.15 animations:^{
-                weakSelf.tb.contentOffset = CGPointMake(0, 0);
-            } completion:^(BOOL finished) {
+//#pragma mark - 因布局设计有卡顿现象，优化方法如下
+//            weakSelf.tb.contentOffset = CGPointMake(0, 220);
+//            [UIView animateWithDuration:0.15 animations:^{
+//                weakSelf.tb.contentOffset = CGPointMake(0, 0);
+//            } completion:^(BOOL finished) {
                 //移除指示器
                 [Tools removeActivity];
                 
-            }];
+//            }];
             
         } failure:^(NSError *error) {
         }];
     }
-    return _datas;
+
 }
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

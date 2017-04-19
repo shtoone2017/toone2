@@ -32,6 +32,7 @@ static UserDefaultsSetting * setting = nil;
     setting.loginDepartId = [defaults objectForKey:@"loginDepartIdKey"];
     setting.departName = [defaults objectForKey:@"departNameKey"];
     setting.userRole = [defaults objectForKey:@"userRoleKey"];
+    setting.type = [defaults objectForKey:@"typeKey"];//层级
     setting.login    = [defaults boolForKey:@"loginKey"];
     setting.enterApplication = [defaults boolForKey:@"enterApplicationKey"];
     setting.userPhoneNum = [defaults objectForKey:@"userPhoneNumKey"];
@@ -58,6 +59,7 @@ static UserDefaultsSetting * setting = nil;
     [defaults setObject:self.loginDepartId forKey:@"loginDepartIdKey"];
     [defaults setObject:self.departName forKey:@"departNameKey"];
     [defaults setObject:self.userRole forKey:@"userRoleKey"];
+    [defaults setObject:self.type forKey:@"typeKey"];
     [defaults setObject:self.userPhoneNum forKey:@"userPhoneNumKey"];
     [defaults setObject:self.userFullName forKey:@"userFullNameKey"];
     [defaults setBool:self.login            forKey:@"loginKey"];

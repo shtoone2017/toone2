@@ -19,6 +19,7 @@
 @property (nonatomic,copy) NSString * departId;
 @property (nonatomic,copy) NSString * departName;
 @property (nonatomic,copy) NSString * userRole;
+@property (nonatomic,copy) NSString * type;//层级
 @property (nonatomic,copy) NSString * userPhoneNum;
 @property (nonatomic,copy) NSString * userFullName;
 @property (nonatomic, strong) NSNumber *funtype;

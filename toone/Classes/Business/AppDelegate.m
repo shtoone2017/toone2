@@ -28,6 +28,11 @@
 //        }
         
     }
+    
+    //保存时间
+    [UserDefaultsSetting shareSetting].startTime = [TimeTools time_3_monthsAgo] ;
+    [UserDefaultsSetting shareSetting].endTime   = [TimeTools currentTime] ;
+    [[UserDefaultsSetting shareSetting] saveToSandbox];
     return YES;
 }
 
