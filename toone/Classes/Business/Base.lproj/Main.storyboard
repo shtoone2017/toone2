@@ -3810,7 +3810,7 @@
             </objects>
             <point key="canvasLocation" x="1038" y="5857"/>
         </scene>
-        <!--拌合站-->
+        <!--沥青-->
         <scene sceneID="hXh-oK-AwE">
             <objects>
                 <viewController id="Wls-Mz-zua" customClass="LLQ_BHZ_Controller" sceneMemberID="viewController">
@@ -3876,7 +3876,7 @@
                             <constraint firstItem="PxX-sg-UWh" firstAttribute="top" secondItem="HQx-v0-1BB" secondAttribute="bottom" id="mMo-zE-gfE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="拌合站" id="hYK-YZ-t0b"/>
+                    <navigationItem key="navigationItem" title="沥青" id="hYK-YZ-t0b"/>
                     <connections>
                         <outlet property="containerView" destination="PxX-sg-UWh" id="7NJ-Oz-1cR"/>
                         <outlet property="departName_Label" destination="Glk-GR-JpA" id="exs-Wj-an6"/>
