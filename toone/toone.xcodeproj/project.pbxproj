@@ -461,6 +461,20 @@
 		D2E04DE71E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqjg.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E04DD51E83ADCC009E9C6A /* LLQ_CBCZ_Detail_lqjg.m */; };
 		D2E04DE81E83ADCD009E9C6A /* LLQ_CBCZ_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E04DD71E83ADCC009E9C6A /* LLQ_CBCZ_DetailController.m */; };
 		D2E04DE91E83ADCD009E9C6A /* LLQ_CDCZ_Detail_lqData.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E04DD91E83ADCC009E9C6A /* LLQ_CDCZ_Detail_lqData.m */; };
+		D2E838491EA75651003E0A7B /* PersonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838471EA75651003E0A7B /* PersonVC.m */; };
+		D2E8384A1EA75651003E0A7B /* PersonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E838481EA75651003E0A7B /* PersonVC.xib */; };
+		D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E8384C1EA756A9003E0A7B /* JumpVC.m */; };
+		D2E8384F1EA756A9003E0A7B /* JumpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E8384D1EA756A9003E0A7B /* JumpVC.xib */; };
+		D2E838511EA7578B003E0A7B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E838501EA7578B003E0A7B /* arrow.png */; };
+		D2E838651EA75AF7003E0A7B /* ScanSuccessJumpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838551EA75AF7003E0A7B /* ScanSuccessJumpVC.m */; };
+		D2E838661EA75AF7003E0A7B /* SGGenerateQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838571EA75AF7003E0A7B /* SGGenerateQRCodeVC.m */; };
+		D2E838671EA75AF7003E0A7B /* SGScanningQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838591EA75AF7003E0A7B /* SGScanningQRCodeVC.m */; };
+		D2E838681EA75AF7003E0A7B /* SGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E8385C1EA75AF7003E0A7B /* SGAlertView.m */; };
+		D2E838691EA75AF7003E0A7B /* sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = D2E8385E1EA75AF7003E0A7B /* sound.caf */; };
+		D2E8386A1EA75AF7003E0A7B /* SGQRCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838611EA75AF7003E0A7B /* SGQRCodeTool.m */; };
+		D2E8386B1EA75AF7003E0A7B /* SGScanningQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838641EA75AF7003E0A7B /* SGScanningQRCodeView.m */; };
+		D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E8386D1EA75E81003E0A7B /* DataVC.m */; };
+		D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E8386E1EA75E81003E0A7B /* DataVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1292,6 +1306,29 @@
 		D2E04DD71E83ADCC009E9C6A /* LLQ_CBCZ_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_CBCZ_DetailController.m; sourceTree = "<group>"; };
 		D2E04DD81E83ADCC009E9C6A /* LLQ_CDCZ_Detail_lqData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_CDCZ_Detail_lqData.h; sourceTree = "<group>"; };
 		D2E04DD91E83ADCC009E9C6A /* LLQ_CDCZ_Detail_lqData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_CDCZ_Detail_lqData.m; sourceTree = "<group>"; };
+		D2E838461EA75651003E0A7B /* PersonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonVC.h; sourceTree = "<group>"; };
+		D2E838471EA75651003E0A7B /* PersonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonVC.m; sourceTree = "<group>"; };
+		D2E838481EA75651003E0A7B /* PersonVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonVC.xib; sourceTree = "<group>"; };
+		D2E8384B1EA756A9003E0A7B /* JumpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpVC.h; sourceTree = "<group>"; };
+		D2E8384C1EA756A9003E0A7B /* JumpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpVC.m; sourceTree = "<group>"; };
+		D2E8384D1EA756A9003E0A7B /* JumpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JumpVC.xib; sourceTree = "<group>"; };
+		D2E838501EA7578B003E0A7B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		D2E838541EA75AF7003E0A7B /* ScanSuccessJumpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanSuccessJumpVC.h; sourceTree = "<group>"; };
+		D2E838551EA75AF7003E0A7B /* ScanSuccessJumpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanSuccessJumpVC.m; sourceTree = "<group>"; };
+		D2E838561EA75AF7003E0A7B /* SGGenerateQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGenerateQRCodeVC.h; sourceTree = "<group>"; };
+		D2E838571EA75AF7003E0A7B /* SGGenerateQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGenerateQRCodeVC.m; sourceTree = "<group>"; };
+		D2E838581EA75AF7003E0A7B /* SGScanningQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScanningQRCodeVC.h; sourceTree = "<group>"; };
+		D2E838591EA75AF7003E0A7B /* SGScanningQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScanningQRCodeVC.m; sourceTree = "<group>"; };
+		D2E8385B1EA75AF7003E0A7B /* SGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAlertView.h; sourceTree = "<group>"; };
+		D2E8385C1EA75AF7003E0A7B /* SGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAlertView.m; sourceTree = "<group>"; };
+		D2E8385E1EA75AF7003E0A7B /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
+		D2E838601EA75AF7003E0A7B /* SGQRCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeTool.h; sourceTree = "<group>"; };
+		D2E838611EA75AF7003E0A7B /* SGQRCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeTool.m; sourceTree = "<group>"; };
+		D2E838631EA75AF7003E0A7B /* SGScanningQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScanningQRCodeView.h; sourceTree = "<group>"; };
+		D2E838641EA75AF7003E0A7B /* SGScanningQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScanningQRCodeView.m; sourceTree = "<group>"; };
+		D2E8386C1EA75E81003E0A7B /* DataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVC.h; sourceTree = "<group>"; };
+		D2E8386D1EA75E81003E0A7B /* DataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVC.m; sourceTree = "<group>"; };
+		D2E8386E1EA75E81003E0A7B /* DataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataVC.xib; sourceTree = "<group>"; };
 		E261BE7D3BCFE91ACDA2295B /* Pods-toone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.release.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2486,6 +2523,7 @@
 				D20063721DFF86800021E293 /* AppDelegate.m */,
 				D200637B1DFF86800021E293 /* Toone-Bridging-Header.h */,
 				D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */,
+				D280AAE21EA7529200EB6E69 /* 二维码扫一扫 */,
 				8CBD73461E09320C00A0C991 /* 组织机构 */,
 				D26AE9931E7A37A90090761D /* 沥青-拌合站（老平台） */,
 				D272EF971E7BBE3A00D0991D /* 沥青-水稳（老平台） */,
@@ -3560,6 +3598,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D280AAE21EA7529200EB6E69 /* 二维码扫一扫 */ = {
+			isa = PBXGroup;
+			children = (
+				D2E838521EA75AF7003E0A7B /* SGQRCode */,
+				D2E838501EA7578B003E0A7B /* arrow.png */,
+				D2E8384B1EA756A9003E0A7B /* JumpVC.h */,
+				D2E8384C1EA756A9003E0A7B /* JumpVC.m */,
+				D2E8384D1EA756A9003E0A7B /* JumpVC.xib */,
+				D2E8386C1EA75E81003E0A7B /* DataVC.h */,
+				D2E8386D1EA75E81003E0A7B /* DataVC.m */,
+				D2E8386E1EA75E81003E0A7B /* DataVC.xib */,
+				D2E838461EA75651003E0A7B /* PersonVC.h */,
+				D2E838471EA75651003E0A7B /* PersonVC.m */,
+				D2E838481EA75651003E0A7B /* PersonVC.xib */,
+			);
+			path = "二维码扫一扫";
+			sourceTree = "<group>";
+		};
 		D2CF6B5F1E011728003AE61D /* EXP6 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3603,6 +3659,66 @@
 				D2E04DD91E83ADCC009E9C6A /* LLQ_CDCZ_Detail_lqData.m */,
 			);
 			path = "超标处置详情";
+			sourceTree = "<group>";
+		};
+		D2E838521EA75AF7003E0A7B /* SGQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				D2E838531EA75AF7003E0A7B /* Controller */,
+				D2E8385A1EA75AF7003E0A7B /* SGAlertView */,
+				D2E8385D1EA75AF7003E0A7B /* Sound */,
+				D2E8385F1EA75AF7003E0A7B /* Tool */,
+				D2E838621EA75AF7003E0A7B /* View */,
+			);
+			path = SGQRCode;
+			sourceTree = "<group>";
+		};
+		D2E838531EA75AF7003E0A7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D2E838541EA75AF7003E0A7B /* ScanSuccessJumpVC.h */,
+				D2E838551EA75AF7003E0A7B /* ScanSuccessJumpVC.m */,
+				D2E838561EA75AF7003E0A7B /* SGGenerateQRCodeVC.h */,
+				D2E838571EA75AF7003E0A7B /* SGGenerateQRCodeVC.m */,
+				D2E838581EA75AF7003E0A7B /* SGScanningQRCodeVC.h */,
+				D2E838591EA75AF7003E0A7B /* SGScanningQRCodeVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D2E8385A1EA75AF7003E0A7B /* SGAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D2E8385B1EA75AF7003E0A7B /* SGAlertView.h */,
+				D2E8385C1EA75AF7003E0A7B /* SGAlertView.m */,
+			);
+			path = SGAlertView;
+			sourceTree = "<group>";
+		};
+		D2E8385D1EA75AF7003E0A7B /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				D2E8385E1EA75AF7003E0A7B /* sound.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		D2E8385F1EA75AF7003E0A7B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D2E838601EA75AF7003E0A7B /* SGQRCodeTool.h */,
+				D2E838611EA75AF7003E0A7B /* SGQRCodeTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		D2E838621EA75AF7003E0A7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2E838631EA75AF7003E0A7B /* SGScanningQRCodeView.h */,
+				D2E838641EA75AF7003E0A7B /* SGScanningQRCodeView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3673,6 +3789,7 @@
 				D219441E1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */,
 				42AC71531E30C393007D8F57 /* EXPrimaryCell.xib in Resources */,
+				D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */,
 				18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
 				D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
@@ -3701,6 +3818,7 @@
 				D20065361DFF86B30021E293 /* MultipleBarChartViewController.xib in Resources */,
 				8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */,
 				42AC71491E30C393007D8F57 /* DCZ_CJ_Inner_Cell.xib in Resources */,
+				D2E838691EA75AF7003E0A7B /* sound.caf in Resources */,
 				D200652A1DFF86B30021E293 /* HalfPieChartViewController.xib in Resources */,
 				D2E04DDF1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_DataCell.xib in Resources */,
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
@@ -3740,6 +3858,7 @@
 				D25977721E76B0BC00507BF2 /* SW_ZZJG_Cell.xib in Resources */,
 				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
+				D2E8384A1EA75651003E0A7B /* PersonVC.xib in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
 				D20065301DFF86B30021E293 /* LineChart2ViewController.xib in Resources */,
 				D272EFC61E7BBE3A00D0991D /* SW_CLHS_ChatCell.xib in Resources */,
@@ -3760,6 +3879,7 @@
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				D220E2C31E8D00E1001A1C14 /* DrawerController.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
+				D2E8384F1EA756A9003E0A7B /* JumpVC.xib in Resources */,
 				42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */,
 				D219437C1E81006700FC0B38 /* Exp52_Xib_View.xib in Resources */,
 				42AC716A1E30C393007D8F57 /* DayQueryTableViewCell.xib in Resources */,
@@ -3768,6 +3888,7 @@
 				42AC71671E30C393007D8F57 /* DayDetailsCell.xib in Resources */,
 				8CBD72E81E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.xib in Resources */,
 				D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */,
+				D2E838511EA7578B003E0A7B /* arrow.png in Resources */,
 				42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */,
 				D24DE9221E80BF25006831A2 /* LLQ_CLHS_Cell.xib in Resources */,
 				D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */,
@@ -3873,13 +3994,16 @@
 				8CBD72E41E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsg.m in Sources */,
 				187C73091E30B1810072F33A /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				42AC71481E30C393007D8F57 /* DCZ_CJ_Inner_Cell.m in Sources */,
+				D2E838661EA75AF7003E0A7B /* SGGenerateQRCodeVC.m in Sources */,
 				D200647D1DFF86800021E293 /* HNT_TJFX_Model.m in Sources */,
 				D200649D1DFF86800021E293 /* UIButton+Img_20.m in Sources */,
 				187C72FA1E30B1810072F33A /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
+				D2E838681EA75AF7003E0A7B /* SGAlertView.m in Sources */,
 				D272EFB81E7BBE3A00D0991D /* LQ_SW_InnerController.m in Sources */,
 				187C72F41E30B1810072F33A /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				D272EFBC1E7BBE3A00D0991D /* SW_CBCZ_Model.m in Sources */,
 				D20065A91DFFE28D0021E293 /* HNT_BHZ_SB_Controller.m in Sources */,
+				D2E838651EA75AF7003E0A7B /* ScanSuccessJumpVC.m in Sources */,
 				D26AE9991E7A38A50090761D /* LLQ_BHZ_Controller.m in Sources */,
 				D200649C1DFF86800021E293 /* NSString+Separate.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
@@ -3914,6 +4038,7 @@
 				42AC71B91E30C423007D8F57 /* SGBarChart.m in Sources */,
 				42AC71781E30C393007D8F57 /* ProduQueryModel.m in Sources */,
 				42AC71761E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.m in Sources */,
+				D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */,
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
 				42AC71B81E30C423007D8F57 /* SGBar.m in Sources */,
@@ -3944,6 +4069,7 @@
 				D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */,
 				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
 				42AC72191E30C576007D8F57 /* LqNodeModel.m in Sources */,
+				D2E8386B1EA75AF7003E0A7B /* SGScanningQRCodeView.m in Sources */,
 				D200649F1DFF86800021E293 /* MyModel.m in Sources */,
 				8CBD72E71E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.m in Sources */,
 				D20064421DFF86800021E293 /* CJDecisionView.m in Sources */,
@@ -4032,6 +4158,7 @@
 				D20065171DFF86B30021E293 /* RadarMarkerView.swift in Sources */,
 				42AC71751E30C393007D8F57 /* ProductionDetailsM.m in Sources */,
 				42AC716E1E30C393007D8F57 /* LQ_CLHS_Cell.m in Sources */,
+				D2E838491EA75651003E0A7B /* PersonVC.m in Sources */,
 				D20064931DFF86800021E293 /* Exp1View.m in Sources */,
 				D219437B1E81006700FC0B38 /* Exp52_Xib_View.m in Sources */,
 				42AC720A1E30C576007D8F57 /* TreeTableView.m in Sources */,
@@ -4080,6 +4207,7 @@
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
 				D20064721DFF86800021E293 /* HNT_YLSY_DetailModel.m in Sources */,
 				D21944031E81204800FC0B38 /* HNT_CLHS_ChatCell.m in Sources */,
+				D2E838671EA75AF7003E0A7B /* SGScanningQRCodeVC.m in Sources */,
 				D21943941E810F6C00FC0B38 /* LLQ_LSSJ_Model.m in Sources */,
 				42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
@@ -4097,6 +4225,7 @@
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
 				D2E04DE61E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqHead.m in Sources */,
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
+				D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */,
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
 				42AC71C21E30C423007D8F57 /* SGPieChart.m in Sources */,
 				187C72F71E30B1810072F33A /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
@@ -4140,6 +4269,7 @@
 				D235E3041E84A9B000EE4459 /* SW_LSSJ_DetailController.m in Sources */,
 				187C72FD1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				42AC717E1E30C393007D8F57 /* LQ_Model.m in Sources */,
+				D2E8386A1EA75AF7003E0A7B /* SGQRCodeTool.m in Sources */,
 				42AC71501E30C393007D8F57 /* disposal_C_Model.m in Sources */,
 				8CE976561E0BF1FF0016A858 /* MySJxib.m in Sources */,
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,

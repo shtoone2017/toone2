@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "PersonVC.h"
+#import "MyNavigationController.h"
 @interface ViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet NoCopyTextField *acountTextField;
 @property (weak, nonatomic) IBOutlet NoCopyTextField *passwordTextField;
@@ -163,8 +164,17 @@
                 
                 //界面跳转
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    if(EqualToString(Format(json[@"lqupdata"]), @"1")){//进入扫码界面
+                        PersonVC * vc = [[PersonVC alloc] init];
+                        vc.userFullName = json[@"userFullName"];
+                        MyNavigationController * nc = [[MyNavigationController alloc] initWithRootViewController:vc];
+                        [UIApplication sharedApplication].keyWindow.rootViewController = nc;
+                        
+                    }else{
+                        id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    }
+                   
                     [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });
             }else{
