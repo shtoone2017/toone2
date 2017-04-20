@@ -40,6 +40,10 @@
             DataVC * vc = [[DataVC alloc] init];
             vc.datas = @[@"普通",@"改性"] ;
             vc.title = @"沥青类型";
+            __weak typeof(self) weakSelf = self;
+            vc.callBlock = ^(NSString * txt){
+                weakSelf.typeLabel.text = txt;
+            };
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
@@ -47,6 +51,10 @@
             DataVC * vc = [[DataVC alloc] init];
             vc.datas = @[@"上面",@"中间" ,@"下面"] ;
             vc.title = @"层面";
+            __weak typeof(self) weakSelf = self;
+            vc.callBlock = ^(NSString * txt){
+                weakSelf.cengmianLabel.text = txt;
+            };
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

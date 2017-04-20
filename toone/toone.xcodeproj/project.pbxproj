@@ -465,7 +465,6 @@
 		D2E8384A1EA75651003E0A7B /* PersonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E838481EA75651003E0A7B /* PersonVC.xib */; };
 		D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E8384C1EA756A9003E0A7B /* JumpVC.m */; };
 		D2E8384F1EA756A9003E0A7B /* JumpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E8384D1EA756A9003E0A7B /* JumpVC.xib */; };
-		D2E838511EA7578B003E0A7B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E838501EA7578B003E0A7B /* arrow.png */; };
 		D2E838651EA75AF7003E0A7B /* ScanSuccessJumpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838551EA75AF7003E0A7B /* ScanSuccessJumpVC.m */; };
 		D2E838661EA75AF7003E0A7B /* SGGenerateQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838571EA75AF7003E0A7B /* SGGenerateQRCodeVC.m */; };
 		D2E838671EA75AF7003E0A7B /* SGScanningQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838591EA75AF7003E0A7B /* SGScanningQRCodeVC.m */; };
@@ -475,6 +474,11 @@
 		D2E8386B1EA75AF7003E0A7B /* SGScanningQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838641EA75AF7003E0A7B /* SGScanningQRCodeView.m */; };
 		D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E8386D1EA75E81003E0A7B /* DataVC.m */; };
 		D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E8386E1EA75E81003E0A7B /* DataVC.xib */; };
+		D2E838791EA83D7B003E0A7B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E838761EA83D7B003E0A7B /* arrow.png */; };
+		D2E8387B1EA83D7B003E0A7B /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E838781EA83D7B003E0A7B /* user.png */; };
+		D2E8387D1EA8445F003E0A7B /* user2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E8387C1EA8445F003E0A7B /* user2.png */; };
+		D2E8387F1EA84466003E0A7B /* qr2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E8387E1EA84466003E0A7B /* qr2.png */; };
+		D2E838811EA84C6F003E0A7B /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E838801EA84C6F003E0A7B /* qr.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1312,7 +1316,6 @@
 		D2E8384B1EA756A9003E0A7B /* JumpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpVC.h; sourceTree = "<group>"; };
 		D2E8384C1EA756A9003E0A7B /* JumpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpVC.m; sourceTree = "<group>"; };
 		D2E8384D1EA756A9003E0A7B /* JumpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JumpVC.xib; sourceTree = "<group>"; };
-		D2E838501EA7578B003E0A7B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		D2E838541EA75AF7003E0A7B /* ScanSuccessJumpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanSuccessJumpVC.h; sourceTree = "<group>"; };
 		D2E838551EA75AF7003E0A7B /* ScanSuccessJumpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanSuccessJumpVC.m; sourceTree = "<group>"; };
 		D2E838561EA75AF7003E0A7B /* SGGenerateQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGenerateQRCodeVC.h; sourceTree = "<group>"; };
@@ -1329,6 +1332,11 @@
 		D2E8386C1EA75E81003E0A7B /* DataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataVC.h; sourceTree = "<group>"; };
 		D2E8386D1EA75E81003E0A7B /* DataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVC.m; sourceTree = "<group>"; };
 		D2E8386E1EA75E81003E0A7B /* DataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataVC.xib; sourceTree = "<group>"; };
+		D2E838761EA83D7B003E0A7B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		D2E838781EA83D7B003E0A7B /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		D2E8387C1EA8445F003E0A7B /* user2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user2.png; sourceTree = "<group>"; };
+		D2E8387E1EA84466003E0A7B /* qr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr2.png; sourceTree = "<group>"; };
+		D2E838801EA84C6F003E0A7B /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
 		E261BE7D3BCFE91ACDA2295B /* Pods-toone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.release.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -3602,7 +3610,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E838521EA75AF7003E0A7B /* SGQRCode */,
-				D2E838501EA7578B003E0A7B /* arrow.png */,
+				D2E838751EA83D7B003E0A7B /* icon */,
 				D2E8384B1EA756A9003E0A7B /* JumpVC.h */,
 				D2E8384C1EA756A9003E0A7B /* JumpVC.m */,
 				D2E8384D1EA756A9003E0A7B /* JumpVC.xib */,
@@ -3721,6 +3729,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D2E838751EA83D7B003E0A7B /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				D2E838801EA84C6F003E0A7B /* qr.png */,
+				D2E8387E1EA84466003E0A7B /* qr2.png */,
+				D2E8387C1EA8445F003E0A7B /* user2.png */,
+				D2E838761EA83D7B003E0A7B /* arrow.png */,
+				D2E838781EA83D7B003E0A7B /* user.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3798,6 +3818,8 @@
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
 				D235E32E1E84C64900EE4459 /* LLQ_LSSJ_Detail_DataCell.xib in Resources */,
 				D2E04DDB1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
+				D2E8387F1EA84466003E0A7B /* qr2.png in Resources */,
+				D2E8387D1EA8445F003E0A7B /* user2.png in Resources */,
 				42AC71471E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
 				42AC72091E30C576007D8F57 /* TheProjectCell.xib in Resources */,
@@ -3808,6 +3830,7 @@
 				D20064441DFF86800021E293 /* CJMonthDayCollectionCell.xib in Resources */,
 				D200652C1DFF86B30021E293 /* HorizontalBarChartViewController.xib in Resources */,
 				D200653A1DFF86B30021E293 /* NegativeStackedBarChartViewController.xib in Resources */,
+				D2E8387B1EA83D7B003E0A7B /* user.png in Resources */,
 				D220E2B41E8CF54F001A1C14 /* BigChartViewController.xib in Resources */,
 				8CEB5BC91E0A6C0D00A5C4AA /* Login.storyboard in Resources */,
 				D235E32B1E84C64900EE4459 /* LLQ_LSSJ_Detail_ChartCell.xib in Resources */,
@@ -3836,6 +3859,7 @@
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
 				D226DC681E8215910042DCFA /* SW_CBCZ_Detail_DataCell.xib in Resources */,
 				D200653C1DFF86B30021E293 /* PieChartViewController.xib in Resources */,
+				D2E838811EA84C6F003E0A7B /* qr.png in Resources */,
 				D200653E1DFF86B30021E293 /* PiePolylineChartViewController.xib in Resources */,
 				D21944321E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.xib in Resources */,
 				D235E3091E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.xib in Resources */,
@@ -3888,7 +3912,7 @@
 				42AC71671E30C393007D8F57 /* DayDetailsCell.xib in Resources */,
 				8CBD72E81E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.xib in Resources */,
 				D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */,
-				D2E838511EA7578B003E0A7B /* arrow.png in Resources */,
+				D2E838791EA83D7B003E0A7B /* arrow.png in Resources */,
 				42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */,
 				D24DE9221E80BF25006831A2 /* LLQ_CLHS_Cell.xib in Resources */,
 				D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */,
