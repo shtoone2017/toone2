@@ -35,7 +35,7 @@
 }
 -(void)loadUi{
     self.view.backgroundColor = [UIColor snowColor];
-    self.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",super.startTime,super.endTime];
+    self.sjLabel.text = [NSString stringWithFormat:@"%@~%@",super.startTime,super.endTime];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HNT_CLHS_ChatCell" bundle:nil] forCellReuseIdentifier:@"HNT_CLHS_ChatCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HNT_CLHS_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CLHS_Cell"];
@@ -170,7 +170,7 @@
             //
             weakSelf.startTime = (NSString*)obj1;
             weakSelf.endTime = (NSString*)obj2;
-            weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",weakSelf.startTime,weakSelf.endTime];
+            weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@~%@",weakSelf.startTime,weakSelf.endTime];
             [weakSelf loadData];
             FuncLog;
         }

@@ -25,7 +25,26 @@
 #define Screen_w      [UIScreen mainScreen].bounds.size.width
 #define Screen_h      [UIScreen mainScreen].bounds.size.height
 #define Drawer_w      Screen_w*0.8
-#define BLUECOLOR     [UIColor denimColor]
+
+/*
+ // Blues
+ + (instancetype)tealColor;
+ + (instancetype)steelBlueColor;
+ + (instancetype)robinEggColor;
+ + (instancetype)pastelBlueColor;
+ + (instancetype)turquoiseColor;
+ + (instancetype)skyBlueColor;
+ + (instancetype)indigoColor;
+ + (instancetype)denimColor;
+ + (instancetype)blueberryColor;
+ + (instancetype)cornflowerColor;
+ + (instancetype)babyBlueColor;
+ + (instancetype)midnightBlueColor;
+ + (instancetype)fadedBlueColor;
+ + (instancetype)icebergColor;
+ + (instancetype)waveColor;
+ */
+#define BLUECOLOR     [UIColor steelBlueColor]
 #define SGCOLOR(r,g,b,a)        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define Color1                  SGCOLOR(224,243,241,1.0)
 #define Color2                  SGCOLOR(232,232,253,1.0)

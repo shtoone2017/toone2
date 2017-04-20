@@ -22,6 +22,8 @@
     [super awakeFromNib];
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 3.0;
+    self.button2.backgroundColor = BLUECOLOR;
+    self.button3.backgroundColor = BLUECOLOR;
     self.layer.borderColor = [UIColor whiteColor].CGColor;
     self.layer.borderWidth = 1.0;
 }

@@ -43,13 +43,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code  snowColor
-    self.containerView.backgroundColor = [UIColor oldLaceColor];
+    self.containerView.backgroundColor = [UIColor whiteColor];
     self.containerView.layer.masksToBounds=NO;
 //    self.containerView.layer.cornerRadius =3.0;
 //    self.containerView.layer.shadowOpacity=1.0;
 //    self.containerView.layer.shadowOffset=CGSizeMake(1,1);
 //    self.containerView.layer.shadowRadius= 2;
-    self.containerView.layer.shadowColor=[UIColor oldLaceColor].CGColor;
+    self.containerView.layer.shadowColor=[UIColor whiteColor].CGColor;
     
     self.bhzCountLabel.layer.masksToBounds = YES;
     self.bhjCountLabel.layer.masksToBounds = YES;
