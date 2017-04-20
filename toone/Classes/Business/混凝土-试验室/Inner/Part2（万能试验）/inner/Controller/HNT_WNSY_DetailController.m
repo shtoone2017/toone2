@@ -184,6 +184,12 @@
                                             @"y_Min":FormatInt(y_Min),
                                             @"datas":totalArray[i],
                                             };
+                    if ([totalArray[i] count] == 0) {
+                        [Tools tip:@"没有数据"];
+                        //移除指示器
+                        [Tools removeActivity];
+                        return ;
+                    }
                     LineChart1ViewController * vc = [[LineChart1ViewController alloc] initWithDict:dict];
                     vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
                     [weakSelf addChildViewController:vc];
