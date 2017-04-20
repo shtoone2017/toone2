@@ -9,19 +9,20 @@
 #import "NodeMode.h"
 #import "YYModel.h"
 #import "NetworkTool.h"
-
+#import "TimeTools.h"
 
 @implementation NodeMode
 
 -(void)channelBlock:(ChannelBlock)channelBlock {
     
-    NSString *dataTime = [SGDate getDay];
+    NSString *dataTime = [TimeTools currentTime];
+    NSString *time = [TimeTools timeStampWithTimeString:dataTime];
     
     NSString *loginDepartId = [UserDefaultsSetting shareSetting].loginDepartId;
     
     NSString *userRole = [UserDefaultsSetting shareSetting].userRole;
     
-    NSString *urlString = [NSString stringWithFormat:AppDepartTree_4,dataTime,[UserDefaultsSetting shareSetting].funtype,loginDepartId,userRole];
+    NSString *urlString = [NSString stringWithFormat:AppDepartTree_4,time,[UserDefaultsSetting shareSetting].funtype,loginDepartId,userRole];
 
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         
