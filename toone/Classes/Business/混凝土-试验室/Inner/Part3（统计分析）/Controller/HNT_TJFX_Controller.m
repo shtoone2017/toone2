@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor snowColor];
-    self.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",super.startTime,super.endTime];
+    self.sjLabel.text = [NSString stringWithFormat:@"%@~%@",super.startTime,super.endTime];
     [self loadData];
 }
 -(void)loadData{
@@ -153,7 +153,7 @@
                 //
                 weakSelf.startTime = (NSString*)obj1;
                 weakSelf.endTime = (NSString*)obj2;
-                weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",weakSelf.startTime,weakSelf.endTime];
+                weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@~%@",weakSelf.startTime,weakSelf.endTime];
                 [weakSelf loadData];
                 FuncLog;
             }
