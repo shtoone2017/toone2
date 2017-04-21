@@ -29,6 +29,7 @@
 @property (nonatomic,copy) NSString * userType;
 @property (nonatomic,copy) NSString * shenehe;
 @property (nonatomic,copy) NSString * chuzhi;
+@property (nonatomic,copy) NSString * zxdwshenhe;
 //@property (nonatomic,copy) NSString * zzjgName;
 @property (nonatomic,copy) NSString * userFullName;
 

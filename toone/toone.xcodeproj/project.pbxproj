@@ -479,6 +479,14 @@
 		D2E8387D1EA8445F003E0A7B /* user2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E8387C1EA8445F003E0A7B /* user2.png */; };
 		D2E8387F1EA84466003E0A7B /* qr2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E8387E1EA84466003E0A7B /* qr2.png */; };
 		D2E838811EA84C6F003E0A7B /* qr.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E838801EA84C6F003E0A7B /* qr.png */; };
+		D2E838851EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838831EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.m */; };
+		D2E838861EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E838841EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib */; };
+		D2E8388A1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838881EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m */; };
+		D2E8388B1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E838891EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib */; };
+		D2E838921EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E8388D1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m */; };
+		D2E838931EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E8388E1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.xib */; };
+		D2E838941EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E838901EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m */; };
+		D2E838951EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E838911EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1337,6 +1345,18 @@
 		D2E8387C1EA8445F003E0A7B /* user2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user2.png; sourceTree = "<group>"; };
 		D2E8387E1EA84466003E0A7B /* qr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr2.png; sourceTree = "<group>"; };
 		D2E838801EA84C6F003E0A7B /* qr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr.png; sourceTree = "<group>"; };
+		D2E838821EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_CBCZ_Detail_ZiXun_Cell.h; sourceTree = "<group>"; };
+		D2E838831EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_CBCZ_Detail_ZiXun_Cell.m; sourceTree = "<group>"; };
+		D2E838841EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_CBCZ_Detail_ZiXun_Cell.xib; sourceTree = "<group>"; };
+		D2E838871EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_CBCZ_Detail_ZiXun_Controller.h; sourceTree = "<group>"; };
+		D2E838881EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_CBCZ_Detail_ZiXun_Controller.m; sourceTree = "<group>"; };
+		D2E838891EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_CBCZ_Detail_ZiXun_Controller.xib; sourceTree = "<group>"; };
+		D2E8388C1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_CBCZ_Detail_ZiXun_Cell.h; sourceTree = "<group>"; };
+		D2E8388D1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SW_CBCZ_Detail_ZiXun_Cell.m; sourceTree = "<group>"; };
+		D2E8388E1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SW_CBCZ_Detail_ZiXun_Cell.xib; sourceTree = "<group>"; };
+		D2E8388F1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_CBCZ_Detail_ZiXun_Controller.h; sourceTree = "<group>"; };
+		D2E838901EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SW_CBCZ_Detail_ZiXun_Controller.m; sourceTree = "<group>"; };
+		D2E838911EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SW_CBCZ_Detail_ZiXun_Controller.xib; sourceTree = "<group>"; };
 		E261BE7D3BCFE91ACDA2295B /* Pods-toone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.release.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -3335,6 +3355,12 @@
 			children = (
 				D21944191E8120E000FC0B38 /* SW_CBCZ_DetailController.h */,
 				D219441A1E8120E000FC0B38 /* SW_CBCZ_DetailController.m */,
+				D2E8388C1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.h */,
+				D2E8388D1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m */,
+				D2E8388E1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.xib */,
+				D2E8388F1EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.h */,
+				D2E838901EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m */,
+				D2E838911EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib */,
 				D219440B1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.h */,
 				D219440C1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.m */,
 				D219440D1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.xib */,
@@ -3641,6 +3667,12 @@
 			children = (
 				D2E04DD61E83ADCC009E9C6A /* LLQ_CBCZ_DetailController.h */,
 				D2E04DD71E83ADCC009E9C6A /* LLQ_CBCZ_DetailController.m */,
+				D2E838821EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.h */,
+				D2E838831EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.m */,
+				D2E838841EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib */,
+				D2E838871EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.h */,
+				D2E838881EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m */,
+				D2E838891EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib */,
 				D2E04DC31E83ADCC009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.h */,
 				D2E04DC41E83ADCC009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.m */,
 				D2E04DC51E83ADCC009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.xib */,
@@ -3808,6 +3840,7 @@
 				18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
 				D219441E1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */,
+				D2E838951EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib in Resources */,
 				42AC71531E30C393007D8F57 /* EXPrimaryCell.xib in Resources */,
 				D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */,
 				18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
@@ -3853,6 +3886,7 @@
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
 				D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */,
 				42AC714D1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
+				D2E838931EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
@@ -3864,6 +3898,7 @@
 				D21944321E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.xib in Resources */,
 				D235E3091E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.xib in Resources */,
 				D2E04DE31E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
+				D2E8388B1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib in Resources */,
 				42AC714F1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.xib in Resources */,
 				D200647B1DFF86800021E293 /* HNT_WNSY_Cell.xib in Resources */,
 				D20065341DFF86B30021E293 /* LineChartTimeViewController.xib in Resources */,
@@ -3915,6 +3950,7 @@
 				D2E838791EA83D7B003E0A7B /* arrow.png in Resources */,
 				42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */,
 				D24DE9221E80BF25006831A2 /* LLQ_CLHS_Cell.xib in Resources */,
+				D2E838861EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
 				D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */,
 				D24DE9241E80BF25006831A2 /* LLQ_CLHS_ChatCell.xib in Resources */,
 			);
@@ -4121,6 +4157,7 @@
 				D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */,
 				42AC71BA1E30C423007D8F57 /* SGBarSuper.m in Sources */,
 				8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */,
+				D2E838941EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
 				D2E04DE41E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.m in Sources */,
 				8CBD72E51E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.m in Sources */,
@@ -4135,12 +4172,14 @@
 				D219438A1E81059400FC0B38 /* LQ_SB_Controller.m in Sources */,
 				D272EFDD1E7BDDAB00D0991D /* DWURunLoopWorkDistribution.m in Sources */,
 				D272EFBA1E7BBE3A00D0991D /* SW_CLHS_Controller.m in Sources */,
+				D2E8388A1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D272EFD51E7BC36F00D0991D /* LLQ_CBCZ_Cell.m in Sources */,
 				D200658F1DFFC9F10021E293 /* HNT_SCCX_Cell.m in Sources */,
 				42AC716D1E30C393007D8F57 /* LQ_CLHS_ModelG.m in Sources */,
 				D21944261E8120E000FC0B38 /* SW_CBCZ_Detail_ShenPi_Controller.m in Sources */,
 				D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */,
 				D20065AC1DFFE4B80021E293 /* HNT_BHZ_SB_Model.m in Sources */,
+				D2E838921EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m in Sources */,
 				D20064A51DFF86800021E293 /* NoCopyTextField.m in Sources */,
 				187C73031E30B1810072F33A /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				D219441F1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.m in Sources */,
@@ -4294,6 +4333,7 @@
 				187C72FD1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				42AC717E1E30C393007D8F57 /* LQ_Model.m in Sources */,
 				D2E8386A1EA75AF7003E0A7B /* SGQRCodeTool.m in Sources */,
+				D2E838851EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.m in Sources */,
 				42AC71501E30C393007D8F57 /* disposal_C_Model.m in Sources */,
 				8CE976561E0BF1FF0016A858 /* MySJxib.m in Sources */,
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,

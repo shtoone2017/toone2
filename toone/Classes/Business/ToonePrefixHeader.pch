@@ -66,9 +66,10 @@
 #import "DWURunLoopWorkDistribution.h"
 
 //
-#define baseUrl     @"http://192.168.11.115:8080/jbgsmss/"
-//@"http://114.215.239.38:8082/yzgsmss/"
-//@"http://192.168.11.118:8081/jbgsmss/"
+#define baseUrl      @"http://192.168.11.115:8080/jbgsmss/"
+//@"http://192.168.11.126:8081/jbgsmss/"
+
+
 
 
 
@@ -95,6 +96,8 @@
 #define appSWChaobiaoChuzhi   FormatString(baseUrl,@"app/appSWChaobiaoChuzhi?")
 //水稳超标审批
 #define appHntChaobiaoShenpi   FormatString(baseUrl,@"app/appHntChaobiaoShenpi?")
+//水稳超标咨询
+#define appHntChaobiaoZXDWShenpi   FormatString(baseUrl,@"app/appHntChaobiaoZXDWShenpi?")
 
 //水稳材料统计
 #define swmaterial   FormatString(baseUrl,@"app/swmaterial?")
@@ -117,6 +120,8 @@
 #define appLQChaobiaoChuzhi   FormatString(baseUrl,@"appLq/appLQChaobiaoChuzhi?")
 //沥青超标审批
 #define appLqChaobiaoShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoShenpi?")
+//沥青超标咨询
+#define appLqChaobiaoZXDWShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoZXDWShenpi?")
 //沥青历史数据查询详情页
 #define liqingxixx   FormatString(baseUrl,@"appLq/liqingxixx?")
 

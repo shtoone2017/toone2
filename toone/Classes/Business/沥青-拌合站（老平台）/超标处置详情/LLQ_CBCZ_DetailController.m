@@ -15,9 +15,11 @@
 #import "LLQ_CBCZ_Detail_DataCell.h"
 #import "LLQ_CBCZ_Detail_ChuLi_Cell.h"
 #import "LLQ_CBCZ_Detail_ShenPi_Cell.h"
+#import "LLQ_CBCZ_Detail_ZiXun_Cell.h"
 
 #import "LLQ_CBCZ_Detail_ChuLi_Controller.h"
 #import "LLQ_CBCZ_Detail_ShenPi_Controller.h"
+#import "LLQ_CBCZ_Detail_ZiXun_Controller.h"
 @interface LLQ_CBCZ_DetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (weak, nonatomic) IBOutlet UITableView *tb;
@@ -44,6 +46,7 @@
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_DataCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_ChuLi_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_ChuLi_Cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_ShenPi_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_ShenPi_Cell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_ZiXun_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_ZiXun_Cell"];
 }
 -(void)loadData{
     //添加指示器
@@ -95,7 +98,7 @@
 }
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -110,6 +113,7 @@
         case 1:return @"采集数据";
         case 2:return @"处置信息";
         case 3:return @"审核信息";
+        case 4:return @"咨询信息";
     }
     return nil;
 }
@@ -129,6 +133,13 @@
     }
     if (indexPath.section == 3) {
         if (EqualToString(self.shenpi, @"1")) {
+            return 105;
+        }else{
+            return 40;
+        }
+    }
+    if (indexPath.section == 4) {
+        if (EqualToString(self.zxdwshenhe, @"1")) {
             return 105;
         }else{
             return 40;
@@ -196,7 +207,7 @@
                 if (!EqualToString(self.chuli, @"1")) {
                     UILabel * label = [[UILabel alloc] init];
                     label.frame = CGRectMake(0, 0, Screen_w, 40);
-                    label.text = @"请先处置后再审批...";
+                    label.text = @"请先处置后再审批..";
                     label.textAlignment = NSTextAlignmentCenter;
                     label.font = [UIFont systemFontOfSize:12.0f];
                     label.textColor = [UIColor blueColor];
@@ -204,7 +215,7 @@
                 }else{
                     UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
                     btn.frame = CGRectMake(0, 0, Screen_w, 40);
-                    [btn setTitle:@"点击这里开始审核..." forState:UIControlStateNormal];
+                    [btn setTitle:@"点击这里开始审核.." forState:UIControlStateNormal];
                     [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
                     btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
                     [cell.contentView addSubview:btn];
@@ -214,7 +225,7 @@
             }else{
                 UILabel * label = [[UILabel alloc] init];
                 label.frame = CGRectMake(0, 0, Screen_w, 40);
-                label.text = @"您没有审批权限";
+                label.text = @"没有审批权限..";
                 label.textAlignment = NSTextAlignmentCenter;
                 label.font = [UIFont systemFontOfSize:12.0f];
                 label.textColor = [UIColor blueColor];
@@ -223,7 +234,37 @@
             return cell;
         }
     }
-    
+    if (indexPath.section == 4) {
+        if (EqualToString(self.zxdwshenhe, @"1")) {
+            LLQ_CBCZ_Detail_ZiXun_Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Detail_ZiXun_Cell"];
+            cell.model = self.swjgModel;
+            cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+            return cell;
+        }else{
+            UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+            if (EqualToString([UserDefaultsSetting_SW shareSetting].zxdwshenhe, @"1")) {
+
+                UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                btn.frame = CGRectMake(0, 0, Screen_w, 40);
+                [btn setTitle:@"点击这里开始咨询.." forState:UIControlStateNormal];
+                [btn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+                btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                [cell.contentView addSubview:btn];
+                [btn addTarget:self action:@selector(goto_zixun) forControlEvents:UIControlEventTouchUpInside];
+            }else{
+                UILabel * label = [[UILabel alloc] init];
+                label.frame = CGRectMake(0, 0, Screen_w, 40);
+                label.text = @"没有咨询信息..";
+                label.textAlignment = NSTextAlignmentCenter;
+                label.font = [UIFont systemFontOfSize:12.0f];
+                label.textColor = [UIColor blueColor];
+                [cell.contentView addSubview:label];
+            }
+            return cell;
+        }
+    }
+
     return nil;
 }
 -(void)goto_chuzhi{
@@ -233,6 +274,11 @@
 }
 -(void)goto_shenpi{
     LLQ_CBCZ_Detail_ShenPi_Controller * vc = [[LLQ_CBCZ_Detail_ShenPi_Controller alloc] init];
+    vc.jieguobianhao = self.bianhao;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(void)goto_zixun{
+    LLQ_CBCZ_Detail_ZiXun_Controller * vc = [[LLQ_CBCZ_Detail_ZiXun_Controller alloc] init];
     vc.jieguobianhao = self.bianhao;
     [self.navigationController pushViewController:vc animated:YES];
 }

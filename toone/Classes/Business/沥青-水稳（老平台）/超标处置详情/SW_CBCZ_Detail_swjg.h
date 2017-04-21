@@ -19,4 +19,8 @@
 @property (nonatomic, copy) NSString * wentiyuanyin ;// string 处置内容
 @property (nonatomic, copy) NSString * yezhuren ;// string 审批人
 @property (nonatomic, copy) NSString * yezhuyijian ;// string 审批意见
+
+@property (nonatomic, copy) NSString * zxdwdate ;// string 咨询时间
+@property (nonatomic, copy) NSString * zxdwyijian ;// string 咨询意见
+@property (nonatomic, copy) NSString * zxdw ;// string 咨询单位签名
 @end

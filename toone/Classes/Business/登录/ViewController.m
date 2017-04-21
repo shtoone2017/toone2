@@ -157,6 +157,7 @@
                     setting.biaoshi = json[@"biaoshi"];
                     setting.shenehe = Format(json[@"shenehe"]);
                     setting.chuzhi = Format(json[@"chuzhi"]);
+                    setting.zxdwshenhe = Format(json[@"zxdwshenhe"]);
                     setting.userFullName = json[@"userFullName"];
                     setting.login = YES;
                     [setting saveToSandbox];

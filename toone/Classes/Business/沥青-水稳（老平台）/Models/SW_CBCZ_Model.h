@@ -18,4 +18,5 @@
 
 @property (nonatomic,copy) NSString * chuli;
 @property (nonatomic,copy) NSString * shenhe;
+@property (nonatomic,copy) NSString * zxdwshenhe;
 @end

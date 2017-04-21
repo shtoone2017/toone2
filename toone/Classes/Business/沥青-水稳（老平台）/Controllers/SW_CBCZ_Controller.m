@@ -241,6 +241,7 @@
                     model.isShow    = json[@"isShow"];
                     model.shenhe = dict[@"shenhe"];
                     model.chuli = dict[@"chuli"];
+                    model.zxdwshenhe = dict[@"zxdwshenhe"];
                     model.sbbh = dict[@"sbbh"];
                     model.bianhao = dict[@"bianhao"];
                     
@@ -372,7 +373,9 @@
   NSDictionary * dic=@{@"bianhao":model.bianhao,
                        @"shebeibianhao":model.sbbh,
                        @"chuli":model.chuli,
-                       @"shenhe":model.shenhe};
+                       @"shenhe":model.shenhe,
+                       @"zxdwshenhe":model.zxdwshenhe,
+                       };
     [self performSegueWithIdentifier:@"SW_CBCZ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -471,6 +474,7 @@
 //        NSDictionary * dict = (NSDictionary*)sender;
         controller.chuli = [sender objectForKey:@"chuli"];
         controller.shenpi = [sender objectForKey:@"shenhe"];
+        controller.zxdwshenhe = [sender objectForKey:@"zxdwshenhe"];
         controller.bianhao = [sender objectForKey:@"bianhao"];
         controller.shebeibianhao = [sender objectForKey:@"shebeibianhao"];
         controller.title = @"详情";
