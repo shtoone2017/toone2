@@ -94,22 +94,33 @@
 }
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.datas.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
+    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.section];
     return frameModel.cellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HNT_SYS_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_SYS_Cell" forIndexPath:indexPath];
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
+    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.section];
     cell.frameModel = frameModel;
     return cell;
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.01;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if(section == self.datas.count -1){
+        return 0.01;
+    }
+    return 10.0f;
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
+    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.section];
     HNT_SYS_Model * model = frameModel.models.firstObject;
     [self performSegueWithIdentifier:@"HNT_SYS_InnerController" sender:model.userGroupId];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
