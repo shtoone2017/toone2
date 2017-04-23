@@ -29,7 +29,6 @@
     //    初始化分页
     self.tableCont = [[NQ_BHZ_SCCX_Inner_Controller alloc] init];
     if ([self.tableCont isKindOfClass:[NQ_BHZ_SCCX_Inner_Controller class]]) {
-        
         [self addChildViewController:self.tableCont];
         [self.view addSubview:self.tableCont.view];
     }
@@ -49,7 +48,6 @@
 
     UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(Screen_w-40, 0, 40, 40)];
     [searchButton setImage:[UIImage imageNamed:@"black_SX"] forState:UIControlStateNormal];
-
     [searchButton addTarget:self action:@selector(clickSearchBut:) forControlEvents:UIControlEventTouchUpInside];
     [segementView addSubview:searchButton];
     
@@ -121,7 +119,6 @@
         self.tableCont = [[NQ_BHZ_SCCX_Inner_Controller alloc] init];
             
         NQ_BHZ_SCCX_Inner_Controller *producVc =(NQ_BHZ_SCCX_Inner_Controller *) self.tableCont;
-            
         [self addChildViewController:producVc];
         [self.view addSubview:producVc.view];
         [self.view addSubview:_segementView];
@@ -141,15 +138,11 @@
     }else if (index == 2) { //材料用量查询
         [self.tableCont removeFromParentViewController];
         [self.tableCont.view removeFromSuperview];
-        
         self.tableCont = [[MaterialTableViewController alloc] init];
-        
         MaterialTableViewController *materVc =(MaterialTableViewController *) self.tableCont;
-        
         [self addChildViewController:materVc];
         [self.view addSubview:materVc.view];
         [self.view addSubview:_segementView];
-        
     }
 }
 #pragma mark - 筛选刷新

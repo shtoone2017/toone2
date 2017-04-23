@@ -22,13 +22,15 @@
 }
 -(NSString *)startTime{
     if (!_startTime) {
-        self.startTime = [TimeTools time_3_monthsAgo];
+        //self.startTime = [TimeTools time_3_monthsAgo];
+        self.startTime = [UserDefaultsSetting shareSetting].startTime;
     }
     return _startTime;
 }
 -(NSString *)endTime{
     if (!_endTime) {
-        self.endTime = [TimeTools currentTime];
+//        self.endTime = [TimeTools currentTime];
+         self.endTime = [UserDefaultsSetting shareSetting].endTime;
     }
     return _endTime;
 }

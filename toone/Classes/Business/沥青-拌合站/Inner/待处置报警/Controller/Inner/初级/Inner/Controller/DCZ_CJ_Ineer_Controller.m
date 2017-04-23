@@ -50,7 +50,8 @@
 }
 
 -(void)looadData {
-    NSString *shebeiStr = [UserDefaultsSetting shareSetting].CBshebeibianhao;
+    NSString *shebeiStr =self.ChaoBiaoModel.shebeibianhao;
+    //[UserDefaultsSetting shareSetting].CBshebeibianhao;
     NSNumber *bianhaoBer = self.ChaoBiaoModel.bianhao;
     NSString *urlString = [NSString stringWithFormat:LQExInner,bianhaoBer,shebeiStr];
     
@@ -76,9 +77,10 @@
                 self.filePathImageHas = YES;
                 data = nil;
             }
+            weakSelf.datas = datas;
+            [weakSelf.tableView reloadData];
         }
-        weakSelf.datas = datas;
-        [weakSelf.tableView reloadData];
+
     }
      ];
 }

@@ -25,11 +25,16 @@
 
 #pragma mark - 监听文本框
 -(void)addTextF {
+    UIView * backView = [[UIView alloc] initWithFrame:CGRectMake(0, 70, Screen_w, 30)];
+    backView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:backView];
+    
+    
     UITextField *textFile = [[UITextField alloc] init];
-    textFile.frame = CGRectMake(10, 70, Screen_w-20, 30);
+    textFile.frame = CGRectMake(10, 0, Screen_w-20, 30);
     textFile.borderStyle = UITextBorderStyleNone;
     textFile.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:textFile];
+    [backView addSubview:textFile];
     self.textField = textFile;
     [textFile addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         switch (self.index) {

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,33 +20,32 @@
                         <color key="tintColor" red="1" green="0.1228944468" blue="0.26459482950000002" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fhn-Kh-DR2" kind="relationship" relationship="viewControllers" id="dQu-tz-Dwe"/>
-                        <segue destination="Qff-ou-NCO" kind="relationship" relationship="viewControllers" id="dcb-Yr-DZ6"/>
-                        <segue destination="wbf-P2-CPM" kind="relationship" relationship="viewControllers" id="rg4-1e-UZh"/>
+                        <segue destination="Qff-ou-NCO" kind="relationship" relationship="viewControllers" id="vIk-Ez-Eq6"/>
+                        <segue destination="wbf-P2-CPM" kind="relationship" relationship="viewControllers" id="avV-Tg-9yS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYl-q3-mLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2390" y="869"/>
         </scene>
-        <!--混凝土拌和站-->
+        <!--混凝土-->
         <scene sceneID="arX-PB-IVc">
             <objects>
                 <navigationController id="Qff-ou-NCO" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="混凝土拌和站" image="ic_bhz" id="cGo-mG-Rf8"/>
+                    <tabBarItem key="tabBarItem" title="混凝土" image="ic_bhz" id="cGo-mG-Rf8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xzo-al-fMC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0YH-Or-WmB" kind="relationship" relationship="rootViewController" id="dId-Zo-g7h"/>
+                        <segue destination="0YH-Or-WmB" kind="relationship" relationship="rootViewController" id="nH7-KJ-jAf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fk-7I-Bub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82" y="1353"/>
         </scene>
-        <!--拌和站-->
+        <!--混凝土拌和站-->
         <scene sceneID="5ke-1C-rZt">
             <objects>
                 <viewController id="0YH-Or-WmB" customClass="HNT_BHZ_Controller" sceneMemberID="viewController">
@@ -111,7 +110,7 @@
                             <constraint firstItem="l2J-pe-kfV" firstAttribute="leading" secondItem="zph-WG-ibM" secondAttribute="leading" id="yge-fZ-gSB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="拌和站" id="fxi-aI-PCD"/>
+                    <navigationItem key="navigationItem" title="混凝土拌和站" id="fxi-aI-PCD"/>
                     <connections>
                         <outlet property="containerView" destination="FHa-nV-YEB" id="hNQ-rv-ZYC"/>
                         <outlet property="departName_Label" destination="DAe-wR-3Vc" id="6pC-3c-Pi2"/>
@@ -3599,11 +3598,11 @@
             </objects>
             <point key="canvasLocation" x="1156" y="238"/>
         </scene>
-        <!--沥青拌合站-->
+        <!--沥青-->
         <scene sceneID="FrY-qO-dxn">
             <objects>
                 <navigationController id="wbf-P2-CPM" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="沥青拌合站" image="ic_yaliji" id="afw-7Y-hub"/>
+                    <tabBarItem key="tabBarItem" title="沥青" image="lq_bhz" id="afw-7Y-hub"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wkR-6A-sgS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3616,7 +3615,7 @@
             </objects>
             <point key="canvasLocation" x="-634" y="4085"/>
         </scene>
-        <!--沥青拌合站-->
+        <!--沥青拌和站-->
         <scene sceneID="ViK-4M-c7i">
             <objects>
                 <viewController id="h6m-wW-bID" customClass="LQViewController" sceneMemberID="viewController">
@@ -3661,7 +3660,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-rB-3LT">
-                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -3681,7 +3680,7 @@
                             <constraint firstItem="wzl-rB-3LT" firstAttribute="leading" secondItem="Poy-f5-ANt" secondAttribute="leading" id="v5q-5j-s17"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="沥青拌合站" id="gOW-ux-7gn">
+                    <navigationItem key="navigationItem" title="沥青拌和站" id="gOW-ux-7gn">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="KHD-AV-h8Q">
                             <connections>
                                 <segue destination="5Ue-G2-eUQ" kind="push" id="rd4-ck-O7a"/>
@@ -3724,7 +3723,7 @@
         <image name="black_SX" width="288" height="113"/>
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
-        <image name="ic_yaliji" width="96" height="96"/>
+        <image name="lq_bhz" width="32" height="32"/>
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>

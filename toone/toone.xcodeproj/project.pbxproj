@@ -350,6 +350,7 @@
 		D246B2A81E00DEBA00E83159 /* HNT_CBCZ_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D246B2A61E00DEBA00E83159 /* HNT_CBCZ_Cell.m */; };
 		D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D246B2A71E00DEBA00E83159 /* HNT_CBCZ_Cell.xib */; };
 		D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D246B2AB1E00E0CD00E83159 /* HNT_CBCZ_Model.m */; };
+		D2938B921EAC91A900770D90 /* arrow_02.png in Resources */ = {isa = PBXBuildFile; fileRef = D2938B911EAC91A900770D90 /* arrow_02.png */; };
 		D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */; };
 		D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */; };
 		D2CF6B671E011728003AE61D /* Exp6View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B641E011728003AE61D /* Exp6View.m */; };
@@ -994,6 +995,7 @@
 		D246B2A71E00DEBA00E83159 /* HNT_CBCZ_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Cell.xib; sourceTree = "<group>"; };
 		D246B2AA1E00E0CD00E83159 /* HNT_CBCZ_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Model.h; sourceTree = "<group>"; };
 		D246B2AB1E00E0CD00E83159 /* HNT_CBCZ_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Model.m; sourceTree = "<group>"; };
+		D2938B911EAC91A900770D90 /* arrow_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_02.png; sourceTree = "<group>"; };
 		D2CF6B601E011728003AE61D /* Exp6_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp6_Xib_View.h; sourceTree = "<group>"; };
 		D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp6_Xib_View.m; sourceTree = "<group>"; };
 		D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp6_Xib_View.xib; sourceTree = "<group>"; };
@@ -1510,6 +1512,7 @@
 		42AC70FB1E30C392007D8F57 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2938B911EAC91A900770D90 /* arrow_02.png */,
 				42AC70FC1E30C392007D8F57 /* DayDetailsCell.h */,
 				42AC70FD1E30C393007D8F57 /* DayDetailsCell.m */,
 				42AC70FE1E30C393007D8F57 /* DayDetailsCell.xib */,
@@ -2193,10 +2196,10 @@
 				D200637B1DFF86800021E293 /* Toone-Bridging-Header.h */,
 				D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */,
 				8CBD73461E09320C00A0C991 /* 组织机构 */,
-				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				D200637E1DFF86800021E293 /* 抽屉 */,
 				D20063891DFF86800021E293 /* 欢迎 */,
 				D20063901DFF86800021E293 /* 沥青-试验室 */,
+				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
 				D20063F71DFF86800021E293 /* 登录 */,
@@ -3140,6 +3143,7 @@
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
+				D2938B921EAC91A900770D90 /* arrow_02.png in Resources */,
 				8CBD73401E091C7E00A0C991 /* HNT_CLHS_ChatCell.xib in Resources */,
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
 				D200653C1DFF86B30021E293 /* PieChartViewController.xib in Resources */,

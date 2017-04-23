@@ -74,6 +74,7 @@
         if ([dict[@"success"] boolValue]) {
             for (NSDictionary * dic in dict[@"data"]) {
                 weakSelf.dataModel = [ProduQueryModel modelWithDict:dic];
+                weakSelf.dataModel.ID = dic[@"id"];
                 [datas addObject:weakSelf.dataModel];
             }
         }

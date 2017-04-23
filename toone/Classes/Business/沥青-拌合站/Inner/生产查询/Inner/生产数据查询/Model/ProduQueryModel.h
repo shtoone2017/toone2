@@ -10,7 +10,7 @@
 #import "MyModel.h"
 
 @interface ProduQueryModel : MyModel
-@property (nonatomic, strong) NSNumber *bianhao;//编号
+@property (nonatomic, strong) NSNumber *ID;//编号   字段bianhao修改为ID
 @property (nonatomic, copy) NSString *deptId; //组织机构id
 @property (nonatomic, copy) NSString *shebeibianhao;//设备编号
 

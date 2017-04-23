@@ -33,7 +33,7 @@
     
     //            保存编号
     [UserDefaultsSetting shareSetting].shebeibianhao = ProduQueryModel.shebeibianhao;
-    [UserDefaultsSetting shareSetting].bianhao = ProduQueryModel.bianhao;
+    [UserDefaultsSetting shareSetting].bianhao = ProduQueryModel.ID;
 }
 
 

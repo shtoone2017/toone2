@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,14 +28,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L94-QT-F8n" userLabel="界面容器">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toone_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
                                         <rect key="frame" x="40" y="60" width="240" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="9b4-lY-qYj"/>
                                             <constraint firstAttribute="width" constant="240" id="Xfw-XF-XEx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="混凝土信息管理系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信息化质量管控系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
                                         <rect key="frame" x="0.0" y="180" width="320" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="PyK-MR-vJD"/>
@@ -64,7 +64,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_person_outline_blue_500_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-F0-LDt" userLabel="左视图">
-                                                <rect key="frame" x="200" y="13.5" width="20" height="20"/>
+                                                <rect key="frame" x="200" y="14" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="QOm-y4-Qjv"/>
                                                     <constraint firstAttribute="width" constant="20" id="iRp-37-V25"/>
@@ -118,7 +118,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock_outline_blue_500_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="MCW-sB-VML" userLabel="左视图">
-                                                <rect key="frame" x="200" y="13.5" width="20" height="20"/>
+                                                <rect key="frame" x="200" y="14" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="TRK-qP-jXj"/>
                                                     <constraint firstAttribute="height" constant="20" id="fqY-e5-Wsh"/>
@@ -229,7 +229,7 @@
     </scenes>
     <resources>
         <image name="ic_lock_outline_blue_500_18dp" width="54" height="54"/>
-        <image name="ic_logo_login" width="288" height="113"/>
         <image name="ic_person_outline_blue_500_18dp" width="54" height="54"/>
+        <image name="toone_logo" width="500" height="500"/>
     </resources>
 </document>

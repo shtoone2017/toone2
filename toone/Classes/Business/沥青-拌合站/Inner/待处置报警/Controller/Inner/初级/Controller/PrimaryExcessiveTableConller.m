@@ -39,6 +39,7 @@
     self.tableView.tableFooterView = [UIView new];
     self.tableView.y = 100;
     self.tableView.height =  Screen_h-100;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     //添加刷新(初始化URL）
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{

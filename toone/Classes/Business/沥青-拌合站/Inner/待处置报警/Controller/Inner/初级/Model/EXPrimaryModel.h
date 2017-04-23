@@ -11,7 +11,7 @@
 
 @interface EXPrimaryModel : MyModel
 //数据展示
-@property (nonatomic, strong) NSNumber *bianhao;//编号
+@property (nonatomic, strong) NSNumber *bianhao;//编号 bianhao改ID
 @property (nonatomic, copy) NSString *shebeibianhao;//设备编号
 @property (nonatomic, copy) NSString *shijian;//出料时间
 @property (nonatomic, copy) NSString *wsjf1;     //粉料1

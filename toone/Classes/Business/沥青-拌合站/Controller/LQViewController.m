@@ -150,7 +150,6 @@
 -(void)LodaUI {
     
     self.ContreView.backgroundColor = BLUECOLOR;
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.rowHeight = 155;
     self.view.backgroundColor = [UIColor oldLaceColor];
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];

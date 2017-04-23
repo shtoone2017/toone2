@@ -43,7 +43,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code  snowColor
-    self.containerView.backgroundColor = [UIColor oldLaceColor];
+    self.containerView.backgroundColor = [UIColor whiteColor];
     self.containerView.layer.masksToBounds=NO;
 //    self.containerView.layer.cornerRadius =3.0;
 //    self.containerView.layer.shadowOpacity=1.0;
@@ -55,8 +55,8 @@
     self.bhjCountLabel.layer.masksToBounds = YES;
     self.bhzCountLabel.layer.cornerRadius = 10;
     self.bhjCountLabel.layer.cornerRadius = 10;
-    self.bhzCountLabel.backgroundColor = [UIColor robinEggColor];
-    self.bhjCountLabel.backgroundColor = [UIColor turquoiseColor];
+    self.bhzCountLabel.backgroundColor = [UIColor whiteColor];
+    self.bhjCountLabel.backgroundColor = [UIColor whiteColor];
     
 }
 //// Greens

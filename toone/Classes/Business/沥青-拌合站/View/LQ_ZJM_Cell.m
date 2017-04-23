@@ -12,6 +12,7 @@
 
 @interface LQ_ZJM_Cell ()
 @property (weak, nonatomic) IBOutlet UIView *bkView;
+@property (weak, nonatomic) IBOutlet UILabel *deptName;
 
 @property (weak, nonatomic) IBOutlet UILabel *bhzCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bhjCountLabel;
@@ -55,18 +56,22 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.bkView.backgroundColor = [UIColor oldLaceColor];
+    self.bkView.backgroundColor = [UIColor whiteColor];
     
     self.bhzCountLabel.layer.masksToBounds = YES;
     self.bhjCountLabel.layer.masksToBounds = YES;
     self.bhzCountLabel.layer.cornerRadius = 10;
     self.bhjCountLabel.layer.cornerRadius = 10;
-    self.bhzCountLabel.backgroundColor = [UIColor robinEggColor];
-    self.bhjCountLabel.backgroundColor = [UIColor turquoiseColor];
+    self.bhzCountLabel.backgroundColor = [UIColor whiteColor];
+    self.bhjCountLabel.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)setCellModel:(LQ_CellModel *)cellModel {
     _cellModel = cellModel;
+
+    self.deptName.text = cellModel.totalModel.deptName;
+    
+    
     self.changliangLabel.text = cellModel.chujiModel.changliang;
     self.panshuLabel.text = cellModel.chujiModel.panshu;
     self.bhzCountLabel.text = cellModel.chujiModel.bhzCount;
@@ -99,6 +104,12 @@
     self.cbpsLabel.text = cellModel.totalModel.cbps;
     self.cblvLabel.text = cellModel.totalModel.cblv;
     self.reallvLabel.text = [NSString stringWithFormat:@"%@%%",cellModel.totalModel.reallv];
+    
+    self.banhezhanminchenLabel.lineBreakMode  =NSLineBreakByTruncatingTail;
+    self.banhezhanminchenCLabel.lineBreakMode =NSLineBreakByTruncatingMiddle;
+    self.banhezhanminchenZLabel.lineBreakMode =NSLineBreakByTruncatingMiddle;
+    self.banhezhanminchenGLabel.lineBreakMode =NSLineBreakByTruncatingMiddle;
+
     
 }
 
