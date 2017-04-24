@@ -76,6 +76,13 @@
         [Tools tip:@"必填项不可为空，请填写完整信息"];
         return ;
     }
+    NSData *  data =[Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:30];
+    
+    if (data.length < 2) {
+        [Tools tip:@"必须上传照片"];
+        return ;
+    }
+    
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeDeterminate;
@@ -92,13 +99,15 @@
                            };
     
     
-    NSData *  data =[Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:30];
-    
+
     [[HTTP shareAFNNetworking] uploadWithUrlstring:urlString parameter:dic data:data success:^(id json) {
         if ([json[@"success"] boolValue]){
             hud.mode = MBProgressHUDModeText;
             hud.label.text = @"提交成功,请刷新数据";
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                
+//                [UserDefaultsSetting shareSetting].randomSeed = [NSString stringWithFormat:@"%d",arc4random()%1000];
+                
                 UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                 [self.navigationController popToViewController:vc animated:YES];
             });

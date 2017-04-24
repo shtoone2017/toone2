@@ -33,22 +33,22 @@
     self.flashLabel.font = [UIFont systemFontOfSize:12.0];
     self.flashLabel.speed = BBFlashCtntSpeedSlow;
 }
-
+static NSString * type = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    type = [UserDefaultsSetting shareSetting].type;
     [self LodaUI];
     [self loadData];
     [self setRightBut];
 }
 
 #pragma mark - 网络请求
-static NSString * type = nil;
+
 -(void)loadData{
     NSDictionary * dic;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
-    type = [UserDefaultsSetting shareSetting].type;
     NSString *urlString;
     if (EqualToString(type, @"GL")) {
         urlString = [NSString stringWithFormat:LQHome,userGroupId,startTimeStamp,endTimeStamp];
@@ -167,7 +167,11 @@ static NSString * type = nil;
 -(void)LodaUI {
     
     self.ContreView.backgroundColor = BLUECOLOR;
-    self.tableView.rowHeight = 155;
+    if (EqualToString(type, @"GL")) {
+        self.tableView.rowHeight = 155;
+    }else{
+        self.tableView.rowHeight = 120;
+    }
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.view.backgroundColor = [UIColor oldLaceColor];
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];

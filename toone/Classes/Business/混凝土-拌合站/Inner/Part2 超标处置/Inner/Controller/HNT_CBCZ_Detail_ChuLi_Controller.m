@@ -105,6 +105,8 @@
             hud.mode = MBProgressHUDModeText;
             hud.label.text = @"提交成功,请刷新数据";
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [UserDefaultsSetting shareSetting].randomSeed = [NSString stringWithFormat:@"%d",arc4random()%1000];
+                
                 UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                 [self.navigationController popToViewController:vc animated:YES];
             });

@@ -411,8 +411,17 @@
         controller.title = @"详情";
     }
 }
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"randomSeed" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self loadData];
+}
 -(void)dealloc{
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"randomSeed"];
     FuncLog;
 }
-
 @end

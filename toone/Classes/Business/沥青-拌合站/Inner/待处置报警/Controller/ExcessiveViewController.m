@@ -20,7 +20,7 @@
 @property (nonatomic, strong) XFSegementView *segementView;
 @property (nonatomic, strong) MyTableViewController *tableCont;
 @property (nonatomic, copy) NSString *shebStr;
-@property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, copy)  NSString *urlString;
 
 @end
 @implementation ExcessiveViewController
@@ -91,23 +91,25 @@
 //            weakSelf.chuzhileixing = @"";
             switch (buttonTag) {
                 case 10:
-                    weakSelf.urlString = [self loadUI:@""];
+                    weakSelf.urlString = [weakSelf loadUI:@""];
                     break;
                 case 20://未处置
-                    weakSelf.urlString = [self loadUI:@"0"];
+                    weakSelf.urlString = [weakSelf loadUI:@"0"];
                         break;
                 case 30:
                 case 40://已处置
-                    weakSelf.urlString = [self loadUI:@"1"];
+                    weakSelf.urlString = [weakSelf loadUI:@"1"];
                     break;
                 case 50:
                     break;
                 case 60:
                     break;
                 default:
-                    weakSelf.urlString = [self loadUI:@""];
+                    weakSelf.urlString = [weakSelf loadUI:@""];
                     break;
             }
+            
+            
             [weakSelf.tableCont reloadData:weakSelf.urlString];
         }
         if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {

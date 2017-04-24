@@ -27,7 +27,9 @@ static NetworkTool *_instance;
             completeBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@"failure === %@",[error localizedDescription]);
+//        if (completeBlock) {
+//            completeBlock(error);
+//        }
     }];
 }
 
@@ -37,8 +39,9 @@ static NetworkTool *_instance;
             completeBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@"错误 --> %@",[error localizedDescription]);
-//        [Tools tip:@"网络故障，提交失败"];
+//        if (completeBlock) {
+//            completeBlock(error);
+//        }
     }];
 }
 

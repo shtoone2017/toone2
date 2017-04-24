@@ -54,4 +54,7 @@
 @property (nonatomic, copy) NSString *CBczlx;//超标处置类型
 
 @property (nonatomic,copy) NSString * type;
+
+
+@property (nonatomic) NSString * randomSeed;
 @end

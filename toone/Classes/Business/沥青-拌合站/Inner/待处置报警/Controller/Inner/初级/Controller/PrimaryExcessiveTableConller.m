@@ -73,6 +73,7 @@
 }
 
 -(void)reloadData:(NSString *)urlString {
+    NSLog(@"初级～reloadData");
     self.urlString = urlString;
     NSString *page = [self getParamValueFromUrl:urlString paramName:@"pageNo"];
     __weak typeof(self)  weakSelf = self;
@@ -153,5 +154,7 @@
     }
     return _dataArr;
 }
+
+
 
 @end

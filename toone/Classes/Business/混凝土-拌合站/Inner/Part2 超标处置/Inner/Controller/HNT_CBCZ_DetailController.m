@@ -78,21 +78,12 @@
                         data = nil;
                     }
                 }
-            }
-            //
-            weakSelf.datas = datas;
-            [weakSelf.tb reloadData];
-            
-#pragma mark - 因布局设计有卡顿现象，优化方法如下
-//            weakSelf.tb.contentOffset = CGPointMake(0, 220);
-//            [UIView animateWithDuration:0.15 animations:^{
-//                weakSelf.tb.contentOffset = CGPointMake(0, 0);
-//            } completion:^(BOOL finished) {
+                //
+                weakSelf.datas = datas;
+                [weakSelf.tb reloadData];
                 //移除指示器
                 [Tools removeActivity];
-                
-//            }];
-            
+            }            
         } failure:^(NSError *error) {
         }];
 }

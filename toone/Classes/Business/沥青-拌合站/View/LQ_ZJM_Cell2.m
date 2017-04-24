@@ -26,5 +26,15 @@
     [super awakeFromNib];
     // Initialization code
 }
-
+-(void)setModel:(LQ_SGModel *)model{
+    _model = model;
+    self.dailycl_Label.text = model.dailycl;
+    self.ljchangliang_Label.text = model.ljchangliang;
+    self.dailyps_Label.text = model.dailyps;
+    self.panshu_Label.text =  model.panshu;
+    self.czps_Label.text = Format(model.czps);
+    self.zcbps_Label.text = Format(model.zcbps);
+    self.cblv_Label.text = Format(model.cblv);
+    self.dczps_Label.text = Format(model.dczps);
+}
 @end

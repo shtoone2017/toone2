@@ -18,6 +18,7 @@ static UserDefaultsSetting * setting = nil;
 +(instancetype)allocWithZone:(struct _NSZone *)zone{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        setting.randomSeed = @"0";
         setting = [super allocWithZone:zone];
         [setting getFromSandbox];
     });

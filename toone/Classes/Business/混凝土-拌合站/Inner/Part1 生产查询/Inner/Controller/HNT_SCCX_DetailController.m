@@ -53,14 +53,14 @@
                     weakSelf.headMsg = headMsg;
                 }
                 
+                //
+                weakSelf.datas = datas;
+                [weakSelf.tb reloadData];
                 
+                //移除指示器
+                [Tools removeActivity];
             }
-            //
-            weakSelf.datas = datas;
-            [weakSelf.tb reloadData];
-            
-            //移除指示器
-            [Tools removeActivity];
+
         } failure:^(NSError *error) {
             
         }];

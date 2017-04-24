@@ -18,7 +18,7 @@
 }
 
 -(void)reloadData:(NSString *) urlString{
-    
+    NSLog(@"MyTableViewController~reloadData");
 }
 -(NSString *)startTime{
     if (!_startTime) {
