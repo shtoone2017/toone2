@@ -66,6 +66,10 @@
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString * urlString = [NSString stringWithFormat:AppHntMain_3,userGroupId,startTimeStamp,endTimeStamp];
 //    __weak typeof(self)  weakSelf = self;
+    if(self.datas){
+        [self.datas removeAllObjects];
+        [self.tableView reloadData];
+    }
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
