@@ -137,9 +137,9 @@
                     setting.departName  = json[@"departName"];
                     setting.userPhoneNum = json[@"userPhoneNum"];
                     setting.userFullName = json[@"userFullName"];
-                    setting.hntchaobiaoReal = json[@"quanxian"][@"hntchaobiaoReal"];
-                    setting.hntchaobiaoSp = json[@"quanxian"][@"hntchaobiaoSp"];
-                    setting.syschaobiaoReal = json[@"quanxian"][@"syschaobiaoReal"];
+                    setting.hntchaobiaoReal = [json[@"quanxian"][@"hntchaobiaoReal"] boolValue];
+                    setting.hntchaobiaoSp = [json[@"quanxian"][@"hntchaobiaoSp"] boolValue];
+                    setting.syschaobiaoReal = [json[@"quanxian"][@"syschaobiaoReal"] boolValue];
                     setting.login = YES;
                     
                     
