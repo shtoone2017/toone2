@@ -15,11 +15,11 @@
 
 @interface PrimaryExcessiveTableConller ()
 @property(nonatomic, strong) NSMutableArray *dataArr;
-
 @property (nonatomic, strong) disposal_C_Model *disModel;
 @property (nonatomic, strong) EXPrimaryModel *dataModel;
 @property (nonatomic, copy) NSString *urlString;
 @property (nonatomic, copy) NSString *yPage;//页码
+
 @end
 @implementation PrimaryExcessiveTableConller
 

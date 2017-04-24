@@ -138,6 +138,7 @@
                     setting.hntchaobiaoReal = [json[@"quanxian"][@"hntchaobiaoReal"] boolValue];
                     setting.hntchaobiaoSp = [json[@"quanxian"][@"hntchaobiaoSp"] boolValue];
                     setting.syschaobiaoReal = [json[@"quanxian"][@"syschaobiaoReal"] boolValue];
+                    setting.lqchaobiaoReal = [json[@"quanxian"][@"lqchaobiaoReal"] boolValue];
                     setting.login = YES;
                     setting.type = json[@"type"];
                     

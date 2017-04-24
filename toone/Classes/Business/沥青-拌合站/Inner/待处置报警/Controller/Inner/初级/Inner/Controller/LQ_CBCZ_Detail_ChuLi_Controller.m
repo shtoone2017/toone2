@@ -103,7 +103,8 @@
     [[HTTP shareAFNNetworking] uploadWithUrlstring:urlString parameter:dic data:data success:^(id json) {
         if ([json[@"success"] boolValue]){
             hud.mode = MBProgressHUDModeText;
-            hud.label.text = @"提交成功,请刷新数据";
+            hud.label.text = @"提交成功";
+            [Tools tip:@"提交成功,请刷新数据"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 
 //                [UserDefaultsSetting shareSetting].randomSeed = [NSString stringWithFormat:@"%d",arc4random()%1000];

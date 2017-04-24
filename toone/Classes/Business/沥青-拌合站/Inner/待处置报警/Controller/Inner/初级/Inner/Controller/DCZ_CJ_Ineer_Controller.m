@@ -154,7 +154,7 @@
             return cell;
         }else {
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-            if ([UserDefaultsSetting shareSetting].hntchaobiaoReal) {
+            if ([UserDefaultsSetting shareSetting].lqchaobiaoReal) {
                 UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
                 btn.frame = CGRectMake(0, 0, Screen_w, 40);
                 [btn setTitle:@"点击这里开始处置..." forState:UIControlStateNormal];
