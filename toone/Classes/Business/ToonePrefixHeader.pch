@@ -52,7 +52,7 @@
 
 
 //云部署地址
-#define baseUrl     @"http://192.168.11.112:8081/njpfqms/"
+#define baseUrl     @"http://192.168.11.107:8081/njpfqms/"
 //@"http://120.26.127.135:8083/xztl/"
 /*
  192.168.11.105:8080/zgjjqms/
@@ -104,9 +104,10 @@
 //沥青组织机构
 #define LqAppDepartTree_4 FormatString(baseUrl,@"app.do?AppDepartTree&updateDepartTime=%@&funtype=%@&userGroupId=%@&type=%@")
 
-//沥青拌合站主界面
+//沥青拌合站主界面 --- 管理层
 #define LQHome FormatString(baseUrl,@"lqChaoBiaoController.do?lqChaoBiaoCount&userGroupId=%@&startTime=%@&endTime=%@")
-
+//沥青拌合站主界面 --- 施工层
+#define LQHome2 FormatString(baseUrl,@"lqSysController.do?produceMenu&userGroupId=%@&startTime=%@&endTime=%@")
 //沥青拌合站生产数据查询
 #define ProduQuery FormatString(baseUrl,@"lqScsjcxController.do?getScsjcxList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=")
 //沥青拌合站生产数据详情

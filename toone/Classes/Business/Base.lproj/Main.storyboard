@@ -3662,7 +3662,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wzl-rB-3LT">
                                 <rect key="frame" x="0.0" y="99" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="h6m-wW-bID" id="NqM-80-qMb"/>
                                     <outlet property="delegate" destination="h6m-wW-bID" id="Brz-7I-vpF"/>
@@ -3727,7 +3727,7 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OFf-sM-NiC"/>
+        <segue reference="huJ-hq-5Ls"/>
         <segue reference="eyg-Cx-bjM"/>
         <segue reference="2qa-au-FyR"/>
         <segue reference="yFe-Zp-Q6l"/>

@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUi];
+    [self loadData];
 }
 
 -(void)dealloc{
@@ -51,8 +52,7 @@
      [self.tb registerNib:[UINib nibWithNibName:@"HNT_CBCZ_Detail_ShenPi_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_CBCZ_Detail_ShenPi_Cell"];
 }
 
--(NSMutableArray *)datas{
-    if (!_datas) {
+-(void)loadData{
         //添加指示器
         [Tools showActivityToView:self.view];
         
@@ -95,8 +95,6 @@
             
         } failure:^(NSError *error) {
         }];
-    }
-    return _datas;
 }
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -219,12 +217,12 @@
 }
 -(void)goto_chuzhi{
     HNT_CBCZ_Detail_ChuLi_Controller * vc = [[HNT_CBCZ_Detail_ChuLi_Controller alloc] init];
-    vc.SId = self.headMsg.SId;
+    vc.SId = self.headMsg.sid;
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)goto_shenpi{
     HNT_CBCZ_Detail_ShenPi_Controller * vc = [[HNT_CBCZ_Detail_ShenPi_Controller alloc] init];
-    vc.SId = self.headMsg.SId;
+    vc.SId = self.headMsg.sid;
     [self.navigationController pushViewController:vc animated:YES];
 }
 @end

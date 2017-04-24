@@ -52,4 +52,6 @@
 
 @property (nonatomic, copy) NSString *shebString;//生产查询筛选设备编号
 @property (nonatomic, copy) NSString *CBczlx;//超标处置类型
+
+@property (nonatomic,copy) NSString * type;
 @end

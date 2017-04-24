@@ -19,7 +19,7 @@
 @property (nonatomic,copy) NSString * gongchengmingcheng        ;// 工程名称
 @property (nonatomic,copy) NSString * gongdanhao                ;// 工单号
 @property (nonatomic,copy) NSString * gujifangshu               ;// 估计方数
-@property (nonatomic,copy) NSString * SId                       ;// 本条数据id
+@property (nonatomic,copy) NSString * sid                       ;// 本条数据id
 @property (nonatomic,copy) NSString * jiaobanshijian            ;// 搅拌时间
 @property (nonatomic,copy) NSString * jiaozuobuwei              ;// 浇筑部位
 @property (nonatomic,copy) NSString * peifanghao                ;// 配方号

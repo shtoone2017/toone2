@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUi];
+    [self loadData];
 }
 -(void)loadUi{
 //    self.automaticallyAdjustsScrollViewInsets = NO;
@@ -31,8 +32,7 @@
     [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_HeadMsgCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_HeadMsgCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Detail_DataCell"];
 }
--(NSMutableArray *)datas{
-    if (!_datas) {
+-(void)loadData{
         //添加指示器
         [Tools showActivityToView:self.view];
         
@@ -62,9 +62,8 @@
             //移除指示器
             [Tools removeActivity];
         } failure:^(NSError *error) {
+            
         }];
-    }
-    return _datas;
 }
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

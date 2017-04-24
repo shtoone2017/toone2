@@ -90,7 +90,7 @@
     if (EqualToString(@"退出账号", drawer.title)) {
         id vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateInitialViewController];
         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-        [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"rippleEffect"];
+        [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [UserDefaultsSetting shareSetting].login = NO;

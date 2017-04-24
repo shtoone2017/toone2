@@ -351,6 +351,9 @@
 		D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D246B2A71E00DEBA00E83159 /* HNT_CBCZ_Cell.xib */; };
 		D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = D246B2AB1E00E0CD00E83159 /* HNT_CBCZ_Model.m */; };
 		D2938B921EAC91A900770D90 /* arrow_02.png in Resources */ = {isa = PBXBuildFile; fileRef = D2938B911EAC91A900770D90 /* arrow_02.png */; };
+		D2938B9B1EAD996500770D90 /* LQ_ZJM_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938B991EAD996500770D90 /* LQ_ZJM_Cell2.m */; };
+		D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */; };
+		D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */; };
 		D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */; };
 		D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */; };
 		D2CF6B671E011728003AE61D /* Exp6View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B641E011728003AE61D /* Exp6View.m */; };
@@ -996,6 +999,11 @@
 		D246B2AA1E00E0CD00E83159 /* HNT_CBCZ_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Model.h; sourceTree = "<group>"; };
 		D246B2AB1E00E0CD00E83159 /* HNT_CBCZ_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Model.m; sourceTree = "<group>"; };
 		D2938B911EAC91A900770D90 /* arrow_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_02.png; sourceTree = "<group>"; };
+		D2938B981EAD996500770D90 /* LQ_ZJM_Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_ZJM_Cell2.h; sourceTree = "<group>"; };
+		D2938B991EAD996500770D90 /* LQ_ZJM_Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_ZJM_Cell2.m; sourceTree = "<group>"; };
+		D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQ_ZJM_Cell2.xib; sourceTree = "<group>"; };
+		D2938B9D1EAD9EB300770D90 /* LQ_SGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_SGModel.h; sourceTree = "<group>"; };
+		D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_SGModel.m; sourceTree = "<group>"; };
 		D2CF6B601E011728003AE61D /* Exp6_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp6_Xib_View.h; sourceTree = "<group>"; };
 		D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp6_Xib_View.m; sourceTree = "<group>"; };
 		D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp6_Xib_View.xib; sourceTree = "<group>"; };
@@ -1696,6 +1704,8 @@
 				42AC71381E30C393007D8F57 /* LQ_CellModel.m */,
 				42AC71391E30C393007D8F57 /* LQ_Model.h */,
 				42AC713A1E30C393007D8F57 /* LQ_Model.m */,
+				D2938B9D1EAD9EB300770D90 /* LQ_SGModel.h */,
+				D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1706,6 +1716,9 @@
 				42AC713C1E30C393007D8F57 /* LQ_ZJM_Cell.h */,
 				42AC713D1E30C393007D8F57 /* LQ_ZJM_Cell.m */,
 				42AC713E1E30C393007D8F57 /* LQ_ZJM_Cell.xib */,
+				D2938B981EAD996500770D90 /* LQ_ZJM_Cell2.h */,
+				D2938B991EAD996500770D90 /* LQ_ZJM_Cell2.m */,
+				D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3119,6 +3132,7 @@
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
 				42AC71471E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
+				D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */,
 				42AC72091E30C576007D8F57 /* TheProjectCell.xib in Resources */,
 				D200651E1DFF86B30021E293 /* BarChartViewController.xib in Resources */,
 				42AC716F1E30C393007D8F57 /* LQ_CLHS_Cell.xib in Resources */,
@@ -3297,6 +3311,7 @@
 				D200647C1DFF86800021E293 /* HNT_TJFX_Controller.m in Sources */,
 				42AC714A1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				42AC71431E30C393007D8F57 /* EXPMiddleModel.m in Sources */,
+				D2938B9B1EAD996500770D90 /* LQ_ZJM_Cell2.m in Sources */,
 				42AC71741E30C393007D8F57 /* ProductionDetailsG.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				D20064641DFF86800021E293 /* DrawerController.m in Sources */,
@@ -3433,6 +3448,7 @@
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
 				D20064721DFF86800021E293 /* HNT_YLSY_DetailModel.m in Sources */,
 				42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */,
+				D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
 				187C72F91E30B1810072F33A /* DGActivityIndicatorBallRotateAnimation.m in Sources */,

@@ -11,7 +11,9 @@
 #import "LqNodeViewController.h"
 #import "LQ_CellModel.h"
 #import "LQ_Model.h"
+#import "LQ_SGModel.h"
 #import "LQ_ZJM_Cell.h"
+#import "LQ_ZJM_Cell2.h"
 @interface LQViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *flashLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -19,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *ContreView;
 
 @property (nonatomic,strong) NSMutableArray * datas;
-
+@property (nonatomic,strong) LQ_SGModel * model;
 @end
 @implementation LQViewController
 
@@ -40,44 +42,59 @@
 }
 
 #pragma mark - 网络请求
+static NSString * type = nil;
 -(void)loadData{
     NSDictionary * dic;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
+    type = [UserDefaultsSetting shareSetting].type;
+    NSString *urlString;
+    if (EqualToString(type, @"GL")) {
+        urlString = [NSString stringWithFormat:LQHome,userGroupId,startTimeStamp,endTimeStamp];
+    }else if(EqualToString(type, @"SG")){
+        urlString = [NSString stringWithFormat:LQHome2,userGroupId,startTimeStamp,endTimeStamp];
+    }else{
+        [Tools tip:@"无法识别的身份，不能获取数据"];
+        return;
+    }
     
-    NSString *urlString = [NSString stringWithFormat:LQHome,userGroupId,startTimeStamp,endTimeStamp];
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dic success:^(id json) {
         if ([json[@"success"] boolValue]) {
-            if ([json[@"data"] isKindOfClass:[NSArray class]]) {
-                NSMutableArray * datas=[NSMutableArray array];
-                for (NSArray * subArray in json[@"data"]) {
-                    LQ_CellModel * cellModel=[[LQ_CellModel alloc] init];
-                    int i=0;
-                    for (NSDictionary * dic in subArray) {
-                        LQ_Model * model = [LQ_Model modelWithDict:dic];
-                        switch (i) {
-                            case 0:
-                                cellModel.totalModel = model;
-                                break;
-                            case 1:
-                                cellModel.chujiModel = model;
-                                break;
-                            case 2:
-                                cellModel.zhongjiModel = model;
-                                break;
-                            case 3:
-                                cellModel.gaojiModel = model;
-                                break;
-                            default:
-                                break;
+            if(EqualToString(type, @"SG")){
+                LQ_SGModel * model = [LQ_SGModel modelWithDict:json[@"data"]];
+                self.model = model;
+            }else{
+                if ([json[@"data"] isKindOfClass:[NSArray class]]) {
+                    NSMutableArray * datas=[NSMutableArray array];
+                    for (NSArray * subArray in json[@"data"]) {
+                        LQ_CellModel * cellModel=[[LQ_CellModel alloc] init];
+                        int i=0;
+                        for (NSDictionary * dic in subArray) {
+                            LQ_Model * model = [LQ_Model modelWithDict:dic];
+                            switch (i) {
+                                case 0:
+                                    cellModel.totalModel = model;
+                                    break;
+                                case 1:
+                                    cellModel.chujiModel = model;
+                                    break;
+                                case 2:
+                                    cellModel.zhongjiModel = model;
+                                    break;
+                                case 3:
+                                    cellModel.gaojiModel = model;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            i++;
                         }
-                        i++;
+                        [datas addObject:cellModel];
                     }
-                    [datas addObject:cellModel];
+                    weakSelf.datas = datas;
                 }
-                weakSelf.datas = datas;
             }
         }
         [weakSelf.tableView reloadData];
@@ -151,17 +168,27 @@
     
     self.ContreView.backgroundColor = BLUECOLOR;
     self.tableView.rowHeight = 155;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     self.view.backgroundColor = [UIColor oldLaceColor];
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [self.tableView.mj_header beginRefreshing];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"LQ_ZJM_Cell2" bundle:nil]  forCellReuseIdentifier:@"LQ_ZJM_Cell2"];
 }
 
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _datas.count;
+    if (EqualToString(type, @"GL")) {
+         return _datas.count;
+    }else if(EqualToString(type, @"SG")){
+        return 1;
+    }
+    return 0;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (EqualToString(type, @"GL")) {
         static NSString *CellIdentifier = @"LQ_ZJM_Cell";
         UINib *nib = [UINib nibWithNibName:@"LQ_ZJM_Cell" bundle:nil];
         [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
@@ -169,10 +196,18 @@
         
         LQ_CellModel * cellModel = self.datas[indexPath.row];
         cell.cellModel = cellModel;
-    
+        
         //取消选中cell背景颜色
-//        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
         return cell;
+    }else if(EqualToString(type, @"SG")){
+        LQ_ZJM_Cell2 * cell = [tableView dequeueReusableCellWithIdentifier:@"LQ_ZJM_Cell2"];
+        cell.model = self.model;
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    
+        return nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

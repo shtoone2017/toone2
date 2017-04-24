@@ -105,7 +105,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      HNT_SCCX_Model * model = self.datas[indexPath.row];
     
-    [self performSegueWithIdentifier:@"HNT_SCCX_DetailController" sender:model.SId];
+    [self performSegueWithIdentifier:@"HNT_SCCX_DetailController" sender:model.sid];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
@@ -172,6 +172,7 @@
     
     if ([vc isKindOfClass:[HNT_SCCX_DetailController class]]) {
         HNT_SCCX_DetailController * controller = vc;
+        
         controller.bianhao = (NSString*)sender;
         controller.title = @"详情";
     }

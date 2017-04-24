@@ -139,7 +139,7 @@
                     setting.hntchaobiaoSp = json[@"quanxian"][@"hntchaobiaoSp"];
                     setting.syschaobiaoReal = json[@"quanxian"][@"syschaobiaoReal"];
                     setting.login = YES;
-                    
+                    setting.type = json[@"type"];
                     
                     setting.loginDepartId  = json[@"departId"];
                     setting.userRole  = json[@"userRole"];
@@ -150,7 +150,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
                     [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"rippleEffect"];
+                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });
             }else{
                 hud.mode = MBProgressHUDModeText;
