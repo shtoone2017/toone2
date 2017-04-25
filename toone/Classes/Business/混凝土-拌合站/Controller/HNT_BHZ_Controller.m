@@ -34,7 +34,7 @@
     [super viewDidLoad];
     [self addPanGestureRecognizer];
     [self loadUI];
-    [self loadData];
+//    [self loadData];
 }
 -(void)dealloc{
     FuncLog;

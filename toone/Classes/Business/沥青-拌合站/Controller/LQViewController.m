@@ -38,7 +38,7 @@ static NSString * type = nil;
     [super viewDidLoad];
     type = [UserDefaultsSetting shareSetting].type;
     [self LodaUI];
-    [self loadData];
+//    [self loadData];
     [self setRightBut];
 }
 

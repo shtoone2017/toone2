@@ -46,7 +46,7 @@
     linker.frame = CGRectMake(0, 0, Screen_w, 20);
     linker.center = CGPointMake(headerBtn.center.x, CGRectGetMaxY(nameLb.frame)+20);
     NSString * tell = [UserDefaultsSetting shareSetting].userPhoneNum;
-    NSString * linkerTitle = [NSString stringWithFormat:@"电话：%@",tell ?tell :@""];
+    NSString * linkerTitle = [NSString stringWithFormat:@"电话：%@",tell ?tell :@"HAVE NO DATA"];
     linker.titleLabel.font = [UIFont systemFontOfSize:14.0];
     [linker setTitle:linkerTitle forState:UIControlStateNormal];
     [self addSubview:linker];
