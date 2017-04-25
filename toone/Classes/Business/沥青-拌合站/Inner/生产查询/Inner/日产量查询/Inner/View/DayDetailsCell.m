@@ -39,43 +39,43 @@
             self.titleLabel.text = @"盘数";
             self.iconView.hidden = YES;
             break;
-        case 3:
-            self.dateTextF.text =model.dailyxzcl;
-            self.titleLabel.text = @"修正产量(kg)";
-            break;
-        case 4:
-            self.dateTextF.text =model.dailymd;
-            self.titleLabel.text = @"标准密度(kg/m2)";
-            break;
-        case 5:
-            self.dateTextF.text =model.dailybuwei;
-            self.titleLabel.text = @"施工桩号";
-            break;
-        case 6:
-            self.dateTextF.text =model.dailycd;
-            self.titleLabel.text = @"长度(m)";
-            break;
-        case 7:
-            self.dateTextF.text =model.dailykd;
-            self.titleLabel.text = @"宽度(m)";
-            break;
-        case 8:
-            self.dateTextF.text =model.dailyhd;
-            self.titleLabel.text = @"厚度(m)";
-            self.iconView.hidden = YES;
-            break;
-        case 9:
-            self.dateTextF.text =model.dailysjhd;
-            self.titleLabel.text = @"实际厚度";
-            break;
-        case 10:
-            self.dateTextF.text =model.dailyxh;
-            self.titleLabel.text = @"型号";
-            break;
-        case 11:
-            self.dateTextF.text =model.dailybeizhu;
-            self.titleLabel.text = @"备注";
-            break;
+//        case 3:
+//            self.dateTextF.text =model.dailyxzcl;
+//            self.titleLabel.text = @"修正产量(kg)";
+//            break;
+//        case 4:
+//            self.dateTextF.text =model.dailymd;
+//            self.titleLabel.text = @"标准密度(kg/m2)";
+//            break;
+//        case 5:
+//            self.dateTextF.text =model.dailybuwei;
+//            self.titleLabel.text = @"施工桩号";
+//            break;
+//        case 6:
+//            self.dateTextF.text =model.dailycd;
+//            self.titleLabel.text = @"长度(m)";
+//            break;
+//        case 7:
+//            self.dateTextF.text =model.dailykd;
+//            self.titleLabel.text = @"宽度(m)";
+//            break;
+//        case 8:
+//            self.dateTextF.text =model.dailyhd;
+//            self.titleLabel.text = @"厚度(m)";
+//            self.iconView.hidden = YES;
+//            break;
+//        case 9:
+//            self.dateTextF.text =model.dailysjhd;
+//            self.titleLabel.text = @"实际厚度";
+//            break;
+//        case 10:
+//            self.dateTextF.text =model.dailyxh;
+//            self.titleLabel.text = @"型号";
+//            break;
+//        case 11:
+//            self.dateTextF.text =model.dailybeizhu;
+//            self.titleLabel.text = @"备注";
+//            break;
         default:
             break;
     }

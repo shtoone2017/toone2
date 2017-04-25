@@ -11,14 +11,10 @@
 
 @interface DayQueryTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *dailyrqLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dailybuweiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dailyclLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dailyxzclLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dailypsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dailymdLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dailycdLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dailykdLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dailyhdLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *dailysbbh_label;
 
 
 @end
@@ -33,14 +29,11 @@
     _dayQueryModel = dayQueryModel;
     
     self.dailyrqLabel.text = dayQueryModel.dailyrq;
-    self.dailybuweiLabel.text = dayQueryModel.dailybuwei;
     self.dailyclLabel.text = dayQueryModel.dailycl;
-    self.dailyxzclLabel.text = dayQueryModel.dailyxzcl;
     self.dailypsLabel.text = dayQueryModel.dailyps;
-    self.dailymdLabel.text = dayQueryModel.dailymd;
-    self.dailycdLabel.text = dayQueryModel.dailycd;
-    self.dailykdLabel.text = dayQueryModel.dailykd;
-    self.dailyhdLabel.text = dayQueryModel.dailyhd;
+    self.dailysbbh_label.text = dayQueryModel.dailysbbh;
+
+
 }
 
 

@@ -127,7 +127,6 @@
 		42AC71901E30C3B6007D8F57 /* Exp8_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71891E30C3B6007D8F57 /* Exp8_Xib_View.m */; };
 		42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AC718A1E30C3B6007D8F57 /* Exp8_Xib_View.xib */; };
 		42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC718C1E30C3B6007D8F57 /* Exp8View.m */; };
-		42AC71971E30C3F0007D8F57 /* MyInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71941E30C3F0007D8F57 /* MyInputController.m */; };
 		42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71961E30C3F0007D8F57 /* MyTableViewController.m */; };
 		42AC71B81E30C423007D8F57 /* SGBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC719B1E30C423007D8F57 /* SGBar.m */; };
 		42AC71B91E30C423007D8F57 /* SGBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC719D1E30C423007D8F57 /* SGBarChart.m */; };
@@ -593,8 +592,6 @@
 		42AC718A1E30C3B6007D8F57 /* Exp8_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp8_Xib_View.xib; sourceTree = "<group>"; };
 		42AC718B1E30C3B6007D8F57 /* Exp8View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp8View.h; sourceTree = "<group>"; };
 		42AC718C1E30C3B6007D8F57 /* Exp8View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp8View.m; sourceTree = "<group>"; };
-		42AC71931E30C3F0007D8F57 /* MyInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInputController.h; sourceTree = "<group>"; };
-		42AC71941E30C3F0007D8F57 /* MyInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInputController.m; sourceTree = "<group>"; };
 		42AC71951E30C3F0007D8F57 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		42AC71961E30C3F0007D8F57 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		42AC719A1E30C423007D8F57 /* SGBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBar.h; sourceTree = "<group>"; };
@@ -1550,20 +1547,12 @@
 		42AC71061E30C393007D8F57 /* 材料用量查询 */ = {
 			isa = PBXGroup;
 			children = (
-				42AC71071E30C393007D8F57 /* Controller */,
 				42AC71081E30C393007D8F57 /* MaterialTableViewController.h */,
 				42AC71091E30C393007D8F57 /* MaterialTableViewController.m */,
 				42AC710A1E30C393007D8F57 /* Model */,
 				42AC710F1E30C393007D8F57 /* View */,
 			);
 			path = "材料用量查询";
-			sourceTree = "<group>";
-		};
-		42AC71071E30C393007D8F57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		42AC710A1E30C393007D8F57 /* Model */ = {
@@ -2721,8 +2710,6 @@
 				D20064221DFF86800021E293 /* MyViewController.m */,
 				D20064231DFF86800021E293 /* UserDefaultsSetting.h */,
 				D20064241DFF86800021E293 /* UserDefaultsSetting.m */,
-				42AC71931E30C3F0007D8F57 /* MyInputController.h */,
-				42AC71941E30C3F0007D8F57 /* MyInputController.m */,
 				42AC71951E30C3F0007D8F57 /* MyTableViewController.h */,
 				42AC71961E30C3F0007D8F57 /* MyTableViewController.m */,
 			);
@@ -3389,7 +3376,6 @@
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
-				42AC71971E30C3F0007D8F57 /* MyInputController.m in Sources */,
 				D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */,
 				8CBD72E31E07A75000A0C991 /* HNT_SCCX_Detail_Data.m in Sources */,
 				42AC71C31E30C423007D8F57 /* SGSign.m in Sources */,

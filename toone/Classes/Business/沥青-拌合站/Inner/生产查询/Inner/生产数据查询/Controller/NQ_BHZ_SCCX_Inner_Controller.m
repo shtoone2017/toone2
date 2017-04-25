@@ -41,7 +41,9 @@
     //添加刷新(初始化URL）
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
-        [weakSelf  reloadData:weakSelf.urlString];
+        NSString *pageNo = @"1";
+        NSString *urlString = [self loadUI:pageNo];
+        [weakSelf reloadData:urlString];
     }];
     //    添加加载
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{

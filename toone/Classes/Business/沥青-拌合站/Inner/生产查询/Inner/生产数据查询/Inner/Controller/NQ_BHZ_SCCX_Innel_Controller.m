@@ -30,7 +30,7 @@
     [self setUI];
     
 #warning 需手动刷新一次
-    [self looadData];
+    [self loadData];
 }
 
 -(void)setUI {
@@ -39,10 +39,10 @@
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.rowHeight = 610;
     
-   [self looadData];
+   [self loadData];
 }
 
--(void)looadData {
+-(void)loadData {
     NSString *shebeiStr = [UserDefaultsSetting shareSetting].shebeibianhao;
     NSNumber *bianhaoBer = [UserDefaultsSetting shareSetting].bianhao;
     NSString *urlString = [NSString stringWithFormat:ProductionDetails,shebeiStr,bianhaoBer];

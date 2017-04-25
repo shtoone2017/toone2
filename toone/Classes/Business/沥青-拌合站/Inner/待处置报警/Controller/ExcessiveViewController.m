@@ -136,6 +136,8 @@
 
 #pragma mark - 分页跳转
 - (void)touchLabelWithIndex:(NSInteger)index {
+    
+    
     if (index == 0) { //初级
         [self.tableCont removeFromParentViewController];
         [self.tableCont.view removeFromSuperview];

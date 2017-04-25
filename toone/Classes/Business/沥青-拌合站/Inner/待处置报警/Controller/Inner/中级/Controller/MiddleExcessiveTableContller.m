@@ -43,7 +43,9 @@
     //添加刷新(初始化URL）
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
-        [weakSelf  reloadData:weakSelf.urlString];
+        NSString *pageNo = @"1";
+        NSString *urlString = [self loadUI:pageNo andLeixing:@""];
+        [weakSelf reloadData:urlString];
     }];
     //    添加加载
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -76,6 +78,11 @@
     self.urlString = urlString;
     NSString *page = [self getParamValueFromUrl:urlString paramName:@"pageNo"];
     __weak typeof(self)  weakSelf = self;
+    
+    if (self.dataArr) {
+        [self.dataArr removeAllObjects];
+        [self.tableView reloadData];
+    }
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         NSDictionary *dict = (NSDictionary *)result;
         NSMutableArray * datas = [NSMutableArray array];
@@ -154,4 +161,32 @@
     return _dataArr;
 }
 
+
+#pragma mark - 观察随机种子启动刷新
+-(instancetype)init{
+    if (self = [super init]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"randomSeed" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)dealloc{
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"randomSeed"];
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self reloadData:[self loadUrlString]];
+}
+-(NSString *)loadUrlString {
+    NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
+    NSString *dengji = @"1";
+    //判断等级
+    NSString *leix = @"";
+    NSString *pageNo = @"1";
+    //    pageNo = self.yPage;
+    NSString *shebStr = @"";
+    NSString *startTime = [TimeTools timeStampWithTimeString:self.startTime];
+    NSString *endTime = [TimeTools timeStampWithTimeString:self.endTime];
+    NSString *urlString = [NSString stringWithFormat:LQExcessive,dengji,leix,pageNo,shebStr,userGroupId,startTime,endTime];
+    
+    return urlString;
+}
 @end

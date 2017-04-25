@@ -9,11 +9,10 @@
 #import "DayDetailsController.h"
 #import "DayDetailsCell.h"
 #import "DayQueryModel.h"
-#import "MyInputController.h"
 #import "Masonry.h"
 
 @interface DayDetailsController ()
-@property (nonatomic, strong) MyInputController *inputVc;
+//@property (nonatomic, strong) MyInputController *inputVc;
 @property (assign,  nonatomic) bool isPop;
 
 @end
@@ -59,10 +58,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2 ||indexPath.row == 8) {
     }else {
-        self.inputVc = [[MyInputController alloc]  init];
-        self.inputVc.index = indexPath.row;
-        self.inputVc.model = self.model;
-        [self.navigationController pushViewController:_inputVc animated:YES];
+//        self.inputVc = [[MyInputController alloc]  init];
+//        self.inputVc.index = indexPath.row;
+//        self.inputVc.model = self.model;
+//        [self.navigationController pushViewController:_inputVc animated:YES];
     }
 }
 #define butW Screen_w/3-50
@@ -147,58 +146,58 @@
     float kd;
     float md;
     float sun;
-     yzzcl =  [self.model.dailyxzcl  floatValue];
-     ycl =  [self.model.dailycl floatValue];
-     cd =  [self.model.dailycd floatValue];
-     kd =  [self.model.dailykd floatValue];
-     md = [self.model.dailymd floatValue];
-    if (cd == 0 || kd == 0 || md == 0) {
-        sun = 0;
-    }else {
-        sun = (yzzcl + ycl) / (cd * kd * md) *100;
-    }
-    self.model.dailyhd = [NSString stringWithFormat:@"%.2f",sun];
-    [self.tableView reloadData];
+//     yzzcl =  [self.model.dailyxzcl  floatValue];
+//     ycl =  [self.model.dailycl floatValue];
+//     cd =  [self.model.dailycd floatValue];
+//     kd =  [self.model.dailykd floatValue];
+//     md = [self.model.dailymd floatValue];
+//    if (cd == 0 || kd == 0 || md == 0) {
+//        sun = 0;
+//    }else {
+//        sun = (yzzcl + ycl) / (cd * kd * md) *100;
+//    }
+//    self.model.dailyhd = [NSString stringWithFormat:@"%.2f",sun];
+//    [self.tableView reloadData];
 }
 
 #pragma mark - 提交
 - (void)submitClick:(id)sender {
-    if (self.model.dailybuwei || self.model.dailyxzcl || self.model.dailymd || self.model.dailycd || self.model.dailykd || self.model.dailysjhd || self.model.dailyxh || self.model.dailybeizhu) {
-        NSString *urlString = FormatString(baseUrl, @"lqclDailyController.do?dayproducecountadd");
-        NSDictionary * dic = @{@"dailybeizhu":self.model.dailybeizhu,
-                               @"dailybuwei":self.model.dailybuwei,
-                               @"dailycd":self.model.dailycd,
-                               @"dailycl":self.model.dailycl,
-                               @"dailyhd":self.model.dailyhd,
-                               @"dailyid":[UserDefaultsSetting shareSetting].dailyid,
-                               @"dailykd":self.model.dailykd,
-                               @"dailymd":self.model.dailymd,
-                               @"dailyps":self.model.dailyps,
-                               @"dailyrq":self.model.dailyrq,
-                               @"dailysbbh":[UserDefaultsSetting shareSetting].dailysbbh,
-                               @"dailysjhd":self.model.dailysjhd,
-                               @"dailyxzcl":self.model.dailyxzcl,
-                               @"dailyxh":self.model.dailyxh
-                               };
-        NSError  * err;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&err];
-        NSString * jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSDictionary * newDic = @{@"data":jsonStr};
-        [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:newDic success:^(id json) {
-            if ([json[@"success"] boolValue]){
-                [Tools tip:@"提交成功,请刷新数据"];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                    [self.weakController.navigationController popViewControllerAnimated:YES];
-                });
-            }else{
-                [Tools tip:@"抱歉，提交失败"];
-            }
-        } failure:^(NSError *error) {
-            [Tools tip:@"网络故障，提交失败"];
-        }];
-    }else {
-         [Tools tip:@"信息不完整，无法提交"];
-    }
+//    if (self.model.dailybuwei || self.model.dailyxzcl || self.model.dailymd || self.model.dailycd || self.model.dailykd || self.model.dailysjhd || self.model.dailyxh || self.model.dailybeizhu) {
+//        NSString *urlString = FormatString(baseUrl, @"lqclDailyController.do?dayproducecountadd");
+//        NSDictionary * dic = @{@"dailybeizhu":self.model.dailybeizhu,
+//                               @"dailybuwei":self.model.dailybuwei,
+//                               @"dailycd":self.model.dailycd,
+//                               @"dailycl":self.model.dailycl,
+//                               @"dailyhd":self.model.dailyhd,
+//                               @"dailyid":[UserDefaultsSetting shareSetting].dailyid,
+//                               @"dailykd":self.model.dailykd,
+//                               @"dailymd":self.model.dailymd,
+//                               @"dailyps":self.model.dailyps,
+//                               @"dailyrq":self.model.dailyrq,
+//                               @"dailysbbh":[UserDefaultsSetting shareSetting].dailysbbh,
+//                               @"dailysjhd":self.model.dailysjhd,
+//                               @"dailyxzcl":self.model.dailyxzcl,
+//                               @"dailyxh":self.model.dailyxh
+//                               };
+//        NSError  * err;
+//        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&err];
+//        NSString * jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//        NSDictionary * newDic = @{@"data":jsonStr};
+//        [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:newDic success:^(id json) {
+//            if ([json[@"success"] boolValue]){
+//                [Tools tip:@"提交成功,请刷新数据"];
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//                    [self.weakController.navigationController popViewControllerAnimated:YES];
+//                });
+//            }else{
+//                [Tools tip:@"抱歉，提交失败"];
+//            }
+//        } failure:^(NSError *error) {
+//            [Tools tip:@"网络故障，提交失败"];
+//        }];
+//    }else {
+//         [Tools tip:@"信息不完整，无法提交"];
+//    }
 }
 /*
 //清空

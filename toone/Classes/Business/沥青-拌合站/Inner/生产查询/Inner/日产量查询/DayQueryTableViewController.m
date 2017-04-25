@@ -31,13 +31,15 @@
 
 -(void)setUI {
     self.yPage = @"1";
-    self.tableView.rowHeight = 180;
+    self.tableView.rowHeight = 80;
     self.tableView.frame = CGRectMake(0, 95, Screen_w, Screen_h - 100);
     self.tableView.tableFooterView = [[UIView alloc] init];
     //添加刷新(初始化URL）
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
-        [weakSelf  reloadData:weakSelf.urlString];
+        NSString *pageNo = @"1";
+        NSString *urlString = [self loadUI:pageNo];
+        [self reloadData:urlString];
     }];
     //    添加加载
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -102,7 +104,7 @@
     
     DayQueryModel *model = _dataArr[indexPath.row];
     //产量存值
-    [UserDefaultsSetting shareSetting].dailyid = model.dailyid;
+//    [UserDefaultsSetting shareSetting].dailyid = model.dailyid;
     [UserDefaultsSetting shareSetting].dailysbbh = model.dailysbbh;
     
     cell.dayQueryModel = model;
@@ -110,9 +112,9 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DayDetailsController *detailVc = [[DayDetailsController alloc] init];
-    detailVc.model = _dataArr[indexPath.row];
-    [self.navigationController pushViewController:detailVc animated:YES];
+//    DayDetailsController *detailVc = [[DayDetailsController alloc] init];
+//    detailVc.model = _dataArr[indexPath.row];
+//    [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 -(NSString *)getParamValueFromUrl:(NSString *)url paramName:(NSString *)paramName
