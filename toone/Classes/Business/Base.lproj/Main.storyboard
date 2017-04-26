@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="Qff-ou-NCO" kind="relationship" relationship="viewControllers" id="vIk-Ez-Eq6"/>
                         <segue destination="wbf-P2-CPM" kind="relationship" relationship="viewControllers" id="avV-Tg-9yS"/>
+                        <segue destination="Ye8-9D-YTE" kind="relationship" relationship="viewControllers" id="0UB-F6-UrX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYl-q3-mLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -638,7 +639,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ozi-vl-cB4">
-                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -3614,6 +3615,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riG-qi-Mbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-634" y="4085"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="JvS-pP-0Ao">
+            <objects>
+                <navigationController id="Ye8-9D-YTE" customClass="MyNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Eog-qM-9JY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bb5-Bg-g3t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xw9-MY-efA" kind="relationship" relationship="rootViewController" id="3bd-XO-LX3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QI5-gj-9sJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1092" y="5189"/>
+        </scene>
+        <!--摊铺现场-->
+        <scene sceneID="THz-t3-G7k">
+            <objects>
+                <viewController id="Xw9-MY-efA" customClass="TP_Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LiF-We-Oqy"/>
+                        <viewControllerLayoutGuide type="bottom" id="lfL-6g-10x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ot1-ud-klR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-cK-u3E">
+                                <rect key="frame" x="33" y="138" width="107" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="摊铺"/>
+                                <connections>
+                                    <action selector="click:" destination="Xw9-MY-efA" eventType="touchUpInside" id="VDs-Sf-CnU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-aH-aii">
+                                <rect key="frame" x="60" y="284" width="107" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="出料"/>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zv-Ba-fML">
+                                <rect key="frame" x="212" y="122" width="107" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="碾压"/>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-h4-FoG">
+                                <rect key="frame" x="222" y="278" width="107" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="设备定位"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="摊铺现场" id="TpD-jp-nj6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lw2-6t-mTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="5246.6266866566721"/>
         </scene>
         <!--沥青拌和站-->
         <scene sceneID="ViK-4M-c7i">

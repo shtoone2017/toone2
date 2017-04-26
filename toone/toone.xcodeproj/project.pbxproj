@@ -355,6 +355,9 @@
 		D2938B9B1EAD996500770D90 /* LQ_ZJM_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938B991EAD996500770D90 /* LQ_ZJM_Cell2.m */; };
 		D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */; };
 		D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */; };
+		D2938BA81EB04E3700770D90 /* TP_TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938BA61EB04E3700770D90 /* TP_TP_Controller.m */; };
+		D2938BA91EB04E3700770D90 /* TP_TP_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2938BA71EB04E3700770D90 /* TP_TP_Controller.xib */; };
+		D2938BAC1EB04E6000770D90 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938BAB1EB04E6000770D90 /* TP_Controller.m */; };
 		D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */; };
 		D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */; };
 		D2CF6B671E011728003AE61D /* Exp6View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B641E011728003AE61D /* Exp6View.m */; };
@@ -1006,6 +1009,11 @@
 		D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQ_ZJM_Cell2.xib; sourceTree = "<group>"; };
 		D2938B9D1EAD9EB300770D90 /* LQ_SGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_SGModel.h; sourceTree = "<group>"; };
 		D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_SGModel.m; sourceTree = "<group>"; };
+		D2938BA51EB04E3700770D90 /* TP_TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_TP_Controller.h; sourceTree = "<group>"; };
+		D2938BA61EB04E3700770D90 /* TP_TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_TP_Controller.m; sourceTree = "<group>"; };
+		D2938BA71EB04E3700770D90 /* TP_TP_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_TP_Controller.xib; sourceTree = "<group>"; };
+		D2938BAA1EB04E6000770D90 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
+		D2938BAB1EB04E6000770D90 /* TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_Controller.m; sourceTree = "<group>"; };
 		D2CF6B601E011728003AE61D /* Exp6_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp6_Xib_View.h; sourceTree = "<group>"; };
 		D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp6_Xib_View.m; sourceTree = "<group>"; };
 		D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp6_Xib_View.xib; sourceTree = "<group>"; };
@@ -2212,6 +2220,7 @@
 				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
+				D2938BA01EB04DEF00770D90 /* 摊铺现场 */,
 				D20063F71DFF86800021E293 /* 登录 */,
 				D20063731DFF86800021E293 /* Example */,
 				D20063FA1DFF86800021E293 /* 组件 */,
@@ -3041,6 +3050,50 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D2938BA01EB04DEF00770D90 /* 摊铺现场 */ = {
+			isa = PBXGroup;
+			children = (
+				D2938BA11EB04DEF00770D90 /* 出料 */,
+				D2938BA21EB04DEF00770D90 /* 摊铺 */,
+				D2938BA31EB04DEF00770D90 /* 碾压 */,
+				D2938BA41EB04DEF00770D90 /* 设备定位 */,
+				D2938BAA1EB04E6000770D90 /* TP_Controller.h */,
+				D2938BAB1EB04E6000770D90 /* TP_Controller.m */,
+			);
+			path = "摊铺现场";
+			sourceTree = "<group>";
+		};
+		D2938BA11EB04DEF00770D90 /* 出料 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "出料";
+			sourceTree = "<group>";
+		};
+		D2938BA21EB04DEF00770D90 /* 摊铺 */ = {
+			isa = PBXGroup;
+			children = (
+				D2938BA51EB04E3700770D90 /* TP_TP_Controller.h */,
+				D2938BA61EB04E3700770D90 /* TP_TP_Controller.m */,
+				D2938BA71EB04E3700770D90 /* TP_TP_Controller.xib */,
+			);
+			path = "摊铺";
+			sourceTree = "<group>";
+		};
+		D2938BA31EB04DEF00770D90 /* 碾压 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "碾压";
+			sourceTree = "<group>";
+		};
+		D2938BA41EB04DEF00770D90 /* 设备定位 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "设备定位";
+			sourceTree = "<group>";
+		};
 		D2CF6B5F1E011728003AE61D /* EXP6 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3163,6 +3216,7 @@
 				D20065421DFF86B30021E293 /* RadarChartViewController.xib in Resources */,
 				D20065A41DFFE12D0021E293 /* Exp5_Xib_View.xib in Resources */,
 				D200648F1DFF86800021E293 /* ZZJG_View.xib in Resources */,
+				D2938BA91EB04E3700770D90 /* TP_TP_Controller.xib in Resources */,
 				D20064921DFF86800021E293 /* Exp1_Xib_View.xib in Resources */,
 				42AC717A1E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Cell.xib in Resources */,
 				D20065461DFF86B30021E293 /* SinusBarChartViewController.xib in Resources */,
@@ -3382,6 +3436,7 @@
 				42AC71731E30C393007D8F57 /* NQ_BHZ_SCCX_InneModel.m in Sources */,
 				187C730B1E30B1810072F33A /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				D20065471DFF86B30021E293 /* StackedBarChartViewController.m in Sources */,
+				D2938BAC1EB04E6000770D90 /* TP_Controller.m in Sources */,
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
@@ -3438,6 +3493,7 @@
 				42AC715C1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.m in Sources */,
 				D200652B1DFF86B30021E293 /* HorizontalBarChartViewController.m in Sources */,
 				42AC71651E30C393007D8F57 /* DayDetailsController.m in Sources */,
+				D2938BA81EB04E3700770D90 /* TP_TP_Controller.m in Sources */,
 				42AC72061E30C576007D8F57 /* Node.m in Sources */,
 				D200649B1DFF86800021E293 /* NSDictionary+Log.m in Sources */,
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
@@ -3675,14 +3731,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/shiguo/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gzbj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shiguo/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
@@ -3697,7 +3753,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/shiguo/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3705,7 +3761,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6e503742-d587-45bd-a21e-c9f648b790e8";
 				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_gzbj;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shiguo/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
