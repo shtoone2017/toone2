@@ -38,7 +38,6 @@ static NSString * type = nil;
     [super viewDidLoad];
     type = [UserDefaultsSetting shareSetting].type;
     [self LodaUI];
-//    [self loadData];
     [self setRightBut];
 }
 
@@ -50,6 +49,12 @@ static NSString * type = nil;
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString *urlString;
+    if(self.datas){
+        self.datas = nil;
+        [self.tableView reloadData];
+    }
+    
+    
     if (EqualToString(type, @"GL")) {
         urlString = [NSString stringWithFormat:LQHome,userGroupId,startTimeStamp,endTimeStamp];
     }else if(EqualToString(type, @"SG")){
@@ -229,5 +234,20 @@ static NSString * type = nil;
     }
     return _datas;
 }
-
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"departId" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    //    NSLog(@"change~~%@",change);
+    if (!EqualToString((NSString*)change[@"new"], (NSString*)change[@"old"])) {
+        [self loadData];
+    }
+}
+-(void)dealloc{
+    FuncLog;
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"departId"];
+}
 @end
