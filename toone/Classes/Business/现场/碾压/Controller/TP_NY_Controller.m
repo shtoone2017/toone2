@@ -34,6 +34,7 @@
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, copy) NSString *baseUrlString;
 @property (nonatomic, assign) int wdIndex;//标记温度Label
 @end
 @implementation TP_NY_Controller
@@ -44,21 +45,15 @@
     self.pageNo = @"1";
     self.maxPageItems = @"15";
     self.shebeibianhao = @"";
-    if (self.urlString == nil) {
-        [self loadUrlString];
-    }
+
+    _baseUrlString=TP_NYSD_List;
+    
     [self loadUI];
     [self loadListTableView];
     [self reloadData];
 }
--(void)loadUrlString {
 
-    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
-    NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-    NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString *urlString = [NSString stringWithFormat:TP_NYSD_List,userGroupId,self.shebeibianhao,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
-    self.urlString = urlString;
-}
+
 -(void)loadListTableView {
     self.firstBackView.backgroundColor = [UIColor snowColor];
     self.ListTableView.tableFooterView = [[UIView alloc] init];
@@ -98,11 +93,12 @@
                 self.pageNo = @"1";
                 self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
                 self.chartLabel.text = @"速度走势图(km/h)";
-                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
-                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-                NSString *urlString = [NSString stringWithFormat:TP_NYSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
-                weakSelf.urlString = urlString;
+//                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
+//                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+//                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+//                NSString *urlString = [NSString stringWithFormat:TP_NYSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
+//                weakSelf.urlString = urlString;
+                    _baseUrlString=TP_NYSD_List;
                 [self reloadData];
                 break;
             }
@@ -111,11 +107,12 @@
                 self.pageNo = @"1";
                 self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
                 self.chartLabel.text = @"温度走势图(℃)";
-                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
-                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-                NSString *urlString = [NSString stringWithFormat:TP_NYWD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
-                weakSelf.urlString = urlString;
+//                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
+//                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+//                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+//                NSString *urlString = [NSString stringWithFormat:TP_NYWD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
+//                weakSelf.urlString = urlString;
+                _baseUrlString=TP_NYWD_List;
                 [self reloadData];
                 break;
             }
@@ -125,17 +122,16 @@
 }
 #pragma mark - 网络请求
 -(void)reloadData {
-    [self  loadUrlString];
     
-    __weak typeof(self)  weakSelf = self;
-//    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
-//    NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-//    NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-//    NSString *urlString = [NSString stringWithFormat:TP_NYSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
-//    NSLog(@"urlString==%@",self.urlString);
+    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
+    NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+    NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+    NSString *urlString = [NSString stringWithFormat:    _baseUrlString,userGroupId,self.shebeibianhao,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
     
-    NSLog(@"urlString~~%@",weakSelf.urlString );
-    [[NetworkTool sharedNetworkTool] getObjectWithURLString:weakSelf.urlString completeBlock:^(id result) {
+    NSLog(@"urlString~~%@",urlString );
+    
+    __weak typeof(self) weakSelf = self;
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         NSMutableArray *arr = [NSMutableArray array];
         if ([result[@"success"] boolValue]) {
             if ([result[@"data"] isKindOfClass:[NSArray class]]) {
