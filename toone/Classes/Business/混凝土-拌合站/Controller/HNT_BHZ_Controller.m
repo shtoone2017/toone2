@@ -37,6 +37,7 @@
 //    [self loadData];
 }
 -(void)loadUI{
+    self.departName_Label.backgroundColor = BLUECOLOR;
     self.containerView.backgroundColor = BLUECOLOR;
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
     btn.tag  = 2;

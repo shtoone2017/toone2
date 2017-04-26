@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MyNavigationController : UINavigationController
-
+@property (nonatomic,strong) UIColor * myColor;
 @end

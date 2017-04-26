@@ -171,6 +171,46 @@
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F021EB043CF00440413 /* LqTheProjectCell.m */; };
 		8C283F051EB043D000440413 /* LqTheProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C283F031EB043CF00440413 /* LqTheProjectCell.xib */; };
+		8C283F451EB0A01C00440413 /* icon_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C283F2F1EB0A01C00440413 /* icon_location@2x.png */; };
+		8C283F461EB0A01C00440413 /* icon_location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C283F301EB0A01C00440413 /* icon_location@3x.png */; };
+		8C283F471EB0A01C00440413 /* BackgroundLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F341EB0A01C00440413 /* BackgroundLocationViewController.m */; };
+		8C283F481EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F371EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.m */; };
+		8C283F491EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C283F381EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib */; };
+		8C283F4A1EB0A01C00440413 /* MonitoringRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F3B1EB0A01C00440413 /* MonitoringRegionViewController.m */; };
+		8C283F4B1EB0A01C00440413 /* SerialLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F3E1EB0A01C00440413 /* SerialLocationViewController.m */; };
+		8C283F4C1EB0A01C00440413 /* SingleLocaitonAloneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F411EB0A01C00440413 /* SingleLocaitonAloneViewController.m */; };
+		8C283F4D1EB0A01C00440413 /* SingleLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F441EB0A01C00440413 /* SingleLocationViewController.m */; };
+		8C28403F1EB1123600440413 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840211EB1123600440413 /* TP_Controller.m */; };
+		8C2840401EB1123600440413 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840241EB1123600440413 /* TP_CL_Cell.m */; };
+		8C2840411EB1123600440413 /* TP_CL_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2840251EB1123600440413 /* TP_CL_Cell.xib */; };
+		8C2840421EB1123600440413 /* TP_CL_ChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840271EB1123600440413 /* TP_CL_ChartModel.m */; };
+		8C2840431EB1123600440413 /* TP_CL_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840291EB1123600440413 /* TP_CL_Controller.m */; };
+		8C2840441EB1123600440413 /* TP_CL_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C28402A1EB1123600440413 /* TP_CL_Controller.xib */; };
+		8C2840451EB1123600440413 /* TP_CL_DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28402C1EB1123600440413 /* TP_CL_DataModel.m */; };
+		8C2840461EB1123600440413 /* TP_CLSB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28402E1EB1123600440413 /* TP_CLSB_Controller.m */; };
+		8C2840471EB1123600440413 /* TP_CLSB_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C28402F1EB1123600440413 /* TP_CLSB_Controller.xib */; };
+		8C28404A1EB1123600440413 /* TP_DW_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840361EB1123600440413 /* TP_DW_Controller.m */; };
+		8C28404B1EB1123600440413 /* TP_DW_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2840371EB1123600440413 /* TP_DW_Controller.xib */; };
+		8C28404C1EB1123600440413 /* TP_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840391EB1123600440413 /* TP_SB_Controller.m */; };
+		8C28404D1EB1123600440413 /* TP_SB_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C28403A1EB1123600440413 /* TP_SB_Controller.xib */; };
+		8C28404E1EB1123600440413 /* TP_SB_Model2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28403C1EB1123600440413 /* TP_SB_Model2.m */; };
+		8C28404F1EB1123600440413 /* TP_SBDW_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28403E1EB1123600440413 /* TP_SBDW_Model.m */; };
+		8C2840681EB1127500440413 /* TP_NY_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840531EB1127500440413 /* TP_NY_Controller.m */; };
+		8C2840691EB1127500440413 /* TP_NY_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2840541EB1127500440413 /* TP_NY_Controller.xib */; };
+		8C28406A1EB1127500440413 /* TP_NY_ChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840571EB1127500440413 /* TP_NY_ChartModel.m */; };
+		8C28406B1EB1127500440413 /* TP_NYSDList_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840591EB1127500440413 /* TP_NYSDList_Model.m */; };
+		8C28406C1EB1127500440413 /* TP_NYSDList_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28405C1EB1127500440413 /* TP_NYSDList_Cell.m */; };
+		8C28406D1EB1127500440413 /* TP_NYSDList_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C28405D1EB1127500440413 /* TP_NYSDList_Cell.xib */; };
+		8C28406E1EB1127500440413 /* TP_NYSDList_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28405F1EB1127500440413 /* TP_NYSDList_Cell1.m */; };
+		8C28406F1EB1127500440413 /* TP_NYSDList_Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2840601EB1127500440413 /* TP_NYSDList_Cell1.xib */; };
+		8C2840701EB1127500440413 /* TP_NY_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840641EB1127500440413 /* TP_NY_SB_Controller.m */; };
+		8C2840711EB1127500440413 /* NY_SB_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840671EB1127500440413 /* NY_SB_Model.m */; };
+		8C28407E1EB1130D00440413 /* TP_TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840751EB1130D00440413 /* TP_TP_Controller.m */; };
+		8C28407F1EB1130D00440413 /* TP_TP_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2840761EB1130D00440413 /* TP_TP_Controller.xib */; };
+		8C2840801EB1130D00440413 /* TP_TP_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28407A1EB1130D00440413 /* TP_TP_SB_Controller.m */; };
+		8C2840811EB1130D00440413 /* TP_SB_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28407D1EB1130D00440413 /* TP_SB_Model.m */; };
+		8C2840861EB1132200440413 /* MyTPSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2840841EB1132200440413 /* MyTPSegmentedControl.m */; };
+		8C2840871EB1132200440413 /* MyTPSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2840851EB1132200440413 /* MyTPSegmentedControl.xib */; };
 		8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD72D51E07A75000A0C991 /* HNT_SCCX_DetailController.m */; };
 		8CBD72E31E07A75000A0C991 /* HNT_SCCX_Detail_Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD72D81E07A75000A0C991 /* HNT_SCCX_Detail_Data.m */; };
 		8CBD72E41E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD72DA1E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsg.m */; };
@@ -355,9 +395,6 @@
 		D2938B9B1EAD996500770D90 /* LQ_ZJM_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938B991EAD996500770D90 /* LQ_ZJM_Cell2.m */; };
 		D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */; };
 		D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */; };
-		D2938BA81EB04E3700770D90 /* TP_TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938BA61EB04E3700770D90 /* TP_TP_Controller.m */; };
-		D2938BA91EB04E3700770D90 /* TP_TP_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2938BA71EB04E3700770D90 /* TP_TP_Controller.xib */; };
-		D2938BAC1EB04E6000770D90 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D2938BAB1EB04E6000770D90 /* TP_Controller.m */; };
 		D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */; };
 		D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */; };
 		D2CF6B671E011728003AE61D /* Exp6View.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF6B641E011728003AE61D /* Exp6View.m */; };
@@ -687,6 +724,75 @@
 		8C283F011EB043CF00440413 /* LqTheProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LqTheProjectCell.h; sourceTree = "<group>"; };
 		8C283F021EB043CF00440413 /* LqTheProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LqTheProjectCell.m; sourceTree = "<group>"; };
 		8C283F031EB043CF00440413 /* LqTheProjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LqTheProjectCell.xib; sourceTree = "<group>"; };
+		8C283F2D1EB0A01C00440413 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		8C283F2F1EB0A01C00440413 /* icon_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_location@2x.png"; sourceTree = "<group>"; };
+		8C283F301EB0A01C00440413 /* icon_location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_location@3x.png"; sourceTree = "<group>"; };
+		8C283F331EB0A01C00440413 /* BackgroundLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLocationViewController.h; sourceTree = "<group>"; };
+		8C283F341EB0A01C00440413 /* BackgroundLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLocationViewController.m; sourceTree = "<group>"; };
+		8C283F361EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringGeoFenceRegionViewController.h; sourceTree = "<group>"; };
+		8C283F371EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringGeoFenceRegionViewController.m; sourceTree = "<group>"; };
+		8C283F381EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringGeoFenceRegionViewController.xib; sourceTree = "<group>"; };
+		8C283F3A1EB0A01C00440413 /* MonitoringRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringRegionViewController.h; sourceTree = "<group>"; };
+		8C283F3B1EB0A01C00440413 /* MonitoringRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringRegionViewController.m; sourceTree = "<group>"; };
+		8C283F3D1EB0A01C00440413 /* SerialLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialLocationViewController.h; sourceTree = "<group>"; };
+		8C283F3E1EB0A01C00440413 /* SerialLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialLocationViewController.m; sourceTree = "<group>"; };
+		8C283F401EB0A01C00440413 /* SingleLocaitonAloneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLocaitonAloneViewController.h; sourceTree = "<group>"; };
+		8C283F411EB0A01C00440413 /* SingleLocaitonAloneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLocaitonAloneViewController.m; sourceTree = "<group>"; };
+		8C283F431EB0A01C00440413 /* SingleLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLocationViewController.h; sourceTree = "<group>"; };
+		8C283F441EB0A01C00440413 /* SingleLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLocationViewController.m; sourceTree = "<group>"; };
+		8C283F4E1EB0A08D00440413 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8C2840201EB1123600440413 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
+		8C2840211EB1123600440413 /* TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_Controller.m; sourceTree = "<group>"; };
+		8C2840231EB1123600440413 /* TP_CL_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CL_Cell.h; sourceTree = "<group>"; };
+		8C2840241EB1123600440413 /* TP_CL_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_CL_Cell.m; sourceTree = "<group>"; };
+		8C2840251EB1123600440413 /* TP_CL_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_CL_Cell.xib; sourceTree = "<group>"; };
+		8C2840261EB1123600440413 /* TP_CL_ChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CL_ChartModel.h; sourceTree = "<group>"; };
+		8C2840271EB1123600440413 /* TP_CL_ChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_CL_ChartModel.m; sourceTree = "<group>"; };
+		8C2840281EB1123600440413 /* TP_CL_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CL_Controller.h; sourceTree = "<group>"; };
+		8C2840291EB1123600440413 /* TP_CL_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_CL_Controller.m; sourceTree = "<group>"; };
+		8C28402A1EB1123600440413 /* TP_CL_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_CL_Controller.xib; sourceTree = "<group>"; };
+		8C28402B1EB1123600440413 /* TP_CL_DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CL_DataModel.h; sourceTree = "<group>"; };
+		8C28402C1EB1123600440413 /* TP_CL_DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_CL_DataModel.m; sourceTree = "<group>"; };
+		8C28402D1EB1123600440413 /* TP_CLSB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CLSB_Controller.h; sourceTree = "<group>"; };
+		8C28402E1EB1123600440413 /* TP_CLSB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_CLSB_Controller.m; sourceTree = "<group>"; };
+		8C28402F1EB1123600440413 /* TP_CLSB_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_CLSB_Controller.xib; sourceTree = "<group>"; };
+		8C2840351EB1123600440413 /* TP_DW_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_DW_Controller.h; sourceTree = "<group>"; };
+		8C2840361EB1123600440413 /* TP_DW_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_DW_Controller.m; sourceTree = "<group>"; };
+		8C2840371EB1123600440413 /* TP_DW_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_DW_Controller.xib; sourceTree = "<group>"; };
+		8C2840381EB1123600440413 /* TP_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_SB_Controller.h; sourceTree = "<group>"; };
+		8C2840391EB1123600440413 /* TP_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_SB_Controller.m; sourceTree = "<group>"; };
+		8C28403A1EB1123600440413 /* TP_SB_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_SB_Controller.xib; sourceTree = "<group>"; };
+		8C28403B1EB1123600440413 /* TP_SB_Model2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_SB_Model2.h; sourceTree = "<group>"; };
+		8C28403C1EB1123600440413 /* TP_SB_Model2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_SB_Model2.m; sourceTree = "<group>"; };
+		8C28403D1EB1123600440413 /* TP_SBDW_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_SBDW_Model.h; sourceTree = "<group>"; };
+		8C28403E1EB1123600440413 /* TP_SBDW_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_SBDW_Model.m; sourceTree = "<group>"; };
+		8C2840521EB1127500440413 /* TP_NY_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_NY_Controller.h; sourceTree = "<group>"; };
+		8C2840531EB1127500440413 /* TP_NY_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_NY_Controller.m; sourceTree = "<group>"; };
+		8C2840541EB1127500440413 /* TP_NY_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_NY_Controller.xib; sourceTree = "<group>"; };
+		8C2840561EB1127500440413 /* TP_NY_ChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_NY_ChartModel.h; sourceTree = "<group>"; };
+		8C2840571EB1127500440413 /* TP_NY_ChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_NY_ChartModel.m; sourceTree = "<group>"; };
+		8C2840581EB1127500440413 /* TP_NYSDList_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_NYSDList_Model.h; sourceTree = "<group>"; };
+		8C2840591EB1127500440413 /* TP_NYSDList_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_NYSDList_Model.m; sourceTree = "<group>"; };
+		8C28405B1EB1127500440413 /* TP_NYSDList_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_NYSDList_Cell.h; sourceTree = "<group>"; };
+		8C28405C1EB1127500440413 /* TP_NYSDList_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_NYSDList_Cell.m; sourceTree = "<group>"; };
+		8C28405D1EB1127500440413 /* TP_NYSDList_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_NYSDList_Cell.xib; sourceTree = "<group>"; };
+		8C28405E1EB1127500440413 /* TP_NYSDList_Cell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_NYSDList_Cell1.h; sourceTree = "<group>"; };
+		8C28405F1EB1127500440413 /* TP_NYSDList_Cell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_NYSDList_Cell1.m; sourceTree = "<group>"; };
+		8C2840601EB1127500440413 /* TP_NYSDList_Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_NYSDList_Cell1.xib; sourceTree = "<group>"; };
+		8C2840631EB1127500440413 /* TP_NY_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_NY_SB_Controller.h; sourceTree = "<group>"; };
+		8C2840641EB1127500440413 /* TP_NY_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_NY_SB_Controller.m; sourceTree = "<group>"; };
+		8C2840661EB1127500440413 /* NY_SB_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NY_SB_Model.h; sourceTree = "<group>"; };
+		8C2840671EB1127500440413 /* NY_SB_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NY_SB_Model.m; sourceTree = "<group>"; };
+		8C2840741EB1130D00440413 /* TP_TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_TP_Controller.h; sourceTree = "<group>"; };
+		8C2840751EB1130D00440413 /* TP_TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_TP_Controller.m; sourceTree = "<group>"; };
+		8C2840761EB1130D00440413 /* TP_TP_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_TP_Controller.xib; sourceTree = "<group>"; };
+		8C2840791EB1130D00440413 /* TP_TP_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_TP_SB_Controller.h; sourceTree = "<group>"; };
+		8C28407A1EB1130D00440413 /* TP_TP_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_TP_SB_Controller.m; sourceTree = "<group>"; };
+		8C28407C1EB1130D00440413 /* TP_SB_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_SB_Model.h; sourceTree = "<group>"; };
+		8C28407D1EB1130D00440413 /* TP_SB_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_SB_Model.m; sourceTree = "<group>"; };
+		8C2840831EB1132200440413 /* MyTPSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTPSegmentedControl.h; sourceTree = "<group>"; };
+		8C2840841EB1132200440413 /* MyTPSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTPSegmentedControl.m; sourceTree = "<group>"; };
+		8C2840851EB1132200440413 /* MyTPSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTPSegmentedControl.xib; sourceTree = "<group>"; };
 		8CBD72D41E07A75000A0C991 /* HNT_SCCX_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_DetailController.h; sourceTree = "<group>"; };
 		8CBD72D51E07A75000A0C991 /* HNT_SCCX_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_SCCX_DetailController.m; sourceTree = "<group>"; };
 		8CBD72D71E07A75000A0C991 /* HNT_SCCX_Detail_Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_Detail_Data.h; sourceTree = "<group>"; };
@@ -1009,11 +1115,6 @@
 		D2938B9A1EAD996500770D90 /* LQ_ZJM_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LQ_ZJM_Cell2.xib; sourceTree = "<group>"; };
 		D2938B9D1EAD9EB300770D90 /* LQ_SGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_SGModel.h; sourceTree = "<group>"; };
 		D2938B9E1EAD9EB300770D90 /* LQ_SGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_SGModel.m; sourceTree = "<group>"; };
-		D2938BA51EB04E3700770D90 /* TP_TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_TP_Controller.h; sourceTree = "<group>"; };
-		D2938BA61EB04E3700770D90 /* TP_TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_TP_Controller.m; sourceTree = "<group>"; };
-		D2938BA71EB04E3700770D90 /* TP_TP_Controller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TP_TP_Controller.xib; sourceTree = "<group>"; };
-		D2938BAA1EB04E6000770D90 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
-		D2938BAB1EB04E6000770D90 /* TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_Controller.m; sourceTree = "<group>"; };
 		D2CF6B601E011728003AE61D /* Exp6_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp6_Xib_View.h; sourceTree = "<group>"; };
 		D2CF6B611E011728003AE61D /* Exp6_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp6_Xib_View.m; sourceTree = "<group>"; };
 		D2CF6B621E011728003AE61D /* Exp6_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp6_Xib_View.xib; sourceTree = "<group>"; };
@@ -1945,6 +2046,7 @@
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C283F4E1EB0A08D00440413 /* CoreLocation.framework */,
 				B53090449FE82B8AD028BA89 /* Pods_toone.framework */,
 			);
 			name = Frameworks;
@@ -1960,6 +2062,279 @@
 				8CE976541E0BF1FF0016A858 /* MySJxib.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8C283F2B1EB0A01C00440413 /* GDRes */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F2C1EB0A01C00440413 /* Configuration */,
+				8C283F2E1EB0A01C00440413 /* Images */,
+				8C283F311EB0A01C00440413 /* Items */,
+			);
+			path = GDRes;
+			sourceTree = "<group>";
+		};
+		8C283F2C1EB0A01C00440413 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F2D1EB0A01C00440413 /* APIKey.h */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		8C283F2E1EB0A01C00440413 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F2F1EB0A01C00440413 /* icon_location@2x.png */,
+				8C283F301EB0A01C00440413 /* icon_location@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8C283F311EB0A01C00440413 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F321EB0A01C00440413 /* BackgroundLocation */,
+				8C283F351EB0A01C00440413 /* MonitoringGeoFenceRegion */,
+				8C283F391EB0A01C00440413 /* MonitoringRegion */,
+				8C283F3C1EB0A01C00440413 /* SerialLocation */,
+				8C283F3F1EB0A01C00440413 /* SingleLocaitonAlone */,
+				8C283F421EB0A01C00440413 /* SingleLocation */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		8C283F321EB0A01C00440413 /* BackgroundLocation */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F331EB0A01C00440413 /* BackgroundLocationViewController.h */,
+				8C283F341EB0A01C00440413 /* BackgroundLocationViewController.m */,
+			);
+			path = BackgroundLocation;
+			sourceTree = "<group>";
+		};
+		8C283F351EB0A01C00440413 /* MonitoringGeoFenceRegion */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F361EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.h */,
+				8C283F371EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.m */,
+				8C283F381EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib */,
+			);
+			path = MonitoringGeoFenceRegion;
+			sourceTree = "<group>";
+		};
+		8C283F391EB0A01C00440413 /* MonitoringRegion */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F3A1EB0A01C00440413 /* MonitoringRegionViewController.h */,
+				8C283F3B1EB0A01C00440413 /* MonitoringRegionViewController.m */,
+			);
+			path = MonitoringRegion;
+			sourceTree = "<group>";
+		};
+		8C283F3C1EB0A01C00440413 /* SerialLocation */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F3D1EB0A01C00440413 /* SerialLocationViewController.h */,
+				8C283F3E1EB0A01C00440413 /* SerialLocationViewController.m */,
+			);
+			path = SerialLocation;
+			sourceTree = "<group>";
+		};
+		8C283F3F1EB0A01C00440413 /* SingleLocaitonAlone */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F401EB0A01C00440413 /* SingleLocaitonAloneViewController.h */,
+				8C283F411EB0A01C00440413 /* SingleLocaitonAloneViewController.m */,
+			);
+			path = SingleLocaitonAlone;
+			sourceTree = "<group>";
+		};
+		8C283F421EB0A01C00440413 /* SingleLocation */ = {
+			isa = PBXGroup;
+			children = (
+				8C283F431EB0A01C00440413 /* SingleLocationViewController.h */,
+				8C283F441EB0A01C00440413 /* SingleLocationViewController.m */,
+			);
+			path = SingleLocation;
+			sourceTree = "<group>";
+		};
+		8C28401F1EB1123600440413 /* 现场 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840721EB1130D00440413 /* 摊铺 */,
+				8C2840501EB1127500440413 /* 碾压 */,
+				8C2840201EB1123600440413 /* TP_Controller.h */,
+				8C2840211EB1123600440413 /* TP_Controller.m */,
+				8C2840221EB1123600440413 /* 出料温度 */,
+				8C2840341EB1123600440413 /* 设备定位 */,
+			);
+			path = "现场";
+			sourceTree = "<group>";
+		};
+		8C2840221EB1123600440413 /* 出料温度 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840281EB1123600440413 /* TP_CL_Controller.h */,
+				8C2840291EB1123600440413 /* TP_CL_Controller.m */,
+				8C28402A1EB1123600440413 /* TP_CL_Controller.xib */,
+				8C2840231EB1123600440413 /* TP_CL_Cell.h */,
+				8C2840241EB1123600440413 /* TP_CL_Cell.m */,
+				8C2840251EB1123600440413 /* TP_CL_Cell.xib */,
+				8C2840261EB1123600440413 /* TP_CL_ChartModel.h */,
+				8C2840271EB1123600440413 /* TP_CL_ChartModel.m */,
+				8C28402B1EB1123600440413 /* TP_CL_DataModel.h */,
+				8C28402C1EB1123600440413 /* TP_CL_DataModel.m */,
+				8C28402D1EB1123600440413 /* TP_CLSB_Controller.h */,
+				8C28402E1EB1123600440413 /* TP_CLSB_Controller.m */,
+				8C28402F1EB1123600440413 /* TP_CLSB_Controller.xib */,
+			);
+			path = "出料温度";
+			sourceTree = "<group>";
+		};
+		8C2840341EB1123600440413 /* 设备定位 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840351EB1123600440413 /* TP_DW_Controller.h */,
+				8C2840361EB1123600440413 /* TP_DW_Controller.m */,
+				8C2840371EB1123600440413 /* TP_DW_Controller.xib */,
+				8C2840381EB1123600440413 /* TP_SB_Controller.h */,
+				8C2840391EB1123600440413 /* TP_SB_Controller.m */,
+				8C28403A1EB1123600440413 /* TP_SB_Controller.xib */,
+				8C28403B1EB1123600440413 /* TP_SB_Model2.h */,
+				8C28403C1EB1123600440413 /* TP_SB_Model2.m */,
+				8C28403D1EB1123600440413 /* TP_SBDW_Model.h */,
+				8C28403E1EB1123600440413 /* TP_SBDW_Model.m */,
+			);
+			path = "设备定位";
+			sourceTree = "<group>";
+		};
+		8C2840501EB1127500440413 /* 碾压 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840511EB1127500440413 /* Controller */,
+				8C2840551EB1127500440413 /* Model */,
+				8C28405A1EB1127500440413 /* View */,
+				8C2840611EB1127500440413 /* 设备列表 */,
+			);
+			path = "碾压";
+			sourceTree = "<group>";
+		};
+		8C2840511EB1127500440413 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840521EB1127500440413 /* TP_NY_Controller.h */,
+				8C2840531EB1127500440413 /* TP_NY_Controller.m */,
+				8C2840541EB1127500440413 /* TP_NY_Controller.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8C2840551EB1127500440413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840561EB1127500440413 /* TP_NY_ChartModel.h */,
+				8C2840571EB1127500440413 /* TP_NY_ChartModel.m */,
+				8C2840581EB1127500440413 /* TP_NYSDList_Model.h */,
+				8C2840591EB1127500440413 /* TP_NYSDList_Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C28405A1EB1127500440413 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C28405B1EB1127500440413 /* TP_NYSDList_Cell.h */,
+				8C28405C1EB1127500440413 /* TP_NYSDList_Cell.m */,
+				8C28405D1EB1127500440413 /* TP_NYSDList_Cell.xib */,
+				8C28405E1EB1127500440413 /* TP_NYSDList_Cell1.h */,
+				8C28405F1EB1127500440413 /* TP_NYSDList_Cell1.m */,
+				8C2840601EB1127500440413 /* TP_NYSDList_Cell1.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C2840611EB1127500440413 /* 设备列表 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840621EB1127500440413 /* Controller */,
+				8C2840651EB1127500440413 /* Model */,
+			);
+			path = "设备列表";
+			sourceTree = "<group>";
+		};
+		8C2840621EB1127500440413 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840631EB1127500440413 /* TP_NY_SB_Controller.h */,
+				8C2840641EB1127500440413 /* TP_NY_SB_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8C2840651EB1127500440413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840661EB1127500440413 /* NY_SB_Model.h */,
+				8C2840671EB1127500440413 /* NY_SB_Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C2840721EB1130D00440413 /* 摊铺 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840731EB1130D00440413 /* Controller */,
+				8C2840771EB1130D00440413 /* 设备列表 */,
+			);
+			path = "摊铺";
+			sourceTree = "<group>";
+		};
+		8C2840731EB1130D00440413 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840741EB1130D00440413 /* TP_TP_Controller.h */,
+				8C2840751EB1130D00440413 /* TP_TP_Controller.m */,
+				8C2840761EB1130D00440413 /* TP_TP_Controller.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8C2840771EB1130D00440413 /* 设备列表 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840781EB1130D00440413 /* Controller */,
+				8C28407B1EB1130D00440413 /* Model */,
+			);
+			path = "设备列表";
+			sourceTree = "<group>";
+		};
+		8C2840781EB1130D00440413 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840791EB1130D00440413 /* TP_TP_SB_Controller.h */,
+				8C28407A1EB1130D00440413 /* TP_TP_SB_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8C28407B1EB1130D00440413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C28407C1EB1130D00440413 /* TP_SB_Model.h */,
+				8C28407D1EB1130D00440413 /* TP_SB_Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8C2840821EB1132200440413 /* View3 */ = {
+			isa = PBXGroup;
+			children = (
+				8C2840831EB1132200440413 /* MyTPSegmentedControl.h */,
+				8C2840841EB1132200440413 /* MyTPSegmentedControl.m */,
+				8C2840851EB1132200440413 /* MyTPSegmentedControl.xib */,
+			);
+			path = View3;
 			sourceTree = "<group>";
 		};
 		8CBD72D21E07A75000A0C991 /* Inner */ = {
@@ -2076,6 +2451,7 @@
 		D20062F01DFF85CB0021E293 = {
 			isa = PBXGroup;
 			children = (
+				8C283F2B1EB0A01C00440413 /* GDRes */,
 				D20064B81DFF86B30021E293 /* ChartClasses */,
 				D20063141DFF86800021E293 /* Classes */,
 				D20062FB1DFF85CB0021E293 /* toone */,
@@ -2220,7 +2596,7 @@
 				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
-				D2938BA01EB04DEF00770D90 /* 摊铺现场 */,
+				8C28401F1EB1123600440413 /* 现场 */,
 				D20063F71DFF86800021E293 /* 登录 */,
 				D20063731DFF86800021E293 /* Example */,
 				D20063FA1DFF86800021E293 /* 组件 */,
@@ -2715,6 +3091,7 @@
 			isa = PBXGroup;
 			children = (
 				18B871C01E1F719900F9DD53 /* Controller */,
+				8C2840821EB1132200440413 /* View3 */,
 				42AC721B1E30C668007D8F57 /* View2 */,
 				8C14C90B1E0BD48300A3F2E7 /* View */,
 				D200641B1DFF86800021E293 /* MyModel.h */,
@@ -3050,50 +3427,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D2938BA01EB04DEF00770D90 /* 摊铺现场 */ = {
-			isa = PBXGroup;
-			children = (
-				D2938BA11EB04DEF00770D90 /* 出料 */,
-				D2938BA21EB04DEF00770D90 /* 摊铺 */,
-				D2938BA31EB04DEF00770D90 /* 碾压 */,
-				D2938BA41EB04DEF00770D90 /* 设备定位 */,
-				D2938BAA1EB04E6000770D90 /* TP_Controller.h */,
-				D2938BAB1EB04E6000770D90 /* TP_Controller.m */,
-			);
-			path = "摊铺现场";
-			sourceTree = "<group>";
-		};
-		D2938BA11EB04DEF00770D90 /* 出料 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "出料";
-			sourceTree = "<group>";
-		};
-		D2938BA21EB04DEF00770D90 /* 摊铺 */ = {
-			isa = PBXGroup;
-			children = (
-				D2938BA51EB04E3700770D90 /* TP_TP_Controller.h */,
-				D2938BA61EB04E3700770D90 /* TP_TP_Controller.m */,
-				D2938BA71EB04E3700770D90 /* TP_TP_Controller.xib */,
-			);
-			path = "摊铺";
-			sourceTree = "<group>";
-		};
-		D2938BA31EB04DEF00770D90 /* 碾压 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "碾压";
-			sourceTree = "<group>";
-		};
-		D2938BA41EB04DEF00770D90 /* 设备定位 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "设备定位";
-			sourceTree = "<group>";
-		};
 		D2CF6B5F1E011728003AE61D /* EXP6 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3142,6 +3475,11 @@
 					D20062F81DFF85CB0021E293 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -3176,11 +3514,13 @@
 				D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
+				8C283F491EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib in Resources */,
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
 				42AC71471E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
 				D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */,
 				42AC72091E30C576007D8F57 /* TheProjectCell.xib in Resources */,
+				8C283F461EB0A01C00440413 /* icon_location@3x.png in Resources */,
 				D200651E1DFF86B30021E293 /* BarChartViewController.xib in Resources */,
 				42AC716F1E30C393007D8F57 /* LQ_CLHS_Cell.xib in Resources */,
 				18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
@@ -3199,28 +3539,32 @@
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				8CBD72E61E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
+				8C2840691EB1127500440413 /* TP_NY_Controller.xib in Resources */,
 				D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */,
 				42AC714D1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
+				8C2840441EB1123600440413 /* TP_CL_Controller.xib in Resources */,
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
 				D2938B921EAC91A900770D90 /* arrow_02.png in Resources */,
 				8CBD73401E091C7E00A0C991 /* HNT_CLHS_ChatCell.xib in Resources */,
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
+				8C2840871EB1132200440413 /* MyTPSegmentedControl.xib in Resources */,
 				D200653C1DFF86B30021E293 /* PieChartViewController.xib in Resources */,
 				D200653E1DFF86B30021E293 /* PiePolylineChartViewController.xib in Resources */,
 				42AC714F1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.xib in Resources */,
+				8C28406F1EB1127500440413 /* TP_NYSDList_Cell1.xib in Resources */,
 				D200647B1DFF86800021E293 /* HNT_WNSY_Cell.xib in Resources */,
 				D20065341DFF86B30021E293 /* LineChartTimeViewController.xib in Resources */,
 				D20065221DFF86B30021E293 /* CandleStickChartViewController.xib in Resources */,
 				D20065421DFF86B30021E293 /* RadarChartViewController.xib in Resources */,
 				D20065A41DFFE12D0021E293 /* Exp5_Xib_View.xib in Resources */,
 				D200648F1DFF86800021E293 /* ZZJG_View.xib in Resources */,
-				D2938BA91EB04E3700770D90 /* TP_TP_Controller.xib in Resources */,
 				D20064921DFF86800021E293 /* Exp1_Xib_View.xib in Resources */,
 				42AC717A1E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Cell.xib in Resources */,
 				D20065461DFF86B30021E293 /* SinusBarChartViewController.xib in Resources */,
 				D20064951DFF86800021E293 /* Exp2_Xib_View.xib in Resources */,
+				8C28404B1EB1123600440413 /* TP_DW_Controller.xib in Resources */,
 				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
@@ -3231,11 +3575,17 @@
 				D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */,
 				D20064651DFF86800021E293 /* DrawerController.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
+				8C2840471EB1123600440413 /* TP_CLSB_Controller.xib in Resources */,
 				D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */,
+				8C28404D1EB1123600440413 /* TP_SB_Controller.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
 				8C283F051EB043D000440413 /* LqTheProjectCell.xib in Resources */,
+				8C28407F1EB1130D00440413 /* TP_TP_Controller.xib in Resources */,
+				8C283F451EB0A01C00440413 /* icon_location@2x.png in Resources */,
+				8C2840411EB1123600440413 /* TP_CL_Cell.xib in Resources */,
+				8C28406D1EB1127500440413 /* TP_NYSDList_Cell.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				8CBD73451E091EF600A0C991 /* HNT_CLHS_Cell.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
@@ -3321,7 +3671,9 @@
 				42AC71631E30C393007D8F57 /* NQ_BHZ_SCCX_Controller.m in Sources */,
 				D20064A11DFF86800021E293 /* MyTabBarController.m in Sources */,
 				42AC72161E30C576007D8F57 /* YYClassInfo.m in Sources */,
+				8C283F4A1EB0A01C00440413 /* MonitoringRegionViewController.m in Sources */,
 				187C730E1E30B1810072F33A /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
+				8C2840711EB1127500440413 /* NY_SB_Model.m in Sources */,
 				D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */,
 				D20064741DFF86800021E293 /* HNT_YLSY_Cell.m in Sources */,
 				D20065141DFF86B30021E293 /* AxisModel.m in Sources */,
@@ -3345,11 +3697,13 @@
 				D200649D1DFF86800021E293 /* UIButton+Img_20.m in Sources */,
 				8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */,
 				187C72FA1E30B1810072F33A /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
+				8C28406C1EB1127500440413 /* TP_NYSDList_Cell.m in Sources */,
 				187C72F41E30B1810072F33A /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				D20065A91DFFE28D0021E293 /* HNT_BHZ_SB_Controller.m in Sources */,
 				D200649C1DFF86800021E293 /* NSString+Separate.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				D20065211DFF86B30021E293 /* CandleStickChartViewController.m in Sources */,
+				8C2840681EB1127500440413 /* TP_NY_Controller.m in Sources */,
 				42AC72131E30C576007D8F57 /* View+MASAdditions.m in Sources */,
 				187C73111E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
@@ -3365,6 +3719,7 @@
 				42AC71741E30C393007D8F57 /* ProductionDetailsG.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				D20064641DFF86800021E293 /* DrawerController.m in Sources */,
+				8C2840811EB1130D00440413 /* TP_SB_Model.m in Sources */,
 				42AC71561E30C393007D8F57 /* SeniorExcessiveTableConller.m in Sources */,
 				D200651B1DFF86B30021E293 /* AnotherBarChartViewController.m in Sources */,
 				D20064961DFF86800021E293 /* Exp2View.m in Sources */,
@@ -3380,6 +3735,7 @@
 				D20064901DFF86800021E293 /* ViewController.m in Sources */,
 				42AC72071E30C576007D8F57 /* NodeMode.m in Sources */,
 				42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */,
+				8C2840401EB1123600440413 /* TP_CL_Cell.m in Sources */,
 				D20064771DFF86800021E293 /* HNT_WNSY_DetailController.m in Sources */,
 				D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */,
 				D20065931DFFCC080021E293 /* HNT_SCCX_Model.m in Sources */,
@@ -3397,11 +3753,13 @@
 				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
 				42AC72191E30C576007D8F57 /* LqNodeModel.m in Sources */,
 				D200649F1DFF86800021E293 /* MyModel.m in Sources */,
+				8C28407E1EB1130D00440413 /* TP_TP_Controller.m in Sources */,
 				8CBD72E71E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.m in Sources */,
 				D20064421DFF86800021E293 /* CJDecisionView.m in Sources */,
 				42AC71691E30C393007D8F57 /* DayQueryTableViewCell.m in Sources */,
 				42AC71641E30C393007D8F57 /* DayQueryTableViewController.m in Sources */,
 				187C72F11E30B1810072F33A /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
+				8C28406A1EB1127500440413 /* TP_NY_ChartModel.m in Sources */,
 				D20064691DFF86800021E293 /* WelcomeViewController.m in Sources */,
 				D20064451DFF86800021E293 /* CJSelectTimeScrollView.m in Sources */,
 				D200645F1DFF86800021E293 /* Exmp1Cell.m in Sources */,
@@ -3409,6 +3767,7 @@
 				42AC71701E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Controller.m in Sources */,
 				8CBD72EF1E07A84C00A0C991 /* HNT_CBCZ_DetailController.m in Sources */,
 				D20064801DFF86800021E293 /* HNT_TJFX_TxtView.m in Sources */,
+				8C2840861EB1132200440413 /* MyTPSegmentedControl.m in Sources */,
 				D200648C1DFF86800021E293 /* HNT_SYS_TestView.m in Sources */,
 				D20064731DFF86800021E293 /* HNT_YLSY_Model.m in Sources */,
 				D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */,
@@ -3423,7 +3782,9 @@
 				18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D20064AA1DFF86800021E293 /* Colours.m in Sources */,
 				18B871DB1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m in Sources */,
+				8C283F4D1EB0A01C00440413 /* SingleLocationViewController.m in Sources */,
 				42AC72121E30C576007D8F57 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				8C28403F1EB1123600440413 /* TP_Controller.m in Sources */,
 				D200658F1DFFC9F10021E293 /* HNT_SCCX_Cell.m in Sources */,
 				42AC716D1E30C393007D8F57 /* LQ_CLHS_ModelG.m in Sources */,
 				D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */,
@@ -3436,8 +3797,8 @@
 				42AC71731E30C393007D8F57 /* NQ_BHZ_SCCX_InneModel.m in Sources */,
 				187C730B1E30B1810072F33A /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				D20065471DFF86B30021E293 /* StackedBarChartViewController.m in Sources */,
-				D2938BAC1EB04E6000770D90 /* TP_Controller.m in Sources */,
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				8C28406B1EB1127500440413 /* TP_NYSDList_Model.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
@@ -3459,6 +3820,7 @@
 				D20065491DFF86B30021E293 /* DateValueFormatter.m in Sources */,
 				D20064661DFF86800021E293 /* Drawer.m in Sources */,
 				D20065171DFF86B30021E293 /* RadarMarkerView.swift in Sources */,
+				8C283F481EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.m in Sources */,
 				42AC71751E30C393007D8F57 /* ProductionDetailsM.m in Sources */,
 				42AC716E1E30C393007D8F57 /* LQ_CLHS_Cell.m in Sources */,
 				D20064931DFF86800021E293 /* Exp1View.m in Sources */,
@@ -3469,7 +3831,10 @@
 				42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */,
 				187C73061E30B1810072F33A /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				D20065A51DFFE12D0021E293 /* Exp5View.m in Sources */,
+				8C2840801EB1130D00440413 /* TP_TP_SB_Controller.m in Sources */,
 				42AC717B1E30C393007D8F57 /* LQ_BHZ_SB_Controller.m in Sources */,
+				8C28404E1EB1123600440413 /* TP_SB_Model2.m in Sources */,
+				8C28404A1EB1123600440413 /* TP_DW_Controller.m in Sources */,
 				8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */,
 				42AC71C41E30C423007D8F57 /* Y.m in Sources */,
 				42AC71C11E30C423007D8F57 /* SGLineX.m in Sources */,
@@ -3493,13 +3858,14 @@
 				42AC715C1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.m in Sources */,
 				D200652B1DFF86B30021E293 /* HorizontalBarChartViewController.m in Sources */,
 				42AC71651E30C393007D8F57 /* DayDetailsController.m in Sources */,
-				D2938BA81EB04E3700770D90 /* TP_TP_Controller.m in Sources */,
 				42AC72061E30C576007D8F57 /* Node.m in Sources */,
 				D200649B1DFF86800021E293 /* NSDictionary+Log.m in Sources */,
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
 				D20064721DFF86800021E293 /* HNT_YLSY_DetailModel.m in Sources */,
 				42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */,
 				D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */,
+				8C28406E1EB1127500440413 /* TP_NYSDList_Cell1.m in Sources */,
+				8C28404C1EB1123600440413 /* TP_SB_Controller.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
 				187C72F91E30B1810072F33A /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
@@ -3522,6 +3888,7 @@
 				D20064701DFF86800021E293 /* HNT_YLSY_Controller.m in Sources */,
 				42AC71BF1E30C423007D8F57 /* SGLineChart.m in Sources */,
 				D20064981DFF86800021E293 /* Exp4View.m in Sources */,
+				8C283F4C1EB0A01C00440413 /* SingleLocaitonAloneViewController.m in Sources */,
 				42AC71711E30C393007D8F57 /* NQ_BHZ_SCCX_Innel_Controller.m in Sources */,
 				D20064991DFF86800021E293 /* CALayer+Animation.m in Sources */,
 				D20065291DFF86B30021E293 /* HalfPieChartViewController.m in Sources */,
@@ -3533,9 +3900,11 @@
 				42AC716B1E30C393007D8F57 /* MaterialTableViewController.m in Sources */,
 				8CBD73391E091B8800A0C991 /* HNT_CLHS_Model.m in Sources */,
 				D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */,
+				8C2840701EB1127500440413 /* TP_NY_SB_Controller.m in Sources */,
 				187C72F01E30B1810072F33A /* DGActivityIndicatorAnimation.m in Sources */,
 				187C730D1E30B1810072F33A /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */,
+				8C283F471EB0A01C00440413 /* BackgroundLocationViewController.m in Sources */,
 				42AC71591E30C393007D8F57 /* MaterialViewController.m in Sources */,
 				D200652D1DFF86B30021E293 /* LineChart1ViewController.m in Sources */,
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,
@@ -3556,6 +3925,8 @@
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,
 				42AC72111E30C576007D8F57 /* NSArray+MASAdditions.m in Sources */,
 				42AC716C1E30C393007D8F57 /* LQ_CLHS_DataModel.m in Sources */,
+				8C2840461EB1123600440413 /* TP_CLSB_Controller.m in Sources */,
+				8C2840451EB1123600440413 /* TP_CL_DataModel.m in Sources */,
 				187C72FC1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				42AC72041E30C576007D8F57 /* NodeViewController.m in Sources */,
 				D20064A21DFF86800021E293 /* MyViewController.m in Sources */,
@@ -3567,12 +3938,15 @@
 				42AC72151E30C576007D8F57 /* NSObject+YYModel.m in Sources */,
 				42AC71901E30C3B6007D8F57 /* Exp8_Xib_View.m in Sources */,
 				42AC71571E30C393007D8F57 /* EXPSeniorModel.m in Sources */,
+				8C2840421EB1123600440413 /* TP_CL_ChartModel.m in Sources */,
 				42AC715A1E30C393007D8F57 /* LQ_ZCL_CL_Controller.m in Sources */,
 				D20064791DFF86800021E293 /* HNT_WNSY_Model.m in Sources */,
 				D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */,
+				8C2840431EB1123600440413 /* TP_CL_Controller.m in Sources */,
 				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,
 				D2CF6B671E011728003AE61D /* Exp6View.m in Sources */,
 				D20064A01DFF86800021E293 /* MyNavigationController.m in Sources */,
+				8C283F4B1EB0A01C00440413 /* SerialLocationViewController.m in Sources */,
 				187C72F81E30B1810072F33A /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
 				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,
@@ -3580,6 +3954,7 @@
 				D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */,
 				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
 				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,
+				8C28404F1EB1123600440413 /* TP_SBDW_Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3651,12 +4026,15 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/shiguo/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -3670,8 +4048,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "6e503742-d587-45bd-a21e-c9f648b790e8";
+				PROVISIONING_PROFILE = "156c1373-12aa-44b1-91fb-91df206e554a";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shiguo/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -3702,10 +4081,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/shiguo/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -3714,8 +4096,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "6e503742-d587-45bd-a21e-c9f648b790e8";
+				PROVISIONING_PROFILE = "156c1373-12aa-44b1-91fb-91df206e554a";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shiguo/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3728,17 +4111,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/shiguo/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gzbj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shiguo/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
@@ -3750,18 +4133,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				DEVELOPMENT_TEAM = MWKKG6D7EX;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/shiguo/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gzbj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6e503742-d587-45bd-a21e-c9f648b790e8";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_gzbj;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shiguo/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;

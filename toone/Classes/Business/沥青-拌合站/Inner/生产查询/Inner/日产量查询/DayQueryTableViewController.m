@@ -32,7 +32,7 @@
 -(void)setUI {
     self.yPage = @"1";
     self.tableView.rowHeight = 80;
-    self.tableView.frame = CGRectMake(0, 95, Screen_w, Screen_h - 100);
+    self.tableView.frame = CGRectMake(0, 105, Screen_w, Screen_h - 105);
     self.tableView.tableFooterView = [[UIView alloc] init];
     //添加刷新(初始化URL）
     __weak typeof(self) weakSelf = self;

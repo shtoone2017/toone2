@@ -12,7 +12,7 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#define FuncLog                             NSLog(@"%s",__func__)
+#define FuncLog                            // NSLog(@"%s",__func__)
 #define EqualToString(string1,string2)      [string1 isEqualToString:string2]
 #define Equal(number1,number2)              [number1 isEqual:number2]
 #define Format(obj)                         [NSString stringWithFormat:@"%@",obj]
@@ -49,10 +49,12 @@
 #import "DGActivityIndicatorView.h"
 //zing定义组件
 #import "ExpViewHeader.h"
-
+#import "SGChart.h"
 
 //云部署地址
-#define baseUrl      @"http://115.29.173.91:8083/gzbjqms/"
+#define baseUrl      @"http://116.62.30.27:8082/njpfsix/"
+//@"http://192.168.11.110:8080/njpfqms/"
+//@"http://115.29.173.91:8083/gzbjqms/"
 //@"http://192.168.11.109:8080/njpfqms/"
 //@"http://192.168.11.107:8080/njpfqms/"
 //@"http://192.168.11.116:8888/njpfqms/"      //"gzbj"
@@ -63,6 +65,32 @@
 
 
 
+/*
+ 3-----------------------
+ */
+//#define baseUrl2      @"http://192.168.11.110:8080/njpfqms/"
+/**************************摊铺*********************************/
+//摊铺现场设备列表
+#define TP_SB_Data FormatString(baseUrl,@"xcTanpuwenduController.do?getMachineList&userGroupId=%@&@&machineType=%@")
+//碾压速度查询
+#define TP_NYSD_List FormatString(baseUrl,@"xcNianYaController.do?appNianYaSDList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+//碾压温度查询
+#define TP_NYWD_List FormatString(baseUrl,@"xcNianYaController.do?appNianYaWDList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+//摊铺温度查询
+#define TP_TPWD_List FormatString(baseUrl,@"xcTanpuwenduController.do?appXcTanpuwenduList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+//摊铺速度查询
+#define TP_TPSD_List FormatString(baseUrl,@"xcTanpuwenduController.do?appXcTanpusuduList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+
+#define SheBeiDW_4  FormatString(baseUrl,@"xcNianYaController.do?SheBeiDW&userGroupId=%@&shebeibianhao=%@&pageNo=%@&maxPageItems=%@")
+#define getMachineList_2  FormatString(baseUrl,@"xcTanpuwenduController.do?getMachineList&userGroupId=%@&machineType=%@")
+
+#define appXcChuliaokouwenduList  FormatString(baseUrl,@"xcTanpuwenduController.do?appXcChuliaokouwenduList&    userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+
+
+
+/*
+ 2-----------------------
+ */
 //登录
 #define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
 //试验室列表

@@ -70,7 +70,6 @@
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
-                
                 for (NSArray * subArray in json[@"data"]) {
                     HNT_SYS_FrameModel * frameModel = [[HNT_SYS_FrameModel alloc] init];
                     NSMutableArray * models = [NSMutableArray array];

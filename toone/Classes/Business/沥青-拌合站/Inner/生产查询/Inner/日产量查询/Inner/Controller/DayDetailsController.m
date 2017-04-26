@@ -140,12 +140,12 @@
 
 #pragma mark - 计算
 -(void)calculateClick:(id)sender {
-    float yzzcl;
-    float ycl;
-    float cd;
-    float kd;
-    float md;
-    float sun;
+//    float yzzcl;
+//    float ycl;
+//    float cd;
+//    float kd;
+//    float md;
+//    float sun;
 //     yzzcl =  [self.model.dailyxzcl  floatValue];
 //     ycl =  [self.model.dailycl floatValue];
 //     cd =  [self.model.dailycd floatValue];
