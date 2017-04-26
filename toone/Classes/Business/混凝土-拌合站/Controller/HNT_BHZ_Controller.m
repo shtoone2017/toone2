@@ -34,11 +34,8 @@
     [super viewDidLoad];
     [self addPanGestureRecognizer];
     [self loadUI];
-    [self loadData];
 }
--(void)dealloc{
-    FuncLog;
-}
+
 -(void)loadUI{
     self.containerView.backgroundColor = BLUECOLOR;
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
@@ -66,6 +63,12 @@
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString * urlString = [NSString stringWithFormat:AppHntMain_3,userGroupId,startTimeStamp,endTimeStamp];
 //    __weak typeof(self)  weakSelf = self;
+    
+    if(self.datas){
+        self.datas = nil;
+        [self.tableView reloadData];
+    }
+    
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
@@ -174,4 +177,21 @@
             break;
     }
 }
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"departId" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    NSLog(@"change~~%@",change);
+    if (!EqualToString((NSString*)change[@"new"], (NSString*)change[@"old"])) {
+        [self loadData];
+    }
+}
+-(void)dealloc{
+    FuncLog;
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"departId"];
+}
+
 @end
