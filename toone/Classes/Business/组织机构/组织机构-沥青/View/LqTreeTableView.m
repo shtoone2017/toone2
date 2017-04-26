@@ -8,7 +8,7 @@
 
 #import "LqTreeTableView.h"
 #import "LqNode.h"
-#import "TheProjectCell.h"
+#import "LqTheProjectCell.h"
 
 @interface LqTreeTableView ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic , strong) NSArray *data;//传递过来已经组织好的数据（全量数据）
@@ -54,9 +54,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"LqtreeNodeCell";
-    UINib *nib = [UINib nibWithNibName:@"TheProjectCell" bundle:nil];
+    UINib *nib = [UINib nibWithNibName:@"LqTheProjectCell" bundle:nil];
     [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
-    TheProjectCell *cell = (TheProjectCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    LqTheProjectCell *cell = (LqTheProjectCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     LqNode *node = [_tempData objectAtIndex:indexPath.row];
     
