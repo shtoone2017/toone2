@@ -69,6 +69,11 @@
                             @"shebeibianhao":self.condition.shebeibianhao
                             };
     __weak typeof(self)  weakSelf = self;
+    
+    if(self.datas){
+        self.datas = nil;
+        [self.tableView reloadData];
+    }
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
@@ -204,7 +209,20 @@
         controller.conditonDict = (NSDictionary*)sender;
     }
 }
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"departId" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    //    NSLog(@"change~~%@",change);
+    if (!EqualToString((NSString*)change[@"new"], (NSString*)change[@"old"])) {
+        [self loadData];
+    }
+}
 -(void)dealloc{
-     FuncLog;
+    FuncLog;
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"departId"];
 }
 @end
