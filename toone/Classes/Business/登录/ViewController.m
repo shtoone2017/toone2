@@ -135,10 +135,14 @@
                     setting.departName  = json[@"departName"];
                     setting.userPhoneNum = json[@"userPhoneNum"];
                     setting.userFullName = json[@"userFullName"];
-                    setting.hntchaobiaoReal = [json[@"quanxian"][@"hntchaobiaoReal"] boolValue];
-                    setting.hntchaobiaoSp = [json[@"quanxian"][@"hntchaobiaoSp"] boolValue];
-                    setting.syschaobiaoReal = [json[@"quanxian"][@"syschaobiaoReal"] boolValue];
-                    setting.lqchaobiaoReal = [json[@"quanxian"][@"lqchaobiaoReal"] boolValue];
+//                    setting.hntchaobiaoReal = [json[@"quanxian"][@"hntchaobiaoReal"] boolValue];
+                    setting.hntchaobiaoReal = [json[@"quanxian"][@"cbchuli"] boolValue];
+//                    setting.hntchaobiaoSp = [json[@"quanxian"][@"hntchaobiaoSp"] boolValue];
+                    setting.hntchaobiaoSp = [json[@"quanxian"][@"cbshenpi"] boolValue];
+//                    setting.syschaobiaoReal = [json[@"quanxian"][@"syschaobiaoReal"] boolValue];
+//                    setting.lqchaobiaoReal = [json[@"quanxian"][@"lqchaobiaoReal"] boolValue];
+                    setting.syschaobiaoReal = [json[@"quanxian"][@"cbchuli"] boolValue];
+                    setting.lqchaobiaoReal = [json[@"quanxian"][@"cbchuli"] boolValue];
                     setting.login = YES;
                     setting.type = json[@"type"];
                     
