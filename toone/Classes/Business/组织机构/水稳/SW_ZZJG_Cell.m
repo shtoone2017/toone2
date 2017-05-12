@@ -63,8 +63,10 @@
     self.backgroundColor = UIColorFromRGB(0xF7F7F7);
   } else if (level == 1) {
     self.backgroundColor = UIColorFromRGB(0xD1EEFC);
-  } else if (level >= 2) {
+  } else if (level == 2) {
     self.backgroundColor = UIColorFromRGB(0xE0F8D8);
+  } else if (level >= 3) {
+    self.backgroundColor = UIColorFromRGB(0xF3B3D7);
   }
   
   CGFloat left = 11 + 20 * level;

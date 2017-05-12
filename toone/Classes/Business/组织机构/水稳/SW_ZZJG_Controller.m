@@ -34,45 +34,99 @@
         NSMutableArray * datas = [NSMutableArray array];
         //业主：1  标段：2  项目部：3  拌合站：5
         if ([json[@"success"] boolValue]) {
-            if ([json[@"biaoduan"] isKindOfClass:[NSArray class]]) {
-                for (NSDictionary * dict in json[@"biaoduan"]) {
-                    SW_ZZJG_Data * biaoduan = [[SW_ZZJG_Data alloc] init];
-                    biaoduan.name = dict[@"biaoduanminchen"];
-                    biaoduan.biaoshiid = Format(dict[@"id"]);
-                    biaoduan.departType = @"2";
-                    [datas addObject:biaoduan];
-                }
-            }
             
-            if ([json[@"xmb"] isKindOfClass:[NSArray class]]) {
-                for (NSDictionary * dict in json[@"xmb"]) {
-                    SW_ZZJG_Data * xmb = [[SW_ZZJG_Data alloc] init];
-                    xmb.name = dict[@"xiangmubuminchen"];
-                    xmb.biaoshiid = Format(dict[@"id"]);
-                    xmb.departType = @"3";
-                    NSString * parentId = Format(dict[@"biaoduanid"]);
-                    for (SW_ZZJG_Data * bianDuan in datas) {
-                        if ([bianDuan.biaoshiid isEqualToString:parentId]) {
-                            if (!bianDuan.children) {
-                                bianDuan.children = [NSMutableArray array];
+            if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"1"]) {
+                if ([json[@"userGroup"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary *dict in json[@"userGroup"]) {
+                        SW_ZZJG_Data * yz = [[SW_ZZJG_Data alloc] init];
+                        yz.name = dict[@"userGroupId"];
+//                        yz.departType = @"1";
+                        [datas addObject:yz];
+                    }
+                }
+                
+                if ([json[@"biaoduan"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"biaoduan"]) {
+                        SW_ZZJG_Data * biaoduan = [[SW_ZZJG_Data alloc] init];
+                        biaoduan.name = dict[@"biaoduanminchen"];
+                        biaoduan.biaoshiid = Format(dict[@"id"]);
+                        biaoduan.departType = @"2";
+//                        [datas addObject:biaoduan];
+                        for (SW_ZZJG_Data *yz in datas) {
+                            if (!yz.children) {
+                                yz.children = [NSMutableArray array];
                             }
-                            [bianDuan addChild:xmb];
+                            [yz addChild:biaoduan];
                         }
                     }
                 }
-            
-            }
-            
-            if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
-                for (NSDictionary * dict in json[@"bhz"]) {
-                    SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
-                    bhz.name = dict[@"banhezhanminchen"];
-                    bhz.biaoshiid = Format(dict[@"id"]);
-                    bhz.departType = @"5";
-                    bhz.shebeibianhao = dict[@"shebeibianhao"];
-                    NSString * parentId  = Format(dict[@"xiangmubuid"]);
-                    for (SW_ZZJG_Data * bianDuan in datas) {
-                        for (SW_ZZJG_Data * xmb in bianDuan.children) {
+                
+                if ([json[@"xmb"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"xmb"]) {
+                        SW_ZZJG_Data * xmb = [[SW_ZZJG_Data alloc] init];
+                        xmb.name = dict[@"xiangmubuminchen"];
+                        xmb.biaoshiid = Format(dict[@"id"]);
+                        xmb.departType = @"3";
+                        NSString * parentId = Format(dict[@"biaoduanid"]);
+                        for (SW_ZZJG_Data *yz in datas) {
+                            for (SW_ZZJG_Data * bianDuan in yz.children) {
+                                if ([bianDuan.biaoshiid isEqualToString:parentId]) {
+                                    if (!bianDuan.children) {
+                                        bianDuan.children = [NSMutableArray array];
+                                    }
+                                    [bianDuan addChild:xmb];
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                
+                if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"bhz"]) {
+                        SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
+                        bhz.name = dict[@"banhezhanminchen"];
+                        bhz.biaoshiid = Format(dict[@"id"]);
+                        bhz.departType = @"5";
+                        bhz.shebeibianhao = dict[@"shebeibianhao"];
+                        NSString * parentId  = Format(dict[@"xiangmubuid"]);
+                        for (SW_ZZJG_Data * yz in datas) {
+                            for (SW_ZZJG_Data * bianDuan in yz.children) {
+                                for ( SW_ZZJG_Data *xmb in bianDuan.children) {
+                                    if ([xmb.biaoshiid isEqualToString:parentId]) {
+                                        if (!xmb.children) {
+                                            xmb.children = [NSMutableArray array];
+                                        }
+                                        [xmb addChild:bhz];
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }//1
+            if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"3"]) {
+                if ([json[@"xmb"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"xmb"]) {
+                        SW_ZZJG_Data * xmb = [[SW_ZZJG_Data alloc] init];
+                        xmb.name = dict[@"xiangmubuminchen"];
+                        xmb.biaoshiid = Format(dict[@"id"]);
+                        xmb.departType = @"3";
+                        [datas addObject:xmb];
+                    }
+                }
+                
+                if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"bhz"]) {
+                        SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
+                        bhz.name = dict[@"banhezhanminchen"];
+                        bhz.biaoshiid = Format(dict[@"id"]);
+                        bhz.departType = @"5";
+                        bhz.shebeibianhao = dict[@"shebeibianhao"];
+                        NSString * parentId = Format(dict[@"xiangmubuid"]);
+                        for (SW_ZZJG_Data * xmb in datas) {
                             if ([xmb.biaoshiid isEqualToString:parentId]) {
                                 if (!xmb.children) {
                                     xmb.children = [NSMutableArray array];
@@ -82,9 +136,63 @@
                         }
                     }
                 }
-            }
+                
+            }//3
+            if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"2"] || [[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"5"] || [[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"6"]) {
+                if ([json[@"biaoduan"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"biaoduan"]) {
+                        SW_ZZJG_Data * biaoduan = [[SW_ZZJG_Data alloc] init];
+                        biaoduan.name = dict[@"biaoduanminchen"];
+                        biaoduan.biaoshiid = Format(dict[@"id"]);
+                        biaoduan.departType = @"2";
+                        [datas addObject:biaoduan];
+                    }
+                }
+                
+                if ([json[@"xmb"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"xmb"]) {
+                        SW_ZZJG_Data * xmb = [[SW_ZZJG_Data alloc] init];
+                        xmb.name = dict[@"xiangmubuminchen"];
+                        xmb.biaoshiid = Format(dict[@"id"]);
+                        xmb.departType = @"3";
+                        NSString * parentId = Format(dict[@"biaoduanid"]);
+                        for (SW_ZZJG_Data * bianDuan in datas) {
+                            if ([bianDuan.biaoshiid isEqualToString:parentId]) {
+                                if (!bianDuan.children) {
+                                    bianDuan.children = [NSMutableArray array];
+                                }
+                                [bianDuan addChild:xmb];
+                            }
+                        }
+                    }
+                    
+                }
+                
+                if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
+                    for (NSDictionary * dict in json[@"bhz"]) {
+                        SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
+                        bhz.name = dict[@"banhezhanminchen"];
+                        bhz.biaoshiid = Format(dict[@"id"]);
+                        bhz.departType = @"5";
+                        bhz.shebeibianhao = dict[@"shebeibianhao"];
+                        NSString * parentId  = Format(dict[@"xiangmubuid"]);
+                        for (SW_ZZJG_Data * bianDuan in datas) {
+                            for (SW_ZZJG_Data * xmb in bianDuan.children) {
+                                if ([xmb.biaoshiid isEqualToString:parentId]) {
+                                    if (!xmb.children) {
+                                        xmb.children = [NSMutableArray array];
+                                    }
+                                    [xmb addChild:bhz];
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }//2||5||6
             
-        }
+            
+        }//success
         
          weakSelf.datas = datas;
         [weakSelf.treeView reloadData];
