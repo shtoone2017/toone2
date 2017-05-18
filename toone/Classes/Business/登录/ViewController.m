@@ -124,12 +124,15 @@
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
-    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text,_UUIDStr];
+    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text];
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
             if ([json[@"msg"] isEqualToString:@"成功"]) {
-                json[@"data"][@"list"];
-//
+                self.UUIDStr = json[@"data"][@"list"][0][@"ssid"];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self loadWKView];
+                });
             }else{
                 hud.mode = MBProgressHUDModeText;
                 hud.label.text = @"账号或密码错误";
@@ -147,9 +150,73 @@
 {
     return NO;
 }
--(void)dealloc{
+
+#pragma mark - webView
+-(void)loadWKView{
+    self.wkView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    NSString *urlString;
+//    NSString *urlString = @"http://www.r93535.com/gateway/gateway/gateway!init.action;jsessionid=5cecbe393b8b4ae2aa18366aa8a4a969";
+    if (self.UUIDStr) {
+        urlString = [NSString stringWithFormat:@"http://www.r93535.com/gateway/gateway/gateway!init.action;jsessionid=%@",self.UUIDStr];
+    }
+    [self.wkView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+    self.wkView.navigationDelegate = self;
+    [self.view addSubview:self.wkView];
+    //侧滑返回上级
+    [self.wkView setAllowsBackForwardNavigationGestures:true];
+    [self.wkView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    
+}
+// 计算wkWebView进度条
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == self.wkView && [keyPath isEqualToString:@"estimatedProgress"]) {
+        CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
+        if (newprogress == 1) {
+            self.progressView.hidden = YES;
+            [self.progressView setProgress:0 animated:NO];
+        }else {
+            self.progressView.hidden = NO;
+            [self.progressView setProgress:newprogress animated:YES];
+        }
+    }
+}
+// 记得取消监听
+-(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    [self.wkView removeObserver:self forKeyPath:@"estimatedProgress"];
     FuncLog;
 }
+
+- (UIProgressView *)progressView
+{
+    if(!_progressView)
+    {
+        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 2)];
+        self.progressView.tintColor = [UIColor greenColor];
+        //        self.progressView.backgroundColor = [UIColor blackColor];
+        self.progressView.trackTintColor = [UIColor whiteColor];
+        [self.view addSubview:self.progressView];
+    }
+    return _progressView;
+}
+#pragma mark - WKUIDelegate
+//开始加载
+-(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    
+}
+//当内容开始返回时调用
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+    
+}
+//页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    
+}
+//跳转到其他的服务器
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
+    
+}
+
+
 
 @end

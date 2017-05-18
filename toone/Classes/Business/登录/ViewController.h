@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JavaScriptCore/JavaScriptCore.h>
+#import<WebKit/WebKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIWebViewDelegate,WKNavigationDelegate>
+@property (strong, nonatomic)  WKWebView *wkView;
+@property (strong, nonatomic) UIProgressView *progressView;
 
 
 @end
