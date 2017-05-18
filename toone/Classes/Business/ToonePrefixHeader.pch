@@ -52,7 +52,8 @@
 
 
 //云部署地址
-#define baseUrl     @"http://120.26.127.135:8083/xztl/"
+#define baseUrl         @"http://www.r93535.com/gateway/user/"
+//@"http://120.26.127.135:8083/xztl/"
 //@"http://120.26.127.135:8083/xztl/"
 
 
@@ -61,6 +62,8 @@
 
 
 //登录
+#define AppLogin   FormatString(baseUrl,@"login!executex.action?account=%@&mobile=%@&imei=A0000055B1AFFB")
+
 #define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
 //试验室列表
 #define sysHome_3    FormatString(baseUrl,@"sysController.do?sysHome&userGroupId=%@&startTime=%@&endTime=%@")
