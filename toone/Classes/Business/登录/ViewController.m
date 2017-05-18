@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "GetUUID.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet NoCopyTextField *acountTextField;
@@ -19,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *passwordTitleLabel;
 @property (weak, nonatomic) IBOutlet UIView *passwordLine;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+@property (nonatomic,copy) NSString * UUIDStr;//设备唯一标识
 /**
  *被激活的textField
  */
@@ -32,8 +35,7 @@
     _acountLine.backgroundColor = [UIColor pastelBlueColor];
     _passwordLine.backgroundColor = [UIColor pastelBlueColor];
     _loginButton.layer.cornerRadius = 20.0f;
-    
-   
+    self.UUIDStr = [GetUUID getUUID];
     
     [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
     
@@ -122,40 +124,12 @@
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
-    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text];
+    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text,_UUIDStr];
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
-            NSLog(@"%@",json);
-            return ;
-            if ([json[@"data"] boolValue]) {
-//                //数据存储到本地
-//                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
-//                    setting.acount = _acountTextField.text;
-//                    setting.password = _passwordTextField.text;
-//                    setting.departId  = json[@"departId"];
-//                    setting.departName  = json[@"departName"];
-//                    setting.userPhoneNum = json[@"userPhoneNum"];
-//                    setting.userFullName = json[@"userFullName"];
-//                    setting.hntchaobiaoReal = json[@"quanxian"][@"hntchaobiaoReal"];
-//                    setting.hntchaobiaoSp = json[@"quanxian"][@"hntchaobiaoSp"];
-//                    setting.syschaobiaoReal = json[@"quanxian"][@"syschaobiaoReal"];
-//                    setting.login = YES;
-//                    
-//                    
-//                    setting.loginDepartId  = json[@"departId"];
-//                    setting.userRole  = json[@"userRole"];
-//                    [setting saveToSandbox];
-//                });
-                
-                //界面跳转
-                dispatch_async(dispatch_get_main_queue(), ^{
-//                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-//                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-//                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"rippleEffect"];
-                    
-                    
-                });
+            if ([json[@"msg"] isEqualToString:@"成功"]) {
+                json[@"data"][@"list"];
+//
             }else{
                 hud.mode = MBProgressHUDModeText;
                 hud.label.text = @"账号或密码错误";
