@@ -35,7 +35,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         UIView *containerView = [[UIView alloc] init];
-        containerView.backgroundColor = [UIColor oldLaceColor];
+        containerView.backgroundColor = [UIColor whiteColor];
 //        containerView.layer.masksToBounds=NO;
 //        containerView.layer.cornerRadius =3.0;
 //        containerView.layer.shadowOpacity=1.0;
