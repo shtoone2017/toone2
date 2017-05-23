@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @property (nonatomic,copy) NSString * UUIDStr;//设备唯一标识
+@property (nonatomic,copy) NSString * ssid;
+@property (nonatomic,copy) NSString * name;
 /**
  *被激活的textField
  */
@@ -124,19 +126,23 @@
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
-    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text];
+    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text];//UUID
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
             if ([json[@"msg"] isEqualToString:@"成功"]) {
-                self.UUIDStr = json[@"data"][@"list"][0][@"ssid"];
-                
+                self.ssid = json[@"data"][@"list"][0][@"ssid"];
+                self.name = json[@"data"][@"list"][0][@"account"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self loadWKView];
                 });
             }else{
                 hud.mode = MBProgressHUDModeText;
-                hud.label.text = @"账号或密码错误";
+                hud.label.text = json[@"msg"];
             }
+//            if (![json[@"status"] isEqualToString:@"0"]) {
+//                hud.mode = MBProgressHUDModeText;
+//                hud.label.text = @"账号或密码错误";
+//            }
             [hud hideAnimated:YES afterDelay:2.0];
         }
     } failure:^(NSError *error) {
@@ -155,9 +161,8 @@
 -(void)loadWKView{
     self.wkView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     NSString *urlString;
-//    NSString *urlString = @"http://www.r93535.com/gateway/gateway/gateway!init.action;jsessionid=5cecbe393b8b4ae2aa18366aa8a4a969";
     if (self.UUIDStr) {
-        urlString = [NSString stringWithFormat:@"http://www.r93535.com/gateway/gateway/gateway!init.action;jsessionid=%@",self.UUIDStr];
+        urlString = [NSString stringWithFormat:@"http://61.237.239.105:18190/h5app/DMSAppPage/UI/index.aspx？token=%@&loginname=%@",self.ssid,self.name];
     }
     [self.wkView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     self.wkView.navigationDelegate = self;
