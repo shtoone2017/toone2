@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "HNT_SYS_InnerController.h"
+#import "MyNavigationController.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet NoCopyTextField *acountTextField;
@@ -153,8 +155,19 @@
                 
                 //界面跳转
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    if ([json[@"type"]  isEqualToString: @"SG"] && [json[@"userRole"] isEqualToString:@"3"]) {//试验室
+                        HNT_SYS_InnerController * vc = (HNT_SYS_InnerController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_SYS_InnerController"];
+                        MyNavigationController * nvc = [[MyNavigationController alloc] initWithRootViewController:vc];
+                        [UIApplication sharedApplication].keyWindow.rootViewController = nvc;
+                    }
+                    if ([json[@"type"]  isEqualToString: @"SG"] && [json[@"userRole"] isEqualToString:@"1"]) {//拌合站
+                        id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NAV_HNT_BHZ_Controller"];
+                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    }
+                    if ([json[@"type"]  isEqualToString: @"GL"]){//管理层
+                        id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    }
                     [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });
             }else{

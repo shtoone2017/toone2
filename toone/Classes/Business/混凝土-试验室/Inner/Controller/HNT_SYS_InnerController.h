@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HNT_SYS_InnerController : UIViewController
+#import "MyViewController.h"
+@interface HNT_SYS_InnerController : MyViewController
 @property (nonatomic,copy) NSString * userGroupId;
 @end
