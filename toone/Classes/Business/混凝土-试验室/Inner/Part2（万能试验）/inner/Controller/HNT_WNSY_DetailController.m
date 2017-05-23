@@ -67,8 +67,10 @@
         case 3:{
             break;
         }
-        case 2:
         case 4:{
+            break;
+        }
+        case 2:{
             self.big_sc_containerHeight.constant = 950-150-10;
             [self.containerView3 removeFromSuperview];
             break;
@@ -109,6 +111,7 @@
 //                weakSelf.txf.text = model.chuli;
                 switch ([weakSelf.tableViewSigner integerValue]) {
                     case 1:
+                    case 4:
                     case 3:{
                         if (model.chuli.length >0) {
                             NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
