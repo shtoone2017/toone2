@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -2916,7 +2916,7 @@
                                             <rect key="frame" x="0.0" y="90" width="374" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z62-AA-9ee">
-                                                    <rect key="frame" x="45" y="0.0" width="120" height="40"/>
+                                                    <rect key="frame" x="44.5" y="0.0" width="120" height="40"/>
                                                     <color key="backgroundColor" red="0.61960784310000006" green="0.93333333330000001" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="o9S-s2-1CE"/>
@@ -2927,7 +2927,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yda-rL-Jm4">
-                                                    <rect key="frame" x="209" y="0.0" width="120" height="40"/>
+                                                    <rect key="frame" x="209.5" y="0.0" width="120" height="40"/>
                                                     <color key="backgroundColor" red="0.99215686270000003" green="0.98039215690000003" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="GD4-nw-Vx4"/>
@@ -2938,21 +2938,21 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-50-hGE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="44.5" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-TZ-jri">
-                                                    <rect key="frame" x="329" y="0.0" width="45" height="40"/>
+                                                    <rect key="frame" x="329.5" y="0.0" width="44.5" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCV-pp-3dc">
-                                                    <rect key="frame" x="165" y="0.0" width="44" height="40"/>
+                                                    <rect key="frame" x="164.5" y="0.0" width="45" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -3730,7 +3730,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A12-eM-deX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634" y="8545"/>
+            <point key="canvasLocation" x="-634" y="7784"/>
         </scene>
         <!--水稳-->
         <scene sceneID="Flw-Gf-Fn1">
@@ -3887,7 +3887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWt-eK-bun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="8544"/>
+            <point key="canvasLocation" x="1038" y="7784"/>
         </scene>
         <!--Inner Controller-->
         <scene sceneID="L4Z-3e-Xb7">
@@ -3906,7 +3906,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zG-Pc-iib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="8544"/>
+            <point key="canvasLocation" x="2246" y="7785"/>
         </scene>
         <!--Controller-->
         <scene sceneID="bkV-BY-Dro">
@@ -4922,7 +4922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-HV-cQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="7252"/>
+            <point key="canvasLocation" x="1831" y="6862"/>
         </scene>
     </scenes>
     <resources>
@@ -4938,11 +4938,11 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="OFf-sM-NiC"/>
+        <segue reference="2qa-au-FyR"/>
+        <segue reference="eyg-Cx-bjM"/>
         <segue reference="GDo-QE-0uU"/>
         <segue reference="ogj-aY-kSm"/>
-        <segue reference="eyg-Cx-bjM"/>
-        <segue reference="2qa-au-FyR"/>
         <segue reference="tGP-vX-aEz"/>
-        <segue reference="huJ-hq-5Ls"/>
     </inferredMetricsTieBreakers>
 </document>
