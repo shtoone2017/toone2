@@ -41,7 +41,7 @@
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
     
-    self.tableView.rowHeight = 120;
+    self.tableView.rowHeight = 140;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerNib:[UINib nibWithNibName:@"LQ_SW_Cell" bundle:nil] forCellReuseIdentifier:@"LQ_SW_Cell"];
     

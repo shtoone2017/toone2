@@ -1467,6 +1467,45 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		422EE9111EDE9776003755CB /* 沥青-试验室 */ = {
+			isa = PBXGroup;
+			children = (
+				422EE9131EDE9776003755CB /* Inner */,
+				422EE9121EDE9776003755CB /* Controller */,
+				422EE9141EDE9776003755CB /* Model */,
+				422EE9151EDE9776003755CB /* View */,
+			);
+			path = "沥青-试验室";
+			sourceTree = "<group>";
+		};
+		422EE9121EDE9776003755CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		422EE9131EDE9776003755CB /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inner;
+			sourceTree = "<group>";
+		};
+		422EE9141EDE9776003755CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		422EE9151EDE9776003755CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2556,6 +2595,7 @@
 				D26AE9931E7A37A90090761D /* 沥青-拌合站（老平台） */,
 				D272EF971E7BBE3A00D0991D /* 沥青-水稳（老平台） */,
 				D21943851E81059400FC0B38 /* 沥青-设备接口（老平台） */,
+				422EE9111EDE9776003755CB /* 沥青-试验室 */,
 				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				D200637E1DFF86800021E293 /* 抽屉 */,
 				D20063891DFF86800021E293 /* 欢迎 */,
