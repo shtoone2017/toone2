@@ -36,7 +36,8 @@
 #define Screen_w      [UIScreen mainScreen].bounds.size.width
 #define Screen_h      [UIScreen mainScreen].bounds.size.height
 #define Drawer_w      Screen_w*0.8
-#define BLUECOLOR     [UIColor mustardColor]
+//#define BLUECOLOR     [UIColor mustardColor]
+#define BLUECOLOR     [UIColor denimColor]
 #define SGCOLOR(r,g,b,a)        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define Color1                  SGCOLOR(224,243,241,1.0)
 #define Color2                  SGCOLOR(232,232,253,1.0)
@@ -64,6 +65,7 @@
 //zing定义组件
 #import "ExpViewHeader.h"
 #import "DWURunLoopWorkDistribution.h"
+#import "SGChart.h"
 
 //
 #define baseUrl       @"http://114.215.239.38:8082/rbgsmss/"
@@ -133,6 +135,23 @@
 
 
 
+
+/**************************摊铺*********************************/
+//摊铺现场设备列表
+#define TP_SB_Data FormatString(baseUrl,@"xcTanpuwenduController.do?getMachineList&userGroupId=%@&@&machineType=%@")
+//碾压速度查询
+#define TP_NYSD_List FormatString(baseUrl,@"xcNianYaController.do?appNianYaSDList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+//碾压温度查询
+#define TP_NYWD_List FormatString(baseUrl,@"xcNianYaController.do?appNianYaWDList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+//摊铺温度查询
+#define TP_TPWD_List FormatString(baseUrl,@"xcTanpuwenduController.do?appXcTanpuwenduList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+//摊铺速度查询
+#define TP_TPSD_List FormatString(baseUrl,@"xcTanpuwenduController.do?appXcTanpusuduList&userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
+
+#define SheBeiDW_4  FormatString(baseUrl,@"xcNianYaController.do?SheBeiDW&userGroupId=%@&shebeibianhao=%@&pageNo=%@&maxPageItems=%@")
+#define getMachineList_2  FormatString(baseUrl,@"xcTanpuwenduController.do?getMachineList&userGroupId=%@&machineType=%@")
+
+#define appXcChuliaokouwenduList  FormatString(baseUrl,@"xcTanpuwenduController.do?appXcChuliaokouwenduList&    userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
 
 
 

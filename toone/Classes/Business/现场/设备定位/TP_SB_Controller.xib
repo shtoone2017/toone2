@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TP_SB_Controller">
+            <connections>
+                <outlet property="button1" destination="bd2-rq-Vri" id="6Ky-es-cch"/>
+                <outlet property="button2" destination="93o-bu-PRM" id="NFq-RH-tTE"/>
+                <outlet property="button3" destination="vQ7-QE-zDG" id="Mx2-bf-vBX"/>
+                <outlet property="tb" destination="tdG-Po-6TM" id="gWX-HK-gnh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xa5-kx-os0">
+                    <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                    <subviews>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd2-rq-Vri">
+                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="35"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.87843137250000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="摊铺机">
+                                <color key="titleColor" red="0.98039215686274506" green="0.41176470588235292" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="click:" destination="-1" eventType="touchUpInside" id="XC8-cm-hRF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93o-bu-PRM">
+                            <rect key="frame" x="125.5" y="0.0" width="124" height="35"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.87843137250000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="压路机">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="click:" destination="-1" eventType="touchUpInside" id="sQi-Eh-PGF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ7-QE-zDG">
+                            <rect key="frame" x="250.5" y="0.0" width="124.5" height="35"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.87843137250000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="出料口设备">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="click:" destination="-1" eventType="touchUpInside" id="zY4-AF-w62"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="93o-bu-PRM" firstAttribute="leading" secondItem="bd2-rq-Vri" secondAttribute="trailing" constant="1" id="6bU-Wm-CvP"/>
+                        <constraint firstItem="93o-bu-PRM" firstAttribute="width" secondItem="vQ7-QE-zDG" secondAttribute="width" id="8NX-we-fu7"/>
+                        <constraint firstItem="93o-bu-PRM" firstAttribute="top" secondItem="xa5-kx-os0" secondAttribute="top" id="CxR-zd-3EH"/>
+                        <constraint firstItem="bd2-rq-Vri" firstAttribute="top" secondItem="xa5-kx-os0" secondAttribute="top" id="EPJ-NN-ssj"/>
+                        <constraint firstItem="vQ7-QE-zDG" firstAttribute="leading" secondItem="93o-bu-PRM" secondAttribute="trailing" constant="1" id="K3B-MJ-mtn"/>
+                        <constraint firstAttribute="bottom" secondItem="93o-bu-PRM" secondAttribute="bottom" id="S3i-zW-wOh"/>
+                        <constraint firstItem="vQ7-QE-zDG" firstAttribute="top" secondItem="xa5-kx-os0" secondAttribute="top" id="Vyt-Ci-tiX"/>
+                        <constraint firstAttribute="bottom" secondItem="vQ7-QE-zDG" secondAttribute="bottom" id="aDS-TE-dFf"/>
+                        <constraint firstAttribute="bottom" secondItem="bd2-rq-Vri" secondAttribute="bottom" id="buN-aW-0Wd"/>
+                        <constraint firstAttribute="height" constant="35" id="g2U-sO-Ng9"/>
+                        <constraint firstAttribute="trailing" secondItem="vQ7-QE-zDG" secondAttribute="trailing" id="gTv-aj-WZM"/>
+                        <constraint firstItem="bd2-rq-Vri" firstAttribute="width" secondItem="93o-bu-PRM" secondAttribute="width" id="kw0-UV-80N"/>
+                        <constraint firstItem="bd2-rq-Vri" firstAttribute="leading" secondItem="xa5-kx-os0" secondAttribute="leading" id="nRd-Zr-fSs"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tdG-Po-6TM">
+                    <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="GB7-2n-XaD"/>
+                        <outlet property="delegate" destination="-1" id="tx2-0L-3Nr"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tdG-Po-6TM" secondAttribute="trailing" id="2K8-Ri-lZA"/>
+                <constraint firstItem="xa5-kx-os0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8F2-RI-2FX"/>
+                <constraint firstItem="tdG-Po-6TM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FX6-R1-uMv"/>
+                <constraint firstItem="tdG-Po-6TM" firstAttribute="top" secondItem="xa5-kx-os0" secondAttribute="bottom" id="Ig9-2j-8wu"/>
+                <constraint firstItem="xa5-kx-os0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="O8R-J5-Lu1"/>
+                <constraint firstAttribute="bottom" secondItem="tdG-Po-6TM" secondAttribute="bottom" id="WWO-Fg-kq6"/>
+                <constraint firstAttribute="trailing" secondItem="xa5-kx-os0" secondAttribute="trailing" id="cwd-ra-BHF"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

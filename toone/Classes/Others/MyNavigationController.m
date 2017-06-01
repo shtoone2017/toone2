@@ -27,7 +27,7 @@
 
 
 @interface MyNavigationController ()
-
+@property(nonatomic,strong) UIView *statusBarView;
 @end
 
 @implementation MyNavigationController
@@ -44,6 +44,11 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 }
 
+-(void)setMyColor:(UIColor *)myColor{
+    _myColor = myColor;
+    self.statusBarView.backgroundColor = myColor;
+    self.navigationBar.backgroundColor = myColor;
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     
