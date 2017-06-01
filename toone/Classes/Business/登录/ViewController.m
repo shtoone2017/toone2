@@ -126,7 +126,7 @@
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
-    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text];//UUID
+    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text,_UUIDStr];//UUID
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
             if ([json[@"msg"] isEqualToString:@"成功"]) {
@@ -137,7 +137,8 @@
                 });
             }else{
                 hud.mode = MBProgressHUDModeText;
-                hud.label.text = json[@"msg"];
+//                hud.label.text = json[@"msg"];
+                hud.label.text = @"账号或密码错误";
             }
 //            if (![json[@"status"] isEqualToString:@"0"]) {
 //                hud.mode = MBProgressHUDModeText;
@@ -162,7 +163,8 @@
     self.wkView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     NSString *urlString;
     if (self.UUIDStr) {
-        urlString = [NSString stringWithFormat:@"http://61.237.239.105:18190/h5app/DMSAppPage/UI/index.aspx？token=%@&loginname=%@",self.ssid,self.name];
+//        urlString = [NSString stringWithFormat:@"http://61.237.239.105:18190/h5app/DMSAppPage/UI/index.aspx？token=%@&loginname=%@",self.ssid,self.name];
+        urlString = [NSString stringWithFormat:@"http://pingcebhz.r93535.com/DMSAPP/UI/index.aspx?token=%@&loginname=%@",self.ssid,self.name];
     }
     [self.wkView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
     self.wkView.navigationDelegate = self;
