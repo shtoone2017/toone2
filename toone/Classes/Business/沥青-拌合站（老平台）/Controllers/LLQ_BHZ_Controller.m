@@ -52,7 +52,7 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = lqWarningStatistics;
-    if (!self.condition) {
+    if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
         SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
         condition.departType = [UserDefaultsSetting_SW shareSetting].userType;
         condition.biaoshiid = [UserDefaultsSetting_SW shareSetting].biaoshi;
@@ -64,8 +64,8 @@
     }
     
     
-    NSDictionary * dict = @{@"departType":self.condition.departType,
-                            @"biaoshiid":self.condition.biaoshiid,
+    NSDictionary * dict = @{@"departType":self.condition.departType? :@"",
+                            @"biaoshiid":self.condition.biaoshiid? :@"",
                             @"startTime":startTimeStamp,
                             @"endTime":endTimeStamp,
                             @"shebeibianhao":self.condition.shebeibianhao
