@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TP_DW_Controller : UIViewController
+#import "MyViewController.h"
+@interface TP_DW_Controller : MyViewController
 
 @end

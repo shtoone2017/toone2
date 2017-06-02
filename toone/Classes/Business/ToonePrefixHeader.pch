@@ -68,8 +68,8 @@
 #import "SGChart.h"
 
 //
-#define baseUrl       @"http://114.215.239.38:8082/rbgsmss/"
-//#define baseUrl     @"http://192.168.11.120:8080/gdnhmssNew/"
+//#define baseUrl       @"http://114.215.239.38:8082/rbgsmss/"
+#define baseUrl     @"http://192.168.11.104:8080/gdnhmssNew/"
 //@"http://192.168.11.107:8080/jbgsmss/"
 
 //@"http://192.168.11.126:8081/jbgsmss/"
@@ -153,6 +153,8 @@
 
 #define appXcChuliaokouwenduList  FormatString(baseUrl,@"xcTanpuwenduController.do?appXcChuliaokouwenduList&    userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
 
+//设备定位
+#define YM_DW FormatString(baseUrl,@"appXc/SheBeiDW?F_SBBH=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@&shebeileixing=%@")
 
 
 

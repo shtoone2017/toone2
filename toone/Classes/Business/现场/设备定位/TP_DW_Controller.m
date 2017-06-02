@@ -72,11 +72,16 @@
 
 //-------
 -(void)loadData{
-    NSString *  userGroupId = [UserDefaultsSetting shareSetting].departId;
+//    NSString *  userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString *  shebeibianhao = self.shebeibianhao;
     NSString *  pageNo = @"1";
     NSString *  maxPageItems = @"15";
-    NSString * urlString =  [NSString stringWithFormat:SheBeiDW_4,userGroupId,shebeibianhao,pageNo,maxPageItems];
+    NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+    NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+    NSString * departType = [UserDefaultsSetting_SW shareSetting].userType;//组织机构类型
+    NSString * biaoshiid = [UserDefaultsSetting_SW shareSetting].biaoshi;//标识id
+    NSString * shebeileixing = @"";//设备类型
+    NSString * urlString =  [NSString stringWithFormat:YM_DW,shebeibianhao,pageNo,maxPageItems,startTimeStamp,endTimeStamp,departType,biaoshiid,shebeileixing];
     
     if (self.annotations) {
        

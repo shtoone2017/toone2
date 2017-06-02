@@ -14,31 +14,33 @@
 #import "TP_CL_Controller.h"
 #import "TP_TP_Controller.h"
 #import "TP_NY_Controller.h"
+#import "SW_ZZJG_Controller.h"
 @interface TP_Controller ()
 - (IBAction)click:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
+@property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @end
 
 @implementation TP_Controller
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
-    
-    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
-    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
-    self.departName_Label.textColor = [UIColor whiteColor];
-    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
-    self.departName_Label.speed = BBFlashCtntSpeedSlow;
+//    
+//    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
+//    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+//    self.departName_Label.textColor = [UIColor whiteColor];
+//    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
+//    self.departName_Label.speed = BBFlashCtntSpeedSlow;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.departName_Label.backgroundColor = BLUECOLOR;
-    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
-    btn.tag  = 2;
-    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    
+//    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
+//    btn.tag  = 2;
+//    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+//    
 }
 -(void)searchButtonClick:(UIButton*)sender{
     LqNodeViewController  * c=[[LqNodeViewController alloc] init] ;
@@ -46,6 +48,8 @@
     NSNumber *number = [NSNumber numberWithInt:2];
     [UserDefaultsSetting shareSetting].funtype = number;
 }
+
+
 - (IBAction)click:(UIButton *)sender {
     switch (sender.tag) {
             case 1:{
