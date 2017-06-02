@@ -49,6 +49,12 @@ static UserDefaultsSetting * setting = nil;
     //存储时间
     setting.startTime = [defaults objectForKey:@"startTimeKey"];
     setting.endTime   = [defaults objectForKey:@"endTimeKey"];
+    
+//    web
+    setting.ssid = [defaults objectForKey:@"ssidKey"];
+    setting.name = [defaults objectForKey:@"nameKey"];
+    setting.UUIDStr = [defaults objectForKey:@"UUIDStrKey"];
+    setting.Webpassword = [defaults objectForKey:@"WebpasswordKey"];
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -73,6 +79,12 @@ static UserDefaultsSetting * setting = nil;
     //存储时间
     [defaults setBool:self.endTime     forKey:@"endTimeKey"];
     [defaults setBool:self.startTime   forKey:@"startTimeKey"];
+    
+//    web
+    [defaults setBool:self.ssid     forKey:@"ssidKey"];
+    [defaults setBool:self.name   forKey:@"nameKey"];
+    [defaults setBool:self.UUIDStr   forKey:@"UUIDStrKey"];
+    [defaults setBool:self.Webpassword   forKey:@"WebpasswordKey"];
     [defaults synchronize];
 }
 

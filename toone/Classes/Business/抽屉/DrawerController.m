@@ -97,6 +97,34 @@
             [[UserDefaultsSetting shareSetting] saveToSandbox];
         });
     }
+    if (EqualToString(@"解除绑定", drawer.title)) {
+        NSString * urlString = [NSString stringWithFormat:AppCreate,[UserDefaultsSetting shareSetting].acount,[UserDefaultsSetting shareSetting].password,[UserDefaultsSetting shareSetting].UUIDStr];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeDeterminate;
+        [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:nil success:^(id json) {
+                //界面跳转
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    id vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateInitialViewController];
+                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"rippleEffect"];
+                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting];
+                    setting.Webpassword = json[@"msg"];
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        [UserDefaultsSetting shareSetting].login = YES;
+//                        [[UserDefaultsSetting shareSetting] saveToSandbox];
+//                        hud.mode = MBProgressHUDModeText;
+//                        hud.label.text = json[@"msg"];
+//                        [hud hideAnimated:YES afterDelay:2.0];
+//                    });
+                });
+            
+        } failure:^(NSError *error) {
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"网络连接异常";
+            [hud hideAnimated:YES afterDelay:2.0];
+        }];
+    }
+
 }
 
 -(void)dealloc{

@@ -61,6 +61,7 @@
 		422C0EEC1ECD777400370C50 /* SSIDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 422C0EEB1ECD777400370C50 /* SSIDModel.m */; };
 		428012491ECD6B53001847F3 /* GetUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 428012481ECD6B53001847F3 /* GetUUID.m */; };
 		4280124C1ECD6BBC001847F3 /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4280124B1ECD6BBC001847F3 /* KeyChainStore.m */; };
+		42A8877B1EE0EF070010B053 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8877A1EE0EF070010B053 /* WebViewController.m */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD72D51E07A75000A0C991 /* HNT_SCCX_DetailController.m */; };
@@ -386,6 +387,8 @@
 		428012481ECD6B53001847F3 /* GetUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUUID.m; sourceTree = "<group>"; };
 		4280124A1ECD6BBC001847F3 /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
 		4280124B1ECD6BBC001847F3 /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
+		42A887791EE0EF070010B053 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		42A8877A1EE0EF070010B053 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CBD72D41E07A75000A0C991 /* HNT_SCCX_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_DetailController.h; sourceTree = "<group>"; };
@@ -893,6 +896,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		42A887771EE0EEC60010B053 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				42A887781EE0EEC60010B053 /* Controller */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		42A887781EE0EEC60010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42A887791EE0EF070010B053 /* WebViewController.h */,
+				42A8877A1EE0EF070010B053 /* WebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1263,6 +1283,7 @@
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
 				D20063F71DFF86800021E293 /* 登录 */,
+				42A887771EE0EEC60010B053 /* Web */,
 				428012441ECD6B07001847F3 /* UUID */,
 				D20063731DFF86800021E293 /* Example */,
 				D20063FA1DFF86800021E293 /* 组件 */,
@@ -2383,6 +2404,7 @@
 				D200649F1DFF86800021E293 /* MyModel.m in Sources */,
 				8CBD72E71E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.m in Sources */,
 				8CBD73831E09320C00A0C991 /* MASViewAttribute.m in Sources */,
+				42A8877B1EE0EF070010B053 /* WebViewController.m in Sources */,
 				D20064421DFF86800021E293 /* CJDecisionView.m in Sources */,
 				187C72F11E30B1810072F33A /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
 				D20064691DFF86800021E293 /* WelcomeViewController.m in Sources */,

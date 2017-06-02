@@ -39,4 +39,10 @@
 //存储开始时间和结束时间
 @property (nonatomic,copy) NSString * startTime;
 @property (nonatomic,copy) NSString * endTime;
+
+//web
+@property (nonatomic,copy) NSString * UUIDStr;//设备唯一标识
+@property (nonatomic,copy) NSString * ssid;
+@property (nonatomic,copy) NSString * name;
+@property (nonatomic,copy) NSString * Webpassword;//是否解除绑定
 @end

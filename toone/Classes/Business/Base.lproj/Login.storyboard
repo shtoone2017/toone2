@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,14 +28,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L94-QT-F8n" userLabel="界面容器">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
-                                        <rect key="frame" x="40" y="60" width="240" height="80"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chong" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
+                                        <rect key="frame" x="110" y="60" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="9b4-lY-qYj"/>
-                                            <constraint firstAttribute="width" constant="240" id="Xfw-XF-XEx"/>
+                                            <constraint firstAttribute="height" constant="100" id="9b4-lY-qYj"/>
+                                            <constraint firstAttribute="width" constant="100" id="Xfw-XF-XEx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="混凝土信息管理系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆铁路枢纽东环线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
                                         <rect key="frame" x="0.0" y="180" width="320" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="PyK-MR-vJD"/>
@@ -186,7 +186,7 @@
                                     <constraint firstAttribute="height" constant="568" id="zOm-mK-NjP"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在此补充相关信息" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5F-hX-OKK" userLabel="相关信息">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@2017 重庆铁路枢纽东环线" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5F-hX-OKK" userLabel="相关信息">
                                 <rect key="frame" x="0.0" y="488" width="320" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2DT-an-cgt"/>
@@ -228,8 +228,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chong" width="100" height="100"/>
         <image name="ic_lock_outline_blue_500_18dp" width="54" height="54"/>
-        <image name="ic_logo_login" width="288" height="113"/>
         <image name="ic_person_outline_blue_500_18dp" width="54" height="54"/>
     </resources>
 </document>

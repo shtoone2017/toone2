@@ -60,7 +60,8 @@
 
 
 
-
+//解除绑定
+#define AppCreate   FormatString(baseUrl,@"login!unBinding.action?account=%@&mobile=%@&imei=%@")
 
 //登录
 #define AppLogin   FormatString(baseUrl,@"login!executex.action?account=%@&mobile=%@&imei=%@")

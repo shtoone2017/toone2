@@ -38,14 +38,18 @@
     _passwordLine.backgroundColor = [UIColor pastelBlueColor];
     _loginButton.layer.cornerRadius = 20.0f;
     self.UUIDStr = [GetUUID getUUID];
-    
     [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
     
     //
     
     if ([UserDefaultsSetting shareSetting].isLogin) {
-        self.acountTextField.text = [UserDefaultsSetting shareSetting].acount;
-        self.passwordTextField.text = [UserDefaultsSetting shareSetting].password;
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeDeterminate;
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = [UserDefaultsSetting shareSetting].Webpassword;
+            [hud hideAnimated:YES afterDelay:2.0];
+//        self.acountTextField.text = [UserDefaultsSetting shareSetting].acount;
+//        self.passwordTextField.text = [UserDefaultsSetting shareSetting].password;
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 //            [self loginBtnClick:self.loginButton];
 //        });
@@ -130,10 +134,23 @@
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
             if ([json[@"msg"] isEqualToString:@"成功"]) {
-                self.ssid = json[@"data"][@"list"][0][@"ssid"];
-                self.name = json[@"data"][@"list"][0][@"account"];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting];
+                    setting.name = json[@"data"][@"list"][0][@"account"];
+                    setting.ssid = json[@"data"][@"list"][0][@"ssid"];
+                    [UserDefaultsSetting shareSetting].acount = self.acountTextField.text;
+                    [UserDefaultsSetting shareSetting].password = self.passwordTextField.text;
+                    if (_UUIDStr) {
+                        setting.UUIDStr = self.UUIDStr;
+                    }
+                    [setting saveToSandbox];
+                });
+                //界面跳转
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self loadWKView];
+//                    [self loadWKView];
+                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });
             }else{
                 hud.mode = MBProgressHUDModeText;
@@ -157,7 +174,7 @@
 {
     return NO;
 }
-
+/*
 #pragma mark - webView
 -(void)loadWKView{
     self.wkView = [[WKWebView alloc] initWithFrame:self.view.bounds];
@@ -224,6 +241,6 @@
     
 }
 
-
+*/
 
 @end
