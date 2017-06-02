@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self LodaUI];
-    [self loadData];
+//    [self loadData];
     [self setRightBut];
 }
 
@@ -153,14 +153,15 @@
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableView.rowHeight = 155;
     self.view.backgroundColor = [UIColor oldLaceColor];
-    self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    [self.tableView.mj_header beginRefreshing];
+//    self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _datas.count;
+    return 1;
+//    return _datas.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *CellIdentifier = @"LQ_ZJM_Cell";
@@ -168,8 +169,8 @@
         [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
         LQ_ZJM_Cell *cell = (LQ_ZJM_Cell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        LQ_CellModel * cellModel = self.datas[indexPath.row];
-        cell.cellModel = cellModel;
+//        LQ_CellModel * cellModel = self.datas[indexPath.row];
+//        cell.cellModel = cellModel;
     
         //取消选中cell背景颜色
 //        cell.selectionStyle =UITableViewCellSelectionStyleNone;

@@ -10,7 +10,7 @@
 #import "NQ_BHZ_SCCX_Controller.h"
 #import "ExcessiveViewController.h"
 #import "MaterialViewController.h"
-#import "MySegmentedControl.h"
+#import "MySYSSegmentedControl.h"
 
 @interface ManageViewController ()
 @property (nonatomic,strong) UIViewController *indexVc;
@@ -35,14 +35,14 @@
 
 }
 -(void)loadUI{
-    MySegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MySegmentedControl" owner:nil options:nil][0];
+    MySYSSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MySYSSegmentedControl" owner:nil options:nil][0];
     seg.frame = CGRectMake(0, 0, 220, 24);
     self.navigationItem.titleView = seg;
-    [seg switchToLQBHZ];
+    [seg switchToSYS];
     __weak typeof(self) weakSelf = self;
     seg.segBlock = ^(int tag){
         switch (tag) {
-            case 1:{//生产查询
+            case 1:{//马歇尔
                 if (weakSelf.index !=1){
                     [self.indexVc removeFromParentViewController];
                     [self.indexVc.view removeFromSuperview];
@@ -57,7 +57,7 @@
                 break;
             }
             case 2:{
-                //总产量统计
+                //软化
                 if (weakSelf.index != 2){
                     [self.indexVc removeFromParentViewController];
                     [self.indexVc.view removeFromSuperview];
@@ -72,7 +72,7 @@
                 break;
             }
             case 3:{
-                //待处置报警
+                //针入
                 if (weakSelf.index != 3){
                     [self.indexVc removeFromParentViewController];
                     [self.indexVc.view removeFromSuperview];
@@ -86,6 +86,23 @@
                 }
                 break;
             }
+            case 4:{
+                //延度
+                if (weakSelf.index != 4){
+                    [self.indexVc removeFromParentViewController];
+                    [self.indexVc.view removeFromSuperview];
+                    
+                    self.indexVc = [[ExcessiveViewController alloc] init];
+                    ExcessiveViewController *excessVc = (ExcessiveViewController *) self.indexVc;
+                    
+                    [self addChildViewController:excessVc];
+                    [self.view addSubview:excessVc.view];
+                    weakSelf.index = 4;
+                }
+                break;
+            }
+
+                
         }
     };
 }

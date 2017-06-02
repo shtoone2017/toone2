@@ -34,7 +34,7 @@
     [super viewDidLoad];
     [self addPanGestureRecognizer];
     [self loadUI];
-    [self loadData];
+//    [self loadData];
 }
 -(void)dealloc{
     FuncLog;
@@ -55,8 +55,8 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerNib:[UINib nibWithNibName:@"HNT_BHZ_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_BHZ_Cell"];
     
-    self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    [self.tableView.mj_header beginRefreshing];
+//    self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+//    [self.tableView.mj_header beginRefreshing];
 }
 
 
@@ -86,13 +86,14 @@
 }
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
     return self.datas.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HNT_BHZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_BHZ_Cell" forIndexPath:indexPath];
-    HNT_BHZ_Model * model = self.datas[indexPath.row];
-    cell.model = model;
+//    HNT_BHZ_Model * model = self.datas[indexPath.row];
+//    cell.model = model;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -86,6 +86,17 @@
 		42A887471EDFEBBC0010B053 /* TP_SBDW_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8872A1EDFEBBC0010B053 /* TP_SBDW_Model.m */; };
 		42A8874C1EDFEDF90010B053 /* MyTPSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8874A1EDFEDF90010B053 /* MyTPSegmentedControl.m */; };
 		42A8874D1EDFEDF90010B053 /* MyTPSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A8874B1EDFEDF90010B053 /* MyTPSegmentedControl.xib */; };
+		42A887681EDFF4CB0010B053 /* icon_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A887521EDFF4CB0010B053 /* icon_location@2x.png */; };
+		42A887691EDFF4CB0010B053 /* icon_location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A887531EDFF4CB0010B053 /* icon_location@3x.png */; };
+		42A8876A1EDFF4CB0010B053 /* BackgroundLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887571EDFF4CB0010B053 /* BackgroundLocationViewController.m */; };
+		42A8876B1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8875A1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.m */; };
+		42A8876C1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A8875B1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.xib */; };
+		42A8876D1EDFF4CB0010B053 /* MonitoringRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8875E1EDFF4CB0010B053 /* MonitoringRegionViewController.m */; };
+		42A8876E1EDFF4CB0010B053 /* SerialLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887611EDFF4CB0010B053 /* SerialLocationViewController.m */; };
+		42A8876F1EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887641EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m */; };
+		42A887701EDFF4CB0010B053 /* SingleLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887671EDFF4CB0010B053 /* SingleLocationViewController.m */; };
+		42A887751EE003140010B053 /* MySYSSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887731EE003140010B053 /* MySYSSegmentedControl.m */; };
+		42A887761EE003140010B053 /* MySYSSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A887741EE003140010B053 /* MySYSSegmentedControl.xib */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -678,6 +689,25 @@
 		42A887491EDFEDF90010B053 /* MyTPSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTPSegmentedControl.h; sourceTree = "<group>"; };
 		42A8874A1EDFEDF90010B053 /* MyTPSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTPSegmentedControl.m; sourceTree = "<group>"; };
 		42A8874B1EDFEDF90010B053 /* MyTPSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTPSegmentedControl.xib; sourceTree = "<group>"; };
+		42A887501EDFF4CB0010B053 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		42A887521EDFF4CB0010B053 /* icon_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_location@2x.png"; sourceTree = "<group>"; };
+		42A887531EDFF4CB0010B053 /* icon_location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_location@3x.png"; sourceTree = "<group>"; };
+		42A887561EDFF4CB0010B053 /* BackgroundLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLocationViewController.h; sourceTree = "<group>"; };
+		42A887571EDFF4CB0010B053 /* BackgroundLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLocationViewController.m; sourceTree = "<group>"; };
+		42A887591EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringGeoFenceRegionViewController.h; sourceTree = "<group>"; };
+		42A8875A1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringGeoFenceRegionViewController.m; sourceTree = "<group>"; };
+		42A8875B1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonitoringGeoFenceRegionViewController.xib; sourceTree = "<group>"; };
+		42A8875D1EDFF4CB0010B053 /* MonitoringRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoringRegionViewController.h; sourceTree = "<group>"; };
+		42A8875E1EDFF4CB0010B053 /* MonitoringRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoringRegionViewController.m; sourceTree = "<group>"; };
+		42A887601EDFF4CB0010B053 /* SerialLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialLocationViewController.h; sourceTree = "<group>"; };
+		42A887611EDFF4CB0010B053 /* SerialLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialLocationViewController.m; sourceTree = "<group>"; };
+		42A887631EDFF4CB0010B053 /* SingleLocaitonAloneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLocaitonAloneViewController.h; sourceTree = "<group>"; };
+		42A887641EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLocaitonAloneViewController.m; sourceTree = "<group>"; };
+		42A887661EDFF4CB0010B053 /* SingleLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLocationViewController.h; sourceTree = "<group>"; };
+		42A887671EDFF4CB0010B053 /* SingleLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLocationViewController.m; sourceTree = "<group>"; };
+		42A887721EE003140010B053 /* MySYSSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySYSSegmentedControl.h; sourceTree = "<group>"; };
+		42A887731EE003140010B053 /* MySYSSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySYSSegmentedControl.m; sourceTree = "<group>"; };
+		42A887741EE003140010B053 /* MySYSSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySYSSegmentedControl.xib; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -1550,45 +1580,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		422EE9111EDE9776003755CB /* 沥青-试验室 */ = {
-			isa = PBXGroup;
-			children = (
-				422EE9131EDE9776003755CB /* Inner */,
-				422EE9121EDE9776003755CB /* Controller */,
-				422EE9141EDE9776003755CB /* Model */,
-				422EE9151EDE9776003755CB /* View */,
-			);
-			path = "沥青-试验室";
-			sourceTree = "<group>";
-		};
-		422EE9121EDE9776003755CB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		422EE9131EDE9776003755CB /* Inner */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Inner;
-			sourceTree = "<group>";
-		};
-		422EE9141EDE9776003755CB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		422EE9151EDE9776003755CB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		42A886EB1EDFEBBC0010B053 /* 现场 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1767,7 +1758,112 @@
 			path = View3;
 			sourceTree = "<group>";
 		};
-		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
+		42A8874E1EDFF4CB0010B053 /* GDRes */ = {
+			isa = PBXGroup;
+			children = (
+				42A8874F1EDFF4CB0010B053 /* Configuration */,
+				42A887511EDFF4CB0010B053 /* Images */,
+				42A887541EDFF4CB0010B053 /* Items */,
+			);
+			path = GDRes;
+			sourceTree = "<group>";
+		};
+		42A8874F1EDFF4CB0010B053 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				42A887501EDFF4CB0010B053 /* APIKey.h */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		42A887511EDFF4CB0010B053 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				42A887521EDFF4CB0010B053 /* icon_location@2x.png */,
+				42A887531EDFF4CB0010B053 /* icon_location@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		42A887541EDFF4CB0010B053 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				42A887551EDFF4CB0010B053 /* BackgroundLocation */,
+				42A887581EDFF4CB0010B053 /* MonitoringGeoFenceRegion */,
+				42A8875C1EDFF4CB0010B053 /* MonitoringRegion */,
+				42A8875F1EDFF4CB0010B053 /* SerialLocation */,
+				42A887621EDFF4CB0010B053 /* SingleLocaitonAlone */,
+				42A887651EDFF4CB0010B053 /* SingleLocation */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		42A887551EDFF4CB0010B053 /* BackgroundLocation */ = {
+			isa = PBXGroup;
+			children = (
+				42A887561EDFF4CB0010B053 /* BackgroundLocationViewController.h */,
+				42A887571EDFF4CB0010B053 /* BackgroundLocationViewController.m */,
+			);
+			path = BackgroundLocation;
+			sourceTree = "<group>";
+		};
+		42A887581EDFF4CB0010B053 /* MonitoringGeoFenceRegion */ = {
+			isa = PBXGroup;
+			children = (
+				42A887591EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.h */,
+				42A8875A1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.m */,
+				42A8875B1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.xib */,
+			);
+			path = MonitoringGeoFenceRegion;
+			sourceTree = "<group>";
+		};
+		42A8875C1EDFF4CB0010B053 /* MonitoringRegion */ = {
+			isa = PBXGroup;
+			children = (
+				42A8875D1EDFF4CB0010B053 /* MonitoringRegionViewController.h */,
+				42A8875E1EDFF4CB0010B053 /* MonitoringRegionViewController.m */,
+			);
+			path = MonitoringRegion;
+			sourceTree = "<group>";
+		};
+		42A8875F1EDFF4CB0010B053 /* SerialLocation */ = {
+			isa = PBXGroup;
+			children = (
+				42A887601EDFF4CB0010B053 /* SerialLocationViewController.h */,
+				42A887611EDFF4CB0010B053 /* SerialLocationViewController.m */,
+			);
+			path = SerialLocation;
+			sourceTree = "<group>";
+		};
+		42A887621EDFF4CB0010B053 /* SingleLocaitonAlone */ = {
+			isa = PBXGroup;
+			children = (
+				42A887631EDFF4CB0010B053 /* SingleLocaitonAloneViewController.h */,
+				42A887641EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m */,
+			);
+			path = SingleLocaitonAlone;
+			sourceTree = "<group>";
+		};
+		42A887651EDFF4CB0010B053 /* SingleLocation */ = {
+			isa = PBXGroup;
+			children = (
+				42A887661EDFF4CB0010B053 /* SingleLocationViewController.h */,
+				42A887671EDFF4CB0010B053 /* SingleLocationViewController.m */,
+			);
+			path = SingleLocation;
+			sourceTree = "<group>";
+		};
+		42A887711EE003140010B053 /* View4 */ = {
+			isa = PBXGroup;
+			children = (
+				42A887721EE003140010B053 /* MySYSSegmentedControl.h */,
+				42A887731EE003140010B053 /* MySYSSegmentedControl.m */,
+				42A887741EE003140010B053 /* MySYSSegmentedControl.xib */,
+			);
+			path = View4;
+			sourceTree = "<group>";
+		};
+		42AC708E1E30C392007D8F57 /* 沥青-试验室 */ = {
 			isa = PBXGroup;
 			children = (
 				42AC708F1E30C392007D8F57 /* Controller */,
@@ -1775,6 +1871,7 @@
 				42AC71361E30C393007D8F57 /* Model */,
 				42AC713B1E30C393007D8F57 /* View */,
 			);
+			name = "沥青-试验室";
 			path = "沥青-拌合站";
 			sourceTree = "<group>";
 		};
@@ -2712,6 +2809,7 @@
 		D20062F01DFF85CB0021E293 = {
 			isa = PBXGroup;
 			children = (
+				42A8874E1EDFF4CB0010B053 /* GDRes */,
 				D20064B81DFF86B30021E293 /* ChartClasses */,
 				D20063141DFF86800021E293 /* Classes */,
 				D20062FB1DFF85CB0021E293 /* toone */,
@@ -2856,10 +2954,9 @@
 				D26AE9931E7A37A90090761D /* 沥青-拌合站（老平台） */,
 				D272EF971E7BBE3A00D0991D /* 沥青-水稳（老平台） */,
 				D21943851E81059400FC0B38 /* 沥青-设备接口（老平台） */,
-				422EE9111EDE9776003755CB /* 沥青-试验室 */,
-				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				42A886EB1EDFEBBC0010B053 /* 现场 */,
 				D200637E1DFF86800021E293 /* 抽屉 */,
+				42AC708E1E30C392007D8F57 /* 沥青-试验室 */,
 				D20063891DFF86800021E293 /* 欢迎 */,
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
@@ -3327,6 +3424,7 @@
 			isa = PBXGroup;
 			children = (
 				18B871C01E1F719900F9DD53 /* Controller */,
+				42A887711EE003140010B053 /* View4 */,
 				42A887481EDFEDF90010B053 /* View3 */,
 				42AC721B1E30C668007D8F57 /* View2 */,
 				8C14C90B1E0BD48300A3F2E7 /* View */,
@@ -4221,6 +4319,7 @@
 				D20065421DFF86B30021E293 /* RadarChartViewController.xib in Resources */,
 				D20065A41DFFE12D0021E293 /* Exp5_Xib_View.xib in Resources */,
 				D200648F1DFF86800021E293 /* ZZJG_View.xib in Resources */,
+				42A887691EDFF4CB0010B053 /* icon_location@3x.png in Resources */,
 				D20064921DFF86800021E293 /* Exp1_Xib_View.xib in Resources */,
 				D21944021E81204800FC0B38 /* HNT_CLHS_Cell.xib in Resources */,
 				42AC717A1E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Cell.xib in Resources */,
@@ -4230,6 +4329,7 @@
 				D20064951DFF86800021E293 /* Exp2_Xib_View.xib in Resources */,
 				D25977721E76B0BC00507BF2 /* SW_ZZJG_Cell.xib in Resources */,
 				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
+				42A8876C1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.xib in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
 				D2E8384A1EA75651003E0A7B /* PersonVC.xib in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
@@ -4246,6 +4346,7 @@
 				D235E3001E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
 				D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */,
+				42A887761EE003140010B053 /* MySYSSegmentedControl.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
 				D2E04DE51E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
@@ -4270,6 +4371,7 @@
 				42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */,
 				D24DE9221E80BF25006831A2 /* LLQ_CLHS_Cell.xib in Resources */,
 				D2E838861EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
+				42A887681EDFF4CB0010B053 /* icon_location@2x.png in Resources */,
 				D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */,
 				D24DE9241E80BF25006831A2 /* LLQ_CLHS_ChatCell.xib in Resources */,
 			);
@@ -4331,9 +4433,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				187C72F31E30B1810072F33A /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				42A8876A1EDFF4CB0010B053 /* BackgroundLocationViewController.m in Sources */,
 				D27B23F41E72922C001A198E /* UserDefaultsSetting_SW.m in Sources */,
 				D20064A71DFF86800021E293 /* SGDate.m in Sources */,
 				42AC717F1E30C393007D8F57 /* LQ_ZJM_Cell.m in Sources */,
+				42A8876F1EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m in Sources */,
 				42AC72081E30C576007D8F57 /* TheProjectCell.m in Sources */,
 				D200646A1DFF86800021E293 /* HNT_BHZ_Controller.m in Sources */,
 				42AC72171E30C576007D8F57 /* LqNodeViewController.m in Sources */,
@@ -4415,6 +4519,7 @@
 				42AC71741E30C393007D8F57 /* ProductionDetailsG.m in Sources */,
 				D2E04DDC1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
+				42A8876D1EDFF4CB0010B053 /* MonitoringRegionViewController.m in Sources */,
 				42AC71561E30C393007D8F57 /* SeniorExcessiveTableConller.m in Sources */,
 				D200651B1DFF86B30021E293 /* AnotherBarChartViewController.m in Sources */,
 				D272EFBD1E7BBE3A00D0991D /* SW_CLHS_Model.m in Sources */,
@@ -4470,6 +4575,7 @@
 				187C72F11E30B1810072F33A /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
 				D219436C1E80CDA400FC0B38 /* SW_LSSJ_Controller.m in Sources */,
 				D20064691DFF86800021E293 /* WelcomeViewController.m in Sources */,
+				42A887701EDFF4CB0010B053 /* SingleLocationViewController.m in Sources */,
 				D235E3381E85117F00EE4459 /* LQ_Peifang_Controller.m in Sources */,
 				D20064451DFF86800021E293 /* CJSelectTimeScrollView.m in Sources */,
 				D2E04DE21E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Cell.m in Sources */,
@@ -4505,6 +4611,7 @@
 				D219438A1E81059400FC0B38 /* LQ_SB_Controller.m in Sources */,
 				42A887421EDFEBBC0010B053 /* TP_DW_Controller.m in Sources */,
 				D272EFDD1E7BDDAB00D0991D /* DWURunLoopWorkDistribution.m in Sources */,
+				42A887751EE003140010B053 /* MySYSSegmentedControl.m in Sources */,
 				D272EFBA1E7BBE3A00D0991D /* SW_CLHS_Controller.m in Sources */,
 				D2E8388A1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D272EFD51E7BC36F00D0991D /* LLQ_CBCZ_Cell.m in Sources */,
@@ -4593,6 +4700,7 @@
 				D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */,
 				D200654B1DFF86B30021E293 /* IntAxisValueFormatter.m in Sources */,
 				D272EFB91E7BBE3A00D0991D /* SW_CBCZ_Controller.m in Sources */,
+				42A8876B1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.m in Sources */,
 				D219435E1E80C12B00FC0B38 /* LLQ_CLHS_Model.m in Sources */,
 				42AC71681E30C393007D8F57 /* DayQueryModel.m in Sources */,
 				42AC715B1E30C393007D8F57 /* LQ_ZCL_CL_Model.m in Sources */,
@@ -4706,6 +4814,7 @@
 				42A8872F1EDFEBBC0010B053 /* TP_CL_Controller.m in Sources */,
 				D20064A01DFF86800021E293 /* MyNavigationController.m in Sources */,
 				187C72F81E30B1810072F33A /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				42A8876E1EDFF4CB0010B053 /* SerialLocationViewController.m in Sources */,
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
 				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,
 				D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */,

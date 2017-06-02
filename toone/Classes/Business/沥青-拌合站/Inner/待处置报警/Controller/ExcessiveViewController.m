@@ -44,7 +44,7 @@
     self.segementView = [[XFSegementView alloc]initWithFrame:CGRectMake(0, 65, [UIScreen mainScreen].bounds.size.width, 35)];
     self.segementView.backgroundColor = [UIColor snowColor];
     
-    self.segementView.titleArray = @[@"初级",@"中级",@"高级",@"总"];
+    self.segementView.titleArray = @[@"合格",@"不合格"];
     
     self.segementView.touchDelegate = self;
     
@@ -57,13 +57,12 @@
     [self.segementView addSubview:searchButton];
 
 }
-
 #pragma mark - 查询
--(void)clickSearchBut:(UIButton *)sender {
+- (IBAction)senchClick:(UIButton *)sender {
     sender.enabled = NO;
     //1.
     UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
-    backView.frame = CGRectMake(0, 64+36, Screen_w, Screen_h  -64-36);
+    backView.frame = CGRectMake(0, 64+35, Screen_w, Screen_h - 49 -64-35);
     backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     backView.hidden = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
@@ -72,69 +71,108 @@
     [self.view addSubview:backView];
     
     //2.
-    Exp8View * e = [[Exp8View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 254);
+    Exp1View * e = [[Exp1View alloc] init];
+    e.frame = CGRectMake(0, 64+35, Screen_w, 150);
     __weak __typeof(self)  weakSelf = self;
-    e.expBlock = ^(ExpButtonType type,id obj1,id obj2, int buttonTag){
+    e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
+        
         if (type == ExpButtonTypeCancel) {
             sender.enabled = YES;
             [backView removeFromSuperview];
         }
-        if (type == ExpButtonTypeOk) {//查询
+        if (type == ExpButtonTypeOk) {
             sender.enabled = YES;
             [backView removeFromSuperview];
             //
             weakSelf.startTime = (NSString*)obj1;
             weakSelf.endTime = (NSString*)obj2;
-            //重新切换titleButton ， 搜索页码应该回归第一页码
-//            weakSelf.pageNo = @"1";
-//            weakSelf.chuzhileixing = @"";
-            switch (buttonTag) {
-                case 10:
-                    weakSelf.urlString = [self loadUI:@""];
-                    break;
-                case 20://未处置
-                    weakSelf.urlString = [self loadUI:@"0"];
-                        break;
-                case 30:
-                case 40://已处置
-                    weakSelf.urlString = [self loadUI:@"1"];
-                    break;
-                case 50:
-                    break;
-                case 60:
-                    break;
-                default:
-                    weakSelf.urlString = [self loadUI:@""];
-                    break;
-            }
+//            [weakSelf loadData];
             [weakSelf.tableCont reloadData:weakSelf.urlString];
         }
         if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
             UIButton * btn = (UIButton*)obj1;
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
-        
-        if (type == ExpButtonTypeChoiceSBButton) {//选择设备
-            UIButton * btn = (UIButton*)obj1;
-            LQ_BHZ_SB_Controller *sbVc = [[LQ_BHZ_SB_Controller alloc] init];
-            [self.navigationController pushViewController:sbVc animated:YES];
-            
-            sbVc.callBlock = ^(NSString *banhezhanminchen,NSString *gprsbianhao){
-                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
-                weakSelf.shebStr = gprsbianhao;
-            };
-
-        }
     };
     [self.view addSubview:e];
 }
+//#pragma mark - 查询
+//-(void)clickSearchBut:(UIButton *)sender {
+//    sender.enabled = NO;
+//    //1.
+//    UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
+//    backView.frame = CGRectMake(0, 64+36, Screen_w, Screen_h  -64-36);
+//    backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+//    backView.hidden = YES;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
+//        backView.hidden = NO;
+//    });
+//    [self.view addSubview:backView];
+//    
+//    //2.
+//    Exp8View * e = [[Exp8View alloc] init];
+//    e.frame = CGRectMake(0, 64+36, Screen_w, 254);
+//    __weak __typeof(self)  weakSelf = self;
+//    e.expBlock = ^(ExpButtonType type,id obj1,id obj2, int buttonTag){
+//        if (type == ExpButtonTypeCancel) {
+//            sender.enabled = YES;
+//            [backView removeFromSuperview];
+//        }
+//        if (type == ExpButtonTypeOk) {//查询
+//            sender.enabled = YES;
+//            [backView removeFromSuperview];
+//            //
+//            weakSelf.startTime = (NSString*)obj1;
+//            weakSelf.endTime = (NSString*)obj2;
+//            //重新切换titleButton ， 搜索页码应该回归第一页码
+////            weakSelf.pageNo = @"1";
+////            weakSelf.chuzhileixing = @"";
+//            switch (buttonTag) {
+//                case 10:
+//                    weakSelf.urlString = [self loadUI:@""];
+//                    break;
+//                case 20://未处置
+//                    weakSelf.urlString = [self loadUI:@"0"];
+//                        break;
+//                case 30:
+//                case 40://已处置
+//                    weakSelf.urlString = [self loadUI:@"1"];
+//                    break;
+//                case 50:
+//                    break;
+//                case 60:
+//                    break;
+//                default:
+//                    weakSelf.urlString = [self loadUI:@""];
+//                    break;
+//            }
+//            [weakSelf.tableCont reloadData:weakSelf.urlString];
+//        }
+//        if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
+//            UIButton * btn = (UIButton*)obj1;
+//            [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
+//        }
+//        
+//        if (type == ExpButtonTypeChoiceSBButton) {//选择设备
+//            UIButton * btn = (UIButton*)obj1;
+//            LQ_BHZ_SB_Controller *sbVc = [[LQ_BHZ_SB_Controller alloc] init];
+//            [self.navigationController pushViewController:sbVc animated:YES];
+//            
+//            sbVc.callBlock = ^(NSString *banhezhanminchen,NSString *gprsbianhao){
+//                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+//                weakSelf.shebStr = gprsbianhao;
+//            };
+//
+//        }
+//    };
+//    [self.view addSubview:e];
+//}
 
 
 
 #pragma mark - 分页跳转
 - (void)touchLabelWithIndex:(NSInteger)index {
-    if (index == 0) { //初级
+    if (index == 0) {
         [self.tableCont removeFromParentViewController];
         [self.tableCont.view removeFromSuperview];
         
@@ -146,7 +184,7 @@
         [self.view addSubview:primaryVc.view];
         [self.view addSubview:self.segementView];
 
-    }else if (index == 1) { //中级
+    }else if (index == 1) {
         [self.tableCont removeFromParentViewController];
         [self.tableCont.view removeFromSuperview];
         
@@ -158,7 +196,9 @@
         [self.view addSubview:middleVc.view];
         [self.view addSubview:self.segementView];
         
-    }else if (index == 2) { //高级
+    }
+    /*
+    else if (index == 2) { //高级
         [self.tableCont removeFromParentViewController];
         [self.tableCont.view removeFromSuperview];
         
@@ -183,7 +223,7 @@
         [self.view addSubview:self.segementView];
         
     }
-    
+    */
 }
 
 -(NSString *)loadUI:(NSString *)leix {
