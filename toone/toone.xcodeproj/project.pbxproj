@@ -97,6 +97,9 @@
 		42A887701EDFF4CB0010B053 /* SingleLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887671EDFF4CB0010B053 /* SingleLocationViewController.m */; };
 		42A887751EE003140010B053 /* MySYSSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887731EE003140010B053 /* MySYSSegmentedControl.m */; };
 		42A887761EE003140010B053 /* MySYSSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A887741EE003140010B053 /* MySYSSegmentedControl.xib */; };
+		42A887931EE2596E0010B053 /* LLQ_MXR_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */; };
+		42A887941EE2596E0010B053 /* LLQ_SYS_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */; };
+		42A887951EE2596E0010B053 /* LLQ_SYS_InnerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887921EE2596E0010B053 /* LLQ_SYS_InnerController.m */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -708,6 +711,12 @@
 		42A887721EE003140010B053 /* MySYSSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySYSSegmentedControl.h; sourceTree = "<group>"; };
 		42A887731EE003140010B053 /* MySYSSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySYSSegmentedControl.m; sourceTree = "<group>"; };
 		42A887741EE003140010B053 /* MySYSSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySYSSegmentedControl.xib; sourceTree = "<group>"; };
+		42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_MXE_Controller.h; sourceTree = "<group>"; };
+		42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_MXR_Controller.m; sourceTree = "<group>"; };
+		42A8878F1EE2596E0010B053 /* LLQ_SYS_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_Controller.h; sourceTree = "<group>"; };
+		42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SYS_Controller.m; sourceTree = "<group>"; };
+		42A887911EE2596E0010B053 /* LLQ_SYS_InnerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_InnerController.h; sourceTree = "<group>"; };
+		42A887921EE2596E0010B053 /* LLQ_SYS_InnerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SYS_InnerController.m; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -1863,7 +1872,76 @@
 			path = View4;
 			sourceTree = "<group>";
 		};
-		42AC708E1E30C392007D8F57 /* 沥青-试验室 */ = {
+		42A8877C1EE257B50010B053 /* 沥青-试验室 */ = {
+			isa = PBXGroup;
+			children = (
+				42A8877D1EE257B50010B053 /* Controller */,
+				42A8877E1EE257B50010B053 /* Inner */,
+				42A887821EE257B50010B053 /* Model */,
+				42A887831EE257B50010B053 /* View */,
+			);
+			path = "沥青-试验室";
+			sourceTree = "<group>";
+		};
+		42A8877D1EE257B50010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */,
+				42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */,
+				42A8878F1EE2596E0010B053 /* LLQ_SYS_Controller.h */,
+				42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */,
+				42A887911EE2596E0010B053 /* LLQ_SYS_InnerController.h */,
+				42A887921EE2596E0010B053 /* LLQ_SYS_InnerController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42A8877E1EE257B50010B053 /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+				42A8877F1EE257B50010B053 /* Controller */,
+				42A887801EE257B50010B053 /* Model */,
+				42A887811EE257B50010B053 /* View */,
+			);
+			path = Inner;
+			sourceTree = "<group>";
+		};
+		42A8877F1EE257B50010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42A887801EE257B50010B053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A887811EE257B50010B053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42A887821EE257B50010B053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A887831EE257B50010B053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
 			isa = PBXGroup;
 			children = (
 				42AC708F1E30C392007D8F57 /* Controller */,
@@ -1871,7 +1949,6 @@
 				42AC71361E30C393007D8F57 /* Model */,
 				42AC713B1E30C393007D8F57 /* View */,
 			);
-			name = "沥青-试验室";
 			path = "沥青-拌合站";
 			sourceTree = "<group>";
 		};
@@ -2954,9 +3031,10 @@
 				D26AE9931E7A37A90090761D /* 沥青-拌合站（老平台） */,
 				D272EF971E7BBE3A00D0991D /* 沥青-水稳（老平台） */,
 				D21943851E81059400FC0B38 /* 沥青-设备接口（老平台） */,
+				42A8877C1EE257B50010B053 /* 沥青-试验室 */,
 				42A886EB1EDFEBBC0010B053 /* 现场 */,
 				D200637E1DFF86800021E293 /* 抽屉 */,
-				42AC708E1E30C392007D8F57 /* 沥青-试验室 */,
+				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
 				D20063891DFF86800021E293 /* 欢迎 */,
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
@@ -4461,6 +4539,7 @@
 				D235E32A1E84C64900EE4459 /* LLQ_LSSJ_Detail_ChartCell.m in Sources */,
 				D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */,
 				D20064741DFF86800021E293 /* HNT_YLSY_Cell.m in Sources */,
+				42A887941EE2596E0010B053 /* LLQ_SYS_Controller.m in Sources */,
 				D20065141DFF86B30021E293 /* AxisModel.m in Sources */,
 				42A887361EDFEBBC0010B053 /* TP_TP_SB_Controller.m in Sources */,
 				D272EFD61E7BC36F00D0991D /* LLQ_CBCZ_View.m in Sources */,
@@ -4505,6 +4584,7 @@
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
 				D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */,
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
+				42A887951EE2596E0010B053 /* LLQ_SYS_InnerController.m in Sources */,
 				42AC71721E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_ moreModel.m in Sources */,
 				42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */,
 				D21944281E8120E000FC0B38 /* SW_CBCZ_DetailController.m in Sources */,
@@ -4623,6 +4703,7 @@
 				D2E838921EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m in Sources */,
 				D20064A51DFF86800021E293 /* NoCopyTextField.m in Sources */,
 				187C73031E30B1810072F33A /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				42A887931EE2596E0010B053 /* LLQ_MXR_Controller.m in Sources */,
 				D219441F1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D200649A1DFF86800021E293 /* NSArray+Log.m in Sources */,
 				42AC720B1E30C576007D8F57 /* MASCompositeConstraint.m in Sources */,

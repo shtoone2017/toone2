@@ -24,11 +24,11 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
-    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
-    self.departName_Label.textColor = [UIColor whiteColor];
-    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
-    self.departName_Label.speed = BBFlashCtntSpeedSlow;
+//    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
+//    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+//    self.departName_Label.textColor = [UIColor whiteColor];
+//    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
+//    self.departName_Label.speed = BBFlashCtntSpeedSlow;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -168,8 +168,8 @@
             FuncLog;
             //组织机构代码块
             //组织机构代码块
+
             [self performSegueWithIdentifier:@"HNT_BHZ_Controller2" sender:nil];
-            
             NSNumber *number = [NSNumber numberWithInt:1];
             [UserDefaultsSetting shareSetting].funtype = number;
             break;

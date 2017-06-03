@@ -22,6 +22,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
+//    ((MyNavigationController*)self.navigationController).myColor = [UIColor clearColor];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
