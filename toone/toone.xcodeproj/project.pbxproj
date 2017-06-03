@@ -100,6 +100,10 @@
 		42A887931EE2596E0010B053 /* LLQ_MXR_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */; };
 		42A887941EE2596E0010B053 /* LLQ_SYS_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */; };
 		42A887951EE2596E0010B053 /* LLQ_SYS_InnerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887921EE2596E0010B053 /* LLQ_SYS_InnerController.m */; };
+		42A887A81EE29E610010B053 /* LLQ_MXE_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887A71EE29E610010B053 /* LLQ_MXE_Model.m */; };
+		42A887AB1EE2A99E0010B053 /* LLQ_YD_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887AA1EE2A99E0010B053 /* LLQ_YD_Controller.m */; };
+		42A887AE1EE2BD4B0010B053 /* LLQ_RH_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887AD1EE2BD4B0010B053 /* LLQ_RH_Controller.m */; };
+		42A887B11EE2C2560010B053 /* LLQ_ZR_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887B01EE2C2560010B053 /* LLQ_ZR_Controller.m */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -711,12 +715,20 @@
 		42A887721EE003140010B053 /* MySYSSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySYSSegmentedControl.h; sourceTree = "<group>"; };
 		42A887731EE003140010B053 /* MySYSSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySYSSegmentedControl.m; sourceTree = "<group>"; };
 		42A887741EE003140010B053 /* MySYSSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySYSSegmentedControl.xib; sourceTree = "<group>"; };
-		42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_MXE_Controller.h; sourceTree = "<group>"; };
-		42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_MXR_Controller.m; sourceTree = "<group>"; };
+		42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = ../../../Controller/LLQ_MXE_Controller.h; sourceTree = "<group>"; };
+		42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXR_Controller.m; path = ../../../Controller/LLQ_MXR_Controller.m; sourceTree = "<group>"; };
 		42A8878F1EE2596E0010B053 /* LLQ_SYS_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_Controller.h; sourceTree = "<group>"; };
 		42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SYS_Controller.m; sourceTree = "<group>"; };
 		42A887911EE2596E0010B053 /* LLQ_SYS_InnerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_InnerController.h; sourceTree = "<group>"; };
 		42A887921EE2596E0010B053 /* LLQ_SYS_InnerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SYS_InnerController.m; sourceTree = "<group>"; };
+		42A887A61EE29E610010B053 /* LLQ_MXE_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_MXE_Model.h; sourceTree = "<group>"; };
+		42A887A71EE29E610010B053 /* LLQ_MXE_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_MXE_Model.m; sourceTree = "<group>"; };
+		42A887A91EE2A99E0010B053 /* LLQ_YD_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_YD_Controller.h; sourceTree = "<group>"; };
+		42A887AA1EE2A99E0010B053 /* LLQ_YD_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_YD_Controller.m; sourceTree = "<group>"; };
+		42A887AC1EE2BD4B0010B053 /* LLQ_RH_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_Controller.h; sourceTree = "<group>"; };
+		42A887AD1EE2BD4B0010B053 /* LLQ_RH_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_Controller.m; sourceTree = "<group>"; };
+		42A887AF1EE2C2560010B053 /* LLQ_ZR_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_ZR_Controller.h; sourceTree = "<group>"; };
+		42A887B01EE2C2560010B053 /* LLQ_ZR_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_ZR_Controller.m; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -1875,8 +1887,8 @@
 		42A8877C1EE257B50010B053 /* 沥青-试验室 */ = {
 			isa = PBXGroup;
 			children = (
-				42A8877D1EE257B50010B053 /* Controller */,
 				42A8877E1EE257B50010B053 /* Inner */,
+				42A8877D1EE257B50010B053 /* Controller */,
 				42A887821EE257B50010B053 /* Model */,
 				42A887831EE257B50010B053 /* View */,
 			);
@@ -1886,8 +1898,6 @@
 		42A8877D1EE257B50010B053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */,
-				42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */,
 				42A8878F1EE2596E0010B053 /* LLQ_SYS_Controller.h */,
 				42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */,
 				42A887911EE2596E0010B053 /* LLQ_SYS_InnerController.h */,
@@ -1899,32 +1909,12 @@
 		42A8877E1EE257B50010B053 /* Inner */ = {
 			isa = PBXGroup;
 			children = (
-				42A8877F1EE257B50010B053 /* Controller */,
-				42A887801EE257B50010B053 /* Model */,
-				42A887811EE257B50010B053 /* View */,
+				42A887961EE26BBD0010B053 /* 马歇尔 */,
+				42A887981EE26BBD0010B053 /* 延度 */,
+				42A887971EE26BBD0010B053 /* 软化 */,
+				42A887991EE26BBD0010B053 /* 针入 */,
 			);
 			path = Inner;
-			sourceTree = "<group>";
-		};
-		42A8877F1EE257B50010B053 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		42A887801EE257B50010B053 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		42A887811EE257B50010B053 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		42A887821EE257B50010B053 /* Model */ = {
@@ -1935,6 +1925,140 @@
 			sourceTree = "<group>";
 		};
 		42A887831EE257B50010B053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42A887961EE26BBD0010B053 /* 马歇尔 */ = {
+			isa = PBXGroup;
+			children = (
+				42A8879A1EE26C060010B053 /* Controller */,
+				42A8879B1EE26C060010B053 /* Model */,
+				42A8879C1EE26C060010B053 /* View */,
+			);
+			path = "马歇尔";
+			sourceTree = "<group>";
+		};
+		42A887971EE26BBD0010B053 /* 软化 */ = {
+			isa = PBXGroup;
+			children = (
+				42A8879D1EE26C210010B053 /* Controller */,
+				42A8879E1EE26C210010B053 /* Model */,
+				42A8879F1EE26C210010B053 /* View */,
+			);
+			path = "软化";
+			sourceTree = "<group>";
+		};
+		42A887981EE26BBD0010B053 /* 延度 */ = {
+			isa = PBXGroup;
+			children = (
+				42A887A01EE26C2A0010B053 /* Controller */,
+				42A887A11EE26C2A0010B053 /* Model */,
+				42A887A21EE26C2A0010B053 /* View */,
+			);
+			path = "延度";
+			sourceTree = "<group>";
+		};
+		42A887991EE26BBD0010B053 /* 针入 */ = {
+			isa = PBXGroup;
+			children = (
+				42A887A31EE26C310010B053 /* Controller */,
+				42A887A41EE26C310010B053 /* Model */,
+				42A887A51EE26C310010B053 /* View */,
+			);
+			path = "针入";
+			sourceTree = "<group>";
+		};
+		42A8879A1EE26C060010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */,
+				42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42A8879B1EE26C060010B053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42A887A61EE29E610010B053 /* LLQ_MXE_Model.h */,
+				42A887A71EE29E610010B053 /* LLQ_MXE_Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A8879C1EE26C060010B053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42A8879D1EE26C210010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42A887AC1EE2BD4B0010B053 /* LLQ_RH_Controller.h */,
+				42A887AD1EE2BD4B0010B053 /* LLQ_RH_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42A8879E1EE26C210010B053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A8879F1EE26C210010B053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42A887A01EE26C2A0010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42A887A91EE2A99E0010B053 /* LLQ_YD_Controller.h */,
+				42A887AA1EE2A99E0010B053 /* LLQ_YD_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42A887A11EE26C2A0010B053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A887A21EE26C2A0010B053 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42A887A31EE26C310010B053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42A887AF1EE2C2560010B053 /* LLQ_ZR_Controller.h */,
+				42A887B01EE2C2560010B053 /* LLQ_ZR_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42A887A41EE26C310010B053 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A887A51EE26C310010B053 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -4613,6 +4737,7 @@
 				42AC71761E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.m in Sources */,
 				D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */,
 				42A8873A1EDFEBBC0010B053 /* TP_NY_ChartModel.m in Sources */,
+				42A887A81EE29E610010B053 /* LLQ_MXE_Model.m in Sources */,
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
 				42A887401EDFEBBC0010B053 /* TP_NY_SB_Controller.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
@@ -4706,6 +4831,7 @@
 				42A887931EE2596E0010B053 /* LLQ_MXR_Controller.m in Sources */,
 				D219441F1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D200649A1DFF86800021E293 /* NSArray+Log.m in Sources */,
+				42A887B11EE2C2560010B053 /* LLQ_ZR_Controller.m in Sources */,
 				42AC720B1E30C576007D8F57 /* MASCompositeConstraint.m in Sources */,
 				42AC720D1E30C576007D8F57 /* MASConstraintMaker.m in Sources */,
 				42AC71731E30C393007D8F57 /* NQ_BHZ_SCCX_InneModel.m in Sources */,
@@ -4813,6 +4939,7 @@
 				42AC718D1E30C3B6007D8F57 /* Exp7_Xib_View.m in Sources */,
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
 				D2E04DE61E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqHead.m in Sources */,
+				42A887AB1EE2A99E0010B053 /* LLQ_YD_Controller.m in Sources */,
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */,
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
@@ -4895,6 +5022,7 @@
 				42A8872F1EDFEBBC0010B053 /* TP_CL_Controller.m in Sources */,
 				D20064A01DFF86800021E293 /* MyNavigationController.m in Sources */,
 				187C72F81E30B1810072F33A /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				42A887AE1EE2BD4B0010B053 /* LLQ_RH_Controller.m in Sources */,
 				42A8876E1EDFF4CB0010B053 /* SerialLocationViewController.m in Sources */,
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
 				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,

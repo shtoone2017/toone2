@@ -6,13 +6,13 @@
 //  Copyright © 2016年 shtoone. All rights reserved.
 //
 
-#import "LLQ_MXE_Controller.h"
+#import "LLQ_RH_Controller.h"
 #import "LQ_SB_Controller.h"
 #import "LLQ_CBCZ_DetailController.h"
 
 #import "LLQ_MXE_Model.h"
 #import "LLQ_CBCZ_Cell.h"
-@interface LLQ_MXE_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface LLQ_RH_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
@@ -53,7 +53,7 @@
 @property (nonatomic,copy) NSString * pageNo3;
 @end
 
-@implementation LLQ_MXE_Controller
+@implementation LLQ_RH_Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -235,14 +235,17 @@
                     LLQ_MXE_Model * model =  [[LLQ_MXE_Model alloc] init];
                     model.dataDict = dict;
                     model.SHeader2 = json[@"SHeader2"];
-                    model.avgvalue1 = json[@"avgvalue1"];
-                    
-                    model.avgvalue2 = dict[@"avgvalue2"];
                     model.is_testtime = dict[@"is_testtime"];
                     model.isQualified = dict[@"isQualified"];
                     model.header5 = dict[@"header5"];
                     model.header3 = dict[@"header3"];
                     model.f_GUID = dict[@"f_GUID"];
+                    model.f_SBBH = dict[@"f_SBBH"];
+                    
+                    model.avgvalue1 = json[@"avgvalue1"];
+                    model.biaoZhun1 = dict[@"biaoZhun1"];
+                    model.ruanhuadian1 = json[@"ruanhuadian1"];
+                    model.ruanhuadian1 = json[@"ruanhuadian1"];
                     
                     [datas addObject:model];
                 }
@@ -433,7 +436,7 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller_MXR" sender:btn];
+            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller_RH" sender:btn];
         }
     };
     [self.view addSubview:e];

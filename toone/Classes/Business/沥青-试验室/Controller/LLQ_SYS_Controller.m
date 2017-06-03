@@ -128,7 +128,7 @@
     
     LLQ_BHZ_Model * model = self.datas[indexPath.row];
     NSDictionary * dict =@{@"biaoshiid":model.bsId,
-                           @"departType":departType
+                           @"departType":departType//userType
                            };
     [self performSegueWithIdentifier:@"LLQ_SYS_InnerController" sender:dict];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

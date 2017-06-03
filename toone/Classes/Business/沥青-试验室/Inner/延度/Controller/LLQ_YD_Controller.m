@@ -6,13 +6,13 @@
 //  Copyright © 2016年 shtoone. All rights reserved.
 //
 
-#import "LLQ_MXE_Controller.h"
+#import "LLQ_YD_Controller.h"
 #import "LQ_SB_Controller.h"
 #import "LLQ_CBCZ_DetailController.h"
 
 #import "LLQ_MXE_Model.h"
 #import "LLQ_CBCZ_Cell.h"
-@interface LLQ_MXE_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface LLQ_YD_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
@@ -53,7 +53,7 @@
 @property (nonatomic,copy) NSString * pageNo3;
 @end
 
-@implementation LLQ_MXE_Controller
+@implementation LLQ_YD_Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -408,9 +408,10 @@
     
     //2.
     Exp5View * e = [[Exp5View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 195);
+    e.frame = CGRectMake(0, 64+36, Screen_w, 294);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
+//        NSLog(@"ExpButtonType~~~ %d buttonTag~~~~%d",type,buttonTag);
         if (type == ExpButtonTypeCancel) {
             sender.enabled = YES;
             [backView removeFromSuperview];
@@ -423,6 +424,7 @@
             weakSelf.endTime = (NSString*)obj2;
             //重新切换titleButton ， 搜索页码应该回归第一页码
 //            weakSelf.pageNo = @"1";
+//            weakSelf.cllx = @"0";
             [weakSelf loadData];
             FuncLog;
         }
@@ -433,7 +435,7 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller_MXR" sender:btn];
+            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller_YD" sender:btn];
         }
     };
     [self.view addSubview:e];

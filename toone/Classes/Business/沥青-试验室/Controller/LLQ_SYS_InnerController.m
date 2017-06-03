@@ -7,10 +7,11 @@
 //
 
 #import "LLQ_SYS_InnerController.h"
-#import "MySegmentedControl.h"
-#import "LLQ_CLHS_Controller.h"
-#import "LLQ_CBCZ_Controller.h"
-#import "LLQ_LSSJ_Controller.h"
+#import "MySYSSegmentedControl.h"
+#import "LLQ_RH_Controller.h"
+#import "LLQ_MXE_Controller.h"
+#import "LLQ_YD_Controller.h"
+#import "LLQ_ZR_Controller.h"
 @interface LLQ_SYS_InnerController ()
 @property (nonatomic,strong) UIViewController * vc;
 @property (nonatomic,assign) int index;
@@ -23,9 +24,9 @@
    
     
     self.index =1;
-    self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_LSSJ_Controller"];
-    if ([self.vc isKindOfClass:[LLQ_LSSJ_Controller class]]) {
-        LLQ_LSSJ_Controller * controller = (LLQ_LSSJ_Controller *)self.vc;
+    self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_MXE_Controller"];
+    if ([self.vc isKindOfClass:[LLQ_MXE_Controller class]]) {
+        LLQ_MXE_Controller * controller = (LLQ_MXE_Controller *)self.vc;
         controller.conditonDict = self.conditonDict;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
@@ -35,19 +36,19 @@
 }
 
 -(void)loadUI{
-    MySegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MySegmentedControl" owner:nil options:nil][0];
+    MySYSSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MySYSSegmentedControl" owner:nil options:nil][0];
     seg.frame = CGRectMake(0, 0, 220, 24);
     self.navigationItem.titleView = seg;
     __weak typeof(self) weakSelf = self;
     seg.segBlock = ^(int tag){
         switch (tag) {
-            case 1:{//压力试验
+            case 1:{//马歇尔
                 if (weakSelf.index !=1){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
-                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_LSSJ_Controller"];
-                    if ([weakSelf.vc isKindOfClass:[LLQ_LSSJ_Controller class]]) {
-                        LLQ_LSSJ_Controller * controller = (LLQ_LSSJ_Controller *)weakSelf.vc;
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_MXE_Controller"];
+                    if ([weakSelf.vc isKindOfClass:[LLQ_MXE_Controller class]]) {
+                        LLQ_MXE_Controller * controller = (LLQ_MXE_Controller *)weakSelf.vc;
                         controller.conditonDict = weakSelf.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
@@ -57,13 +58,13 @@
                 break;
             }
             case 2:{
-                //超标查询
+                //延度
                 if (weakSelf.index != 2){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
-                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_CBCZ_Controller"];
-                    if ([weakSelf.vc isKindOfClass:[LLQ_CBCZ_Controller class]]) {
-                        LLQ_CBCZ_Controller * controller = (LLQ_CBCZ_Controller *)weakSelf.vc;
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_YD_Controller"];
+                    if ([weakSelf.vc isKindOfClass:[LLQ_YD_Controller class]]) {
+                        LLQ_YD_Controller * controller = (LLQ_YD_Controller *)weakSelf.vc;
                         controller.conditonDict = weakSelf.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
@@ -73,13 +74,13 @@
                 break;
             }
             case 3:{
-                //统计分析
+                //软化
                 if (weakSelf.index != 3){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
-                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_CLHS_Controller"];
-                    if ([weakSelf.vc isKindOfClass:[LLQ_CLHS_Controller class]]) {
-                        LLQ_CLHS_Controller * controller = (LLQ_CLHS_Controller *)weakSelf.vc;
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_RH_Controller"];
+                    if ([weakSelf.vc isKindOfClass:[LLQ_RH_Controller class]]) {
+                        LLQ_RH_Controller * controller = (LLQ_RH_Controller *)weakSelf.vc;
                         controller.conditonDict = weakSelf.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
@@ -88,10 +89,26 @@
                 }
                 break;
             }
+            case 4:{
+                //针入
+                if (weakSelf.index != 4){
+                    [weakSelf.vc removeFromParentViewController];
+                    [weakSelf.vc.view removeFromSuperview];
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LLQ_ZR_Controller"];
+                    if ([weakSelf.vc isKindOfClass:[LLQ_ZR_Controller class]]) {
+                        LLQ_ZR_Controller * controller = (LLQ_ZR_Controller *)weakSelf.vc;
+                        controller.conditonDict = weakSelf.conditonDict;
+                        [weakSelf addChildViewController:controller];
+                        [weakSelf.view addSubview:controller.view];
+                    }
+                    weakSelf.index = 4;
+                }
+                break;
+            }
         }
     };
     //切换到拌合站
-    [seg switchToBHZ];
+    [seg switchToSYS];
     
 }
 @end
