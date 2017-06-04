@@ -11,7 +11,8 @@
 #import "LLQ_CBCZ_DetailController.h"
 
 #import "LLQ_MXE_Model.h"
-#import "LLQ_CBCZ_Cell.h"
+//#import "LLQ_CBCZ_Cell.h"
+#import "LLQ_MXE_Cell.h"
 @interface LLQ_MXE_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -134,7 +135,7 @@
     }];
     
     
-    [tableView registerClass:[LLQ_CBCZ_Cell class] forCellReuseIdentifier:@"LLQ_CBCZ_Cell"];
+    [tableView registerClass:[LLQ_MXE_Cell class] forCellReuseIdentifier:@"LLQ_MXE_Cell"];
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
@@ -325,24 +326,24 @@
 //        return cell;
 //    }
     if (tableView == self.tableView2) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+        LLQ_MXE_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_MXE_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
-        LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
+        LLQ_MXE_Model * model = self.datas2[indexPath.row];
         cell.model = model;
 //        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     if (tableView == self.tableView3) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+        LLQ_MXE_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_MXE_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
-        LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
+        LLQ_MXE_Model * model = self.datas3[indexPath.row];
         cell.model = model;
 //        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     return nil;
 }
-
+/*
 -(CGFloat)rowHeightWithModel:(LLQ_MXE_Model*)model{
     int index = 0;
     for (NSString * key in model.dataDict.allKeys) {
@@ -358,7 +359,7 @@
             index++;
         }
     }
-    return index*15.0;
+    return 6*15.0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    if (tableView == self.tableView1) {
@@ -372,6 +373,7 @@
     }
     return 0.1;
 }
+ */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LLQ_MXE_Model * model;
 //    if (tableView == self.tableView1) {
@@ -391,7 +393,7 @@
                          };
     
     
-    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
+//    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {

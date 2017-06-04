@@ -4965,7 +4965,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="qnQ-fj-8IB"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="碾压" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAs-Gi-B1A">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="终压" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAs-Gi-B1A">
                                                 <rect key="frame" x="69" y="110" width="50" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="xKM-EW-83G"/>
@@ -5112,6 +5112,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="摊铺现场" id="cBM-hG-h5v"/>
                     <connections>
+                        <outlet property="clView" destination="gBO-tW-eCx" id="xHv-2P-O9t"/>
                         <outlet property="departName_Label" destination="ton-Nf-6GR" id="Lym-j4-tO3"/>
                     </connections>
                 </viewController>
@@ -5955,6 +5956,6 @@
         <segue reference="WQO-SS-2jJ"/>
         <segue reference="h6h-V1-R2o"/>
         <segue reference="2qa-au-FyR"/>
-        <segue reference="4UB-eZ-aeJ"/>
+        <segue reference="9ZO-xd-2LS"/>
     </inferredMetricsTieBreakers>
 </document>

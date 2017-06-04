@@ -40,7 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.wdIndex = 1;
+    self.wdIndex = 2;
     self.pageNo = @"1";
     self.maxPageItems = @"10";
     self.shebeibianhao = @"";
@@ -83,27 +83,28 @@
     self.sjLabel.numberOfLines = 2;
     self.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",self.startTime,self.endTime];
     
-    MyTPSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MyTPSegmentedControl" owner:nil options:nil][0];
-    seg.frame = CGRectMake(0, 0, 220, 24);
-    self.navigationItem.titleView = seg;
-    __weak typeof(self)  weakSelf = self;
-    seg.segBlock = ^(int tag){
-        switch (tag) {
-            case 1:{//速度
-                self.wdIndex = 1;
-                self.pageNo = @"1";
-                self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",self.pageNo];
-                self.chartLabel.text = @"速度走势图(m/min)";
-//                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
-//                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-//                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-//                NSString *urlString = [NSString stringWithFormat:TP_TPSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
-//                weakSelf.urlString = urlString;
-                self.baseUrlString = TP_TPSD_List;
-                [self reloadData];
-                break;
-            }
-            case 2:{//温度
+//    MyTPSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MyTPSegmentedControl" owner:nil options:nil][0];
+//    seg.frame = CGRectMake(0, 0, 220, 24);
+//    self.navigationItem.titleView = seg;
+    self.navigationItem.title = @"摊铺温度";
+//    __weak typeof(self)  weakSelf = self;
+//    seg.segBlock = ^(int tag){
+//        switch (tag) {
+//            case 1:{//速度
+//                self.wdIndex = 1;
+//                self.pageNo = @"1";
+//                self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",self.pageNo];
+//                self.chartLabel.text = @"速度走势图(m/min)";
+////                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
+////                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+////                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+////                NSString *urlString = [NSString stringWithFormat:TP_TPSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
+////                weakSelf.urlString = urlString;
+//                self.baseUrlString = TP_TPSD_List;
+//                [self reloadData];
+//                break;
+//            }
+//            case 2:{//温度
                 self.wdIndex = 2;
                 self.pageNo = @"1";
                 self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",self.pageNo];
@@ -115,11 +116,11 @@
 //                weakSelf.urlString = urlString;
                 self.baseUrlString = TP_TPWD_List;
                 [self reloadData];
-                break;
-            }
-        }
-    };
-    [seg switchToTP];
+//                break;
+//            }
+//        }
+//    };
+//    [seg switchToTP];
 }
 #pragma mark - 网络请求
 -(void)reloadData {

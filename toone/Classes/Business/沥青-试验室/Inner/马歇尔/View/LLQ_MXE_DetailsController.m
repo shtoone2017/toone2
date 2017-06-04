@@ -6,18 +6,20 @@
 //  Copyright © 2017年 shtoone. All rights reserved.
 //
 
-#import "TP_NY_Controller.h"
-#import "MyTPSegmentedControl.h"
+#import "LLQ_MXE_DetailsController.h"
+//#import "MyTPSegmentedControl.h"
 #import "LQ_BHZ_SB_Controller.h"
 #import "NetworkTool.h"
 #import "TP_NY_ChartModel.h"
 #import "TP_NYSDList_Model.h"
 #import "SGChart.h"
-#import "TP_NYSDList_Cell.h"
-#import "TP_NYSDList_Cell1.h"
-#import "TP_NY_SB_Controller.h"
+#import "LLQ_MXE_Cell.h"
+#import "LLQ_MXE_Model.h"
+//#import "TP_NYSDList_Cell.h"
+//#import "TP_NYSDList_Cell1.h"
+//#import "TP_NY_SB_Controller.h"
 
-@interface TP_NY_Controller ()<UITableViewDataSource,UITableViewDelegate>
+@interface LLQ_MXE_DetailsController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *firstBackView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *sjLabel;
@@ -37,7 +39,7 @@
 @property (nonatomic, copy) NSString *baseUrlString;
 @property (nonatomic, assign) int wdIndex;//标记温度Label
 @end
-@implementation TP_NY_Controller
+@implementation LLQ_MXE_DetailsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,7 +51,7 @@
     _baseUrlString=TP_NYSD_List;
     
     [self loadUI];
-    [self loadListTableView];
+//    [self loadListTableView];
     [self reloadData];
 }
 
@@ -75,39 +77,18 @@
 }
 
 -(void)loadUI{
-    self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",self.pageNo];
-    self.chartLabel.text = @"速度走势图(km/h)";
+//    self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",self.pageNo];
+//    self.chartLabel.text = @"速度走势图(km/h)";
     
-    self.sjLabel.textColor = [UIColor blackColor];
-    self.sjLabel.numberOfLines = 2;
-    self.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",self.startTime,self.endTime];
-    
-//    MyTPSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MyTPSegmentedControl" owner:nil options:nil][0];
-//    seg.frame = CGRectMake(0, 0, 220, 24);
-//    self.navigationItem.titleView = seg;
-    self.navigationItem.title = @"终压温度";
+//    self.sjLabel.textColor = [UIColor blackColor];
+//    self.sjLabel.numberOfLines = 2;
+//    self.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",self.startTime,self.endTime];
+//    self.navigationItem.title = @"终压温度";
     __weak typeof(self)  weakSelf = self;
-//    seg.segBlock = ^(int tag){
-//        switch (tag) {
-//            case 1:{//速度
-//                self.wdIndex = 1;
-//                self.pageNo = @"1";
-//                self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
-//                self.chartLabel.text = @"速度走势图(km/h)";
-////                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
-////                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-////                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-////                NSString *urlString = [NSString stringWithFormat:TP_NYSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
-////                weakSelf.urlString = urlString;
-//                    _baseUrlString=TP_NYSD_List;
-//                [self reloadData];
-//                break;
-//            }
-//            case 2:{//温度
                 self.wdIndex = 2;
                 self.pageNo = @"1";
-                self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
-                self.chartLabel.text = @"温度走势图(℃)";
+//                self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
+//                self.chartLabel.text = @"温度走势图(℃)";
 //                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
 //                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
 //                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
@@ -115,11 +96,6 @@
 //                weakSelf.urlString = urlString;
                 _baseUrlString=TP_NYWD_List;
                 [self reloadData];
-//                break;
-//            }
-//        }
-//    };
-//    [seg switchToNY];
 }
 #pragma mark - 网络请求
 -(void)reloadData {
@@ -189,88 +165,17 @@
 }
 #pragma mark -delegateSoure
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.sdArray.count+1;
+    return 1;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-        return 20;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//        return 20;
+//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        TP_NYSDList_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell1"];
-        if (self.wdIndex == 2) {
-            [cell setLabel:@"温度"];
-        }if (self.wdIndex == 1) {
-            [cell setLabel:@"速度"];
-        }
-        return cell;
-    }else {
-        TP_NYSDList_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell"];
-        for (int i =0; i<9; i++) {
-            TP_NYSDList_Model * model = self.sdArray[indexPath.row-1];
-            cell.listModel = model;
-        }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    return nil;
+    LLQ_MXE_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_MXE_Cell" forIndexPath:indexPath];
+//    LLQ_MXE_Model * model = self.datas[indexPath.row];
+//    cell.model = model;
+    return cell;
 }
 
-#pragma mark - 搜索查询
-- (IBAction)searchButtonClick:(UIButton *)sender {
-    sender.enabled = NO;
-    //1.
-    UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
-    backView.frame = CGRectMake(0, 64+36, Screen_w, Screen_h  -64-36);
-    backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    backView.hidden = YES;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-        backView.hidden = NO;
-    });
-    [self.view addSubview:backView];
-    
-    //2.
-    Exp5View * e = [[Exp5View alloc] init];
-    e.frame = CGRectMake(0, 64+35, Screen_w, 195);
-    __weak __typeof(self)  weakSelf = self;
-    e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
-        
-        if (type == ExpButtonTypeCancel) {
-            sender.enabled = YES;
-            [backView removeFromSuperview];
-        }
-        if (type == ExpButtonTypeOk) {
-            sender.enabled = YES;
-            [backView removeFromSuperview];
-            weakSelf.sdArray = nil;
-            weakSelf.chaoBiaoDatas = nil;
-            weakSelf.chaoX = nil;
-//            [self.chartView removeFromSuperview];
-            [weakSelf.ListTableView reloadData];
-            
-            weakSelf.startTime = (NSString*)obj1;
-            weakSelf.endTime = (NSString*)obj2;
-            //重新切换titleButton ， 搜索页码应该回归第一页码
-            weakSelf.pageNo = @"1";
-            [weakSelf reloadData];
-//            NSString *urlString = [self loadUI];
-//            [weakSelf.tableCont reloadData:urlString];
-        }
-        if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
-            UIButton * btn = (UIButton*)obj1;
-            [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
-        }
-        
-        if (type == ExpButtonTypeChoiceSBButton) {//选择设备
-            UIButton * btn = (UIButton*)obj1;
-            TP_NY_SB_Controller *sbVc = [[TP_NY_SB_Controller alloc] init];
-            [self.navigationController pushViewController:sbVc animated:YES];
-            
-            sbVc.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
-                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
-                weakSelf.shebeibianhao = gprsbianhao;
-            };
-        }
-    };
-    [self.view addSubview:e];
-}
+
 @end

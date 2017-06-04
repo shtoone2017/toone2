@@ -18,6 +18,8 @@
 @interface TP_Controller ()
 - (IBAction)click:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
+@property (weak, nonatomic) IBOutlet UIView *clView;
+
 @property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @end
 
@@ -25,6 +27,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
+    _clView.hidden = YES;
 //    
 //    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
 //    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
