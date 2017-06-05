@@ -12,6 +12,9 @@
 
 #import "LLQ_MXE_Model.h"
 #import "LLQ_CBCZ_Cell.h"
+
+#import "LLQ_RH_Cell.h"
+#import "LLQ_MXE_Model.h"
 @interface LLQ_RH_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -42,8 +45,8 @@
 @property (nonatomic,copy) NSString * pageNo                                ;//当前页数
 @property (nonatomic,copy) NSString * maxPageItems                          ;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao                         ;//设备编号
-@property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
-@property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
+@property (nonatomic,copy) NSString * isQualified;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
+//@property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
 
 
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
@@ -62,13 +65,12 @@
         self.pageNo2 = @"1";
         self.pageNo3 = @"1";
         
+        
         self.pageNo = _pageNo1;
         self.maxPageItems = @"30";
-        self.chaobiaolx = @"2";//全部
+        self.isQualified = @"不合格";
         self.shebeibianhao = @"";
-        self.cllx = @"0";
         self.tableViewSigner = @"1";
-        
     }
     
     [self loadUI];
@@ -132,9 +134,10 @@
         
         [weakSelf loadData];
     }];
+    tableView.rowHeight = 140;
+    [tableView registerNib:[UINib nibWithNibName:@"LLQ_RH_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_RH_Cell"];
     
-    
-    [tableView registerClass:[LLQ_CBCZ_Cell class] forCellReuseIdentifier:@"LLQ_CBCZ_Cell"];
+//    [tableView registerClass:[LLQ_CBCZ_Cell class] forCellReuseIdentifier:@"LLQ_CBCZ_Cell"];
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
@@ -155,7 +158,7 @@
 //            break;
         case 2://中级
             self.pageNo = self.pageNo2;
-            self.chaobiaolx =@"2";
+            self.isQualified =@"不合格";
             if(self.datas2==nil) {
                 [self loadData];
                 [self loadData];
@@ -163,7 +166,7 @@
             break;
         case 3://高级
             self.pageNo = self.pageNo3;
-            self.chaobiaolx =@"3";
+            self.isQualified =@"合格";
             if(self.datas3==nil) {
                 [self loadData];
                 [self loadData];
@@ -214,20 +217,20 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqchaoBiaoList;
+    NSString * urlString = [NSString stringWithFormat:RHList,self.shebeibianhao,self.isQualified,self.pageNo,self.maxPageItems,startTimeStamp,endTimeStamp,@"1",@"11"];
     NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
                             @"biaoshiid":self.conditonDict[@"biaoshiid"],
                             @"endTime":endTimeStamp,
                             @"startTime":startTimeStamp,
                             @"shebeibianhao":self.shebeibianhao,
 //                            @"chaobiaolx":self.chaobiaolx,
-                            @"cllx":self.cllx,
+//                            @"cllx":self.cllx,
                             @"pageNo":self.pageNo,
                             @"maxPageItems":self.maxPageItems,
                             };
     
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -328,7 +331,7 @@
 //        return cell;
 //    }
     if (tableView == self.tableView2) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_RH_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
         LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
         cell.model = model;
@@ -336,7 +339,7 @@
         return cell;
     }
     if (tableView == self.tableView3) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_RH_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
         LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
         cell.model = model;
@@ -346,35 +349,35 @@
     return nil;
 }
 
--(CGFloat)rowHeightWithModel:(LLQ_MXE_Model*)model{
-    int index = 0;
-    for (NSString * key in model.dataDict.allKeys) {
-        if ([key hasPrefix:@"bhzName"] ||
-            [key hasPrefix:@"clTime"] ||
-            [key hasPrefix:@"clwd"] ||
-            [key hasPrefix:@"lqwd"] ||
-            [key hasPrefix:@"glwd"] ||
-            [key hasPrefix:@"sjtjj"] ||
-            [key hasPrefix:@"sjysb"] ||
-            [key hasPrefix:@"sjlq"] ||
-            (([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
-            index++;
-        }
-    }
-    return index*15.0;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (tableView == self.tableView1) {
-//        return [self rowHeightWithModel:self.datas1[indexPath.row]];
+//-(CGFloat)rowHeightWithModel:(LLQ_MXE_Model*)model{
+//    int index = 0;
+//    for (NSString * key in model.dataDict.allKeys) {
+//        if ([key hasPrefix:@"bhzName"] ||
+//            [key hasPrefix:@"clTime"] ||
+//            [key hasPrefix:@"clwd"] ||
+//            [key hasPrefix:@"lqwd"] ||
+//            [key hasPrefix:@"glwd"] ||
+//            [key hasPrefix:@"sjtjj"] ||
+//            [key hasPrefix:@"sjysb"] ||
+//            [key hasPrefix:@"sjlq"] ||
+//            (([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
+//            index++;
+//        }
 //    }
-    if (tableView == self.tableView2) {
-        return [self rowHeightWithModel:self.datas2[indexPath.row]];
-    }
-    if (tableView == self.tableView3) {
-        return [self rowHeightWithModel:self.datas3[indexPath.row]];
-    }
-    return 0.1;
-}
+//    return index*15.0;
+//}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+////    if (tableView == self.tableView1) {
+////        return [self rowHeightWithModel:self.datas1[indexPath.row]];
+////    }
+//    if (tableView == self.tableView2) {
+//        return [self rowHeightWithModel:self.datas2[indexPath.row]];
+//    }
+//    if (tableView == self.tableView3) {
+//        return [self rowHeightWithModel:self.datas3[indexPath.row]];
+//    }
+//    return 0.1;
+//}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LLQ_MXE_Model * model;
 //    if (tableView == self.tableView1) {
@@ -394,7 +397,7 @@
                          };
     
     
-    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
+//    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {

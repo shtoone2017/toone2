@@ -117,6 +117,8 @@
 		42A887D71EE53CA90010B053 /* LLQ_MXE_Detail_Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887D61EE53CA90010B053 /* LLQ_MXE_Detail_Data.m */; };
 		42A887DA1EE5520F0010B053 /* LLQ_MXE_Detail_Chart.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887D91EE5520F0010B053 /* LLQ_MXE_Detail_Chart.m */; };
 		42A887DD1EE55C2B0010B053 /* ChartPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887DC1EE55C2B0010B053 /* ChartPointModel.m */; };
+		42A887E11EE583F90010B053 /* LLQ_RH_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887DF1EE583F90010B053 /* LLQ_RH_Cell.m */; };
+		42A887E21EE583F90010B053 /* LLQ_RH_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A887E01EE583F90010B053 /* LLQ_RH_Cell.xib */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -764,6 +766,9 @@
 		42A887D91EE5520F0010B053 /* LLQ_MXE_Detail_Chart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_MXE_Detail_Chart.m; sourceTree = "<group>"; };
 		42A887DB1EE55C2B0010B053 /* ChartPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartPointModel.h; sourceTree = "<group>"; };
 		42A887DC1EE55C2B0010B053 /* ChartPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartPointModel.m; sourceTree = "<group>"; };
+		42A887DE1EE583F90010B053 /* LLQ_RH_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_Cell.h; sourceTree = "<group>"; };
+		42A887DF1EE583F90010B053 /* LLQ_RH_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_Cell.m; sourceTree = "<group>"; };
+		42A887E01EE583F90010B053 /* LLQ_RH_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_RH_Cell.xib; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -2054,6 +2059,9 @@
 		42A8879F1EE26C210010B053 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42A887DE1EE583F90010B053 /* LLQ_RH_Cell.h */,
+				42A887DF1EE583F90010B053 /* LLQ_RH_Cell.m */,
+				42A887E01EE583F90010B053 /* LLQ_RH_Cell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4586,6 +4594,7 @@
 				42A8872D1EDFEBBC0010B053 /* TP_CL_Cell.xib in Resources */,
 				D272EFC21E7BBE3A00D0991D /* SW_CBCZ_View.xib in Resources */,
 				D21944201E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
+				42A887E21EE583F90010B053 /* LLQ_RH_Cell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
 				D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */,
 				42AC714D1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
@@ -4900,6 +4909,7 @@
 				D2E04DE41E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.m in Sources */,
 				42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */,
 				8CBD72E51E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.m in Sources */,
+				42A887E11EE583F90010B053 /* LLQ_RH_Cell.m in Sources */,
 				42AC71661E30C393007D8F57 /* DayDetailsCell.m in Sources */,
 				D20064891DFF86800021E293 /* HNT_SYS_Cell.m in Sources */,
 				42A887CA1EE51EF70010B053 /* LLQ_MXE_Detail_ChartCell.m in Sources */,
