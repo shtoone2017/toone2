@@ -9,5 +9,5 @@
 #import "MyViewController.h"
 
 @interface LLQ_MXE_DetailsController : MyViewController
-
+@property (nonatomic, copy) NSString *f_GUID;
 @end

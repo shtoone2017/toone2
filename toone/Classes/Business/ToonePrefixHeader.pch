@@ -68,8 +68,8 @@
 #import "SGChart.h"
 
 //
-#define baseUrl       @"http://114.215.239.38:8082/rbgsmss/"
-//#define baseUrl     @"http://192.168.11.104:8080/gdnhmssNew/"
+//#define baseUrl       @"http://114.215.239.38:8082/rbgsmss/"
+#define baseUrl     @"http://192.168.11.107:8080/gdnhmssNew/"
 //@"http://192.168.11.107:8080/jbgsmss/"
 
 //@"http://192.168.11.126:8081/jbgsmss/"
@@ -158,6 +158,11 @@
 
 
 
+/**************************沥青试验室*********************************/
+//马歇尔列表
+#define MXEList FormatString(baseUrl,@"app/maxieerChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
+//马歇尔详情
+#define MXE_Datail FormatString(baseUrl,@"app/maxieerXX?F_GUID=%@")
 
 
 
