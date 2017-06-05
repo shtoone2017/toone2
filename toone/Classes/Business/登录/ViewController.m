@@ -39,8 +39,8 @@
     _loginButton.layer.cornerRadius = 20.0f;
     self.UUIDStr = [GetUUID getUUID];
     [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
-    
-    //
+    _acountTextField.text = [UserDefaultsSetting shareSetting].acount?:@"";
+    _passwordTextField.text = [UserDefaultsSetting shareSetting].password?:@"";
     
     if ([UserDefaultsSetting shareSetting].isLogin) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
