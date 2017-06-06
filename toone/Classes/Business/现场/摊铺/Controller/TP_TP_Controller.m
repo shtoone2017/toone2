@@ -32,6 +32,7 @@
 @property (nonatomic,copy) NSString * pageNo;//当前页数
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
+@property (nonatomic,copy) NSString * biaoshiid;//
 @property (nonatomic, copy) NSString *urlString;
 @property (nonatomic, assign) int wdIndex;//标记温度Label
 @property (nonatomic, copy) NSString * baseUrlString;
@@ -44,10 +45,11 @@
     self.pageNo = @"1";
     self.maxPageItems = @"10";
     self.shebeibianhao = @"";
+    self.biaoshiid = @"";
 //    if (self.urlString == nil) {
 //        [self loadUrlString];
 //    }
-    self.baseUrlString = TP_TPSD_List;
+    self.baseUrlString = TP_TPWD;
     [self loadUI];
     [self loadListTableView];
     [self reloadData];
@@ -114,7 +116,7 @@
 //                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
 //                NSString *urlString = [NSString stringWithFormat:TP_TPWD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
 //                weakSelf.urlString = urlString;
-                self.baseUrlString = TP_TPWD_List;
+                self.baseUrlString = TP_TPWD;
                 [self reloadData];
 //                break;
 //            }
@@ -124,13 +126,11 @@
 }
 #pragma mark - 网络请求
 -(void)reloadData {
-    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
+    NSString *departType = [UserDefaultsSetting_SW shareSetting].userType;
     NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString *urlString =  [NSString stringWithFormat:_baseUrlString,userGroupId,self.shebeibianhao,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
+    NSString *urlString =  [NSString stringWithFormat:_baseUrlString,self.shebeibianhao,startTimeStamp,endTimeStamp,self.maxPageItems,self.pageNo,departType,self.biaoshiid];
    
-    
-
     __weak typeof(self)  weakSelf = self;
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         NSMutableArray *arr = [NSMutableArray array];
@@ -199,9 +199,10 @@
         TP_NYSDList_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell1"];
         if (self.wdIndex == 2) {
             [cell setLabel:@"温度"];
-        }if (self.wdIndex == 1) {
-            [cell setLabel:@"速度"];
         }
+//            if (self.wdIndex == 1) {
+//            [cell setLabel:@"速度"];
+//        }
         return cell;
     }else {
         TP_NYSDList_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell"];

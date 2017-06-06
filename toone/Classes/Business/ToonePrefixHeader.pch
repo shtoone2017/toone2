@@ -168,7 +168,8 @@
 #define RHList FormatString(baseUrl,@"app/ruanhuadianChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
 //试验室主页
 #define LLqSYSMain   FormatString(baseUrl,@"appXc/lqsysHome?")
-
+//摊铺温度
+#define TP_TPWD FormatString(baseUrl,@"appXc/tmpwenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
 
 
 
