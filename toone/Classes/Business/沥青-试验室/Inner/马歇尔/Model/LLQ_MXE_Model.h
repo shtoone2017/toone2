@@ -9,7 +9,7 @@
 #import "MyModel.h"
 
 @interface LLQ_MXE_Model : MyModel
-@property (nonatomic ,strong) NSDictionary * dataDict;
+//@property (nonatomic ,strong) NSDictionary * dataDict;
 
 @property (nonatomic,copy)NSString *is_testtime;//试验时间
 @property (nonatomic,copy)NSString *isQualified;//是否合格

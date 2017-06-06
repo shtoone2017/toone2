@@ -218,7 +218,8 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = [NSString stringWithFormat:MXEList,self.shebeibianhao,self.isQualified,self.pageNo,self.maxPageItems,startTimeStamp,endTimeStamp,@"1",@"11"];
+    NSString * urlString = [NSString stringWithFormat:MXEList,self.shebeibianhao,self.isQualified,self.pageNo,self.maxPageItems,startTimeStamp,endTimeStamp,self.conditonDict[@"departType"],self.conditonDict[@"biaoshiid"]];
+
     NSDictionary * dict = @{@"departType":@"1",//self.conditonDict[@"departType"],
                             @"startTime":startTimeStamp,
                             @"endTime":endTimeStamp,
@@ -237,7 +238,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_MXE_Model * model =  [[LLQ_MXE_Model alloc] init];
-                    model.dataDict = dict;
+//                    model.dataDict = dict;
                     model.SHeader2 = json[@"SHeader2"];
                     model.avgvalue1 = json[@"avgvalue1"];
                     
@@ -247,7 +248,7 @@
                     model.header5 = dict[@"header5"];
                     model.header3 = dict[@"header3"];
                     model.f_GUID = dict[@"f_GUID"];
-                    
+                    model.f_SBBH = dict[@"f_SBBH"];
                     [datas addObject:model];
                 }
             }

@@ -9,9 +9,12 @@
 
 #import "LLQ_SYS_Controller.h"
 #import "SW_ZZJG_Controller.h"
-#import "LLQ_BHZ_Model.h"
-#import "LLQ_BHZ_Cell.h"
+//#import "LLQ_BHZ_Model.h"
+//#import "LLQ_BHZ_Cell.h"
 #import "LLQ_SYS_InnerController.h"
+
+#import "LLQ_SYS_Model.h"
+#import "LLQ_SYS_Cell.h"
 @interface LLQ_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -41,9 +44,9 @@
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
     
-    self.tableView.rowHeight = 140;
+    self.tableView.rowHeight = 70;
     self.tableView.tableFooterView = [[UIView alloc] init];
-    [self.tableView registerNib:[UINib nibWithNibName:@"LLQ_BHZ_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_BHZ_Cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LLQ_SYS_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_SYS_Cell"];
     
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [self.tableView.mj_header beginRefreshing];
@@ -51,7 +54,7 @@
 -(void)loadData{
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqWarningStatistics;
+    NSString * urlString = LLqSYSMain;
     if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
         SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
         condition.departType = [UserDefaultsSetting_SW shareSetting].userType;
@@ -82,7 +85,7 @@
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
-                    LLQ_BHZ_Model * model = [LLQ_BHZ_Model modelWithDict:dict];
+                    LLQ_SYS_Model * model = [LLQ_SYS_Model modelWithDict:dict];
                     [datas addObject:model];
                 }
             }
@@ -103,8 +106,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LLQ_BHZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_BHZ_Cell" forIndexPath:indexPath];
-    LLQ_BHZ_Model * model = self.datas[indexPath.row];
+    LLQ_SYS_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_SYS_Cell" forIndexPath:indexPath];
+    LLQ_SYS_Model * model = self.datas[indexPath.row];
     cell.model = model;
     return cell;
 }
@@ -126,8 +129,8 @@
             break;
     }
     
-    LLQ_BHZ_Model * model = self.datas[indexPath.row];
-    NSDictionary * dict =@{@"biaoshiid":model.bsId,
+    LLQ_SYS_Model * model = self.datas[indexPath.row];
+    NSDictionary * dict =@{@"biaoshiid":model.bsid,
                            @"departType":departType//userType
                            };
     [self performSegueWithIdentifier:@"LLQ_SYS_InnerController" sender:dict];

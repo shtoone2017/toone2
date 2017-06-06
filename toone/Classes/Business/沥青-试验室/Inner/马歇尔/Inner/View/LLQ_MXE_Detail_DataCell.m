@@ -55,17 +55,17 @@
 //    数据容易炸
     [self.lb1 setTitle:liuArr[0] forState:UIControlStateNormal];
     [self.lb2 setTitle:liuArr[1] forState:UIControlStateNormal];
-    [self.lb3 setTitle:liuArr[2] forState:UIControlStateNormal];
-    [self.lb4 setTitle:liuArr[3] forState:UIControlStateNormal];
-    [self.lb5 setTitle:liuArr[4] forState:UIControlStateNormal];
-    [self.lb6 setTitle:liuArr[5] forState:UIControlStateNormal];
+//    [self.lb3 setTitle:liuArr[2] forState:UIControlStateNormal];
+//    [self.lb4 setTitle:liuArr[3] forState:UIControlStateNormal];
+//    [self.lb5 setTitle:liuArr[4] forState:UIControlStateNormal];
+//    [self.lb6 setTitle:liuArr[5] forState:UIControlStateNormal];
     
     self.wd1.text = wdArr[0];
     self.wd2.text = wdArr[1];
-    self.wd3.text = wdArr[2];
-    self.wd4.text = wdArr[3];
-    self.wd5.text = wdArr[4];
-    self.wd6.text = wdArr[5];
+//    self.wd3.text = wdArr[2];
+//    self.wd4.text = wdArr[3];
+//    self.wd5.text = wdArr[4];
+//    self.wd6.text = wdArr[5];
 }
 
 - (IBAction)btnAction:(UIButton *)sender

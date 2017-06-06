@@ -236,7 +236,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_MXE_Model * model =  [[LLQ_MXE_Model alloc] init];
-                    model.dataDict = dict;
+//                    model.dataDict = dict;
                     model.SHeader2 = json[@"SHeader2"];
                     model.is_testtime = dict[@"is_testtime"];
                     model.isQualified = dict[@"isQualified"];
