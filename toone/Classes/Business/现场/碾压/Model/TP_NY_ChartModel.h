@@ -12,4 +12,7 @@
 @property (nonatomic, copy) NSString *sudu;
 @property (nonatomic, copy) NSString *shijian;
 @property (nonatomic, copy) NSString *wendu;
+
+@property (nonatomic,copy)NSString *tmpshijian;//时间
+@property (nonatomic,copy)NSString *tmpdata;//温度
 @end

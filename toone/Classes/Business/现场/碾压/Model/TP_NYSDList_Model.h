@@ -19,4 +19,8 @@
 //温度
 @property (nonatomic, copy) NSString *tmpshijian;//时间
 @property (nonatomic, copy) NSString *tmpdata;//温度
+
+@property (nonatomic,copy)NSString *tmpno;//设备编号
+
+
 @end

@@ -50,20 +50,20 @@
         self.yMax = yMax;
         self.yMin = yMin;
         
-        if (xTitleArray.count > 600) {
-            _defaultSpace = 5;
+        if (xValueArray.count > 600) {
+            _defaultSpace = 50;
         }
-        else if (xTitleArray.count > 400 && xTitleArray.count <= 600){
-            _defaultSpace = 10;
+        else if (xValueArray.count > 400 && xValueArray.count <= 600){
+            _defaultSpace = 100;
         }
-        else if (xTitleArray.count > 200 && xTitleArray.count <= 400){
-            _defaultSpace = 20;
+        else if (xValueArray.count > 200 && xValueArray.count <= 400){
+            _defaultSpace = 200;
         }
-        else if (xTitleArray.count > 100 && xTitleArray.count <= 200){
-            _defaultSpace = 30;
+        else if (xValueArray.count > 100 && xValueArray.count <= 200){
+            _defaultSpace = 300;
         }
         else {
-            _defaultSpace = 40;
+            _defaultSpace = 400;
         }
 
         self.pointGap = _defaultSpace;
@@ -366,10 +366,10 @@
             
             // 判断是不是小数
             if ([self isPureFloat:[num floatValue]]) {
-                [[NSString stringWithFormat:@"水位:%.2fm", [num floatValue]] drawAtPoint:CGPointMake(drawPoint.x, drawPoint.y+15) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+                [[NSString stringWithFormat:@"流值:%.2fm", [num floatValue]] drawAtPoint:CGPointMake(drawPoint.x, drawPoint.y+15) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor whiteColor]}];
             }
             else {
-                [[NSString stringWithFormat:@"水位:%.0fm", [num floatValue]] drawAtPoint:CGPointMake(drawPoint.x, drawPoint.y+15)withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+                [[NSString stringWithFormat:@"流值:%.0fm", [num floatValue]] drawAtPoint:CGPointMake(drawPoint.x, drawPoint.y+15)withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor whiteColor]}];
                 
             }
             

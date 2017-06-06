@@ -52,20 +52,20 @@
         self.yMax = yMax;
         self.yMin = yMin;
         
-        if (xTitleArray.count > 600) {
-            _defaultSpace = 5;
+        if (xValueArray.count > 600) {
+            _defaultSpace = 50;
         }
-        else if (xTitleArray.count > 400 && xTitleArray.count <= 600){
-            _defaultSpace = 10;
+        else if (xValueArray.count > 400 && xValueArray.count <= 600){
+            _defaultSpace = 100;
         }
-        else if (xTitleArray.count > 200 && xTitleArray.count <= 400){
-            _defaultSpace = 20;
+        else if (xValueArray.count > 200 && xValueArray.count <= 400){
+            _defaultSpace = 200;
         }
-        else if (xTitleArray.count > 100 && xTitleArray.count <= 200){
-            _defaultSpace = 30;
+        else if (xValueArray.count > 100 && xValueArray.count <= 200){
+            _defaultSpace = 300;
         }
         else {
-            _defaultSpace = 40;
+            _defaultSpace = 400;
         }
         
         self.pointGap = _defaultSpace;
@@ -130,11 +130,11 @@
             
             self.xAxisView.pointGap = self.pointGap;
             
-        }else if (self.xAxisView.frame.size.width-lastSpace >= self.xTitleArray.count * _defaultSpace){
+        }else if (self.xAxisView.frame.size.width-lastSpace >= self.xValueArray.count * _defaultSpace){
             
             [UIView animateWithDuration:0.25 animations:^{
                 CGRect frame = self.xAxisView.frame;
-                frame.size.width = self.xTitleArray.count * _defaultSpace + lastSpace;
+                frame.size.width = self.xValueArray.count * _defaultSpace + lastSpace;
                 self.xAxisView.frame = frame;
                 
             }];

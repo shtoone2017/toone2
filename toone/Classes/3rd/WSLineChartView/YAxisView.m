@@ -50,9 +50,9 @@
     
     
     NSDictionary *waterAttr = @{NSFontAttributeName : [UIFont systemFontOfSize:8]};
-    CGSize waterLabelSize = [@"水位/m" sizeWithAttributes:waterAttr];
+    CGSize waterLabelSize = [@"流值/m" sizeWithAttributes:waterAttr];
     CGRect waterRect = CGRectMake(self.frame.size.width - 1-5 - waterLabelSize.width, 0,waterLabelSize.width,waterLabelSize.height);
-    [@"水位/m" drawInRect:waterRect withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:8],NSForegroundColorAttributeName:kChartTextColor}];
+    [@"流值/m" drawInRect:waterRect withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:8],NSForegroundColorAttributeName:kChartTextColor}];
 
     // Label做占据的高度
     CGFloat allLabelHeight = self.frame.size.height - xAxisTextGap - labelSize.height;

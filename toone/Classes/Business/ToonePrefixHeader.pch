@@ -70,7 +70,7 @@
 
 //
 //#define baseUrl       @"http://114.215.239.38:8082/rbgsmss/"
-#define baseUrl     @"http://192.168.11.113:8080/gdnhmssNew/"
+#define baseUrl     @"http://192.168.11.117:8080/gdnhmssNew/"
 //@"http://192.168.11.107:8080/jbgsmss/"
 
 //@"http://192.168.11.126:8081/jbgsmss/"
@@ -170,6 +170,8 @@
 #define LLqSYSMain   FormatString(baseUrl,@"appXc/lqsysHome?")
 //摊铺温度
 #define TP_TPWD FormatString(baseUrl,@"appXc/tmpwenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
+//终压温度
+#define TP_ZYWD FormatString(baseUrl,@"appXc/nywenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
 
 
 

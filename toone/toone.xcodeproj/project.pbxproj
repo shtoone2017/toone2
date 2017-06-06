@@ -122,12 +122,12 @@
 		42A888191EE658120010B053 /* LLQ_SYS_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888171EE658120010B053 /* LLQ_SYS_Cell.m */; };
 		42A8881A1EE658120010B053 /* LLQ_SYS_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A888181EE658120010B053 /* LLQ_SYS_Cell.xib */; };
 		42A8881D1EE67AB60010B053 /* LLQ_SYS_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8881C1EE67AB60010B053 /* LLQ_SYS_Model.m */; };
-		42A8882B1EE689260010B053 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42A888201EE689260010B053 /* SVProgressHUD.bundle */; };
-		42A8882C1EE689260010B053 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888221EE689260010B053 /* SVProgressHUD.m */; };
-		42A8882D1EE689260010B053 /* TBActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888241EE689260010B053 /* TBActivityView.m */; };
-		42A8882E1EE689260010B053 /* WSLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888261EE689260010B053 /* WSLineChartView.m */; };
-		42A8882F1EE689260010B053 /* XAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888281EE689260010B053 /* XAxisView.m */; };
-		42A888301EE689260010B053 /* YAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8882A1EE689260010B053 /* YAxisView.m */; };
+		42A8883E1EE6A9920010B053 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 42A888331EE6A9920010B053 /* SVProgressHUD.bundle */; };
+		42A8883F1EE6A9920010B053 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888351EE6A9920010B053 /* SVProgressHUD.m */; };
+		42A888401EE6A9920010B053 /* TBActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888371EE6A9920010B053 /* TBActivityView.m */; };
+		42A888411EE6A9920010B053 /* WSLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A888391EE6A9920010B053 /* WSLineChartView.m */; };
+		42A888421EE6A9920010B053 /* XAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8883B1EE6A9920010B053 /* XAxisView.m */; };
+		42A888431EE6A9920010B053 /* YAxisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8883D1EE6A9920010B053 /* YAxisView.m */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -783,17 +783,17 @@
 		42A888181EE658120010B053 /* LLQ_SYS_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_SYS_Cell.xib; sourceTree = "<group>"; };
 		42A8881B1EE67AB60010B053 /* LLQ_SYS_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_Model.h; sourceTree = "<group>"; };
 		42A8881C1EE67AB60010B053 /* LLQ_SYS_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SYS_Model.m; sourceTree = "<group>"; };
-		42A888201EE689260010B053 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		42A888211EE689260010B053 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		42A888221EE689260010B053 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		42A888231EE689260010B053 /* TBActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBActivityView.h; sourceTree = "<group>"; };
-		42A888241EE689260010B053 /* TBActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBActivityView.m; sourceTree = "<group>"; };
-		42A888251EE689260010B053 /* WSLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLineChartView.h; sourceTree = "<group>"; };
-		42A888261EE689260010B053 /* WSLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLineChartView.m; sourceTree = "<group>"; };
-		42A888271EE689260010B053 /* XAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAxisView.h; sourceTree = "<group>"; };
-		42A888281EE689260010B053 /* XAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAxisView.m; sourceTree = "<group>"; };
-		42A888291EE689260010B053 /* YAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAxisView.h; sourceTree = "<group>"; };
-		42A8882A1EE689260010B053 /* YAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAxisView.m; sourceTree = "<group>"; };
+		42A888331EE6A9920010B053 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		42A888341EE6A9920010B053 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		42A888351EE6A9920010B053 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		42A888361EE6A9920010B053 /* TBActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBActivityView.h; sourceTree = "<group>"; };
+		42A888371EE6A9920010B053 /* TBActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBActivityView.m; sourceTree = "<group>"; };
+		42A888381EE6A9920010B053 /* WSLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLineChartView.h; sourceTree = "<group>"; };
+		42A888391EE6A9920010B053 /* WSLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLineChartView.m; sourceTree = "<group>"; };
+		42A8883A1EE6A9920010B053 /* XAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAxisView.h; sourceTree = "<group>"; };
+		42A8883B1EE6A9920010B053 /* XAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAxisView.m; sourceTree = "<group>"; };
+		42A8883C1EE6A9920010B053 /* YAxisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAxisView.h; sourceTree = "<group>"; };
+		42A8883D1EE6A9920010B053 /* YAxisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAxisView.m; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -2192,28 +2192,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		42A8881E1EE689260010B053 /* WSLineChartView */ = {
+		42A888311EE6A9920010B053 /* WSLineChartView */ = {
 			isa = PBXGroup;
 			children = (
-				42A8881F1EE689260010B053 /* SVProgressHUD */,
-				42A888251EE689260010B053 /* WSLineChartView.h */,
-				42A888261EE689260010B053 /* WSLineChartView.m */,
-				42A888271EE689260010B053 /* XAxisView.h */,
-				42A888281EE689260010B053 /* XAxisView.m */,
-				42A888291EE689260010B053 /* YAxisView.h */,
-				42A8882A1EE689260010B053 /* YAxisView.m */,
+				42A888321EE6A9920010B053 /* SVProgressHUD */,
+				42A888381EE6A9920010B053 /* WSLineChartView.h */,
+				42A888391EE6A9920010B053 /* WSLineChartView.m */,
+				42A8883A1EE6A9920010B053 /* XAxisView.h */,
+				42A8883B1EE6A9920010B053 /* XAxisView.m */,
+				42A8883C1EE6A9920010B053 /* YAxisView.h */,
+				42A8883D1EE6A9920010B053 /* YAxisView.m */,
 			);
 			path = WSLineChartView;
 			sourceTree = "<group>";
 		};
-		42A8881F1EE689260010B053 /* SVProgressHUD */ = {
+		42A888321EE6A9920010B053 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				42A888201EE689260010B053 /* SVProgressHUD.bundle */,
-				42A888211EE689260010B053 /* SVProgressHUD.h */,
-				42A888221EE689260010B053 /* SVProgressHUD.m */,
-				42A888231EE689260010B053 /* TBActivityView.h */,
-				42A888241EE689260010B053 /* TBActivityView.m */,
+				42A888331EE6A9920010B053 /* SVProgressHUD.bundle */,
+				42A888341EE6A9920010B053 /* SVProgressHUD.h */,
+				42A888351EE6A9920010B053 /* SVProgressHUD.m */,
+				42A888361EE6A9920010B053 /* TBActivityView.h */,
+				42A888371EE6A9920010B053 /* TBActivityView.m */,
 			);
 			path = SVProgressHUD;
 			sourceTree = "<group>";
@@ -3214,7 +3214,7 @@
 		D20063151DFF86800021E293 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
-				42A8881E1EE689260010B053 /* WSLineChartView */,
+				42A888311EE6A9920010B053 /* WSLineChartView */,
 				42AC71991E30C423007D8F57 /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
 				187C72A71E30B1810072F33A /* DGActivityIndicatorView */,
@@ -4660,7 +4660,7 @@
 				42A887D01EE521D50010B053 /* LLQ_MXE_Detail_DataCell.xib in Resources */,
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
-				42A8882B1EE689260010B053 /* SVProgressHUD.bundle in Resources */,
+				42A8883E1EE6A9920010B053 /* SVProgressHUD.bundle in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
 				D226DC681E8215910042DCFA /* SW_CBCZ_Detail_DataCell.xib in Resources */,
@@ -5017,14 +5017,14 @@
 				D200648A1DFF86800021E293 /* HNT_SYS_HeaderView.m in Sources */,
 				D235E3081E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.m in Sources */,
 				D272EFCC1E7BBEEC00D0991D /* LLQ_CBCZ_Controller.m in Sources */,
-				42A8882F1EE689260010B053 /* XAxisView.m in Sources */,
+				42A888421EE6A9920010B053 /* XAxisView.m in Sources */,
 				D25977711E76B0BC00507BF2 /* SW_ZZJG_Cell.m in Sources */,
 				42AC71C01E30C423007D8F57 /* SGLineDIY.m in Sources */,
 				42AC72181E30C576007D8F57 /* LqNode.m in Sources */,
 				42A887CF1EE521D50010B053 /* LLQ_MXE_Detail_DataCell.m in Sources */,
 				D235E2FF1E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.m in Sources */,
 				D20065841DFFC5AB0021E293 /* HNT_SCCX_Controller.m in Sources */,
-				42A8882E1EE689260010B053 /* WSLineChartView.m in Sources */,
+				42A888411EE6A9920010B053 /* WSLineChartView.m in Sources */,
 				D21943911E810F4F00FC0B38 /* LLQ_LSSJ_Cell.m in Sources */,
 				42A8873E1EDFEBBC0010B053 /* TP_NYSDList_Cell1.m in Sources */,
 				D20064A61DFF86800021E293 /* SGAnimationType.m in Sources */,
@@ -5114,7 +5114,7 @@
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
 				D2E04DE61E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqHead.m in Sources */,
 				42A887AB1EE2A99E0010B053 /* LLQ_YD_Controller.m in Sources */,
-				42A8882D1EE689260010B053 /* TBActivityView.m in Sources */,
+				42A888401EE6A9920010B053 /* TBActivityView.m in Sources */,
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */,
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
@@ -5124,7 +5124,7 @@
 				D235E3301E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.m in Sources */,
 				D20065711DFF9DF40021E293 /* HNT_CBCZ_Controller.m in Sources */,
 				D20064781DFF86800021E293 /* HNT_WNSY_DetailModel.m in Sources */,
-				42A8882C1EE689260010B053 /* SVProgressHUD.m in Sources */,
+				42A8883F1EE6A9920010B053 /* SVProgressHUD.m in Sources */,
 				D20064701DFF86800021E293 /* HNT_YLSY_Controller.m in Sources */,
 				42A8874C1EDFEDF90010B053 /* MyTPSegmentedControl.m in Sources */,
 				42AC71BF1E30C423007D8F57 /* SGLineChart.m in Sources */,
@@ -5191,7 +5191,7 @@
 				D226DC601E8211F90042DCFA /* SW_CDCZ_Detail_swData.m in Sources */,
 				42AC71571E30C393007D8F57 /* EXPSeniorModel.m in Sources */,
 				42AC715A1E30C393007D8F57 /* LQ_ZCL_CL_Controller.m in Sources */,
-				42A888301EE689260010B053 /* YAxisView.m in Sources */,
+				42A888431EE6A9920010B053 /* YAxisView.m in Sources */,
 				D20064791DFF86800021E293 /* HNT_WNSY_Model.m in Sources */,
 				D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */,
 				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,

@@ -34,6 +34,8 @@
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, copy) NSString *biaoshiid;
+
 @property (nonatomic, copy) NSString *baseUrlString;
 @property (nonatomic, assign) int wdIndex;//标记温度Label
 @end
@@ -45,8 +47,8 @@
     self.pageNo = @"1";
     self.maxPageItems = @"15";
     self.shebeibianhao = @"";
-
-    _baseUrlString=TP_NYSD_List;
+    self.biaoshiid = @"";
+    _baseUrlString=TP_ZYWD;
     
     [self loadUI];
     [self loadListTableView];
@@ -62,12 +64,12 @@
     __weak __typeof(self) weakSelf = self;
     self.ListTableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
         weakSelf.pageNo = @"1";
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     self.ListTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.pageNo = FormatInt([weakSelf.pageNo intValue]+1);
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     [self.ListTableView registerNib:[UINib nibWithNibName:@"TP_NYSDList_Cell" bundle:nil] forCellReuseIdentifier:@"TP_NYSDList_Cell"];
@@ -113,7 +115,7 @@
 //                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
 //                NSString *urlString = [NSString stringWithFormat:TP_NYWD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
 //                weakSelf.urlString = urlString;
-                _baseUrlString=TP_NYWD_List;
+                _baseUrlString=TP_ZYWD;
                 [self reloadData];
 //                break;
 //            }
@@ -123,40 +125,33 @@
 }
 #pragma mark - 网络请求
 -(void)reloadData {
-    
-    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
+    NSString *departType = [UserDefaultsSetting_SW shareSetting].userType;
     NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString *urlString = [NSString stringWithFormat:    _baseUrlString,userGroupId,self.shebeibianhao,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
-    
-//    NSLog(@"urlString~~%@",urlString );
+//    NSString *urlString = [NSString stringWithFormat:    _baseUrlString,userGroupId,self.shebeibianhao,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
+    NSString *urlString =  [NSString stringWithFormat:_baseUrlString,self.shebeibianhao,startTimeStamp,endTimeStamp,self.maxPageItems,self.pageNo,departType,self.biaoshiid];
+
     
     __weak typeof(self) weakSelf = self;
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         NSMutableArray *arr = [NSMutableArray array];
+        NSMutableArray *datas = [NSMutableArray array];
+        NSMutableArray *nyX = [NSMutableArray array];
         if ([result[@"success"] boolValue]) {
             if ([result[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dic in result[@"data"]) {//表格
                     weakSelf.listModel = [TP_NYSDList_Model modelWithDict:dic];
                     [arr addObject:weakSelf.listModel];
+                    
+                    weakSelf.chartModel = [TP_NY_ChartModel modelWithDict:dic];
+                    if (weakSelf.chartModel.tmpdata) {
+                        [datas addObject:weakSelf.chartModel.tmpdata];
+                    }
+                    [nyX addObject:weakSelf.chartModel.tmpshijian];
                 }
             }
 
             self.sdArray = arr;
-            
-            NSMutableArray *datas = [NSMutableArray array];
-            NSMutableArray *nyX = [NSMutableArray array];
-        if ([result[@"chart"] isKindOfClass:[NSArray class]]) {//表格
-            for (NSDictionary *dict in result[@"chart"]) {//图表
-                weakSelf.chartModel = [TP_NY_ChartModel modelWithDict:dict];
-                if (weakSelf.chartModel.sudu) {
-                    [datas addObject:weakSelf.chartModel.sudu];
-                }if (weakSelf.chartModel.wendu) {
-                    [datas addObject:weakSelf.chartModel.wendu];
-                }
-                [nyX addObject:weakSelf.chartModel.shijian];
-            }
-        }
 
             weakSelf.chaoX = nyX;
             weakSelf.chaoBiaoDatas = datas;
@@ -199,9 +194,10 @@
         TP_NYSDList_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell1"];
         if (self.wdIndex == 2) {
             [cell setLabel:@"温度"];
-        }if (self.wdIndex == 1) {
-            [cell setLabel:@"速度"];
         }
+//        if (self.wdIndex == 1) {
+//            [cell setLabel:@"速度"];
+//        }
         return cell;
     }else {
         TP_NYSDList_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell"];
