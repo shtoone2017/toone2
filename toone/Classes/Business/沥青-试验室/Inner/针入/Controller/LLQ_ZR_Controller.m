@@ -10,8 +10,10 @@
 #import "LQ_SB_Controller.h"
 #import "LLQ_CBCZ_DetailController.h"
 
-#import "LLQ_MXE_Model.h"
-#import "LLQ_CBCZ_Cell.h"
+//#import "LLQ_MXE_Model.h"
+//#import "LLQ_CBCZ_Cell.h"
+#import "LLQ_ZR_Cell.h"
+#import "LLQ_ZR_Model.h"
 @interface LLQ_ZR_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -42,9 +44,9 @@
 @property (nonatomic,copy) NSString * pageNo                                ;//当前页数
 @property (nonatomic,copy) NSString * maxPageItems                          ;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao                         ;//设备编号
-@property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
-@property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
-
+//@property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
+//@property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
+@property (nonatomic,copy)NSString *isQualified;
 
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
 //不同页面记录的页码
@@ -64,9 +66,9 @@
         
         self.pageNo = _pageNo1;
         self.maxPageItems = @"30";
-        self.chaobiaolx = @"2";//全部
+        self.isQualified = @"不合格";
         self.shebeibianhao = @"";
-        self.cllx = @"0";
+        
         self.tableViewSigner = @"1";
         
     }
@@ -96,10 +98,10 @@
 //            case 1:
 //                weakSelf.pageNo1 = @"1";
 //                break;
-            case 2:
+            case 1:
                 weakSelf.pageNo2 = @"1";
                 break;
-            case 3:
+            case 2:
                 weakSelf.pageNo3 = @"1";
                 break;
             default:
@@ -117,12 +119,12 @@
 //                weakSelf.pageNo1 = FormatInt([weakSelf.pageNo1 intValue]+1);
 //                weakSelf.pageNo = weakSelf.pageNo1;
 //                break;
-            case 2:
+            case 1:
                 weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo2;
                 //NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
                 break;
-            case 3:
+            case 2:
                 weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo3;
                 break;
@@ -132,9 +134,10 @@
         
         [weakSelf loadData];
     }];
+    tableView.rowHeight = 120;
+    [tableView registerNib:[UINib nibWithNibName:@"LLQ_ZR_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_ZR_Cell"];
     
-    
-    [tableView registerClass:[LLQ_CBCZ_Cell class] forCellReuseIdentifier:@"LLQ_CBCZ_Cell"];
+//    [tableView registerClass:[LLQ_ZR_Cell class] forCellReuseIdentifier:@"LLQ_ZR_Cell"];
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
@@ -153,17 +156,17 @@
 //                [self loadData];
 //            }
 //            break;
-        case 2://中级
+        case 1://中级
             self.pageNo = self.pageNo2;
-            self.chaobiaolx =@"2";
+            self.isQualified =@"不合格";
             if(self.datas2==nil) {
                 [self loadData];
                 [self loadData];
             }
             break;
-        case 3://高级
+        case 2://高级
             self.pageNo = self.pageNo3;
-            self.chaobiaolx =@"3";
+            self.isQualified =@"合格";
             if(self.datas3==nil) {
                 [self loadData];
                 [self loadData];
@@ -214,25 +217,26 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqchaoBiaoList;
+//    NSString * urlString = lqchaoBiaoList;
+    NSString * urlString = [NSString stringWithFormat:ZRList,self.shebeibianhao,self.isQualified,self.pageNo,self.maxPageItems,startTimeStamp,endTimeStamp,self.conditonDict[@"departType"],self.conditonDict[@"biaoshiid"]];
     NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
                             @"biaoshiid":self.conditonDict[@"biaoshiid"],
                             @"endTime":endTimeStamp,
                             @"startTime":startTimeStamp,
                             @"shebeibianhao":self.shebeibianhao,
 //                            @"chaobiaolx":self.chaobiaolx,
-                            @"cllx":self.cllx,
+//                            @"cllx":self.cllx,
                             @"pageNo":self.pageNo,
                             @"maxPageItems":self.maxPageItems,
                             };
     
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
-                    LLQ_MXE_Model * model =  [[LLQ_MXE_Model alloc] init];
+                    LLQ_ZR_Model * model =  [[LLQ_ZR_Model alloc] init];
 //                    model.dataDict = dict;
                     model.SHeader2 = json[@"SHeader2"];
                     model.is_testtime = dict[@"is_testtime"];
@@ -272,7 +276,7 @@
 //                    [weakSelf.tableView1.mj_footer endRefreshingWithNoMoreData];
 //                }
 //                break;
-            case 2:
+            case 1:
                 if ([weakSelf.pageNo2 intValue] == 1) {
                     weakSelf.datas2 = datas;
                 }else{
@@ -285,7 +289,7 @@
                     [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
                 }
                 break;
-            case 3:
+            case 2:
                 if ([weakSelf.pageNo3 intValue] == 1) {
                     weakSelf.datas3 = datas;
                 }else{
@@ -328,56 +332,26 @@
 //        return cell;
 //    }
     if (tableView == self.tableView2) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+        LLQ_ZR_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_ZR_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
-        LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
+        LLQ_ZR_Model * model = self.datas2[indexPath.row];
         cell.model = model;
 //        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     if (tableView == self.tableView3) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+        LLQ_ZR_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_ZR_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
-        LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
+        LLQ_ZR_Model * model = self.datas3[indexPath.row];
         cell.model = model;
 //        [cell setModel:model indexPath:indexPath];
         return cell;
     }
     return nil;
 }
-/*
--(CGFloat)rowHeightWithModel:(LLQ_MXE_Model*)model{
-    int index = 0;
-    for (NSString * key in model.dataDict.allKeys) {
-        if ([key hasPrefix:@"bhzName"] ||
-            [key hasPrefix:@"clTime"] ||
-            [key hasPrefix:@"clwd"] ||
-            [key hasPrefix:@"lqwd"] ||
-            [key hasPrefix:@"glwd"] ||
-            [key hasPrefix:@"sjtjj"] ||
-            [key hasPrefix:@"sjysb"] ||
-            [key hasPrefix:@"sjlq"] ||
-            (([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
-            index++;
-        }
-    }
-    return index*15.0;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (tableView == self.tableView1) {
-//        return [self rowHeightWithModel:self.datas1[indexPath.row]];
-//    }
-    if (tableView == self.tableView2) {
-        return [self rowHeightWithModel:self.datas2[indexPath.row]];
-    }
-    if (tableView == self.tableView3) {
-        return [self rowHeightWithModel:self.datas3[indexPath.row]];
-    }
-    return 0.1;
-}
- */
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    LLQ_MXE_Model * model;
+    LLQ_ZR_Model * model;
 //    if (tableView == self.tableView1) {
 //        model = self.datas1[indexPath.row];
 //    }
@@ -395,7 +369,7 @@
                          };
     
     
-    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
+//    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
@@ -453,7 +427,7 @@
         
         controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
                                     @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                                    @"machineType":@"2",
+                                    @"machineType":@"11",
                                     };
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];

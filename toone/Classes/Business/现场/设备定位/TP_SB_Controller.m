@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tb;
 
 @property (nonatomic ,copy) NSString * machineType;
+@property (nonatomic ,copy) NSString * biaoshiid;
 @property (nonatomic,strong) NSArray * datas;
 @end
 
@@ -29,7 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设备";
-    self.machineType = @"8";
+    self.machineType = @"5";
+    self.biaoshiid = @"";
     [self loadData];
     self.tb.tableFooterView = [[UIView alloc] init];
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -42,21 +44,21 @@
             break;
         }
         case 2:{
-            self.machineType = @"8";
+            self.machineType = @"5";
             [self changeButtonShape:sender];
             [self loadData];
             break;
         }
         case 3:{
-            self.machineType = @"9";
+            self.machineType = @"4";
             [self changeButtonShape:sender];
             [self loadData];
             break;
         }
         case 4:{
             self.machineType = @"10";
-            [self changeButtonShape:sender];
-            [self loadData];
+//            [self changeButtonShape:sender];
+//            [self loadData];
             break;
         }
     }
@@ -76,14 +78,18 @@
 }
 -(void)loadData{
    // getMachineList_2
-    NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
-    NSString * urlString = [NSString stringWithFormat:getMachineList_2,userGroupId,self.machineType];
-    
+    NSString * departType = [UserDefaultsSetting_SW shareSetting].userType;
+    NSString * urlString = machineList;
+    NSDictionary * dict = @{@"departType":departType,
+                            @"biaoshiid":self.biaoshiid,
+                            @"machineType":self.machineType,
+                            };
+
     if (self.datas) {
         self.datas = nil;
         [self.tb reloadData];
     }
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"]  isKindOfClass:[NSArray class]]) {
                 NSMutableArray * datas = [NSMutableArray array];

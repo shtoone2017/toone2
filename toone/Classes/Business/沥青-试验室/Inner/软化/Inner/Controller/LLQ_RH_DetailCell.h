@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 @class LLQ_RH_Model;
-@interface LLQ_RH_Cell : UITableViewCell
+@interface LLQ_RH_DetailCell : UITableViewCell
 @property (nonatomic,strong) LLQ_RH_Model * model ;
 @end

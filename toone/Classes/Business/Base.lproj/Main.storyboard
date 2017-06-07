@@ -92,7 +92,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-pe-kfV">
-                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -4737,7 +4737,7 @@
         <!--Controller-->
         <scene sceneID="RMj-wF-laT">
             <objects>
-                <viewController id="Djo-mE-R5u" customClass="LQ_SB_Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LQ_SB_Controller" id="Djo-mE-R5u" customClass="LQ_SB_Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PMk-Nt-gPY"/>
                         <viewControllerLayoutGuide type="bottom" id="rkk-3j-Bg3"/>
@@ -5269,7 +5269,7 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWq-xV-5ZJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <state key="normal" title="不合格1" image="circle_green">
+                                                        <state key="normal" title="不合格" image="circle_green">
                                                             <color key="titleColor" red="1" green="0.1228944468" blue="0.26459482950000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -5401,7 +5401,7 @@
                         <outlet property="tableView3" destination="mda-eo-adI" id="7O9-NW-bYn"/>
                         <outlet property="text_sc" destination="blN-z9-4ae" id="uAM-m9-OEd"/>
                         <outlet property="title_sc" destination="amo-pX-qax" id="XXP-Az-qF1"/>
-                        <segue destination="Djo-mE-R5u" kind="push" identifier="LQ_SB_Controller_MXE" id="TGl-bm-ZV5"/>
+                        <segue destination="Djo-mE-R5u" kind="push" identifier="LQ_SB_Controller_MXR" id="TGl-bm-ZV5"/>
                         <segue destination="S34-0B-tMz" kind="push" identifier="LLQ_MXE_DetailController" id="yHF-0V-ifb"/>
                     </connections>
                 </viewController>
@@ -5445,7 +5445,7 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJf-XT-brq">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <state key="normal" title="不合格2" image="circle_green">
+                                                        <state key="normal" title="不合格" image="circle_green">
                                                             <color key="titleColor" red="1" green="0.1228944468" blue="0.26459482950000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -5620,7 +5620,7 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVN-Eo-m7v">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <state key="normal" title="不合格3" image="circle_green">
+                                                        <state key="normal" title="不合格" image="circle_green">
                                                             <color key="titleColor" red="1" green="0.1228944468" blue="0.26459482950000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -5795,7 +5795,7 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-DU-bTq">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <state key="normal" title="初级" image="circle_green">
+                                                        <state key="normal" title="不合格" image="circle_green">
                                                             <color key="titleColor" red="1" green="0.1228944468" blue="0.26459482950000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -5805,7 +5805,7 @@
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-dA-Ck2">
                                                         <rect key="frame" x="70" y="0.0" width="70" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="高级" image="circle_red">
+                                                        <state key="normal" title="合格" image="circle_red">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
@@ -5991,10 +5991,10 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2qa-au-FyR"/>
         <segue reference="ClF-l9-kJF"/>
-        <segue reference="TGl-bm-ZV5"/>
+        <segue reference="2qa-au-FyR"/>
         <segue reference="h6h-V1-R2o"/>
         <segue reference="WQO-SS-2jJ"/>
+        <segue reference="4UB-eZ-aeJ"/>
     </inferredMetricsTieBreakers>
 </document>

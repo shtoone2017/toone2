@@ -166,18 +166,21 @@
 #define MXE_Datail FormatString(baseUrl,@"app/maxieerXX?F_GUID=%@")
 //软化度列表
 #define RHList FormatString(baseUrl,@"app/ruanhuadianChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
+//软化详情
+#define RH_Datail FormatString(baseUrl,@"app/ruanhuadianXX?F_GUID=%@")
 //试验室主页
 #define LLqSYSMain   FormatString(baseUrl,@"appXc/lqsysHome?")
 //摊铺温度
 #define TP_TPWD FormatString(baseUrl,@"appXc/tmpwenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
 //终压温度
 #define TP_ZYWD FormatString(baseUrl,@"appXc/nywenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
+//设备列表
+#define LLQ_SYS_SB   FormatString(baseUrl,@"app/machineList?departType=%@&biaoshiid=%@&machineType=%@")
+//针入列表
+#define ZRList FormatString(baseUrl,@"app/zhenruduChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
 
-
-
-
-
-
+//延度列表
+#define YDList FormatString(baseUrl,@"app/yanduChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
 
 
 

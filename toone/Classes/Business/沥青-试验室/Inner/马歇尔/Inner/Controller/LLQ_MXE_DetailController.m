@@ -37,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = YES;
     self.currentLineNum = 0;
     [self loadData];
 }
@@ -48,14 +47,13 @@
 -(void)loadUi{
     self.view.backgroundColor = [UIColor whiteColor];
     self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
-//    self.tb.frame = self.view.bounds;
     self.tb.delegate = self;
     self.tb.dataSource = self;
+    self.automaticallyAdjustsScrollViewInsets = YES;
     [self.view addSubview:self.tb];
     self.tb.tableFooterView = [[UIView alloc] init];
     self.tb.separatorColor = [UIColor clearColor];
-    self.tb.separatorStyle = UITableViewCellSelectionStyleNone;
-    self.automaticallyAdjustsScrollViewInsets = YES;
+//    self.tb.separatorStyle = UITableViewCellSelectionStyleNone;
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_MXE_Detail_HeadCell" bundle:nil] forCellReuseIdentifier:@"LLQ_MXE_Detail_HeadCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_MXE_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"LLQ_MXE_Detail_DataCell"];
@@ -192,6 +190,7 @@
     if (indexPath.section == 0) {
         LLQ_MXE_Detail_HeadCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_MXE_Detail_HeadCell"];
         cell.model = self.headModel;
+        self.automaticallyAdjustsScrollViewInsets = YES;
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -214,7 +213,7 @@
     {
         LLQ_MXE_Detail_ChartCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_MXE_Detail_ChartCell"];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-         WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, 0, Screen_w, 180) xTitleArray:@[@"1",@"2",@"3",@"4",@"5",@"6"] xValueArray:self.xMutableArr[_currentLineNum] yValueArray:self.yMutableArr[_currentLineNum] yMax:300 yMin:0];
+         WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, 0, Screen_w, 180) xTitleArray:@[@"1",@"2",@"3",@"4"] xValueArray:self.xMutableArr[_currentLineNum] yValueArray:self.yMutableArr[_currentLineNum] yMax:300 yMin:0];
         wsLine.backgroundColor = [UIColor whiteColor];
         [cell.chartParentView addSubview:wsLine];
         return cell;

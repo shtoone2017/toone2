@@ -55,6 +55,17 @@
 		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
+		42022F551EE7D1C000931544 /* LLQ_RH_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F541EE7D1C000931544 /* LLQ_RH_DetailController.m */; };
+		42022F581EE7D1E600931544 /* LLQ_RH_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F571EE7D1E600931544 /* LLQ_RH_Model.m */; };
+		42022F5C1EE7D39300931544 /* LLQ_RH_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F5A1EE7D39300931544 /* LLQ_RH_DetailCell.m */; };
+		42022F5D1EE7D39300931544 /* LLQ_RH_DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F5B1EE7D39300931544 /* LLQ_RH_DetailCell.xib */; };
+		42022F611EE7E2A300931544 /* LLQ_RH_DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F5F1EE7E2A300931544 /* LLQ_RH_DetailsViewController.m */; };
+		42022F621EE7E2A300931544 /* LLQ_RH_DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F601EE7E2A300931544 /* LLQ_RH_DetailsViewController.xib */; };
+		42022F651EE7EA1500931544 /* LLQ_ZR_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F641EE7EA1500931544 /* LLQ_ZR_Model.m */; };
+		42022F691EE7ECD700931544 /* LLQ_ZR_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F671EE7ECD700931544 /* LLQ_ZR_Cell.m */; };
+		42022F6A1EE7ECD700931544 /* LLQ_ZR_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F681EE7ECD700931544 /* LLQ_ZR_Cell.xib */; };
+		42022F6D1EE7F0A500931544 /* LLQ_YD_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F6C1EE7F0A500931544 /* LLQ_YD_Model.m */; };
+		422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
 		42A8872D1EDFEBBC0010B053 /* TP_CL_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A886F11EDFEBBC0010B053 /* TP_CL_Cell.xib */; };
@@ -668,6 +679,25 @@
 		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
 		18DA4FE51E1E15B800229C81 /* Exmp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp2.h; sourceTree = "<group>"; };
 		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
+		42022F531EE7D1C000931544 /* LLQ_RH_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_DetailController.h; sourceTree = "<group>"; };
+		42022F541EE7D1C000931544 /* LLQ_RH_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_DetailController.m; sourceTree = "<group>"; };
+		42022F561EE7D1E600931544 /* LLQ_RH_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_Model.h; sourceTree = "<group>"; };
+		42022F571EE7D1E600931544 /* LLQ_RH_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_Model.m; sourceTree = "<group>"; };
+		42022F591EE7D39300931544 /* LLQ_RH_DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_DetailCell.h; sourceTree = "<group>"; };
+		42022F5A1EE7D39300931544 /* LLQ_RH_DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_DetailCell.m; sourceTree = "<group>"; };
+		42022F5B1EE7D39300931544 /* LLQ_RH_DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_RH_DetailCell.xib; sourceTree = "<group>"; };
+		42022F5E1EE7E2A300931544 /* LLQ_RH_DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_DetailsViewController.h; sourceTree = "<group>"; };
+		42022F5F1EE7E2A300931544 /* LLQ_RH_DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_DetailsViewController.m; sourceTree = "<group>"; };
+		42022F601EE7E2A300931544 /* LLQ_RH_DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_RH_DetailsViewController.xib; sourceTree = "<group>"; };
+		42022F631EE7EA1500931544 /* LLQ_ZR_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_ZR_Model.h; sourceTree = "<group>"; };
+		42022F641EE7EA1500931544 /* LLQ_ZR_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_ZR_Model.m; sourceTree = "<group>"; };
+		42022F661EE7ECD700931544 /* LLQ_ZR_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_ZR_Cell.h; sourceTree = "<group>"; };
+		42022F671EE7ECD700931544 /* LLQ_ZR_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_ZR_Cell.m; sourceTree = "<group>"; };
+		42022F681EE7ECD700931544 /* LLQ_ZR_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_ZR_Cell.xib; sourceTree = "<group>"; };
+		42022F6B1EE7F0A500931544 /* LLQ_YD_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_YD_Model.h; sourceTree = "<group>"; };
+		42022F6C1EE7F0A500931544 /* LLQ_YD_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_YD_Model.m; sourceTree = "<group>"; };
+		422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SB_Controller.h; sourceTree = "<group>"; };
+		422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SB_Controller.m; sourceTree = "<group>"; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
 		42A886ED1EDFEBBC0010B053 /* TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_Controller.m; sourceTree = "<group>"; };
 		42A886EF1EDFEBBC0010B053 /* TP_CL_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CL_Cell.h; sourceTree = "<group>"; };
@@ -1666,6 +1696,37 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		42022F501EE7CD3E00931544 /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+				42022F511EE7CD3E00931544 /* Controller */,
+				42022F521EE7CD3E00931544 /* Model */,
+			);
+			path = Inner;
+			sourceTree = "<group>";
+		};
+		42022F511EE7CD3E00931544 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42022F531EE7D1C000931544 /* LLQ_RH_DetailController.h */,
+				42022F541EE7D1C000931544 /* LLQ_RH_DetailController.m */,
+				42022F5E1EE7E2A300931544 /* LLQ_RH_DetailsViewController.h */,
+				42022F5F1EE7E2A300931544 /* LLQ_RH_DetailsViewController.m */,
+				42022F601EE7E2A300931544 /* LLQ_RH_DetailsViewController.xib */,
+				42022F591EE7D39300931544 /* LLQ_RH_DetailCell.h */,
+				42022F5A1EE7D39300931544 /* LLQ_RH_DetailCell.m */,
+				42022F5B1EE7D39300931544 /* LLQ_RH_DetailCell.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42022F521EE7CD3E00931544 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		42A886EB1EDFEBBC0010B053 /* 现场 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1673,7 +1734,7 @@
 				42A886ED1EDFEBBC0010B053 /* TP_Controller.m */,
 				42A886EE1EDFEBBC0010B053 /* 出料温度 */,
 				42A886FC1EDFEBBC0010B053 /* 摊铺 */,
-				42A887081EDFEBBC0010B053 /* 碾压 */,
+				42A887081EDFEBBC0010B053 /* 终压 */,
 				42A887201EDFEBBC0010B053 /* 设备定位 */,
 			);
 			path = "现场";
@@ -1730,6 +1791,8 @@
 		42A887021EDFEBBC0010B053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */,
+				422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */,
 				42A887031EDFEBBC0010B053 /* TP_TP_SB_Controller.h */,
 				42A887041EDFEBBC0010B053 /* TP_TP_SB_Controller.m */,
 			);
@@ -1745,7 +1808,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		42A887081EDFEBBC0010B053 /* 碾压 */ = {
+		42A887081EDFEBBC0010B053 /* 终压 */ = {
 			isa = PBXGroup;
 			children = (
 				42A887091EDFEBBC0010B053 /* Controller */,
@@ -1753,6 +1816,7 @@
 				42A887121EDFEBBC0010B053 /* View */,
 				42A887191EDFEBBC0010B053 /* 设备列表 */,
 			);
+			name = "终压";
 			path = "碾压";
 			sourceTree = "<group>";
 		};
@@ -2015,6 +2079,7 @@
 		42A887971EE26BBD0010B053 /* 软化 */ = {
 			isa = PBXGroup;
 			children = (
+				42022F501EE7CD3E00931544 /* Inner */,
 				42A8879D1EE26C210010B053 /* Controller */,
 				42A8879E1EE26C210010B053 /* Model */,
 				42A8879F1EE26C210010B053 /* View */,
@@ -2082,6 +2147,8 @@
 		42A8879E1EE26C210010B053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42022F561EE7D1E600931544 /* LLQ_RH_Model.h */,
+				42022F571EE7D1E600931544 /* LLQ_RH_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2108,6 +2175,8 @@
 		42A887A11EE26C2A0010B053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42022F6B1EE7F0A500931544 /* LLQ_YD_Model.h */,
+				42022F6C1EE7F0A500931544 /* LLQ_YD_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2131,6 +2200,8 @@
 		42A887A41EE26C310010B053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42022F631EE7EA1500931544 /* LLQ_ZR_Model.h */,
+				42022F641EE7EA1500931544 /* LLQ_ZR_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2138,6 +2209,9 @@
 		42A887A51EE26C310010B053 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42022F661EE7ECD700931544 /* LLQ_ZR_Cell.h */,
+				42022F671EE7ECD700931544 /* LLQ_ZR_Cell.m */,
+				42022F681EE7ECD700931544 /* LLQ_ZR_Cell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4704,6 +4778,7 @@
 				D20065321DFF86B30021E293 /* LineChartFilledViewController.xib in Resources */,
 				42AC714B1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */,
+				42022F621EE7E2A300931544 /* LLQ_RH_DetailsViewController.xib in Resources */,
 				D272EFBF1E7BBE3A00D0991D /* LQ_SW_Cell.xib in Resources */,
 				D235E3001E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
@@ -4712,6 +4787,7 @@
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
 				D2E04DE51E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
+				42022F5D1EE7D39300931544 /* LLQ_RH_DetailCell.xib in Resources */,
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
@@ -4731,6 +4807,7 @@
 				D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */,
 				D2E838791EA83D7B003E0A7B /* arrow.png in Resources */,
 				42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */,
+				42022F6A1EE7ECD700931544 /* LLQ_ZR_Cell.xib in Resources */,
 				D24DE9221E80BF25006831A2 /* LLQ_CLHS_Cell.xib in Resources */,
 				D2E838861EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
 				42A887C61EE50B7F0010B053 /* LLQ_MXE_Detail_HeadCell.xib in Resources */,
@@ -4795,6 +4872,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42022F5C1EE7D39300931544 /* LLQ_RH_DetailCell.m in Sources */,
 				187C72F31E30B1810072F33A /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				42A8876A1EDFF4CB0010B053 /* BackgroundLocationViewController.m in Sources */,
 				D27B23F41E72922C001A198E /* UserDefaultsSetting_SW.m in Sources */,
@@ -4845,8 +4923,10 @@
 				D200651D1DFF86B30021E293 /* BarChartViewController.m in Sources */,
 				8CBD72E41E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsg.m in Sources */,
 				187C73091E30B1810072F33A /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
+				42022F611EE7E2A300931544 /* LLQ_RH_DetailsViewController.m in Sources */,
 				42AC71481E30C393007D8F57 /* DCZ_CJ_Inner_Cell.m in Sources */,
 				D2E838661EA75AF7003E0A7B /* SGGenerateQRCodeVC.m in Sources */,
+				42022F551EE7D1C000931544 /* LLQ_RH_DetailController.m in Sources */,
 				D200647D1DFF86800021E293 /* HNT_TJFX_Model.m in Sources */,
 				D200649D1DFF86800021E293 /* UIButton+Img_20.m in Sources */,
 				187C72FA1E30B1810072F33A /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
@@ -4859,6 +4939,7 @@
 				D26AE9991E7A38A50090761D /* LLQ_BHZ_Controller.m in Sources */,
 				D200649C1DFF86800021E293 /* NSString+Separate.m in Sources */,
 				42A888191EE658120010B053 /* LLQ_SYS_Cell.m in Sources */,
+				42022F6D1EE7F0A500931544 /* LLQ_YD_Model.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				D20065211DFF86B30021E293 /* CandleStickChartViewController.m in Sources */,
 				D2E04DE71E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqjg.m in Sources */,
@@ -4955,6 +5036,7 @@
 				D272EFBE1E7BBE3A00D0991D /* LQ_SW_Cell.m in Sources */,
 				D20064881DFF86800021E293 /* HNT_SYS_Model.m in Sources */,
 				42AC71701E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Controller.m in Sources */,
+				42022F691EE7ECD700931544 /* LLQ_ZR_Cell.m in Sources */,
 				8CBD72EF1E07A84C00A0C991 /* HNT_CBCZ_DetailController.m in Sources */,
 				D20064801DFF86800021E293 /* HNT_TJFX_TxtView.m in Sources */,
 				D235E32D1E84C64900EE4459 /* LLQ_LSSJ_Detail_DataCell.m in Sources */,
@@ -5011,7 +5093,9 @@
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
 				42AC71971E30C3F0007D8F57 /* MyInputController.m in Sources */,
+				422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */,
 				D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */,
+				42022F581EE7D1E600931544 /* LLQ_RH_Model.m in Sources */,
 				8CBD72E31E07A75000A0C991 /* HNT_SCCX_Detail_Data.m in Sources */,
 				42AC71C31E30C423007D8F57 /* SGSign.m in Sources */,
 				D200648A1DFF86800021E293 /* HNT_SYS_HeaderView.m in Sources */,
@@ -5057,6 +5141,7 @@
 				D2E04DDA1E83ADCC009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D20065A51DFFE12D0021E293 /* Exp5View.m in Sources */,
 				D24DE9211E80BF25006831A2 /* LLQ_CLHS_Cell.m in Sources */,
+				42022F651EE7EA1500931544 /* LLQ_ZR_Model.m in Sources */,
 				42AC717B1E30C393007D8F57 /* LQ_BHZ_SB_Controller.m in Sources */,
 				8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */,
 				42AC71C41E30C423007D8F57 /* Y.m in Sources */,

@@ -6,9 +6,10 @@
 //  Copyright © 2016年 shtoone. All rights reserved.
 //
 
-#import "LLQ_RH_Cell.h"
-#import "LLQ_RH_Model.h"
-@interface LLQ_RH_Cell()
+#import "LLQ_ZR_Cell.h"
+#import "LLQ_ZR_Model.h"
+#import "LLQ_YD_Model.h"
+@interface LLQ_ZR_Cell()
 @property (weak, nonatomic) IBOutlet UILabel * chuliaoshijian_Label         ;// 出料时间
 @property (weak, nonatomic) IBOutlet UILabel * banhezhanminchen_Label       ;// 样品编号
 @property (weak, nonatomic) IBOutlet UILabel * gongchengmingcheng_Label     ;// 工程名称
@@ -24,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *container1_label;
 @property (weak, nonatomic) IBOutlet UILabel *container2_label;
 @end
-@implementation LLQ_RH_Cell
+@implementation LLQ_ZR_Cell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -39,7 +40,7 @@
 
     // Configure the view for the selected state
 }
--(void)setModel:(LLQ_RH_Model *)model{
+-(void)setModel:(LLQ_ZR_Model *)model{
     self.chuliaoshijian_Label.text = model.is_testtime;
     self.banhezhanminchen_Label.text = model.header5;
     self.gongchengmingcheng_Label.text = model.header3;
@@ -61,4 +62,28 @@
     }
 
 }
+
+-(void)setModels:(LLQ_YD_Model *)models {
+    self.chuliaoshijian_Label.text = models.IS_TESTTIME;
+    self.banhezhanminchen_Label.text = models.header5;
+    self.gongchengmingcheng_Label.text = models.header3;
+    self.jiaozuobuwei_Label.text = models.SHeader2;
+    self.sigongdidian_Label.text = models.avgvalue1;
+    self.qiangdudengji_Label.text = models.biaozhunzhi1;
+    
+    self.container1_label.textColor = [UIColor whiteColor];
+    self.container2_label.textColor = [UIColor whiteColor];
+    self.container1.hidden = NO;
+    if(EqualToString(models.isQualified, @"合格")){
+        self.container1_label.backgroundColor = [UIColor bananaColor];
+        self.container1_label.text = @"合格";
+    }else if(EqualToString(models.isQualified, @"不合格")){
+        self.container1_label.backgroundColor = [UIColor emeraldColor];
+        self.container1_label.text = @"不合格";
+    }else {
+        self.container1.hidden = YES;
+    }
+
+}
+
 @end

@@ -136,7 +136,7 @@
         [weakSelf loadData];
     }];
     
-    tableView.rowHeight = 140;
+    tableView.rowHeight = 120;
     [tableView registerNib:[UINib nibWithNibName:@"LLQ_MXE_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_MXE_Cell"];
 //    [tableView registerClass:[LLQ_MXE_Cell class] forCellReuseIdentifier:@"LLQ_MXE_Cell"];
 }
@@ -426,7 +426,7 @@
         
         controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
                                     @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                                    @"machineType":@"2",
+                                    @"machineType":@"9",
                                     };
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];

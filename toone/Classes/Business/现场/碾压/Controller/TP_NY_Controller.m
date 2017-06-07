@@ -16,6 +16,7 @@
 #import "TP_NYSDList_Cell.h"
 #import "TP_NYSDList_Cell1.h"
 #import "TP_NY_SB_Controller.h"
+#import "LLQ_SB_Controller.h"
 
 @interface TP_NY_Controller ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *firstBackView;
@@ -258,13 +259,20 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {//选择设备
             UIButton * btn = (UIButton*)obj1;
-            TP_NY_SB_Controller *sbVc = [[TP_NY_SB_Controller alloc] init];
-            [self.navigationController pushViewController:sbVc animated:YES];
+            LLQ_SB_Controller * controller = [[LLQ_SB_Controller alloc] init];
+            controller.conditonDict = @{@"departType":[UserDefaultsSetting_SW shareSetting].userType,
+                                        @"biaoshiid":self.biaoshiid,
+                                        @"machineType":@"4",
+                                        };
+            [self.navigationController pushViewController:controller animated:YES];
             
-            sbVc.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+            __weak __typeof(self)  weakSelf = self;
+            //            controller.title = @"选择设备";
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.shebeibianhao = gprsbianhao;
             };
+
         }
     };
     [self.view addSubview:e];
