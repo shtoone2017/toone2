@@ -29,11 +29,11 @@
  */
 -(void)setModel:(SW_LSSJ_Detail_Data *)model{
         self.lb1.text = model.name;
-        self.lb2.text = model.mbpeibi;
+        self.lb2.text = model.yongliang;
         self.lb3.text = model.scpeibi;
         self.lb4.text = model.sgpeibi;
-        self.lb5.text = model.wucha;
-        self.lb6.text = model.yongliang;
+        self.lb5.text = model.mbpeibi;
+        self.lb6.text = model.wucha;
 }
 -(void)setColor:(UIColor *)color{
     self.lb2.textColor = color;
