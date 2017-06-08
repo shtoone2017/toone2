@@ -65,6 +65,10 @@
 		42022F691EE7ECD700931544 /* LLQ_ZR_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F671EE7ECD700931544 /* LLQ_ZR_Cell.m */; };
 		42022F6A1EE7ECD700931544 /* LLQ_ZR_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F681EE7ECD700931544 /* LLQ_ZR_Cell.xib */; };
 		42022F6D1EE7F0A500931544 /* LLQ_YD_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F6C1EE7F0A500931544 /* LLQ_YD_Model.m */; };
+		42022F781EE8F7CC00931544 /* LLQ_ZR_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F761EE8F7CC00931544 /* LLQ_ZR_DetailController.m */; };
+		42022F791EE8F7CC00931544 /* LLQ_ZR_DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F771EE8F7CC00931544 /* LLQ_ZR_DetailController.xib */; };
+		42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */; };
+		42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */; };
 		422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -696,6 +700,12 @@
 		42022F681EE7ECD700931544 /* LLQ_ZR_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_ZR_Cell.xib; sourceTree = "<group>"; };
 		42022F6B1EE7F0A500931544 /* LLQ_YD_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_YD_Model.h; sourceTree = "<group>"; };
 		42022F6C1EE7F0A500931544 /* LLQ_YD_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_YD_Model.m; sourceTree = "<group>"; };
+		42022F751EE8F7CC00931544 /* LLQ_ZR_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_ZR_DetailController.h; sourceTree = "<group>"; };
+		42022F761EE8F7CC00931544 /* LLQ_ZR_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_ZR_DetailController.m; sourceTree = "<group>"; };
+		42022F771EE8F7CC00931544 /* LLQ_ZR_DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_ZR_DetailController.xib; sourceTree = "<group>"; };
+		42022F7A1EE8FC9100931544 /* LLQ_YD_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_YD_DetailController.h; sourceTree = "<group>"; };
+		42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_YD_DetailController.m; sourceTree = "<group>"; };
+		42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_YD_DetailController.xib; sourceTree = "<group>"; };
 		422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SB_Controller.h; sourceTree = "<group>"; };
 		422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SB_Controller.m; sourceTree = "<group>"; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -1727,6 +1737,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		42022F6E1EE8E94200931544 /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+				42022F7A1EE8FC9100931544 /* LLQ_YD_DetailController.h */,
+				42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */,
+				42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */,
+			);
+			path = Inner;
+			sourceTree = "<group>";
+		};
+		42022F741EE8F78F00931544 /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+				42022F751EE8F7CC00931544 /* LLQ_ZR_DetailController.h */,
+				42022F761EE8F7CC00931544 /* LLQ_ZR_DetailController.m */,
+				42022F771EE8F7CC00931544 /* LLQ_ZR_DetailController.xib */,
+			);
+			path = Inner;
+			sourceTree = "<group>";
+		};
 		42A886EB1EDFEBBC0010B053 /* 现场 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2090,6 +2120,7 @@
 		42A887981EE26BBD0010B053 /* 延度 */ = {
 			isa = PBXGroup;
 			children = (
+				42022F6E1EE8E94200931544 /* Inner */,
 				42A887A01EE26C2A0010B053 /* Controller */,
 				42A887A11EE26C2A0010B053 /* Model */,
 				42A887A21EE26C2A0010B053 /* View */,
@@ -2100,6 +2131,7 @@
 		42A887991EE26BBD0010B053 /* 针入 */ = {
 			isa = PBXGroup;
 			children = (
+				42022F741EE8F78F00931544 /* Inner */,
 				42A887A31EE26C310010B053 /* Controller */,
 				42A887A41EE26C310010B053 /* Model */,
 				42A887A51EE26C310010B053 /* View */,
@@ -4710,6 +4742,7 @@
 				D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */,
 				42A887431EDFEBBC0010B053 /* TP_DW_Controller.xib in Resources */,
 				42A887301EDFEBBC0010B053 /* TP_CL_Controller.xib in Resources */,
+				42022F791EE8F7CC00931544 /* LLQ_ZR_DetailController.xib in Resources */,
 				D200648D1DFF86800021E293 /* HNT_SYS_TestView.xib in Resources */,
 				D200646D1DFF86800021E293 /* HNT_BHZ_Cell.xib in Resources */,
 				42A887B61EE3E37A0010B053 /* LLQ_MXE_Cell.xib in Resources */,
@@ -4790,6 +4823,7 @@
 				42022F5D1EE7D39300931544 /* LLQ_RH_DetailCell.xib in Resources */,
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
+				42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				D220E2C31E8D00E1001A1C14 /* DrawerController.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
@@ -5014,6 +5048,7 @@
 				D20064911DFF86800021E293 /* Exp1_Xib_View.m in Sources */,
 				187C73001E30B1810072F33A /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				42A8881D1EE67AB60010B053 /* LLQ_SYS_Model.m in Sources */,
+				42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */,
 				D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */,
 				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
 				42AC72191E30C576007D8F57 /* LqNodeModel.m in Sources */,
@@ -5099,6 +5134,7 @@
 				8CBD72E31E07A75000A0C991 /* HNT_SCCX_Detail_Data.m in Sources */,
 				42AC71C31E30C423007D8F57 /* SGSign.m in Sources */,
 				D200648A1DFF86800021E293 /* HNT_SYS_HeaderView.m in Sources */,
+				42022F781EE8F7CC00931544 /* LLQ_ZR_DetailController.m in Sources */,
 				D235E3081E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.m in Sources */,
 				D272EFCC1E7BBEEC00D0991D /* LLQ_CBCZ_Controller.m in Sources */,
 				42A888421EE6A9920010B053 /* XAxisView.m in Sources */,

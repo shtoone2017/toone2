@@ -178,10 +178,12 @@
 #define LLQ_SYS_SB   FormatString(baseUrl,@"app/machineList?departType=%@&biaoshiid=%@&machineType=%@")
 //针入列表
 #define ZRList FormatString(baseUrl,@"app/zhenruduChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
-
+//针入详情
+#define ZR_Datail FormatString(baseUrl,@"app/zhenruduXX?F_GUID=%@")
 //延度列表
 #define YDList FormatString(baseUrl,@"app/yanduChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
-
+//延度详情
+#define YD_Datail FormatString(baseUrl,@"app/yanduXX?F_GUID=%@")
 
 
 //----------------------------------------------------------------------------------------------------//

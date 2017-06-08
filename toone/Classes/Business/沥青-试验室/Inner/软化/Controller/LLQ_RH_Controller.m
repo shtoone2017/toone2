@@ -236,7 +236,7 @@
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_RH_Model * model =  [[LLQ_RH_Model alloc] init];
 //                    model.dataDict = dict;
-                    model.SHeader2 = json[@"SHeader2"];
+                    model.SHeader2 = dict[@"SHeader2"];
                     model.is_testtime = dict[@"is_testtime"];
                     model.isQualified = dict[@"isQualified"];
                     model.header5 = dict[@"header5"];
@@ -244,10 +244,10 @@
                     model.f_GUID = dict[@"f_GUID"];
                     model.f_SBBH = dict[@"f_SBBH"];
                     
-                    model.avgvalue1 = json[@"avgvalue1"];
+                    model.avgvalue1 = dict[@"avgvalue1"];
                     model.biaoZhun1 = dict[@"biaoZhun1"];
-                    model.ruanhuadian1 = json[@"ruanhuadian1"];
-                    model.ruanhuadian1 = json[@"ruanhuadian1"];
+                    model.ruanhuadian1 = dict[@"ruanhuadian1"];
+                    model.ruanhuadian2 = dict[@"ruanhuadian2"];
                     
                     [datas addObject:model];
                 }

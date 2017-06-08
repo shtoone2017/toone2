@@ -239,8 +239,8 @@
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_MXE_Model * model =  [[LLQ_MXE_Model alloc] init];
 //                    model.dataDict = dict;
-                    model.SHeader2 = json[@"SHeader2"];
-                    model.avgvalue1 = json[@"avgvalue1"];
+                    model.SHeader2 = dict[@"SHeader2"];
+                    model.avgvalue1 = dict[@"avgvalue1"];
                     
                     model.avgvalue2 = dict[@"avgvalue2"];
                     model.is_testtime = dict[@"is_testtime"];

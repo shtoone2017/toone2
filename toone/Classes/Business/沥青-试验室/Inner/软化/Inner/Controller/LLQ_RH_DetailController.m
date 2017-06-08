@@ -48,18 +48,18 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_RH_Model * model =  [[LLQ_RH_Model alloc] init];
-                    model.SHeader2 = json[@"SHeader2"];
-                    model.SHeader3 = json[@"SHeader3"];
-                    model.SHeader4 = json[@"SHeader4"];
+                    model.SHeader2 = dict[@"SHeader2"];
+                    model.SHeader3 = dict[@"SHeader3"];
+                    model.SHeader4 = dict[@"SHeader4"];
                     model.is_testtime = dict[@"is_testtime"];
                     model.isQualified = dict[@"isQualified"];
                     model.header5 = dict[@"header5"];
                     model.header3 = dict[@"header3"];
                     
-                    model.avgvalue1 = json[@"avgvalue1"];
+                    model.avgvalue1 = dict[@"avgvalue1"];
                     model.biaoZhun1 = dict[@"biaoZhun1"];
-                    model.ruanhuadian1 = json[@"ruanhuadian1"];
-                    model.ruanhuadian1 = json[@"ruanhuadian1"];
+                    model.ruanhuadian1 = dict[@"ruanhuadian1"];
+                    model.ruanhuadian1 = dict[@"ruanhuadian1"];
                     
                     [datas addObject:model];
                 }

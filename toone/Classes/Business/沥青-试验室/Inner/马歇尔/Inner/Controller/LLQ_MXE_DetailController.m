@@ -14,19 +14,14 @@
 #import "LLQ_MXE_Detail_HeadCell.h"
 #import "LLQ_MXE_Detail_ChartCell.h"
 #import "LLQ_MXE_Detail_DataCell.h"
-#import "SGLineDIY.h"
 #import "WSLineChartView.h"
 #import "ChartPointModel.h"
 @interface LLQ_MXE_DetailController ()<UITableViewDataSource,UITableViewDelegate>
-//@property (nonatomic,strong) NSMutableArray * datas;
-//@property (nonatomic,strong) NSMutableArray * charts;
-@property (nonatomic,strong) NSMutableArray * heads;
-
 @property (strong, nonatomic)  UITableView *tb;
 @property (nonatomic,strong) LLQ_MXE_Detail_Head * headModel;
 @property (nonatomic,strong) LLQ_MXE_Detail_Data * dataModel;
 
-
+//@property (nonatomic,strong) NSMutableArray *datas;
 @property (nonatomic,strong) NSMutableArray * xMutableArr;
 @property (nonatomic,strong) NSMutableArray * yMutableArr;
 @property (nonatomic,assign) NSInteger currentLineNum;
@@ -38,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.currentLineNum = 0;
+    self.navigationItem.title = @"详情";
     [self loadData];
 }
 
@@ -46,7 +42,7 @@
 }
 -(void)loadUi{
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+    self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     self.tb.delegate = self;
     self.tb.dataSource = self;
     self.automaticallyAdjustsScrollViewInsets = YES;
@@ -89,16 +85,12 @@
     __weak typeof(self)  weakSelf = self;
     
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
-
+//        NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
-//            NSMutableArray * datas = [NSMutableArray array];
-//            NSMutableArray * charts = [NSMutableArray array];
-            
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_MXE_Detail_Data * data = [LLQ_MXE_Detail_Data modelWithDict:dict];
                     weakSelf.dataModel = data;
-                    
 //                    [datas addObject:data];
                 }
             }
@@ -112,7 +104,6 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_MXE_Detail_Chart * chart = [LLQ_MXE_Detail_Chart modelWithDict:dict];
-//                    [chartDatas addObject:chart];
                     NSArray *yArrs = [chart.f_YSKYLZ componentsSeparatedByString:@"&"];
                     NSArray *xArrs = [chart.f_YSKYXB componentsSeparatedByString:@"&"];
                     for (int i = 0; i<xArrs.count; i++)
@@ -125,14 +116,9 @@
                         
                     }
                     
-                    
-
                 }
             }
-            
 //            weakSelf.datas = datas;
-//            weakSelf.charts = weakSelf.chartsArr1;
-
             [weakSelf.tb reloadData];
             [Tools removeActivity];
         }
@@ -160,7 +146,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    if (section == 0) {
+        return 1;
+    }
+    if (section == 1) {
+//        return self.datas.count+1;
+        return 1;
+    }
+    if (section == 2) {
+        return 1;
+    }
+    return 0;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

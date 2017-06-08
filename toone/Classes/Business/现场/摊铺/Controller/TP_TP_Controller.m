@@ -65,7 +65,7 @@
     __weak __typeof(self) weakSelf = self;
     self.ListTableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
         weakSelf.pageNo = @"1";
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     self.ListTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -79,7 +79,7 @@
 
 -(void)loadUI{
     self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",self.pageNo];
-    self.chartLabel.text = @"速度走势图(m/min)";
+//    self.chartLabel.text = @"速度走势图(m/min)";
     
     self.firstBackView.backgroundColor = [UIColor snowColor];
     self.sjLabel.textColor = [UIColor blackColor];

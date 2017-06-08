@@ -14,6 +14,7 @@
 //#import "LLQ_CBCZ_Cell.h"
 #import "LLQ_YD_Model.h"
 #import "LLQ_ZR_Cell.h"
+#import "LLQ_YD_DetailController.h"
 @interface LLQ_YD_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -236,9 +237,9 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_YD_Model * model =  [[LLQ_YD_Model alloc] init];
-                    model.SHeader2 = json[@"SHeader2"];
-                    model.avgvalue1 = json[@"avgvalue1"];
-                    model.biaozhunzhi1 = json[@"biaozhunzhi1"];
+                    model.SHeader2 = dict[@"SHeader2"];
+                    model.avgvalue1 = dict[@"avgvalue1"];
+                    model.biaozhunzhi1 = dict[@"biaozhunzhi1"];
                     model.IS_TESTTIME = dict[@"IS_TESTTIME"];
                     model.isQualified = dict[@"isQualified"];
                     model.header5 = dict[@"header5"];
@@ -361,7 +362,9 @@
 //                         @"shenhe":model.shenhe,
 //                         @"zxdwshenhe":model.zxdwshenhe
                          };
-    
+    LLQ_YD_DetailController *mxeDetaVc = [[LLQ_YD_DetailController alloc] init];
+    mxeDetaVc.f_GUID = model.f_GUID;
+    [self.navigationController pushViewController:mxeDetaVc animated:YES];
     
 //    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

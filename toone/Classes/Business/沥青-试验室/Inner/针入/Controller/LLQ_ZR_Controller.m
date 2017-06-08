@@ -14,6 +14,7 @@
 //#import "LLQ_CBCZ_Cell.h"
 #import "LLQ_ZR_Cell.h"
 #import "LLQ_ZR_Model.h"
+#import "LLQ_ZR_DetailController.h"
 @interface LLQ_ZR_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -238,7 +239,7 @@
                 for (NSDictionary * dict in json[@"data"]) {
                     LLQ_ZR_Model * model =  [[LLQ_ZR_Model alloc] init];
 //                    model.dataDict = dict;
-                    model.SHeader2 = json[@"SHeader2"];
+                    model.SHeader2 = dict[@"SHeader2"];
                     model.is_testtime = dict[@"is_testtime"];
                     model.isQualified = dict[@"isQualified"];
                     model.header5 = dict[@"header5"];
@@ -246,10 +247,10 @@
                     model.f_GUID = dict[@"f_GUID"];
                     model.f_SBBH = dict[@"f_SBBH"];
                     
-                    model.avgvalue1 = json[@"avgvalue1"];
+                    model.avgvalue1 = dict[@"avgvalue1"];
                     model.biaoZhun1 = dict[@"biaoZhun1"];
                     model.biaoZhun2 = dict[@"biaoZhun2"];
-                    model.zhenrudu = json[@"zhenrudu"];
+                    model.zhenrudu = dict[@"zhenrudu"];
                     
                     [datas addObject:model];
                 }
@@ -367,7 +368,9 @@
 //                         @"shenhe":model.shenhe,
 //                         @"zxdwshenhe":model.zxdwshenhe
                          };
-    
+    LLQ_ZR_DetailController *mxeDetaVc = [[LLQ_ZR_DetailController alloc] init];
+    mxeDetaVc.f_GUID = model.f_GUID;
+    [self.navigationController pushViewController:mxeDetaVc animated:YES];
     
 //    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
