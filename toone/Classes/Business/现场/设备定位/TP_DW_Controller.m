@@ -43,7 +43,7 @@
 -(void)loadMap{
     ///地图需要v4.5.0及以上版本才必须要打开此选项（v4.5.0以下版本，需要手动配置info.plist）
     [AMapServices sharedServices].enableHTTPS = YES;
-    
+
     ///初始化地图
     MAMapView *mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
     mapView.delegate = self;

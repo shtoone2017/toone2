@@ -229,10 +229,16 @@
                 
             }else {
                 CGFloat xValue = [self.xValueArray[i] floatValue];
+                if (!xValue) {
+                    return;
+                }
                 CGFloat nextXValue = [self.xValueArray[i+1] floatValue];
                 
                 
                 NSNumber *startValue = self.yValueArray[i];
+                if (!startValue) {
+                    return;
+                }
                 NSNumber *endValue = self.yValueArray[i+1];
                 CGFloat chartHeight = self.frame.size.height - textSize.height - 5 - topMargin;
                 
