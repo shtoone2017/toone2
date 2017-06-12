@@ -34,7 +34,6 @@
         NSMutableArray * datas = [NSMutableArray array];
         //业主：1  标段：2  项目部：3  拌合站：5
         if ([json[@"success"] boolValue]) {
-            
             if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"1"]) {
                 if ([json[@"userGroup"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary *dict in json[@"userGroup"]) {
@@ -81,7 +80,7 @@
                         
                     }
                 }
-                
+                if (![self.modelType isEqualToString:@"9"]) {
                 if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"bhz"]) {
                         SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
@@ -105,6 +104,7 @@
                         
                     }
                 }
+                }//试验室
                 
             }//1
             if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"3"]) {
@@ -167,7 +167,7 @@
                     }
                     
                 }
-                
+                if ([self.modelType isEqualToString:@"9"]) {
                 if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"bhz"]) {
                         SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
@@ -189,7 +189,8 @@
                     }
                 }
                 
-            }//2||5||6            
+            }//2||5||6
+            }//试验室
             
         }//success
         

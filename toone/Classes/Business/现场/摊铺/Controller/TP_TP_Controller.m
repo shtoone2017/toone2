@@ -128,9 +128,11 @@
 #pragma mark - 网络请求
 -(void)reloadData {
     NSString *departType = [UserDefaultsSetting_SW shareSetting].userType;
+    NSString *biaoshi = [UserDefaultsSetting_SW shareSetting].biaoshi;
+    self.biaoshiid = biaoshi;
     NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString *urlString =  [NSString stringWithFormat:_baseUrlString,self.shebeibianhao,startTimeStamp,endTimeStamp,self.maxPageItems,self.pageNo,departType,self.biaoshiid];
+    NSString *urlString =  [NSString stringWithFormat:_baseUrlString,self.shebeibianhao,startTimeStamp,endTimeStamp,self.maxPageItems,self.pageNo,departType,biaoshi];
    
     __weak typeof(self)  weakSelf = self;
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {

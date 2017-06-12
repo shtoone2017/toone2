@@ -79,6 +79,8 @@
 -(void)loadData{
    // getMachineList_2
     NSString * departType = [UserDefaultsSetting_SW shareSetting].userType;
+    NSString *biaoshi = [UserDefaultsSetting_SW shareSetting].biaoshi;
+    self.biaoshiid = biaoshi;
     NSString * urlString = machineList;
     NSDictionary * dict = @{@"departType":departType,
                             @"biaoshiid":self.biaoshiid,
