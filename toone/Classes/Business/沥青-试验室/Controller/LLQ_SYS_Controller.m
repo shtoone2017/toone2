@@ -112,26 +112,26 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString * departType;
-//    switch ([self.condition.departType intValue]) {
-//        case 1:
-//            departType = @"2";
-//            break;
-//        case 2:
-//            departType = @"3";
-//            break;
-//        case 3:
-//        case 5:
-//            departType = @"5";
-//            break;
-//        default:
-//            departType =@"1";
-//            break;
-//    }
+    NSString * departType;
+    switch ([self.condition.departType intValue]) {
+        case 1:
+            departType = @"2";
+            break;
+        case 2:
+            departType = @"3";
+            break;
+        case 3:
+        case 5:
+            departType = @"5";
+            break;
+        default:
+            departType =@"1";
+            break;
+    }
     
     LLQ_SYS_Model * model = self.datas[indexPath.row];
     NSDictionary * dict =@{@"biaoshiid":model.bsid,
-                           @"departType":[UserDefaultsSetting_SW shareSetting].userType//userType
+                           @"departType":departType//[UserDefaultsSetting_SW shareSetting].userType//userType
                            };
     [self performSegueWithIdentifier:@"LLQ_SYS_InnerController" sender:dict];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

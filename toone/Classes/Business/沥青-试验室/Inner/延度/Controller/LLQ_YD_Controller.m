@@ -383,7 +383,7 @@
     
     //2.
     Exp5View * e = [[Exp5View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 294);
+    e.frame = CGRectMake(0, 64+36, Screen_w, 195);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
 //        NSLog(@"ExpButtonType~~~ %d buttonTag~~~~%d",type,buttonTag);
