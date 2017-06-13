@@ -80,7 +80,7 @@
                         
                     }
                 }
-                if (![self.modelType isEqualToString:@"9"]) {
+                if (![self.modelType isEqualToString:@"99"]) {
                 if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"bhz"]) {
                         SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
@@ -167,7 +167,7 @@
                     }
                     
                 }
-                if ([self.modelType isEqualToString:@"9"]) {
+                if (![self.modelType isEqualToString:@"99"]) {
                 if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"bhz"]) {
                         SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
