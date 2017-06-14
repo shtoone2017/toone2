@@ -80,7 +80,7 @@
                         
                     }
                 }
-                if (![self.modelType isEqualToString:@"99"]) {
+//                if (![self.modelType isEqualToString:@"99"]) {
                 if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"bhz"]) {
                         SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
@@ -104,7 +104,7 @@
                         
                     }
                 }
-                }//试验室
+//                }//试验室
                 
             }//1
             if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"3"]) {
@@ -167,7 +167,7 @@
                     }
                     
                 }
-                if (![self.modelType isEqualToString:@"99"]) {
+//                if (![self.modelType isEqualToString:@"99"]) {
                 if ([json[@"bhz"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"bhz"]) {
                         SW_ZZJG_Data * bhz = [[SW_ZZJG_Data alloc] init];
@@ -190,7 +190,7 @@
                 }
                 
             }//2||5||6
-            }//试验室
+//            }//试验室
             
         }//success
         

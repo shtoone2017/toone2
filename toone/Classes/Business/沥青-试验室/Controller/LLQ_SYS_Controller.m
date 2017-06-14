@@ -197,7 +197,8 @@
     if ([vc isKindOfClass:[SW_ZZJG_Controller class]]) {
         SW_ZZJG_Controller * controller = vc;
         __weak typeof(self) weakSelf = self;
-        controller.modelType = @"99";
+        controller.modelType = [NSString stringWithFormat:@"%d,%d,%d,%d",9,10,11,12];
+        
         controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
             weakSelf.condition = data;
             NSString * zjjg = FormatString(@"组织机构 : ", data.name);
