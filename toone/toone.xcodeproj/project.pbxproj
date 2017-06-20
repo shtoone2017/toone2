@@ -70,6 +70,7 @@
 		42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */; };
 		42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */; };
 		422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */; };
+		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
 		42A8872D1EDFEBBC0010B053 /* TP_CL_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A886F11EDFEBBC0010B053 /* TP_CL_Cell.xib */; };
@@ -112,7 +113,6 @@
 		42A887701EDFF4CB0010B053 /* SingleLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887671EDFF4CB0010B053 /* SingleLocationViewController.m */; };
 		42A887751EE003140010B053 /* MySYSSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887731EE003140010B053 /* MySYSSegmentedControl.m */; };
 		42A887761EE003140010B053 /* MySYSSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A887741EE003140010B053 /* MySYSSegmentedControl.xib */; };
-		42A887931EE2596E0010B053 /* LLQ_MXR_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */; };
 		42A887941EE2596E0010B053 /* LLQ_SYS_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */; };
 		42A887951EE2596E0010B053 /* LLQ_SYS_InnerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887921EE2596E0010B053 /* LLQ_SYS_InnerController.m */; };
 		42A887A81EE29E610010B053 /* LLQ_MXE_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A887A71EE29E610010B053 /* LLQ_MXE_Model.m */; };
@@ -708,6 +708,8 @@
 		42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_YD_DetailController.xib; sourceTree = "<group>"; };
 		422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SB_Controller.h; sourceTree = "<group>"; };
 		422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SB_Controller.m; sourceTree = "<group>"; };
+		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
+		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
 		42A886ED1EDFEBBC0010B053 /* TP_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TP_Controller.m; sourceTree = "<group>"; };
 		42A886EF1EDFEBBC0010B053 /* TP_CL_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_CL_Cell.h; sourceTree = "<group>"; };
@@ -779,8 +781,6 @@
 		42A887721EE003140010B053 /* MySYSSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySYSSegmentedControl.h; sourceTree = "<group>"; };
 		42A887731EE003140010B053 /* MySYSSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySYSSegmentedControl.m; sourceTree = "<group>"; };
 		42A887741EE003140010B053 /* MySYSSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySYSSegmentedControl.xib; sourceTree = "<group>"; };
-		42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = ../../../Controller/LLQ_MXE_Controller.h; sourceTree = "<group>"; };
-		42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXR_Controller.m; path = ../../../Controller/LLQ_MXR_Controller.m; sourceTree = "<group>"; };
 		42A8878F1EE2596E0010B053 /* LLQ_SYS_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_Controller.h; sourceTree = "<group>"; };
 		42A887901EE2596E0010B053 /* LLQ_SYS_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SYS_Controller.m; sourceTree = "<group>"; };
 		42A887911EE2596E0010B053 /* LLQ_SYS_InnerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SYS_InnerController.h; sourceTree = "<group>"; };
@@ -2142,8 +2142,8 @@
 		42A8879A1EE26C060010B053 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				42A8878D1EE2596E0010B053 /* LLQ_MXE_Controller.h */,
-				42A8878E1EE2596E0010B053 /* LLQ_MXR_Controller.m */,
+				4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */,
+				4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5114,7 +5114,6 @@
 				D2E838921EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.m in Sources */,
 				D20064A51DFF86800021E293 /* NoCopyTextField.m in Sources */,
 				187C73031E30B1810072F33A /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
-				42A887931EE2596E0010B053 /* LLQ_MXR_Controller.m in Sources */,
 				D219441F1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D200649A1DFF86800021E293 /* NSArray+Log.m in Sources */,
 				42A887B11EE2C2560010B053 /* LLQ_ZR_Controller.m in Sources */,
@@ -5273,6 +5272,7 @@
 				187C72FB1E30B1810072F33A /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				187C730C1E30B1810072F33A /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				D21943971E810FE200FC0B38 /* LLQ_LSSJ_Controller.m in Sources */,
+				4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */,
 				8CBD72F71E07B1D200A0C991 /* HNT_CBCZ_Detail_HeadMsg.m in Sources */,
 				42AC72141E30C576007D8F57 /* ViewController+MASAdditions.m in Sources */,
 				187C730A1E30B1810072F33A /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
@@ -5488,10 +5488,10 @@
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gdrb;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94146984-ce84-454d-965a-9a60d6fac28d";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_gdrb;
+				PROVISIONING_PROFILE = "047cb7df-d281-4c01-a90a-0d50802ecad2";
+				PROVISIONING_PROFILE_SPECIFIER = profile_distuibution_hnym;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
@@ -5511,10 +5511,10 @@
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gdrb;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94146984-ce84-454d-965a-9a60d6fac28d";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_gdrb;
+				PROVISIONING_PROFILE = "047cb7df-d281-4c01-a90a-0d50802ecad2";
+				PROVISIONING_PROFILE_SPECIFIER = profile_distuibution_hnym;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
