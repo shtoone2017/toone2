@@ -2121,7 +2121,8 @@
 				TargetAttributes = {
 					D20062F81DFF85CB0021E293 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = MWKKG6D7EX;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -2613,9 +2614,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2623,7 +2624,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
@@ -2635,18 +2636,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/apple/Desktop/toone2/toone/Classes/Business/ToonePrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.zgjj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "258f883c-0fc4-438f-a9bc-d7d12454e55d";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_zgjj;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Desktop/toone2/toone/Classes/Business/Toone-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
