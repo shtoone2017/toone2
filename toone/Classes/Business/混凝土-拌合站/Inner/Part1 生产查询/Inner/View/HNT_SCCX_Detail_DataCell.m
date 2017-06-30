@@ -34,5 +34,26 @@
     self.shiji.text = data.shiji;//  实际值
     self.wuchalv.text = data.wuchalv;//  误差率
     self.wuchazhi.text = data.wuchazhi;//  误差值
+    
+    if ([data.cbGrade intValue]==0 || EqualToString(data.cbGrade, @"")) {//无
+//        self.img.width = 0;
+//        self.img.image = nil;
+    }
+    if ([data.cbGrade intValue]==1 || [data.cbGrade intValue]==4) {//初
+//            self.img.image = [UIImage imageNamed:@"zhengchao.png"];
+        self.wuchalv.textColor = [UIColor blueColor];
+        self.wuchazhi.textColor = [UIColor blueColor];
+    }
+    if ([data.cbGrade intValue]==2 || [data.cbGrade intValue]==5){//中
+        self.wuchalv.textColor = [UIColor orangeColor];
+        self.wuchazhi.textColor = [UIColor orangeColor];
+    }
+    if ([data.cbGrade intValue]==3 || [data.cbGrade intValue]==6) {
+        self.wuchalv.textColor = [UIColor redColor];
+        self.wuchazhi.textColor = [UIColor redColor];
+    }
+    
+
+    
 }
 @end
