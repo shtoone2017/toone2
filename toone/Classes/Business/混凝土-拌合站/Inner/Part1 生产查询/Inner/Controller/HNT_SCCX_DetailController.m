@@ -11,12 +11,14 @@
 #import "HNT_SCCX_Detail_HeadMsgCell.h"
 #import "HNT_SCCX_Detail_HeadMsg.h"
 #import "HNT_SCCX_Detail_Data.h"
+#import "HNT_SCCX_Detail_HeadModel.h"
 
 
 @interface HNT_SCCX_DetailController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tb;
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) HNT_SCCX_Detail_HeadMsg * headMsg;
+@property (nonatomic,strong) HNT_SCCX_Detail_HeadModel * headModel;
 @end
 
 @implementation HNT_SCCX_DetailController
@@ -52,6 +54,10 @@
                     HNT_SCCX_Detail_HeadMsg * headMsg = [HNT_SCCX_Detail_HeadMsg modelWithDict:json[@"headMsg"]];
                     weakSelf.headMsg = headMsg;
                 }
+                if ([json[@"hbfield"] isKindOfClass:[NSDictionary class]]) {
+                    HNT_SCCX_Detail_HeadModel * headModel = [HNT_SCCX_Detail_HeadModel modelWithDict:json[@"hbfield"]];
+                    weakSelf.headModel = headModel;
+                }
                 
                 //
                 weakSelf.datas = datas;
@@ -86,6 +92,7 @@
     if (indexPath.row == 0) {
         HNT_SCCX_Detail_HeadMsgCell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_SCCX_Detail_HeadMsgCell"];
         cell.headMsg = self.headMsg;
+        cell.headModel = self.headModel;
         return cell;
     }else{
         

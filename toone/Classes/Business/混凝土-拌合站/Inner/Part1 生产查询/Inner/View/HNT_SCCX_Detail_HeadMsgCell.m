@@ -9,6 +9,7 @@
 #import "HNT_SCCX_Detail_HeadMsgCell.h"
 #import "HNT_SCCX_Detail_HeadMsg.h"
 #import "HNT_CBCZ_Detail_HeadMsg.h"
+#import "HNT_SCCX_Detail_HeadModel.h"
 @interface HNT_SCCX_Detail_HeadMsgCell()
 @property (nonatomic,weak) IBOutlet UILabel  *  banhezhanminchen ;//  拌合站名称
 @property (nonatomic,weak) IBOutlet UILabel  *  chaozuozhe ;//  操作者
@@ -18,6 +19,9 @@
 @property (nonatomic,weak) IBOutlet UILabel  *  gongdanhao ;//  工单号
 @property (nonatomic,weak) IBOutlet UILabel  *  gujifangshu ;//  估计方数
 @property (nonatomic,weak) IBOutlet UILabel  *  jiaobanshijian ;//  搅拌时间
+@property (weak, nonatomic) IBOutlet UILabel *jbsjLabel;//可变搅拌
+
+
 @property (nonatomic,weak) IBOutlet UILabel  *  jiaozuobuwei ;//  浇筑部位
 @property (nonatomic,weak) IBOutlet UILabel  *  peifanghao ;//  配方号  -->施工配比编号
 @property (nonatomic,weak) IBOutlet UILabel  *  qiangdudengji ;//  强度等级
@@ -38,6 +42,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+-(void)setHeadModel:(HNT_SCCX_Detail_HeadModel *)headModel {
+    _headModel = headModel;
+    self.jbsjLabel.text = [NSString stringWithFormat:@"%@:\t\t",headModel.jiaobanshijian];
 }
 -(void)setHeadMsg:(HNT_SCCX_Detail_HeadMsg *)headMsg{
     self.banhezhanminchen.text = headMsg.banhezhanminchen ;//  拌合站名称
