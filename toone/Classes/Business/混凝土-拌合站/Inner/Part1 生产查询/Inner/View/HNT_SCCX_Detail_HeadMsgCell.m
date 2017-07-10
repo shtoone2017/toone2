@@ -36,6 +36,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+//    self.jbsjLabel.textAlignment = NSTextAlignmentRight;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,8 +45,9 @@
     // Configure the view for the selected state
 }
 -(void)setHeadModel:(HNT_SCCX_Detail_HeadModel *)headModel {
+//    self.jbsjLabel.textAlignment = NSTextAlignmentRight;
     _headModel = headModel;
-    self.jbsjLabel.text = [NSString stringWithFormat:@"%@:\t\t",headModel.jiaobanshijian];
+    self.jbsjLabel.text = [NSString stringWithFormat:@"%@:\t",headModel.jiaobanshijian];
 }
 -(void)setHeadMsg:(HNT_SCCX_Detail_HeadMsg *)headMsg{
     self.banhezhanminchen.text = headMsg.banhezhanminchen ;//  拌合站名称
