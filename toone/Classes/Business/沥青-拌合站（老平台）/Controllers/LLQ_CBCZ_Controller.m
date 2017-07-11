@@ -24,13 +24,13 @@
 - (IBAction)titleButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *button1                      ;//初级
 @property (weak, nonatomic) IBOutlet UIButton *button2                      ;//中级
-@property (weak, nonatomic) IBOutlet UIButton *button3                      ;//高级
+//@property (weak, nonatomic) IBOutlet UIButton *button3                      ;//高级
 
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView1                ;//初级
 @property (weak, nonatomic) IBOutlet UITableView *tableView2                ;//中级
-@property (weak, nonatomic) IBOutlet UITableView *tableView3                ;//高级
+//@property (weak, nonatomic) IBOutlet UITableView *tableView3                ;//高级
 
 //******************************************************************
 @property (nonatomic,strong) NSMutableArray * datas1;
@@ -42,7 +42,7 @@
 @property (nonatomic,copy) NSString * pageNo                                ;//当前页数
 @property (nonatomic,copy) NSString * maxPageItems                          ;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao                         ;//设备编号
-@property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
+@property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji==两级显示中级和高级数据
 @property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
 
 
@@ -55,8 +55,11 @@
 
 @implementation LLQ_CBCZ_Controller
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.button3.hidden = YES;
+//    self.tableView3.hidden = YES;
     {//设置初始请求条件
         self.pageNo1 = @"1";
         self.pageNo2 = @"1";
@@ -78,14 +81,14 @@
 }
 
 -(void)loadUI{
-    self.ContainerWidth.constant = Screen_w*3;
+    self.ContainerWidth.constant = Screen_w*2;
     self.title_sc.backgroundColor = [UIColor snowColor];
     //self.searchButton.backgroundColor = [UIColor snowColor];//black75PercentColor
     
     
     [self registerTableView:self.tableView1];
     [self registerTableView:self.tableView2];
-    [self registerTableView:self.tableView3];
+//    [self registerTableView:self.tableView3];
 
 }
 -(void)registerTableView:(UITableView*)tableView{
@@ -99,9 +102,9 @@
             case 2:
                 weakSelf.pageNo2 = @"1";
                 break;
-            case 3:
-                weakSelf.pageNo3 = @"1";
-                break;
+//            case 3:
+//                weakSelf.pageNo3 = @"1";
+//                break;
             default:
                 break;
         }
@@ -122,10 +125,10 @@
                 weakSelf.pageNo = weakSelf.pageNo2;
                 //NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
                 break;
-            case 3:
-                weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
-                weakSelf.pageNo = weakSelf.pageNo3;
-                break;
+//            case 3:
+//                weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
+//                weakSelf.pageNo = weakSelf.pageNo3;
+//                break;
             default:
                 break;
         }
@@ -161,13 +164,13 @@
                 [self loadData];
             }
             break;
-        case 3://高级
-            self.pageNo = self.pageNo3;
-            self.chaobiaolx =@"3";
-            if(self.datas3==nil) {
-                [self loadData];
-                [self loadData];
-            }
+//        case 3://高级
+//            self.pageNo = self.pageNo3;
+//            self.chaobiaolx =@"3";
+//            if(self.datas3==nil) {
+//                [self loadData];
+//                [self loadData];
+//            }
             break;
         default:
             break;
@@ -177,10 +180,10 @@
 -(void)addTitleButtonAnimaiton:(UIButton*)sender{
     [self.button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [self.button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.button1 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     self.button2 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
-    self.button3 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
+//    self.button3 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     
     [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     sender.titleLabel.font = [UIFont systemFontOfSize:14.0f];
@@ -281,19 +284,19 @@
                     [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
                 }
                 break;
-            case 3:
-                if ([weakSelf.pageNo3 intValue] == 1) {
-                    weakSelf.datas3 = datas;
-                }else{
-                    [weakSelf.datas3 addObjectsFromArray:datas];
-                }
-                [weakSelf.tableView3 reloadData];
-                [weakSelf.tableView3.mj_header endRefreshing];
-                [weakSelf.tableView3.mj_footer endRefreshing];
-                if (weakSelf.datas3.count < ([weakSelf.pageNo3 intValue]* [weakSelf.maxPageItems intValue])) {
-                    [weakSelf.tableView3.mj_footer endRefreshingWithNoMoreData];
-                }
-                break;
+//            case 3:
+//                if ([weakSelf.pageNo3 intValue] == 1) {
+//                    weakSelf.datas3 = datas;
+//                }else{
+//                    [weakSelf.datas3 addObjectsFromArray:datas];
+//                }
+//                [weakSelf.tableView3 reloadData];
+//                [weakSelf.tableView3.mj_header endRefreshing];
+//                [weakSelf.tableView3.mj_footer endRefreshing];
+//                if (weakSelf.datas3.count < ([weakSelf.pageNo3 intValue]* [weakSelf.maxPageItems intValue])) {
+//                    [weakSelf.tableView3.mj_footer endRefreshingWithNoMoreData];
+//                }
+//                break;
         }
     } failure:^(NSError *error) {
         
@@ -308,9 +311,9 @@
     if (tableView == self.tableView2) {
         return self.datas2.count;
     }
-    if (tableView == self.tableView3) {
-        return self.datas3.count;
-    }
+//    if (tableView == self.tableView3) {
+//        return self.datas3.count;
+//    }
     return 0;
 }
 
@@ -331,14 +334,14 @@
 //        [cell setModel:model indexPath:indexPath];
         return cell;
     }
-    if (tableView == self.tableView3) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
-        cell.currentIndexPath = indexPath;
-        LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
-        cell.model = model;
-//        [cell setModel:model indexPath:indexPath];
-        return cell;
-    }
+//    if (tableView == self.tableView3) {
+//        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+//        cell.currentIndexPath = indexPath;
+//        LLQ_CBCZ_Model * model = self.datas3[indexPath.row];
+//        cell.model = model;
+////        [cell setModel:model indexPath:indexPath];
+//        return cell;
+//    }
     return nil;
 }
 
@@ -366,9 +369,9 @@
     if (tableView == self.tableView2) {
         return [self rowHeightWithModel:self.datas2[indexPath.row]];
     }
-    if (tableView == self.tableView3) {
-        return [self rowHeightWithModel:self.datas3[indexPath.row]];
-    }
+//    if (tableView == self.tableView3) {
+//        return [self rowHeightWithModel:self.datas3[indexPath.row]];
+//    }
     return 0.1;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -379,9 +382,9 @@
     if (tableView == self.tableView2) {
         model = self.datas2[indexPath.row];
     }
-    if (tableView == self.tableView3) {
-        model = self.datas3[indexPath.row];
-    }
+//    if (tableView == self.tableView3) {
+//        model = self.datas3[indexPath.row];
+//    }
     NSDictionary * dic=@{@"bianhao":model.bianhao,
                          @"shebeibianhao":model.sbbh,
                          @"chuli":model.chuli,

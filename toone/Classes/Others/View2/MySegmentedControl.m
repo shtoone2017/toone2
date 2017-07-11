@@ -37,6 +37,11 @@
     [self.button2 setTitle:@"数据统计" forState:UIControlStateNormal];
     [self.button3 setTitle:@"待处置报警" forState:UIControlStateNormal];
 }
+-(void)switchToSYS{
+    [self.button1 setTitle:@"延度" forState:UIControlStateNormal];
+    [self.button2 setTitle:@"软化" forState:UIControlStateNormal];
+    [self.button3 setTitle:@"针入" forState:UIControlStateNormal];
+}
 - (IBAction)buttonClick:(UIButton *)sender {
     self.button1.backgroundColor = BLUECOLOR;
     self.button2.backgroundColor = BLUECOLOR;

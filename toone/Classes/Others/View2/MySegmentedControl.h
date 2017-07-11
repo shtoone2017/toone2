@@ -17,4 +17,5 @@ typedef  void (^SegBlock_t)(int  tag);
 
 -(void)switchToBHZ;
 -(void)switchToLQBHZ;
+-(void)switchToSYS;
 @end

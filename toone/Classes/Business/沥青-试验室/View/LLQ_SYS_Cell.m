@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *departNameLabel;//工程名称
 
-@property (weak, nonatomic) IBOutlet UILabel *countmxe;//马
+//@property (weak, nonatomic) IBOutlet UILabel *countmxe;//马
 @property (weak, nonatomic) IBOutlet UILabel *countrhd;//软
 @property (weak, nonatomic) IBOutlet UILabel *countyd;//延度
 @property (weak, nonatomic) IBOutlet UILabel *countzrd;//针入
@@ -32,7 +32,7 @@
 
 -(void)setModel:(LLQ_SYS_Model *)model{
     self.departNameLabel.text = model.banhezhanminchen;
-    self.countmxe.text = model.countmxe;
+//    self.countmxe.text = model.countmxe;
     self.countrhd.text = model.countrhd;
     self.countyd.text = model.countyd;
     self.countzrd.text = model.countzrd;
