@@ -63,14 +63,15 @@
     self.totalFangliangLabel.text = model.totalFangliang;
     self.totalPanshuLabel.text = model.totalPanshu;
     //初级
-    self.cbpanshuLabel.text = model.cbpanshu;
-    self.cblvLabel.text = model.cblv;
-    self.cczpanshuLabel.text = model.cczpanshu;
-    self.czlvLabel.text = model.czlv;
-//    self.cbpanshuLabel.text = model.mcbpanshu;
-//    self.cblvLabel.text = model.mcblv;
-//    self.cczpanshuLabel.text = model.mczpanshu;
-//    self.czlvLabel.text = model.mczlv;
+//    self.cbpanshuLabel.text = model.cbpanshu;
+//    self.cblvLabel.text = model.cblv;
+//    self.cczpanshuLabel.text = model.cczpanshu;
+//    self.czlvLabel.text = model.czlv;
+        /**两级取中级**/
+    self.cbpanshuLabel.text = model.mcbpanshu;
+    self.cblvLabel.text = model.mcblv;
+    self.cczpanshuLabel.text = model.mczpanshu;
+    self.czlvLabel.text = model.mczlv;
     //中级
     self.mcbpanshuLabel.text = model.mcbpanshu;
     self.mcblvLabel.text = model.mcblv;

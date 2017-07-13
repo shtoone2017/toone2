@@ -19,6 +19,8 @@
 - (IBAction)click:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
 @property (weak, nonatomic) IBOutlet UIView *clView;//出料
+@property (weak, nonatomic) IBOutlet UIView *dwView;//定位
+@property (weak, nonatomic) IBOutlet UIView *zyView;//终压
 
 @property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @end
@@ -28,6 +30,8 @@
     [super viewWillAppear:animated];
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
     _clView.hidden = YES;
+    _dwView.hidden = YES;
+    _zyView.hidden = YES;
 //    
 //    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
 //    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
