@@ -18,7 +18,7 @@
 @interface TP_Controller ()
 - (IBAction)click:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
-@property (weak, nonatomic) IBOutlet UIView *clView;
+@property (weak, nonatomic) IBOutlet UIView *clView;//出料
 
 @property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @end

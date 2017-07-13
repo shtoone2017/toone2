@@ -70,6 +70,19 @@
 		42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */; };
 		42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */; };
 		422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */; };
+		427278EE1F170662003AB9FA /* SGBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278D41F170662003AB9FA /* SGBar.m */; };
+		427278EF1F170662003AB9FA /* SGBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278D61F170662003AB9FA /* SGBarChart.m */; };
+		427278F01F170662003AB9FA /* SGBarSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278D81F170662003AB9FA /* SGBarSuper.m */; };
+		427278F11F170662003AB9FA /* SGChartZBX.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278DB1F170662003AB9FA /* SGChartZBX.m */; };
+		427278F21F170662003AB9FA /* SGChartZBX_X.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278DD1F170662003AB9FA /* SGChartZBX_X.m */; };
+		427278F31F170662003AB9FA /* SGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278DF1F170662003AB9FA /* SGConst.m */; };
+		427278F41F170662003AB9FA /* SGLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E11F170662003AB9FA /* SGLine.m */; };
+		427278F51F170662003AB9FA /* SGLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E31F170662003AB9FA /* SGLineChart.m */; };
+		427278F61F170662003AB9FA /* SGLineDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E51F170662003AB9FA /* SGLineDIY.m */; };
+		427278F71F170662003AB9FA /* SGLineX.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E71F170662003AB9FA /* SGLineX.m */; };
+		427278F81F170662003AB9FA /* SGPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E91F170662003AB9FA /* SGPieChart.m */; };
+		427278F91F170662003AB9FA /* SGSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278EB1F170662003AB9FA /* SGSign.m */; };
+		427278FA1F170662003AB9FA /* Y.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278ED1F170662003AB9FA /* Y.m */; };
 		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -217,19 +230,6 @@
 		42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC718C1E30C3B6007D8F57 /* Exp8View.m */; };
 		42AC71971E30C3F0007D8F57 /* MyInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71941E30C3F0007D8F57 /* MyInputController.m */; };
 		42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71961E30C3F0007D8F57 /* MyTableViewController.m */; };
-		42AC71B81E30C423007D8F57 /* SGBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC719B1E30C423007D8F57 /* SGBar.m */; };
-		42AC71B91E30C423007D8F57 /* SGBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC719D1E30C423007D8F57 /* SGBarChart.m */; };
-		42AC71BA1E30C423007D8F57 /* SGBarSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC719F1E30C423007D8F57 /* SGBarSuper.m */; };
-		42AC71BB1E30C423007D8F57 /* SGChartZBX.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71A21E30C423007D8F57 /* SGChartZBX.m */; };
-		42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71A41E30C423007D8F57 /* SGChartZBX_X.m */; };
-		42AC71BD1E30C423007D8F57 /* SGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71A61E30C423007D8F57 /* SGConst.m */; };
-		42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71A81E30C423007D8F57 /* SGLine.m */; };
-		42AC71BF1E30C423007D8F57 /* SGLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71AA1E30C423007D8F57 /* SGLineChart.m */; };
-		42AC71C01E30C423007D8F57 /* SGLineDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71AC1E30C423007D8F57 /* SGLineDIY.m */; };
-		42AC71C11E30C423007D8F57 /* SGLineX.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71AE1E30C423007D8F57 /* SGLineX.m */; };
-		42AC71C21E30C423007D8F57 /* SGPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71B01E30C423007D8F57 /* SGPieChart.m */; };
-		42AC71C31E30C423007D8F57 /* SGSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71B21E30C423007D8F57 /* SGSign.m */; };
-		42AC71C41E30C423007D8F57 /* Y.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71B41E30C423007D8F57 /* Y.m */; };
 		42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71B71E30C423007D8F57 /* XFSegementView.m */; };
 		42AC72041E30C576007D8F57 /* NodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71C91E30C576007D8F57 /* NodeViewController.m */; };
 		42AC72051E30C576007D8F57 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC71CC1E30C576007D8F57 /* NetworkTool.m */; };
@@ -708,6 +708,33 @@
 		42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_YD_DetailController.xib; sourceTree = "<group>"; };
 		422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SB_Controller.h; sourceTree = "<group>"; };
 		422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SB_Controller.m; sourceTree = "<group>"; };
+		427278D31F170662003AB9FA /* SGBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBar.h; sourceTree = "<group>"; };
+		427278D41F170662003AB9FA /* SGBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBar.m; sourceTree = "<group>"; };
+		427278D51F170662003AB9FA /* SGBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarChart.h; sourceTree = "<group>"; };
+		427278D61F170662003AB9FA /* SGBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarChart.m; sourceTree = "<group>"; };
+		427278D71F170662003AB9FA /* SGBarSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarSuper.h; sourceTree = "<group>"; };
+		427278D81F170662003AB9FA /* SGBarSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarSuper.m; sourceTree = "<group>"; };
+		427278D91F170662003AB9FA /* SGChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChart.h; sourceTree = "<group>"; };
+		427278DA1F170662003AB9FA /* SGChartZBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX.h; sourceTree = "<group>"; };
+		427278DB1F170662003AB9FA /* SGChartZBX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX.m; sourceTree = "<group>"; };
+		427278DC1F170662003AB9FA /* SGChartZBX_X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX_X.h; sourceTree = "<group>"; };
+		427278DD1F170662003AB9FA /* SGChartZBX_X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX_X.m; sourceTree = "<group>"; };
+		427278DE1F170662003AB9FA /* SGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConst.h; sourceTree = "<group>"; };
+		427278DF1F170662003AB9FA /* SGConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConst.m; sourceTree = "<group>"; };
+		427278E01F170662003AB9FA /* SGLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLine.h; sourceTree = "<group>"; };
+		427278E11F170662003AB9FA /* SGLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLine.m; sourceTree = "<group>"; };
+		427278E21F170662003AB9FA /* SGLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineChart.h; sourceTree = "<group>"; };
+		427278E31F170662003AB9FA /* SGLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineChart.m; sourceTree = "<group>"; };
+		427278E41F170662003AB9FA /* SGLineDIY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineDIY.h; sourceTree = "<group>"; };
+		427278E51F170662003AB9FA /* SGLineDIY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineDIY.m; sourceTree = "<group>"; };
+		427278E61F170662003AB9FA /* SGLineX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineX.h; sourceTree = "<group>"; };
+		427278E71F170662003AB9FA /* SGLineX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineX.m; sourceTree = "<group>"; };
+		427278E81F170662003AB9FA /* SGPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPieChart.h; sourceTree = "<group>"; };
+		427278E91F170662003AB9FA /* SGPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPieChart.m; sourceTree = "<group>"; };
+		427278EA1F170662003AB9FA /* SGSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSign.h; sourceTree = "<group>"; };
+		427278EB1F170662003AB9FA /* SGSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSign.m; sourceTree = "<group>"; };
+		427278EC1F170662003AB9FA /* Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y.h; sourceTree = "<group>"; };
+		427278ED1F170662003AB9FA /* Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y.m; sourceTree = "<group>"; };
 		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
 		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -965,33 +992,6 @@
 		42AC71941E30C3F0007D8F57 /* MyInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInputController.m; sourceTree = "<group>"; };
 		42AC71951E30C3F0007D8F57 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		42AC71961E30C3F0007D8F57 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
-		42AC719A1E30C423007D8F57 /* SGBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBar.h; sourceTree = "<group>"; };
-		42AC719B1E30C423007D8F57 /* SGBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBar.m; sourceTree = "<group>"; };
-		42AC719C1E30C423007D8F57 /* SGBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarChart.h; sourceTree = "<group>"; };
-		42AC719D1E30C423007D8F57 /* SGBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarChart.m; sourceTree = "<group>"; };
-		42AC719E1E30C423007D8F57 /* SGBarSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarSuper.h; sourceTree = "<group>"; };
-		42AC719F1E30C423007D8F57 /* SGBarSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarSuper.m; sourceTree = "<group>"; };
-		42AC71A01E30C423007D8F57 /* SGChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChart.h; sourceTree = "<group>"; };
-		42AC71A11E30C423007D8F57 /* SGChartZBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX.h; sourceTree = "<group>"; };
-		42AC71A21E30C423007D8F57 /* SGChartZBX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX.m; sourceTree = "<group>"; };
-		42AC71A31E30C423007D8F57 /* SGChartZBX_X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX_X.h; sourceTree = "<group>"; };
-		42AC71A41E30C423007D8F57 /* SGChartZBX_X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX_X.m; sourceTree = "<group>"; };
-		42AC71A51E30C423007D8F57 /* SGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConst.h; sourceTree = "<group>"; };
-		42AC71A61E30C423007D8F57 /* SGConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConst.m; sourceTree = "<group>"; };
-		42AC71A71E30C423007D8F57 /* SGLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLine.h; sourceTree = "<group>"; };
-		42AC71A81E30C423007D8F57 /* SGLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLine.m; sourceTree = "<group>"; };
-		42AC71A91E30C423007D8F57 /* SGLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineChart.h; sourceTree = "<group>"; };
-		42AC71AA1E30C423007D8F57 /* SGLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineChart.m; sourceTree = "<group>"; };
-		42AC71AB1E30C423007D8F57 /* SGLineDIY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineDIY.h; sourceTree = "<group>"; };
-		42AC71AC1E30C423007D8F57 /* SGLineDIY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineDIY.m; sourceTree = "<group>"; };
-		42AC71AD1E30C423007D8F57 /* SGLineX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineX.h; sourceTree = "<group>"; };
-		42AC71AE1E30C423007D8F57 /* SGLineX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineX.m; sourceTree = "<group>"; };
-		42AC71AF1E30C423007D8F57 /* SGPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPieChart.h; sourceTree = "<group>"; };
-		42AC71B01E30C423007D8F57 /* SGPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPieChart.m; sourceTree = "<group>"; };
-		42AC71B11E30C423007D8F57 /* SGSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSign.h; sourceTree = "<group>"; };
-		42AC71B21E30C423007D8F57 /* SGSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSign.m; sourceTree = "<group>"; };
-		42AC71B31E30C423007D8F57 /* Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y.h; sourceTree = "<group>"; };
-		42AC71B41E30C423007D8F57 /* Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y.m; sourceTree = "<group>"; };
 		42AC71B61E30C423007D8F57 /* XFSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFSegementView.h; sourceTree = "<group>"; };
 		42AC71B71E30C423007D8F57 /* XFSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFSegementView.m; sourceTree = "<group>"; };
 		42AC71C81E30C576007D8F57 /* NodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeViewController.h; sourceTree = "<group>"; };
@@ -1755,6 +1755,40 @@
 				42022F771EE8F7CC00931544 /* LLQ_ZR_DetailController.xib */,
 			);
 			path = Inner;
+			sourceTree = "<group>";
+		};
+		427278D21F170662003AB9FA /* SGChart */ = {
+			isa = PBXGroup;
+			children = (
+				427278D31F170662003AB9FA /* SGBar.h */,
+				427278D41F170662003AB9FA /* SGBar.m */,
+				427278D51F170662003AB9FA /* SGBarChart.h */,
+				427278D61F170662003AB9FA /* SGBarChart.m */,
+				427278D71F170662003AB9FA /* SGBarSuper.h */,
+				427278D81F170662003AB9FA /* SGBarSuper.m */,
+				427278D91F170662003AB9FA /* SGChart.h */,
+				427278DA1F170662003AB9FA /* SGChartZBX.h */,
+				427278DB1F170662003AB9FA /* SGChartZBX.m */,
+				427278DC1F170662003AB9FA /* SGChartZBX_X.h */,
+				427278DD1F170662003AB9FA /* SGChartZBX_X.m */,
+				427278DE1F170662003AB9FA /* SGConst.h */,
+				427278DF1F170662003AB9FA /* SGConst.m */,
+				427278E01F170662003AB9FA /* SGLine.h */,
+				427278E11F170662003AB9FA /* SGLine.m */,
+				427278E21F170662003AB9FA /* SGLineChart.h */,
+				427278E31F170662003AB9FA /* SGLineChart.m */,
+				427278E41F170662003AB9FA /* SGLineDIY.h */,
+				427278E51F170662003AB9FA /* SGLineDIY.m */,
+				427278E61F170662003AB9FA /* SGLineX.h */,
+				427278E71F170662003AB9FA /* SGLineX.m */,
+				427278E81F170662003AB9FA /* SGPieChart.h */,
+				427278E91F170662003AB9FA /* SGPieChart.m */,
+				427278EA1F170662003AB9FA /* SGSign.h */,
+				427278EB1F170662003AB9FA /* SGSign.m */,
+				427278EC1F170662003AB9FA /* Y.h */,
+				427278ED1F170662003AB9FA /* Y.m */,
+			);
+			path = SGChart;
 			sourceTree = "<group>";
 		};
 		42A886EB1EDFEBBC0010B053 /* 现场 */ = {
@@ -2944,40 +2978,6 @@
 			path = EXP8;
 			sourceTree = "<group>";
 		};
-		42AC71991E30C423007D8F57 /* SGChart */ = {
-			isa = PBXGroup;
-			children = (
-				42AC719A1E30C423007D8F57 /* SGBar.h */,
-				42AC719B1E30C423007D8F57 /* SGBar.m */,
-				42AC719C1E30C423007D8F57 /* SGBarChart.h */,
-				42AC719D1E30C423007D8F57 /* SGBarChart.m */,
-				42AC719E1E30C423007D8F57 /* SGBarSuper.h */,
-				42AC719F1E30C423007D8F57 /* SGBarSuper.m */,
-				42AC71A01E30C423007D8F57 /* SGChart.h */,
-				42AC71A11E30C423007D8F57 /* SGChartZBX.h */,
-				42AC71A21E30C423007D8F57 /* SGChartZBX.m */,
-				42AC71A31E30C423007D8F57 /* SGChartZBX_X.h */,
-				42AC71A41E30C423007D8F57 /* SGChartZBX_X.m */,
-				42AC71A51E30C423007D8F57 /* SGConst.h */,
-				42AC71A61E30C423007D8F57 /* SGConst.m */,
-				42AC71A71E30C423007D8F57 /* SGLine.h */,
-				42AC71A81E30C423007D8F57 /* SGLine.m */,
-				42AC71A91E30C423007D8F57 /* SGLineChart.h */,
-				42AC71AA1E30C423007D8F57 /* SGLineChart.m */,
-				42AC71AB1E30C423007D8F57 /* SGLineDIY.h */,
-				42AC71AC1E30C423007D8F57 /* SGLineDIY.m */,
-				42AC71AD1E30C423007D8F57 /* SGLineX.h */,
-				42AC71AE1E30C423007D8F57 /* SGLineX.m */,
-				42AC71AF1E30C423007D8F57 /* SGPieChart.h */,
-				42AC71B01E30C423007D8F57 /* SGPieChart.m */,
-				42AC71B11E30C423007D8F57 /* SGSign.h */,
-				42AC71B21E30C423007D8F57 /* SGSign.m */,
-				42AC71B31E30C423007D8F57 /* Y.h */,
-				42AC71B41E30C423007D8F57 /* Y.m */,
-			);
-			path = SGChart;
-			sourceTree = "<group>";
-		};
 		42AC71B51E30C423007D8F57 /* XFSegementView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3321,7 +3321,7 @@
 			isa = PBXGroup;
 			children = (
 				42A888311EE6A9920010B053 /* WSLineChartView */,
-				42AC71991E30C423007D8F57 /* SGChart */,
+				427278D21F170662003AB9FA /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
 				187C72A71E30B1810072F33A /* DGActivityIndicatorView */,
 				D20063241DFF86800021E293 /* BBFlashCtntLabel */,
@@ -4672,7 +4672,7 @@
 					D20062F81DFF85CB0021E293 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = MWKKG6D7EX;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4915,6 +4915,7 @@
 				42A8876F1EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m in Sources */,
 				42AC72081E30C576007D8F57 /* TheProjectCell.m in Sources */,
 				D200646A1DFF86800021E293 /* HNT_BHZ_Controller.m in Sources */,
+				427278FA1F170662003AB9FA /* Y.m in Sources */,
 				42AC72171E30C576007D8F57 /* LqNodeViewController.m in Sources */,
 				42A887471EDFEBBC0010B053 /* TP_SBDW_Model.m in Sources */,
 				D272EFC51E7BBE3A00D0991D /* SW_CLHS_ChatCell.m in Sources */,
@@ -4925,7 +4926,6 @@
 				42A887321EDFEBBC0010B053 /* TP_CLSB_Controller.m in Sources */,
 				D20065191DFF86B30021E293 /* XYMarkerView.swift in Sources */,
 				42A8872E1EDFEBBC0010B053 /* TP_CL_ChartModel.m in Sources */,
-				42AC71BB1E30C423007D8F57 /* SGChartZBX.m in Sources */,
 				42AC71541E30C393007D8F57 /* TotalTableController.m in Sources */,
 				D246B2A81E00DEBA00E83159 /* HNT_CBCZ_Cell.m in Sources */,
 				D20064871DFF86800021E293 /* HNT_SYS_FrameModel.m in Sources */,
@@ -4944,6 +4944,7 @@
 				D20064971DFF86800021E293 /* Exp3View.m in Sources */,
 				D200652F1DFF86B30021E293 /* LineChart2ViewController.m in Sources */,
 				D25977751E76B19800507BF2 /* SW_ZZJG_Data.m in Sources */,
+				427278F21F170662003AB9FA /* SGChartZBX_X.m in Sources */,
 				D2CF6B6C1E011D98003AE61D /* UIView+Shape.m in Sources */,
 				42A887441EDFEBBC0010B053 /* TP_SB_Controller.m in Sources */,
 				187C72F21E30B1810072F33A /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
@@ -4980,9 +4981,11 @@
 				42AC72131E30C576007D8F57 /* View+MASAdditions.m in Sources */,
 				D219437D1E81006700FC0B38 /* Exp52View.m in Sources */,
 				D2E04DDE1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_DataCell.m in Sources */,
+				427278F11F170662003AB9FA /* SGChartZBX.m in Sources */,
 				42A887DD1EE55C2B0010B053 /* ChartPointModel.m in Sources */,
 				187C73111E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
+				427278F01F170662003AB9FA /* SGBarSuper.m in Sources */,
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
 				D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */,
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
@@ -5012,7 +5015,6 @@
 				D235E32F1E84C64900EE4459 /* LLQ_LSSJ_Detail_Head.m in Sources */,
 				42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */,
 				D20064481DFF86800021E293 /* MJDIYHeader2.m in Sources */,
-				42AC71B91E30C423007D8F57 /* SGBarChart.m in Sources */,
 				42AC71781E30C393007D8F57 /* ProduQueryModel.m in Sources */,
 				42AC71761E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.m in Sources */,
 				D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */,
@@ -5021,7 +5023,6 @@
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
 				42A887401EDFEBBC0010B053 /* TP_NY_SB_Controller.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
-				42AC71B81E30C423007D8F57 /* SGBar.m in Sources */,
 				42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */,
 				D20064901DFF86800021E293 /* ViewController.m in Sources */,
 				42AC72071E30C576007D8F57 /* NodeMode.m in Sources */,
@@ -5032,7 +5033,6 @@
 				D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */,
 				D20065931DFFCC080021E293 /* HNT_SCCX_Model.m in Sources */,
 				187C730F1E30B1810072F33A /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
-				42AC71BD1E30C423007D8F57 /* SGConst.m in Sources */,
 				42AC71551E30C393007D8F57 /* EXPTotalModel.m in Sources */,
 				42A887DA1EE5520F0010B053 /* LLQ_MXE_Detail_Chart.m in Sources */,
 				D20064411DFF86800021E293 /* CJUseTime.m in Sources */,
@@ -5049,6 +5049,7 @@
 				187C73001E30B1810072F33A /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				42A8881D1EE67AB60010B053 /* LLQ_SYS_Model.m in Sources */,
 				42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */,
+				427278F61F170662003AB9FA /* SGLineDIY.m in Sources */,
 				D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */,
 				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
 				42AC72191E30C576007D8F57 /* LqNodeModel.m in Sources */,
@@ -5080,7 +5081,6 @@
 				D272EFBB1E7BBE3A00D0991D /* LQ_SW_Model.m in Sources */,
 				D2E04DE81E83ADCD009E9C6A /* LLQ_CBCZ_DetailController.m in Sources */,
 				D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */,
-				42AC71BA1E30C423007D8F57 /* SGBarSuper.m in Sources */,
 				8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */,
 				D2E838941EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
@@ -5105,6 +5105,7 @@
 				42A887751EE003140010B053 /* MySYSSegmentedControl.m in Sources */,
 				D272EFBA1E7BBE3A00D0991D /* SW_CLHS_Controller.m in Sources */,
 				D2E8388A1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m in Sources */,
+				427278F71F170662003AB9FA /* SGLineX.m in Sources */,
 				D272EFD51E7BC36F00D0991D /* LLQ_CBCZ_Cell.m in Sources */,
 				D200658F1DFFC9F10021E293 /* HNT_SCCX_Cell.m in Sources */,
 				42AC716D1E30C393007D8F57 /* LQ_CLHS_ModelG.m in Sources */,
@@ -5123,7 +5124,6 @@
 				187C730B1E30B1810072F33A /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				D20065471DFF86B30021E293 /* StackedBarChartViewController.m in Sources */,
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
-				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
 				42AC71971E30C3F0007D8F57 /* MyInputController.m in Sources */,
@@ -5131,14 +5131,12 @@
 				D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */,
 				42022F581EE7D1E600931544 /* LLQ_RH_Model.m in Sources */,
 				8CBD72E31E07A75000A0C991 /* HNT_SCCX_Detail_Data.m in Sources */,
-				42AC71C31E30C423007D8F57 /* SGSign.m in Sources */,
 				D200648A1DFF86800021E293 /* HNT_SYS_HeaderView.m in Sources */,
 				42022F781EE8F7CC00931544 /* LLQ_ZR_DetailController.m in Sources */,
 				D235E3081E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.m in Sources */,
 				D272EFCC1E7BBEEC00D0991D /* LLQ_CBCZ_Controller.m in Sources */,
 				42A888421EE6A9920010B053 /* XAxisView.m in Sources */,
 				D25977711E76B0BC00507BF2 /* SW_ZZJG_Cell.m in Sources */,
-				42AC71C01E30C423007D8F57 /* SGLineDIY.m in Sources */,
 				42AC72181E30C576007D8F57 /* LqNode.m in Sources */,
 				42A887CF1EE521D50010B053 /* LLQ_MXE_Detail_DataCell.m in Sources */,
 				D235E2FF1E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.m in Sources */,
@@ -5150,6 +5148,7 @@
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				D235E3321E84C64900EE4459 /* LLQ_LSSJ_DetailController.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
+				427278EF1F170662003AB9FA /* SGBarChart.m in Sources */,
 				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
 				187C73021E30B1810072F33A /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
@@ -5179,8 +5178,6 @@
 				42022F651EE7EA1500931544 /* LLQ_ZR_Model.m in Sources */,
 				42AC717B1E30C393007D8F57 /* LQ_BHZ_SB_Controller.m in Sources */,
 				8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */,
-				42AC71C41E30C423007D8F57 /* Y.m in Sources */,
-				42AC71C11E30C423007D8F57 /* SGLineX.m in Sources */,
 				42AC71791E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Cell.m in Sources */,
 				D20064711DFF86800021E293 /* HNT_YLSY_DetailController.m in Sources */,
 				D272EFC31E7BBE3A00D0991D /* SW_CLHS_Cell.m in Sources */,
@@ -5192,9 +5189,11 @@
 				D20064761DFF86800021E293 /* HNT_WNSY_Controller.m in Sources */,
 				42A887C51EE50B7F0010B053 /* LLQ_MXE_Detail_HeadCell.m in Sources */,
 				42AC720F1E30C576007D8F57 /* MASViewAttribute.m in Sources */,
+				427278EE1F170662003AB9FA /* SGBar.m in Sources */,
 				42AC71601E30C393007D8F57 /* LQ_ZCL_CBL_Controller.m in Sources */,
 				D200649E1DFF86800021E293 /* UIView+Frame.m in Sources */,
 				D20064A41DFF86800021E293 /* HTTP.m in Sources */,
+				427278F91F170662003AB9FA /* SGSign.m in Sources */,
 				18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */,
 				18B871D11E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m in Sources */,
 				D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */,
@@ -5229,6 +5228,7 @@
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,
 				8CE976551E0BF1FF0016A858 /* MySJView.m in Sources */,
 				42AC714E1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.m in Sources */,
+				427278F81F170662003AB9FA /* SGPieChart.m in Sources */,
 				D200645E1DFF86800021E293 /* Exmp1.m in Sources */,
 				42AC718D1E30C3B6007D8F57 /* Exp7_Xib_View.m in Sources */,
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
@@ -5238,7 +5238,6 @@
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */,
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
-				42AC71C21E30C423007D8F57 /* SGPieChart.m in Sources */,
 				187C72F71E30B1810072F33A /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				D272EFC91E7BBE9B00D0991D /* LLQ_BHZ_InnerController.m in Sources */,
 				D235E3301E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.m in Sources */,
@@ -5247,7 +5246,6 @@
 				42A8883F1EE6A9920010B053 /* SVProgressHUD.m in Sources */,
 				D20064701DFF86800021E293 /* HNT_YLSY_Controller.m in Sources */,
 				42A8874C1EDFEDF90010B053 /* MyTPSegmentedControl.m in Sources */,
-				42AC71BF1E30C423007D8F57 /* SGLineChart.m in Sources */,
 				42A887381EDFEBBC0010B053 /* TP_NY_Controller.m in Sources */,
 				D20064981DFF86800021E293 /* Exp4View.m in Sources */,
 				42AC71711E30C393007D8F57 /* NQ_BHZ_SCCX_Innel_Controller.m in Sources */,
@@ -5270,6 +5268,7 @@
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,
 				D272EFB71E7BBE3A00D0991D /* LQ_SW_Controller.m in Sources */,
 				187C72FB1E30B1810072F33A /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				427278F31F170662003AB9FA /* SGConst.m in Sources */,
 				187C730C1E30B1810072F33A /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				D21943971E810FE200FC0B38 /* LLQ_LSSJ_Controller.m in Sources */,
 				4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */,
@@ -5290,6 +5289,7 @@
 				42AC71501E30C393007D8F57 /* disposal_C_Model.m in Sources */,
 				8CE976561E0BF1FF0016A858 /* MySJxib.m in Sources */,
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,
+				427278F51F170662003AB9FA /* SGLineChart.m in Sources */,
 				42AC72111E30C576007D8F57 /* NSArray+MASAdditions.m in Sources */,
 				42AC716C1E30C393007D8F57 /* LQ_CLHS_DataModel.m in Sources */,
 				187C72FC1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
@@ -5315,7 +5315,6 @@
 				42A888431EE6A9920010B053 /* YAxisView.m in Sources */,
 				D20064791DFF86800021E293 /* HNT_WNSY_Model.m in Sources */,
 				D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */,
-				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,
 				D2CF6B671E011728003AE61D /* Exp6View.m in Sources */,
 				D219438E1E8105F900FC0B38 /* LQ_UsePosition_Controller.m in Sources */,
 				42A8872F1EDFEBBC0010B053 /* TP_CL_Controller.m in Sources */,
@@ -5326,6 +5325,7 @@
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
 				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,
 				D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */,
+				427278F41F170662003AB9FA /* SGLine.m in Sources */,
 				D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */,
 				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
 				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,
@@ -5481,17 +5481,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gdny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c4c04562-4534-423d-bc65-e4acc24e1cf6";
+				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_gdny;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
@@ -5504,17 +5504,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gdny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c4c04562-4534-423d-bc65-e4acc24e1cf6";
+				PROVISIONING_PROFILE_SPECIFIER = profile_distribution_gdny;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};

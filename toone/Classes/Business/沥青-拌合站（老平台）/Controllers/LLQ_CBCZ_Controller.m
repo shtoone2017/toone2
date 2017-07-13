@@ -102,9 +102,9 @@
             case 2:
                 weakSelf.pageNo2 = @"1";
                 break;
-//            case 3:
-//                weakSelf.pageNo3 = @"1";
-//                break;
+            case 3:
+                weakSelf.pageNo3 = @"1";
+                break;
             default:
                 break;
         }
@@ -150,7 +150,7 @@
     switch (count) {
         case 1://初级
             self.pageNo = self.pageNo1;
-            self.chaobiaolx =@"1";
+            self.chaobiaolx =@"2";
             if(self.datas1==nil) {
                 self.cllx = @"0";
                 [self loadData];
@@ -158,7 +158,7 @@
             break;
         case 2://中级
             self.pageNo = self.pageNo2;
-            self.chaobiaolx =@"2";
+            self.chaobiaolx =@"3";
             if(self.datas2==nil) {
                 [self loadData];
                 [self loadData];

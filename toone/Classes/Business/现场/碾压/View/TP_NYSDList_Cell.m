@@ -26,10 +26,10 @@
     _listModel = listModel;
     self.sbLabel.text = listModel.banhezhanminchen;
 //    self.sjLabel.text = listModel.shijian;
-//    if (listModel.sudu) {//速度
-//        self.sdLabel.text = Format(listModel.sudu);
-//        self.sjLabel.text = listModel.shijian;
-//    }
+    if (listModel.tmpsudu) {//速度
+        self.sdLabel.text = Format(listModel.tmpsudu);
+        self.sjLabel.text = listModel.tmpshijian;
+    }
     if (listModel.tmpdata) {//温度
         self.sdLabel.text = listModel.tmpdata;
         self.sjLabel.text = listModel.tmpshijian;

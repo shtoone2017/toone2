@@ -15,4 +15,5 @@
 
 @property (nonatomic,copy)NSString *tmpshijian;//时间
 @property (nonatomic,copy)NSString *tmpdata;//温度
+@property (nonatomic,copy)NSString *tmpsudu;//速度
 @end
