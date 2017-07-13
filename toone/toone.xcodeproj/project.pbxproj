@@ -70,19 +70,19 @@
 		42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */; };
 		42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */; };
 		422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */; };
-		427278EE1F170662003AB9FA /* SGBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278D41F170662003AB9FA /* SGBar.m */; };
-		427278EF1F170662003AB9FA /* SGBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278D61F170662003AB9FA /* SGBarChart.m */; };
-		427278F01F170662003AB9FA /* SGBarSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278D81F170662003AB9FA /* SGBarSuper.m */; };
-		427278F11F170662003AB9FA /* SGChartZBX.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278DB1F170662003AB9FA /* SGChartZBX.m */; };
-		427278F21F170662003AB9FA /* SGChartZBX_X.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278DD1F170662003AB9FA /* SGChartZBX_X.m */; };
-		427278F31F170662003AB9FA /* SGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278DF1F170662003AB9FA /* SGConst.m */; };
-		427278F41F170662003AB9FA /* SGLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E11F170662003AB9FA /* SGLine.m */; };
-		427278F51F170662003AB9FA /* SGLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E31F170662003AB9FA /* SGLineChart.m */; };
-		427278F61F170662003AB9FA /* SGLineDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E51F170662003AB9FA /* SGLineDIY.m */; };
-		427278F71F170662003AB9FA /* SGLineX.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E71F170662003AB9FA /* SGLineX.m */; };
-		427278F81F170662003AB9FA /* SGPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278E91F170662003AB9FA /* SGPieChart.m */; };
-		427278F91F170662003AB9FA /* SGSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278EB1F170662003AB9FA /* SGSign.m */; };
-		427278FA1F170662003AB9FA /* Y.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278ED1F170662003AB9FA /* Y.m */; };
+		427279171F175693003AB9FA /* SGBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278FD1F175693003AB9FA /* SGBar.m */; };
+		427279181F175693003AB9FA /* SGBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427278FF1F175693003AB9FA /* SGBarChart.m */; };
+		427279191F175693003AB9FA /* SGBarSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279011F175693003AB9FA /* SGBarSuper.m */; };
+		4272791A1F175693003AB9FA /* SGChartZBX.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279041F175693003AB9FA /* SGChartZBX.m */; };
+		4272791B1F175693003AB9FA /* SGChartZBX_X.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279061F175693003AB9FA /* SGChartZBX_X.m */; };
+		4272791C1F175693003AB9FA /* SGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279081F175693003AB9FA /* SGConst.m */; };
+		4272791D1F175693003AB9FA /* SGLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272790A1F175693003AB9FA /* SGLine.m */; };
+		4272791E1F175693003AB9FA /* SGLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272790C1F175693003AB9FA /* SGLineChart.m */; };
+		4272791F1F175693003AB9FA /* SGLineDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272790E1F175693003AB9FA /* SGLineDIY.m */; };
+		427279201F175693003AB9FA /* SGLineX.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279101F175693003AB9FA /* SGLineX.m */; };
+		427279211F175693003AB9FA /* SGPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279121F175693003AB9FA /* SGPieChart.m */; };
+		427279221F175693003AB9FA /* SGSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279141F175693003AB9FA /* SGSign.m */; };
+		427279231F175693003AB9FA /* Y.m in Sources */ = {isa = PBXBuildFile; fileRef = 427279161F175693003AB9FA /* Y.m */; };
 		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -708,33 +708,33 @@
 		42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_YD_DetailController.xib; sourceTree = "<group>"; };
 		422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SB_Controller.h; sourceTree = "<group>"; };
 		422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SB_Controller.m; sourceTree = "<group>"; };
-		427278D31F170662003AB9FA /* SGBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBar.h; sourceTree = "<group>"; };
-		427278D41F170662003AB9FA /* SGBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBar.m; sourceTree = "<group>"; };
-		427278D51F170662003AB9FA /* SGBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarChart.h; sourceTree = "<group>"; };
-		427278D61F170662003AB9FA /* SGBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarChart.m; sourceTree = "<group>"; };
-		427278D71F170662003AB9FA /* SGBarSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarSuper.h; sourceTree = "<group>"; };
-		427278D81F170662003AB9FA /* SGBarSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarSuper.m; sourceTree = "<group>"; };
-		427278D91F170662003AB9FA /* SGChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChart.h; sourceTree = "<group>"; };
-		427278DA1F170662003AB9FA /* SGChartZBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX.h; sourceTree = "<group>"; };
-		427278DB1F170662003AB9FA /* SGChartZBX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX.m; sourceTree = "<group>"; };
-		427278DC1F170662003AB9FA /* SGChartZBX_X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX_X.h; sourceTree = "<group>"; };
-		427278DD1F170662003AB9FA /* SGChartZBX_X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX_X.m; sourceTree = "<group>"; };
-		427278DE1F170662003AB9FA /* SGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConst.h; sourceTree = "<group>"; };
-		427278DF1F170662003AB9FA /* SGConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConst.m; sourceTree = "<group>"; };
-		427278E01F170662003AB9FA /* SGLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLine.h; sourceTree = "<group>"; };
-		427278E11F170662003AB9FA /* SGLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLine.m; sourceTree = "<group>"; };
-		427278E21F170662003AB9FA /* SGLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineChart.h; sourceTree = "<group>"; };
-		427278E31F170662003AB9FA /* SGLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineChart.m; sourceTree = "<group>"; };
-		427278E41F170662003AB9FA /* SGLineDIY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineDIY.h; sourceTree = "<group>"; };
-		427278E51F170662003AB9FA /* SGLineDIY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineDIY.m; sourceTree = "<group>"; };
-		427278E61F170662003AB9FA /* SGLineX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineX.h; sourceTree = "<group>"; };
-		427278E71F170662003AB9FA /* SGLineX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineX.m; sourceTree = "<group>"; };
-		427278E81F170662003AB9FA /* SGPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPieChart.h; sourceTree = "<group>"; };
-		427278E91F170662003AB9FA /* SGPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPieChart.m; sourceTree = "<group>"; };
-		427278EA1F170662003AB9FA /* SGSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSign.h; sourceTree = "<group>"; };
-		427278EB1F170662003AB9FA /* SGSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSign.m; sourceTree = "<group>"; };
-		427278EC1F170662003AB9FA /* Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y.h; sourceTree = "<group>"; };
-		427278ED1F170662003AB9FA /* Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y.m; sourceTree = "<group>"; };
+		427278FC1F175693003AB9FA /* SGBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBar.h; sourceTree = "<group>"; };
+		427278FD1F175693003AB9FA /* SGBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBar.m; sourceTree = "<group>"; };
+		427278FE1F175693003AB9FA /* SGBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarChart.h; sourceTree = "<group>"; };
+		427278FF1F175693003AB9FA /* SGBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarChart.m; sourceTree = "<group>"; };
+		427279001F175693003AB9FA /* SGBarSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBarSuper.h; sourceTree = "<group>"; };
+		427279011F175693003AB9FA /* SGBarSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBarSuper.m; sourceTree = "<group>"; };
+		427279021F175693003AB9FA /* SGChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChart.h; sourceTree = "<group>"; };
+		427279031F175693003AB9FA /* SGChartZBX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX.h; sourceTree = "<group>"; };
+		427279041F175693003AB9FA /* SGChartZBX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX.m; sourceTree = "<group>"; };
+		427279051F175693003AB9FA /* SGChartZBX_X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGChartZBX_X.h; sourceTree = "<group>"; };
+		427279061F175693003AB9FA /* SGChartZBX_X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGChartZBX_X.m; sourceTree = "<group>"; };
+		427279071F175693003AB9FA /* SGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConst.h; sourceTree = "<group>"; };
+		427279081F175693003AB9FA /* SGConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConst.m; sourceTree = "<group>"; };
+		427279091F175693003AB9FA /* SGLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLine.h; sourceTree = "<group>"; };
+		4272790A1F175693003AB9FA /* SGLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLine.m; sourceTree = "<group>"; };
+		4272790B1F175693003AB9FA /* SGLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineChart.h; sourceTree = "<group>"; };
+		4272790C1F175693003AB9FA /* SGLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineChart.m; sourceTree = "<group>"; };
+		4272790D1F175693003AB9FA /* SGLineDIY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineDIY.h; sourceTree = "<group>"; };
+		4272790E1F175693003AB9FA /* SGLineDIY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineDIY.m; sourceTree = "<group>"; };
+		4272790F1F175693003AB9FA /* SGLineX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLineX.h; sourceTree = "<group>"; };
+		427279101F175693003AB9FA /* SGLineX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLineX.m; sourceTree = "<group>"; };
+		427279111F175693003AB9FA /* SGPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPieChart.h; sourceTree = "<group>"; };
+		427279121F175693003AB9FA /* SGPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPieChart.m; sourceTree = "<group>"; };
+		427279131F175693003AB9FA /* SGSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSign.h; sourceTree = "<group>"; };
+		427279141F175693003AB9FA /* SGSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSign.m; sourceTree = "<group>"; };
+		427279151F175693003AB9FA /* Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y.h; sourceTree = "<group>"; };
+		427279161F175693003AB9FA /* Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y.m; sourceTree = "<group>"; };
 		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
 		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -1757,36 +1757,36 @@
 			path = Inner;
 			sourceTree = "<group>";
 		};
-		427278D21F170662003AB9FA /* SGChart */ = {
+		427278FB1F175693003AB9FA /* SGChart */ = {
 			isa = PBXGroup;
 			children = (
-				427278D31F170662003AB9FA /* SGBar.h */,
-				427278D41F170662003AB9FA /* SGBar.m */,
-				427278D51F170662003AB9FA /* SGBarChart.h */,
-				427278D61F170662003AB9FA /* SGBarChart.m */,
-				427278D71F170662003AB9FA /* SGBarSuper.h */,
-				427278D81F170662003AB9FA /* SGBarSuper.m */,
-				427278D91F170662003AB9FA /* SGChart.h */,
-				427278DA1F170662003AB9FA /* SGChartZBX.h */,
-				427278DB1F170662003AB9FA /* SGChartZBX.m */,
-				427278DC1F170662003AB9FA /* SGChartZBX_X.h */,
-				427278DD1F170662003AB9FA /* SGChartZBX_X.m */,
-				427278DE1F170662003AB9FA /* SGConst.h */,
-				427278DF1F170662003AB9FA /* SGConst.m */,
-				427278E01F170662003AB9FA /* SGLine.h */,
-				427278E11F170662003AB9FA /* SGLine.m */,
-				427278E21F170662003AB9FA /* SGLineChart.h */,
-				427278E31F170662003AB9FA /* SGLineChart.m */,
-				427278E41F170662003AB9FA /* SGLineDIY.h */,
-				427278E51F170662003AB9FA /* SGLineDIY.m */,
-				427278E61F170662003AB9FA /* SGLineX.h */,
-				427278E71F170662003AB9FA /* SGLineX.m */,
-				427278E81F170662003AB9FA /* SGPieChart.h */,
-				427278E91F170662003AB9FA /* SGPieChart.m */,
-				427278EA1F170662003AB9FA /* SGSign.h */,
-				427278EB1F170662003AB9FA /* SGSign.m */,
-				427278EC1F170662003AB9FA /* Y.h */,
-				427278ED1F170662003AB9FA /* Y.m */,
+				427278FC1F175693003AB9FA /* SGBar.h */,
+				427278FD1F175693003AB9FA /* SGBar.m */,
+				427278FE1F175693003AB9FA /* SGBarChart.h */,
+				427278FF1F175693003AB9FA /* SGBarChart.m */,
+				427279001F175693003AB9FA /* SGBarSuper.h */,
+				427279011F175693003AB9FA /* SGBarSuper.m */,
+				427279021F175693003AB9FA /* SGChart.h */,
+				427279031F175693003AB9FA /* SGChartZBX.h */,
+				427279041F175693003AB9FA /* SGChartZBX.m */,
+				427279051F175693003AB9FA /* SGChartZBX_X.h */,
+				427279061F175693003AB9FA /* SGChartZBX_X.m */,
+				427279071F175693003AB9FA /* SGConst.h */,
+				427279081F175693003AB9FA /* SGConst.m */,
+				427279091F175693003AB9FA /* SGLine.h */,
+				4272790A1F175693003AB9FA /* SGLine.m */,
+				4272790B1F175693003AB9FA /* SGLineChart.h */,
+				4272790C1F175693003AB9FA /* SGLineChart.m */,
+				4272790D1F175693003AB9FA /* SGLineDIY.h */,
+				4272790E1F175693003AB9FA /* SGLineDIY.m */,
+				4272790F1F175693003AB9FA /* SGLineX.h */,
+				427279101F175693003AB9FA /* SGLineX.m */,
+				427279111F175693003AB9FA /* SGPieChart.h */,
+				427279121F175693003AB9FA /* SGPieChart.m */,
+				427279131F175693003AB9FA /* SGSign.h */,
+				427279141F175693003AB9FA /* SGSign.m */,
+				427279151F175693003AB9FA /* Y.h */,
+				427279161F175693003AB9FA /* Y.m */,
 			);
 			path = SGChart;
 			sourceTree = "<group>";
@@ -3320,8 +3320,8 @@
 		D20063151DFF86800021E293 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				427278FB1F175693003AB9FA /* SGChart */,
 				42A888311EE6A9920010B053 /* WSLineChartView */,
-				427278D21F170662003AB9FA /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
 				187C72A71E30B1810072F33A /* DGActivityIndicatorView */,
 				D20063241DFF86800021E293 /* BBFlashCtntLabel */,
@@ -4915,7 +4915,7 @@
 				42A8876F1EDFF4CB0010B053 /* SingleLocaitonAloneViewController.m in Sources */,
 				42AC72081E30C576007D8F57 /* TheProjectCell.m in Sources */,
 				D200646A1DFF86800021E293 /* HNT_BHZ_Controller.m in Sources */,
-				427278FA1F170662003AB9FA /* Y.m in Sources */,
+				427279231F175693003AB9FA /* Y.m in Sources */,
 				42AC72171E30C576007D8F57 /* LqNodeViewController.m in Sources */,
 				42A887471EDFEBBC0010B053 /* TP_SBDW_Model.m in Sources */,
 				D272EFC51E7BBE3A00D0991D /* SW_CLHS_ChatCell.m in Sources */,
@@ -4944,7 +4944,7 @@
 				D20064971DFF86800021E293 /* Exp3View.m in Sources */,
 				D200652F1DFF86B30021E293 /* LineChart2ViewController.m in Sources */,
 				D25977751E76B19800507BF2 /* SW_ZZJG_Data.m in Sources */,
-				427278F21F170662003AB9FA /* SGChartZBX_X.m in Sources */,
+				4272791B1F175693003AB9FA /* SGChartZBX_X.m in Sources */,
 				D2CF6B6C1E011D98003AE61D /* UIView+Shape.m in Sources */,
 				42A887441EDFEBBC0010B053 /* TP_SB_Controller.m in Sources */,
 				187C72F21E30B1810072F33A /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
@@ -4981,11 +4981,11 @@
 				42AC72131E30C576007D8F57 /* View+MASAdditions.m in Sources */,
 				D219437D1E81006700FC0B38 /* Exp52View.m in Sources */,
 				D2E04DDE1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_DataCell.m in Sources */,
-				427278F11F170662003AB9FA /* SGChartZBX.m in Sources */,
+				4272791A1F175693003AB9FA /* SGChartZBX.m in Sources */,
 				42A887DD1EE55C2B0010B053 /* ChartPointModel.m in Sources */,
 				187C73111E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
-				427278F01F170662003AB9FA /* SGBarSuper.m in Sources */,
+				427279191F175693003AB9FA /* SGBarSuper.m in Sources */,
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
 				D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */,
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
@@ -5049,7 +5049,7 @@
 				187C73001E30B1810072F33A /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				42A8881D1EE67AB60010B053 /* LLQ_SYS_Model.m in Sources */,
 				42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */,
-				427278F61F170662003AB9FA /* SGLineDIY.m in Sources */,
+				4272791F1F175693003AB9FA /* SGLineDIY.m in Sources */,
 				D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */,
 				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
 				42AC72191E30C576007D8F57 /* LqNodeModel.m in Sources */,
@@ -5105,7 +5105,7 @@
 				42A887751EE003140010B053 /* MySYSSegmentedControl.m in Sources */,
 				D272EFBA1E7BBE3A00D0991D /* SW_CLHS_Controller.m in Sources */,
 				D2E8388A1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m in Sources */,
-				427278F71F170662003AB9FA /* SGLineX.m in Sources */,
+				427279201F175693003AB9FA /* SGLineX.m in Sources */,
 				D272EFD51E7BC36F00D0991D /* LLQ_CBCZ_Cell.m in Sources */,
 				D200658F1DFFC9F10021E293 /* HNT_SCCX_Cell.m in Sources */,
 				42AC716D1E30C393007D8F57 /* LQ_CLHS_ModelG.m in Sources */,
@@ -5148,7 +5148,7 @@
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				D235E3321E84C64900EE4459 /* LLQ_LSSJ_DetailController.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
-				427278EF1F170662003AB9FA /* SGBarChart.m in Sources */,
+				427279181F175693003AB9FA /* SGBarChart.m in Sources */,
 				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
 				187C73021E30B1810072F33A /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
@@ -5189,11 +5189,11 @@
 				D20064761DFF86800021E293 /* HNT_WNSY_Controller.m in Sources */,
 				42A887C51EE50B7F0010B053 /* LLQ_MXE_Detail_HeadCell.m in Sources */,
 				42AC720F1E30C576007D8F57 /* MASViewAttribute.m in Sources */,
-				427278EE1F170662003AB9FA /* SGBar.m in Sources */,
+				427279171F175693003AB9FA /* SGBar.m in Sources */,
 				42AC71601E30C393007D8F57 /* LQ_ZCL_CBL_Controller.m in Sources */,
 				D200649E1DFF86800021E293 /* UIView+Frame.m in Sources */,
 				D20064A41DFF86800021E293 /* HTTP.m in Sources */,
-				427278F91F170662003AB9FA /* SGSign.m in Sources */,
+				427279221F175693003AB9FA /* SGSign.m in Sources */,
 				18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */,
 				18B871D11E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m in Sources */,
 				D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */,
@@ -5228,7 +5228,7 @@
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,
 				8CE976551E0BF1FF0016A858 /* MySJView.m in Sources */,
 				42AC714E1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.m in Sources */,
-				427278F81F170662003AB9FA /* SGPieChart.m in Sources */,
+				427279211F175693003AB9FA /* SGPieChart.m in Sources */,
 				D200645E1DFF86800021E293 /* Exmp1.m in Sources */,
 				42AC718D1E30C3B6007D8F57 /* Exp7_Xib_View.m in Sources */,
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
@@ -5268,7 +5268,7 @@
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,
 				D272EFB71E7BBE3A00D0991D /* LQ_SW_Controller.m in Sources */,
 				187C72FB1E30B1810072F33A /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
-				427278F31F170662003AB9FA /* SGConst.m in Sources */,
+				4272791C1F175693003AB9FA /* SGConst.m in Sources */,
 				187C730C1E30B1810072F33A /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				D21943971E810FE200FC0B38 /* LLQ_LSSJ_Controller.m in Sources */,
 				4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */,
@@ -5289,7 +5289,7 @@
 				42AC71501E30C393007D8F57 /* disposal_C_Model.m in Sources */,
 				8CE976561E0BF1FF0016A858 /* MySJxib.m in Sources */,
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,
-				427278F51F170662003AB9FA /* SGLineChart.m in Sources */,
+				4272791E1F175693003AB9FA /* SGLineChart.m in Sources */,
 				42AC72111E30C576007D8F57 /* NSArray+MASAdditions.m in Sources */,
 				42AC716C1E30C393007D8F57 /* LQ_CLHS_DataModel.m in Sources */,
 				187C72FC1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
@@ -5325,7 +5325,7 @@
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
 				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,
 				D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */,
-				427278F41F170662003AB9FA /* SGLine.m in Sources */,
+				4272791D1F175693003AB9FA /* SGLine.m in Sources */,
 				D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */,
 				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
 				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,

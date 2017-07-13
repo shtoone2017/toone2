@@ -98,7 +98,7 @@
     if ([_key isEqualToString:@"left"]) {
         for (int i = 0; i<Y_count; ++i) {
             CGFloat text = i*max/(Y_count-1);
-            NSString * text_str = [NSString stringWithFormat:@"%.f",text];
+            NSString * text_str = [NSString stringWithFormat:@"%.1f",text];
             [TextArray addObject:text_str];
         }
        
@@ -106,7 +106,7 @@
     if ([_key isEqualToString:@"right"]) {
         for (int i = 0; i<Y_count; ++i) {
             CGFloat text = i*max_min/(Y_count-1) + min;
-            NSString * text_str = [NSString stringWithFormat:@"%.f%%",text];
+            NSString * text_str = [NSString stringWithFormat:@"%.1f%%",text];
             [TextArray addObject:text_str];
         }
     }
