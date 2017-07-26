@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "APIKey.h"
+#import <PgySDK/PgyManager.h>
+#import <PgyUpdate/PgyUpdateManager.h>
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+    NSString *appURLStr;
+}
 
 @end
 @implementation AppDelegate
@@ -34,7 +38,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    //启动基本SDK
+    [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+    //启动更新检查SDK
+    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+    [[PgyUpdateManager sharedPgyManager] checkUpdateWithDelegete:self selector:@selector(updateMethod:)];
+    [[PgyUpdateManager sharedPgyManager] updateLocalBuildNumber];
 
 //    if ([UserDefaultsSetting shareSetting].isEnterApplication) {
     if ([UserDefaultsSetting_SW shareSetting].isEnterApplication) {
@@ -48,6 +57,34 @@
         
     }
     return YES;
+}
+/**
+ *  检查更新回调
+ *
+ *  @param response 检查更新的返回结果
+ */
+- (void)updateMethod:(NSDictionary *)response
+{
+    if (response[@"downloadURL"]) {
+        appURLStr = response[@"appUrl"];
+        NSString *message = response[@"releaseNote"];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"发现新版本"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"好的"
+                                                  otherButtonTitles:nil,
+                                  nil];
+        
+        [alertView show];
+    }
+    
+    //    调用checkUpdateWithDelegete后可用此方法来更新本地的版本号，如果有更新的话，在调用了此方法后再次调用将不提示更新信息。
+    //    [[PgyUpdateManager sharedPgyManager] updateLocalBuildNumber];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appURLStr]];
 }
 
 
