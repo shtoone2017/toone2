@@ -22,6 +22,8 @@ PODS:
     - RealmSwift (~> 1.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
+  - Pgyer (2.8.5)
+  - PgyUpdate (1.3)
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
   - RATreeView (2.1.2)
@@ -41,6 +43,8 @@ DEPENDENCIES:
   - Charts/Realm
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh
+  - Pgyer
+  - PgyUpdate
   - PNChart
   - RATreeView (~> 2.1.2)
   - SDWebImage (~> 3.8)
@@ -50,6 +54,8 @@ SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Pgyer: 69f8fba661dc99f0f5c2bba705441cc2f3cc827d
+  PgyUpdate: 38634295d19aca6c63dc4a87a595c92a13838e5b
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
@@ -57,6 +63,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: 0477a508f4432dc29e8d13d478a16b55b04d2a47
+PODFILE CHECKSUM: aa763fae7ea9f9e8542962a94a2bf44a0ca321f5
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
