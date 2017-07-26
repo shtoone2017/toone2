@@ -31,7 +31,7 @@
     [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APPID];
     //启动更新检查SDK
     [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APPID];
-    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+    [[PgyUpdateManager sharedPgyManager] checkUpdateWithDelegete:self selector:@selector(updateMethod:)];
     
     
 //    if ([UserDefaultsSetting shareSetting].isEnterApplication) {
