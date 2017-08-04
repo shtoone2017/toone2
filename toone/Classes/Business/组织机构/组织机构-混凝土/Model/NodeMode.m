@@ -22,8 +22,9 @@
     NSString *userRole = [UserDefaultsSetting shareSetting].userRole;
     
     NSString *urlString = [NSString stringWithFormat:AppDepartTree_4,dataTime,[UserDefaultsSetting shareSetting].funtype,loginDepartId,userRole];
+    NSString *url = @"http://192.168.11.113:8081/gxzjzqms/appWZproject.do?Appfenbufenxiang";
 
-    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:url completeBlock:^(id result) {
         
         NSDictionary *dict = (NSDictionary *)result;
         

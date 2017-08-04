@@ -64,7 +64,27 @@
     TheProjectCell *cell = (TheProjectCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     Node *node = [_tempData objectAtIndex:indexPath.row];
-    
+    //
+    switch (node.depth) {
+        case 0:
+            [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
+            break;
+        case 1:
+            [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
+            break;
+        case 2:
+            [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
+            break;
+        default:
+//            if ([_type isEqualToString: @"3"]) {
+//                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"ShiYan"]];
+//            }
+//            else
+//            {
+//                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"BanHe"]];
+//            }
+            break;
+    }
     // cell有缩进的方法
     cell.treeNode = node;
     cell.cellLabel.text = node.name;
@@ -95,11 +115,114 @@
     if ([_treeTableCellDelegate respondsToSelector:@selector(cellClick:didReachToBottom:)]) {
         [_treeTableCellDelegate  cellClick:node didReachToBottom:YES];
     }
-    
     self.nodeNada = node;
     [UserDefaultsSetting shareSetting].departName  = node.name;
     [UserDefaultsSetting shareSetting].departId = node.nodeId;
+    /*********************************/
+    NSUInteger startPosition = indexPath.row+1;
+    NSUInteger endPosition = startPosition;
+    BOOL expand = NO;
+    for (int i=0; i<_data.count; i++) {
+        Node *node = [_data objectAtIndex:i];
+        if (node.parentId == node.nodeId) {
+            node.expand = !node.expand;
+            if (node.expand) {
+                [_tempData insertObject:node atIndex:endPosition];
+                expand = YES;
+                endPosition++;
+            }else{
+                expand = NO;
+                endPosition = [self removeAllNodesAtParentNode:node];
+                break;
+            }
+        }
+    }
     
+    //获得需要修正的indexPath
+    NSMutableArray *indexPathArray = [NSMutableArray array];
+    for (NSUInteger i=startPosition; i<endPosition; i++) {
+        NSIndexPath *tempIndexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [indexPathArray addObject:tempIndexPath];
+    }
+    TheProjectCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.treeNode = node;
+    //插入或者删除相关节点
+    if (expand) {
+        switch (node.depth) {
+            case 0:
+                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"下"]];
+                break;
+            case 1:
+                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"下"]];
+                break;
+            case 2:
+                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"下"]];
+                break;
+            default:
+//                if ([_type isEqualToString: @"3"]) {
+//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"ShiYan"]];
+//                }
+//                else
+//                {
+//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"BanHe"]];
+//                }
+                break;
+        }
+        [self insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
+    }else{
+        switch (node.depth) {
+            case 0:
+                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
+                break;
+            case 1:
+                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
+                break;
+            case 2:
+                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
+                break;
+            default:
+//                if ([_type isEqualToString: @"3"]) {
+//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"ShiYan"]];
+//                }
+//                else
+//                {
+//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"BanHe"]];
+//                }
+                break;
+        }
+        [self deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
+    }
+
+}
+
+#pragma mark - Optional
+/**
+ *  删除该父节点下的所有子节点（包括孙子节点）
+ *
+ *  @param parentNode 父节点
+ *
+ *  @return 该父节点下一个相邻的统一级别的节点的位置
+ */
+-(NSUInteger)removeAllNodesAtParentNode : (Node *)parentNode{
+    NSUInteger startPosition = [_tempData indexOfObject:parentNode];
+    NSUInteger endPosition = startPosition;
+    for (NSUInteger i=startPosition+1; i<_tempData.count; i++) {
+        Node *node = [_tempData objectAtIndex:i];
+        endPosition++;
+        if (node.depth <= parentNode.depth) {
+            break;
+        }
+        if(endPosition == _tempData.count-1){
+            endPosition++;
+            node.expand = NO;
+            break;
+        }
+        node.expand = NO;
+    }
+    if (endPosition>startPosition) {
+        [_tempData removeObjectsInRange:NSMakeRange(startPosition+1, endPosition-startPosition-1)];
+    }
+    return endPosition;
 }
 
 

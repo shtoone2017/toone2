@@ -55,6 +55,7 @@
 		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
+		4218771A1F331E7A00F8F524 /* LevelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 421877191F331E7A00F8F524 /* LevelModel.m */; };
 		4261D2821F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2811F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
@@ -508,6 +509,8 @@
 		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
 		18DA4FE51E1E15B800229C81 /* Exmp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp2.h; sourceTree = "<group>"; };
 		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
+		421877181F331E7A00F8F524 /* LevelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelModel.h; sourceTree = "<group>"; };
+		421877191F331E7A00F8F524 /* LevelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelModel.m; sourceTree = "<group>"; };
 		4261D2801F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_Detail_HeadModel.h; sourceTree = "<group>"; };
 		4261D2811F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_SCCX_Detail_HeadModel.m; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
@@ -1235,6 +1238,99 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		425AE0DA1F3418AE0048D96B /* 磅房管理 */ = {
+			isa = PBXGroup;
+			children = (
+				425AE0DB1F3418AE0048D96B /* Controller */,
+				425AE0DC1F3418AE0048D96B /* Model */,
+				425AE0DD1F3418AE0048D96B /* View */,
+			);
+			path = "磅房管理";
+			sourceTree = "<group>";
+		};
+		425AE0DB1F3418AE0048D96B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		425AE0DC1F3418AE0048D96B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		425AE0DD1F3418AE0048D96B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		425AE0DE1F3418B50048D96B /* 料仓管理 */ = {
+			isa = PBXGroup;
+			children = (
+				425AE0DF1F3418B50048D96B /* Controller */,
+				425AE0E01F3418B50048D96B /* Model */,
+				425AE0E11F3418B50048D96B /* View */,
+			);
+			path = "料仓管理";
+			sourceTree = "<group>";
+		};
+		425AE0DF1F3418B50048D96B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		425AE0E01F3418B50048D96B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		425AE0E11F3418B50048D96B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		425AE0E21F3418F00048D96B /* 工程部管理 */ = {
+			isa = PBXGroup;
+			children = (
+				425AE0E31F3418F00048D96B /* Controller */,
+				425AE0E41F3418F00048D96B /* Model */,
+				425AE0E51F3418F00048D96B /* View */,
+			);
+			path = "工程部管理";
+			sourceTree = "<group>";
+		};
+		425AE0E31F3418F00048D96B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		425AE0E41F3418F00048D96B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		425AE0E51F3418F00048D96B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1919,6 +2015,8 @@
 		42AC71CA1E30C576007D8F57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				421877181F331E7A00F8F524 /* LevelModel.h */,
+				421877191F331E7A00F8F524 /* LevelModel.m */,
 				42AC71CB1E30C576007D8F57 /* NetworkTool.h */,
 				42AC71CC1E30C576007D8F57 /* NetworkTool.m */,
 				42AC71CD1E30C576007D8F57 /* Node.h */,
@@ -2596,6 +2694,9 @@
 				D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */,
 				8CBD73461E09320C00A0C991 /* 组织机构 */,
 				D200637E1DFF86800021E293 /* 抽屉 */,
+				425AE0E21F3418F00048D96B /* 工程部管理 */,
+				425AE0DE1F3418B50048D96B /* 料仓管理 */,
+				425AE0DA1F3418AE0048D96B /* 磅房管理 */,
 				D20063891DFF86800021E293 /* 欢迎 */,
 				D20063901DFF86800021E293 /* 沥青-试验室 */,
 				42AC708E1E30C392007D8F57 /* 沥青-拌合站 */,
@@ -3777,6 +3878,7 @@
 				D200648C1DFF86800021E293 /* HNT_SYS_TestView.m in Sources */,
 				D20064731DFF86800021E293 /* HNT_YLSY_Model.m in Sources */,
 				D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */,
+				4218771A1F331E7A00F8F524 /* LevelModel.m in Sources */,
 				42AC71BA1E30C423007D8F57 /* SGBarSuper.m in Sources */,
 				8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */,
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,

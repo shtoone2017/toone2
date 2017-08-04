@@ -18,6 +18,6 @@
 @property (retain, strong) Node *treeNode;
 @property (retain, strong) LqNode *LqtreeNode;
 
-//- (void)setTheButtonBackgroundImage:(UIImage *)backgroundImage;
+- (void)setTheButtonBackgroundImage:(UIImage *)backgroundImage;
 
 @end
