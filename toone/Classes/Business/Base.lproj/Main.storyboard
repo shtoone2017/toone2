@@ -21,9 +21,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="Qff-ou-NCO" kind="relationship" relationship="viewControllers" id="vIk-Ez-Eq6"/>
-                        <segue destination="wbf-P2-CPM" kind="relationship" relationship="viewControllers" id="avV-Tg-9yS"/>
-                        <segue destination="Ye8-9D-YTE" kind="relationship" relationship="viewControllers" id="0UB-F6-UrX"/>
                         <segue destination="fhn-Kh-DR2" kind="relationship" relationship="viewControllers" id="hh1-5Q-3P8"/>
+                        <segue destination="DTm-Np-IwD" kind="relationship" relationship="viewControllers" id="L2x-QG-N2g"/>
+                        <segue destination="H2l-Nl-EHH" kind="relationship" relationship="viewControllers" id="MaY-lo-lkh"/>
+                        <segue destination="J2Q-XA-5tB" kind="relationship" relationship="viewControllers" id="otM-zj-nhp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYl-q3-mLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3973,11 +3974,208 @@
             </objects>
             <point key="canvasLocation" x="1225" y="8083"/>
         </scene>
+        <!--磅房-->
+        <scene sceneID="bde-Wb-p2s">
+            <objects>
+                <navigationController id="DTm-Np-IwD" customClass="MyNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="磅房" image="gbc" id="PX6-9h-yao"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zTU-Qs-Iu2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sXb-kk-fsR" kind="relationship" relationship="rootViewController" id="NHy-x6-EZt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFH-1a-E8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="4103"/>
+        </scene>
+        <!--磅房-->
+        <scene sceneID="FbR-Vy-F76">
+            <objects>
+                <viewController id="sXb-kk-fsR" customClass="BFViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gIG-Yo-pmw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dfz-pf-DgG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EMb-La-PX1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="磅房" id="Fpv-lg-9ye"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hy-LD-Yxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="4102"/>
+        </scene>
+        <!--料仓-->
+        <scene sceneID="T6U-Aa-8DG">
+            <objects>
+                <navigationController id="H2l-Nl-EHH" customClass="MyNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="料仓" image="ck" id="SWU-Vu-fR8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Sa-2z-el7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3Kf-Bj-9GB" kind="relationship" relationship="rootViewController" id="a67-ca-hYp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiu-2j-Yx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="5096"/>
+        </scene>
+        <!--料仓-->
+        <scene sceneID="UMJ-ug-QsZ">
+            <objects>
+                <viewController id="3Kf-Bj-9GB" customClass="LCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oTU-27-ScT"/>
+                        <viewControllerLayoutGuide type="bottom" id="4f2-w9-iqq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zE4-BL-OZg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fi-mZ-swq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-Xy-RkJ">
+                                        <rect key="frame" x="323" y="0.0" width="52" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="nv4-Mz-Y88"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="筛选" image="white_SX"/>
+                                        <connections>
+                                            <action selector="searchButtonClick:" destination="3Kf-Bj-9GB" eventType="touchUpInside" id="WMC-Xq-Mxx"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cix-Th-jFL" customClass="BBFlashCtntLabel">
+                                        <rect key="frame" x="3" y="0.0" width="318" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2784313725" green="0.43137254899999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Cix-Th-jFL" firstAttribute="leading" secondItem="7fi-mZ-swq" secondAttribute="leading" constant="3" id="S8N-wX-t7y"/>
+                                    <constraint firstItem="YbN-Xy-RkJ" firstAttribute="top" secondItem="7fi-mZ-swq" secondAttribute="top" id="UD9-4g-ZXa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cix-Th-jFL" secondAttribute="bottom" id="Vjz-Pr-0jg"/>
+                                    <constraint firstAttribute="bottom" secondItem="YbN-Xy-RkJ" secondAttribute="bottom" id="eOa-kV-1dx"/>
+                                    <constraint firstItem="YbN-Xy-RkJ" firstAttribute="leading" secondItem="Cix-Th-jFL" secondAttribute="trailing" constant="2" id="hSC-dD-8df"/>
+                                    <constraint firstAttribute="height" constant="35" id="jSs-E2-MKK"/>
+                                    <constraint firstAttribute="trailing" secondItem="YbN-Xy-RkJ" secondAttribute="trailing" id="mhB-TN-EwZ"/>
+                                    <constraint firstItem="Cix-Th-jFL" firstAttribute="top" secondItem="7fi-mZ-swq" secondAttribute="top" id="smN-ZZ-nua"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7fi-mZ-swq" firstAttribute="top" secondItem="oTU-27-ScT" secondAttribute="bottom" id="G83-w5-dMS"/>
+                            <constraint firstAttribute="trailing" secondItem="7fi-mZ-swq" secondAttribute="trailing" id="Pes-9U-B1u"/>
+                            <constraint firstItem="7fi-mZ-swq" firstAttribute="leading" secondItem="zE4-BL-OZg" secondAttribute="leading" id="WfK-iz-D35"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="料仓" id="XRY-Lt-2TE"/>
+                    <connections>
+                        <outlet property="containerView" destination="7fi-mZ-swq" id="Vv4-ek-vAU"/>
+                        <outlet property="departName_Label" destination="Cix-Th-jFL" id="deb-uy-fvP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWB-LR-1G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="5096"/>
+        </scene>
+        <!--料仓-->
+        <scene sceneID="9Pl-4e-fhE">
+            <objects>
+                <navigationController id="J2Q-XA-5tB" customClass="MyNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="料仓" image="gcb" id="cUw-u6-qOr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jLq-0L-Wxf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ofb-Am-f4D" kind="relationship" relationship="rootViewController" id="CSd-MZ-gTd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b82-y6-4Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="5983"/>
+        </scene>
+        <!--工程部-->
+        <scene sceneID="ELf-6n-irR">
+            <objects>
+                <viewController id="Ofb-Am-f4D" customClass="GCB_Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WLk-cE-4ie"/>
+                        <viewControllerLayoutGuide type="bottom" id="dQU-7C-NG5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qks-GN-BZK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1w-re-E9g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crN-Dh-1hh">
+                                        <rect key="frame" x="323" y="0.0" width="52" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="nkC-Ae-AUv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="筛选" image="white_SX"/>
+                                        <connections>
+                                            <action selector="searchButtonClick:" destination="Ofb-Am-f4D" eventType="touchUpInside" id="dXt-0D-sLb"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKv-tG-t96" customClass="BBFlashCtntLabel">
+                                        <rect key="frame" x="3" y="0.0" width="318" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2784313725" green="0.43137254899999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZKv-tG-t96" firstAttribute="top" secondItem="q1w-re-E9g" secondAttribute="top" id="3fC-mK-T8q"/>
+                                    <constraint firstItem="crN-Dh-1hh" firstAttribute="leading" secondItem="ZKv-tG-t96" secondAttribute="trailing" constant="2" id="6aJ-7p-Cfb"/>
+                                    <constraint firstAttribute="height" constant="35" id="9Gg-6R-P1L"/>
+                                    <constraint firstAttribute="trailing" secondItem="crN-Dh-1hh" secondAttribute="trailing" id="HJy-Tb-i6J"/>
+                                    <constraint firstItem="crN-Dh-1hh" firstAttribute="top" secondItem="q1w-re-E9g" secondAttribute="top" id="IVb-hL-ojS"/>
+                                    <constraint firstAttribute="bottom" secondItem="crN-Dh-1hh" secondAttribute="bottom" id="Ihl-lH-Rgw"/>
+                                    <constraint firstItem="ZKv-tG-t96" firstAttribute="leading" secondItem="q1w-re-E9g" secondAttribute="leading" constant="3" id="XZl-86-lKE"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZKv-tG-t96" secondAttribute="bottom" id="azh-bo-IhJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q1w-re-E9g" firstAttribute="leading" secondItem="Qks-GN-BZK" secondAttribute="leading" id="3FR-jf-R5x"/>
+                            <constraint firstItem="q1w-re-E9g" firstAttribute="top" secondItem="WLk-cE-4ie" secondAttribute="bottom" id="Xq5-Qu-anB"/>
+                            <constraint firstAttribute="trailing" secondItem="q1w-re-E9g" secondAttribute="trailing" id="hhO-rM-t6l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="工程部" id="B1u-Cg-d9y"/>
+                    <connections>
+                        <outlet property="containerView" destination="q1w-re-E9g" id="sf1-Uc-naW"/>
+                        <outlet property="departName_Label" destination="ZKv-tG-t96" id="eqx-px-bO9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xd4-vd-xST" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="5983"/>
+        </scene>
     </scenes>
     <resources>
         <image name="99D58PICZNR_1024" width="29" height="29"/>
         <image name="Road" width="32" height="32"/>
         <image name="black_SX" width="288" height="113"/>
+        <image name="ck" width="32" height="32"/>
+        <image name="gbc" width="38" height="32"/>
+        <image name="gcb" width="32" height="32"/>
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
         <image name="lq_bhz" width="32" height="32"/>
@@ -3988,9 +4186,9 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OFf-sM-NiC"/>
+        <segue reference="yFe-Zp-Q6l"/>
         <segue reference="2qa-au-FyR"/>
         <segue reference="eyg-Cx-bjM"/>
-        <segue reference="ogj-aY-kSm"/>
+        <segue reference="huJ-hq-5Ls"/>
     </inferredMetricsTieBreakers>
 </document>
