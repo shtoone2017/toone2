@@ -10,7 +10,6 @@
 #import "Node.h"
 #import "TreeTableView.h"
 #import "NodeMode.h"
-#import "LevelModel.h"
 
 #define levelLength 3
 @interface NodeViewController ()<TreeTableCellDelegate>
@@ -21,25 +20,30 @@
 @property (nonatomic, strong) Node *node;
 @property (nonatomic, strong) TreeTableView *treeTableView;
 
-@property (nonatomic, strong) LevelModel *leveModel;
-@property (nonatomic,strong) NSMutableArray *originalDataArr;
-@property (nonatomic,strong) NSMutableArray *dataArr;
 @end
 @implementation NodeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initWithData];
+    [self addButton];
     
-    
+}
+-(void)addButton {
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStylePlain target:self action:@selector(cellClick)];
+    rightBarItem.tintColor = [UIColor wheatColor];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
 }
 -(void)cellClick:(Node *)node didReachToBottom:(BOOL)reached {
     if (reached) {
-        if (self.callBlock) {
-            self.callBlock();
-        }
-        [self.navigationController  popViewControllerAnimated:YES];
+        
     }
+}
+-(void)cellClick {
+    if (self.callBlock) {
+        self.callBlock();
+    }
+    [self.navigationController  popViewControllerAnimated:YES];
 }
 
 #pragma mark - 组织机构
@@ -49,23 +53,16 @@
     [nodeMode channelBlock:^(NSArray *result) {
         for (int i = 0; i < result.count; i++) {
             weakSelf.node = [[Node alloc] init];
-//            weakSelf.node.parentId = (NSString *)[result[i] valueForKey:@"parentdepartid"];
-//            weakSelf.node.name = (NSString *)[result[i] valueForKey:@"departname"];
-//            weakSelf.node.nodeId = [result[i] valueForKey:@"ID"];
+            weakSelf.node.parentId = (NSString *)[result[i] valueForKey:@"parentdepartid"];
+            weakSelf.node.name = (NSString *)[result[i] valueForKey:@"departname"];
+            weakSelf.node.nodeId = [result[i] valueForKey:@"ID"];
             
-            weakSelf.node.parentId = (NSString *)[result[i] valueForKey:@"parentNo"];
-            weakSelf.node.name = (NSString *)[result[i] valueForKey:@"projectName"];
-            weakSelf.node.nodeId = [result[i] valueForKey:@"projectNo"];
-            
-            weakSelf.leveModel = [[LevelModel alloc] init];
-            weakSelf.leveModel.parentNo = (NSString *)[result[i] valueForKey:@"parentNo"];
-            weakSelf.leveModel.projectName = (NSString *)[result[i] valueForKey:@"projectName"];
-            weakSelf.leveModel.projectNo = [result[i] valueForKey:@"projectNo"];
-            [weakSelf.originalDataArr addObject:weakSelf.leveModel];
+//            weakSelf.node.parentId = (NSString *)[result[i] valueForKey:@"parentNo"];
+//            weakSelf.node.name = (NSString *)[result[i] valueForKey:@"projectName"];
+//            weakSelf.node.nodeId = [result[i] valueForKey:@"projectNo"];
             
             [weakSelf.channs addObject:weakSelf.node];
         }
-//        [self processData];
         int level = 0;
         for (int i = 0; i < weakSelf.channs.count; i++) {
             level = 0;
@@ -158,64 +155,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-#pragma mark - 测试--
-
-- (void)processData
-{
-    //获取当前数据中最高等级
-    LevelModel *firstModel = _originalDataArr[0];
-    NSInteger longestLevel = firstModel.projectNo.length/levelLength;
-    
-    for (int i = 0; i<_originalDataArr.count; i++)
-    {
-        LevelModel *model = _originalDataArr[i];
-        
-        NSInteger level = model.projectNo.length/levelLength;
-        if (longestLevel < level)
-        {
-            longestLevel = level;
-        }
-    }
-    //根据最高等级,将数据分级
-    NSMutableArray *levelArr = [NSMutableArray array];
-    for (int i = 0; i<longestLevel; i++)
-    {
-        NSMutableArray *tempArr = [NSMutableArray array];
-        [levelArr addObject:tempArr];
-    }
-    
-    for (LevelModel *model in _originalDataArr)
-    {
-        NSInteger level = model.projectNo.length/levelLength;
-        NSMutableArray *tempArr = levelArr[level-1];
-        [tempArr addObject:model];
-        [levelArr setObject:tempArr atIndexedSubscript:level-1];
-    }
-    
-    for (int i = 0; i<levelArr.count-1; i++)
-    {
-        for (LevelModel *model in levelArr[i])
-        {
-            NSMutableArray *tempArr = [NSMutableArray array];
-            for (LevelModel *nextLevelModel in levelArr[i+1])
-            {
-                if ([model.projectNo isEqualToString:nextLevelModel.parentNo])
-                {
-                    [tempArr addObject:nextLevelModel];
-                }
-            }
-            model.data = tempArr;
-        }
-    }
-}
-- (NSMutableArray *)originalDataArr
-{
-    if (!_originalDataArr)
-    {
-        _originalDataArr = [NSMutableArray array];
-    }
-    return _originalDataArr;
 }
 
 @end

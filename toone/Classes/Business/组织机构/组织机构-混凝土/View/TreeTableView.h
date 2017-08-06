@@ -14,6 +14,7 @@
 /** 点击哪个节点的代理方法.
  @param node 传出来的数据模型.
  @param reached 是否到达叶子节点(YES 为到达了, 你可以进行push 之类操作).
+ @return void.
  */
 -(void)cellClick:(Node *)node didReachToBottom:(BOOL)reached;
 
@@ -25,8 +26,5 @@
 @property (nonatomic , weak) id<TreeTableCellDelegate> treeTableCellDelegate;
 
 -(instancetype)initWithFrame:(CGRect)frame withData : (id )data;
-
-@property (nonatomic, strong) Node *nodeNada;
-
 
 @end

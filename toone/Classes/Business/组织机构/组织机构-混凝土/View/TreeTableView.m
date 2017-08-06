@@ -8,15 +8,15 @@
 
 #import "TreeTableView.h"
 #import "Node.h"
-#import "TheProjectCell.h"
+#import "TreeTableViewCell.h"
 
 @interface TreeTableView ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic , strong) NSArray *data;//传递过来已经组织好的数据（全量数据）
 
+//@property (nonatomic , strong) NSMutableArray *tempData;//用于存储数据源（部分数据）
 
 @property (nonatomic, assign)NSInteger maxDepth;//节点最深处
-
 
 @end
 
@@ -29,6 +29,7 @@
         self.delegate = self;
         _data = data;
         _tempData = [self createTempData:data];
+        [self registerNib:[UINib nibWithNibName:@"TreeTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"node_cell_id"];
     }
     return self;
 }
@@ -37,62 +38,52 @@
  * 初始化数据源
  */
 -(NSMutableArray *)createTempData : (NSArray *)data{
-    
     NSMutableArray *tempArray = [NSMutableArray array];
-    
+    NSInteger maxDepth = 0;
     for (int i=0; i<data.count; i++) {
         Node *node = [_data objectAtIndex:i];
+        
+        if (node.depth > maxDepth)//找最深的
+        {
+            maxDepth = node.depth;
+        }
+        
         if (node.expand) {
             [tempArray addObject:node];
         }
     }
-    
+    _maxDepth = maxDepth;
     return tempArray;
 }
 
 
 #pragma mark - UITableViewDataSource
+
+#pragma mark - Required
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _tempData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
- 
-    static NSString *CellIdentifier = @"treeNodeCell";
-    UINib *nib = [UINib nibWithNibName:@"TheProjectCell" bundle:nil];
-    [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
-    TheProjectCell *cell = (TheProjectCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *NODE_CELL_ID = @"node_cell_id";
+    
+    TreeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NODE_CELL_ID];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TreeTableViewCell" owner:self options:nil] lastObject];
+    }
     
     Node *node = [_tempData objectAtIndex:indexPath.row];
-    //
-    switch (node.depth) {
-        case 0:
-            [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
-            break;
-        case 1:
-            [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
-            break;
-        case 2:
-            [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
-            break;
-        default:
-//            if ([_type isEqualToString: @"3"]) {
-//                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"ShiYan"]];
-//            }
-//            else
-//            {
-//                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"BanHe"]];
-//            }
-            break;
-    }
+    
     // cell有缩进的方法
-    cell.treeNode = node;
-    cell.cellLabel.text = node.name;
-    cell.cellLabel.layer.cornerRadius = 5;
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    [cell setNeedsDisplay];
+    cell.indentationLevel = node.depth; // 缩进级别
+    cell.indentationWidth = 30.f; // 每个缩进级别的距离
+    
+    cell.titleLabel.text = node.name;
+    
     return cell;
 }
+
 
 #pragma mark - Optional
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -108,94 +99,126 @@
 }
 
 #pragma mark - UITableViewDelegate
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+#pragma mark - Optional
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Node *node = [_tempData objectAtIndex:indexPath.row];
-    
-    if ([_treeTableCellDelegate respondsToSelector:@selector(cellClick:didReachToBottom:)]) {
-        [_treeTableCellDelegate  cellClick:node didReachToBottom:YES];
-    }
-    self.nodeNada = node;
     [UserDefaultsSetting shareSetting].departName  = node.name;
     [UserDefaultsSetting shareSetting].departId = node.nodeId;
-    /*********************************/
-    NSUInteger startPosition = indexPath.row+1;
-    NSUInteger endPosition = startPosition;
-    BOOL expand = NO;
-    for (int i=0; i<_data.count; i++) {
-        Node *node = [_data objectAtIndex:i];
-        if (node.parentId == node.nodeId) {
-            node.expand = !node.expand;
-            if (node.expand) {
-                [_tempData insertObject:node atIndex:endPosition];
-                expand = YES;
-                endPosition++;
-            }else{
-                expand = NO;
-                endPosition = [self removeAllNodesAtParentNode:node];
-                break;
+    
+    //点击cell 改变 indicator 的状态
+    TreeTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.indicator.selected = !cell.indicator.selected;
+    
+    //先修改数据源
+    Node *parentNode = [_tempData objectAtIndex:indexPath.row];
+    
+    if (![self NodeHasChildrenNode:parentNode]) //是否到了最深处
+    {
+        if (_treeTableCellDelegate && [_treeTableCellDelegate respondsToSelector:@selector(cellClick:didReachToBottom:)]) {
+            [_treeTableCellDelegate cellClick:parentNode didReachToBottom:YES];
+        }
+    }
+    else
+    {
+        if (_treeTableCellDelegate && [_treeTableCellDelegate respondsToSelector:@selector(cellClick:didReachToBottom:)]) {
+            [_treeTableCellDelegate cellClick:parentNode didReachToBottom:NO];
+        }
+        
+        NSUInteger startPosition = indexPath.row+1;
+        NSUInteger endPosition = startPosition;
+        BOOL expand = NO;
+        for (int i=0; i<_data.count; i++)
+        {
+            Node *node = [_data objectAtIndex:i];
+            if (node.parentId == parentNode.nodeId)
+            {
+                node.expand = !node.expand;
+                if (node.expand)
+                {
+                    [_tempData insertObject:node atIndex:endPosition];
+                    expand = YES;
+                    endPosition++;
+                }
+                else
+                {
+                    expand = NO;
+                    endPosition = [self removeAllNodesAtParentNode:parentNode];
+                    break;
+                }
+            }
+        }
+        //获得需要修正的indexPath
+        NSMutableArray *indexPathArray = [NSMutableArray array];
+        for (NSUInteger i=startPosition; i<endPosition; i++)
+        {
+            NSIndexPath *tempIndexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            [indexPathArray addObject:tempIndexPath];
+        }
+        
+        //插入或者删除相关节点
+        if (expand)
+        {
+            [self insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self setIndicatorStates:tableView]; //先视图更新后进行状态更改操作
+        }
+        else
+        {
+            [self resetAllDeletedCellStates:indexPathArray tableView:tableView];// 先恢复 将要 "删除" 掉cell 的状态
+            [self deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+
+    }
+}
+
+- (void)resetAllDeletedCellStates:(NSArray *)indexPaths tableView:(UITableView *)tableView//恢复状态
+{
+    for (NSIndexPath *indexPath in indexPaths)
+    {
+        TreeTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.indicator.hidden = NO;
+        cell.indicator.selected = NO;
+    }
+}
+
+- (void)setIndicatorStates:(UITableView *)tableView //改变cell 上的 indicator 状态
+{
+    NSInteger index = 0;
+    for (Node *node in _tempData)
+    {
+        index = [_tempData indexOfObject:node];
+        TreeTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+//        NSLog(@"%p", cell);
+        if (_maxDepth == node.depth)//如果已经是最深节点 全部置为选中状态, 这样就没必要循环去检测他的子节点是否最深了
+        {
+            cell.indicator.selected = YES;
+            cell.indicator.hidden = YES;
+        }
+        else
+        {
+            if (![self NodeHasChildrenNode:node])
+            {
+                cell.indicator.selected = YES;
+                cell.indicator.hidden = YES;
             }
         }
     }
-    
-    //获得需要修正的indexPath
-    NSMutableArray *indexPathArray = [NSMutableArray array];
-    for (NSUInteger i=startPosition; i<endPosition; i++) {
-        NSIndexPath *tempIndexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [indexPathArray addObject:tempIndexPath];
-    }
-    TheProjectCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.treeNode = node;
-    //插入或者删除相关节点
-    if (expand) {
-        switch (node.depth) {
-            case 0:
-                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"下"]];
-                break;
-            case 1:
-                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"下"]];
-                break;
-            case 2:
-                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"下"]];
-                break;
-            default:
-//                if ([_type isEqualToString: @"3"]) {
-//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"ShiYan"]];
-//                }
-//                else
-//                {
-//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"BanHe"]];
-//                }
-                break;
-        }
-        [self insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
-    }else{
-        switch (node.depth) {
-            case 0:
-                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
-                break;
-            case 1:
-                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
-                break;
-            case 2:
-                [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"上"]];
-                break;
-            default:
-//                if ([_type isEqualToString: @"3"]) {
-//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"ShiYan"]];
-//                }
-//                else
-//                {
-//                    [cell setTheButtonBackgroundImage:[UIImage imageNamed:@"BanHe"]];
-//                }
-                break;
-        }
-        [self deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
-    }
-
 }
 
-#pragma mark - Optional
+- (BOOL)NodeHasChildrenNode:(Node *)node //检查是否到了节点最深处
+{
+    BOOL flag = NO;
+    for (Node *tempNode in _data)
+    {
+        if (node.nodeId == tempNode.parentId) //只要有一个就证明他有子节点
+        {
+            flag = YES;
+            break;
+        }
+    }
+    return flag;
+}
+
 /**
  *  删除该父节点下的所有子节点（包括孙子节点）
  *
@@ -225,6 +248,9 @@
     return endPosition;
 }
 
-
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    _selected = NO;
+//}
 
 @end
