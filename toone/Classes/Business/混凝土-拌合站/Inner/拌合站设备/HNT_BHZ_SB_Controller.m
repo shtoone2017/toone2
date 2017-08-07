@@ -15,8 +15,17 @@
 
 @implementation HNT_BHZ_SB_Controller
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.title = @"adaada";
+    [self datas];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.rowHeight = 40;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_BHZ_SB_Controller"];
@@ -26,7 +35,16 @@
         [Tools showActivityToView:self.view];
         
         NSString * departId = self.departId;
-        NSString * urlString = [NSString stringWithFormat:getShebeiList_1,departId];
+        NSString * urlString;
+        if (_type == SBListTypeBF)
+        {
+            //磅房设备URL
+            urlString = [NSString stringWithFormat:@"%@AppGB.do?AppDiBangList&departId=%@",baseUrl,[UserDefaultsSetting shareSetting].departId];
+        }
+        else
+        {
+            urlString = [NSString stringWithFormat:getShebeiList_1,departId];
+        }
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
             NSMutableArray * datas = [NSMutableArray array];

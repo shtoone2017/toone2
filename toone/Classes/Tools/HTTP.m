@@ -22,6 +22,9 @@ static HTTP *networking = nil;
         AFHTTPSessionManager * sessionManager = [AFHTTPSessionManager manager];
         sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
         sessionManager.requestSerializer.timeoutInterval = 20;
+        
+        
+
 //        NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
 //        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration]   ;
 //        manager.responseSerializer.acceptableContentTypes =[manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
@@ -37,8 +40,13 @@ static HTTP *networking = nil;
     switch (method) {
         case GET:{
             [manager GET:encodePath parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                id jsondata = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-                if (successBlock) successBlock(jsondata);
+                NSString *responseStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                NSData *resData = [responseStr dataUsingEncoding:NSUTF8StringEncoding];
+                NSDictionary*dic = [NSJSONSerialization JSONObjectWithData:resData options:0 error:nil];
+                if (successBlock)
+                {
+                    successBlock(dic);
+                }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if(failureBlock) failureBlock(error);

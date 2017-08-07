@@ -237,6 +237,9 @@
 		8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC41E0A6C0D00A5C4AA /* Main.storyboard */; };
 		8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC61E0A6C0D00A5C4AA /* Welcome.storyboard */; };
 		8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */; };
+		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
+		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
+		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -844,6 +847,11 @@
 		8CEB5BCF1E0A6D1900A5C4AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Welcome.strings"; sourceTree = "<group>"; };
 		8CEB5BD21E0A7DAA00A5C4AA /* SGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGButton.h; sourceTree = "<group>"; };
 		8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGButton.m; sourceTree = "<group>"; };
+		9C20240D1F38021200F79559 /* ScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
+		9C20240E1F38021200F79559 /* ScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
+		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
+		9C2024111F38052700F79559 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelTextFieldCell.m; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.m"; sourceTree = SOURCE_ROOT; };
+		9C2024121F38052700F79559 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextFieldCell.xib; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.xib"; sourceTree = SOURCE_ROOT; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -3206,6 +3214,11 @@
 		D200641A1DFF86800021E293 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				9C2024101F38052700F79559 /* LabelTextFieldCell.h */,
+				9C2024111F38052700F79559 /* LabelTextFieldCell.m */,
+				9C2024121F38052700F79559 /* LabelTextFieldCell.xib */,
+				9C20240D1F38021200F79559 /* ScreenView.h */,
+				9C20240E1F38021200F79559 /* ScreenView.m */,
 				18B871C01E1F719900F9DD53 /* Controller */,
 				8C2840821EB1132200440413 /* View3 */,
 				42AC721B1E30C668007D8F57 /* View2 */,
@@ -3651,6 +3664,7 @@
 				8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */,
 				42AC71491E30C393007D8F57 /* DCZ_CJ_Inner_Cell.xib in Resources */,
 				D200652A1DFF86B30021E293 /* HalfPieChartViewController.xib in Resources */,
+				9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */,
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				8CBD72E61E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.xib in Resources */,
@@ -3933,6 +3947,7 @@
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
 				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
+				9C20240F1F38021200F79559 /* ScreenView.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
 				187C73021E30B1810072F33A /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				D200646E1DFF86800021E293 /* HNT_SYS_Controller.m in Sources */,
@@ -4043,6 +4058,7 @@
 				425AE0E81F341C360048D96B /* GCB_Controller.m in Sources */,
 				42AC71501E30C393007D8F57 /* disposal_C_Model.m in Sources */,
 				8CE976561E0BF1FF0016A858 /* MySJxib.m in Sources */,
+				9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */,
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,
 				42AC72111E30C576007D8F57 /* NSArray+MASAdditions.m in Sources */,
 				42AC716C1E30C393007D8F57 /* LQ_CLHS_DataModel.m in Sources */,
