@@ -209,9 +209,12 @@
     {
         LLQ_MXE_Detail_ChartCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_MXE_Detail_ChartCell"];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-         WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, 0, Screen_w, 180) xTitleArray:@[@"1",@"2",@"3",@"4"] xValueArray:self.xMutableArr[_currentLineNum] yValueArray:self.yMutableArr[_currentLineNum] yMax:300 yMin:0];
-        wsLine.backgroundColor = [UIColor whiteColor];
-        [cell.chartParentView addSubview:wsLine];
+        
+        if (self.xMutableArr != nil && self.xMutableArr.count != 0 && ![self.xMutableArr isKindOfClass:[NSNull class]]) {
+            WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, 0, Screen_w, 180) xTitleArray:@[@"1",@"2",@"3",@"4"] xValueArray:self.xMutableArr[_currentLineNum] yValueArray:self.yMutableArr[_currentLineNum] yMax:300 yMin:0];
+            wsLine.backgroundColor = [UIColor whiteColor];
+            [cell.chartParentView addSubview:wsLine];
+        }
         return cell;
 
     }
