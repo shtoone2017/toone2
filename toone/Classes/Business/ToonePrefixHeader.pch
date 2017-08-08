@@ -21,6 +21,7 @@
 #define FormatFloat(obj)                    [NSString stringWithFormat:@"%.0f",obj]
 #define FormatString(obj1,obj2)             [NSString stringWithFormat:@"%@%@",obj1,obj2]
 
+#define PGY_APP_ID @"79fd6c8bbf4da4d092c091e62a6e3ff7"
 /*
  + (instancetype)goldenrodColor;
  + (instancetype)yellowGreenColor;
