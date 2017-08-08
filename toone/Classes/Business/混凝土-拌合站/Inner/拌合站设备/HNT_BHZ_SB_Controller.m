@@ -9,7 +9,7 @@
 #import "HNT_BHZ_SB_Controller.h"
 #import "HNT_BHZ_SB_Model.h"
 @interface HNT_BHZ_SB_Controller ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic)  UITableView *tbleView;
 @property (nonatomic,strong) NSMutableArray * datas;
 @end
 
@@ -26,9 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView.rowHeight = 40;
-    self.tableView.tableFooterView = [[UIView alloc] init];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_BHZ_SB_Controller"];
+    self.tbleView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, Screen_w, Screen_h) style:UITableViewStylePlain];
+//    self.tbleView.backgroundColor = [UIColor cyanColor];
+    _tbleView.delegate =self;
+    _tbleView.dataSource = self;
+    self.tbleView.rowHeight = 40;
+    self.tbleView.tableFooterView = [[UIView alloc] init];
+    [self.tbleView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_BHZ_SB_Controller"];
+    [self.view addSubview:self.tbleView];
 }
 -(NSMutableArray *)datas{
     if (!_datas) {
@@ -57,7 +62,7 @@
                 }
             }
             weakSelf.datas = datas;
-            [weakSelf.tableView reloadData];
+            [weakSelf.tbleView reloadData];
             [Tools removeActivity];
         } failure:^(NSError *error) {
         }];

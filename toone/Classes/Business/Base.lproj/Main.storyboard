@@ -3557,28 +3557,9 @@
                     <view key="view" contentMode="scaleToFill" id="bOo-Fi-08G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1HF-od-Ex1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="byI-bw-Xq5" id="kYj-z9-Je8"/>
-                                    <outlet property="delegate" destination="byI-bw-Xq5" id="p9p-wt-ttC"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1HF-od-Ex1" firstAttribute="leading" secondItem="bOo-Fi-08G" secondAttribute="leading" id="Usp-7Z-fVO"/>
-                            <constraint firstAttribute="trailing" secondItem="1HF-od-Ex1" secondAttribute="trailing" id="efV-rt-WrR"/>
-                            <constraint firstItem="1HF-od-Ex1" firstAttribute="top" secondItem="fI8-D0-lbM" secondAttribute="bottom" id="soz-Oa-boQ"/>
-                            <constraint firstItem="1pv-WH-dNv" firstAttribute="top" secondItem="1HF-od-Ex1" secondAttribute="bottom" id="vb2-Z9-4Nx"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Ib-eg-R4v"/>
-                    <connections>
-                        <outlet property="tableView" destination="1HF-od-Ex1" id="Wge-fA-Hnt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rp-c0-2GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
