@@ -85,6 +85,8 @@
         if (type == SJOkClick) {
             timeString = [NSString stringWithFormat:@"%@ %@",timeString,time];
             [(UIButton*)weakcontroller.obj setTitle:timeString forState:UIControlStateNormal];
+            self.selectTime = timeString;
+            
         }
     };
     FuncLog;

@@ -23,6 +23,15 @@
 
 @property (nonatomic , assign) BOOL expand;//该节点是否处于展开状态
 
+//
+////  材料名称
+//@property (nonatomic , copy) NSString *parentnode;//父节点的id
+//
+//@property (nonatomic , copy) NSString *cailiaono;//本节点的id
+//
+//@property (nonatomic , copy) NSString *cailiaoname;
+
+
 
 /**
  *快速实例化该对象模型

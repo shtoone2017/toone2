@@ -18,7 +18,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"adaada";
+    self.title = @"选择设备";
     [self datas];
 }
 

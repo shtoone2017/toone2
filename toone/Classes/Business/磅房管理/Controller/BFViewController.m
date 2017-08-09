@@ -32,7 +32,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUI];
+    
+    //kvo监听时间变化
+    [self addObserver:self forKeyPath:@"selectTime" options:NSKeyValueObservingOptionNew context:nil];
 }
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"selectTime"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    [scView.tbView reloadData];
+}
+
 -(void)loadUI{
     //    self.containerView.backgroundColor = BLUECOLOR;
     //顶部UISegmentedControl
@@ -112,6 +126,9 @@
     NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间:",@"批次:",@"车牌号:"];
     scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 0, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF];
     scView.backgroundColor = [UIColor cyanColor];
+    scView.block = ^(BOOL isShow) {
+        isShowScreenView = isShow;
+    };
     [self.view addSubview:scView];
 }
 

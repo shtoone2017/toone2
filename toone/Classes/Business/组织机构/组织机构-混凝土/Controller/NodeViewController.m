@@ -26,7 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self initWithData];
+    if (_type == NodeTypeCL)
+    {
+        [self getDataOfMaterial];
+    }
+    else
+    {
+        [self initWithData];
+    }
+    
     [self addButton];
 }
 -(void)addButton {
@@ -56,72 +64,111 @@
             weakSelf.node.parentId = (NSString *)[result[i] valueForKey:@"parentdepartid"];
             weakSelf.node.name = (NSString *)[result[i] valueForKey:@"departname"];
             weakSelf.node.nodeId = [result[i] valueForKey:@"ID"];
-            
-//            weakSelf.node.parentId = (NSString *)[result[i] valueForKey:@"parentNo"];
-//            weakSelf.node.name = (NSString *)[result[i] valueForKey:@"projectName"];
-//            weakSelf.node.nodeId = [result[i] valueForKey:@"projectNo"];
-            
             [weakSelf.channs addObject:weakSelf.node];
         }
-        int level = 0;
-        for (int i = 0; i < weakSelf.channs.count; i++) {
-            level = 0;
-            if ([[weakSelf.channs[i] parentId]  isEqual: @""]) {
-                level = 0;
-            }else {
-                //分层级
-                [weakSelf clearLevel:weakSelf.channs[i] array:weakSelf.channs num:0 level:&level];
-            }
-            Node *node = _channs[i];
-            node.expand = true;
-            node.depth = level;
-        }
-        for (int i = 0; i < weakSelf.channs.count; i++) {
-            if ([[weakSelf.channs[i] parentId]  isEqual: @""] || ![weakSelf.channs[i] parentId]) {
-                [weakSelf.channArr addObject:_channs[i]];
-            }
-        }
         
-        long arrCount = _channArr.count;
-        
-        for (int i = 0; i < arrCount; i++) {
-            //            递归添加子节点
-            [self addNode:_channArr[i] arry:_channs arryNode:_channArr];
-        }
-        
-        
-        TreeTableView *tableview = [[TreeTableView alloc] initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) withData:_channArr];
-        
-        tableview.backgroundColor = [UIColor clearColor];
-        tableview.bounces = NO;
-        tableview.treeTableCellDelegate = self;
-        tableview.separatorStyle = UITableViewCellSelectionStyleNone;
-        [self.view addSubview:tableview];
-        self.treeTableView = tableview;
+        [weakSelf setUpUI];
     }];
 }
+
+//材料名称结构
+- (void)getDataOfMaterial
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@appWZproject.do?AppCaiLiaoNameDict",baseUrl];
+    __weak typeof(self) weakSelf = self;
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
+        
+        NSDictionary *dict = (NSDictionary *)result;
+        
+        NSArray *dictArr = dict[@"data"];
+        
+         for (int i = 0; i < dictArr.count; i++) {
+             NSDictionary *modelDic = dictArr[i];
+             weakSelf.node = [[Node alloc] init];
+             if ([[modelDic valueForKey:@"parentnode"] isKindOfClass:[NSNull class]])
+             {
+                 weakSelf.node.parentId = @"";
+             }
+             else{
+                 weakSelf.node.parentId = (NSString *)[modelDic valueForKey:@"parentnode"] ? :@"";
+             }
+             
+             weakSelf.node.name = (NSString *)[modelDic valueForKey:@"cailiaoname"];
+             weakSelf.node.nodeId = [modelDic valueForKey:@"cailiaono"];
+             [weakSelf.channs addObject:weakSelf.node];
+         
+         }
+        [weakSelf setUpUI];
+    }];
+}
+
+
+- (void)setUpUI
+{
+    int level = 0;
+    for (int i = 0; i < self.channs.count; i++) {
+        level = 0;
+        if ([[self.channs[i] parentId]  isEqual: @""]) {
+            level = 0;
+        }else {
+            //分层级
+            [self clearLevel:self.channs[i] array:self.channs num:0 level:&level];
+        }
+        Node *node = _channs[i];
+        node.depth = level;
+        if (!node.depth) {
+            node.expand = true;
+        }
+    }
+    for (int i = 0; i < self.channs.count; i++) {
+        if ([[self.channs[i] parentId]  isEqual: @""] || ![self.channs[i] parentId]) {
+            [self.channArr addObject:_channs[i]];
+        }
+    }
+    
+    long arrCount = _channArr.count;
+    
+    for (int i = 0; i < arrCount; i++) {
+        //            递归添加子节点
+        [self addNode:_channArr[i] arry:_channs arryNode:_channArr];
+    }
+    
+    
+    TreeTableView *tableview = [[TreeTableView alloc] initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) withData:_channArr];
+    
+    tableview.backgroundColor = [UIColor clearColor];
+    tableview.bounces = NO;
+    tableview.treeTableCellDelegate = self;
+    tableview.separatorStyle = UITableViewCellSelectionStyleNone;
+    [self.view addSubview:tableview];
+    self.treeTableView = tableview;
+}
+
 #pragma mark - 分层级
 -(void)clearLevel:(Node *)nodeObj array:(NSMutableArray *)array num:(int)num level:(int *)level {
     Node *mode = array[num];
-    if ([nodeObj.parentId  isEqualToString:mode.nodeId]) {
-        Node *noode = [[Node alloc] init];
-        noode.nodeId = [array[num] nodeId];
-        noode.parentId = [array[num] parentId];
-        noode.name = [array[num] name];
-        (*level)++;
-        num = 0;
-        
-        [self clearLevel:noode array:array num:num level:level];
-    }else {
-        
-        if(!nodeObj.parentId || [nodeObj.parentId isEqualToString:@""]){
+    if([nodeObj.parentId isEqualToString:@""]){
+        return;
+    }else{
+        if ([nodeObj.parentId  isEqualToString:mode.nodeId]) {
+            Node *noode = [[Node alloc] init];
+            noode.nodeId = [array[num] nodeId];
+            noode.parentId = [array[num] parentId];
+            noode.name = [array[num] name];
+            (*level)++;
+            num = 0;
             
-            return;
-        }else{
-            num++;
-            [self clearLevel:nodeObj array:array num:num level:level];
+            [self clearLevel:noode array:array num:num level:level];
+        }else {
+            if ([nodeObj.parentId isEqualToString:@""]) {
+                return;
+            }else {
+                num++;
+                [self clearLevel:nodeObj array:array num:num level:level];
+            }
         }
     }
+
 }
 
 

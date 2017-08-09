@@ -13,7 +13,7 @@
 @property (nonatomic,copy)NSString * startTime;
 @property (nonatomic,copy)NSString * endTime;
 
-
+@property (nonatomic,strong) NSString *selectTime;
 
 /**
  * 提供一个可供子类继承/重写的buttonClick:

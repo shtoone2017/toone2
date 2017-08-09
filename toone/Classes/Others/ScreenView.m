@@ -10,13 +10,17 @@
 #import "LabelTextFieldCell.h"
 #import "NodeViewController.h"
 #import "HNT_BHZ_SB_Controller.h"
+#import "BFViewController.h"
+#import "CJCalendarViewController.h"
 
 #define BF_SB_Name @"BF_SB_Name"
 #define BF_SB_ID @"BF_SB_ID"
 
-@interface ScreenView()<UITableViewDelegate,UITableViewDataSource>
+@interface ScreenView()<UITableViewDelegate,UITableViewDataSource,CalendarViewControllerDelegate>
 
 @property (nonatomic,strong) NSMutableDictionary *paraDic;  //参数字典
+
+@property (nonatomic,assign) BOOL isShow;
 
 @end
 
@@ -60,6 +64,23 @@
     
     self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{BF_SB_Name:@"",BF_SB_ID:@""}];
     
+    UISwipeGestureRecognizer *swipeGes = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenAction)];
+    swipeGes.direction = UISwipeGestureRecognizerDirectionRight;
+    [self addGestureRecognizer:swipeGes];
+    
+}
+
+- (void)hiddenAction
+{
+    _isShow = NO;
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3 animations:^{
+        weakSelf.frame = CGRectMake(Screen_w, 0, weakSelf.bounds.size.width, weakSelf.bounds.size.height);
+        if (_block)
+        {
+            _block(_isShow);
+        }
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -98,6 +119,19 @@
                     //磅房
                     cell.txtField.text = _paraDic[BF_SB_Name];
                 }
+                else if (indexPath.row == 2)
+                {
+                    //材料
+                }
+                else if (indexPath.row == 3)
+                {
+                    //时间
+                    BFViewController *vc = (BFViewController *)[self viewController];
+                    if (vc.selectTime)
+                    {
+                        cell.txtField.text = vc.selectTime;
+                    }
+                }
             }
         }
         
@@ -116,6 +150,7 @@
             {
                 //所属机构
                 NodeViewController *vc = [[NodeViewController alloc] init];
+                vc.type = NodeTypeZZJG;
                 [[self viewController].navigationController pushViewController:vc animated:YES];
             }
             else if(indexPath.row == 1)
@@ -129,26 +164,23 @@
                 };
                 [[self viewController].navigationController pushViewController:vc animated:YES];
             }
+            else if (indexPath.row == 2)
+            {
+                //材料
+                NodeViewController *vc = [[NodeViewController alloc] init];
+                vc.type = NodeTypeCL;
+                [[self viewController].navigationController pushViewController:vc animated:YES];
+            }
+            else if (indexPath.row == 3)
+            {
+                BFViewController *vc = (BFViewController *)[self viewController];
+                [vc calendarWithTimeString:nil obj:nil];
+            }
         }
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    id vc = segue.destinationViewController;
-    if ([vc isKindOfClass:[HNT_BHZ_SB_Controller class]]) {
-        HNT_BHZ_SB_Controller * controller = vc;
-        __weak UIButton * weakBtn = sender;
-        __weak __typeof(self)  weakSelf = self;
-        controller.title = @"选择设备";
-        //        controller.departId = self.departId;
-        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
-            [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
-            //            weakSelf.shebeibianhao = gprsbianhao;
-        };
-        
-    }
-    
-}
+
 //获取view的controller
 - (UIViewController *)viewController
 {

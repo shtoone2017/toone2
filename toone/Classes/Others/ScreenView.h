@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ScreenIsShowBlock)(BOOL isShow);
 
 typedef NS_ENUM(NSInteger,ScreenViewType)
 {
@@ -23,6 +24,8 @@ typedef NS_ENUM(NSInteger,ScreenViewType)
 @property (nonatomic,assign) NSInteger type;    //筛选视图类型
 
 @property (nonatomic,strong) UITableView *tbView;
+
+@property (nonatomic,copy) ScreenIsShowBlock block;
 
 - (instancetype)initWithFrame:(CGRect)frame titleArr:(NSArray *)titleArr type:(NSInteger)type;
 
