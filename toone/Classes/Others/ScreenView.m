@@ -13,8 +13,6 @@
 #import "BFViewController.h"
 #import "CJCalendarViewController.h"
 
-
-
 @interface ScreenView()<UITableViewDelegate,UITableViewDataSource,CalendarViewControllerDelegate>
 
 @property (nonatomic,assign) BOOL isShow;
@@ -82,28 +80,22 @@
     _tbView.sectionFooterHeight = 80;
 //    _tbView.backgroundColor = [UIColor yellowColor];
     [self addSubview:_tbView];
-    
-//    jinchangshijian1 true 进场时间1
-//    jinchangshijian2 true 进场时间2
-//    chuchangshijian1 true 出场时间1
-//    chuchangshijian2 true 出场时间2
-//    orgcode true 组织机构编号
-//    pageNo true 当前页
-//    maxPageItems true 每页条数
-//    pici true 批次
-//    cheliangbianhao true 车辆编号
-//    gprsbianhao true 设备编号（shebeibianhao）
-//    cailiaono
-    if (_type == ScreenViewTypeBF_JC)
-    {
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",jinchangshijian2:@"",cheliangbianhao:@"",orgcode:@"",pici:@"",gprsbianhao:@"",cailiaono:@""}];
-    }
-    
+
+    [self clearAllPara];
     
     UISwipeGestureRecognizer *swipeGes = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenAction)];
     swipeGes.direction = UISwipeGestureRecognizerDirectionRight;
     [self addGestureRecognizer:swipeGes];
     
+}
+
+- (void)clearAllPara
+{
+    if (_type == ScreenViewTypeBF_JC)
+    {
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:self.parentVC.startTime,jinchangshijian2:self.parentVC.endTime,cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,pici:@"",gprsbianhao:@"",cailiaono:@""}];
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:self.parentVC.startTime,LIST_JCTime2:self.parentVC.endTime,LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
+    }
 }
 
 - (void)hiddenAction
@@ -146,9 +138,15 @@
                 if (indexPath.row == 0)
                 {
                     //所属机构
+                    if ([_nameDic[LIST_ZZJG] isEqualToString:@""]) {
+                        cell.txtField.text = [UserDefaultsSetting shareSetting].departName;
+                    }
+                    else
+                    {
+                        cell.txtField.text = _nameDic[LIST_JCTime2];
+                    }
                     NSString *txtStr = _nameDic[LIST_ZZJG];
                     cell.txtField.text = txtStr;
-//                    NSLog(@"组织结构:    %@",[UserDefaultsSetting shareSetting].departId);
                 }
                 else if (indexPath.row == 1)
                 {
@@ -162,7 +160,7 @@
                 }
                 else if (indexPath.row == 3)
                 {
-                    if (!_nameDic[LIST_JCTime1]) {
+                    if ([_nameDic[LIST_JCTime1] isEqualToString:@""]) {
                         cell.txtField.text = self.parentVC.startTime;
                     }
                     else
@@ -172,7 +170,7 @@
                 }
                 else if (indexPath.row == 4)
                 {
-                    if (!_nameDic[LIST_JCTime2]) {
+                    if ([_nameDic[LIST_JCTime2] isEqualToString:@""]) {
                         cell.txtField.text = self.parentVC.endTime;
                     }
                     else
@@ -284,12 +282,13 @@
     if (sender.tag == 100)
     {
         //重置
-        
+        [self clearAllPara];
+        [_tbView reloadData];
     }
     else
     {
         //查询
-        
+        [self hiddenAction];
     }
 }
 
