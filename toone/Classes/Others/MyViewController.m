@@ -84,9 +84,20 @@
     c.callBack = ^(SJButtonClickType type,NSString * time){
         if (type == SJOkClick) {
             timeString = [NSString stringWithFormat:@"%@ %@",timeString,time];
-            [(UIButton*)weakcontroller.obj setTitle:timeString forState:UIControlStateNormal];
-            self.selectTime = timeString;
-            
+            if ([weakcontroller.obj isKindOfClass:[UIButton class]])
+            {
+                [(UIButton*)weakcontroller.obj setTitle:timeString forState:UIControlStateNormal];
+            }
+            else
+            {
+                UITextField *txtF = (UITextField *)weakcontroller.obj;
+                txtF.text = timeString;
+            }
+
+            if (_block)
+            {
+                _block();
+            }
         }
     };
     FuncLog;

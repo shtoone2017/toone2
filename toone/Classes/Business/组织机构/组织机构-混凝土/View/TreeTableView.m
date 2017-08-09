@@ -103,8 +103,12 @@
 #pragma mark - Optional
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Node *node = [_tempData objectAtIndex:indexPath.row];
-    [UserDefaultsSetting shareSetting].departName  = node.name;
-    [UserDefaultsSetting shareSetting].departId = node.nodeId;
+//    [UserDefaultsSetting shareSetting].departName  = node.name;
+//    [UserDefaultsSetting shareSetting].departId = node.nodeId;
+    if (_block)
+    {
+        _block(node.name,node.nodeId);
+    }
     
     //点击cell 改变 indicator 的状态
     TreeTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];

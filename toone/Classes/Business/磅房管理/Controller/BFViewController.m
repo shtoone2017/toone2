@@ -11,10 +11,14 @@
 #import "ScreenView.h"
 #import "HNT_BHZ_SB_Controller.h"
 
-@interface BFViewController ()
+
+
+@interface BFViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     ScreenView *scView;
     BOOL isShowScreenView;
+    UITableView *_tbView;
+    NSInteger _currentPage;
 }
 @end
 
@@ -33,19 +37,9 @@
     [super viewDidLoad];
     [self loadUI];
     
-    //kvo监听时间变化
-    [self addObserver:self forKeyPath:@"selectTime" options:NSKeyValueObservingOptionNew context:nil];
+    
 }
 
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:@"selectTime"];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-{
-    [scView.tbView reloadData];
-}
 
 -(void)loadUI{
     //    self.containerView.backgroundColor = BLUECOLOR;
@@ -71,8 +65,6 @@
     [seg addTarget:self action:@selector(segmentControlAction:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = seg;
     
-    [self createScreenView];
-    
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
     btn.tag  = 2;
     [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -82,6 +74,106 @@
     btn3.tag  = 3;
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
+    
+    //创建列表
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,Screen_w,Screen_h) style:UITableViewStylePlain];
+    _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tbView.rowHeight = 70.0;
+    _tbView.delegate = self;
+    _tbView.dataSource = self;
+    [self.view addSubview:_tbView];
+    
+    [self createScreenView];
+}
+
+
+- (void)configRefreshControl
+{
+    __weak typeof(self) weakSelf = self;
+    _tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _currentPage = 1;
+        [_tbView.mj_footer resetNoMoreData];
+        [weakSelf loadingDataWithTag:1 showLoading:YES];
+    }];
+    [_tbView.mj_header beginRefreshing];
+    
+    _tbView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf loadingDataWithTag:0 showLoading:YES];
+    }];
+}
+
+
+#pragma mark - Data request
+
+- (void)loadingDataWithTag:(NSInteger)tag showLoading:(BOOL)isShowLoading
+{
+    __weak typeof(self) weakSelf = self;
+    NSString *urlString = [NSString stringWithFormat:@"%@AppGB.do?JinChangGB",baseUrl];
+//    [NetworkTool sharedNetworkTool]getObjectWithURLString:urlString parmas:nil completeBlock:^(id result) {
+//        
+//    };
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
+        
+        NSDictionary *dict = (NSDictionary *)result;
+        
+        NSArray *dictArr = dict[@"data"];
+        
+//        for (int i = 0; i < dictArr.count; i++) {
+//            NSDictionary *modelDic = dictArr[i];
+//            weakSelf.node = [[Node alloc] init];
+//            if ([[modelDic valueForKey:@"parentnode"] isKindOfClass:[NSNull class]])
+//            {
+//                weakSelf.node.parentId = @"";
+//            }
+//            else{
+//                weakSelf.node.parentId = (NSString *)[modelDic valueForKey:@"parentnode"] ? :@"";
+//            }
+//            
+//            weakSelf.node.name = (NSString *)[modelDic valueForKey:@"cailiaoname"];
+//            weakSelf.node.nodeId = [modelDic valueForKey:@"cailiaono"];
+//            [weakSelf.channs addObject:weakSelf.node];
+//            
+//        }
+//        [weakSelf setUpUI];
+    }];
+
+    /*
+     if (result && result != nil)
+     {
+     if (tag == 1) {
+     [self.tableArray removeAllObjects];
+     }
+     NSArray *arr = [NewsListModel arrayOfModelsFromDictionaries:result];
+     [weakSelf.tableArray addObjectsFromArray:arr];
+     if ([arr count] == [kPageSize integerValue])
+     {
+     _currentPage ++ ;//有下一页  show 加载按钮
+     }else
+     {
+     //没有下一页  hide 加载按钮
+     [weakSelf.tableV.mj_footer endRefreshingWithNoMoreData];
+     }
+     [_tableV reloadData];
+     */
+}
+
+
+#pragma mark - UITableViewDelegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return nil;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
 }
 
@@ -123,26 +215,28 @@
 
 - (void)createScreenView
 {
-    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间:",@"批次:",@"车牌号:"];
-    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 0, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF];
-    scView.backgroundColor = [UIColor cyanColor];
+    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间(开始):",@"进场时间(结束):",@"批次:",@"车牌号:"];
+    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
+//    scView.backgroundColor = [UIColor cyanColor];
     scView.block = ^(BOOL isShow) {
         isShowScreenView = isShow;
     };
+    
     [self.view addSubview:scView];
+    [self.view bringSubviewToFront:scView];
 }
 
 - (void)showScreenView
 {
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-        scView.frame = CGRectMake(30, 0, Screen_w-30, Screen_h);
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        scView.frame = CGRectMake(30, 60, Screen_w-30, Screen_h);
     } completion:nil];
 }
 
 - (void)hidenScreenView
 {
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-        scView.frame = CGRectMake(Screen_w, 0, Screen_w-30, Screen_h);
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        scView.frame = CGRectMake(Screen_w, 60, Screen_w-30, Screen_h);
     } completion:nil];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -150,10 +244,10 @@
     if ([vc isKindOfClass:[HNT_BHZ_SB_Controller class]]) {
         HNT_BHZ_SB_Controller * controller = vc;
         __weak UIButton * weakBtn = sender;
-        __weak __typeof(self)  weakSelf = self;
+//        __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
 //        controller.departId = self.departId;
-        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao1){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
 //            weakSelf.shebeibianhao = gprsbianhao;
         };

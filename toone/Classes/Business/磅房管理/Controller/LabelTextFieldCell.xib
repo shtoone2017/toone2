@@ -19,21 +19,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JS-dZ-BH4">
-                        <rect key="frame" x="100" y="25.5" width="272" height="30"/>
+                        <rect key="frame" x="141" y="26" width="231" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="j7v-1u-OjG"/>
                         </constraints>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进场时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-Qx-Up0">
-                        <rect key="frame" x="15" y="25.5" width="65" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进场时间(开始):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-Qx-Up0">
+                        <rect key="frame" x="15" y="26" width="111" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="65" id="NFn-gU-QFs"/>
+                            <constraint firstAttribute="width" constant="111" id="NFn-gU-QFs"/>
                             <constraint firstAttribute="height" constant="30" id="aZU-ab-Se9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -43,7 +43,7 @@
                     <constraint firstAttribute="bottom" secondItem="fXB-Qx-Up0" secondAttribute="bottom" constant="15" id="gJ3-cR-tmO"/>
                     <constraint firstItem="fXB-Qx-Up0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="sA3-FL-UZs"/>
                     <constraint firstAttribute="trailing" secondItem="1JS-dZ-BH4" secondAttribute="trailing" constant="30" id="uda-GZ-uWh"/>
-                    <constraint firstItem="1JS-dZ-BH4" firstAttribute="leading" secondItem="fXB-Qx-Up0" secondAttribute="trailing" constant="20" id="vOa-UF-B2p"/>
+                    <constraint firstItem="1JS-dZ-BH4" firstAttribute="leading" secondItem="fXB-Qx-Up0" secondAttribute="trailing" constant="15" id="vOa-UF-B2p"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

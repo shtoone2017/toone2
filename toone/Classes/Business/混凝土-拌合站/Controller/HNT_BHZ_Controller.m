@@ -111,7 +111,7 @@
     __weak typeof(self) weakSelf = self;
     if ([vc isKindOfClass:[NodeViewController class]]) {
         NodeViewController * controller = vc;
-        controller.callBlock = ^(){
+        controller.ZZJGBlock = ^(NSString *name, NSString *identifier) {
             [weakSelf.datas removeAllObjects];
             [weakSelf.tableView reloadData];
             [weakSelf loadData];

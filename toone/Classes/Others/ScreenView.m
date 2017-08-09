@@ -13,14 +13,15 @@
 #import "BFViewController.h"
 #import "CJCalendarViewController.h"
 
-#define BF_SB_Name @"BF_SB_Name"
-#define BF_SB_ID @"BF_SB_ID"
+
 
 @interface ScreenView()<UITableViewDelegate,UITableViewDataSource,CalendarViewControllerDelegate>
 
-@property (nonatomic,strong) NSMutableDictionary *paraDic;  //参数字典
-
 @property (nonatomic,assign) BOOL isShow;
+
+@property (nonatomic,strong) NSMutableDictionary *nameDic;  //显示内容
+
+@property (nonatomic,strong) BFViewController *parentVC;
 
 @end
 
@@ -34,6 +35,15 @@
 }
 */
 
+- (BFViewController *)parentVC
+{
+    if (!_parentVC)
+    {
+        _parentVC = (BFViewController *)[self viewController];
+    }
+    return _parentVC;
+}
+
 - (NSMutableDictionary *)paraDic
 {
     if (!_paraDic) {
@@ -41,6 +51,15 @@
     }
     return _paraDic;
 }
+
+- (NSMutableDictionary *)nameDic
+{
+    if (!_nameDic) {
+        _nameDic = [NSMutableDictionary dictionary];
+    }
+    return _nameDic;
+}
+
 
 - (instancetype)initWithFrame:(CGRect)frame titleArr:(NSArray *)titleArr type:(NSInteger)type
 {
@@ -53,16 +72,33 @@
     return self;
 }
 
+
 - (void)setUpUI
 {
     _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) style:UITableViewStyleGrouped];
     _tbView.delegate = self;
     _tbView.dataSource = self;
     _tbView.rowHeight = 70;
+    _tbView.sectionFooterHeight = 80;
 //    _tbView.backgroundColor = [UIColor yellowColor];
     [self addSubview:_tbView];
     
-    self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{BF_SB_Name:@"",BF_SB_ID:@""}];
+//    jinchangshijian1 true 进场时间1
+//    jinchangshijian2 true 进场时间2
+//    chuchangshijian1 true 出场时间1
+//    chuchangshijian2 true 出场时间2
+//    orgcode true 组织机构编号
+//    pageNo true 当前页
+//    maxPageItems true 每页条数
+//    pici true 批次
+//    cheliangbianhao true 车辆编号
+//    gprsbianhao true 设备编号（shebeibianhao）
+//    cailiaono
+    if (_type == ScreenViewTypeBF_JC)
+    {
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",jinchangshijian2:@"",cheliangbianhao:@"",orgcode:@"",pici:@"",gprsbianhao:@"",cailiaono:@""}];
+    }
+    
     
     UISwipeGestureRecognizer *swipeGes = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenAction)];
     swipeGes.direction = UISwipeGestureRecognizerDirectionRight;
@@ -102,36 +138,49 @@
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LabelTextFieldCell" owner:self options:nil] lastObject];
         cell.lab.text = _titleArr[indexPath.row];
-        if (_type == ScreenViewTypeBF)
+        if (_type == ScreenViewTypeBF_JC)
         {
-            if (indexPath.row < 4)
+            if (indexPath.row < 5)
             {
                 cell.txtField.enabled = NO;
                 if (indexPath.row == 0)
                 {
                     //所属机构
-                    NSString *txtStr = [UserDefaultsSetting shareSetting].departName;
+                    NSString *txtStr = _nameDic[LIST_ZZJG];
                     cell.txtField.text = txtStr;
 //                    NSLog(@"组织结构:    %@",[UserDefaultsSetting shareSetting].departId);
                 }
                 else if (indexPath.row == 1)
                 {
                     //磅房
-                    cell.txtField.text = _paraDic[BF_SB_Name];
+                    cell.txtField.text = _nameDic[LIST_SB_NUM];
                 }
                 else if (indexPath.row == 2)
                 {
                     //材料
+                    cell.txtField.text = _nameDic[LIST_CL_NUM];
                 }
                 else if (indexPath.row == 3)
                 {
-                    //时间
-                    BFViewController *vc = (BFViewController *)[self viewController];
-                    if (vc.selectTime)
+                    if (!_nameDic[LIST_JCTime1]) {
+                        cell.txtField.text = self.parentVC.startTime;
+                    }
+                    else
                     {
-                        cell.txtField.text = vc.selectTime;
+                        cell.txtField.text = _nameDic[LIST_JCTime1];
                     }
                 }
+                else if (indexPath.row == 4)
+                {
+                    if (!_nameDic[LIST_JCTime2]) {
+                        cell.txtField.text = self.parentVC.endTime;
+                    }
+                    else
+                    {
+                        cell.txtField.text = _nameDic[LIST_JCTime2];
+                    }
+                }
+                    
             }
         }
         
@@ -142,25 +191,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_type == ScreenViewTypeBF)
+    if (_type == ScreenViewTypeBF_JC)
     {
-        if (indexPath.row < 4)
+        if (indexPath.row < 5)
         {
             if (indexPath.row == 0)
             {
                 //所属机构
                 NodeViewController *vc = [[NodeViewController alloc] init];
                 vc.type = NodeTypeZZJG;
+                vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                    [self.nameDic setObject: name forKey:LIST_ZZJG];
+                    [self.paraDic setObject:identifier forKey:orgcode];
+                };
                 [[self viewController].navigationController pushViewController:vc animated:YES];
             }
             else if(indexPath.row == 1)
             {
                 //磅房设备列表
                 HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
-                vc.type = ScreenViewTypeBF;
+                vc.type = ScreenViewTypeBF_JC;
                 vc.callBlock = ^(NSString *name, NSString *bfID) {
-                    [self.paraDic setObject:name forKey:BF_SB_Name];
-                    [self.paraDic setObject:bfID forKey:BF_SB_ID];
+                    [self.nameDic setObject:name forKey:LIST_SB_NUM];
+                    [self.paraDic setObject:bfID forKey:gprsbianhao];
                 };
                 [[self viewController].navigationController pushViewController:vc animated:YES];
             }
@@ -169,14 +222,74 @@
                 //材料
                 NodeViewController *vc = [[NodeViewController alloc] init];
                 vc.type = NodeTypeCL;
+                vc.CLBlock = ^(NSString *name, NSString *identifier) {
+                    [self.nameDic setObject: name forKey:LIST_CL_NUM];
+                    [self.paraDic setObject:identifier forKey:cailiaono];
+                };
+                
                 [[self viewController].navigationController pushViewController:vc animated:YES];
             }
-            else if (indexPath.row == 3)
+            else if (indexPath.row == 3 || indexPath.row == 4)
             {
+                LabelTextFieldCell *cell = [tableView cellForRowAtIndexPath:indexPath];
                 BFViewController *vc = (BFViewController *)[self viewController];
-                [vc calendarWithTimeString:nil obj:nil];
+                vc.block = ^{
+                    if (indexPath.row == 3)
+                    {
+                        [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian1];
+                        [self.paraDic setObject:cell.txtField.text forKey:LIST_JCTime1];
+                    }
+                    else
+                    {
+                        [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian2];
+                        [self.paraDic setObject:cell.txtField.text forKey:LIST_JCTime2];
+                    }
+                   
+                };
+                [vc calendarWithTimeString:nil obj:cell.txtField];
             }
         }
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerView = [UIView new];
+    NSArray *titleArr = @[@"重置",@"查询"];
+    for (int i = 0; i<2; i++)
+    {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.tag = 100+i;
+        if (i==0)
+        {
+            btn.frame = CGRectMake(self.bounds.size.width/2-30-80, 30, 80, 30);
+        }
+        else
+        {
+            btn.frame = CGRectMake(self.bounds.size.width/2+30, 30, 80, 30);
+        }
+        btn.layer.cornerRadius = 5;
+        btn.layer.masksToBounds = YES;
+        btn.backgroundColor = BLUECOLOR;
+        [btn setTitle:titleArr[i] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [footerView addSubview:btn];
+    }
+    return footerView;
+}
+
+- (void)btnAction:(UIButton *)sender
+{
+    if (sender.tag == 100)
+    {
+        //重置
+        
+    }
+    else
+    {
+        //查询
+        
     }
 }
 

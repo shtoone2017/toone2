@@ -45,4 +45,23 @@ static NetworkTool *_instance;
     }];
 }
 
+
+/**
+ GET:带有参数字典
+
+ @param URLString <#URLString description#>
+ @param params <#params description#>
+ @param completeBlock <#completeBlock description#>
+ */
+- (void)getObjectWithURLString:(NSString *)URLString parmas:(NSDictionary *)params completeBlock:(CompleteBlock)completeBlock{
+    [self GET:URLString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (completeBlock) {
+            completeBlock(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
+    }];
+}
+
+
 @end

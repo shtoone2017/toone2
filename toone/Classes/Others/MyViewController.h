@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ZZJG_View.h"
 
+typedef void(^SendTimeBlock)();
+
 @interface MyViewController : UIViewController<UIGestureRecognizerDelegate,CalendarViewControllerDelegate>
 @property (nonatomic,copy)NSString * startTime;
 @property (nonatomic,copy)NSString * endTime;
 
-@property (nonatomic,strong) NSString *selectTime;
+@property (nonatomic,copy) SendTimeBlock block;
 
 /**
  * 提供一个可供子类继承/重写的buttonClick:

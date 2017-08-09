@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+typedef void(^SendParaBlock)(NSString *name,NSString *identifier);
+
 @class Node;
 
 @protocol TreeTableCellDelegate <NSObject>
@@ -24,6 +27,8 @@
 @property (nonatomic , strong) NSMutableArray *tempData;//用于存储数据源（部分数据）
 
 @property (nonatomic , weak) id<TreeTableCellDelegate> treeTableCellDelegate;
+
+@property (nonatomic,copy) SendParaBlock block;
 
 -(instancetype)initWithFrame:(CGRect)frame withData : (id )data;
 

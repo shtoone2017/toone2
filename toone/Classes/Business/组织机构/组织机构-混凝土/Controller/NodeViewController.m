@@ -13,6 +13,11 @@
 
 #define levelLength 3
 @interface NodeViewController ()<TreeTableCellDelegate>
+{
+    NSString *selectName;
+    NSString *selectId;
+}
+
 //数据存储
 @property (nonatomic, strong) NSMutableArray *channs;
 //递归添加
@@ -48,9 +53,21 @@
     }
 }
 -(void)cellClick {
-    if (self.callBlock) {
-        self.callBlock();
+    if (_type == NodeTypeCL)
+    {
+        if (self.CLBlock)
+        {
+            self.CLBlock(selectName, selectId);
+        }
     }
+    else
+    {
+        if (self.ZZJGBlock)
+        {
+            self.ZZJGBlock(selectName, selectId);
+        }
+    }
+    
     [self.navigationController  popViewControllerAnimated:YES];
 }
 
@@ -140,8 +157,14 @@
     tableview.bounces = NO;
     tableview.treeTableCellDelegate = self;
     tableview.separatorStyle = UITableViewCellSelectionStyleNone;
+    tableview.block = ^(NSString *name, NSString *identifier) {
+        selectName = name;
+        selectId = identifier;
+    };
+    
     [self.view addSubview:tableview];
     self.treeTableView = tableview;
+    
 }
 
 #pragma mark - 分层级

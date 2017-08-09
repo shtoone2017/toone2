@@ -8,12 +8,49 @@
 
 #import <UIKit/UIKit.h>
 
+
+//磅房参数
+/*
+ jinchangshijian1 true 进场时间1
+ jinchangshijian2 true 进场时间2
+ chuchangshijian1 true 出场时间1
+ chuchangshijian2 true 出场时间2
+ orgcode true 组织机构编号
+ pageNo true 当前页
+ maxPageItems true 每页条数
+ pici true 批次
+ cheliangbianhao true 车辆编号
+ gprsbianhao true 设备编号（shebeibianhao）
+ cailiaono
+ */
+#define jinchangshijian1 @"jinchangshijian1"
+#define jinchangshijian2 @"jinchangshijian2"
+#define chuchangshijian1 @"chuchangshijian1"
+#define chuchangshijian2 @"chuchangshijian2"
+#define orgcode @"orgcode"
+#define pici @"pici"
+#define cheliangbianhao @"cheliangbianhao"
+#define gprsbianhao @"gprsbianhao"
+#define cailiaono @"cailiaono"
+
+#define LIST_JCTime1 @"LIST_JCTime1"
+#define LIST_JCTime2 @"LIST_JCTime1"
+#define LIST_CCTime1 @"LIST_CCTime1"
+#define LIST_CCTime2 @"LIST_CCTime1"
+#define LIST_ZZJG @"LIST_ZZJG"
+#define LIST_PICI @"LIST_PC"
+#define LIST_CAR_NUM @"LIST_CAR_NUM"
+#define LIST_SB_NUM @"LIST_SB_NUM"
+#define LIST_CL_NUM @"LIST_CL_NUM"
+
+
+
 typedef void(^ScreenIsShowBlock)(BOOL isShow);
 
 typedef NS_ENUM(NSInteger,ScreenViewType)
 {
-    ScreenViewTypeBF = 0   //磅房筛选
-    
+    ScreenViewTypeBF_JC = 0,   //磅房筛选  进场
+    ScreenViewTypeBF_CC        //出场
     
 };
 
@@ -26,6 +63,9 @@ typedef NS_ENUM(NSInteger,ScreenViewType)
 @property (nonatomic,strong) UITableView *tbView;
 
 @property (nonatomic,copy) ScreenIsShowBlock block;
+
+@property (nonatomic,strong) NSMutableDictionary *paraDic;  //参数字典
+
 
 - (instancetype)initWithFrame:(CGRect)frame titleArr:(NSArray *)titleArr type:(NSInteger)type;
 
