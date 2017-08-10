@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ScreenBlock)(NSDictionary *paraDic);
 
 //磅房参数
 /*
@@ -24,9 +25,7 @@
  cailiaono
  */
 #define jinchangshijian1 @"jinchangshijian1"
-#define jinchangshijian2 @"jinchangshijian2"
 #define chuchangshijian1 @"chuchangshijian1"
-#define chuchangshijian2 @"chuchangshijian2"
 #define orgcode @"orgcode"
 #define pici @"pici"
 #define cheliangbianhao @"cheliangbianhao"
@@ -34,9 +33,7 @@
 #define cailiaono @"cailiaono"
 
 #define LIST_JCTime1 @"LIST_JCTime1"
-#define LIST_JCTime2 @"LIST_JCTime1"
 #define LIST_CCTime1 @"LIST_CCTime1"
-#define LIST_CCTime2 @"LIST_CCTime1"
 #define LIST_ZZJG @"LIST_ZZJG"
 #define LIST_PICI @"LIST_PC"
 #define LIST_CAR_NUM @"LIST_CAR_NUM"
@@ -65,6 +62,8 @@ typedef NS_ENUM(NSInteger,ScreenViewType)
 @property (nonatomic,copy) ScreenIsShowBlock block;
 
 @property (nonatomic,strong) NSMutableDictionary *paraDic;  //参数字典
+
+@property (nonatomic,strong) ScreenBlock paraBlock;
 
 
 - (instancetype)initWithFrame:(CGRect)frame titleArr:(NSArray *)titleArr type:(NSInteger)type;

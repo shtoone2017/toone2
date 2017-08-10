@@ -93,8 +93,8 @@
 {
     if (_type == ScreenViewTypeBF_JC)
     {
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:self.parentVC.startTime,jinchangshijian2:self.parentVC.endTime,cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,pici:@"",gprsbianhao:@"",cailiaono:@""}];
-        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:self.parentVC.startTime,LIST_JCTime2:self.parentVC.endTime,LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,pici:@"",gprsbianhao:@"",cailiaono:@""}];
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
     }
 }
 
@@ -143,10 +143,9 @@
                     }
                     else
                     {
-                        cell.txtField.text = _nameDic[LIST_JCTime2];
+                        cell.txtField.text = _nameDic[LIST_ZZJG];
                     }
-                    NSString *txtStr = _nameDic[LIST_ZZJG];
-                    cell.txtField.text = txtStr;
+                    
                 }
                 else if (indexPath.row == 1)
                 {
@@ -162,20 +161,29 @@
                 {
                     if ([_nameDic[LIST_JCTime1] isEqualToString:@""]) {
                         cell.txtField.text = self.parentVC.startTime;
+                        [_nameDic setObject:self.parentVC.startTime forKey:LIST_JCTime1];
+                        NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
+                        
+                        [_paraDic setObject:startTime forKey:jinchangshijian1];
                     }
                     else
                     {
                         cell.txtField.text = _nameDic[LIST_JCTime1];
                     }
+                    
                 }
                 else if (indexPath.row == 4)
                 {
-                    if ([_nameDic[LIST_JCTime2] isEqualToString:@""]) {
+                    if ([_nameDic[LIST_CCTime1] isEqualToString:@""]) {
                         cell.txtField.text = self.parentVC.endTime;
+                        [_nameDic setObject:self.parentVC.endTime forKey:LIST_CCTime1];
+                        NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
+                        
+                        [_paraDic setObject:endTime forKey:chuchangshijian1];
                     }
                     else
                     {
-                        cell.txtField.text = _nameDic[LIST_JCTime2];
+                        cell.txtField.text = _nameDic[LIST_CCTime1];
                     }
                 }
                     
@@ -235,12 +243,15 @@
                     if (indexPath.row == 3)
                     {
                         [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian1];
-                        [self.paraDic setObject:cell.txtField.text forKey:LIST_JCTime1];
+                        
+                        NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
+                        [self.paraDic setObject:startTime forKey:LIST_JCTime1];
                     }
                     else
                     {
-                        [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian2];
-                        [self.paraDic setObject:cell.txtField.text forKey:LIST_JCTime2];
+                        [self.nameDic setObject:cell.txtField.text forKey:chuchangshijian1];
+                        NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
+                        [self.paraDic setObject:endTime forKey:LIST_CCTime1];
                     }
                    
                 };
@@ -289,6 +300,10 @@
     {
         //查询
         [self hiddenAction];
+        if (_paraBlock)
+        {
+            _paraBlock(_paraDic);
+        }
     }
 }
 

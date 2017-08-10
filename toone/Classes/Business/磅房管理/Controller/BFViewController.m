@@ -10,16 +10,21 @@
 #import "MySegmentedControl.h"
 #import "ScreenView.h"
 #import "HNT_BHZ_SB_Controller.h"
+#import "BFListModel.h"
+#import "BFListCell.h"
 
-
-
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 @interface BFViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     ScreenView *scView;
     BOOL isShowScreenView;
     UITableView *_tbView;
     NSInteger _currentPage;
+    NSInteger _currentSegIndex;
 }
+
+@property (nonatomic,strong) NSMutableArray *dataArr;
+
 @end
 
 @implementation BFViewController
@@ -33,10 +38,20 @@
     }
 }
 
+- (NSMutableArray *)dataArr
+{
+    if (!_dataArr)
+    {
+        _dataArr = [NSMutableArray array];
+    }
+    return _dataArr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUI];
-    
+    _currentPage = 1;
+    [self refreshDataWithParaDic:[self getParaDic]];
     
 }
 
@@ -77,84 +92,107 @@
     
     //创建列表
     _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,Screen_w,Screen_h) style:UITableViewStylePlain];
-    _tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tbView.rowHeight = 70.0;
+    _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _tbView.estimatedRowHeight = 30.0;
+    _tbView.rowHeight = UITableViewAutomaticDimension;
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
     
+    
     [self createScreenView];
+}
+- (void)createScreenView
+{
+    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间(开始):",@"进场时间(结束):",@"批次:",@"车牌号:"];
+    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
+    //    scView.backgroundColor = [UIColor cyanColor];
+    scView.block = ^(BOOL isShow) {
+        isShowScreenView = isShow;
+    };
+    
+    WS(weakSelf);
+    scView.paraBlock = ^(NSDictionary *paraDic) {
+        NSMutableDictionary *tempDic = [weakSelf getParaDic];
+        [tempDic setValuesForKeysWithDictionary:paraDic];
+        [tempDic setObject:@"1341763200" forKey:jinchangshijian1];
+        [tempDic setObject:@"1246723200" forKey:chuchangshijian1];
+        [weakSelf refreshDataWithParaDic:tempDic];
+    };
+    [self.view addSubview:scView];
+    [self.view bringSubviewToFront:scView];
+}
+
+- (NSMutableDictionary *)getParaDic
+{
+    NSDictionary *dic = @{@"maxPageItems":[NSString stringWithFormat:@"%d",kPageSize],@"pageNo":[NSString stringWithFormat:@"%ld",(long)_currentPage]};
+    NSMutableDictionary *paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+    //加入时间,组织机构参数
+    [paraDic setObject:@"1341763200" forKey:jinchangshijian1];
+    [paraDic setObject:@"1246723200" forKey:chuchangshijian1];
+//    [paraDic setObject:[TimeTools timeStampWithTimeString:self.startTime] forKey:jinchangshijian1];
+//    [paraDic setObject:[TimeTools timeStampWithTimeString:self.endTime] forKey:chuchangshijian1];
+    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:orgcode];
+    
+    return paraDic;
 }
 
 
-- (void)configRefreshControl
+- (void)refreshDataWithParaDic:(NSDictionary *)paraDic
 {
     __weak typeof(self) weakSelf = self;
     _tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        _currentPage = 1;
         [_tbView.mj_footer resetNoMoreData];
-        [weakSelf loadingDataWithTag:1 showLoading:YES];
+        [weakSelf loadingDataWithTag:1 paraDic:paraDic];
     }];
     [_tbView.mj_header beginRefreshing];
     
     _tbView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadingDataWithTag:0 showLoading:YES];
+        [weakSelf loadingDataWithTag:0 paraDic:paraDic];
     }];
 }
 
 
 #pragma mark - Data request
 
-- (void)loadingDataWithTag:(NSInteger)tag showLoading:(BOOL)isShowLoading
+- (void)loadingDataWithTag:(NSInteger)tag paraDic:(NSDictionary *)paraDic
 {
     __weak typeof(self) weakSelf = self;
-    NSString *urlString = [NSString stringWithFormat:@"%@AppGB.do?JinChangGB",baseUrl];
-//    [NetworkTool sharedNetworkTool]getObjectWithURLString:urlString parmas:nil completeBlock:^(id result) {
-//        
-//    };
-    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
+    NSString *urlString;
+    if (_currentSegIndex == 0)
+    {
+        urlString = [NSString stringWithFormat:@"%@AppGB.do?JinChangGB",baseUrl];
+    }
+    else
+    {
+        urlString = [NSString stringWithFormat:@"%@AppGB.do?ChuChangGB",baseUrl];
+    }
+    
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString parmas:paraDic completeBlock:^(id result) {
+        [_tbView.mj_header endRefreshing];
+        [_tbView.mj_footer endRefreshing];
+        if (result && result != nil)
+        {
+            if (tag == 1) {
+                [weakSelf.dataArr removeAllObjects];
+            }
+            NSDictionary *dict = (NSDictionary *)result;
+            NSArray *tempArr = [BFListModel arrayOfModelsFromDictionaries:dict[@"data"]];
+            [weakSelf.dataArr addObjectsFromArray:tempArr];
+            if ([tempArr count] == kPageSize)
+            {
+                _currentPage ++ ;//有下一页  show 加载按钮
+            }else
+            {
+                //没有下一页  hide 加载按钮
+                [_tbView.mj_footer endRefreshingWithNoMoreData];
+            }
+            [_tbView reloadData];
+        }
         
-        NSDictionary *dict = (NSDictionary *)result;
-        
-        NSArray *dictArr = dict[@"data"];
-        
-//        for (int i = 0; i < dictArr.count; i++) {
-//            NSDictionary *modelDic = dictArr[i];
-//            weakSelf.node = [[Node alloc] init];
-//            if ([[modelDic valueForKey:@"parentnode"] isKindOfClass:[NSNull class]])
-//            {
-//                weakSelf.node.parentId = @"";
-//            }
-//            else{
-//                weakSelf.node.parentId = (NSString *)[modelDic valueForKey:@"parentnode"] ? :@"";
-//            }
-//            
-//            weakSelf.node.name = (NSString *)[modelDic valueForKey:@"cailiaoname"];
-//            weakSelf.node.nodeId = [modelDic valueForKey:@"cailiaono"];
-//            [weakSelf.channs addObject:weakSelf.node];
-//            
-//        }
-//        [weakSelf setUpUI];
     }];
 
-    /*
-     if (result && result != nil)
-     {
-     if (tag == 1) {
-     [self.tableArray removeAllObjects];
-     }
-     NSArray *arr = [NewsListModel arrayOfModelsFromDictionaries:result];
-     [weakSelf.tableArray addObjectsFromArray:arr];
-     if ([arr count] == [kPageSize integerValue])
-     {
-     _currentPage ++ ;//有下一页  show 加载按钮
-     }else
-     {
-     //没有下一页  hide 加载按钮
-     [weakSelf.tableV.mj_footer endRefreshingWithNoMoreData];
-     }
-     [_tableV reloadData];
-     */
+    
 }
 
 
@@ -162,14 +200,25 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.dataArr.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return nil;
+    BFListModel *model = [self.dataArr objectAtIndex:indexPath.row];
+    NSString *cellId = [NSString stringWithFormat:@"cellID%ld%ld",(long)indexPath.section,(long)indexPath.row];
+    BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] firstObject];
+        cell.JC_BF_Name.text = model.banhezhanminchen;
+        cell.JC_SJ.text = model.jinchangshijian;
+        cell.JC_CL_Name.text = model.cailiaoName;
+        cell.JC_GYS_Name.text = model.gongyingshangName;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -179,15 +228,8 @@
 
 - (void)segmentControlAction:(UISegmentedControl *)seg
 {
-    NSInteger index = [seg selectedSegmentIndex];
-    if (index == 0)
-    {
-        //进场
-    }
-    else
-    {
-        //出场
-    }
+    _currentSegIndex = [seg selectedSegmentIndex];
+    [self refreshDataWithParaDic:[self getParaDic]];
 }
 
 -(void)searchButtonClick:(UIButton *)sender {
@@ -213,18 +255,6 @@
     
 }
 
-- (void)createScreenView
-{
-    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间(开始):",@"进场时间(结束):",@"批次:",@"车牌号:"];
-    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
-//    scView.backgroundColor = [UIColor cyanColor];
-    scView.block = ^(BOOL isShow) {
-        isShowScreenView = isShow;
-    };
-    
-    [self.view addSubview:scView];
-    [self.view bringSubviewToFront:scView];
-}
 
 - (void)showScreenView
 {
@@ -239,6 +269,7 @@
         scView.frame = CGRectMake(Screen_w, 60, Screen_w-30, Screen_h);
     } completion:nil];
 }
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
     if ([vc isKindOfClass:[HNT_BHZ_SB_Controller class]]) {

@@ -237,6 +237,19 @@
 		8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC41E0A6C0D00A5C4AA /* Main.storyboard */; };
 		8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC61E0A6C0D00A5C4AA /* Welcome.storyboard */; };
 		8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */; };
+		9C05F05B1F3BF83800BF4627 /* BFListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0591F3BF83800BF4627 /* BFListCell.m */; };
+		9C05F05C1F3BF83800BF4627 /* BFListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C05F05A1F3BF83800BF4627 /* BFListCell.xib */; };
+		9C05F0771F3BFC4400BF4627 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0601F3BFC4400BF4627 /* JSONModel.m */; };
+		9C05F0781F3BFC4400BF4627 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0621F3BFC4400BF4627 /* JSONModelArray.m */; };
+		9C05F0791F3BFC4400BF4627 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0641F3BFC4400BF4627 /* JSONModelClassProperty.m */; };
+		9C05F07A1F3BFC4400BF4627 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0661F3BFC4400BF4627 /* JSONModelError.m */; };
+		9C05F07B1F3BFC4400BF4627 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0691F3BFC4400BF4627 /* NSArray+JSONModel.m */; };
+		9C05F07C1F3BFC4400BF4627 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F06D1F3BFC4400BF4627 /* JSONAPI.m */; };
+		9C05F07D1F3BFC4400BF4627 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F06F1F3BFC4400BF4627 /* JSONHTTPClient.m */; };
+		9C05F07E1F3BFC4400BF4627 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0711F3BFC4400BF4627 /* JSONModel+networking.m */; };
+		9C05F07F1F3BFC4400BF4627 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0741F3BFC4400BF4627 /* JSONKeyMapper.m */; };
+		9C05F0801F3BFC4400BF4627 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0761F3BFC4400BF4627 /* JSONValueTransformer.m */; };
+		9C05F0831F3BFC9400BF4627 /* BFListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0821F3BFC9400BF4627 /* BFListModel.m */; };
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
 		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
@@ -847,6 +860,32 @@
 		8CEB5BCF1E0A6D1900A5C4AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Welcome.strings"; sourceTree = "<group>"; };
 		8CEB5BD21E0A7DAA00A5C4AA /* SGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGButton.h; sourceTree = "<group>"; };
 		8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGButton.m; sourceTree = "<group>"; };
+		9C05F0581F3BF83800BF4627 /* BFListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFListCell.h; path = Classes/Others/BFListCell.h; sourceTree = SOURCE_ROOT; };
+		9C05F0591F3BF83800BF4627 /* BFListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFListCell.m; path = Classes/Others/BFListCell.m; sourceTree = SOURCE_ROOT; };
+		9C05F05A1F3BF83800BF4627 /* BFListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BFListCell.xib; path = Classes/Others/BFListCell.xib; sourceTree = SOURCE_ROOT; };
+		9C05F05F1F3BFC4400BF4627 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		9C05F0601F3BFC4400BF4627 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		9C05F0611F3BFC4400BF4627 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		9C05F0621F3BFC4400BF4627 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		9C05F0631F3BFC4400BF4627 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		9C05F0641F3BFC4400BF4627 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		9C05F0651F3BFC4400BF4627 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		9C05F0661F3BFC4400BF4627 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		9C05F0681F3BFC4400BF4627 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		9C05F0691F3BFC4400BF4627 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		9C05F06A1F3BFC4400BF4627 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		9C05F06C1F3BFC4400BF4627 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		9C05F06D1F3BFC4400BF4627 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		9C05F06E1F3BFC4400BF4627 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		9C05F06F1F3BFC4400BF4627 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		9C05F0701F3BFC4400BF4627 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		9C05F0711F3BFC4400BF4627 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		9C05F0731F3BFC4400BF4627 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		9C05F0741F3BFC4400BF4627 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		9C05F0751F3BFC4400BF4627 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		9C05F0761F3BFC4400BF4627 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		9C05F0811F3BFC9400BF4627 /* BFListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFListModel.h; path = Classes/Others/BFListModel.h; sourceTree = SOURCE_ROOT; };
+		9C05F0821F3BFC9400BF4627 /* BFListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFListModel.m; path = Classes/Others/BFListModel.m; sourceTree = SOURCE_ROOT; };
 		9C20240D1F38021200F79559 /* ScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
 		9C20240E1F38021200F79559 /* ScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
@@ -1274,6 +1313,8 @@
 		425AE0DC1F3418AE0048D96B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C05F0811F3BFC9400BF4627 /* BFListModel.h */,
+				9C05F0821F3BFC9400BF4627 /* BFListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1281,6 +1322,9 @@
 		425AE0DD1F3418AE0048D96B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C05F0581F3BF83800BF4627 /* BFListCell.h */,
+				9C05F0591F3BF83800BF4627 /* BFListCell.m */,
+				9C05F05A1F3BF83800BF4627 /* BFListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2060,6 +2104,7 @@
 		42AC71D71E30C576007D8F57 /* 第三方 */ = {
 			isa = PBXGroup;
 			children = (
+				9C05F05D1F3BFC4400BF4627 /* JSONModel */,
 				42AC71D81E30C576007D8F57 /* Masonry */,
 				42AC71F21E30C576007D8F57 /* YYModel */,
 			);
@@ -2567,6 +2612,66 @@
 				E261BE7D3BCFE91ACDA2295B /* Pods-toone.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C05F05D1F3BFC4400BF4627 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C05F05E1F3BFC4400BF4627 /* JSONModel */,
+				9C05F0671F3BFC4400BF4627 /* JSONModelCategories */,
+				9C05F06A1F3BFC4400BF4627 /* JSONModelLib.h */,
+				9C05F06B1F3BFC4400BF4627 /* JSONModelNetworking */,
+				9C05F0721F3BFC4400BF4627 /* JSONModelTransformations */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		9C05F05E1F3BFC4400BF4627 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C05F05F1F3BFC4400BF4627 /* JSONModel.h */,
+				9C05F0601F3BFC4400BF4627 /* JSONModel.m */,
+				9C05F0611F3BFC4400BF4627 /* JSONModelArray.h */,
+				9C05F0621F3BFC4400BF4627 /* JSONModelArray.m */,
+				9C05F0631F3BFC4400BF4627 /* JSONModelClassProperty.h */,
+				9C05F0641F3BFC4400BF4627 /* JSONModelClassProperty.m */,
+				9C05F0651F3BFC4400BF4627 /* JSONModelError.h */,
+				9C05F0661F3BFC4400BF4627 /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		9C05F0671F3BFC4400BF4627 /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				9C05F0681F3BFC4400BF4627 /* NSArray+JSONModel.h */,
+				9C05F0691F3BFC4400BF4627 /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		9C05F06B1F3BFC4400BF4627 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				9C05F06C1F3BFC4400BF4627 /* JSONAPI.h */,
+				9C05F06D1F3BFC4400BF4627 /* JSONAPI.m */,
+				9C05F06E1F3BFC4400BF4627 /* JSONHTTPClient.h */,
+				9C05F06F1F3BFC4400BF4627 /* JSONHTTPClient.m */,
+				9C05F0701F3BFC4400BF4627 /* JSONModel+networking.h */,
+				9C05F0711F3BFC4400BF4627 /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		9C05F0721F3BFC4400BF4627 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				9C05F0731F3BFC4400BF4627 /* JSONKeyMapper.h */,
+				9C05F0741F3BFC4400BF4627 /* JSONKeyMapper.m */,
+				9C05F0751F3BFC4400BF4627 /* JSONValueTransformer.h */,
+				9C05F0761F3BFC4400BF4627 /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 		D20062F01DFF85CB0021E293 = {
@@ -3697,6 +3802,7 @@
 				D20064951DFF86800021E293 /* Exp2_Xib_View.xib in Resources */,
 				8C28404B1EB1123600440413 /* TP_DW_Controller.xib in Resources */,
 				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
+				9C05F05C1F3BF83800BF4627 /* BFListCell.xib in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
 				D20065301DFF86B30021E293 /* LineChart2ViewController.xib in Resources */,
@@ -3794,6 +3900,7 @@
 				42AC72171E30C576007D8F57 /* LqNodeViewController.m in Sources */,
 				42AC721F1E30C668007D8F57 /* MySegmentedControl.m in Sources */,
 				D200645D1DFF86800021E293 /* AppDelegate.m in Sources */,
+				9C05F07D1F3BFC4400BF4627 /* JSONHTTPClient.m in Sources */,
 				D20065191DFF86B30021E293 /* XYMarkerView.swift in Sources */,
 				42AC71BB1E30C423007D8F57 /* SGChartZBX.m in Sources */,
 				42AC71541E30C393007D8F57 /* TotalTableController.m in Sources */,
@@ -3825,6 +3932,7 @@
 				187C73091E30B1810072F33A /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				42AC71481E30C393007D8F57 /* DCZ_CJ_Inner_Cell.m in Sources */,
 				D200647D1DFF86800021E293 /* HNT_TJFX_Model.m in Sources */,
+				9C05F07A1F3BFC4400BF4627 /* JSONModelError.m in Sources */,
 				D200649D1DFF86800021E293 /* UIButton+Img_20.m in Sources */,
 				8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */,
 				187C72FA1E30B1810072F33A /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
@@ -3914,6 +4022,7 @@
 				187C73081E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D20064AA1DFF86800021E293 /* Colours.m in Sources */,
+				9C05F0801F3BFC4400BF4627 /* JSONValueTransformer.m in Sources */,
 				18B871DB1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m in Sources */,
 				8C283F4D1EB0A01C00440413 /* SingleLocationViewController.m in Sources */,
 				42AC72121E30C576007D8F57 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -3922,6 +4031,7 @@
 				42AC716D1E30C393007D8F57 /* LQ_CLHS_ModelG.m in Sources */,
 				D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */,
 				D20065AC1DFFE4B80021E293 /* HNT_BHZ_SB_Model.m in Sources */,
+				9C05F05B1F3BF83800BF4627 /* BFListCell.m in Sources */,
 				D20064A51DFF86800021E293 /* NoCopyTextField.m in Sources */,
 				187C73031E30B1810072F33A /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				D200649A1DFF86800021E293 /* NSArray+Log.m in Sources */,
@@ -3945,7 +4055,9 @@
 				D20065841DFFC5AB0021E293 /* HNT_SCCX_Controller.m in Sources */,
 				D20064A61DFF86800021E293 /* SGAnimationType.m in Sources */,
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
+				9C05F07F1F3BFC4400BF4627 /* JSONKeyMapper.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
+				9C05F0771F3BFC4400BF4627 /* JSONModel.m in Sources */,
 				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
 				9C20240F1F38021200F79559 /* ScreenView.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
@@ -3988,6 +4100,7 @@
 				42AC71681E30C393007D8F57 /* DayQueryModel.m in Sources */,
 				42AC715B1E30C393007D8F57 /* LQ_ZCL_CL_Model.m in Sources */,
 				D20065571DFF931B0021E293 /* HNT_BHZ_InnerController.m in Sources */,
+				9C05F0781F3BFC4400BF4627 /* JSONModelArray.m in Sources */,
 				42AC715C1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.m in Sources */,
 				D200652B1DFF86B30021E293 /* HorizontalBarChartViewController.m in Sources */,
 				42AC71651E30C393007D8F57 /* DayDetailsController.m in Sources */,
@@ -4004,14 +4117,17 @@
 				187C72F91E30B1810072F33A /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				D20064A81DFF86800021E293 /* TimeTools.m in Sources */,
 				42AC71581E30C393007D8F57 /* ExcessiveModel.m in Sources */,
+				9C05F07C1F3BFC4400BF4627 /* JSONAPI.m in Sources */,
 				D20065161DFF86B30021E293 /* BalloonMarker.swift in Sources */,
 				D20064A31DFF86800021E293 /* UserDefaultsSetting.m in Sources */,
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,
 				8CE976551E0BF1FF0016A858 /* MySJView.m in Sources */,
 				425AE0EE1F341C720048D96B /* BFViewController.m in Sources */,
 				42AC714E1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.m in Sources */,
+				9C05F0791F3BFC4400BF4627 /* JSONModelClassProperty.m in Sources */,
 				D200645E1DFF86800021E293 /* Exmp1.m in Sources */,
 				42AC718D1E30C3B6007D8F57 /* Exp7_Xib_View.m in Sources */,
+				9C05F0831F3BFC9400BF4627 /* BFListModel.m in Sources */,
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
@@ -4071,8 +4187,10 @@
 				42AC714C1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.m in Sources */,
 				42AC71421E30C393007D8F57 /* MiddleExcessiveTableContller.m in Sources */,
 				42AC72051E30C576007D8F57 /* NetworkTool.m in Sources */,
+				9C05F07E1F3BFC4400BF4627 /* JSONModel+networking.m in Sources */,
 				D20065371DFF86B30021E293 /* MultipleLinesChartViewController.m in Sources */,
 				42AC72151E30C576007D8F57 /* NSObject+YYModel.m in Sources */,
+				9C05F07B1F3BFC4400BF4627 /* NSArray+JSONModel.m in Sources */,
 				42AC71901E30C3B6007D8F57 /* Exp8_Xib_View.m in Sources */,
 				42AC71571E30C393007D8F57 /* EXPSeniorModel.m in Sources */,
 				8C2840421EB1123600440413 /* TP_CL_ChartModel.m in Sources */,
