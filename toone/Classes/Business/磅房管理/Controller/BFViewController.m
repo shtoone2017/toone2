@@ -12,8 +12,9 @@
 #import "HNT_BHZ_SB_Controller.h"
 #import "BFListModel.h"
 #import "BFListCell.h"
+#import "BFDetailViewController.h"
 
-#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
 @interface BFViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     ScreenView *scView;
@@ -177,7 +178,8 @@
                 [weakSelf.dataArr removeAllObjects];
             }
             NSDictionary *dict = (NSDictionary *)result;
-            NSArray *tempArr = [BFListModel arrayOfModelsFromDictionaries:dict[@"data"]];
+            NSArray *arr =dict[@"data"];
+            NSArray *tempArr = [BFListModel arrayOfModelsFromDictionaries:arr];
             [weakSelf.dataArr addObjectsFromArray:tempArr];
             if ([tempArr count] == kPageSize)
             {
@@ -211,11 +213,24 @@
     BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell)
     {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] firstObject];
-        cell.JC_BF_Name.text = model.banhezhanminchen;
-        cell.JC_SJ.text = model.jinchangshijian;
-        cell.JC_CL_Name.text = model.cailiaoName;
-        cell.JC_GYS_Name.text = model.gongyingshangName;
+        if (_currentSegIndex == 0)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] firstObject];
+            cell.JC_BF_Name.text = model.banhezhanminchen;
+            cell.JC_SJ.text = model.jinchangshijian;
+            cell.JC_CL_Name.text = model.cailiaoName;
+            cell.JC_GYS_Name.text = model.gongyingshangName;
+        }
+        else
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:1];
+            cell.CC_BF_Name.text = model.banhezhanminchen;
+            cell.CC_SJ.text = model.jinchangshijian;
+            cell.CC_CL_Name.text = model.cailiaoName;
+            cell.CC_GYS_Name.text = model.gongyingshangName;
+            cell.CC_TYPE.text = model.remark;
+        }
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
@@ -223,7 +238,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    BFListModel *model = self.dataArr[indexPath.row];
+    BFDetailViewController *vc = [[BFDetailViewController alloc] init];
+    vc.identifier = [NSString stringWithFormat:@"%@",model.id];
+    if (_currentSegIndex == 0)
+    {
+        vc.urlStr = [NSString stringWithFormat:@"%@AppGB.do?JinChangGBDetail",baseUrl];
+    }
+    else
+    {
+        vc.urlStr = [NSString stringWithFormat:@"%@AppGB.do?ChuChangGBDetail",baseUrl];
+    }
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)seg

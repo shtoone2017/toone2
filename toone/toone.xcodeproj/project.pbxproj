@@ -250,6 +250,8 @@
 		9C05F07F1F3BFC4400BF4627 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0741F3BFC4400BF4627 /* JSONKeyMapper.m */; };
 		9C05F0801F3BFC4400BF4627 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0761F3BFC4400BF4627 /* JSONValueTransformer.m */; };
 		9C05F0831F3BFC9400BF4627 /* BFListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0821F3BFC9400BF4627 /* BFListModel.m */; };
+		9C05F0861F3C490F00BF4627 /* BFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0851F3C490F00BF4627 /* BFDetailViewController.m */; };
+		9C05F0891F3C586500BF4627 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0871F3C586500BF4627 /* BaseModel.m */; };
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
 		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
@@ -886,6 +888,10 @@
 		9C05F0761F3BFC4400BF4627 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		9C05F0811F3BFC9400BF4627 /* BFListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFListModel.h; path = Classes/Others/BFListModel.h; sourceTree = SOURCE_ROOT; };
 		9C05F0821F3BFC9400BF4627 /* BFListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFListModel.m; path = Classes/Others/BFListModel.m; sourceTree = SOURCE_ROOT; };
+		9C05F0841F3C490F00BF4627 /* BFDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFDetailViewController.h; sourceTree = "<group>"; };
+		9C05F0851F3C490F00BF4627 /* BFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFDetailViewController.m; sourceTree = "<group>"; };
+		9C05F0871F3C586500BF4627 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		9C05F0881F3C586500BF4627 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		9C20240D1F38021200F79559 /* ScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
 		9C20240E1F38021200F79559 /* ScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
@@ -1306,6 +1312,8 @@
 			children = (
 				425AE0EC1F341C720048D96B /* BFViewController.h */,
 				425AE0ED1F341C720048D96B /* BFViewController.m */,
+				9C05F0841F3C490F00BF4627 /* BFDetailViewController.h */,
+				9C05F0851F3C490F00BF4627 /* BFDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2104,6 +2112,8 @@
 		42AC71D71E30C576007D8F57 /* 第三方 */ = {
 			isa = PBXGroup;
 			children = (
+				9C05F0881F3C586500BF4627 /* BaseModel.h */,
+				9C05F0871F3C586500BF4627 /* BaseModel.m */,
 				9C05F05D1F3BFC4400BF4627 /* JSONModel */,
 				42AC71D81E30C576007D8F57 /* Masonry */,
 				42AC71F21E30C576007D8F57 /* YYModel */,
@@ -3910,6 +3920,7 @@
 				D20064A11DFF86800021E293 /* MyTabBarController.m in Sources */,
 				42AC72161E30C576007D8F57 /* YYClassInfo.m in Sources */,
 				8C283F4A1EB0A01C00440413 /* MonitoringRegionViewController.m in Sources */,
+				9C05F0891F3C586500BF4627 /* BaseModel.m in Sources */,
 				187C730E1E30B1810072F33A /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				8C2840711EB1127500440413 /* NY_SB_Model.m in Sources */,
 				D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */,
@@ -4007,6 +4018,7 @@
 				D20064881DFF86800021E293 /* HNT_SYS_Model.m in Sources */,
 				42AC71701E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Controller.m in Sources */,
 				8CBD72EF1E07A84C00A0C991 /* HNT_CBCZ_DetailController.m in Sources */,
+				9C05F0861F3C490F00BF4627 /* BFDetailViewController.m in Sources */,
 				D20064801DFF86800021E293 /* HNT_TJFX_TxtView.m in Sources */,
 				8C2840861EB1132200440413 /* MyTPSegmentedControl.m in Sources */,
 				D200648C1DFF86800021E293 /* HNT_SYS_TestView.m in Sources */,

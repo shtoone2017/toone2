@@ -30,7 +30,7 @@
 #define Color2                  SGCOLOR(232,232,253,1.0)
 
 #define kPageSize 20
-
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 #import "UserDefaultsSetting.h"
 #import "UIView+Frame.h"
 #import "UIView+Shape.h"

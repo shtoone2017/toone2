@@ -1,0 +1,17 @@
+//
+//  BFDetailViewController.h
+//  toone
+//
+//  Created by 景晓峰 on 2017/8/10.
+//  Copyright © 2017年 shtoone. All rights reserved.
+//
+
+#import "MyViewController.h"
+
+@interface BFDetailViewController : MyViewController
+
+@property (nonatomic,strong) NSString *urlStr;
+
+@property (nonatomic,strong) NSString *identifier;
+
+@end
