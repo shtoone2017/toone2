@@ -55,6 +55,8 @@ static NetworkTool *_instance;
  */
 - (void)getObjectWithURLString:(NSString *)URLString parmas:(NSDictionary *)params completeBlock:(CompleteBlock)completeBlock{
     [self GET:URLString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"\nGET 地址\n %@ \n",URLString);
+        NSLog(@"\nGET 参数 %@ \n",params);
         if (completeBlock) {
             completeBlock(responseObject);
         }

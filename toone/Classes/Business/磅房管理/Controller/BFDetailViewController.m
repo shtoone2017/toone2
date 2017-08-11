@@ -87,7 +87,22 @@
         if (!cell)
         {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:2];
-            cell.Detail_Remark.text = dataModel.remark;
+            if (dataModel.guobangleibie)
+            {
+                if ([dataModel.guobangleibie isEqualToString:@"0"])
+                {
+                    cell.Detail_Remark.text = @"废料";
+                }
+                else
+                {
+                    cell.Detail_Remark.text = @"调拨";
+                }
+            }
+            else
+            {
+                cell.Detail_Remark.text = @"";
+            }
+            
             cell.Detail_Car_Num.text = dataModel.qianchepai;
             cell.Detail_Order_Num.text = dataModel.jinchuliaodanno;
             cell.Detail_PC.text = dataModel.pici;
