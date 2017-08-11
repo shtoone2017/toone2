@@ -82,23 +82,23 @@
 //    {
 //        
 //    }
-    static NSString *cellId = @"BFListCell1";
+    static NSString *cellId = @"ListCell3";
     BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell)
     {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:3];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:2];
         
     }
-    cell.Remeke.text = dataModel.remark;
-    cell.Car_Num.text = dataModel.qianchepai;
-    cell.Order_Num.text = [NSString stringWithFormat:@"%@",dataModel.jinchuliaodanNo];
-    cell.PC.text = dataModel.pici;
-    cell.LC_Name.text = dataModel.liaocang;
-    cell.JC_Time.text = dataModel.jinchangshijian;
-    cell.CC_Time.text = dataModel.chuchangshijian;
-    cell.Person_Name.text = dataModel.sibangyuan;
-    cell.DB_Name.text = dataModel.banhezhanminchen;
-    cell.GYS_Name.text = dataModel.gongyingshangName;
+    cell.Detail_Remark.text = dataModel.remark;
+    cell.Detail_Car_Num.text = dataModel.qianchepai;
+    cell.Detail_Order_Num.text = [NSString stringWithFormat:@"%@",dataModel.jinchuliaodanNo];
+    cell.Detail_PC.text = dataModel.pici;
+    cell.Detail_LC_Name.text = dataModel.liaocang;
+    cell.Detail_JC_Time.text = dataModel.jinchangshijian;
+    cell.Detail_CC_Time.text = dataModel.chuchangshijian;
+    cell.Detail_Person_Name.text = dataModel.sibangyuan;
+    cell.Detail_DB_Name.text = dataModel.banhezhanminchen;
+    cell.Detail_GYS_Name.text = dataModel.gongyingshangName;
     return cell;
 }
 

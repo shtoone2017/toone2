@@ -24,21 +24,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *CC_TYPE;
 
 //详情
-@property (strong, nonatomic) IBOutlet UILabel *GYS_Name;
-@property (strong, nonatomic) IBOutlet UILabel *DB_Name;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_GYS_Name;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_DB_Name;
 
-@property (strong, nonatomic) IBOutlet UILabel *Person_Name;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_Person_Name;
 
-@property (strong, nonatomic) IBOutlet UILabel *CC_Time;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CC_Time;
 
-@property (strong, nonatomic) IBOutlet UILabel *JC_Time;
-@property (strong, nonatomic) IBOutlet UILabel *LC_Name;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_JC_Time;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_LC_Name;
 
-@property (strong, nonatomic) IBOutlet UILabel *PC;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_PC;
 
-@property (strong, nonatomic) IBOutlet UILabel *Order_Num;
-@property (strong, nonatomic) IBOutlet UILabel *Car_Num;
-@property (strong, nonatomic) IBOutlet UILabel *Remeke;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_Order_Num;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_Car_Num;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_Remark;
 
 
 

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="166" id="gM7-dV-1S4" customClass="BFListCell">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="ListCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="166" id="gM7-dV-1S4" customClass="BFListCell">
             <rect key="frame" x="0.0" y="0.0" width="328" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gM7-dV-1S4" id="r0j-zs-VYS">
@@ -123,29 +123,14 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="CC_BF_Name" destination="KbC-cp-UvZ" id="9pG-Qu-Uz9"/>
-                <outlet property="CC_CL_Name" destination="IFn-C6-bkF" id="NQR-MX-Fe1"/>
-                <outlet property="CC_GYS_Name" destination="xZ8-ap-fSA" id="3TJ-cX-Usy"/>
-                <outlet property="CC_SJ" destination="fnS-V0-Xo4" id="uI1-7h-YVJ"/>
-                <outlet property="CC_TYPE" destination="Kyz-2a-ABb" id="NVZ-Mi-xPC"/>
-                <outlet property="CC_Time" destination="K1d-fp-GzQ" id="KMn-Sl-heA"/>
-                <outlet property="Car_Num" destination="emI-Dn-wZA" id="mLG-hx-0dh"/>
-                <outlet property="DB_Name" destination="gJF-Ue-9Rd" id="Dcc-Lo-g7e"/>
-                <outlet property="GYS_Name" destination="dzv-tH-8w8" id="jOH-Wf-5a3"/>
                 <outlet property="JC_BF_Name" destination="RU6-jw-cz7" id="F4D-Nz-GMI"/>
                 <outlet property="JC_CL_Name" destination="bdx-5K-GcY" id="vBW-1t-BCm"/>
                 <outlet property="JC_GYS_Name" destination="YyS-TA-efc" id="gAb-rf-fjF"/>
                 <outlet property="JC_SJ" destination="arY-UW-xub" id="Siv-hx-s27"/>
-                <outlet property="JC_Time" destination="ocg-r8-RPX" id="UQ9-GQ-6Mz"/>
-                <outlet property="LC_Name" destination="umV-dT-Fag" id="0lQ-HD-SgN"/>
-                <outlet property="Order_Num" destination="DPv-7E-ja0" id="rGM-eI-cLX"/>
-                <outlet property="PC" destination="ngG-3Z-Yyx" id="D4O-ZV-LEo"/>
-                <outlet property="Person_Name" destination="xqt-fB-aZ0" id="Gck-YA-DQ0"/>
-                <outlet property="Remeke" destination="fRH-Oh-e6R" id="c9a-wk-fWa"/>
             </connections>
             <point key="canvasLocation" x="61" y="27"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="203" id="yfM-5c-E1n" customClass="BFListCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell2" rowHeight="203" id="yfM-5c-E1n" customClass="BFListCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yfM-5c-E1n" id="1Ec-8C-ip7">
@@ -279,9 +264,16 @@
                     <constraint firstItem="hgf-N9-sPw" firstAttribute="width" secondItem="qQO-nv-XqC" secondAttribute="width" id="yGi-MN-WDD"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="61" y="247"/>
+            <connections>
+                <outlet property="CC_BF_Name" destination="KbC-cp-UvZ" id="Aux-Vu-LPN"/>
+                <outlet property="CC_CL_Name" destination="IFn-C6-bkF" id="4ro-31-Eiv"/>
+                <outlet property="CC_GYS_Name" destination="xZ8-ap-fSA" id="oMr-Co-Qxn"/>
+                <outlet property="CC_SJ" destination="fnS-V0-Xo4" id="pKB-sH-ZHY"/>
+                <outlet property="CC_TYPE" destination="Kyz-2a-ABb" id="iU0-eM-3au"/>
+            </connections>
+            <point key="canvasLocation" x="61" y="246.5"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="344" id="K9j-Q9-fDE" customClass="BFListCell">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="ListCell3" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell3" rowHeight="344" id="K9j-Q9-fDE" customClass="BFListCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K9j-Q9-fDE" id="Cij-HP-efo">
@@ -538,6 +530,18 @@
                     <constraint firstItem="Y1R-36-s6l" firstAttribute="top" secondItem="QaX-mP-axT" secondAttribute="bottom" constant="10" id="zWt-Bs-LYn"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="Detail_CC_Time" destination="K1d-fp-GzQ" id="SXu-gC-gAc"/>
+                <outlet property="Detail_Car_Num" destination="emI-Dn-wZA" id="sZP-P9-6E4"/>
+                <outlet property="Detail_DB_Name" destination="gJF-Ue-9Rd" id="dzO-lN-4Qt"/>
+                <outlet property="Detail_GYS_Name" destination="dzv-tH-8w8" id="oSB-YY-shT"/>
+                <outlet property="Detail_JC_Time" destination="ocg-r8-RPX" id="5fF-8h-fu0"/>
+                <outlet property="Detail_LC_Name" destination="umV-dT-Fag" id="1wk-5g-Rva"/>
+                <outlet property="Detail_Order_Num" destination="DPv-7E-ja0" id="2mA-m5-0vv"/>
+                <outlet property="Detail_PC" destination="ngG-3Z-Yyx" id="tVF-l1-cqi"/>
+                <outlet property="Detail_Person_Name" destination="xqt-fB-aZ0" id="aVu-F0-NNW"/>
+                <outlet property="Detail_Remark" destination="fRH-Oh-e6R" id="28W-R0-fry"/>
+            </connections>
             <point key="canvasLocation" x="45" y="576"/>
         </tableViewCell>
     </objects>
