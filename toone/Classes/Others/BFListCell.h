@@ -40,6 +40,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *Detail_Car_Num;
 @property (strong, nonatomic) IBOutlet UILabel *Detail_Remark;
 
+//材料明细
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_Name;
+
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_MZ;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_PZ;
+
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_KZ;
+
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_KL;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_JZ;
+@property (strong, nonatomic) IBOutlet UILabel *Detail_CL_SJZL;
 
 
 

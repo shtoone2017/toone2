@@ -39,6 +39,12 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self hidenScreenView];
+}
+
 - (NSMutableArray *)dataArr
 {
     if (!_dataArr)
@@ -269,7 +275,6 @@
             {
                 [self showScreenView];
             }
-            isShowScreenView = !isShowScreenView;
             break;
         case 3:
             [super pan];
@@ -287,6 +292,8 @@
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
         scView.frame = CGRectMake(30, 60, Screen_w-30, Screen_h);
     } completion:nil];
+    isShowScreenView = !isShowScreenView;
+
 }
 
 - (void)hidenScreenView
@@ -294,6 +301,8 @@
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
         scView.frame = CGRectMake(Screen_w, 60, Screen_w-30, Screen_h);
     } completion:nil];
+    isShowScreenView = !isShowScreenView;
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

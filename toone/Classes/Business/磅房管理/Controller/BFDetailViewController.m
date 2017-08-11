@@ -30,7 +30,7 @@
 - (void)setUpUI
 {
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,Screen_w,Screen_h) style:UITableViewStylePlain];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,60,Screen_w,Screen_h) style:UITableViewStyleGrouped];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
@@ -58,53 +58,94 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    switch (section)
-//    {
-//        case 0:
-//            return 1;
-//            break;
-//        default:
-//            return 1;
-//            break;
-//    }
-    return 1;
+    switch (section)
+    {
+        case 0:
+            return 1;
+            break;
+        case 2:
+            return 0;
+            break;
+        default:
+            return 1;
+            break;
+    }
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (indexPath.section == 0)
-//    {
-//        
-//    }
-    static NSString *cellId = @"ListCell3";
-    BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell)
+    if (indexPath.section == 0)
     {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:2];
-        
+        static NSString *cellId = @"ListCell3";
+        BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:2];
+            cell.Detail_Remark.text = dataModel.remark;
+            cell.Detail_Car_Num.text = dataModel.qianchepai;
+            cell.Detail_Order_Num.text = dataModel.jinchuliaodanno;
+            cell.Detail_PC.text = dataModel.pici;
+            cell.Detail_LC_Name.text = dataModel.liaocang;
+            cell.Detail_JC_Time.text = dataModel.jinchangshijian;
+            cell.Detail_CC_Time.text = dataModel.chuchangshijian;
+            cell.Detail_Person_Name.text = dataModel.sibangyuan;
+            cell.Detail_DB_Name.text = dataModel.banhezhanminchen;
+            cell.Detail_GYS_Name.text = dataModel.gongyingshangname;
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }
-    cell.Detail_Remark.text = dataModel.remark;
-    cell.Detail_Car_Num.text = dataModel.qianchepai;
-    cell.Detail_Order_Num.text = [NSString stringWithFormat:@"%@",dataModel.jinchuliaodanNo];
-    cell.Detail_PC.text = dataModel.pici;
-    cell.Detail_LC_Name.text = dataModel.liaocang;
-    cell.Detail_JC_Time.text = dataModel.jinchangshijian;
-    cell.Detail_CC_Time.text = dataModel.chuchangshijian;
-    cell.Detail_Person_Name.text = dataModel.sibangyuan;
-    cell.Detail_DB_Name.text = dataModel.banhezhanminchen;
-    cell.Detail_GYS_Name.text = dataModel.gongyingshangName;
-    return cell;
+    else if (indexPath.section == 1)
+    {
+        static NSString *cellId = @"ListCell4";
+        BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:3];
+
+            cell.Detail_CL_Name.text = dataModel.cailiaoname;
+            cell.Detail_CL_MZ.text = dataModel.maozhong;
+            cell.Detail_CL_PZ.text = dataModel.pizhong;
+            cell.Detail_CL_KZ.text = dataModel.kouzhong;
+            cell.Detail_CL_KL.text = dataModel.koulv;
+            cell.Detail_CL_JZ.text = dataModel.jingzhong;
+            cell.Detail_CL_SJZL.text = dataModel.jingzhong;
+        }
+        return cell;
+    }
+    else
+    {
+        return nil;
+    }
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *titleArr = @[@"基本信息",@"材料明细",@"进出场情况"];
+    UIView *headerView = [UIView new];
+    UILabel *titleLab = [UILabel new];
+    titleLab.frame = CGRectMake(25, 5, 150, 25);
+    titleLab.text = titleArr[section];
+    titleLab.textColor = BLUECOLOR;
+    [headerView addSubview:titleLab];
+    return headerView;
 }
 
 
