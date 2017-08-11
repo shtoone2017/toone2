@@ -13,13 +13,13 @@
 
 #import "SW_LSSJ_Detail_DataCell.h"
 #import "SW_LSSJ_Detail_HeadCell.h"
-#import "SW_LSSJ_Detail_ChartCell.h"
+//#import "SW_LSSJ_Detail_ChartCell.h"
 #import "SW_LSSJ_Detail_Chart2Cell.h"
 #import "SGLineDIY.h"
 @interface SW_LSSJ_DetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) NSMutableArray * chartDatas;
-@property (nonatomic,strong) NSMutableArray * charts;
+//@property (nonatomic,strong) NSMutableArray * charts;
 @property (nonatomic,strong) NSMutableArray * titles;
 @property (nonatomic,strong) NSMutableArray * colors;
 @property (weak, nonatomic) IBOutlet UITableView *tb;
@@ -43,7 +43,7 @@
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_HeadCell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_HeadCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_DataCell"];
-    [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_ChartCell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_ChartCell"];
+//    [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_ChartCell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_ChartCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"SW_LSSJ_Detail_Chart2Cell" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Detail_Chart2Cell"];
 
 }
@@ -107,9 +107,9 @@
             //
             weakSelf.datas = datas;
             weakSelf.chartDatas = chartDatas;
-            weakSelf.titles = titles;
-            weakSelf.charts = charts;
-            weakSelf.colors = colors;
+//            weakSelf.titles = titles;
+//            weakSelf.charts = charts;
+//            weakSelf.colors = colors;
             [weakSelf.tb reloadData];
             [Tools removeActivity];
         }
@@ -129,7 +129,7 @@
 }
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -139,9 +139,9 @@
     if (section == 1) {
         return self.datas.count+1;
     }
-    if (section == 2) {
-        return 1;
-    }
+//    if (section == 2) {
+//        return 1;
+//    }
     if (section == 3) {
         
         return self.chartDatas.count+1;
@@ -152,7 +152,7 @@
     switch (section) {
         case 0:return @"基本信息";
         case 1:return @"采集数据";
-        case 2:return [NSString stringWithFormat:@"%@%@",self.position,@"合成级配曲线图"];
+//        case 2:return [NSString stringWithFormat:@"%@%@",self.position,@"合成级配曲线图"];
         case 3:return @"合成后各筛孔尺寸的通过百分率(%)";
     }
     return nil;
@@ -164,9 +164,9 @@
     if (indexPath.section == 1) {
         return 20;
     }
-    if (indexPath.section == 2) {
-        return 200.0f;
-    }
+//    if (indexPath.section == 2) {
+//        return 200.0f;
+//    }
     if (indexPath.section == 3) {
         return 20;
     }
@@ -191,15 +191,15 @@
         return cell;
     }
     if (indexPath.section == 2) {
-        SW_LSSJ_Detail_ChartCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Detail_ChartCell"];
-        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-        if (self.titles.count > 0) {
-            SGLineDIY * line = [[SGLineDIY alloc] initWithFrame:CGRectMake(0, 0, Screen_w, 180) data:self.charts title:self.titles color:self.colors];
-            line.backgroundColor = [UIColor whiteColor];
-            [cell.chartParentView addSubview:line];
-        }
-       
-        return cell;
+//        SW_LSSJ_Detail_ChartCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Detail_ChartCell"];
+//        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+//        if (self.titles.count > 0) {
+//            SGLineDIY * line = [[SGLineDIY alloc] initWithFrame:CGRectMake(0, 0, Screen_w, 180) data:self.charts title:self.titles color:self.colors];
+//            line.backgroundColor = [UIColor whiteColor];
+//            [cell.chartParentView addSubview:line];
+//        }
+    
+//        return cell;
 
     }
     if (indexPath.section == 3) {

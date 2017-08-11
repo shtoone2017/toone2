@@ -46,10 +46,10 @@
     [super viewDidLoad];
     self.wdIndex = 2;
     self.pageNo = @"1";
-    self.maxPageItems = @"15";
+    self.maxPageItems = @"10";
     self.shebeibianhao = @"";
     self.biaoshiid = @"";
-    _baseUrlString=TP_ZYWD;
+    _baseUrlString = TP_NYSD;
     
     [self loadUI];
     [self loadListTableView];
@@ -65,12 +65,12 @@
     __weak __typeof(self) weakSelf = self;
     self.ListTableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
         weakSelf.pageNo = @"1";
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     self.ListTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.pageNo = FormatInt([weakSelf.pageNo intValue]+1);
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     [self.ListTableView registerNib:[UINib nibWithNibName:@"TP_NYSDList_Cell" bundle:nil] forCellReuseIdentifier:@"TP_NYSDList_Cell"];
@@ -88,36 +88,36 @@
 //    MyTPSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MyTPSegmentedControl" owner:nil options:nil][0];
 //    seg.frame = CGRectMake(0, 0, 220, 24);
 //    self.navigationItem.titleView = seg;
-    self.navigationItem.title = @"终压温度";
+    self.navigationItem.title = @"碾压速度";
     __weak typeof(self)  weakSelf = self;
 //    seg.segBlock = ^(int tag){
 //        switch (tag) {
 //            case 1:{//速度
-//                self.wdIndex = 1;
-//                self.pageNo = @"1";
-//                self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
-//                self.chartLabel.text = @"速度走势图(km/h)";
+                self.wdIndex = 1;
+                self.pageNo = @"1";
+                self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
+                self.chartLabel.text = @"速度走势图(km/h)";
 ////                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
 ////                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
 ////                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
 ////                NSString *urlString = [NSString stringWithFormat:TP_NYSD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
 ////                weakSelf.urlString = urlString;
-//                    _baseUrlString=TP_NYSD_List;
-//                [self reloadData];
+                    _baseUrlString = TP_NYSD;
+                [self reloadData];
 //                break;
 //            }
 //            case 2:{//温度
-                self.wdIndex = 2;
-                self.pageNo = @"1";
-                self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
-                self.chartLabel.text = @"温度走势图(℃)";
+//                self.wdIndex = 2;
+//                self.pageNo = @"1";
+//                self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
+//                self.chartLabel.text = @"温度走势图(℃)";
 //                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
 //                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
 //                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
 //                NSString *urlString = [NSString stringWithFormat:TP_NYWD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
 //                weakSelf.urlString = urlString;
-                _baseUrlString=TP_ZYWD;
-                [self reloadData];
+//                _baseUrlString = TP_NYSD;
+//                [self reloadData];
 //                break;
 //            }
 //        }
@@ -149,6 +149,9 @@
                     weakSelf.chartModel = [TP_NY_ChartModel modelWithDict:dic];
                     if (weakSelf.chartModel.tmpdata) {
                         [datas addObject:weakSelf.chartModel.tmpdata];
+                    }
+                    if (weakSelf.chartModel.tmpsudu) {//图表
+                        [datas addObject:weakSelf.chartModel.tmpsudu];
                     }
                     [nyX addObject:weakSelf.chartModel.tmpshijian];
                 }
@@ -198,9 +201,9 @@
         if (self.wdIndex == 2) {
             [cell setLabel:@"温度"];
         }
-//        if (self.wdIndex == 1) {
-//            [cell setLabel:@"速度"];
-//        }
+        if (self.wdIndex == 1) {
+            [cell setLabel:@"速度"];
+        }
         return cell;
     }else {
         TP_NYSDList_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"TP_NYSDList_Cell"];

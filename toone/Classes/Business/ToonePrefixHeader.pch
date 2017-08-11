@@ -70,8 +70,8 @@
 #import "WSLineChartView.h"
 
 //
-#define baseUrl       @"http://112.124.12.254:8082/lygsmss/"
-//#define baseUrl     @"http://192.168.11.109:8888/lygsmss/"
+//#define baseUrl       @"http://112.124.12.254:8082/lygsmss/"
+#define baseUrl     @"http://192.168.11.101:8888/lygsmss/"
 //@"http://192.168.11.107:8080/jbgsmss/"
 
 //@"http://192.168.11.126:8081/jbgsmss/"
@@ -177,6 +177,8 @@
 #define TP_TPSD FormatString(baseUrl,@"appXc/tmpsuduchaxun?&tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
 //终压温度
 #define TP_ZYWD FormatString(baseUrl,@"appXc/nywenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
+//碾压速度
+#define TP_NYSD FormatString(baseUrl,@"appXc/nysuduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
 //设备列表
 #define LLQ_SYS_SB   FormatString(baseUrl,@"app/machineList?departType=%@&biaoshiid=%@&machineType=%@")
 //针入列表

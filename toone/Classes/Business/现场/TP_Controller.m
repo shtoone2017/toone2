@@ -31,8 +31,8 @@
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
     _clView.hidden = YES;
     _dwView.hidden = YES;
-    _zyView.hidden = YES;
-//    
+//    _zyView.hidden = YES;
+//
 //    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
 //    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
 //    self.departName_Label.textColor = [UIColor whiteColor];
