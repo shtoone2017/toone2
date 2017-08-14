@@ -10,22 +10,33 @@
 #import "DrawerController.h"
 #import "MySJView.h"
 @interface MyViewController ()
+{
+    BOOL isShowScreenView;
+}
+
 @property (nonatomic,strong) DrawerController * drawer;
 
 @end
 
 @implementation MyViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (_scView)
+    {
+        [_scView.tbView reloadData];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //1.移动手势
-
     
-
+    if (_screenViewTitleArr && _screenViewTitleArr.count > 0)
+    {
+        [self addRightScreenBtn];
+    }
     
-    //3.获取开始、结束时间
-//    self.startTime = [TimeTools time_3_monthsAgo]; 
-//    self.endTime = [TimeTools currentTime];
 
 }
 -(NSString *)startTime{
@@ -40,6 +51,69 @@
     }
     return _endTime;
 }
+
+#pragma mark - 添加筛选视图
+- (void)addRightScreenBtn
+{
+    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
+    [btn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    [self createScreenViewWithTitlrArr:_screenViewTitleArr];
+}
+
+- (void)createScreenViewWithTitlrArr:(NSArray *)titleArr
+{
+    _scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
+    //    _scView.backgroundColor = [UIColor cyanColor];
+    _scView.block = ^(BOOL isShow) {
+        isShowScreenView = isShow;
+    };
+    
+//    WS(weakSelf);
+//    _scView.paraBlock = ^(NSDictionary *paraDic) {
+//        NSMutableDictionary *tempDic = [weakSelf getParaDic];
+//        [tempDic setValuesForKeysWithDictionary:paraDic];
+//        [tempDic setObject:@"1341763200" forKey:jinchangshijian1];
+//        [tempDic setObject:@"1246723200" forKey:chuchangshijian1];
+//        [weakSelf refreshDataWithParaDic:tempDic];
+//    };
+    [self.view addSubview:_scView];
+    [self.view bringSubviewToFront:_scView];
+}
+
+
+
+- (void)rightBtnClick
+{
+    if (isShowScreenView == YES)
+    {
+        [self hidenScreenView];
+    }
+    else
+    {
+        [self showScreenView];
+    }
+}
+
+- (void)showScreenView
+{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        _scView.frame = CGRectMake(30, 60, Screen_w-30, Screen_h);
+    } completion:nil];
+    isShowScreenView = !isShowScreenView;
+    
+}
+
+- (void)hidenScreenView
+{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        _scView.frame = CGRectMake(Screen_w, 60, Screen_w-30, Screen_h);
+    } completion:nil];
+    isShowScreenView = !isShowScreenView;
+    
+}
+
 #pragma mark - 添加搜索按钮
 -(void)addSearchButton{
     //1.     ic_search_white_18dp
@@ -52,6 +126,7 @@
     [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }
+
 #pragma mark - 提供一个可供子类继承/重写的buttonClick:
 -(void)searchButtonClick:(UIButton*)sender{}
 #pragma mark - 封装3rd时间组件

@@ -29,7 +29,7 @@ typedef void(^ScreenBlock)(NSDictionary *paraDic);
 #define orgcode @"orgcode"
 #define apici @"pici"
 #define cheliangbianhao @"cheliangbianhao"
-#define gprsbianhao @"gprsbianhao"
+#define gprsbianha @"gprsbianhao"
 #define cailiaono @"cailiaono"
 
 #define LIST_JCTime1 @"LIST_JCTime1"

@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "ZZJG_View.h"
+#import "ScreenView.h"
 
 typedef void(^SendTimeBlock)();
 
 @interface MyViewController : UIViewController<UIGestureRecognizerDelegate,CalendarViewControllerDelegate>
 @property (nonatomic,copy)NSString * startTime;
 @property (nonatomic,copy)NSString * endTime;
+
+@property (nonatomic,strong) NSArray *screenViewTitleArr;
+
+@property (nonatomic,strong) ScreenView *scView;
 
 @property (nonatomic,copy) SendTimeBlock block;
 
