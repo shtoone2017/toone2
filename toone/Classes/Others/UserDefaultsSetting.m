@@ -39,7 +39,8 @@ static UserDefaultsSetting * setting = nil;
     setting.userFullName = [defaults objectForKey:@"userFullNameKey"];
     //项目选择
     setting.funtype = [defaults objectForKey:@"funtypeKey"];
-    
+    //分部分项
+    setting.partialName = [defaults objectForKey:@"partialNameKey"];
     
     //权限
     setting.hntchaobiaoReal = [defaults boolForKey:@"hntchaobiaoRealKey"];
@@ -85,6 +86,8 @@ static UserDefaultsSetting * setting = nil;
     [defaults setBool:self.enterApplication forKey:@"enterApplicationKey"];
     //    组织机构项目选择
     [defaults setObject:self.funtype forKey:@"funtypeKey"];
+    //分部分项
+    [defaults setObject:self.partialName forKey:@"partialNameKey"];
     
     //权限
     [defaults setBool:self.hntchaobiaoReal   forKey:@"hntchaobiaoRealKey"];

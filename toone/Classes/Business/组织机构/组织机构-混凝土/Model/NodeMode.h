@@ -20,7 +20,7 @@ typedef void(^ChannelBlock)(NSArray *result);
 @property (nonatomic, copy) NSString*success;
 
 @property (nonatomic,copy)NSString *parentNo;//父
-@property (nonatomic,copy)NSString *projectName;//
+@property (nonatomic,copy)NSString *projectName;
 @property (nonatomic,copy)NSString *projectNo;//子
 
 @property (nonatomic, strong) NSArray*channel;

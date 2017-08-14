@@ -11,12 +11,15 @@
 typedef NS_ENUM(NSInteger,NodeType) {
     NodeTypeZZJG = 0,
     NodeTypeCL,
+    NodeTypeFBFX,
 };
 
 @interface NodeViewController : ViewController
 @property (nonatomic,copy) void(^ZZJGBlock)(NSString *name,NSString *identifier);
 
 @property (nonatomic,copy) void(^CLBlock)(NSString *name,NSString *identifier);
+@property (nonatomic,copy) void(^FBFXBlock)(NSString *identifier);//分部分项
+
 
 @property (nonatomic,assign) NSInteger type;
 

@@ -79,6 +79,14 @@
 
 #define appXcChuliaokouwenduList  FormatString(baseUrl,@"xcTanpuwenduController.do?appXcChuliaokouwenduList&    userGroupId=%@&shebeibianhao=%@&startTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@")
 
+/**************************工程部*********************************/
+//工程进度查询
+#define AppProgress FormatString(baseUrl,@"AppWZprojectProgressQueryController.do?query&parentno=%@&pageNo=%@&maxPageItems=%@")
+//分部分项
+#define AppPartial FormatString(baseUrl,@"appWZproject.do?Appfenbufenxiang&orgCode=%@")
+
+
+
 
 
 /*
