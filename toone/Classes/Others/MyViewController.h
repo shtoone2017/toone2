@@ -18,6 +18,8 @@ typedef void(^SendTimeBlock)();
 
 @property (nonatomic,strong) NSArray *screenViewTitleArr;
 
+@property (nonatomic,assign) NSInteger screenViewType;
+
 @property (nonatomic,strong) ScreenView *scView;
 
 @property (nonatomic,copy) SendTimeBlock block;

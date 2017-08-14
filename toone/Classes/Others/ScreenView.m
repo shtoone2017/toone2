@@ -96,6 +96,12 @@
         self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,apici:@"",gprsbianha:@"",cailiaono:@""}];
         self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
     }
+    else if (_type == ScreenViewTypeLC)
+    {
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_Title_ZZJG:[UserDefaultsSetting shareSetting].departName,LC_Title_CLMC:@""}];
+        
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_PARA_ZZJG:[UserDefaultsSetting shareSetting].departId,LC_PARA_CLMC:@""}];
+    }
 }
 
 - (void)hiddenAction
@@ -189,6 +195,26 @@
                     
             }
         }
+        else if(_type == ScreenViewTypeLC)
+        {
+            cell.txtField.enabled = NO;
+            if (indexPath.row == 0)
+            {
+                //所属机构
+                if ([_nameDic[LC_Title_ZZJG] isEqualToString:@""]) {
+                    cell.txtField.text = [UserDefaultsSetting shareSetting].departName;
+                }
+                else
+                {
+                    cell.txtField.text = _nameDic[LC_Title_ZZJG];
+                }
+            }
+            else
+            {
+                //材料
+                cell.txtField.text = _nameDic[LC_Title_CLMC];
+            }
+        }
         
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -257,6 +283,32 @@
                 };
                 [vc calendarWithTimeString:nil obj:cell.txtField];
             }
+        }
+    }
+    else if(_type == ScreenViewTypeLC)
+    {
+        if (indexPath.row == 0)
+        {
+            //所属机构
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                [self.nameDic setObject: name forKey:LC_Title_ZZJG];
+                [self.paraDic setObject:identifier forKey:LC_PARA_ZZJG];
+            };
+            [[self viewController].navigationController pushViewController:vc animated:YES];
+        }
+        else
+        {
+            //材料
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeCL;
+            vc.CLBlock = ^(NSString *name, NSString *identifier) {
+                [self.nameDic setObject: name forKey:LC_Title_CLMC];
+                [self.paraDic setObject:identifier forKey:LC_PARA_CLMC];
+            };
+            
+            [[self viewController].navigationController pushViewController:vc animated:YES];
         }
     }
 }

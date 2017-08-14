@@ -11,19 +11,7 @@
 typedef void(^ScreenBlock)(NSDictionary *paraDic);
 
 //磅房参数
-/*
- jinchangshijian1 true 进场时间1
- jinchangshijian2 true 进场时间2
- chuchangshijian1 true 出场时间1
- chuchangshijian2 true 出场时间2
- orgcode true 组织机构编号
- pageNo true 当前页
- maxPageItems true 每页条数
- pici true 批次
- cheliangbianhao true 车辆编号
- gprsbianhao true 设备编号（shebeibianhao）
- cailiaono
- */
+
 #define jinchangshijian1 @"jinchangshijian1"
 #define chuchangshijian1 @"chuchangshijian1"
 #define orgcode @"orgcode"
@@ -40,6 +28,12 @@ typedef void(^ScreenBlock)(NSDictionary *paraDic);
 #define LIST_SB_NUM @"LIST_SB_NUM"
 #define LIST_CL_NUM @"LIST_CL_NUM"
 
+//料仓
+#define LC_PARA_ZZJG @"departId"
+#define LC_PARA_CLMC @"cailiaomingcheng"
+
+#define LC_Title_ZZJG @"LC_Title_ZZJG"
+#define LC_Title_CLMC @"LC_Title_CLMC"
 
 
 typedef void(^ScreenIsShowBlock)(BOOL isShow);
@@ -47,7 +41,8 @@ typedef void(^ScreenIsShowBlock)(BOOL isShow);
 typedef NS_ENUM(NSInteger,ScreenViewType)
 {
     ScreenViewTypeBF_JC = 0,   //磅房筛选  进场
-    ScreenViewTypeBF_CC        //出场
+    ScreenViewTypeBF_CC,   //出场
+    ScreenViewTypeLC//料仓
     
 };
 

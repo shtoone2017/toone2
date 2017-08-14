@@ -59,25 +59,16 @@
     [btn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
-    [self createScreenViewWithTitlrArr:_screenViewTitleArr];
+    [self createScreenViewWithTitlrArr:_screenViewTitleArr type:_screenViewType];
 }
 
-- (void)createScreenViewWithTitlrArr:(NSArray *)titleArr
+- (void)createScreenViewWithTitlrArr:(NSArray *)titleArr type:(NSInteger)type
 {
-    _scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
+    _scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:type];
     //    _scView.backgroundColor = [UIColor cyanColor];
     _scView.block = ^(BOOL isShow) {
         isShowScreenView = isShow;
     };
-    
-//    WS(weakSelf);
-//    _scView.paraBlock = ^(NSDictionary *paraDic) {
-//        NSMutableDictionary *tempDic = [weakSelf getParaDic];
-//        [tempDic setValuesForKeysWithDictionary:paraDic];
-//        [tempDic setObject:@"1341763200" forKey:jinchangshijian1];
-//        [tempDic setObject:@"1246723200" forKey:chuchangshijian1];
-//        [weakSelf refreshDataWithParaDic:tempDic];
-//    };
     [self.view addSubview:_scView];
     [self.view bringSubviewToFront:_scView];
 }

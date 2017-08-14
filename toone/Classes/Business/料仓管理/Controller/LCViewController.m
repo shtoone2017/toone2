@@ -39,6 +39,7 @@
 {
     [super loadView];
     self.screenViewTitleArr = @[@"所属机构:",@"材料名称:"];
+    self.screenViewType = ScreenViewTypeLC;
 }
 
 - (void)viewDidLoad
@@ -48,6 +49,13 @@
     [self loadUI];
     _currentPage = 1;
     [self refreshDataWithParaDic:[self getParaDic]];
+    WS(weakSelf);
+    self.scView.paraBlock = ^(NSDictionary *paraDic)
+    {
+        NSMutableDictionary *tempDic = [weakSelf getParaDic];
+        [tempDic setValuesForKeysWithDictionary:paraDic];
+        [weakSelf refreshDataWithParaDic:tempDic];
+    };
 }
 
 
@@ -69,23 +77,11 @@
     [self.view sendSubviewToBack:_tbView];
 }
 
-
-
-//    WS(weakSelf);
-//    scView.paraBlock = ^(NSDictionary *paraDic) {
-//        NSMutableDictionary *tempDic = [weakSelf getParaDic];
-//        [tempDic setValuesForKeysWithDictionary:paraDic];
-//        [tempDic setObject:@"1341763200" forKey:jinchangshijian1];
-//        [tempDic setObject:@"1246723200" forKey:chuchangshijian1];
-//        [weakSelf refreshDataWithParaDic:tempDic];
-//    };
-
-
 - (NSMutableDictionary *)getParaDic
 {
     NSDictionary *dic = @{@"maxPageItems":[NSString stringWithFormat:@"%d",kPageSize],@"pageNo":[NSString stringWithFormat:@"%ld",(long)_currentPage]};
     NSMutableDictionary *paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:orgcode];
+    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:LC_PARA_ZZJG];
     
     return paraDic;
 }
