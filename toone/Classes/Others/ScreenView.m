@@ -93,7 +93,7 @@
 {
     if (_type == ScreenViewTypeBF_JC)
     {
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,apici:@"",gprsbianha:@"",cailiaono:@""}];
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",:[UserDefaultsSetting shareSetting].departId,apici:@"",gprsbianha:@"",cailiaono:@""}];
         self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
     }
     else if (_type == ScreenViewTypeLC)
@@ -197,7 +197,7 @@
         }
         else if(_type == ScreenViewTypeLC)
         {
-            cell.txtField.enabled = NO;
+            cell.txtField.enabled = NO; 
             if (indexPath.row == 0)
             {
                 //所属机构
