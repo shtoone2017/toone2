@@ -64,9 +64,8 @@
 
 - (void)createScreenViewWithTitlrArr:(NSArray *)titleArr type:(NSInteger)type
 {
-    _scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:type];
-    //    _scView.backgroundColor = [UIColor cyanColor];
-    _scView.block = ^(BOOL isShow) {
+    _scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w, Screen_h) titleArr:titleArr type:type];
+    _scView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];    _scView.block = ^(BOOL isShow) {
         isShowScreenView = isShow;
     };
     [self.view addSubview:_scView];
@@ -90,7 +89,7 @@
 - (void)showScreenView
 {
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-        _scView.frame = CGRectMake(30, 60, Screen_w-30, Screen_h);
+        _scView.frame = CGRectMake(0, 60, Screen_w, Screen_h);
     } completion:nil];
     isShowScreenView = !isShowScreenView;
     
@@ -99,7 +98,7 @@
 - (void)hidenScreenView
 {
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-        _scView.frame = CGRectMake(Screen_w, 60, Screen_w-30, Screen_h);
+        _scView.frame = CGRectMake(Screen_w, 60, Screen_w, Screen_h);
     } completion:nil];
     isShowScreenView = !isShowScreenView;
     

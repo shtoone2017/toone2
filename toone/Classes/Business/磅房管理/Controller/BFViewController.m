@@ -110,9 +110,9 @@
 }
 - (void)createScreenView
 {
-    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间(开始):",@"进场时间(结束):",@"批次:",@"车牌号:"];
-    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w-30, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
-    //    scView.backgroundColor = [UIColor cyanColor];
+    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间:",@"出场时间:",@"批次:",@"车牌号:"];
+    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
+    scView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     scView.block = ^(BOOL isShow) {
         isShowScreenView = isShow;
     };
@@ -289,7 +289,7 @@
 - (void)showScreenView
 {
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-        scView.frame = CGRectMake(30, 60, Screen_w-30, Screen_h);
+        scView.frame = CGRectMake(0, 60, Screen_w, Screen_h);
     } completion:nil];
     isShowScreenView = !isShowScreenView;
 
@@ -298,7 +298,7 @@
 - (void)hidenScreenView
 {
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
-        scView.frame = CGRectMake(Screen_w, 60, Screen_w-30, Screen_h);
+        scView.frame = CGRectMake(Screen_w, 60, Screen_w, Screen_h);
     } completion:nil];
     isShowScreenView = !isShowScreenView;
 

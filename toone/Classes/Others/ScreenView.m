@@ -73,12 +73,12 @@
 
 - (void)setUpUI
 {
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) style:UITableViewStyleGrouped];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(40, 0, self.bounds.size.width-40, self.bounds.size.height-80) style:UITableViewStyleGrouped];
     _tbView.delegate = self;
     _tbView.dataSource = self;
-    _tbView.rowHeight = 70;
+    _tbView.rowHeight = 48;
     _tbView.sectionFooterHeight = 80;
-//    _tbView.backgroundColor = [UIColor yellowColor];
+    _tbView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_tbView];
 
     [self clearAllPara];
@@ -93,7 +93,7 @@
 {
     if (_type == ScreenViewTypeBF_JC)
     {
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",:[UserDefaultsSetting shareSetting].departId,apici:@"",gprsbianha:@"",cailiaono:@""}];
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,apici:@"",gprsbianha:@"",cailiaono:@""}];
         self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
     }
     else if (_type == ScreenViewTypeLC)
