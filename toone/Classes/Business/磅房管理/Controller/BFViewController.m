@@ -96,6 +96,13 @@
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
     
+    [self createTableView];
+    
+    [self createScreenView];
+}
+
+- (void)createTableView
+{
     //创建列表
     _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,Screen_w,Screen_h) style:UITableViewStylePlain];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -104,10 +111,8 @@
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
-    
-    
-    [self createScreenView];
 }
+
 - (void)createScreenView
 {
     NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间:",@"出场时间:",@"批次:",@"车牌号:"];
@@ -146,10 +151,7 @@
 
 - (void)refreshDataWithParaDic:(NSDictionary *)paraDic
 {
-    if (_tbView.mj_header)
-    {
-        [_tbView.mj_header endRefreshing];
-    }
+    
     __weak typeof(self) weakSelf = self;
     _tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_tbView.mj_footer resetNoMoreData];
@@ -263,6 +265,14 @@
 
 - (void)segmentControlAction:(UISegmentedControl *)seg
 {
+    if(_tbView)
+    {
+        [_tbView removeFromSuperview];
+        _tbView = nil;
+    }
+        
+    [self createTableView];
+    _tbView.frame = CGRectMake(0, 60, Screen_w, Screen_h);
     _currentSegIndex = [seg selectedSegmentIndex];
     [self refreshDataWithParaDic:[self getParaDic]];
 }
