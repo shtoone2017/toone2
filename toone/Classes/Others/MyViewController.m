@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     if (_screenViewTitleArr && _screenViewTitleArr.count > 0)
     {
         [self addRightScreenBtn];

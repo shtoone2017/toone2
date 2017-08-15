@@ -30,10 +30,11 @@
 - (void)setUpUI
 {
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,60,Screen_w,Screen_h) style:UITableViewStyleGrouped];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h) style:UITableViewStyleGrouped];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
+    _tbView.sectionFooterHeight = 0.00001;
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
@@ -148,7 +149,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40.0;
+    return 38.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -156,7 +157,7 @@
     NSArray *titleArr = @[@"基本信息",@"材料明细",@"进出场情况"];
     UIView *headerView = [UIView new];
     UILabel *titleLab = [UILabel new];
-    titleLab.frame = CGRectMake(25, 5, 150, 25);
+    titleLab.frame = CGRectMake(25, 10, 150, 25);
     titleLab.text = titleArr[section];
     titleLab.textColor = BLUECOLOR;
     [headerView addSubview:titleLab];
