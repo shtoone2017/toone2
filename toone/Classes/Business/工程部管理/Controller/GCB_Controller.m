@@ -37,9 +37,11 @@
     [super viewDidLoad];
     self.pageNo = @"1";
     self.maxPageItems = @"5";
+    self.parentno = @"";
     [self addPanGestureRecognizer];
     [self loadTb];
     [self loadUI];
+    [self loadData];
 }
 
 -(void)loadTb{
@@ -59,7 +61,7 @@
         weakSelf.pageNo = FormatInt([weakSelf.pageNo intValue]+1);
         [weakSelf loadData];
     }];
-    self.tb.rowHeight = 65;
+    self.tb.rowHeight = 80;
     [self.tb registerNib:[UINib nibWithNibName:@"GCB_Table_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_Table_Cell"];
 }
 -(void)loadUI{
@@ -131,7 +133,9 @@
             vc.type = NodeTypeFBFX;
             vc.FBFXBlock = ^(NSString *identifier) {
                 weakSelf.parentno = identifier;
+                [self loadData];
             };
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 3:{

@@ -103,7 +103,7 @@
 #pragma mark - Optional
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Node *node = [_tempData objectAtIndex:indexPath.row];
-    [UserDefaultsSetting shareSetting].partialName  = node.name;
+//    [UserDefaultsSetting shareSetting].partialName  = node.name;
 //    [UserDefaultsSetting shareSetting].departId = node.nodeId;
     if (_block)
     {

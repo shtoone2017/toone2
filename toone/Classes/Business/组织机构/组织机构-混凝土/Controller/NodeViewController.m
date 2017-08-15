@@ -101,6 +101,7 @@
 }
 #pragma mark - 分部分项
 -(void)initWithFbfx {
+    [Tools showActivityToView:self.view];
     NSString *orgCode = @"";
     NSString *urlString = [NSString stringWithFormat:AppPartial,orgCode];
     __weak typeof(self) weakSelf = self;
@@ -122,6 +123,7 @@
             [weakSelf.channs addObject:weakSelf.node];
         }
         [weakSelf setUpUI];
+        [Tools removeActivity];
     }];
 }
 
