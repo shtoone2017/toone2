@@ -73,12 +73,12 @@
 
 - (void)setUpUI
 {
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height) style:UITableViewStyleGrouped];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(40, 0, self.bounds.size.width-40, self.bounds.size.height-80) style:UITableViewStyleGrouped];
     _tbView.delegate = self;
     _tbView.dataSource = self;
-    _tbView.rowHeight = 70;
+    _tbView.rowHeight = 48;
     _tbView.sectionFooterHeight = 80;
-//    _tbView.backgroundColor = [UIColor yellowColor];
+    _tbView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_tbView];
 
     [self clearAllPara];
@@ -197,7 +197,7 @@
         }
         else if(_type == ScreenViewTypeLC)
         {
-            cell.txtField.enabled = NO;
+            cell.txtField.enabled = NO; 
             if (indexPath.row == 0)
             {
                 //所属机构
