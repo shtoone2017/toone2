@@ -11,7 +11,7 @@
 #import "TreeTableView.h"
 #import "NodeMode.h"
 
-#define levelLength 3
+//#define levelLength 3
 @interface NodeViewController ()<TreeTableCellDelegate>
 {
     NSString *selectName;
@@ -35,7 +35,11 @@
     {
         [self getDataOfMaterial];
     }
-    else
+    if (_type == NodeTypeFBFX)//分部分项
+    {
+        [self initWithFbfx];
+    }
+     if(_type == NodeTypeZZJG)
     {
         [self initWithData];
     }
@@ -60,7 +64,15 @@
             self.CLBlock(selectName, selectId);
         }
     }
-    else
+    if (_type == NodeTypeFBFX)
+    {
+        if (self.FBFXBlock)
+        {
+            self.FBFXBlock(selectId);
+        }
+    }
+    
+    if(_type == NodeTypeZZJG)
     {
         if (self.ZZJGBlock)
         {
@@ -84,6 +96,31 @@
             [weakSelf.channs addObject:weakSelf.node];
         }
         
+        [weakSelf setUpUI];
+    }];
+}
+#pragma mark - 分部分项
+-(void)initWithFbfx {
+    NSString *orgCode = @"";
+    NSString *urlString = [NSString stringWithFormat:AppPartial,orgCode];
+    __weak typeof(self) weakSelf = self;
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
+        
+        NSDictionary *dict = (NSDictionary *)result;
+        NSArray *dictArr = dict[@"data"];
+        for (int i = 0; i < dictArr.count; i++) {
+            NSDictionary *modelDic = dictArr[i];
+            weakSelf.node = [[Node alloc] init];
+            
+            if ([[modelDic valueForKey:@"parentNo"] isKindOfClass:[NSNull class]]) {
+                weakSelf.node.parentId = @"";
+            }else {
+                weakSelf.node.parentId = (NSString *)[modelDic valueForKey:@"parentNo"] ? :@"";
+            }
+            weakSelf.node.name = (NSString *)[modelDic valueForKey:@"projectName"];
+            weakSelf.node.nodeId = [modelDic valueForKey:@"projectNo"];
+            [weakSelf.channs addObject:weakSelf.node];
+        }
         [weakSelf setUpUI];
     }];
 }

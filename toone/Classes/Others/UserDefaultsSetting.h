@@ -23,6 +23,8 @@
 @property (nonatomic,copy) NSString * userFullName;
 @property (nonatomic, strong) NSNumber *funtype;
 
+@property (nonatomic,copy)NSString *partialName;//分部分项
+
 
 @property (nonatomic,assign,getter=isLogin) BOOL  login;
 @property (nonatomic,assign,getter=isEnterApplication) BOOL enterApplication;
