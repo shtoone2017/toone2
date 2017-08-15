@@ -146,6 +146,10 @@
 
 - (void)refreshDataWithParaDic:(NSDictionary *)paraDic
 {
+    if (_tbView.mj_header)
+    {
+        [_tbView.mj_header endRefreshing];
+    }
     __weak typeof(self) weakSelf = self;
     _tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_tbView.mj_footer resetNoMoreData];
