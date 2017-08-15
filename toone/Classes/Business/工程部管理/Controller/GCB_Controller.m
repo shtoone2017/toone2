@@ -37,6 +37,7 @@
     [super viewDidLoad];
     self.pageNo = @"1";
     self.maxPageItems = @"5";
+    self.parentno = @"";
     [self addPanGestureRecognizer];
     [self loadTb];
     [self loadUI];
