@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MySYSSegmentedControl">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="24"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-d8-REZ">
+                    <rect key="frame" x="56" y="1" width="53.5" height="22"/>
+                    <color key="backgroundColor" red="0.2784313725" green="0.43137254899999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="软化">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="NBY-qb-zQN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUg-cE-CpA">
+                    <rect key="frame" x="110.5" y="1" width="54" height="22"/>
+                    <color key="backgroundColor" red="0.2784313725" green="0.43137254899999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="针入">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="BgU-sM-5dJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSS-5b-SGZ">
+                    <rect key="frame" x="165.5" y="1" width="53.5" height="22"/>
+                    <color key="backgroundColor" red="0.2784313725" green="0.43137254899999999" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="延度">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ljw-pa-qaX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-Tj-DuL">
+                    <rect key="frame" x="1" y="1" width="54" height="22"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="马歇尔">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="AcF-Fo-Wee"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mgR-d8-REZ" firstAttribute="leading" secondItem="eWN-Tj-DuL" secondAttribute="trailing" constant="1" id="61J-RE-MYV"/>
+                <constraint firstAttribute="trailing" secondItem="VSS-5b-SGZ" secondAttribute="trailing" constant="1" id="Eic-qi-98f"/>
+                <constraint firstItem="VSS-5b-SGZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="SKg-LS-fp7"/>
+                <constraint firstAttribute="bottom" secondItem="sUg-cE-CpA" secondAttribute="bottom" constant="1" id="Uvg-yU-PIr"/>
+                <constraint firstItem="sUg-cE-CpA" firstAttribute="width" secondItem="VSS-5b-SGZ" secondAttribute="width" id="X5s-gK-h5h"/>
+                <constraint firstItem="eWN-Tj-DuL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="1" id="YUs-M7-kpT"/>
+                <constraint firstItem="eWN-Tj-DuL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="cOO-um-TUz"/>
+                <constraint firstItem="sUg-cE-CpA" firstAttribute="leading" secondItem="mgR-d8-REZ" secondAttribute="trailing" constant="1" id="eCK-5W-cfK"/>
+                <constraint firstItem="mgR-d8-REZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="fLZ-qO-Lfx"/>
+                <constraint firstItem="sUg-cE-CpA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="hTX-f4-62E"/>
+                <constraint firstAttribute="bottom" secondItem="mgR-d8-REZ" secondAttribute="bottom" constant="1" id="kEr-nZ-iJR"/>
+                <constraint firstItem="eWN-Tj-DuL" firstAttribute="width" secondItem="mgR-d8-REZ" secondAttribute="width" id="mow-ua-Z6z"/>
+                <constraint firstAttribute="bottom" secondItem="VSS-5b-SGZ" secondAttribute="bottom" constant="1" id="ndM-mt-xb6"/>
+                <constraint firstItem="VSS-5b-SGZ" firstAttribute="leading" secondItem="sUg-cE-CpA" secondAttribute="trailing" constant="1" id="qdj-pQ-G27"/>
+                <constraint firstItem="mgR-d8-REZ" firstAttribute="width" secondItem="sUg-cE-CpA" secondAttribute="width" id="xAd-yp-OQE"/>
+                <constraint firstAttribute="bottom" secondItem="eWN-Tj-DuL" secondAttribute="bottom" constant="1" id="yyn-kV-NZ2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button1" destination="mgR-d8-REZ" id="1G9-qD-BXL"/>
+                <outlet property="button2" destination="sUg-cE-CpA" id="iyD-MF-3wv"/>
+                <outlet property="button3" destination="VSS-5b-SGZ" id="NQc-wf-jM6"/>
+                <outlet property="button4" destination="eWN-Tj-DuL" id="LaD-e6-IFW"/>
+            </connections>
+            <point key="canvasLocation" x="-13" y="-130"/>
+        </view>
+    </objects>
+</document>

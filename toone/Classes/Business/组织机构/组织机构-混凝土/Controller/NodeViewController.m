@@ -68,7 +68,7 @@
     {
         if (self.FBFXBlock)
         {
-            self.FBFXBlock(selectId);
+            self.FBFXBlock(selectId, selectName);
         }
     }
     
