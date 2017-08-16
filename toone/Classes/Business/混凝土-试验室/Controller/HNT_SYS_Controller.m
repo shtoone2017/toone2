@@ -64,6 +64,7 @@
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString * urlString = [NSString stringWithFormat:sysHome_3,userGroupId,startTimeStamp,endTimeStamp];
+    NSLog(@"GET 地址 \n %@",urlString);
     __weak __typeof(self)  weakSelf = self;
     
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {

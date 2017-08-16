@@ -9,6 +9,7 @@
 #import "BFDetailViewController.h"
 #import "BFListModel.h"
 #import "BFListCell.h"
+#import "HNT_SYS_InnerController.h"
 
 @interface BFDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
