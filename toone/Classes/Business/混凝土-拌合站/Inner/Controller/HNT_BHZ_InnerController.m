@@ -20,8 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    
     self.index =1;
     self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_SCCX_Controller"];
     if ([self.vc isKindOfClass:[HNT_SCCX_Controller class]]) {

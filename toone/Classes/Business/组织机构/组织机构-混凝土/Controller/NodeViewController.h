@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger,NodeType) {
 @property (nonatomic,copy) void(^ZZJGBlock)(NSString *name,NSString *identifier);
 
 @property (nonatomic,copy) void(^CLBlock)(NSString *name,NSString *identifier);
-@property (nonatomic,copy) void(^FBFXBlock)(NSString *identifier);//分部分项
+@property (nonatomic,copy) void(^FBFXBlock)(NSString *identifier,NSString *name);//分部分项
 
 
 @property (nonatomic,assign) NSInteger type;

@@ -84,7 +84,12 @@
 #define AppProgress FormatString(baseUrl,@"AppWZprojectProgressQueryController.do?query&parentno=%@&pageNo=%@&maxPageItems=%@")
 //分部分项
 #define AppPartial FormatString(baseUrl,@"appWZproject.do?Appfenbufenxiang&orgCode=%@")
-
+//任务单执行主页
+#define AppRWD FormatString(baseUrl,@"appWZproject.do?AppTaskListZXQK&departId=%@&kaipanriqi=%@&kaipanriqiend=%@&pageNo=%@&maxPageItems=%@&zhuangtai=%@&sjqd=%@")
+//浇筑令主页
+#define AppJZL FormatString(baseUrl,@"appWZSys.do?AppWzRenWuDanList&departId=%@&state=%@&startTime=%@&endTime=%@&sjqd=%@&renwuno=%@&pageNo=%@&maxPageItems=%@")
+//进场过磅主页
+#define AppJCB FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBCount&departId=&@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&jinchangshijian1=%@&jinchangshijian2=%@&pageNo=%@&maxPageItems=%@")
 
 
 
