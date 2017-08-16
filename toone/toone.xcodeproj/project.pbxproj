@@ -186,6 +186,11 @@
 		42E288471F43F2A20002AF72 /* Exp52_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E288431F43F2A20002AF72 /* Exp52_Xib_View.xib */; };
 		42E288481F43F2A20002AF72 /* Exp52View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288451F43F2A20002AF72 /* Exp52View.m */; };
 		42E2884B1F4415EB0002AF72 /* GCB_RWD_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E2884A1F4415EB0002AF72 /* GCB_RWD_Model.m */; };
+		42E2884E1F4428550002AF72 /* GCB_JZL_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E2884D1F4428550002AF72 /* GCB_JZL_Model.m */; };
+		42E288551F442A700002AF72 /* Exp51_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288511F442A700002AF72 /* Exp51_Xib_View.m */; };
+		42E288561F442A700002AF72 /* Exp51_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E288521F442A700002AF72 /* Exp51_Xib_View.xib */; };
+		42E288571F442A700002AF72 /* Exp51View.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288541F442A700002AF72 /* Exp51View.m */; };
+		42E2885D1F4441050002AF72 /* GCB_JC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E2885C1F4441050002AF72 /* GCB_JC_Model.m */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F021EB043CF00440413 /* LqTheProjectCell.m */; };
@@ -796,6 +801,15 @@
 		42E288451F43F2A20002AF72 /* Exp52View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp52View.m; sourceTree = "<group>"; };
 		42E288491F4415EB0002AF72 /* GCB_RWD_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_RWD_Model.h; sourceTree = "<group>"; };
 		42E2884A1F4415EB0002AF72 /* GCB_RWD_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_RWD_Model.m; sourceTree = "<group>"; };
+		42E2884C1F4428550002AF72 /* GCB_JZL_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JZL_Model.h; sourceTree = "<group>"; };
+		42E2884D1F4428550002AF72 /* GCB_JZL_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JZL_Model.m; sourceTree = "<group>"; };
+		42E288501F442A700002AF72 /* Exp51_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp51_Xib_View.h; sourceTree = "<group>"; };
+		42E288511F442A700002AF72 /* Exp51_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp51_Xib_View.m; sourceTree = "<group>"; };
+		42E288521F442A700002AF72 /* Exp51_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp51_Xib_View.xib; sourceTree = "<group>"; };
+		42E288531F442A700002AF72 /* Exp51View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp51View.h; sourceTree = "<group>"; };
+		42E288541F442A700002AF72 /* Exp51View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp51View.m; sourceTree = "<group>"; };
+		42E2885B1F4441050002AF72 /* GCB_JC_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JC_Model.h; sourceTree = "<group>"; };
+		42E2885C1F4441050002AF72 /* GCB_JC_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JC_Model.m; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C283F011EB043CF00440413 /* LqTheProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LqTheProjectCell.h; sourceTree = "<group>"; };
@@ -2331,6 +2345,8 @@
 		42E288191F43D4D10002AF72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42E2884C1F4428550002AF72 /* GCB_JZL_Model.h */,
+				42E2884D1F4428550002AF72 /* GCB_JZL_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2432,6 +2448,8 @@
 		42E288291F43DE580002AF72 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				42E2885B1F4441050002AF72 /* GCB_JC_Model.h */,
+				42E2885C1F4441050002AF72 /* GCB_JC_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2463,6 +2481,18 @@
 				42E288451F43F2A20002AF72 /* Exp52View.m */,
 			);
 			path = EXP52;
+			sourceTree = "<group>";
+		};
+		42E2884F1F442A700002AF72 /* EXP51 */ = {
+			isa = PBXGroup;
+			children = (
+				42E288501F442A700002AF72 /* Exp51_Xib_View.h */,
+				42E288511F442A700002AF72 /* Exp51_Xib_View.m */,
+				42E288521F442A700002AF72 /* Exp51_Xib_View.xib */,
+				42E288531F442A700002AF72 /* Exp51View.h */,
+				42E288541F442A700002AF72 /* Exp51View.m */,
+			);
+			path = EXP51;
 			sourceTree = "<group>";
 		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
@@ -3508,6 +3538,7 @@
 		D20063FA1DFF86800021E293 /* 组件 */ = {
 			isa = PBXGroup;
 			children = (
+				42E2884F1F442A700002AF72 /* EXP51 */,
 				42E288401F43F2A20002AF72 /* EXP52 */,
 				42AC71811E30C3B6007D8F57 /* EXP7 */,
 				42AC71871E30C3B6007D8F57 /* EXP8 */,
@@ -4043,6 +4074,7 @@
 				8C2840441EB1123600440413 /* TP_CL_Controller.xib in Resources */,
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
+				42E288561F442A700002AF72 /* Exp51_Xib_View.xib in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
 				D2938B921EAC91A900770D90 /* arrow_02.png in Resources */,
 				8CBD73401E091C7E00A0C991 /* HNT_CLHS_ChatCell.xib in Resources */,
@@ -4195,6 +4227,7 @@
 				D200654A1DFF86B30021E293 /* DayAxisValueFormatter.m in Sources */,
 				D20064861DFF86800021E293 /* SYS_testTypeModel.m in Sources */,
 				187C73041E30B1810072F33A /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
+				42E2885D1F4441050002AF72 /* GCB_JC_Model.m in Sources */,
 				42AC71511E30C393007D8F57 /* EXPrimaryModel.m in Sources */,
 				42AC717D1E30C393007D8F57 /* LQ_CellModel.m in Sources */,
 				D200653D1DFF86B30021E293 /* PiePolylineChartViewController.m in Sources */,
@@ -4243,6 +4276,7 @@
 				42AC71781E30C393007D8F57 /* ProduQueryModel.m in Sources */,
 				42AC71761E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.m in Sources */,
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
+				42E288571F442A700002AF72 /* Exp51View.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
 				42AC71B81E30C423007D8F57 /* SGBar.m in Sources */,
 				42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */,
@@ -4296,6 +4330,7 @@
 				D20064891DFF86800021E293 /* HNT_SYS_Cell.m in Sources */,
 				42AC71521E30C393007D8F57 /* EXPrimaryCell.m in Sources */,
 				187C73081E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
+				42E288551F442A700002AF72 /* Exp51_Xib_View.m in Sources */,
 				18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D20064AA1DFF86800021E293 /* Colours.m in Sources */,
 				9CD8DDAB1F416FF100F67C8B /* LCListModel.m in Sources */,
@@ -4431,6 +4466,7 @@
 				D200653B1DFF86B30021E293 /* PieChartViewController.m in Sources */,
 				D20064401DFF86800021E293 /* CJYearViewController.m in Sources */,
 				8CBD733F1E091C7E00A0C991 /* HNT_CLHS_ChatCell.m in Sources */,
+				42E2884E1F4428550002AF72 /* GCB_JZL_Model.m in Sources */,
 				42AC716B1E30C393007D8F57 /* MaterialTableViewController.m in Sources */,
 				8CBD73391E091B8800A0C991 /* HNT_CLHS_Model.m in Sources */,
 				D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */,

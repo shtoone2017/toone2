@@ -31,9 +31,9 @@
 }
 -(void)switchToWZ{
     [self.button4 setTitle:@"任务单" forState:UIControlStateNormal];
-    [self.button2 setTitle:@"浇筑令" forState:UIControlStateNormal];
-    [self.button3 setTitle:@"进出磅" forState:UIControlStateNormal];
-    [self.button1 setTitle:@"进出耗" forState:UIControlStateNormal];
+    [self.button2 setTitle:@"进出磅" forState:UIControlStateNormal];
+    [self.button3 setTitle:@"进出耗" forState:UIControlStateNormal];
+    [self.button1 setTitle:@"浇筑令" forState:UIControlStateNormal];
 }
 - (IBAction)buttonClick:(UIButton *)sender {
     self.button1.backgroundColor = BLUECOLOR;
