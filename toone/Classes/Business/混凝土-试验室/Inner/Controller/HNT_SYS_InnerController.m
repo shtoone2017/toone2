@@ -11,6 +11,8 @@
 #import "HNT_YLSY_Controller.h"
 #import "HNT_WNSY_Controller.h"
 #import "HNT_TJFX_Controller.h"
+#import "SYS_PHBViewController.h"
+
 @interface HNT_SYS_InnerController ()
 
 @property (nonatomic,strong) UIViewController * currentVC;
@@ -23,14 +25,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.userGroupId == nil) {//直接跳入试验室
-        self.userGroupId = [UserDefaultsSetting shareSetting].departId;
-        
-        UIButton *btn3 = [UIButton img_20WithName:@"sg_person"];
-        btn3.tag = 3;
-        [btn3 addTarget:self action:@selector(pan) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
-    }
+//    if (self.userGroupId == nil) {//直接跳入试验室
+//        self.userGroupId = [UserDefaultsSetting shareSetting].departId;
+//        
+//        UIButton *btn3 = [UIButton img_20WithName:@"sg_person"];
+//        btn3.tag = 3;
+//        [btn3 addTarget:self action:@selector(pan) forControlEvents:UIControlEventTouchUpInside];
+//        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
+//    }
     [self loadUI];
 }
 
@@ -64,7 +66,11 @@
     
     HNT_TJFX_Controller *tjVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_TJFX_Controller"];
     [self addChildViewController:tjVC];
-    _vcsArr = @[ylVC,wnVC,tjVC];
+    
+    SYS_PHBViewController *phbVC = [[SYS_PHBViewController alloc] init];
+    [self addChildViewController:phbVC];
+    
+    _vcsArr = @[ylVC,wnVC,tjVC,phbVC];
     
     //设置默认vc
     self.currentVC = ylVC;

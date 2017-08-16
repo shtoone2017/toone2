@@ -259,6 +259,14 @@
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
 		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
+		9CAAAF8D1F43DA70008F43BA /* SYS_PHBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF8C1F43DA70008F43BA /* SYS_PHBViewController.m */; };
+		9CAAAF911F43DEF6008F43BA /* SYS_PHBListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF901F43DEF6008F43BA /* SYS_PHBListModel.m */; };
+		9CAAAF961F43E106008F43BA /* PHBListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF941F43E106008F43BA /* PHBListCell.m */; };
+		9CAAAF971F43E106008F43BA /* PHBListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAAAF951F43E106008F43BA /* PHBListCell.xib */; };
+		9CAAAF9D1F43EE3F008F43BA /* SJ_PHB_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF9C1F43EE3F008F43BA /* SJ_PHB_ViewController.m */; };
+		9CAAAFA01F43EF4E008F43BA /* SJ_PHBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF9F1F43EF4E008F43BA /* SJ_PHBModel.m */; };
+		9CAAAFA41F43F612008F43BA /* SJ_PHBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAFA21F43F612008F43BA /* SJ_PHBCell.m */; };
+		9CAAAFA51F43F612008F43BA /* SJ_PHBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAAAFA31F43F612008F43BA /* SJ_PHBCell.xib */; };
 		9CD8DDAB1F416FF100F67C8B /* LCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAA1F416FF100F67C8B /* LCListModel.m */; };
 		9CD8DDAF1F41725E00F67C8B /* LCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAD1F41725E00F67C8B /* LCListCell.m */; };
 		9CD8DDB01F41725E00F67C8B /* LCListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAE1F41725E00F67C8B /* LCListCell.xib */; };
@@ -913,6 +921,20 @@
 		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
 		9C2024111F38052700F79559 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelTextFieldCell.m; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.m"; sourceTree = SOURCE_ROOT; };
 		9C2024121F38052700F79559 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextFieldCell.xib; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.xib"; sourceTree = SOURCE_ROOT; };
+		9CAAAF8B1F43DA70008F43BA /* SYS_PHBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_PHBViewController.h; sourceTree = "<group>"; };
+		9CAAAF8C1F43DA70008F43BA /* SYS_PHBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_PHBViewController.m; sourceTree = "<group>"; };
+		9CAAAF8F1F43DEF6008F43BA /* SYS_PHBListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_PHBListModel.h; sourceTree = "<group>"; };
+		9CAAAF901F43DEF6008F43BA /* SYS_PHBListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_PHBListModel.m; sourceTree = "<group>"; };
+		9CAAAF931F43E106008F43BA /* PHBListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBListCell.h; sourceTree = "<group>"; };
+		9CAAAF941F43E106008F43BA /* PHBListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBListCell.m; sourceTree = "<group>"; };
+		9CAAAF951F43E106008F43BA /* PHBListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBListCell.xib; sourceTree = "<group>"; };
+		9CAAAF9B1F43EE3F008F43BA /* SJ_PHB_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJ_PHB_ViewController.h; sourceTree = "<group>"; };
+		9CAAAF9C1F43EE3F008F43BA /* SJ_PHB_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJ_PHB_ViewController.m; sourceTree = "<group>"; };
+		9CAAAF9E1F43EF4E008F43BA /* SJ_PHBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJ_PHBModel.h; sourceTree = "<group>"; };
+		9CAAAF9F1F43EF4E008F43BA /* SJ_PHBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJ_PHBModel.m; sourceTree = "<group>"; };
+		9CAAAFA11F43F612008F43BA /* SJ_PHBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJ_PHBCell.h; sourceTree = "<group>"; };
+		9CAAAFA21F43F612008F43BA /* SJ_PHBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJ_PHBCell.m; sourceTree = "<group>"; };
+		9CAAAFA31F43F612008F43BA /* SJ_PHBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJ_PHBCell.xib; sourceTree = "<group>"; };
 		9CD8DDA91F416FF100F67C8B /* LCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListModel.h; path = "Classes/Business/磅房管理/Controller/LCListModel.h"; sourceTree = SOURCE_ROOT; };
 		9CD8DDAA1F416FF100F67C8B /* LCListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCListModel.m; path = "Classes/Business/磅房管理/Controller/LCListModel.m"; sourceTree = SOURCE_ROOT; };
 		9CD8DDAC1F41725E00F67C8B /* LCListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListCell.h; path = "Classes/Business/磅房管理/Controller/LCListCell.h"; sourceTree = SOURCE_ROOT; };
@@ -2723,6 +2745,44 @@
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
+		9CAAAF8A1F43D9DB008F43BA /* Part4(配合比) */ = {
+			isa = PBXGroup;
+			children = (
+				9CAAAF921F43E0DA008F43BA /* View */,
+				9CAAAF8E1F43DED7008F43BA /* Model */,
+				9CAAAF8B1F43DA70008F43BA /* SYS_PHBViewController.h */,
+				9CAAAF8C1F43DA70008F43BA /* SYS_PHBViewController.m */,
+				9CAAAF9B1F43EE3F008F43BA /* SJ_PHB_ViewController.h */,
+				9CAAAF9C1F43EE3F008F43BA /* SJ_PHB_ViewController.m */,
+			);
+			name = "Part4(配合比)";
+			path = "Part3（统计分析）";
+			sourceTree = "<group>";
+		};
+		9CAAAF8E1F43DED7008F43BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CAAAF8F1F43DEF6008F43BA /* SYS_PHBListModel.h */,
+				9CAAAF901F43DEF6008F43BA /* SYS_PHBListModel.m */,
+				9CAAAF9E1F43EF4E008F43BA /* SJ_PHBModel.h */,
+				9CAAAF9F1F43EF4E008F43BA /* SJ_PHBModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9CAAAF921F43E0DA008F43BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CAAAF931F43E106008F43BA /* PHBListCell.h */,
+				9CAAAF941F43E106008F43BA /* PHBListCell.m */,
+				9CAAAF951F43E106008F43BA /* PHBListCell.xib */,
+				9CAAAFA11F43F612008F43BA /* SJ_PHBCell.h */,
+				9CAAAFA21F43F612008F43BA /* SJ_PHBCell.m */,
+				9CAAAFA31F43F612008F43BA /* SJ_PHBCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D20062F01DFF85CB0021E293 = {
 			isa = PBXGroup;
 			children = (
@@ -3035,6 +3095,7 @@
 				D20063A81DFF86800021E293 /* Part1（压力试验） */,
 				D20063BB1DFF86800021E293 /* Part2（万能试验） */,
 				D20063CD1DFF86800021E293 /* Part3（统计分析） */,
+				9CAAAF8A1F43D9DB008F43BA /* Part4(配合比) */,
 				D20063DB1DFF86800021E293 /* View */,
 				D20063DF1DFF86800021E293 /* 试验类型和设备 */,
 			);
@@ -3811,6 +3872,7 @@
 				18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20064441DFF86800021E293 /* CJMonthDayCollectionCell.xib in Resources */,
 				D200652C1DFF86B30021E293 /* HorizontalBarChartViewController.xib in Resources */,
+				9CAAAFA51F43F612008F43BA /* SJ_PHBCell.xib in Resources */,
 				D200653A1DFF86B30021E293 /* NegativeStackedBarChartViewController.xib in Resources */,
 				8CEB5BC91E0A6C0D00A5C4AA /* Login.storyboard in Resources */,
 				D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */,
@@ -3878,6 +3940,7 @@
 				8C28406D1EB1127500440413 /* TP_NYSDList_Cell.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				8CBD73451E091EF600A0C991 /* HNT_CLHS_Cell.xib in Resources */,
+				9CAAAF971F43E106008F43BA /* PHBListCell.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
 				42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */,
 				42AC716A1E30C393007D8F57 /* DayQueryTableViewCell.xib in Resources */,
@@ -4064,6 +4127,7 @@
 				D20064881DFF86800021E293 /* HNT_SYS_Model.m in Sources */,
 				42AC71701E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Controller.m in Sources */,
 				8CBD72EF1E07A84C00A0C991 /* HNT_CBCZ_DetailController.m in Sources */,
+				9CAAAFA01F43EF4E008F43BA /* SJ_PHBModel.m in Sources */,
 				9C05F0861F3C490F00BF4627 /* BFDetailViewController.m in Sources */,
 				D20064801DFF86800021E293 /* HNT_TJFX_TxtView.m in Sources */,
 				8C2840861EB1132200440413 /* MyTPSegmentedControl.m in Sources */,
@@ -4075,6 +4139,7 @@
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
 				8CBD72E51E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.m in Sources */,
 				42AC71661E30C393007D8F57 /* DayDetailsCell.m in Sources */,
+				9CAAAF911F43DEF6008F43BA /* SYS_PHBListModel.m in Sources */,
 				D20064891DFF86800021E293 /* HNT_SYS_Cell.m in Sources */,
 				42AC71521E30C393007D8F57 /* EXPrimaryCell.m in Sources */,
 				187C73081E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
@@ -4134,6 +4199,7 @@
 				D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */,
 				42AC720C1E30C576007D8F57 /* MASConstraint.m in Sources */,
 				42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */,
+				9CAAAF961F43E106008F43BA /* PHBListCell.m in Sources */,
 				187C73061E30B1810072F33A /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				D20065A51DFFE12D0021E293 /* Exp5View.m in Sources */,
 				8C2840801EB1130D00440413 /* TP_TP_SB_Controller.m in Sources */,
@@ -4183,6 +4249,7 @@
 				D20064A31DFF86800021E293 /* UserDefaultsSetting.m in Sources */,
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,
 				8CE976551E0BF1FF0016A858 /* MySJView.m in Sources */,
+				9CAAAF9D1F43EE3F008F43BA /* SJ_PHB_ViewController.m in Sources */,
 				425AE0EE1F341C720048D96B /* BFViewController.m in Sources */,
 				42AC714E1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.m in Sources */,
 				9C05F0791F3BFC4400BF4627 /* JSONModelClassProperty.m in Sources */,
@@ -4258,6 +4325,7 @@
 				42AC715A1E30C393007D8F57 /* LQ_ZCL_CL_Controller.m in Sources */,
 				D20064791DFF86800021E293 /* HNT_WNSY_Model.m in Sources */,
 				D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */,
+				9CAAAF8D1F43DA70008F43BA /* SYS_PHBViewController.m in Sources */,
 				8C2840431EB1123600440413 /* TP_CL_Controller.m in Sources */,
 				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,
 				D2CF6B671E011728003AE61D /* Exp6View.m in Sources */,
@@ -4272,6 +4340,7 @@
 				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
 				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,
 				8C28404F1EB1123600440413 /* TP_SBDW_Model.m in Sources */,
+				9CAAAFA41F43F612008F43BA /* SJ_PHBCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

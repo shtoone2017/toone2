@@ -31,7 +31,7 @@
 - (void)setUpUI
 {
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h) style:UITableViewStyleGrouped];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h-70) style:UITableViewStyleGrouped];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
