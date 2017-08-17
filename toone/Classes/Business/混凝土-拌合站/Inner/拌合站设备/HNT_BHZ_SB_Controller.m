@@ -8,6 +8,7 @@
 
 #import "HNT_BHZ_SB_Controller.h"
 #import "HNT_BHZ_SB_Model.h"
+#import "GCB_JCB_Controller.h"
 @interface HNT_BHZ_SB_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tbleView;
 @property (nonatomic,strong) NSMutableArray * datas;
@@ -68,7 +69,8 @@
         if (_type == SBListTypeBF)
         {
             //磅房设备URL
-            urlString = [NSString stringWithFormat:@"%@AppGB.do?AppDiBangList&departId=%@",baseUrl,[UserDefaultsSetting shareSetting].departId];
+//            departId = [UserDefaultsSetting shareSetting].departId;
+            urlString = [NSString stringWithFormat:@"%@AppGB.do?AppDiBangList&departId=%@",baseUrl,departId];
         }
         else if (_type == SBListTypeSJQD)
         {

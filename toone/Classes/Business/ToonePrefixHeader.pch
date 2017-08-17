@@ -93,6 +93,9 @@
 #define AppJCB FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBCount&departId=&@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&jinchangshijian1=%@&jinchangshijian2=%@&pageNo=%@&maxPageItems=%@")
 
 
+//原材料进出耗
+#define AppJCH FormatString(baseUrl,@"AppWZJinChuChangController.do?list&departId=%@&jinchangshijian1=%@&jinchangshijian2=%@")
+
 
 
 /*

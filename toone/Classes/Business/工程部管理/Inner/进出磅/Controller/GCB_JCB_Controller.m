@@ -8,6 +8,8 @@
 
 #import "GCB_JCB_Controller.h"
 #import "GCB_JC_Model.h"
+#import "NodeViewController.h"
+#import "HNT_BHZ_SB_Controller.h"
 
 @interface GCB_JCB_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
@@ -301,6 +303,10 @@
     
     //2.
     Exp52View * e = [[Exp52View alloc] init];
+    e.useLabel = @"组织机构";
+    e.sbLabel = @"磅房设备";
+    e.earthLabel = @"材料名称";
+    
     e.frame = CGRectMake(0, 64+36, Screen_w, 275);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
@@ -325,23 +331,40 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         
-        if (type == ExpButtonTypeChoiceSBButton) {//组织机构
+        if (type == ExpButtonTypeChoiceSBButton) {//
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"GCB_RWD_Controller" sender:btn];
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeBF;
+            controller.title = @"选择设备";
+            controller.departId = self.departId;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.gprsbianhao = gprsbianhao;
+            };
+            [self.navigationController pushViewController:controller animated:YES];
         }
-        if (type == ExpButtonTypeUsePosition) {//状态
+        if (type == ExpButtonTypeUsePosition) {//组织机构
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_UsePosition_Controller" sender:btn];
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.departId = identifier;
+                [btn setTitle:name forState:UIControlStateNormal];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
-        if (type == ExpButtonTypeEarthwork) {//设计
-            
+        if (type == ExpButtonTypeEarthwork) {//材料
+            UIButton * btn = (UIButton*)obj1;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeCL;
+            vc.CLBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.departId = identifier;
+                [btn setTitle:name forState:UIControlStateNormal];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
     };
     [self.view addSubview:e];
-}
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    id vc = segue.destinationViewController;
-    
 }
 
 

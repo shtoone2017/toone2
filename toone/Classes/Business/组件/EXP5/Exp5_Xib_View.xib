@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -199,6 +199,7 @@
                 <outlet property="endTimeButton" destination="o7W-2d-q6J" id="GfA-c9-xQc"/>
                 <outlet property="okButton" destination="cVs-dD-c0D" id="l4Q-Tp-vbd"/>
                 <outlet property="sbButton" destination="5bK-95-J1A" id="b6Q-cE-yPp"/>
+                <outlet property="sbLabel" destination="ohT-xP-w2s" id="Fv7-ns-YV4"/>
                 <outlet property="startTimeButton" destination="wyS-R0-S0o" id="5fb-gU-tKk"/>
             </connections>
             <point key="canvasLocation" x="85.5" y="-511"/>

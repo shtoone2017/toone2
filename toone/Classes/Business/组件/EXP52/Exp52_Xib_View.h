@@ -14,10 +14,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *sbButton;//任务单
+@property (weak, nonatomic) IBOutlet UILabel *sbLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *usePositionButton;//组织机构
 @property (weak, nonatomic) IBOutlet UILabel *useLabel;//机构
 
 @property (weak, nonatomic) IBOutlet UIButton *earthworkButton;//设计强度
+@property (weak, nonatomic) IBOutlet UILabel *earthLabel;
+
 
 
 @end
