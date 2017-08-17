@@ -10,7 +10,9 @@
 
 typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeBF = 0,  //磅房设备列表
-    
+    SBListTypeSJQD,   //设计强度
+    SBListTypeTLD,    //塌落度
+    SBListTypeJZFS     //浇注方式
 };
 
 @interface HNT_BHZ_SB_Controller : UIViewController

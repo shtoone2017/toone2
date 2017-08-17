@@ -125,7 +125,7 @@
                     {
                         //设计强度
                         HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
-                        vc.type = SBListTypeBF;
+                        vc.type = SBListTypeSJQD;
                         vc.callBlock = ^(NSString *name, NSString *bfID) {
 //                            [self.nameDic setObject:name forKey:LIST_SB_NUM];
 //                            [self.paraDic setObject:bfID forKey:gprsbianha];
@@ -137,7 +137,7 @@
                     {
                         //塌落度
                         HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
-                        vc.type = SBListTypeBF;
+                        vc.type = SBListTypeTLD;
                         vc.callBlock = ^(NSString *name, NSString *bfID) {
 //                            [self.nameDic setObject:name forKey:LIST_SB_NUM];
 //                            [self.paraDic setObject:bfID forKey:gprsbianha];
