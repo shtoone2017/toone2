@@ -38,6 +38,9 @@
     }
     return self;
 }
+-(void)setSbLabel:(NSString *)sbLabel {
+    self.xib.sbLabel.text = sbLabel;
+}
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
         if (self.expBlock) {

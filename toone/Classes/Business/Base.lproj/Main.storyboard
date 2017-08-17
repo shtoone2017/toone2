@@ -3563,7 +3563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rp-c0-2GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6622" y="4146"/>
+            <point key="canvasLocation" x="6738" y="1801"/>
         </scene>
         <!--组织机构-->
         <scene sceneID="kys-gG-Mbh">
@@ -4415,7 +4415,6 @@
                     <connections>
                         <outlet property="sjLabel" destination="tZ2-72-RN9" id="YEN-TF-0cl"/>
                         <outlet property="tb" destination="vye-SD-f1O" id="IfR-dF-lCH"/>
-                        <segue destination="byI-bw-Xq5" kind="push" identifier="GCB_RWD_Controller" id="BTq-uc-Qg4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sC-el-25I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4694,6 +4693,6 @@
         <segue reference="OFf-sM-NiC"/>
         <segue reference="2qa-au-FyR"/>
         <segue reference="eyg-Cx-bjM"/>
-        <segue reference="BTq-uc-Qg4"/>
+        <segue reference="yFe-Zp-Q6l"/>
     </inferredMetricsTieBreakers>
 </document>

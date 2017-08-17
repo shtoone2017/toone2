@@ -8,6 +8,7 @@
 
 #import "GCB_RWD_Controller.h"
 #import "GCB_RWD_Model.h"
+#import "NodeViewController.h"
 
 @interface GCB_RWD_Controller ()
 @property (weak, nonatomic) IBOutlet UILabel *sjLabel;
@@ -145,13 +146,21 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         
-        if (type == ExpButtonTypeChoiceSBButton) {//组织机构
-            UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"GCB_RWD_Controller" sender:btn];
+        if (type == ExpButtonTypeChoiceSBButton) {//状态
+            
         }
-        if (type == ExpButtonTypeUsePosition) {//状态
+        if (type == ExpButtonTypeUsePosition) {//组织机构
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_UsePosition_Controller" sender:btn];
+            __weak typeof(self) weakSelf = self;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.departId = identifier;
+                [btn setTitle:name forState:UIControlStateNormal];
+//                [self loadData];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
+
         }
         if (type == ExpButtonTypeEarthwork) {//设计
             
@@ -160,10 +169,7 @@
     [self.view addSubview:e];
 
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    id vc = segue.destinationViewController;
-    
-}
+
 
 
 

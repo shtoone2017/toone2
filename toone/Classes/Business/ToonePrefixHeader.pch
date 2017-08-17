@@ -57,7 +57,7 @@
 //云部署地址
 
 //#define baseUrl      @"http://192.168.11.114:8081/gxzjzqms/"
-#define baseUrl         @"http://192.168.11.112:8080/jeecg/"
+#define baseUrl         @"http://192.168.11.100:8080/jeecg/"
 /*
  3-----------------------
  */
@@ -91,6 +91,9 @@
 //进场过磅主页
 #define AppJCB FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBCount&departId=&@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&jinchangshijian1=%@&jinchangshijian2=%@&pageNo=%@&maxPageItems=%@")
 
+
+//原材料进出耗
+#define AppJCH FormatString(baseUrl,@"AppWZJinChuChangController.do?list&departId=%@&jinchangshijian1=%@&jinchangshijian2=%@")
 
 
 

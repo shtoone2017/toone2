@@ -43,6 +43,12 @@
 -(void)setUseLabel:(NSString *)useLabel{
     self.xib.useLabel.text = useLabel;
 }
+-(void)setSbLabel:(NSString *)sbLabel {
+    self.xib.sbLabel.text = sbLabel;
+}
+-(void)setEarthLabel:(NSString *)earthLabel {
+    self.xib.earthLabel.text = earthLabel;
+}
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
         if (self.expBlock) {

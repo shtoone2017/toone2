@@ -8,6 +8,7 @@
 
 #import "GCB_JZL_Controller.h"
 #import "GCB_JZL_Model.h"
+#import "NodeViewController.h"
 
 @interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -331,7 +332,15 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {//组织
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller_YD" sender:btn];
+            __weak typeof(self) weakSelf = self;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.departId = identifier;
+                [btn setTitle:name forState:UIControlStateNormal];
+                [self loadData];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if (type == ExpButtonTypeEarthwork) {//设计
             
