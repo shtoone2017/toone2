@@ -10,6 +10,7 @@
 #import "GCB_JC_Model.h"
 #import "NodeViewController.h"
 #import "HNT_BHZ_SB_Controller.h"
+#import "GCB_JCB_Cell.h"
 
 @interface GCB_JCB_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
@@ -34,12 +35,11 @@
 @property (nonatomic,copy)NSString *cailiaomingcheng;//材料名称id
 @property (nonatomic,copy)NSString *tongjitype;//统计类型（0,1,2）季度、月、周
 @property (nonatomic,copy)NSString *gprsbianhao;//过磅设备
-
+@property (nonatomic,copy)NSString *states;//出厂类别(全部不写 废料0 调拨1)
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
 //不同页面记录的页码
-@property (nonatomic,copy) NSString * pageNo2;
+@property (nonatomic,copy) NSString * pageNo2;//进场
 @property (nonatomic,copy) NSString * pageNo3;
-
 
 
 @end
@@ -49,13 +49,14 @@
     [super viewDidLoad];
     self.pageNo2 = @"1";
     self.pageNo3 = @"1";
-    
     self.pageNo = @"1";
     self.maxPageItems = @"5";
     self.cailiaomingcheng = @"";
     self.departId = @"";
-    self.tongjitype = @"";
+    self.tongjitype = @"0";
+    self.gprsbianhao = @"";
     self.tableViewSigner = @"1";
+    self.states = @"";
     
     [self loadUI];
     [self loadData];
@@ -64,7 +65,7 @@
 -(void)loadUI{
     self.ContainerWidth.constant = Screen_w*2;
     self.title_sc.backgroundColor = [UIColor snowColor];
-    //self.searchButton.backgroundColor = [UIColor snowColor];//black75PercentColor
+    //self.searchButton.backgroundColor = [UIColor snowColor];//
     
     //    [self registerTableView:self.tableView1];
     [self registerTableView:self.tableView2];
@@ -78,15 +79,19 @@
         switch ([weakSelf.tableViewSigner intValue]) {
             case 1:
                 weakSelf.pageNo2 = @"1";
+                weakSelf.pageNo = @"1";
+                [weakSelf loadData];
                 break;
             case 2:
                 weakSelf.pageNo3 = @"1";
+                weakSelf.pageNo = @"1";
+                [weakSelf reloadData];
                 break;
             default:
                 break;
         }
-        weakSelf.pageNo = @"1";
-        [weakSelf loadData];
+//        weakSelf.pageNo = @"1";
+//        [weakSelf loadData];
     }];
     
     tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -94,21 +99,20 @@
             case 1:
                 weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo2;
+                [weakSelf loadData];
                 break;
             case 2:
                 weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo3;
+                [weakSelf reloadData];
                 break;
             default:
                 break;
         }
-        
-        [weakSelf loadData];
+//        [weakSelf loadData];
     }];
-    
-    //    tableView.rowHeight = 120;
-    //    [tableView registerNib:[UINib nibWithNibName:@"LLQ_ZR_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_ZR_Cell"];
-    //    [tableView registerClass:[LLQ_CBCZ_Cell class] forCellReuseIdentifier:@"LLQ_CBCZ_Cell"];
+    tableView.rowHeight = 180;
+    [tableView registerNib:[UINib nibWithNibName:@"GCB_JCB_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_JCB_Cell"];
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
@@ -131,8 +135,8 @@
             self.pageNo = self.pageNo3;
 //            self.ztstate = @"1";
             if(self.datas3==nil) {
-                [self loadData];
-                [self loadData];
+                [self reloadData];
+                [self reloadData];
             }
             break;
         default:
@@ -174,8 +178,40 @@
     }
 }
 #pragma mark - 网络请求
--(void)loadData{
-    return;
+-(void)reloadData {//出场
+    NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+    NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+    __weak typeof(self)  weakSelf = self;
+    NSString * urlString = [NSString stringWithFormat:AppCCB,_departId,_cailiaomingcheng,_gprsbianhao,_tongjitype,startTimeStamp,endTimeStamp,_states,self.pageNo,self.maxPageItems];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        NSMutableArray * datas = [NSMutableArray array];
+        if ([json[@"success"] boolValue]) {
+            if ([json[@"data"] isKindOfClass:[NSArray class]]) {
+                for (NSDictionary * dict in json[@"data"]) {
+                    GCB_JC_Model * model = [GCB_JC_Model modelWithDict:dict];
+                    
+                    [datas addObject:model];
+                }
+            }
+        }
+        
+        if ([weakSelf.pageNo3 intValue] == 1) {
+            weakSelf.datas3 = datas;
+        }else{
+            [weakSelf.datas3 addObjectsFromArray:datas];
+        }
+        [weakSelf.tableView3 reloadData];
+        [weakSelf.tableView3.mj_header endRefreshing];
+        [weakSelf.tableView3.mj_footer endRefreshing];
+        if (weakSelf.datas3.count < ([weakSelf.pageNo3 intValue]* [weakSelf.maxPageItems intValue])) {
+            [weakSelf.tableView3.mj_footer endRefreshingWithNoMoreData];
+        }
+
+    } failure:^(NSError *error) {
+        
+    }];
+}
+-(void)loadData{//进场
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:AppJCB,_departId,_cailiaomingcheng,_gprsbianhao,_tongjitype,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
@@ -198,42 +234,21 @@
                 }
             }
         }
-        
-        int i = [weakSelf.tableViewSigner intValue];
-        
-        
-        switch (i) {
-            case 1:
-                if ([weakSelf.pageNo2 intValue] == 1) {
-                    weakSelf.datas2 = datas;
-                }else{
-                    [weakSelf.datas2 addObjectsFromArray:datas];
-                }
-                [weakSelf.tableView2 reloadData];
-                [weakSelf.tableView2.mj_header endRefreshing];
-                [weakSelf.tableView2.mj_footer endRefreshing];
-                if (weakSelf.datas2.count < ([weakSelf.pageNo2 intValue]* [weakSelf.maxPageItems intValue])) {
-                    [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
-                }
-                break;
-            case 2:
-                if ([weakSelf.pageNo3 intValue] == 1) {
-                    weakSelf.datas3 = datas;
-                }else{
-                    [weakSelf.datas3 addObjectsFromArray:datas];
-                }
-                [weakSelf.tableView3 reloadData];
-                [weakSelf.tableView3.mj_header endRefreshing];
-                [weakSelf.tableView3.mj_footer endRefreshing];
-                if (weakSelf.datas3.count < ([weakSelf.pageNo3 intValue]* [weakSelf.maxPageItems intValue])) {
-                    [weakSelf.tableView3.mj_footer endRefreshingWithNoMoreData];
-                }
-                break;
+        if ([weakSelf.pageNo2 intValue] == 1) {
+            weakSelf.datas2 = datas;
+        }else{
+            [weakSelf.datas2 addObjectsFromArray:datas];
         }
+        [weakSelf.tableView2 reloadData];
+        [weakSelf.tableView2.mj_header endRefreshing];
+        [weakSelf.tableView2.mj_footer endRefreshing];
+        if (weakSelf.datas2.count < ([weakSelf.pageNo2 intValue]* [weakSelf.maxPageItems intValue])) {
+            [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
+        }
+        
     } failure:^(NSError *error) {
         
     }];
-    
 }
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -246,24 +261,21 @@
     return 0;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (tableView == self.tableView2) {
-//        LLQ_ZR_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_ZR_Cell" forIndexPath:indexPath];
-//        cell.currentIndexPath = indexPath;
-//        LLQ_YD_Model * model = self.datas2[indexPath.row];
-//        cell.models = model;
-//
-//        return cell;
-//    }
-//    if (tableView == self.tableView3) {
-//        LLQ_ZR_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_ZR_Cell" forIndexPath:indexPath];
-//        cell.currentIndexPath = indexPath;
-//        LLQ_YD_Model * model = self.datas3[indexPath.row];
-//        cell.models = model;
-//        return cell;
-//    }
-//    return nil;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == self.tableView2) {
+        GCB_JCB_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCB_Cell" forIndexPath:indexPath];
+        GCB_JC_Model * model = self.datas2[indexPath.row];
+        cell.jcModel = model;
+        return cell;
+    }
+    if (tableView == self.tableView3) {
+        GCB_JCB_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCB_Cell" forIndexPath:indexPath];
+        GCB_JC_Model * model = self.datas3[indexPath.row];
+        cell.ccModel = model;
+        return cell;
+    }
+    return nil;
+}
 
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    LLQ_YD_Model * model;
@@ -331,7 +343,7 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         
-        if (type == ExpButtonTypeChoiceSBButton) {//
+        if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
             HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
             controller.type = SBListTypeBF;
@@ -366,10 +378,4 @@
     };
     [self.view addSubview:e];
 }
-
-
-
-
-
-
 @end

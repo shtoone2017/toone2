@@ -29,7 +29,6 @@
     [super viewDidLoad];
     self.departId = @"";
     
-    NSLog(@"1");
     [self loadUI];
     [self loadData];
     

@@ -33,14 +33,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     if (_type == NodeTypeCL)
     {
+        self.navigationItem.title = @"材料名称";
         [self getDataOfMaterial];
     }
     if (_type == NodeTypeFBFX)//分部分项
     {
+        self.navigationItem.title = @"分部分项";
         [self initWithFbfx];
     }
      if(_type == NodeTypeZZJG)
     {
+        self.navigationItem.title = @"组织机构";
         [self initWithData];
     }
     
