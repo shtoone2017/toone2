@@ -9,11 +9,14 @@
 #import "SJ_PHB_ViewController.h"
 #import "SJ_PHBModel.h"
 #import "SJ_PHBCell.h"
+#import "NodeViewController.h"
+#import "HNT_BHZ_SB_Controller.h"
+
 
 @interface SJ_PHB_ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     
-    UITableView *_tbView;
+    TPKeyboardAvoidingTableView *_tbView;
     SJ_PHBModel *dataModel;
     BOOL _isChange;
     UIButton *rightBtn;
@@ -49,7 +52,7 @@
 - (void)setUpUI
 {
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h-70) style:UITableViewStyleGrouped];
+    _tbView = [[TPKeyboardAvoidingTableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h-70) style:UITableViewStyleGrouped];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
@@ -89,30 +92,66 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0)
+    NSString *cellId = [NSString stringWithFormat:@"cellID%long%long",indexPath.section,indexPath.row];
+    SJ_PHBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell)
     {
-        NSString *cellId = [NSString stringWithFormat:@"cellID%long%long",indexPath.section,indexPath.row];
-        SJ_PHBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-        if (!cell)
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"SJ_PHBCell" owner:self options:nil] objectAtIndex:indexPath.section];
+        if (indexPath.section == 0)
         {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"SJ_PHBCell" owner:self options:nil] firstObject];
-            cell.SJ_BH_Lab.text = dataModel.llphbno;
+            cell.SJ_BH_TF.text = dataModel.llphbno;
             cell.SJ_KZD_TF.text = dataModel.kangzhedu;
             cell.SJ_KSDJ_TF.text = dataModel.kangshendengji;
-            cell.SJ_TLD_Lab.text = dataModel.tanluodu;
-            cell.SJ_SJQD_Lab.text = dataModel.sjqd;
-            cell.SJ_ZZJG_Lab.text = dataModel.departname;
+            [cell.SJ_TLD_Btn setTitle:dataModel.tanluodu forState:UIControlStateNormal];
+            [cell.SJ_SJQD_Btn setTitle:dataModel.sjqd forState:UIControlStateNormal];
+            [cell.SJ_ZZJG_Btn setTitle:dataModel.departname forState:UIControlStateNormal];
+            cell.block = ^(NSInteger senderTag)
+            {
+                switch (senderTag)
+                {
+                    case 100:
+                    {
+                        //组织机构
+                        NodeViewController *vc = [[NodeViewController alloc] init];
+                        vc.type = NodeTypeZZJG;
+                        vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+//                            [self.nameDic setObject: name forKey:LIST_ZZJG];
+//                            [self.paraDic setObject:identifier forKey:orgcode];
+                        };
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }
+                        break;
+                    case 101:
+                    {
+                        //设计强度
+                        HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+                        vc.type = SBListTypeBF;
+                        vc.callBlock = ^(NSString *name, NSString *bfID) {
+//                            [self.nameDic setObject:name forKey:LIST_SB_NUM];
+//                            [self.paraDic setObject:bfID forKey:gprsbianha];
+                        };
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }
+                        break;
+                    case 102:
+                    {
+                        //塌落度
+                        HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+                        vc.type = SBListTypeBF;
+                        vc.callBlock = ^(NSString *name, NSString *bfID) {
+//                            [self.nameDic setObject:name forKey:LIST_SB_NUM];
+//                            [self.paraDic setObject:bfID forKey:gprsbianha];
+                        };
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }
+                        break;
+                    default:
+                        break;
+                }
+            };
         }
-        cell.selectionStyle= UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    else if(indexPath.section == 1)
-    {
-        NSString *cellId = [NSString stringWithFormat:@"cellID%long%long",indexPath.section,indexPath.row];
-        SJ_PHBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-        if (!cell)
+        else if (indexPath.section == 1)
         {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"SJ_PHBCell" owner:self options:nil] objectAtIndex:1];
             cell.SJ_YC_SN_NAME.text = dataModel.fenliao1mingzi;
             cell.SJ_YC_SN_PB.text = dataModel.fenliao1phb;
             cell.SJ_YC_FM_NAME.text = dataModel.fenliao2mingzi;
@@ -132,17 +171,8 @@
             cell.SJ_YC_Shui_NAME.text = dataModel.shuimingzi;
             cell.SJ_YC_Shui_PB.text = dataModel.shuiphb;
         }
-        cell.selectionStyle= UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    else
-    {
-        
-        NSString *cellId = [NSString stringWithFormat:@"cellID%long%long",indexPath.section,indexPath.row];
-        SJ_PHBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-        if (!cell)
+        else
         {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"SJ_PHBCell" owner:self options:nil] objectAtIndex:2];
             cell.SJ_CL_XS.text = dataModel.xishichanliang;
             cell.SJ_CL_JG3.text = dataModel.jg3chanliang;
             cell.SJ_CL_HS.text = dataModel.heshachanliang;
@@ -153,9 +183,48 @@
             cell.SJ_CL_SL.text = dataModel.shalv;
             cell.SJ_CL_BZ.text = dataModel.remark;
         }
-        cell.selectionStyle= UITableViewCellSelectionStyleNone;
-        return cell;
     }
+    cell.selectionStyle= UITableViewCellSelectionStyleNone;
+    
+    
+    NSArray *subViews = [cell.contentView subviews];
+    for (id view in subViews)
+    {
+        if ([view isKindOfClass:[UITextField class]])
+        {
+            UITextField *tempTF = (UITextField *)view;
+            if (_isChange)
+            {
+                tempTF.enabled = YES;
+                tempTF.backgroundColor = [UIColor lightGrayColor01];
+            }
+            else
+            {
+                tempTF.enabled = NO;
+                tempTF.backgroundColor = [UIColor whiteColor];
+            }
+        }
+        else if ([view isKindOfClass:[UIButton class]])
+        {
+            UIButton *tempBtn = (UIButton *)view;
+            if (_isChange)
+            {
+                tempBtn.enabled = YES;
+                tempBtn.backgroundColor = [UIColor lightGrayColor01];
+            }
+            else
+            {
+                tempBtn.enabled = NO;
+                tempBtn.backgroundColor = [UIColor whiteColor];
+            }
+        }
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

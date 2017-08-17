@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^senderBlock)(NSInteger senderTag);
+
 @interface SJ_PHBCell : UITableViewCell
 
+@property (nonatomic,copy) senderBlock block;
+
 //基本信息
-@property (weak, nonatomic) IBOutlet UILabel *SJ_BH_Lab;
-@property (weak, nonatomic) IBOutlet UILabel *SJ_ZZJG_Lab;
-@property (weak, nonatomic) IBOutlet UILabel *SJ_SJQD_Lab;
-@property (weak, nonatomic) IBOutlet UILabel *SJ_TLD_Lab;
+@property (weak, nonatomic) IBOutlet UITextField *SJ_BH_TF;
+@property (weak, nonatomic) IBOutlet UIButton *SJ_ZZJG_Btn;
+@property (weak, nonatomic) IBOutlet UIButton *SJ_SJQD_Btn;
+@property (weak, nonatomic) IBOutlet UIButton *SJ_TLD_Btn;
 @property (weak, nonatomic) IBOutlet UITextField *SJ_KSDJ_TF;
 @property (weak, nonatomic) IBOutlet UITextField *SJ_KZD_TF;
 

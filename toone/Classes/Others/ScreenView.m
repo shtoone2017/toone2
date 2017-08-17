@@ -242,7 +242,7 @@
             {
                 //磅房设备列表
                 HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
-                vc.type = ScreenViewTypeBF_JC;
+                vc.type = SBListTypeBF;
                 vc.callBlock = ^(NSString *name, NSString *bfID) {
                     [self.nameDic setObject:name forKey:LIST_SB_NUM];
                     [self.paraDic setObject:bfID forKey:gprsbianha];
