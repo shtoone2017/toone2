@@ -33,7 +33,7 @@
 - (void)setUpUI
 {
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h) style:UITableViewStyleGrouped];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h-70) style:UITableViewStyleGrouped];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
@@ -92,7 +92,14 @@
             cell.LC_Detail_SJCL_Label.text = dataModel.shijichuliang;
             cell.LC_Detail_XZL_Label.text = dataModel.xiuzhengliang;
             cell.LC_Detail_CSL_Label.text = dataModel.chushiliang;
-            cell.LC_Detail_BJ_Label.text = dataModel.baojing;
+            if ([dataModel.baojing isEqualToString:@"0"])
+            {
+                cell.LC_Detail_BJ_Label.text = @"不报警";
+            }
+            else
+            {
+                cell.LC_Detail_BJ_Label.text = @"报警";
+            }
             cell.LC_Detail_JJZ_Label.text = dataModel.jingjiezhi;
         }
         cell.selectionStyle= UITableViewCellSelectionStyleNone;

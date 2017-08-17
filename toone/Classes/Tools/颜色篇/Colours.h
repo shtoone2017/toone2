@@ -430,6 +430,7 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
 + (instancetype)linenColor;
 
 // Grays
++ (instancetype)lightGrayColor01;
 + (instancetype)black25PercentColor;
 + (instancetype)black50PercentColor;
 + (instancetype)black75PercentColor;//浅灰

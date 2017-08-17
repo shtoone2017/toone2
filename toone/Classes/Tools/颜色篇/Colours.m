@@ -820,6 +820,11 @@ static CGFloat (^RAD)(CGFloat) = ^CGFloat (CGFloat degree){
 
 
 #pragma mark - Grays
++ (instancetype)lightGrayColor01
+{
+    return [[self class] colorWithWhite:0.25 alpha:0.1];
+}
+
 + (instancetype)black25PercentColor
 {
 	return [[self class] colorWithWhite:0.25 alpha:1.0];
