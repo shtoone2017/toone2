@@ -18,8 +18,32 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"选择设备";
-    [self datas];
+    switch (_type)
+    {
+        case SBListTypeSJQD:
+        {
+            self.title = @"选择设计强度";
+
+        }
+            break;
+        case SBListTypeTLD:
+        {
+            self.title = @"选择塌落度";
+
+        }
+            break;
+        case SBListTypeJZFS:
+        {
+            self.title = @"选择浇注方式";
+
+        }
+            break;
+        default:
+            self.title = @"选择设备";
+
+            break;
+    }
+        [self datas];
 }
 
 
@@ -45,6 +69,18 @@
         {
             //磅房设备URL
             urlString = [NSString stringWithFormat:@"%@AppGB.do?AppDiBangList&departId=%@",baseUrl,[UserDefaultsSetting shareSetting].departId];
+        }
+        else if (_type == SBListTypeSJQD)
+        {
+            urlString = [NSString stringWithFormat:@"%@app.do?appTypes&typegroupcode=%@",baseUrl,@"SJQD"];
+        }
+        else if (_type == SBListTypeTLD)
+        {
+            urlString = [NSString stringWithFormat:@"%@app.do?appTypes&typegroupcode=%@",baseUrl,@"TLD"];
+        }
+        else if (_type == SBListTypeJZFS)
+        {
+            urlString = [NSString stringWithFormat:@"%@app.do?appTypes&typegroupcode=%@",baseUrl,@"JZFS"];
         }
         else
         {
@@ -78,7 +114,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_BHZ_SB_Controller" forIndexPath:indexPath];
     HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
-    cell.textLabel.text = model.banhezhanminchen;
+    if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
+    {
+        cell.textLabel.text = model.typecode;
+    }
+    else
+    {
+        cell.textLabel.text = model.banhezhanminchen;
+    }
     cell.textLabel.font = [UIFont systemFontOfSize:12.0f];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor oldLaceColor];
@@ -87,7 +130,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
     if (self.callBlock) {
-        self.callBlock(model.banhezhanminchen,model.gprsbianhao);
+        if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
+        {
+            self.callBlock(model.typename,model.typecode);
+        }
+        else
+        {
+            self.callBlock(model.banhezhanminchen,model.gprsbianhao);
+        }
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
