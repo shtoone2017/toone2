@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.departId = @"";
+    
+    NSLog(@"1");
     [self loadUI];
     [self loadData];
     
@@ -59,30 +61,30 @@
         NSMutableArray * bars = [NSMutableArray array];
         for (GCB_JCH_Model * model in datas) {
             BarModel * bar = [[BarModel alloc] init];
-//            for (NSUInteger i = 0; i <= 3; i++) {
-//                switch (i) {
-//                    case 1:{
-//                        bar.value = model.xiaohao;
-//                        bar.name = model.cailiaoName;
-//                        [bars addObject:bar];
-//                        break;
-//                    }
-//                    case 2:{
-//                        bar.value = model.chuchang;
-//                        bar.name = model.cailiaoName;
-//                        [bars addObject:bar];
-//                        break;
-//                    }
-//                    case 3:{
-//                        bar.name = model.cailiaoName;
-//                        bar.value = model.jinchang;
-//                        [bars addObject:bar];
-//                        break;
-//                    }
-//                    default:
-//                        break;
-//                }
-//            }
+            for (NSUInteger i = 0; i <= 3; i++) {
+                switch (i) {
+                    case 1:{
+                        bar.value = model.xiaohao;
+                        bar.name = model.cailiaoName;
+                        [bars addObject:bar];
+                        break;
+                    }
+                    case 2:{
+                        bar.value = model.chuchang;
+                        bar.name = model.cailiaoName;
+                        [bars addObject:bar];
+                        break;
+                    }
+                    case 3:{
+                        bar.name = model.cailiaoName;
+                        bar.value = model.jinchang;
+                        [bars addObject:bar];
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }
             
 }
         
