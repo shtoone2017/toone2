@@ -18,7 +18,7 @@
 {
     if (_block)
     {
-        _block(sender.tag);
+        _block(sender.tag,sender);
     }
 }
 

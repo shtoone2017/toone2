@@ -20,16 +20,31 @@
     SJ_PHBModel *dataModel;
     BOOL _isChange;
     UIButton *rightBtn;
+    NSMutableArray *_tfArr;
+    NSArray *_keysArr;
 }
+
+@property (nonatomic,strong)NSMutableDictionary *paraDic;
 
 @end
 
 @implementation SJ_PHB_ViewController
 
+- (NSMutableDictionary *)paraDic
+{
+    if (!_paraDic)
+    {
+        _paraDic = [NSMutableDictionary dictionary];
+    }
+    return _paraDic;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"设计配合比";
+    _tfArr = [NSMutableArray array];
+    _keysArr = @[@"llphbno",@"kangshendengji",@"kangzhedu",@"fenliao1name",@"fenliao2name",@"guliao1name",@"guliao2name",@"guliao3name",@"guliao4name",@"fenliao3name",@"waijiaji1name",@"shuiname",@"fenliao1phb",@"fenliao2phb",@"guliao1phb",@"guliao2phb",@"guliao3phb",@"guliao4phb",@"fenliao3phb",@"waijiaji1phb",@"shuiphb",@"xishichanliang",@"jg3chanliang",@"heshachanliang",@"shuijiaobi",@"biaoguanmidu",@"fangliang",@"jusuosuanchanliang",@"shalv",@"remark"];
     
 #warning 根据角色  以及状态  显示 修改 按钮
     rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -92,7 +107,20 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellId = [NSString stringWithFormat:@"cellID%long%long",indexPath.section,indexPath.row];
+    NSString *cellId;
+    if (indexPath.section == 0)
+    {
+        cellId = @"SJ_PHBCell1";
+    }
+    else if (indexPath.section == 1)
+    {
+        cellId = @"SJ_PHBCell2";
+    }
+    else
+    {
+        cellId = @"SJ_PHBCell3";
+    }
+    
     SJ_PHBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell)
     {
@@ -105,7 +133,8 @@
             [cell.SJ_TLD_Btn setTitle:dataModel.tanluodu forState:UIControlStateNormal];
             [cell.SJ_SJQD_Btn setTitle:dataModel.sjqd forState:UIControlStateNormal];
             [cell.SJ_ZZJG_Btn setTitle:dataModel.departname forState:UIControlStateNormal];
-            cell.block = ^(NSInteger senderTag)
+            WS(weakSelf);
+            cell.block = ^(NSInteger senderTag,UIButton *sender)
             {
                 switch (senderTag)
                 {
@@ -115,8 +144,10 @@
                         NodeViewController *vc = [[NodeViewController alloc] init];
                         vc.type = NodeTypeZZJG;
                         vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
-//                            [self.nameDic setObject: name forKey:LIST_ZZJG];
-//                            [self.paraDic setObject:identifier forKey:orgcode];
+                            [weakSelf.paraDic setObject:identifier forKey:@"departId"];
+                            
+//                            SJ_PHBCell *cell = [_tbView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                            [sender setTitle:name forState:UIControlStateNormal];
                         };
                         [self.navigationController pushViewController:vc animated:YES];
                     }
@@ -127,8 +158,8 @@
                         HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
                         vc.type = SBListTypeSJQD;
                         vc.callBlock = ^(NSString *name, NSString *bfID) {
-//                            [self.nameDic setObject:name forKey:LIST_SB_NUM];
-//                            [self.paraDic setObject:bfID forKey:gprsbianha];
+                            [weakSelf.paraDic setObject:bfID forKey:@"sjqd"];
+                            [sender setTitle:name forState:UIControlStateNormal];
                         };
                         [self.navigationController pushViewController:vc animated:YES];
                     }
@@ -139,8 +170,8 @@
                         HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
                         vc.type = SBListTypeTLD;
                         vc.callBlock = ^(NSString *name, NSString *bfID) {
-//                            [self.nameDic setObject:name forKey:LIST_SB_NUM];
-//                            [self.paraDic setObject:bfID forKey:gprsbianha];
+                            [weakSelf.paraDic setObject:bfID forKey:@"tanluodu"];
+                            [sender setTitle:name forState:UIControlStateNormal];
                         };
                         [self.navigationController pushViewController:vc animated:YES];
                     }
@@ -186,7 +217,6 @@
     }
     cell.selectionStyle= UITableViewCellSelectionStyleNone;
     
-    
     NSArray *subViews = [cell.contentView subviews];
     for (id view in subViews)
     {
@@ -219,6 +249,7 @@
             }
         }
     }
+    
     return cell;
 }
 
@@ -278,12 +309,69 @@
 
 - (void)btnAction:(UIButton *)btn
 {
+    WS(weakSelf);
     UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"是否%@?",btn.titleLabel.text] message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if ([btn.titleLabel.text isEqualToString:@"保存"])
         {
-            //编辑
+            //获取到所有的textfield
+            if (_tfArr && _tfArr.count > 0)
+            {
+                [_tfArr removeAllObjects];
+            }
+            for (int i = 0; i<3; i++)
+            {
+                NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:i];
+                SJ_PHBCell *cell = [_tbView cellForRowAtIndexPath:index];
+                if (!cell)
+                {
+                    cell = (SJ_PHBCell *)[weakSelf tableView:_tbView cellForRowAtIndexPath:index];
+                }
+                
+                NSArray *subViews = [cell.contentView subviews];
+                for (id view in subViews)
+                {
+                    if ([view isKindOfClass:[UITextField class]])
+                    {
+                        UITextField *tempTF = (UITextField *)view;
+                        [_tfArr addObject:tempTF];
+                    }
+                }
+            }
+            
+            //将所有的textfield上的内容赋值给参数字典
+            for (int i = 0; i<_keysArr.count; i++)
+            {
+                UITextField *tf = _tfArr[i];
+                [weakSelf.paraDic setObject:tf.text forKey:_keysArr[i]];
+            }
+            
+            //将btn上的内容加上去
+            NSArray *btnKeyArr = @[@"departId",@"sjqd",@"tanluodu"];
+            for (int i = 0; i<btnKeyArr.count; i++)
+            {
+                if ([weakSelf checkHasKey:btnKeyArr[i]] == NO)
+                {
+                    switch (i) {
+                        case 0:
+                            [weakSelf.paraDic setObject:dataModel.departid forKey:btnKeyArr[i]];
+                            break;
+                        case 1:
+                            [weakSelf.paraDic setObject:dataModel.sjqd forKey:btnKeyArr[i]];
+                            break;
+                        case 2:
+                            [weakSelf.paraDic setObject:dataModel.tanluodu forKey:btnKeyArr[i]];
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    
+                }
+            }
+            [weakSelf requestToEdit];
+            
         }
         else if([btn.titleLabel.text isEqualToString:@"退出"])
         {
@@ -306,6 +394,19 @@
     [self presentViewController:alertCtr animated:YES completion:nil];
 }
 
+- (BOOL)checkHasKey:(NSString *)keyStr
+{
+    for (NSString *akey in [_paraDic allKeys])
+    {
+        if ([akey isEqualToString:keyStr])
+        {
+            return YES;
+        }
+        break;
+    }
+    return NO;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 38.0;
@@ -322,6 +423,18 @@
     [headerView addSubview:titleLab];
     //    headerView.backgroundColor = [UIColor yellowColor];
     return headerView;
+}
+
+- (void)requestToEdit
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@appWZSys.do?AppsjphbEdit",baseUrl];
+    WS(weakSelf);
+    [[NetworkTool sharedNetworkTool] postObjectWithURLString:urlString parmas:_paraDic completeBlock:^(id result) {
+        if (result && result != nil)
+        {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

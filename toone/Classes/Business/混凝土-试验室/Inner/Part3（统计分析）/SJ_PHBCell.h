@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^senderBlock)(NSInteger senderTag);
+typedef void(^senderBlock)(NSInteger senderTag,UIButton *sender);
 
 @interface SJ_PHBCell : UITableViewCell
 

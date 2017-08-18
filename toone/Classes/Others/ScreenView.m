@@ -102,6 +102,12 @@
         
         self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_PARA_ZZJG:[UserDefaultsSetting shareSetting].departId,LC_PARA_CLMC:@""}];
     }
+    else if (_type == ScreenViewTypePHB)
+    {
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{PHB_PARA_ZZJG:@"",PHB_PARA_SJQD:@"",PHB_PARA_TIME1:@"",PHB_PARA_TIME2:@""}];
+        
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{PHB_Title_ZZJG:@"",PHB_Title_SJQD:@"",PHB_Title_TIME1:@"",PHB_Title_TIME2:@""}];
+    }
 }
 
 - (void)hiddenAction
@@ -180,7 +186,8 @@
                 }
                 else if (indexPath.row == 4)
                 {
-                    if ([_nameDic[LIST_CCTime1] isEqualToString:@""]) {
+                    if ([_nameDic[LIST_CCTime1] isEqualToString:@""])
+                    {
                         cell.txtField.text = self.parentVC.endTime;
                         [_nameDic setObject:self.parentVC.endTime forKey:LIST_CCTime1];
                         NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
@@ -215,7 +222,12 @@
                 cell.txtField.text = _nameDic[LC_Title_CLMC];
             }
         }
-        
+        else if (_type == ScreenViewTypePHB)
+        {
+            cell.txtField.enabled = NO;
+            NSArray *keys = @[PHB_Title_ZZJG,PHB_Title_SJQD,PHB_Title_TIME1,PHB_Title_TIME2];
+            cell.txtField.text = [_nameDic objectForKey:[keys objectAtIndex:indexPath.row]];
+        }
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -310,6 +322,59 @@
             
             [[self viewController].navigationController pushViewController:vc animated:YES];
         }
+    }
+    else if(_type == ScreenViewTypePHB)
+    {
+        switch (indexPath.row)
+        {
+            case 0:
+            {
+                //所属机构
+                NodeViewController *vc = [[NodeViewController alloc] init];
+                vc.type = NodeTypeZZJG;
+                vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                    [self.nameDic setObject: name forKey:PHB_Title_ZZJG];
+                    [self.paraDic setObject:identifier forKey:PHB_PARA_ZZJG];
+                };
+                [[self viewController].navigationController pushViewController:vc animated:YES];
+            }
+                break;
+            case 1:
+            {
+                HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+                vc.type = SBListTypeSJQD;
+                vc.callBlock = ^(NSString *name, NSString *bfID) {
+                    [self.nameDic setObject:name forKey:PHB_Title_SJQD];
+                    [self.paraDic setObject:bfID forKey:PHB_PARA_SJQD];
+                };
+                [[self viewController].navigationController pushViewController:vc animated:YES];
+            }
+                break;
+            default:
+            {
+                LabelTextFieldCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+                BFViewController *vc = (BFViewController *)[self viewController];
+                vc.block = ^{
+                    if (indexPath.row == 2)
+                    {
+                        [self.nameDic setObject:cell.txtField.text forKey:PHB_Title_TIME1];
+                        
+                        NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
+                        [self.paraDic setObject:startTime forKey:PHB_PARA_TIME1];
+                    }
+                    else
+                    {
+                        [self.nameDic setObject:cell.txtField.text forKey:PHB_Title_TIME2];
+                        NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
+                        [self.paraDic setObject:endTime forKey:PHB_PARA_TIME2];
+                    }
+                    
+                };
+                [vc calendarWithTimeString:nil obj:cell.txtField];
+            }
+            break;
+        }
+
     }
 }
 
