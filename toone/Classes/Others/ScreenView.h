@@ -56,8 +56,8 @@ typedef void(^ScreenIsShowBlock)(BOOL isShow);
 typedef NS_ENUM(NSInteger,ScreenViewType)
 {
     ScreenViewTypeBF_JC = 0,   //磅房筛选
-    ScreenViewTypeLC//料仓
-    
+    ScreenViewTypeLC,      //料仓
+    ScreenViewTypePHB     //设计配合比
 };
 
 @interface ScreenView : UIView

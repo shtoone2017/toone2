@@ -10,13 +10,15 @@
 #import "SYS_PHBListModel.h"
 #import "PHBListCell.h"
 #import "SJ_PHB_ViewController.h"
-
+#import "ScreenView.h"
 
 @interface SYS_PHBViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
     UITableView *_tbView;
     NSInteger _currentPage;
+    ScreenView *scView;
+    BOOL isShowScreenView;
 }
 @property (nonatomic,strong) NSMutableArray *dataArr;
 
@@ -32,12 +34,15 @@
     return _dataArr;
 }
 
-- (void)loadView
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super loadView];
-    self.screenViewTitleArr = @[@"组织机构:",@"设计强度:",@"配合比状态:",@"开始时间:",@"结束时间:",@"配合比编号:"];
-//    self.screenViewType = ScreenViewTypeLC;
+    [super viewWillAppear:animated];
+    if (scView)
+    {
+        [scView.tbView reloadData];
+    }
 }
+
 
 - (void)viewDidLoad
 {
@@ -62,8 +67,21 @@
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
     
+    UIView *navigationView = [UIView new];
+    navigationView.frame = CGRectMake(0, 60, Screen_w, 30);
+    navigationView.backgroundColor = BLUECOLOR;
+    [self.view addSubview:navigationView];
+    
+    UIButton * navigationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    navigationBtn.backgroundColor = [UIColor blackColor];
+    navigationBtn.frame = CGRectMake(Screen_w-50, 0, 50, 30);
+    [navigationBtn setImage:[UIImage imageNamed:@"ic_format_list_numbered_white_24dp"] forState:UIControlStateNormal];
+    [navigationBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 15, 5, 15)];
+    [navigationBtn addTarget:self action:@selector(controlScreenView) forControlEvents:UIControlEventTouchUpInside];
+    [navigationView addSubview:navigationBtn];
+    
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,60,Screen_w,Screen_h-60) style:UITableViewStylePlain];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,90,Screen_w,Screen_h-90) style:UITableViewStylePlain];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
@@ -71,6 +89,57 @@
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
     [self.view sendSubviewToBack:_tbView];
+    [self createScreenView];
+}
+
+- (void)createScreenView
+{
+    NSArray *titleArr = @[@"组织机构:",@"设计强度:",@"开始时间:",@"结束时间:"];
+    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 90, Screen_w, Screen_h) titleArr:titleArr type:ScreenViewTypePHB];
+    scView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    scView.block = ^(BOOL isShow) {
+        isShowScreenView = isShow;
+    };
+    
+    WS(weakSelf);
+    scView.paraBlock = ^(NSDictionary *paraDic) {
+        NSMutableDictionary *tempDic = [weakSelf getParaDic];
+        [tempDic setValuesForKeysWithDictionary:paraDic];
+        [tempDic setObject:@"1463557140" forKey:PHB_PARA_TIME1];
+        [tempDic setObject:@"1503041940" forKey:PHB_PARA_TIME2];
+        [weakSelf refreshDataWithParaDic:tempDic];
+    };
+    [self.view addSubview:scView];
+    [self.view bringSubviewToFront:scView];
+}
+- (void)controlScreenView
+{
+    if (isShowScreenView == YES)
+    {
+        [self hidenScreenView];
+    }
+    else
+    {
+        [self showScreenView];
+    }
+}
+
+- (void)showScreenView
+{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        scView.frame = CGRectMake(0, 90, Screen_w, Screen_h);
+    } completion:nil];
+    isShowScreenView = !isShowScreenView;
+    
+}
+
+- (void)hidenScreenView
+{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionNone animations:^{
+        scView.frame = CGRectMake(Screen_w, 90, Screen_w, Screen_h);
+    } completion:nil];
+    isShowScreenView = !isShowScreenView;
+    
 }
 
 - (NSMutableDictionary *)getParaDic
