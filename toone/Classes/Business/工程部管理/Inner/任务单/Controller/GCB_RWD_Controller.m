@@ -9,6 +9,8 @@
 #import "GCB_RWD_Controller.h"
 #import "GCB_RWD_Model.h"
 #import "NodeViewController.h"
+#import "HNT_BHZ_SB_Controller.h"
+#import "GCB_RWD_Cell.h"
 
 @interface GCB_RWD_Controller ()
 @property (weak, nonatomic) IBOutlet UILabel *sjLabel;
@@ -27,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageNo = @"1";
-    self.maxPageItems = @"3";
+    self.maxPageItems = @"5";
     self.departId = @"";
     self.rwzt = @"";
     self.sjwork = @"";
@@ -50,15 +52,21 @@
         weakSelf.pageNo = FormatInt([weakSelf.pageNo intValue]+1);
         [weakSelf loadData];
     }];
-//    self.tb.rowHeight = 140;
-//    [self.tb registerNib:[UINib nibWithNibName:@"HNT_SCCX_Cell" bundle:nil] forCellReuseIdentifier:@"HNT_SCCX_Cell"];
+    self.tb.rowHeight = 240;
+    [self.tb registerNib:[UINib nibWithNibName:@"GCB_RWD_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_RWD_Cell"];
 }
 #pragma mark - 网络请求
 -(void)loadData {
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = [NSString stringWithFormat:AppRWD,self.departId,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems,_rwzt,_sjwork];
+    NSString *depard = @"";
+    if (![self.departId isEqualToString:@""]) {
+        depard = self.departId;
+    }else {
+        depard = [UserDefaultsSetting shareSetting].departId;
+    }
+    NSString * urlString = [NSString stringWithFormat:AppRWD,depard,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems,_rwzt,_sjwork];
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
@@ -93,20 +101,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datas.count;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    HNT_SCCX_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_SCCX_Cell" forIndexPath:indexPath];
-//    HNT_SCCX_Model * model = self.datas[indexPath.row];
-//    cell.model = model;
-//    return cell;
-//}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    HNT_SCCX_Model * model = self.datas[indexPath.row];
-//    
-//    [self performSegueWithIdentifier:@"HNT_SCCX_DetailController" sender:model.sid];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCB_RWD_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_RWD_Cell" forIndexPath:indexPath];
+    GCB_RWD_Model * model = self.datas[indexPath.row];
+    cell.model = model;
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
+    return cell;
 }
-
 
 - (IBAction)searchButtonClick:(UIButton *)sender {
     sender.enabled = NO;
@@ -145,9 +146,17 @@
             UIButton * btn = (UIButton*)obj1;
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
-        
         if (type == ExpButtonTypeChoiceSBButton) {//状态
-            
+            UIButton * btn = (UIButton*)obj1;
+            __weak typeof(self) weakSelf = self;
+            HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+            vc.type = SBListTypeTon;
+            vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.rwzt = departid;
+                [self loadData];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if (type == ExpButtonTypeUsePosition) {//组织机构
             UIButton * btn = (UIButton*)obj1;
@@ -157,21 +166,26 @@
             vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
                 weakSelf.departId = identifier;
                 [btn setTitle:name forState:UIControlStateNormal];
-//                [self loadData];
+                [self loadData];
             };
             [self.navigationController pushViewController:vc animated:YES];
 
         }
         if (type == ExpButtonTypeEarthwork) {//设计
-            
+            UIButton * btn = (UIButton*)obj1;
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeSJQD;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.sjwork = gprsbianhao;
+                [self loadData];
+            };
+            [self.navigationController pushViewController:controller animated:YES];
         }
     };
     [self.view addSubview:e];
 
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

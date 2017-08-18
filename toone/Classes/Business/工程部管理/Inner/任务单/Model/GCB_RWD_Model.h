@@ -20,9 +20,10 @@
 @property (nonatomic,copy)NSString *jzbw;//浇筑部位
 @property (nonatomic,copy)NSString *jihuafangliang;//计划方量
 @property (nonatomic,strong) NSNumber *jiechao;//节超
+@property (nonatomic,strong) NSNumber *shejifangliang;//设计方量
+@property (nonatomic,strong) NSNumber *shijifangliang;//实耗方量
 @property (nonatomic,copy)NSString *shuinibiaohao;//强度等级
 @property (nonatomic,copy)NSString *kaipanriqi;//开盘时间
-@property (nonatomic,strong) NSNumber *shijifangliang;//实耗方量
 @property (nonatomic,copy)NSString *zhuangtai;//生产状态 0:未配料 1：已配料 2：生产中 3：已完成
 @property (nonatomic,copy)NSString *sgphbNo;//配比通知单号
 

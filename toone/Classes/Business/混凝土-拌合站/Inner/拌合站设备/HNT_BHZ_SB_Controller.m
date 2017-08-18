@@ -12,6 +12,9 @@
 @interface HNT_BHZ_SB_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tbleView;
 @property (nonatomic,strong) NSMutableArray * datas;
+@property (nonatomic, strong) NSArray * ztArr;
+@property (nonatomic, strong) NSArray * statesArr;
+@property (nonatomic, strong) NSArray * tongtypeArr;
 @end
 
 @implementation HNT_BHZ_SB_Controller
@@ -108,21 +111,59 @@
     }
     return _datas;
 }
+-(NSArray *)ztArr {//任务单
+    if (_ztArr == nil) {
+        _ztArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"zhuangtai.plist" ofType:nil]];
+    }
+    return _ztArr;
+}
+-(NSArray *)statesArr {
+    if (_statesArr == nil) {
+        _statesArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"states.plist" ofType:nil]];
+    }
+    return _statesArr;
+}
+-(NSArray *)tongtypeArr {
+    if (_tongtypeArr == nil) {
+        _tongtypeArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tongjitype.plist" ofType:nil]];
+    }
+    return _tongtypeArr;
+}
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
+    if (_type == SBListTypeRWDZT) {
+       return self.ztArr.count;
+    }else if (_type == SBListTypeTon) {
+        return self.tongtypeArr.count;
+    }else if (_type == SBListTypeStat) {
+        return self.statesArr.count;
+    }else {
+        return self.datas.count;
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_BHZ_SB_Controller" forIndexPath:indexPath];
-    HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
-    if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
-    {
-        cell.textLabel.text = model.typecode;
-    }
-    else
-    {
-        cell.textLabel.text = model.banhezhanminchen;
+    if (_type == SBListTypeRWDZT) {//任务单
+        NSDictionary * dict = self.ztArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeTon) {//时间类型
+        NSDictionary * dict = self.tongtypeArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeStat) {//出场类型
+        NSDictionary * dict = self.statesArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else {
+        
+        HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
+        if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
+        {
+            cell.textLabel.text = model.typecode;
+        }
+        else
+        {
+            cell.textLabel.text = model.banhezhanminchen;
+        }
     }
     cell.textLabel.font = [UIFont systemFontOfSize:12.0f];
     cell.textLabel.backgroundColor = [UIColor clearColor];
@@ -130,15 +171,30 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
-    if (self.callBlock) {
-        if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
-        {
-            self.callBlock(model.typename,model.typecode);
-        }
-        else
-        {
-            self.callBlock(model.banhezhanminchen,model.gprsbianhao);
+    if (_type == SBListTypeRWDZT) {
+        
+        NSDictionary * dict = self.ztArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeTon) {
+        
+        NSDictionary * dict = self.tongtypeArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeStat) {
+        
+        NSDictionary * dict = self.statesArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else {
+        
+        HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
+        if (self.callBlock) {
+            if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
+            {
+                self.callBlock(model.typename,model.typecode);
+            }
+            else
+            {
+                self.callBlock(model.banhezhanminchen,model.gprsbianhao);
+            }
         }
     }
     [self.navigationController popViewControllerAnimated:YES];

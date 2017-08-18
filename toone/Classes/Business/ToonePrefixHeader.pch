@@ -90,9 +90,9 @@
 //浇筑令主页
 #define AppJZL FormatString(baseUrl,@"appWZSys.do?AppWzRenWuDanList&departId=%@&state=%@&startTime=%@&endTime=%@&sjqd=%@&renwuno=%@&pageNo=%@&maxPageItems=%@")
 //进场过磅主页
-#define AppJCB FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBCount&departId=&@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&jinchangshijian1=%@&jinchangshijian2=%@&pageNo=%@&maxPageItems=%@")
-
-
+#define AppJCB FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBCount&departId=%@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&jinchangshijian1=%@&jinchangshijian2=%@&pageNo=%@&maxPageItems=%@")
+//出场过磅主页
+#define AppCCB FormatString(baseUrl,@"AppWZYCLChuChangGBCountInterfaceController.do?AppWZYCLChuChangGBCount&departId=%@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&chuchangshijian1=%@&chuchangshijian2=%@&states=%@&pageNo=%@&maxPageItems=%@")
 //原材料进出耗
 #define AppJCH FormatString(baseUrl,@"AppWZJinChuChangController.do?list&departId=%@&jinchangshijian1=%@&jinchangshijian2=%@")
 

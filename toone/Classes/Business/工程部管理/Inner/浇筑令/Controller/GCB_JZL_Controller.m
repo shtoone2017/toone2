@@ -9,6 +9,7 @@
 #import "GCB_JZL_Controller.h"
 #import "GCB_JZL_Model.h"
 #import "NodeViewController.h"
+#import "HNT_BHZ_SB_Controller.h"
 
 @interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -330,7 +331,7 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         
-        if (type == ExpButtonTypeChoiceSBButton) {//组织
+        if (type == ExpButtonTypeUsePosition) {//组织
             UIButton * btn = (UIButton*)obj1;
             __weak typeof(self) weakSelf = self;
             NodeViewController *vc = [[NodeViewController alloc] init];
@@ -338,20 +339,26 @@
             vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
                 weakSelf.departId = identifier;
                 [btn setTitle:name forState:UIControlStateNormal];
-                [self loadData];
+//                [self loadData];
             };
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (type == ExpButtonTypeEarthwork) {//设计
-            
+            UIButton * btn = (UIButton*)obj1;
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeSJQD;
+//            controller.title = @"选择设备";
+//            controller.departId = self.departId;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.sjqd = gprsbianhao;
+            };
+            [self.navigationController pushViewController:controller animated:YES];
         }
     };
     [self.view addSubview:e];
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    id vc = segue.destinationViewController;
-    
-}
+
 
 
 @end
