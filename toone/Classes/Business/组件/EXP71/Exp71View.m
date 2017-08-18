@@ -36,6 +36,9 @@
         [self.xib.sbButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.usePositionButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.earthworkButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.tjlxBut addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.cclxBut addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        
         [SGAnimationType show:self animation:0];
     }
     return self;
@@ -92,6 +95,16 @@
     if (sender == self.xib.earthworkButton) {
         if (self.expBlock) {
             _expBlock(ExpButtonTypeEarthwork,self.xib.earthworkButton,nil);
+        }
+    }
+    if (sender == self.xib.tjlxBut) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeTjlxBut,self.xib.tjlxBut,nil);
+        }
+    }
+    if (sender == self.xib.cclxBut) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeCclxBut,self.xib.cclxBut,nil);
         }
     }
 

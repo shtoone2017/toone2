@@ -339,7 +339,7 @@
             vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
                 weakSelf.departId = identifier;
                 [btn setTitle:name forState:UIControlStateNormal];
-//                [self loadData];
+                [self loadData];
             };
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -347,11 +347,11 @@
             UIButton * btn = (UIButton*)obj1;
             HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
             controller.type = SBListTypeSJQD;
-//            controller.title = @"选择设备";
 //            controller.departId = self.departId;
             controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.sjqd = gprsbianhao;
+                [self loadData];
             };
             [self.navigationController pushViewController:controller animated:YES];
         }

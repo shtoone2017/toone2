@@ -205,6 +205,10 @@
 		42E2887D1F45A2AC0002AF72 /* zhuangtai.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E2887C1F45A2AC0002AF72 /* zhuangtai.plist */; };
 		42E288801F45AF8A0002AF72 /* states.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E2887E1F45AF8A0002AF72 /* states.plist */; };
 		42E288811F45AF8A0002AF72 /* tongjitype.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E2887F1F45AF8A0002AF72 /* tongjitype.plist */; };
+		42E288881F4690D40002AF72 /* GCB_JCB_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288871F4690D40002AF72 /* GCB_JCB_DetailController.m */; };
+		42E2888B1F4693A90002AF72 /* JCB_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E2888A1F4693A90002AF72 /* JCB_DetailModel.m */; };
+		42E2888F1F4695BD0002AF72 /* JCB_DetailCell_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E2888D1F4695BD0002AF72 /* JCB_DetailCell_1.m */; };
+		42E288901F4695BD0002AF72 /* JCB_DetailCell_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E2888E1F4695BD0002AF72 /* JCB_DetailCell_1.xib */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F021EB043CF00440413 /* LqTheProjectCell.m */; };
@@ -853,6 +857,13 @@
 		42E2887C1F45A2AC0002AF72 /* zhuangtai.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zhuangtai.plist; sourceTree = "<group>"; };
 		42E2887E1F45AF8A0002AF72 /* states.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = states.plist; sourceTree = "<group>"; };
 		42E2887F1F45AF8A0002AF72 /* tongjitype.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tongjitype.plist; sourceTree = "<group>"; };
+		42E288861F4690D40002AF72 /* GCB_JCB_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JCB_DetailController.h; sourceTree = "<group>"; };
+		42E288871F4690D40002AF72 /* GCB_JCB_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JCB_DetailController.m; sourceTree = "<group>"; };
+		42E288891F4693A90002AF72 /* JCB_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCB_DetailModel.h; sourceTree = "<group>"; };
+		42E2888A1F4693A90002AF72 /* JCB_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCB_DetailModel.m; sourceTree = "<group>"; };
+		42E2888C1F4695BD0002AF72 /* JCB_DetailCell_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCB_DetailCell_1.h; sourceTree = "<group>"; };
+		42E2888D1F4695BD0002AF72 /* JCB_DetailCell_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCB_DetailCell_1.m; sourceTree = "<group>"; };
+		42E2888E1F4695BD0002AF72 /* JCB_DetailCell_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCB_DetailCell_1.xib; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C283F011EB043CF00440413 /* LqTheProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LqTheProjectCell.h; sourceTree = "<group>"; };
@@ -2496,6 +2507,7 @@
 		42E288271F43DE580002AF72 /* 进出磅 */ = {
 			isa = PBXGroup;
 			children = (
+				42E288821F468C900002AF72 /* Inner */,
 				42E288281F43DE580002AF72 /* Controller */,
 				42E288291F43DE580002AF72 /* Model */,
 				42E2882A1F43DE580002AF72 /* View */,
@@ -2575,6 +2587,44 @@
 				42E288781F4592DB0002AF72 /* Exp71View.m */,
 			);
 			path = EXP71;
+			sourceTree = "<group>";
+		};
+		42E288821F468C900002AF72 /* Inner */ = {
+			isa = PBXGroup;
+			children = (
+				42E288831F468C900002AF72 /* Controller */,
+				42E288841F468C900002AF72 /* Model */,
+				42E288851F468C900002AF72 /* View */,
+			);
+			path = Inner;
+			sourceTree = "<group>";
+		};
+		42E288831F468C900002AF72 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42E288861F4690D40002AF72 /* GCB_JCB_DetailController.h */,
+				42E288871F4690D40002AF72 /* GCB_JCB_DetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42E288841F468C900002AF72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42E288891F4693A90002AF72 /* JCB_DetailModel.h */,
+				42E2888A1F4693A90002AF72 /* JCB_DetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42E288851F468C900002AF72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42E2888C1F4695BD0002AF72 /* JCB_DetailCell_1.h */,
+				42E2888D1F4695BD0002AF72 /* JCB_DetailCell_1.m */,
+				42E2888E1F4695BD0002AF72 /* JCB_DetailCell_1.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
@@ -4229,6 +4279,7 @@
 				42E288801F45AF8A0002AF72 /* states.plist in Resources */,
 				8C28404B1EB1123600440413 /* TP_DW_Controller.xib in Resources */,
 				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
+				42E288901F4695BD0002AF72 /* JCB_DetailCell_1.xib in Resources */,
 				9C05F05C1F3BF83800BF4627 /* BFListCell.xib in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
@@ -4417,6 +4468,7 @@
 				D20064901DFF86800021E293 /* ViewController.m in Sources */,
 				42AC72071E30C576007D8F57 /* NodeMode.m in Sources */,
 				42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */,
+				42E288881F4690D40002AF72 /* GCB_JCB_DetailController.m in Sources */,
 				8C2840401EB1123600440413 /* TP_CL_Cell.m in Sources */,
 				D20064771DFF86800021E293 /* HNT_WNSY_DetailController.m in Sources */,
 				D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */,
@@ -4526,6 +4578,7 @@
 				D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */,
 				42AC720C1E30C576007D8F57 /* MASConstraint.m in Sources */,
 				42E2884B1F4415EB0002AF72 /* GCB_RWD_Model.m in Sources */,
+				42E2888B1F4693A90002AF72 /* JCB_DetailModel.m in Sources */,
 				42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */,
 				9CAAAF961F43E106008F43BA /* PHBListCell.m in Sources */,
 				187C73061E30B1810072F33A /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
@@ -4648,6 +4701,7 @@
 				D20064A21DFF86800021E293 /* MyViewController.m in Sources */,
 				D200648E1DFF86800021E293 /* ZZJG_View.m in Sources */,
 				42AC714C1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.m in Sources */,
+				42E2888F1F4695BD0002AF72 /* JCB_DetailCell_1.m in Sources */,
 				42AC71421E30C393007D8F57 /* MiddleExcessiveTableContller.m in Sources */,
 				42AC72051E30C576007D8F57 /* NetworkTool.m in Sources */,
 				9C05F07E1F3BFC4400BF4627 /* JSONModel+networking.m in Sources */,

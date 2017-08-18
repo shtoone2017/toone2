@@ -96,6 +96,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     GCB_Model * model = [GCB_Model modelWithDict:dict];
+                    model.uesid = dict[@"id"];
                     [datas addObject:model];
                 }
             }

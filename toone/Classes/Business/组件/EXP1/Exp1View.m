@@ -9,7 +9,7 @@
 //
 
 #import "Exp1View.h"
-#import "Exp1_Xib_View.H"
+#import "Exp1_Xib_View.h"
 
 @interface Exp1View()
 @property (nonatomic,strong) Exp1_Xib_View * xib;

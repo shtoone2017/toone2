@@ -11,6 +11,7 @@
 #import "NodeViewController.h"
 #import "HNT_BHZ_SB_Controller.h"
 #import "GCB_JCB_Cell.h"
+#import "GCB_JCB_DetailController.h"
 
 @interface GCB_JCB_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
@@ -189,7 +190,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     GCB_JC_Model * model = [GCB_JC_Model modelWithDict:dict];
-                    
+                    model.ccid = dict[@"id"];
                     [datas addObject:model];
                 }
             }
@@ -215,12 +216,6 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:AppJCB,_departId,_cailiaomingcheng,_gprsbianhao,_tongjitype,startTimeStamp,endTimeStamp,self.pageNo,self.maxPageItems];
-    NSDictionary * dict = @{@"departType":_departId,
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"pageNo":self.pageNo,
-                            @"maxPageItems":self.maxPageItems,
-                            };
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -260,47 +255,57 @@
     }
     return 0;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCB_JCB_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCB_Cell" forIndexPath:indexPath];
     if (tableView == self.tableView2) {
-        GCB_JCB_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCB_Cell" forIndexPath:indexPath];
         GCB_JC_Model * model = self.datas2[indexPath.row];
         cell.jcModel = model;
         return cell;
     }
     if (tableView == self.tableView3) {
-        GCB_JCB_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCB_Cell" forIndexPath:indexPath];
+//        GCB_JCB_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCB_Cell" forIndexPath:indexPath];
         GCB_JC_Model * model = self.datas3[indexPath.row];
         cell.ccModel = model;
         return cell;
     }
     return nil;
 }
-
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    LLQ_YD_Model * model;
-//    //    if (tableView == self.tableView1) {
-//    //        model = self.datas1[indexPath.row];
-//    //    }
-//    if (tableView == self.tableView2) {
-//        model = self.datas2[indexPath.row];
-//    }
-//    if (tableView == self.tableView3) {
-//        model = self.datas3[indexPath.row];
-//    }
-//    NSDictionary * dic=@{@"F_GUID":model.f_GUID,
-//                         //                         @"shebeibianhao":model.sbbh,
-//                         //                         @"chuli":model.chuli,
-//                         //                         @"shenhe":model.shenhe,
-//                         //                         @"zxdwshenhe":model.zxdwshenhe
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GCB_JC_Model *model;
+    GCB_JCB_DetailController *vc = [[GCB_JCB_DetailController alloc] init];
+    if (tableView == self.tableView2) {
+        model = self.datas2[indexPath.row];
+        vc.type = GCBTypeJC;
+    }
+    if (tableView == self.tableView3) {
+        model = self.datas3[indexPath.row];
+        vc.type = GCBTypeCC;
+        vc.ccid = model.ccid;
+        vc.guobangleibie = model.guobangleibie;
+    }
+    vc.cailiaoNo = model.cailiaoNo;
+    vc.jinchuliaodanNo = model.jinchuliaodanNo;
+    vc.gongyingshangdanweibianma = model.gongyingshangdanweibianma;
+    vc.pici = model.pici;
+    vc.shebeibianhao = model.shebeibianhao;
+    vc.jcmax = model.jcmax;
+    vc.jcmin = model.jcmin;
+    vc.ccmax = model.ccmax;
+    vc.ccmin = model.ccmin;
+    [self.navigationController pushViewController:vc animated:YES];
+//    NSDictionary * dic=@{@"cailiaoNo":model.cailiaoNo,
+//                         @"jinchuliaodanNo":model.jinchuliaodanNo,
+//                         @"gongyingshangdanweibianma":model.gongyingshangdanweibianma,
+//                         @"pici":model.pici,
+//                         @"shebeibianhao":model.shebeibianhao,
+//                         @"jcmin":model.jcmin,
+//                         @"jcmax":model.jcmax,
+//                         @"ccmin":model.ccmin,
+//                         @"ccmax":model.ccmax
 //                         };
-//    LLQ_YD_DetailController *mxeDetaVc = [[LLQ_YD_DetailController alloc] init];
-//    mxeDetaVc.f_GUID = model.f_GUID;
-//    [self.navigationController pushViewController:mxeDetaVc animated:YES];
-//
-//    //    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//}
+//    [self performSegueWithIdentifier:@"GCB_JCB_DetailController" sender:dic];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 - (IBAction)searchButtonClick:(UIButton *)sender {
     sender.enabled = NO;
     //1.
@@ -314,12 +319,12 @@
     [self.view addSubview:backView];
     
     //2.
-    Exp52View * e = [[Exp52View alloc] init];
+    Exp71View * e = [[Exp71View alloc] init];
     e.useLabel = @"组织机构";
     e.sbLabel = @"磅房设备";
     e.earthLabel = @"材料名称";
     
-    e.frame = CGRectMake(0, 64+36, Screen_w, 275);
+    e.frame = CGRectMake(0, 64+36, Screen_w, 305);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         if (type == ExpButtonTypeCancel) {
@@ -335,7 +340,11 @@
             //重新切换titleButton ， 搜索页码应该回归第一页码
             //            weakSelf.pageNo = @"1";
             //            weakSelf.cllx = @"0";
-            [weakSelf loadData];
+            if ([_tableViewSigner intValue] == 1) {
+                [self loadData];
+            }else if ([_tableViewSigner intValue] == 2) {
+                [self reloadData];
+            }
             FuncLog;
         }
         if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
@@ -352,6 +361,11 @@
             controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.gprsbianhao = gprsbianhao;
+                if ([_tableViewSigner intValue] == 1) {
+                    [self loadData];
+                }else if ([_tableViewSigner intValue] == 2) {
+                    [self reloadData];
+                }
             };
             [self.navigationController pushViewController:controller animated:YES];
         }
@@ -362,6 +376,11 @@
             vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
                 weakSelf.departId = identifier;
                 [btn setTitle:name forState:UIControlStateNormal];
+                if ([_tableViewSigner intValue] == 1) {
+                    [self loadData];
+                }else if ([_tableViewSigner intValue] == 2) {
+                    [self reloadData];
+                }
             };
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -372,9 +391,45 @@
             vc.CLBlock = ^(NSString *name, NSString *identifier) {
                 weakSelf.departId = identifier;
                 [btn setTitle:name forState:UIControlStateNormal];
+                if ([_tableViewSigner intValue] == 1) {
+                    [self loadData];
+                }else if ([_tableViewSigner intValue] == 2) {
+                    [self reloadData];
+                }
             };
             [self.navigationController pushViewController:vc animated:YES];
         }
+        if (type == ExpButtonTypeTjlxBut) {//统计类型
+            UIButton * btn = (UIButton*)obj1;
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeTon;
+//            controller.departId = self.departId;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.tongjitype = gprsbianhao;
+                if ([_tableViewSigner intValue] == 1) {
+                    [self loadData];
+                }else if ([_tableViewSigner intValue] == 2) {
+                    [self reloadData];
+                }
+            };
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        if (type == ExpButtonTypeCclxBut) {//出场类型
+            UIButton * btn = (UIButton*)obj1;
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeStat;
+//            controller.departId = self.departId;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.states = gprsbianhao;
+                [self reloadData];
+            };
+            if ([_tableViewSigner intValue] == 2) {
+                [self.navigationController pushViewController:controller animated:YES];
+            }
+        }
+
     };
     [self.view addSubview:e];
 }
