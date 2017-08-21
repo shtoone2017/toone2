@@ -74,6 +74,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     GCB_RWD_Model * model = [GCB_RWD_Model modelWithDict:dict];
+                    model.detailId = dict[@"id"];
                     [datas addObject:model];
                 }
             }
