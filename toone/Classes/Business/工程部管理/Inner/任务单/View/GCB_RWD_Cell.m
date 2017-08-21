@@ -9,6 +9,7 @@
 #import "GCB_RWD_Cell.h"
 #import "GCB_RWD_Model.h"
 #import "ZYProGressView.h"
+#import "GCB_RWD_DetailController.h"
 
 @interface GCB_RWD_Cell (){
     ZYProGressView *progress;
@@ -71,12 +72,30 @@
 }
 
 - (IBAction)renwuClick:(UIButton *)sender {//任务单
-    NSLog(@"任务单号");
-}
-- (IBAction)sgphbClick:(UIButton *)sender {//配比单
-    NSLog(@"配比单号");
+    GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
+    vc.detailId = [NSString stringWithFormat:@"%@",self.model.detailId];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)sgphbClick:(UIButton *)sender {//配比单
+    if (![sender.titleLabel.text isEqualToString:@"未配料"]) {
+        NSLog(@"配比单号");
+    }
+}
+
+
+- (UIViewController *)viewController {
+    UIViewController *viewController = nil;
+    UIResponder *next = self.nextResponder;
+    while (next) {
+        if ([next isKindOfClass:[UIViewController class]]) {
+            viewController = (UIViewController *)next;
+            break;
+        }
+        next = next.nextResponder;
+    }
+    return viewController;
+}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

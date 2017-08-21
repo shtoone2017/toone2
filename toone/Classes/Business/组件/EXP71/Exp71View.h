@@ -17,5 +17,7 @@ typedef void(^Exp71Block_t) (ExpButtonType,id,id);
 @property (nonatomic,copy) NSString * useLabel;
 @property (nonatomic,copy) NSString * sbLabel;
 @property (nonatomic,copy) NSString * earthLabel;
+@property (nonatomic,copy) NSString * tjlxLabel;//
+@property (nonatomic,copy) NSString * cclxLabel;//
 
 @end

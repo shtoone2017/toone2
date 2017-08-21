@@ -22,7 +22,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *earthworkButton;//设计强度
 @property (weak, nonatomic) IBOutlet UILabel *earthLabel;
 
-@property (nonatomic,strong) NSArray * buttons;
--(void)shapeWithTag:(int)buttonTag;
+//统计类型
+@property (weak, nonatomic) IBOutlet UIButton *tjlxBut;
+@property (weak, nonatomic) IBOutlet UILabel *tjlxLabel;
+
+//出场类型
+@property (weak, nonatomic) IBOutlet UIButton *cclxBut;
+@property (weak, nonatomic) IBOutlet UILabel *cclxLabel;
+
 
 @end

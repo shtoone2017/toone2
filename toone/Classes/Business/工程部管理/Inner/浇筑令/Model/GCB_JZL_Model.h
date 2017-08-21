@@ -21,5 +21,7 @@
 @property (nonatomic,copy)NSString *zhuangtai;//状态
 @property (nonatomic,copy)NSString *renwuno;//任务单编号
 @property (nonatomic,copy)NSString *shejifangliang;//设计方量
+@property (nonatomic,copy)NSString *createtime;//创建时间
+@property (nonatomic,copy)NSString *createperson;//创建人
 
 @end

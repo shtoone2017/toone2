@@ -15,6 +15,6 @@
 @property (nonatomic,strong)NSNumber *jindu;//进度
 @property (nonatomic,strong)NSNumber *projectType;//工程类型
 @property (nonatomic,copy)NSString *projectName;//工程名称
-
+@property (nonatomic,strong)NSNumber *uesid;//
 
 @end

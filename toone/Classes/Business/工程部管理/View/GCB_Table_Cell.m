@@ -39,6 +39,7 @@
     progress.progressValue = [NSString stringWithFormat:@"%.2f",[jin doubleValue]*0.01];
     progress.progressColor = [UIColor orangeColor];
     
+    _bxLabl.text = [NSString stringWithFormat:@"%@",model.uesid];
     _sjLabel.text = [NSString stringWithFormat:@"%@",model.shejifangliang];
     _ssjLabel.text = [NSString stringWithFormat:@"%@",model.shijifangliang];
     if ([[model.projectType stringValue] isEqual: @"0"]) {

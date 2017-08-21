@@ -25,7 +25,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
 }
 
 -(void)setJcModel:(GCB_JC_Model *)jcModel {

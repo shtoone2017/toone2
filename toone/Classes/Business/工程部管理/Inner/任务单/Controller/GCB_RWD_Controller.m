@@ -74,6 +74,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     GCB_RWD_Model * model = [GCB_RWD_Model modelWithDict:dict];
+                    model.detailId = dict[@"id"];
                     [datas addObject:model];
                 }
             }
@@ -150,7 +151,7 @@
             UIButton * btn = (UIButton*)obj1;
             __weak typeof(self) weakSelf = self;
             HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
-            vc.type = SBListTypeTon;
+            vc.type = SBListTypeRWDZT;
             vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.rwzt = departid;

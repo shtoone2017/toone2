@@ -93,8 +93,15 @@
 #define AppJCB FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBCount&departId=%@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&jinchangshijian1=%@&jinchangshijian2=%@&pageNo=%@&maxPageItems=%@")
 //出场过磅主页
 #define AppCCB FormatString(baseUrl,@"AppWZYCLChuChangGBCountInterfaceController.do?AppWZYCLChuChangGBCount&departId=%@&cailiaomingcheng=%@&gprsbianhao=%@&tongjitype=%@&chuchangshijian1=%@&chuchangshijian2=%@&states=%@&pageNo=%@&maxPageItems=%@")
-//原材料进出耗
+//原材料进出耗比
 #define AppJCH FormatString(baseUrl,@"AppWZJinChuChangController.do?list&departId=%@&jinchangshijian1=%@&jinchangshijian2=%@")
+//进场过磅详情
+#define AppJCB_Detail_1 FormatString(baseUrl,@"AppWZYCLJinChangGBCountInterfaceController.do?AppWZYCLJinChangGBDetail&jinchuliaodanno=%@&cailiaono=%@&gongyingshangdanweibianma=%@&pici=%@&shebeibianhao=%@&jcmin=%@&jcmax=%@&ccmin=%@&ccmax=%@")
+//出场过磅详情
+#define AppCCB_Detail_2 FormatString(baseUrl,@"AppWZYCLChuChangGBCountInterfaceController.do?AppWZYCLChuChangGBDetail&id=%@&guobangleibie=%@&cailiaono=%@&gongyingshangdanweibianma=%@&pici=%@&shebeibianhao=%@&jcmin=%@&jcmax=%@&ccmin=%@&ccmax=%@")
+//浇筑令详情(任务单详情)
+#define AppJZL_Detail FormatString(baseUrl,@"appWZproject.do?AppTaskListDetail&id=%@")
+
 
 
 

@@ -27,4 +27,6 @@
 @property (nonatomic,copy)NSString *zhuangtai;//生产状态 0:未配料 1：已配料 2：生产中 3：已完成
 @property (nonatomic,copy)NSString *sgphbNo;//配比通知单号
 
+@property (nonatomic,strong) NSNumber *detailId;//详情跳转
+
 @end

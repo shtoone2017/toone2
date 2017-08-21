@@ -10,6 +10,9 @@
 #import "GCB_JZL_Model.h"
 #import "NodeViewController.h"
 #import "HNT_BHZ_SB_Controller.h"
+#import "GCB_WSC_Cell.h"
+#import "GCB_YSC_Cell.h"
+#import "GCB_JZL_Model.h"
 
 @interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -56,6 +59,7 @@
     self.pageNo = @"1";
     self.maxPageItems = @"5";
     self.ztstate = @"";
+    self.sjqd = @"";
     self.departId = @"";
     self.renwuno = @"";
     self.tableViewSigner = @"1";
@@ -108,10 +112,13 @@
         
         [weakSelf loadData];
     }];
-    
-//    tableView.rowHeight = 120;
-//    [tableView registerNib:[UINib nibWithNibName:@"LLQ_ZR_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_ZR_Cell"];
-    //    [tableView registerClass:[LLQ_CBCZ_Cell class] forCellReuseIdentifier:@"LLQ_CBCZ_Cell"];
+//    if ([_tableViewSigner intValue] == 1) {
+//        tableView.rowHeight = 200;
+//    }if ([_tableViewSigner intValue] == 2) {
+        tableView.rowHeight = 240;
+//    }
+    [tableView registerNib:[UINib nibWithNibName:@"GCB_YSC_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_YSC_Cell"];
+    [tableView registerNib:[UINib nibWithNibName:@"GCB_WSC_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_WSC_Cell"];
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
@@ -178,17 +185,17 @@
 }
 #pragma mark - 网络请求
 -(void)loadData{
-    return;
+    
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:AppJZL,_departId,_ztstate,startTimeStamp,endTimeStamp,_sjqd,_renwuno,self.pageNo,self.maxPageItems];
-    NSDictionary * dict = @{@"departType":_departId,
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":_sjqd,
-                            @"pageNo":self.pageNo,
-                            @"maxPageItems":self.maxPageItems,
-                            };
+//    NSDictionary * dict = @{@"departType":_departId,
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":_sjqd,
+//                            @"pageNo":self.pageNo,
+//                            @"maxPageItems":self.maxPageItems,
+//                            };
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -204,7 +211,6 @@
         }
         
         int i = [weakSelf.tableViewSigner intValue];
-        
         
         switch (i) {
             case 1:
@@ -250,24 +256,24 @@
     return 0;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (tableView == self.tableView2) {
-//        LLQ_ZR_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_ZR_Cell" forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == self.tableView2) {
+        GCB_WSC_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_WSC_Cell" forIndexPath:indexPath];
+        GCB_JZL_Model * model = self.datas2[indexPath.row];
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        cell.model = model;
+        return cell;
+    }
+    if (tableView == self.tableView3) {
+        GCB_YSC_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_YSC_Cell" forIndexPath:indexPath];
 //        cell.currentIndexPath = indexPath;
-//        LLQ_YD_Model * model = self.datas2[indexPath.row];
-//        cell.models = model;
-//        
-//        return cell;
-//    }
-//    if (tableView == self.tableView3) {
-//        LLQ_ZR_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_ZR_Cell" forIndexPath:indexPath];
-//        cell.currentIndexPath = indexPath;
-//        LLQ_YD_Model * model = self.datas3[indexPath.row];
-//        cell.models = model;
-//        return cell;
-//    }
-//    return nil;
-//}
+        GCB_JZL_Model * model = self.datas3[indexPath.row];
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        cell.model = model;
+        return cell;
+    }
+    return nil;
+}
 
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    LLQ_YD_Model * model;
@@ -339,7 +345,7 @@
             vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
                 weakSelf.departId = identifier;
                 [btn setTitle:name forState:UIControlStateNormal];
-//                [self loadData];
+                [self loadData];
             };
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -347,11 +353,11 @@
             UIButton * btn = (UIButton*)obj1;
             HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
             controller.type = SBListTypeSJQD;
-//            controller.title = @"选择设备";
 //            controller.departId = self.departId;
             controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.sjqd = gprsbianhao;
+                [self loadData];
             };
             [self.navigationController pushViewController:controller animated:YES];
         }
