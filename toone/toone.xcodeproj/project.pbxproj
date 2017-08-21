@@ -297,6 +297,10 @@
 		9CAAAFA01F43EF4E008F43BA /* SJ_PHBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF9F1F43EF4E008F43BA /* SJ_PHBModel.m */; };
 		9CAAAFA41F43F612008F43BA /* SJ_PHBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAFA21F43F612008F43BA /* SJ_PHBCell.m */; };
 		9CAAAFA51F43F612008F43BA /* SJ_PHBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAAAFA31F43F612008F43BA /* SJ_PHBCell.xib */; };
+		9CAB0F9D1F4A696D00F47B92 /* SYS_TZDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0F9C1F4A696D00F47B92 /* SYS_TZDViewController.m */; };
+		9CAB0FA21F4A6CB700F47B92 /* TZD_ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA01F4A6CB700F47B92 /* TZD_ListCell.m */; };
+		9CAB0FA31F4A6CB700F47B92 /* TZD_ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */; };
+		9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */; };
 		9CD8DDAB1F416FF100F67C8B /* LCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAA1F416FF100F67C8B /* LCListModel.m */; };
 		9CD8DDAF1F41725E00F67C8B /* LCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAD1F41725E00F67C8B /* LCListCell.m */; };
 		9CD8DDB01F41725E00F67C8B /* LCListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAE1F41725E00F67C8B /* LCListCell.xib */; };
@@ -1015,6 +1019,13 @@
 		9CAAAFA11F43F612008F43BA /* SJ_PHBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJ_PHBCell.h; sourceTree = "<group>"; };
 		9CAAAFA21F43F612008F43BA /* SJ_PHBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJ_PHBCell.m; sourceTree = "<group>"; };
 		9CAAAFA31F43F612008F43BA /* SJ_PHBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SJ_PHBCell.xib; sourceTree = "<group>"; };
+		9CAB0F9B1F4A696D00F47B92 /* SYS_TZDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_TZDViewController.h; sourceTree = "<group>"; };
+		9CAB0F9C1F4A696D00F47B92 /* SYS_TZDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_TZDViewController.m; sourceTree = "<group>"; };
+		9CAB0F9F1F4A6CB700F47B92 /* TZD_ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_ListCell.h; sourceTree = "<group>"; };
+		9CAB0FA01F4A6CB700F47B92 /* TZD_ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_ListCell.m; sourceTree = "<group>"; };
+		9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TZD_ListCell.xib; sourceTree = "<group>"; };
+		9CAB0FA51F4A704900F47B92 /* TZD_ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_ListModel.h; sourceTree = "<group>"; };
+		9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_ListModel.m; sourceTree = "<group>"; };
 		9CD8DDA91F416FF100F67C8B /* LCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListModel.h; path = "Classes/Business/磅房管理/Controller/LCListModel.h"; sourceTree = SOURCE_ROOT; };
 		9CD8DDAA1F416FF100F67C8B /* LCListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCListModel.m; path = "Classes/Business/磅房管理/Controller/LCListModel.m"; sourceTree = SOURCE_ROOT; };
 		9CD8DDAC1F41725E00F67C8B /* LCListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListCell.h; path = "Classes/Business/磅房管理/Controller/LCListCell.h"; sourceTree = SOURCE_ROOT; };
@@ -3082,6 +3093,36 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		9CAB0F9A1F4A691700F47B92 /* Part5(通知单) */ = {
+			isa = PBXGroup;
+			children = (
+				9CAB0FA41F4A703200F47B92 /* Model */,
+				9CAB0F9E1F4A6C8700F47B92 /* view */,
+				9CAB0F9B1F4A696D00F47B92 /* SYS_TZDViewController.h */,
+				9CAB0F9C1F4A696D00F47B92 /* SYS_TZDViewController.m */,
+			);
+			name = "Part5(通知单)";
+			sourceTree = "<group>";
+		};
+		9CAB0F9E1F4A6C8700F47B92 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9CAB0F9F1F4A6CB700F47B92 /* TZD_ListCell.h */,
+				9CAB0FA01F4A6CB700F47B92 /* TZD_ListCell.m */,
+				9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		9CAB0FA41F4A703200F47B92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CAB0FA51F4A704900F47B92 /* TZD_ListModel.h */,
+				9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D20062F01DFF85CB0021E293 = {
 			isa = PBXGroup;
 			children = (
@@ -3398,6 +3439,7 @@
 				D20063BB1DFF86800021E293 /* Part2（万能试验） */,
 				D20063CD1DFF86800021E293 /* Part3（统计分析） */,
 				9CAAAF8A1F43D9DB008F43BA /* Part4(配合比) */,
+				9CAB0F9A1F4A691700F47B92 /* Part5(通知单) */,
 				D20063DB1DFF86800021E293 /* View */,
 				D20063DF1DFF86800021E293 /* 试验类型和设备 */,
 			);
@@ -4169,6 +4211,7 @@
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
 				8C283F491EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib in Resources */,
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
+				9CAB0FA31F4A6CB700F47B92 /* TZD_ListCell.xib in Resources */,
 				42AC71471E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
 				42E2887A1F4592DB0002AF72 /* Exp71_Xib_View.xib in Resources */,
@@ -4567,6 +4610,7 @@
 				42E287BB1F41C04F0002AF72 /* GCB_Table_Cell.m in Sources */,
 				D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */,
 				8C28406E1EB1127500440413 /* TP_NYSDList_Cell1.m in Sources */,
+				9CAB0F9D1F4A696D00F47B92 /* SYS_TZDViewController.m in Sources */,
 				8C28404C1EB1123600440413 /* TP_SB_Controller.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
@@ -4643,10 +4687,12 @@
 				42AC716C1E30C393007D8F57 /* LQ_CLHS_DataModel.m in Sources */,
 				8C2840461EB1123600440413 /* TP_CLSB_Controller.m in Sources */,
 				8C2840451EB1123600440413 /* TP_CL_DataModel.m in Sources */,
+				9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */,
 				187C72FC1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				42AC72041E30C576007D8F57 /* NodeViewController.m in Sources */,
 				D20064A21DFF86800021E293 /* MyViewController.m in Sources */,
 				D200648E1DFF86800021E293 /* ZZJG_View.m in Sources */,
+				9CAB0FA21F4A6CB700F47B92 /* TZD_ListCell.m in Sources */,
 				42AC714C1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.m in Sources */,
 				42AC71421E30C393007D8F57 /* MiddleExcessiveTableContller.m in Sources */,
 				42AC72051E30C576007D8F57 /* NetworkTool.m in Sources */,

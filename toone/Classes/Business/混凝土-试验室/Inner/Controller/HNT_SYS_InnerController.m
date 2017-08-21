@@ -12,6 +12,7 @@
 #import "HNT_WNSY_Controller.h"
 #import "HNT_TJFX_Controller.h"
 #import "SYS_PHBViewController.h"
+#import "SYS_TZDViewController.h"
 
 @interface HNT_SYS_InnerController ()
 
@@ -70,7 +71,10 @@
     SYS_PHBViewController *phbVC = [[SYS_PHBViewController alloc] init];
     [self addChildViewController:phbVC];
     
-    _vcsArr = @[ylVC,wnVC,tjVC,phbVC];
+    SYS_TZDViewController *tzdVC = [[SYS_TZDViewController alloc] init];
+    [self addChildViewController:tzdVC];
+    
+    _vcsArr = @[ylVC,wnVC,tjVC,phbVC,tzdVC];
     
     //设置默认vc
     self.currentVC = ylVC;

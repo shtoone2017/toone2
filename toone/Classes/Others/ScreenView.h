@@ -35,7 +35,7 @@ typedef void(^ScreenBlock)(NSDictionary *paraDic);
 #define LC_Title_ZZJG @"LC_Title_ZZJG"
 #define LC_Title_CLMC @"LC_Title_CLMC"
 
-//试验室-配合比
+//试验室-设计配合比
 #define PHB_PARA_ZZJG @"departId"
 #define PHB_PARA_SJQD @"llphblistsjqd"
 #define PHB_PARA_BH @"llphblistno"
@@ -50,6 +50,14 @@ typedef void(^ScreenBlock)(NSDictionary *paraDic);
 #define PHB_Title_TIME2 @"PHB_Title_TIME2"
 #define PHB_Title_ZT @"PHB_Title_ZT"
 
+//试验室-通知单
+#define TZD_PARA_ZZJG @"departId"
+#define TZD_PARA_TIME1 @"kaipanriqi"
+#define TZD_PARA_TIME2 @"kaipanriqiend"
+
+#define TZD_Title_ZZJG @"TZD_Title_ZZJG"
+#define TZD_Title_TIME1 @"TZD_Title_TIME1"
+#define TZD_Title_TIME2 @"TZD_Title_TIME2"
 
 typedef void(^ScreenIsShowBlock)(BOOL isShow);
 
@@ -57,7 +65,8 @@ typedef NS_ENUM(NSInteger,ScreenViewType)
 {
     ScreenViewTypeBF_JC = 0,   //磅房筛选
     ScreenViewTypeLC,      //料仓
-    ScreenViewTypePHB     //设计配合比
+    ScreenViewTypePHB,     //设计配合比
+    ScreenViewTypeTZD,     //配比通知单
 };
 
 @interface ScreenView : UIView
