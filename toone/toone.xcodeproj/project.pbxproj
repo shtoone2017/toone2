@@ -308,6 +308,10 @@
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
 		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
+		9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */; };
+		9CA7D9081F4BC07500BA2C91 /* TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */; };
+		9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */; };
+		9CA7D90D1F4BC2B000BA2C91 /* TZD_DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA7D90B1F4BC2B000BA2C91 /* TZD_DetailCell.xib */; };
 		9CAAAF8D1F43DA70008F43BA /* SYS_PHBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF8C1F43DA70008F43BA /* SYS_PHBViewController.m */; };
 		9CAAAF911F43DEF6008F43BA /* SYS_PHBListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF901F43DEF6008F43BA /* SYS_PHBListModel.m */; };
 		9CAAAF961F43E106008F43BA /* PHBListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAAF941F43E106008F43BA /* PHBListCell.m */; };
@@ -1055,6 +1059,13 @@
 		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
 		9C2024111F38052700F79559 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelTextFieldCell.m; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.m"; sourceTree = SOURCE_ROOT; };
 		9C2024121F38052700F79559 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextFieldCell.xib; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.xib"; sourceTree = SOURCE_ROOT; };
+		9CA7D9031F4BBF5100BA2C91 /* TZD_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailModel.h; sourceTree = "<group>"; };
+		9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailModel.m; sourceTree = "<group>"; };
+		9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailViewController.h; sourceTree = "<group>"; };
+		9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailViewController.m; sourceTree = "<group>"; };
+		9CA7D9091F4BC2B000BA2C91 /* TZD_DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailCell.h; sourceTree = "<group>"; };
+		9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailCell.m; sourceTree = "<group>"; };
+		9CA7D90B1F4BC2B000BA2C91 /* TZD_DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TZD_DetailCell.xib; sourceTree = "<group>"; };
 		9CAAAF8B1F43DA70008F43BA /* SYS_PHBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_PHBViewController.h; sourceTree = "<group>"; };
 		9CAAAF8C1F43DA70008F43BA /* SYS_PHBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_PHBViewController.m; sourceTree = "<group>"; };
 		9CAAAF8F1F43DEF6008F43BA /* SYS_PHBListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_PHBListModel.h; sourceTree = "<group>"; };
@@ -3245,6 +3256,8 @@
 				9CAB0F9E1F4A6C8700F47B92 /* view */,
 				9CAB0F9B1F4A696D00F47B92 /* SYS_TZDViewController.h */,
 				9CAB0F9C1F4A696D00F47B92 /* SYS_TZDViewController.m */,
+				9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */,
+				9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */,
 			);
 			name = "Part5(通知单)";
 			sourceTree = "<group>";
@@ -3255,6 +3268,9 @@
 				9CAB0F9F1F4A6CB700F47B92 /* TZD_ListCell.h */,
 				9CAB0FA01F4A6CB700F47B92 /* TZD_ListCell.m */,
 				9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */,
+				9CA7D9091F4BC2B000BA2C91 /* TZD_DetailCell.h */,
+				9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */,
+				9CA7D90B1F4BC2B000BA2C91 /* TZD_DetailCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -3264,6 +3280,8 @@
 			children = (
 				9CAB0FA51F4A704900F47B92 /* TZD_ListModel.h */,
 				9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */,
+				9CA7D9031F4BBF5100BA2C91 /* TZD_DetailModel.h */,
+				9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -4365,6 +4383,7 @@
 				D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */,
 				8C283F461EB0A01C00440413 /* icon_location@3x.png in Resources */,
 				42E288811F45AF8A0002AF72 /* tongjitype.plist in Resources */,
+				9CA7D90D1F4BC2B000BA2C91 /* TZD_DetailCell.xib in Resources */,
 				D200651E1DFF86B30021E293 /* BarChartViewController.xib in Resources */,
 				42AC716F1E30C393007D8F57 /* LQ_CLHS_Cell.xib in Resources */,
 				18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
@@ -4697,6 +4716,7 @@
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				8C28406B1EB1127500440413 /* TP_NYSDList_Model.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
+				9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
 				D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */,
@@ -4714,6 +4734,7 @@
 				9C05F0771F3BFC4400BF4627 /* JSONModel.m in Sources */,
 				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
 				9C20240F1F38021200F79559 /* ScreenView.m in Sources */,
+				9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
 				187C73021E30B1810072F33A /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				D200646E1DFF86800021E293 /* HNT_SYS_Controller.m in Sources */,
@@ -4764,6 +4785,7 @@
 				42AC71651E30C393007D8F57 /* DayDetailsController.m in Sources */,
 				42AC72061E30C576007D8F57 /* Node.m in Sources */,
 				D200649B1DFF86800021E293 /* NSDictionary+Log.m in Sources */,
+				9CA7D9081F4BC07500BA2C91 /* TZD_DetailViewController.m in Sources */,
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
 				D20064721DFF86800021E293 /* HNT_YLSY_DetailModel.m in Sources */,
 				42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */,

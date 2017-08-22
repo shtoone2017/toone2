@@ -11,6 +11,8 @@
 #import "TZD_ListCell.h"
 #import "TZD_ListModel.h"
 #import "SJ_PHB_ViewController.h"
+#import "TZD_DetailViewController.h"
+#import "GCB_RWD_DetailController.h"
 
 @interface SYS_TZDViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -186,10 +188,7 @@
             }
             [_tbView reloadData];
         }
-        
     }];
-    
-    
 }
 
 
@@ -222,6 +221,9 @@
         if (tag == 100)
         {
             //通知单
+            TZD_DetailViewController *vc = [[TZD_DetailViewController alloc] init];
+            vc.detailNum = model.sgphbNo;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         }
         else if (tag == 101)
         {
@@ -233,6 +235,9 @@
         else
         {
             //任务
+            GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
+            vc.detailId = model.renwuNo;
+            [self.navigationController pushViewController:vc animated:YES];
         }
     };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
