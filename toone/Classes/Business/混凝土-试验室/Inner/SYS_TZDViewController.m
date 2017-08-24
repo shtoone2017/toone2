@@ -1,18 +1,20 @@
 //
-//  SYS_PHBViewController.m
+//  SYS_TZDViewController.m
 //  toone
 //
-//  Created by 景晓峰 on 2017/8/16.
+//  Created by 景晓峰 on 2017/8/21.
 //  Copyright © 2017年 shtoone. All rights reserved.
 //
 
-#import "SYS_PHBViewController.h"
-#import "SYS_PHBListModel.h"
-#import "PHBListCell.h"
-#import "SJ_PHB_ViewController.h"
+#import "SYS_TZDViewController.h"
 #import "ScreenView.h"
+#import "TZD_ListCell.h"
+#import "TZD_ListModel.h"
+#import "SJ_PHB_ViewController.h"
+#import "TZD_DetailViewController.h"
+#import "GCB_RWD_DetailController.h"
 
-@interface SYS_PHBViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface SYS_TZDViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
     UITableView *_tbView;
@@ -23,7 +25,7 @@
 @property (nonatomic,strong) NSMutableArray *dataArr;
 
 @end
-@implementation SYS_PHBViewController
+@implementation SYS_TZDViewController
 
 - (NSMutableArray *)dataArr
 {
@@ -50,7 +52,6 @@
     [self loadUI];
     _currentPage = 1;
     [self refreshDataWithParaDic:[self getParaDic]];
-    
 }
 
 
@@ -62,7 +63,7 @@
     [self.view addSubview:navigationView];
     
     UIButton * navigationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    navigationBtn.backgroundColor = [UIColor blackColor];
+    //    navigationBtn.backgroundColor = [UIColor blackColor];
     navigationBtn.frame = CGRectMake(Screen_w-50, 0, 50, 30);
     [navigationBtn setImage:[UIImage imageNamed:@"ic_format_list_numbered_white_24dp"] forState:UIControlStateNormal];
     [navigationBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 15, 5, 15)];
@@ -83,8 +84,8 @@
 
 - (void)createScreenView
 {
-    NSArray *titleArr = @[@"组织机构:",@"设计强度:",@"开始时间:",@"结束时间:"];
-    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 90, Screen_w, Screen_h) titleArr:titleArr type:ScreenViewTypePHB];
+    NSArray *titleArr = @[@"组织机构:",@"开始时间:",@"结束时间:"];
+    scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 90, Screen_w, Screen_h) titleArr:titleArr type:ScreenViewTypeTZD];
     scView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     scView.block = ^(BOOL isShow) {
         isShowScreenView = isShow;
@@ -94,8 +95,8 @@
     scView.paraBlock = ^(NSDictionary *paraDic) {
         NSMutableDictionary *tempDic = [weakSelf getParaDic];
         [tempDic setValuesForKeysWithDictionary:paraDic];
-        [tempDic setObject:@"1463557140" forKey:PHB_PARA_TIME1];
-        [tempDic setObject:@"1503041940" forKey:PHB_PARA_TIME2];
+//        [tempDic setObject:@"1499234665" forKey:TZD_PARA_TIME1];
+//        [tempDic setObject:@"1501826665" forKey:TZD_PARA_TIME2];
         [weakSelf refreshDataWithParaDic:tempDic];
     };
     [self.view addSubview:scView];
@@ -135,9 +136,9 @@
 {
     NSDictionary *dic = @{@"maxPageItems":[NSString stringWithFormat:@"%d",kPageSize],@"pageNo":[NSString stringWithFormat:@"%ld",(long)_currentPage]};
     NSMutableDictionary *paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:PHB_PARA_ZZJG];
-    [paraDic setObject:[TimeTools timeStampWithTimeString:self.startTime] forKey:PHB_PARA_TIME1];
-    [paraDic setObject:[TimeTools timeStampWithTimeString:self.endTime] forKey:PHB_PARA_TIME2];
+    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:TZD_PARA_ZZJG];
+    [paraDic setObject:[TimeTools timeStampWithTimeString:self.startTime] forKey:TZD_PARA_TIME1];
+    [paraDic setObject:[TimeTools timeStampWithTimeString:self.endTime] forKey:TZD_PARA_TIME2];
     
     return paraDic;
 }
@@ -163,7 +164,7 @@
 {
     __weak typeof(self) weakSelf = self;
     NSString *urlString;
-    urlString = [NSString stringWithFormat:@"%@appWZSys.do?AppsjphbList",baseUrl];
+    urlString = [NSString stringWithFormat:@"%@appWZSys.do?AppPeibiTongzhidanCX",baseUrl];
     
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString parmas:paraDic completeBlock:^(id result) {
         [_tbView.mj_header endRefreshing];
@@ -175,7 +176,7 @@
             }
             NSDictionary *dict = (NSDictionary *)result;
             NSArray *arr =dict[@"data"];
-            NSArray *tempArr = [SYS_PHBListModel arrayOfModelsFromDictionaries:arr];
+            NSArray *tempArr = [TZD_ListModel arrayOfModelsFromDictionaries:arr];
             [weakSelf.dataArr addObjectsFromArray:tempArr];
             if ([tempArr count] == kPageSize)
             {
@@ -187,10 +188,7 @@
             }
             [_tbView reloadData];
         }
-        
     }];
-    
-    
 }
 
 
@@ -204,29 +202,62 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SYS_PHBListModel *model = [self.dataArr objectAtIndex:indexPath.row];
-    NSString *cellId = [NSString stringWithFormat:@"cellID%ld%ld",(long)indexPath.section,(long)indexPath.row];
-    PHBListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    WS(weakSelf);
+    static NSString *cellID = @"TZD_ListCell1";
+    TZD_ListModel *model = [self.dataArr objectAtIndex:indexPath.row];
+    TZD_ListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell)
     {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"PHBListCell" owner:self options:nil] objectAtIndex:0];
-        cell.PHB_ZZJG_Label.text = model.departname;
-        cell.PHB_BH_Label.text = model.llphbno;
-        cell.PHB_SJB_Label.text = model.shuijiaobi;
-        cell.PHB_SJQD_Label.text = model.sjqd;
-        cell.PHB_TIME_Label.text = model.createdatetime;
-        cell.PHB_STATE_Label.text = model.zhuangtai;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TZD_ListCell" owner:self options:nil] objectAtIndex:0];
     }
+    cell.TZD_List_ZZJG.text = model.departname;
+    [cell.TZD_List_TZD_NUM setTitle:model.sgphbNo forState:UIControlStateNormal];
+    [cell.TZD_List_RWD_NUM setTitle:model.renwuNo forState:UIControlStateNormal];
+    [cell.TZD_List_SJ_NUM setTitle:model.llphbNo forState:UIControlStateNormal];
+    cell.TZD_List_SY_Date.text = model.createDateTime;
+    cell.TZD_List_JZBW.text = model.jzbw;
+    cell.block = ^(NSInteger tag)
+    {
+        if (tag == 100)
+        {
+            //通知单
+            TZD_DetailViewController *vc = [[TZD_DetailViewController alloc] init];
+            vc.detailNum = model.sgphbNo;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
+        else if (tag == 101)
+        {
+            //设计
+            SJ_PHB_ViewController *vc = [[SJ_PHB_ViewController alloc] init];
+            vc.detailNum = model.llphbNo;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
+        else
+        {
+            //任务
+            GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
+            vc.detailId = model.renwuNo;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    };
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SYS_PHBListModel *model = _dataArr[indexPath.row];
-    SJ_PHB_ViewController *vc = [[SJ_PHB_ViewController alloc] init];
-    vc.detailNum = model.llphbno;
-    [self.navigationController pushViewController:vc animated:YES];
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

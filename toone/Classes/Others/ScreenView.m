@@ -108,6 +108,12 @@
         
         self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{PHB_Title_ZZJG:@"",PHB_Title_SJQD:@"",PHB_Title_TIME1:@"",PHB_Title_TIME2:@""}];
     }
+    else if (_type == ScreenViewTypeTZD)
+    {
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{TZD_PARA_ZZJG:@"",TZD_PARA_TIME1:@"",TZD_PARA_TIME2:@""}];
+        
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{TZD_Title_ZZJG:@"",TZD_Title_TIME1:@"",TZD_Title_TIME2:@""}];
+    }
 }
 
 - (void)hiddenAction
@@ -226,6 +232,12 @@
         {
             cell.txtField.enabled = NO;
             NSArray *keys = @[PHB_Title_ZZJG,PHB_Title_SJQD,PHB_Title_TIME1,PHB_Title_TIME2];
+            cell.txtField.text = [_nameDic objectForKey:[keys objectAtIndex:indexPath.row]];
+        }
+        else if (_type == ScreenViewTypeTZD)
+        {
+            cell.txtField.enabled = NO;
+            NSArray *keys = @[TZD_Title_ZZJG,TZD_Title_TIME1,TZD_Title_TIME2];
             cell.txtField.text = [_nameDic objectForKey:[keys objectAtIndex:indexPath.row]];
         }
     }
@@ -375,6 +387,42 @@
             break;
         }
 
+    }
+    else if(_type == ScreenViewTypeTZD)
+    {
+        if (indexPath.row == 0)
+        {
+            //所属机构
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                [self.nameDic setObject: name forKey:TZD_Title_ZZJG];
+                [self.paraDic setObject:identifier forKey:TZD_PARA_ZZJG];
+            };
+            [[self viewController].navigationController pushViewController:vc animated:YES];
+        }
+        else if (indexPath.row == 1 || indexPath.row == 2)
+        {
+            LabelTextFieldCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            BFViewController *vc = (BFViewController *)[self viewController];
+            vc.block = ^{
+                if (indexPath.row == 1)
+                {
+                    [self.nameDic setObject:cell.txtField.text forKey:TZD_Title_TIME1];
+                    
+                    NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
+                    [self.paraDic setObject:startTime forKey:TZD_PARA_TIME1];
+                }
+                else
+                {
+                    [self.nameDic setObject:cell.txtField.text forKey:TZD_Title_TIME2];
+                    NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
+                    [self.paraDic setObject:endTime forKey:TZD_PARA_TIME2];
+                }
+                
+            };
+            [vc calendarWithTimeString:nil obj:cell.txtField];
+        }
     }
 }
 

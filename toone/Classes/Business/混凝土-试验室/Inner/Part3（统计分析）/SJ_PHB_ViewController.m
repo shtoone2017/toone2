@@ -47,12 +47,12 @@
     _keysArr = @[@"llphbno",@"kangshendengji",@"kangzhedu",@"fenliao1name",@"fenliao2name",@"guliao1name",@"guliao2name",@"guliao3name",@"guliao4name",@"fenliao3name",@"waijiaji1name",@"shuiname",@"fenliao1phb",@"fenliao2phb",@"guliao1phb",@"guliao2phb",@"guliao3phb",@"guliao4phb",@"fenliao3phb",@"waijiaji1phb",@"shuiphb",@"xishichanliang",@"jg3chanliang",@"heshachanliang",@"shuijiaobi",@"biaoguanmidu",@"fangliang",@"jusuosuanchanliang",@"shalv",@"remark"];
     
 #warning 根据角色  以及状态  显示 修改 按钮
-    rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightBtn.frame = CGRectMake(0, 0, 80, 20);
-    [rightBtn setTitle:@"修改" forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(changeInfo) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    self.navigationItem.rightBarButtonItem = rightItem;
+//    rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    rightBtn.frame = CGRectMake(0, 0, 80, 20);
+//    [rightBtn setTitle:@"修改" forState:UIControlStateNormal];
+//    [rightBtn addTarget:self action:@selector(changeInfo) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+//    self.navigationItem.rightBarButtonItem = rightItem;
     
     [self getData];
 }
@@ -258,54 +258,54 @@
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    if (section == 2)
-    {
-        return 80;
-    }
-    return 0.0001;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    
-    if (section == 2)
-    {
-        NSArray *titleArr;
-        if (_isChange)
-        {
-            titleArr = @[@"退出",@"保存"];
-        }
-        else
-        {
-            titleArr = @[@"删除",@"提交"];
-        }
-        UIView *footer = [UIView new];
-        for (int i = 0; i<2; i++)
-        {
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-            if (i==0)
-            {
-                btn.frame = CGRectMake(self.view.bounds.size.width/2-30-80, 20, 80, 30);
-            }
-            else
-            {
-                btn.frame = CGRectMake(self.view.bounds.size.width/2+30, 20, 80, 30);
-            }
-            btn.layer.cornerRadius = 5;
-            btn.layer.masksToBounds = YES;
-            btn.backgroundColor = BLUECOLOR;
-            [btn setTitle:titleArr[i] forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-            [btn setTitle:titleArr[i] forState:UIControlStateNormal];
-            [footer addSubview:btn];
-        }
-        return footer;
-    }
-    return nil;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    if (section == 2)
+//    {
+//        return 80;
+//    }
+//    return 0.0001;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    
+//    if (section == 2)
+//    {
+//        NSArray *titleArr;
+//        if (_isChange)
+//        {
+//            titleArr = @[@"退出",@"保存"];
+//        }
+//        else
+//        {
+//            titleArr = @[@"删除",@"提交"];
+//        }
+//        UIView *footer = [UIView new];
+//        for (int i = 0; i<2; i++)
+//        {
+//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+//            if (i==0)
+//            {
+//                btn.frame = CGRectMake(self.view.bounds.size.width/2-30-80, 20, 80, 30);
+//            }
+//            else
+//            {
+//                btn.frame = CGRectMake(self.view.bounds.size.width/2+30, 20, 80, 30);
+//            }
+//            btn.layer.cornerRadius = 5;
+//            btn.layer.masksToBounds = YES;
+//            btn.backgroundColor = BLUECOLOR;
+//            [btn setTitle:titleArr[i] forState:UIControlStateNormal];
+//            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+//            [btn setTitle:titleArr[i] forState:UIControlStateNormal];
+//            [footer addSubview:btn];
+//        }
+//        return footer;
+//    }
+//    return nil;
+//}
 
 - (void)btnAction:(UIButton *)btn
 {
