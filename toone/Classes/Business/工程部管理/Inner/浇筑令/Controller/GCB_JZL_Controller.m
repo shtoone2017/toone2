@@ -15,6 +15,7 @@
 #import "GCB_JZL_Model.h"
 #import "GCB_JZL_DetailController.h"
 #import "GCB_JZL_BkView.h"
+#import "YBPopupMenu.h"
 
 @interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -279,17 +280,17 @@
     CGRect rect = [tableView convertRect:rectInTableView toView:[tableView superview]];
     
     if (tableView == self.tableView2) {//生产中(任务单)
-        if (!(indexPath == nil)) {
-            _isHidder = true;
-            UIView *bkView = [[GCB_JZL_BkView alloc] init];
-            if (_isHidder) {
-                bkView.frame = rect;
-                [self.view addSubview:bkView];
-                _isHidder = false;
-            }else {
-                [bkView removeFromSuperview];
-            }
-        }
+//        if (!(indexPath == nil)) {
+//            _isHidder = true;
+//            UIView *bkView = [[GCB_JZL_BkView alloc] init];
+//            if (_isHidder) {
+//                bkView.frame = rect;
+//                [self.view addSubview:bkView];
+//                _isHidder = false;
+//            }else {
+//                [bkView removeFromSuperview];
+//            }
+//        }
         
 //        model = self.datas2[indexPath.row];
 //        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];

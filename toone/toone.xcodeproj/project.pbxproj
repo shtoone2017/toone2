@@ -231,6 +231,9 @@
 		42E288D91F4BCF110002AF72 /* MyInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288D81F4BCF110002AF72 /* MyInputController.m */; };
 		42E7CA091F4D7A1E00708235 /* GCB_JZL_BkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA081F4D7A1E00708235 /* GCB_JZL_BkView.m */; };
 		42E7CA0B1F4D7A3800708235 /* GCB_JZL_BkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E7CA0A1F4D7A3800708235 /* GCB_JZL_BkView.xib */; };
+		42E7CA1D1F4E6BBC00708235 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */; };
+		42E7CA1E1F4E6BBC00708235 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA1A1F4E6BBC00708235 /* YBPopupMenuPath.m */; };
+		42E7CA1F1F4E6BBC00708235 /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA1C1F4E6BBC00708235 /* YBRectConst.m */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F021EB043CF00440413 /* LqTheProjectCell.m */; };
@@ -930,6 +933,12 @@
 		42E7CA071F4D7A1E00708235 /* GCB_JZL_BkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JZL_BkView.h; sourceTree = "<group>"; };
 		42E7CA081F4D7A1E00708235 /* GCB_JZL_BkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JZL_BkView.m; sourceTree = "<group>"; };
 		42E7CA0A1F4D7A3800708235 /* GCB_JZL_BkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCB_JZL_BkView.xib; sourceTree = "<group>"; };
+		42E7CA171F4E6BBC00708235 /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
+		42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
+		42E7CA191F4E6BBC00708235 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
+		42E7CA1A1F4E6BBC00708235 /* YBPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenuPath.m; sourceTree = "<group>"; };
+		42E7CA1B1F4E6BBC00708235 /* YBRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBRectConst.h; sourceTree = "<group>"; };
+		42E7CA1C1F4E6BBC00708235 /* YBRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBRectConst.m; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C283F011EB043CF00440413 /* LqTheProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LqTheProjectCell.h; sourceTree = "<group>"; };
@@ -2805,6 +2814,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		42E7CA161F4E6BBC00708235 /* YBPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				42E7CA171F4E6BBC00708235 /* YBPopupMenu.h */,
+				42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */,
+				42E7CA191F4E6BBC00708235 /* YBPopupMenuPath.h */,
+				42E7CA1A1F4E6BBC00708235 /* YBPopupMenuPath.m */,
+				42E7CA1B1F4E6BBC00708235 /* YBRectConst.h */,
+				42E7CA1C1F4E6BBC00708235 /* YBRectConst.m */,
+			);
+			path = YBPopupMenu;
+			sourceTree = "<group>";
+		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3404,6 +3426,7 @@
 				42E2887E1F45AF8A0002AF72 /* states.plist */,
 				42E2887F1F45AF8A0002AF72 /* tongjitype.plist */,
 				42E2887C1F45A2AC0002AF72 /* zhuangtai.plist */,
+				42E7CA161F4E6BBC00708235 /* YBPopupMenu */,
 				42AC71991E30C423007D8F57 /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
 				187C72A71E30B1810072F33A /* DGActivityIndicatorView */,
@@ -4627,6 +4650,7 @@
 				42E288361F43E0900002AF72 /* GCB_RWD_Controller.m in Sources */,
 				8C2840711EB1127500440413 /* NY_SB_Model.m in Sources */,
 				9CD8DDB31F417ADB00F67C8B /* LCDetailViewController.m in Sources */,
+				42E7CA1D1F4E6BBC00708235 /* YBPopupMenu.m in Sources */,
 				D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */,
 				D20064741DFF86800021E293 /* HNT_YLSY_Cell.m in Sources */,
 				D20065141DFF86B30021E293 /* AxisModel.m in Sources */,
@@ -4696,6 +4720,7 @@
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
 				42AC71B81E30C423007D8F57 /* SGBar.m in Sources */,
 				42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */,
+				42E7CA1F1F4E6BBC00708235 /* YBRectConst.m in Sources */,
 				D20064901DFF86800021E293 /* ViewController.m in Sources */,
 				42AC72071E30C576007D8F57 /* NodeMode.m in Sources */,
 				42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */,
@@ -4897,6 +4922,7 @@
 				42E288BE1F4985450002AF72 /* GCB_RWD_Detail_ZXCell.m in Sources */,
 				4261D2821F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m in Sources */,
 				42AC71711E30C393007D8F57 /* NQ_BHZ_SCCX_Innel_Controller.m in Sources */,
+				42E7CA1E1F4E6BBC00708235 /* YBPopupMenuPath.m in Sources */,
 				D20064991DFF86800021E293 /* CALayer+Animation.m in Sources */,
 				D20065291DFF86B30021E293 /* HalfPieChartViewController.m in Sources */,
 				D200643F1DFF86800021E293 /* CJMonthDayViewController.m in Sources */,
