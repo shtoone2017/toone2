@@ -39,6 +39,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.1.2)
   - TPKeyboardAvoiding (1.3.1)
   - UICountingLabel (1.2.0)
 
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - MJRefresh
   - PNChart
   - SDWebImage (~> 3.8)
+  - SVProgressHUD (~> 2.1.2)
   - TPKeyboardAvoiding (~> 1.3.1)
 
 SPEC CHECKSUMS:
@@ -68,9 +70,10 @@ SPEC CHECKSUMS:
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: f4a912b509da30f9b5a7aa835f1275a76538c6cb
+PODFILE CHECKSUM: d1b8f1081fe49ed3fa2fa3754c6fe481e608a967
 
 COCOAPODS: 1.2.1

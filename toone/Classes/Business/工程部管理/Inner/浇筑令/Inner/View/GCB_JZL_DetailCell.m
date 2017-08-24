@@ -107,84 +107,31 @@
 //提交
 - (IBAction)submitClick:(id)sender {
     NSString *urlString = FormatString(baseUrl, @"appWZproject.do?AppWZRenwudanEdit");
+    
     NSDictionary * dic = @{@"isAdd":@"0",
-                           @"id":_tjID,
-                           @"renwuno":self.rwbhText.text,
-                           @"kaipanriqi":self.kptimeBut.titleLabel.text,
-                           @"jzbw":self.jzbwBut.titleLabel.text,
-                           @"gcmc":self.gcmcText.text,
-                           @"kangdongdengji":self.kddjText.text,
-                           @"jiaozhufangshi":self.jzfsBut.titleLabel.text,
-                           @"createtime":self.cjtimeLabel.text,
-                           @"jihuafangliang":self.jhflText.text,
-                           @"departid":_identifier,
-                           @"shuinibiaohao":self.sjqdBut.titleLabel.text,
-                           @"tanluodu":self.tldBut.titleLabel.text,
-                           @"createperson":self.userLabel.text,
-                           @"kangshendengji":self.ksdjText.text,
-                           @"remark":self.bzText.text
+                           @"id":_tjID?:@"",
+                           @"renwuno":self.rwbhText.text?:@"",
+                           @"kaipanriqi":self.kptimeBut.titleLabel.text?:@"",
+                           @"jzbw":self.jzbwBut.titleLabel.text?:@"",
+                           @"gcmc":self.gcmcText.text?:@"",
+                           @"kangdongdengji":self.kddjText.text?:@"",
+                           @"jiaozhufangshi":self.jzfsBut.titleLabel.text?:@"",
+                           @"createtime":self.cjtimeLabel.text?:@"",
+                           @"jihuafangliang":self.jhflText.text?:@"",
+                           @"departid":_identifier?:@"",
+                           @"shuinibiaohao":self.sjqdBut.titleLabel.text?:@"",
+                           @"tanluodu":self.tldBut.titleLabel.text?:@"",
+                           @"createperson":self.userLabel.text?:@"",
+                           @"kangshendengji":self.ksdjText.text?:@"",
+                           @"remark":self.bzText.text?:@""
                            };
-    
-    NSError  * err;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&err];
-    NSString * jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSDictionary * newDic = @{@"data":jsonStr};
-    
-    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
-    [dictM setValue:@"0"forKey:@"isAdd"];
-    [dictM setValue:@"11" forKey:@"tanluodu"];
-    [dictM setValue:@"110" forKey:@"kangdongdengji"];
-    
-    NSData *jsonDa = [NSJSONSerialization dataWithJSONObject:dictM options:NSJSONWritingPrettyPrinted error:&err];
-//    NSDictionary * dicc = @{@"data":jsonDa};
-    NSString *str = [dictM yy_modelToJSONString];
-    
-    NSMutableArray *arr = [NSMutableArray array];
-    [arr addObject:str];
-//    str = [arr yy_modelToJSONString];
-    
-//    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dicc[@"data"] success:^(id json) {
-//
-//        if ([json[@"success"] boolValue]){
-//            [Tools tip:@"提交成功,请刷新数据"];
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//                [self.viewController.navigationController popViewControllerAnimated:YES];
-//            });
-//        }else{
-//            [Tools tip:@"抱歉，提交失败"];
-//        }
-//    } failure:^(NSError *error) {
-//        [Tools tip:@"网络故障，提交失败"];
-//    }];
-
-    
-    
-    
-//    NSString * jsonStr1 = [[[NSString alloc] initWithData:jsonData1 encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    
-    AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-//    AFHTTPRequestSerializer *requestSerializer =  [AFJSONRequestSerializer serializer];
-
-    NSDictionary *headerFieldValueDictionary = newDic.copy;
-    if (headerFieldValueDictionary != nil) {
-//        NSDictionary *dict = headerFieldValueDictionary[@"data"];
-//        for (NSString *httpHeaderField in dict.allKeys) {
-//            NSString *value = dict[httpHeaderField];
-//            [requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
-//        }
-        [manger.requestSerializer setValue:str forHTTPHeaderField:@"data"];
-//        [manger.requestSerializer setValue:@"900" forHTTPHeaderField:@"Content-Length"];
-         NSLog(@"%@",manger.requestSerializer.HTTPRequestHeaders);
-    }
-    
-//    manger.requestSerializer = requestSerializer;
-    [manger POST:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
+    [[HTTP shareAFNNetworking] requestToEditWithDic:dic urlStr:urlString success:^(id json)
+     {
+         NSLog(@"请求成功");
+    } failure:^(NSError *error)
+     {
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [Tools tip:@"网络故障，提交失败"];
     }];
-    
 }
 
 

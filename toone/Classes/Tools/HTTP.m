@@ -102,4 +102,72 @@ static HTTP *networking = nil;
          if(failureBlock) failureBlock(error);
     }];
 }
+
+
+/**
+ 专用编辑请求
+ 将json对象(NSData)传入body
+
+ @param paraDic 参数字典
+ @param urlString 请求地址
+ */
+- (void)requestToEditWithDic:(NSDictionary *)paraDic urlStr:(NSString *)urlString  success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlock
+{
+    WS(weakSelf);
+    NSError *error;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:paraDic options:0 error:&error];
+    
+    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    NSMutableURLRequest *req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:urlString parameters:nil error:nil];
+    
+    req.timeoutInterval= [[[NSUserDefaults standardUserDefaults] valueForKey:@"timeoutInterval"] longValue];
+    
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [req setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    [req setHTTPBody:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [[manager dataTaskWithRequest:req completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        if (!error) {
+            
+            NSLog(@"Reply JSON: %@", responseObject);
+            if (responseObject[@"success"])
+            {
+                if ((NSInteger)responseObject[@"success"] == 1)
+                {
+                    id jsondata = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+                    if (successBlock) successBlock(jsondata);
+                    [weakSelf showMessage:@"编辑成功"];
+                }
+                else
+                {
+                    [weakSelf showMessage:@"编辑失败"];
+                }
+            }
+            else
+            {
+                [weakSelf showMessage:@"编辑失败"];
+            }
+            
+            
+        } else {
+            
+            NSLog(@"Error: %@, %@, %@", error, response, responseObject);
+            if(failureBlock) failureBlock(error);
+        }
+        
+    }] resume];
+}
+
+// show message
+- (void)showMessage:(NSString *)message
+{
+    [SVProgressHUD showErrorWithStatus:message];
+}
 @end

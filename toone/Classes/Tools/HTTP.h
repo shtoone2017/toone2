@@ -27,4 +27,13 @@ typedef void(^bodyBlock_t)();
 
 
 -(void)uploadWithUrlstring:(NSString*)urlString  parameter:(NSDictionary*)parameter data:(NSData*)data success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlock;
+
+/**
+ 专用编辑请求
+ 将json对象(NSData)传入body
+ 
+ @param paraDic 参数字典
+ @param urlString 请求地址
+ */
+- (void)requestToEditWithDic:(NSDictionary *)paraDic urlStr:(NSString *)urlString  success:(successBlock_t)successBlock failure:(failureBlock_t)failureBlo;
 @end

@@ -292,10 +292,10 @@
 //            }
 //        }
         
-//        model = self.datas2[indexPath.row];
-//        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
-//        vc.detailId = model.rwdId;
-//        [self.navigationController pushViewController:vc animated:YES];
+        model = self.datas2[indexPath.row];
+        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
+        vc.detailId = model.rwdId;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     if (tableView == self.tableView3) {
         model = self.datas3[indexPath.row];
