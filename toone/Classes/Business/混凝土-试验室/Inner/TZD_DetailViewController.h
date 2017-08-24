@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyViewController.h"
 
 @interface TZD_DetailViewController : MyViewController
 
