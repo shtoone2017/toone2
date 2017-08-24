@@ -68,6 +68,9 @@
         _zhutLabel.textColor = [UIColor greenColor];
     }if ([model.zhuangtai isEqualToString:@"3"]) {
         _zhutLabel.text = [NSString stringWithFormat:@"已完成"];
+    }if ([model.zhuangtai isEqualToString:@"-1"]) {
+        _zhutLabel.text = [NSString stringWithFormat:@"未提交"];
+        _zhutLabel.textColor = [UIColor redColor];
     }
 }
 

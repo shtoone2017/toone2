@@ -38,6 +38,11 @@
     }if ([model.type isEqualToString:@"1"]) {
         _typeLabel.text = @"方量转移";
     }
+    if (model.renwuno1 == model.renwuno2) {
+        _zrtypeLabel.text = @"转入";
+    }else {
+        _zrtypeLabel.text = @"转出";
+    }
     
 }
 

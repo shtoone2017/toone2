@@ -21,6 +21,7 @@ typedef enum{
     ExpButtonTypeEarthwork,
     ExpButtonTypeTjlxBut,//统计类型
     ExpButtonTypeCclxBut,//出场类型
+    ExpButtonTypeRwdText,//任务单号
 } ExpButtonType;
 
 typedef void(^ExpBlock_t) (ExpButtonType,id,id);

@@ -11,7 +11,7 @@
 typedef NS_ENUM(NSInteger,NodeType) {
     NodeTypeZZJG = 0,
     NodeTypeCL,
-    NodeTypeFBFX,
+    NodeTypeFBFX,//分部分项
 };
 
 @interface NodeViewController : ViewController

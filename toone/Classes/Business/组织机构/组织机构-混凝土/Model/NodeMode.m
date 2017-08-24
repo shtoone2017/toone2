@@ -22,7 +22,6 @@
     NSString *userRole = [UserDefaultsSetting shareSetting].userRole;
     
     NSString *urlString = [NSString stringWithFormat:AppDepartTree_4,dataTime,[UserDefaultsSetting shareSetting].funtype,loginDepartId,userRole];
-    
 
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         

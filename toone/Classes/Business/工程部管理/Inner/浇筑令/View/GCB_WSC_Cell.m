@@ -8,6 +8,7 @@
 
 #import "GCB_WSC_Cell.h"
 #import "GCB_JZL_Model.h"
+#import "GCB_RWD_DetailController.h"
 
 @interface GCB_WSC_Cell ()
 @property (weak, nonatomic) IBOutlet UILabel *kpsjLabel;
@@ -55,15 +56,19 @@
         _ztLabel.textColor = [UIColor greenColor];
     }if ([model.zhuangtai isEqualToString:@"3"]) {
         _ztLabel.text = [NSString stringWithFormat:@"已完成"];
+    }if ([model.zhuangtai isEqualToString:@"-1"]) {
+        _ztLabel.text = [NSString stringWithFormat:@"未提交"];
+        _ztLabel.textColor = [UIColor redColor];
     }
 }
 
 
 
-
 //任务单
 - (IBAction)rwdClick:(id)sender {
-    
+    GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
+    vc.detailId = [NSString stringWithFormat:@"%@",self.model.rwdId];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 //配比单
 - (IBAction)pbClick:(id)sender {
@@ -75,7 +80,18 @@
     
 }
 
-
+- (UIViewController *)viewController {
+    UIViewController *viewController = nil;
+    UIResponder *next = self.nextResponder;
+    while (next) {
+        if ([next isKindOfClass:[UIViewController class]]) {
+            viewController = (UIViewController *)next;
+            break;
+        }
+        next = next.nextResponder;
+    }
+    return viewController;
+}
 
 
 @end

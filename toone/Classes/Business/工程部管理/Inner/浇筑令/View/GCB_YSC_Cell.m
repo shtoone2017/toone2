@@ -9,6 +9,7 @@
 #import "GCB_YSC_Cell.h"
 #import "GCB_JZL_Model.h"
 #import "ZYProGressView.h"
+#import "GCB_RWD_DetailController.h"
 
 @interface GCB_YSC_Cell (){
     ZYProGressView *progress;
@@ -67,9 +68,37 @@
         _ztLabel.textColor = [UIColor greenColor];
     }if ([model.zhuangtai isEqualToString:@"3"]) {
         _ztLabel.text = [NSString stringWithFormat:@"已完成"];
+    }if ([model.zhuangtai isEqualToString:@"-1"]) {
+        _ztLabel.text = [NSString stringWithFormat:@"未提交"];
+        _ztLabel.textColor = [UIColor redColor];
+    }
+}
+//任务单
+- (IBAction)rwdClick:(UIButton *)sender {
+    GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
+    vc.detailId = [NSString stringWithFormat:@"%@",self.model.rwdId];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+//配比单
+- (IBAction)pbdClick:(UIButton *)sender {
+    if (![sender.titleLabel.text isEqualToString:@"未配料"]) {
+        NSLog(@"配比单号");
     }
 }
 
+
+- (UIViewController *)viewController {
+    UIViewController *viewController = nil;
+    UIResponder *next = self.nextResponder;
+    while (next) {
+        if ([next isKindOfClass:[UIViewController class]]) {
+            viewController = (UIViewController *)next;
+            break;
+        }
+        next = next.nextResponder;
+    }
+    return viewController;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

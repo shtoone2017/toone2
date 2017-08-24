@@ -24,4 +24,5 @@
 @property (nonatomic,copy)NSString *createtime;//创建时间
 @property (nonatomic,copy)NSString *createperson;//创建人
 
+@property (nonatomic,copy)NSString *rwdId;//任务单跳转(编辑)
 @end

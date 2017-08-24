@@ -36,6 +36,7 @@
         [self.xib.sbButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.usePositionButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.earthworkButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.rwdhText addTarget:self action:@selector(clikText:) forControlEvents:UIControlEventTouchUpInside];
         [SGAnimationType show:self animation:0];
     }
     return self;
@@ -88,7 +89,14 @@
             _expBlock(ExpButtonTypeEarthwork,self.xib.earthworkButton,nil);
         }
     }
-
+    
+}
+-(void)clikText:(UITextField *)text {
+    if (text == self.xib.rwdhText) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeRwdText,self.xib.rwdhText.text,nil);
+        }
+    }
 }
 
 -(void)remove{

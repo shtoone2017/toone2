@@ -192,6 +192,9 @@
                                         <rect key="frame" x="75" y="0.0" width="240" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="000"/>
+                                        <connections>
+                                            <action selector="rwdClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E61-qc-3ai"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -222,6 +225,9 @@
                                         <rect key="frame" x="75" y="0.0" width="240" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="0000"/>
+                                        <connections>
+                                            <action selector="pbdClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p50-2J-7Av"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

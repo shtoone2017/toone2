@@ -13,6 +13,8 @@
 #import "GCB_WSC_Cell.h"
 #import "GCB_YSC_Cell.h"
 #import "GCB_JZL_Model.h"
+#import "GCB_JZL_DetailController.h"
+#import "GCB_JZL_BkView.h"
 
 @interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -46,6 +48,7 @@
 @property (nonatomic,copy) NSString * pageNo2;
 @property (nonatomic,copy) NSString * pageNo3;
 
+@property (nonatomic,assign) BOOL isHidder;//
 
 @end
 @implementation GCB_JZL_Controller
@@ -55,7 +58,6 @@
     self.pageNo2 = @"1";
     self.pageNo3 = @"1";
     
-//    self.pageNo = _pageNo2;
     self.pageNo = @"1";
     self.maxPageItems = @"5";
     self.ztstate = @"";
@@ -112,11 +114,7 @@
         
         [weakSelf loadData];
     }];
-//    if ([_tableViewSigner intValue] == 1) {
-//        tableView.rowHeight = 200;
-//    }if ([_tableViewSigner intValue] == 2) {
-        tableView.rowHeight = 240;
-//    }
+    tableView.rowHeight = 240;
     [tableView registerNib:[UINib nibWithNibName:@"GCB_YSC_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_YSC_Cell"];
     [tableView registerNib:[UINib nibWithNibName:@"GCB_WSC_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_WSC_Cell"];
 }
@@ -204,7 +202,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     GCB_JZL_Model * model = [GCB_JZL_Model modelWithDict:dict];;
-                    
+                    model.rwdId = dict[@"id"];
                     [datas addObject:model];
                 }
             }
@@ -275,30 +273,42 @@
     return nil;
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    LLQ_YD_Model * model;
-//    //    if (tableView == self.tableView1) {
-//    //        model = self.datas1[indexPath.row];
-//    //    }
-//    if (tableView == self.tableView2) {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GCB_JZL_Model * model;
+    CGRect rectInTableView = [tableView rectForRowAtIndexPath:indexPath];
+    CGRect rect = [tableView convertRect:rectInTableView toView:[tableView superview]];
+    
+    if (tableView == self.tableView2) {//生产中(任务单)
+        if (!(indexPath == nil)) {
+            _isHidder = true;
+            UIView *bkView = [[GCB_JZL_BkView alloc] init];
+            if (_isHidder) {
+                bkView.frame = rect;
+                [self.view addSubview:bkView];
+                _isHidder = false;
+            }else {
+                [bkView removeFromSuperview];
+            }
+        }
+        
 //        model = self.datas2[indexPath.row];
-//    }
-//    if (tableView == self.tableView3) {
-//        model = self.datas3[indexPath.row];
-//    }
+//        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
+//        vc.detailId = model.rwdId;
+//        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if (tableView == self.tableView3) {
+        model = self.datas3[indexPath.row];
+        
+    }
 //    NSDictionary * dic=@{@"F_GUID":model.f_GUID,
 //                         //                         @"shebeibianhao":model.sbbh,
 //                         //                         @"chuli":model.chuli,
 //                         //                         @"shenhe":model.shenhe,
 //                         //                         @"zxdwshenhe":model.zxdwshenhe
 //                         };
-//    LLQ_YD_DetailController *mxeDetaVc = [[LLQ_YD_DetailController alloc] init];
-//    mxeDetaVc.f_GUID = model.f_GUID;
-//    [self.navigationController pushViewController:mxeDetaVc animated:YES];
-//    
-//    //    [self performSegueWithIdentifier:@"LLQ_CBCZ_DetailController" sender:dic];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//}
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 - (IBAction)searchButtonClick:(UIButton *)sender {
     sender.enabled = NO;
     //1.
@@ -336,7 +346,11 @@
             UIButton * btn = (UIButton*)obj1;
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
-        
+        if (type == ExpButtonTypeRwdText) {
+            UITextField *text  = (UITextField*)obj1;
+            _renwuno = text.text;
+            [self loadData];
+        }
         if (type == ExpButtonTypeUsePosition) {//组织
             UIButton * btn = (UIButton*)obj1;
             __weak typeof(self) weakSelf = self;
