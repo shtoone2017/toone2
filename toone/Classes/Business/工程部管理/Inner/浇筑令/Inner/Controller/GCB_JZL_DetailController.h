@@ -10,5 +10,7 @@
 
 @interface GCB_JZL_DetailController : MyViewController
 @property (nonatomic,copy)NSString *detailId;//编辑ID
+@property (nonatomic,assign) NSInteger jzlName;//1.编辑 2.新增
+
 
 @end

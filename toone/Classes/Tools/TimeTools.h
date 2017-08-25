@@ -19,6 +19,10 @@
 +(NSString*)current_HH_mm;
 
 
+//获取当前时间   格式：yy-MM-dd
++(NSString*)current_yy_MM_dd;
+
+
 //获取当前时间   格式：yyyy-MM-dd HH:mm
 +(NSString*)currentTime;
 

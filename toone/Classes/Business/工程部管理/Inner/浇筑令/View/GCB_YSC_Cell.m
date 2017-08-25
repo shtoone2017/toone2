@@ -10,6 +10,7 @@
 #import "GCB_JZL_Model.h"
 #import "ZYProGressView.h"
 #import "GCB_RWD_DetailController.h"
+#import "TZD_DetailViewController.h"
 
 @interface GCB_YSC_Cell (){
     ZYProGressView *progress;
@@ -56,7 +57,6 @@
     [_pbdBut setTitle:model.sgphbno forState:UIControlStateNormal];
     
     
-    
     if ([model.zhuangtai isEqualToString:@"0"]) {
         _ztLabel.text = [NSString stringWithFormat:@"未配料"];
         _ztLabel.textColor = [UIColor blueColor];
@@ -82,7 +82,14 @@
 //配比单
 - (IBAction)pbdClick:(UIButton *)sender {
     if (![sender.titleLabel.text isEqualToString:@"未配料"]) {
-        NSLog(@"配比单号");
+        TZD_DetailViewController *vc = [[TZD_DetailViewController alloc] init];
+        vc.detailNum = self.model.sgphbno;
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    }else {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"未生成配料单无法查看";
+        [hud hideAnimated:YES afterDelay:2.0];
     }
 }
 

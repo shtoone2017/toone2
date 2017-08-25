@@ -26,6 +26,6 @@
 @property (nonatomic,copy)NSString *kangshendengji;//抗滲等级
 @property (nonatomic,copy)NSString *shuinibiaohao;//设计强度
 
-@property (nonatomic,strong) NSNumber *tjId;//提交id
+@property (nonatomic,strong) NSNumber *tjId;//编辑id
 
 @end

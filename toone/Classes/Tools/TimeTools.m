@@ -22,6 +22,12 @@
     NSString * time = [dateFormater stringFromDate:[NSDate date]];
     return time;
 }
++(NSString*)current_yy_MM_dd{
+    NSDateFormatter  * dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:@"yyyy-MM-dd"];
+    NSString * time = [dateFormater stringFromDate:[NSDate date]];
+    return time;
+}
 +(NSString*)currentTime{
     NSDateFormatter  * dateFormater = [[NSDateFormatter alloc] init];
     [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm"];

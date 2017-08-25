@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 @class GCB_JZL_DetailModel;
 @interface GCB_JZL_DetailCell : UITableViewCell
-@property (nonatomic,strong) GCB_JZL_DetailModel *model;//
+@property (nonatomic,strong) GCB_JZL_DetailModel *model;//编辑
+@property (nonatomic,strong) GCB_JZL_DetailModel *xzmodel;//新增
+
+@property (nonatomic,assign) NSInteger isbjti;//1 新增 2 编辑
 @end

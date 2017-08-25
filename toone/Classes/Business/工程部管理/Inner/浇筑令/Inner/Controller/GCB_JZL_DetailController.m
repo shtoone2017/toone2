@@ -20,18 +20,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"任务单编辑";
+    switch (_jzlName) {
+        case 1:
+            self.navigationItem.title = @"任务单编辑";
+            break;
+        case 2:
+            self.navigationItem.title = @"任务单新增";
+            break;
+        default:
+            break;
+    }
     [self loadUI];
     [self loadData];
 }
 -(void)loadUI{
     self.tb.tableFooterView = [[UIView alloc] init];
+    self.tb.bounces = NO;
     self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-65) style:UITableViewStylePlain];
     self.tb.delegate = self;
     self.tb.dataSource = self;
     [self.view addSubview:self.tb];
     //    self.tb.separatorColor = [UIColor clearColor];
-    self.tb.rowHeight = 550;
+    self.tb.rowHeight = Screen_h;
     [self.tb registerNib:[UINib nibWithNibName:@"GCB_JZL_DetailCell" bundle:nil] forCellReuseIdentifier:@"GCB_JZL_DetailCell"];
 }
 -(void)loadData{
@@ -64,7 +74,18 @@
     GCB_JZL_DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JZL_DetailCell" forIndexPath:indexPath];
     GCB_JZL_DetailModel * model = self.datas[indexPath.row];
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
-    cell.model = model;
+    switch (_jzlName) {
+        case 1://编辑
+            cell.model = model;
+            cell.isbjti = 2;
+            break;
+        case 2:
+            cell.isbjti = 1;
+            cell.xzmodel = model;
+            break;
+        default:
+            break;
+    }
     return cell;
 }
 

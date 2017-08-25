@@ -58,8 +58,8 @@
 
 //云部署地址
 
-#define baseUrl      @"http://192.168.11.106:8081/gxzjzqms/"
-//#define baseUrl         @"http://192.168.11.106:8080/jeecg/"
+//#define baseUrl      @"http://192.168.11.106:8081/gxzjzqms/"
+#define baseUrl         @"http://192.168.11.100:8080/jeecg/"
 /*
  3-----------------------
  */
@@ -104,7 +104,12 @@
 #define AppJZL_Detail FormatString(baseUrl,@"appWZproject.do?AppTaskListDetail&id=%@")
 //任务单编辑
 #define AppJZL_BJDetail FormatString(baseUrl,@"appWZproject.do?AppRenwudanSkip&id=%@")
-
+//任务单提交
+#define AppJZL_Tj FormatString(baseUrl,@"appWZproject.do?AppRenwudanTiJiao&id=%@&username=%@")
+//任务单删除
+#define AppJZL_Dele FormatString(baseUrl,@"appWZproject.do?AppWzRenwudandel&id=%@")
+//浇筑部位
+#define AppJZBW FormatString(baseUrl,@"appWZproject.do?AppjzbwList&departId=%@&page=%@&rows=%@")
 
 
 /*

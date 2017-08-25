@@ -115,9 +115,7 @@ static HTTP *networking = nil;
 {
     WS(weakSelf);
     NSError *error;
-    
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:paraDic options:0 error:&error];
-    
     NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -125,11 +123,8 @@ static HTTP *networking = nil;
     NSMutableURLRequest *req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:urlString parameters:nil error:nil];
     
     req.timeoutInterval= [[[NSUserDefaults standardUserDefaults] valueForKey:@"timeoutInterval"] longValue];
-    
     [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
     [req setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
     [req setHTTPBody:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
     
     [[manager dataTaskWithRequest:req completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {

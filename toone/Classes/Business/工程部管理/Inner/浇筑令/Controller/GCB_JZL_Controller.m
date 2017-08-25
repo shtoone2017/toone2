@@ -16,8 +16,9 @@
 #import "GCB_JZL_DetailController.h"
 #import "GCB_JZL_BkView.h"
 #import "YBPopupMenu.h"
+#define TITLES @[@"新增", @"编辑", @"删除",@"提交"]
 
-@interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
 @property (weak, nonatomic) IBOutlet UIScrollView *title_sc                 ;//标题scrollView
@@ -49,7 +50,9 @@
 @property (nonatomic,copy) NSString * pageNo2;
 @property (nonatomic,copy) NSString * pageNo3;
 
-@property (nonatomic,assign) BOOL isHidder;//
+@property (nonatomic,copy)NSString *rwdid;//当前cell任务单编号
+@property (nonatomic,copy)NSString *dearid;//编辑跳转ID
+@property (nonatomic,copy)NSString *zhuant;//当前cell状态
 
 @end
 @implementation GCB_JZL_Controller
@@ -188,13 +191,6 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:AppJZL,_departId,_ztstate,startTimeStamp,endTimeStamp,_sjqd,_renwuno,self.pageNo,self.maxPageItems];
-//    NSDictionary * dict = @{@"departType":_departId,
-//                            @"endTime":endTimeStamp,
-//                            @"startTime":startTimeStamp,
-//                            @"shebeibianhao":_sjqd,
-//                            @"pageNo":self.pageNo,
-//                            @"maxPageItems":self.maxPageItems,
-//                            };
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -280,36 +276,89 @@
     CGRect rect = [tableView convertRect:rectInTableView toView:[tableView superview]];
     
     if (tableView == self.tableView2) {//生产中(任务单)
-//        if (!(indexPath == nil)) {
-//            _isHidder = true;
-//            UIView *bkView = [[GCB_JZL_BkView alloc] init];
-//            if (_isHidder) {
-//                bkView.frame = rect;
-//                [self.view addSubview:bkView];
-//                _isHidder = false;
-//            }else {
-//                [bkView removeFromSuperview];
-//            }
-//        }
-        
         model = self.datas2[indexPath.row];
-        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
-        vc.detailId = model.rwdId;
-        [self.navigationController pushViewController:vc animated:YES];
+        _dearid = model.rwdId;
+        _zhuant = model.zhuangtai;
+        _rwdid = model.renwuno;
+        
+        CGPoint a = CGPointMake(Screen_w*0.5, rect.origin.y+220);
+        [YBPopupMenu showAtPoint:a titles:TITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
+            popupMenu.dismissOnSelected = YES;
+            popupMenu.isShowShadow = YES;
+            popupMenu.delegate = self;
+            popupMenu.offset = 10;
+            popupMenu.type = YBPopupMenuTypeDark;
+            popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
+        }];
     }
-    if (tableView == self.tableView3) {
+    if (tableView == self.tableView3) {//完工
         model = self.datas3[indexPath.row];
         
     }
-//    NSDictionary * dic=@{@"F_GUID":model.f_GUID,
-//                         //                         @"shebeibianhao":model.sbbh,
-//                         //                         @"chuli":model.chuli,
-//                         //                         @"shenhe":model.shenhe,
-//                         //                         @"zxdwshenhe":model.zxdwshenhe
-//                         };
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+#pragma mark - YBPopupMenuDelegate
+- (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu {
+    if ([TITLES[index] isEqualToString:@"新增"]) {
+        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
+        vc.detailId = _dearid;
+        vc.jzlName = 2;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if ([TITLES[index] isEqualToString:@"编辑"]) {
+        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
+        vc.detailId = _dearid;
+        vc.jzlName = 1;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    if ([TITLES[index] isEqualToString:@"删除"]) {
+        if ([_zhuant isEqualToString:@"-1"]) {
+            [self loadDeleting];
+        }else {
+            [SVProgressHUD showErrorWithStatus:@"任务单已提交，无法删除"];
+        }
+    }
+    if ([TITLES[index] isEqualToString:@"提交"]) {
+        if ([_zhuant isEqualToString:@"-1"]) {
+            [self loadSubmit];
+        }else {
+            [SVProgressHUD showErrorWithStatus:@"任务单已提交，无法再次提交"];
+        }
+    }
+}
+
+-(void)loadSubmit {//提交
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString * urlString = [NSString stringWithFormat:AppJZL_Tj,_dearid,[UserDefaultsSetting shareSetting].userFullName];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        if ([json[@"success"] boolValue]) {
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"任务单提交成功";
+            [hud hideAnimated:YES afterDelay:2.0];
+            [self loadData];
+        }if(![json[@"success"] boolValue]) {
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"任务单提交失败";
+            [hud hideAnimated:YES afterDelay:2.0];
+        }
+    } failure:^(NSError *error) {
+        [Tools tip:@"服务器异常"];
+    }];
+}
+-(void)loadDeleting {//删除
+    NSString * urlString = [NSString stringWithFormat:AppJZL_Dele,_dearid];
+    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:nil success:^(id json) {
+        if ([json[@"success"] boolValue]) {
+            [self loadData];
+            [SVProgressHUD showSuccessWithStatus:@"任务单删除成功"];
+        }
+    } failure:^(NSError *error) {
+        [Tools tip:@"服务器异常"];
+    }];
+}
+
+
 - (IBAction)searchButtonClick:(UIButton *)sender {
     sender.enabled = NO;
     //1.
@@ -379,7 +428,19 @@
     };
     [self.view addSubview:e];
 }
-
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"GCBSeed" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self loadData];
+}
+-(void)dealloc{
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"GCBSeed"];
+    FuncLog;
+}
 
 
 @end
