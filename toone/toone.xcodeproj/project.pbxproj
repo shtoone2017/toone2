@@ -238,6 +238,11 @@
 		42E7CA291F4EDB2100708235 /* JZL_JZBW_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA281F4EDB2100708235 /* JZL_JZBW_Model.m */; };
 		42E7CA2D1F4EE06D00708235 /* JZL_JZBW_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA2B1F4EE06D00708235 /* JZL_JZBW_Cell.m */; };
 		42E7CA2E1F4EE06D00708235 /* JZL_JZBW_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E7CA2C1F4EE06D00708235 /* JZL_JZBW_Cell.xib */; };
+		42E7CA381F50114600708235 /* DVBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA331F50114600708235 /* DVBarChartView.m */; };
+		42E7CA391F50114600708235 /* DVXBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA351F50114600708235 /* DVXBarView.m */; };
+		42E7CA3A1F50114600708235 /* DVYBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA371F50114600708235 /* DVYBarView.m */; };
+		42E7CA3F1F50175500708235 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA3C1F50175500708235 /* UIColor+Hex.m */; };
+		42E7CA401F50175500708235 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA3E1F50175500708235 /* UIView+Extension.m */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8C283F041EB043CF00440413 /* LqTheProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C283F021EB043CF00440413 /* LqTheProjectCell.m */; };
@@ -950,6 +955,16 @@
 		42E7CA2A1F4EE06D00708235 /* JZL_JZBW_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZL_JZBW_Cell.h; sourceTree = "<group>"; };
 		42E7CA2B1F4EE06D00708235 /* JZL_JZBW_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZL_JZBW_Cell.m; sourceTree = "<group>"; };
 		42E7CA2C1F4EE06D00708235 /* JZL_JZBW_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JZL_JZBW_Cell.xib; sourceTree = "<group>"; };
+		42E7CA321F50114600708235 /* DVBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVBarChartView.h; sourceTree = "<group>"; };
+		42E7CA331F50114600708235 /* DVBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVBarChartView.m; sourceTree = "<group>"; };
+		42E7CA341F50114600708235 /* DVXBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVXBarView.h; sourceTree = "<group>"; };
+		42E7CA351F50114600708235 /* DVXBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVXBarView.m; sourceTree = "<group>"; };
+		42E7CA361F50114600708235 /* DVYBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVYBarView.h; sourceTree = "<group>"; };
+		42E7CA371F50114600708235 /* DVYBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVYBarView.m; sourceTree = "<group>"; };
+		42E7CA3B1F50175500708235 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		42E7CA3C1F50175500708235 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		42E7CA3D1F50175500708235 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		42E7CA3E1F50175500708235 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C283F011EB043CF00440413 /* LqTheProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LqTheProjectCell.h; sourceTree = "<group>"; };
@@ -2877,6 +2892,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		42E7CA311F50114600708235 /* DVBarChartView */ = {
+			isa = PBXGroup;
+			children = (
+				42E7CA3B1F50175500708235 /* UIColor+Hex.h */,
+				42E7CA3C1F50175500708235 /* UIColor+Hex.m */,
+				42E7CA3D1F50175500708235 /* UIView+Extension.h */,
+				42E7CA3E1F50175500708235 /* UIView+Extension.m */,
+				42E7CA321F50114600708235 /* DVBarChartView.h */,
+				42E7CA331F50114600708235 /* DVBarChartView.m */,
+				42E7CA341F50114600708235 /* DVXBarView.h */,
+				42E7CA351F50114600708235 /* DVXBarView.m */,
+				42E7CA361F50114600708235 /* DVYBarView.h */,
+				42E7CA371F50114600708235 /* DVYBarView.m */,
+			);
+			path = DVBarChartView;
+			sourceTree = "<group>";
+		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3476,6 +3508,7 @@
 				42E2887E1F45AF8A0002AF72 /* states.plist */,
 				42E2887F1F45AF8A0002AF72 /* tongjitype.plist */,
 				42E2887C1F45A2AC0002AF72 /* zhuangtai.plist */,
+				42E7CA311F50114600708235 /* DVBarChartView */,
 				42E7CA161F4E6BBC00708235 /* YBPopupMenu */,
 				42AC71991E30C423007D8F57 /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
@@ -4874,6 +4907,7 @@
 				42AC72181E30C576007D8F57 /* LqNode.m in Sources */,
 				D20065841DFFC5AB0021E293 /* HNT_SCCX_Controller.m in Sources */,
 				D20064A61DFF86800021E293 /* SGAnimationType.m in Sources */,
+				42E7CA381F50114600708235 /* DVBarChartView.m in Sources */,
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				9C05F07F1F3BFC4400BF4627 /* JSONKeyMapper.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
@@ -5003,8 +5037,10 @@
 				187C72FB1E30B1810072F33A /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				187C730C1E30B1810072F33A /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				8CBD72F71E07B1D200A0C991 /* HNT_CBCZ_Detail_HeadMsg.m in Sources */,
+				42E7CA3A1F50114600708235 /* DVYBarView.m in Sources */,
 				42AC72141E30C576007D8F57 /* ViewController+MASAdditions.m in Sources */,
 				187C730A1E30B1810072F33A /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
+				42E7CA391F50114600708235 /* DVXBarView.m in Sources */,
 				D200646C1DFF86800021E293 /* HNT_BHZ_Cell.m in Sources */,
 				42AC72101E30C576007D8F57 /* MASViewConstraint.m in Sources */,
 				D20064431DFF86800021E293 /* CJMonthDayCollectionCell.m in Sources */,
@@ -5027,6 +5063,7 @@
 				42AC72041E30C576007D8F57 /* NodeViewController.m in Sources */,
 				D20064A21DFF86800021E293 /* MyViewController.m in Sources */,
 				D200648E1DFF86800021E293 /* ZZJG_View.m in Sources */,
+				42E7CA3F1F50175500708235 /* UIColor+Hex.m in Sources */,
 				9CAB0FA21F4A6CB700F47B92 /* TZD_ListCell.m in Sources */,
 				42AC714C1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.m in Sources */,
 				42E2888F1F4695BD0002AF72 /* JCB_DetailCell_1.m in Sources */,
@@ -5042,6 +5079,7 @@
 				42AC715A1E30C393007D8F57 /* LQ_ZCL_CL_Controller.m in Sources */,
 				D20064791DFF86800021E293 /* HNT_WNSY_Model.m in Sources */,
 				D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */,
+				42E7CA401F50175500708235 /* UIView+Extension.m in Sources */,
 				9CAAAF8D1F43DA70008F43BA /* SYS_PHBViewController.m in Sources */,
 				8C2840431EB1123600440413 /* TP_CL_Controller.m in Sources */,
 				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,
@@ -5218,13 +5256,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.sggk;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.wzgl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -5241,13 +5279,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MWKKG6D7EX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.sggk;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.wzgl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

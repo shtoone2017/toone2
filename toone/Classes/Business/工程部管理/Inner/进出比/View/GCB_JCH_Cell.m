@@ -8,6 +8,7 @@
 
 #import "GCB_JCH_Cell.h"
 #import "BarChartViewController.h"
+#import "DVBarChartView.h"
 
 @interface GCB_JCH_Cell ()
 @property (weak, nonatomic) IBOutlet UIView *chartView;
@@ -19,6 +20,22 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+-(void)setchart:(NSMutableArray *)ax add:(NSMutableArray *)ay {
+    DVBarChartView *chartView = [[DVBarChartView alloc] initWithFrame:CGRectMake(0,0,Screen_w,350)];
+    chartView.yAxisViewWidth = 52;
+    NSArray *sortArray = [[NSArray alloc] initWithObjects:@"6",@"5",@"13",@"20",@"28",@"1",nil];
+    CGFloat maxValue = [[sortArray valueForKeyPath:@"@max.intValue"] integerValue];
+    NSLog(@"%zd",maxValue);
+    
+    chartView.yAxisMaxValue = maxValue;
+    chartView.numberOfYAxisElements = 5;
+    chartView.xAxisTitleArray = ay;
+    chartView.xValues = ax;
+    //    chartView.barUserInteractionEnabled = NO;
+    [chartView draw];
+    [self.chartView addSubview:chartView];
 }
 
 -(void)setDatas:(NSArray *)datas {

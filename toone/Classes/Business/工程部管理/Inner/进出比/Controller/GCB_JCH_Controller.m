@@ -57,38 +57,51 @@
                 }
             }
         }
-        NSMutableArray * bars = [NSMutableArray array];
-        for (GCB_JCH_Model * model in datas) {
-            BarModel * bar = [[BarModel alloc] init];
-            for (NSUInteger i = 0; i <= 3; i++) {
-                switch (i) {
-                    case 1:{
-                        bar.value = model.xiaohao;
-                        bar.name = model.cailiaoName;
-                        [bars addObject:bar];
-                        break;
-                    }
-                    case 2:{
-                        bar.value = model.chuchang;
-                        bar.name = model.cailiaoName;
-                        [bars addObject:bar];
-                        break;
-                    }
-                    case 3:{
-                        bar.name = model.cailiaoName;
-                        bar.value = model.jinchang;
-                        [bars addObject:bar];
-                        break;
-                    }
-                    default:
-                        break;
-                }
+        NSMutableArray * bars = [NSMutableArray array];//y
+        NSMutableArray * names = [NSMutableArray array];
+//        for (GCB_JCH_Model * model in datas) {
+//            BarModel * bar = [[BarModel alloc] init];
+//            for (NSUInteger i = 0; i <= 3; i++) {
+//                switch (i) {
+//                    case 1:{
+//                        bar.value = model.xiaohao;
+//                        bar.name = model.cailiaoName;
+//                        [bars addObject:bar];
+//                        break;
+//                    }
+//                    case 2:{
+//                        bar.value = model.chuchang;
+//                        bar.name = model.cailiaoName;
+//                        [bars addObject:bar];
+//                        break;
+//                    }
+//                    case 3:{
+//                        bar.name = model.cailiaoName;
+//                        bar.value = model.jinchang;
+//                        [bars addObject:bar];
+//                        break;
+//                    }
+//                    default:
+//                        break;
+//                }
+//            }
+//        }
+        for (GCB_JCH_Model *model in datas) {
+            [bars addObject:model.xiaohao];
+            [bars addObject:model.chuchang];
+            [bars addObject:model.jinchang];
+            [names addObject:model.cailiaoName];
+        }
+        NSMutableArray *a = [NSMutableArray array];
+        for (NSInteger j = 0; j<names.count; j++) {
+            for (NSInteger i=0; i<3; i++) {
+                [a addObject:names[j]];
             }
-            
-}
-        
+        }
         weakSelf.ChartDatas = bars;
-        weakSelf.datas = datas;
+        weakSelf.datas = a;
+//        weakSelf.ChartDatas = bars;
+//        weakSelf.datas = datas;
         [weakSelf.tableView reloadData];
         
         [Tools removeActivity];
@@ -105,7 +118,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GCB_JCH_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCH_Cell" forIndexPath:indexPath];
-    cell.datas = _ChartDatas;
+//    cell.datas = _ChartDatas;
+    [cell setchart:_ChartDatas add:_datas];
     return cell;
 }
 

@@ -18,7 +18,7 @@
 #import "YBPopupMenu.h"
 #define TITLES @[@"新增", @"编辑", @"删除",@"提交"]
 
-@interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate,UITextFieldDelegate>
+@interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate,UITextFieldDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
 @property (weak, nonatomic) IBOutlet UIScrollView *title_sc                 ;//标题scrollView
@@ -280,24 +280,61 @@
         _dearid = model.rwdId;
         _zhuant = model.zhuangtai;
         _rwdid = model.renwuno;
-        
-        CGPoint a = CGPointMake(Screen_w*0.5, rect.origin.y+220);
-        [YBPopupMenu showAtPoint:a titles:TITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
-            popupMenu.dismissOnSelected = YES;
-            popupMenu.isShowShadow = YES;
-            popupMenu.delegate = self;
-            popupMenu.offset = 10;
-            popupMenu.type = YBPopupMenuTypeDark;
-            popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
-        }];
+        if ([UserDefaultsSetting shareSetting].wzgcbReal) {
+            CGPoint a = CGPointMake(Screen_w*0.5, rect.origin.y+220);
+            [YBPopupMenu showAtPoint:a titles:TITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
+                popupMenu.dismissOnSelected = YES;
+                popupMenu.isShowShadow = YES;
+                popupMenu.delegate = self;
+                popupMenu.offset = 10;
+                popupMenu.type = YBPopupMenuTypeDark;
+                popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
+            }];
+        }
     }
     if (tableView == self.tableView3) {//完工
         model = self.datas3[indexPath.row];
-        
+        _dearid = model.rwdId;
+        if ([UserDefaultsSetting shareSetting].wzgcbReal) {
+            if ([model.zhuangtai isEqualToString:@"2"]) {//生产中
+                [self rwdAlert];
+            }else {
+                [SVProgressHUD showErrorWithStatus:@"生产中任务单才能结束"];
+            }
+        }
     }
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+-(void)rwdAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AlertViewTest"
+                                                    message:@"message"
+                                                   delegate:self
+                                          cancelButtonTitle:@"取消"
+                                          otherButtonTitles:@"确定",nil];
+    alert.title = @"提示";
+    alert.message = @"是否立即结束任务单";
+    //显示AlertView
+    [alert show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self scDeleting];
+    }
+}
+-(void)scDeleting {
+    NSString * urlString = [NSString stringWithFormat:AppJSRWD,_dearid,[UserDefaultsSetting shareSetting].userFullName];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        if ([json[@"success"] boolValue]) {
+            [SVProgressHUD showSuccessWithStatus:@"任务单结束成功"];
+            [self loadData];
+        }if(![json[@"success"] boolValue]) {
+            [SVProgressHUD showErrorWithStatus:@"任务单结束失败"];
+        }
+    } failure:^(NSError *error) {
+        [Tools tip:@"服务器异常"];
+    }];
+}
+
 #pragma mark - YBPopupMenuDelegate
 - (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu {
     if ([TITLES[index] isEqualToString:@"新增"]) {
@@ -327,7 +364,6 @@
         }
     }
 }
-
 -(void)loadSubmit {//提交
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString * urlString = [NSString stringWithFormat:AppJZL_Tj,_dearid,[UserDefaultsSetting shareSetting].userFullName];

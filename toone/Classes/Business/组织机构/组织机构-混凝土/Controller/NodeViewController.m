@@ -90,6 +90,7 @@
 -(void)initWithData {
     NodeMode *nodeMode = [[NodeMode alloc] init];
     __weak typeof(self) weakSelf = self;
+    [Tools showActivityToView:self.view];
     [nodeMode channelBlock:^(NSArray *result) {
         for (int i = 0; i < result.count; i++) {
             weakSelf.node = [[Node alloc] init];
@@ -98,7 +99,7 @@
             weakSelf.node.nodeId = [result[i] valueForKey:@"ID"];
             [weakSelf.channs addObject:weakSelf.node];
         }
-        
+        [Tools removeActivity];
         [weakSelf setUpUI];
     }];
 }

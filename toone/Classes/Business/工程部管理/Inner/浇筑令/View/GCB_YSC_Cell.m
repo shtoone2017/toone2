@@ -65,7 +65,7 @@
         _ztLabel.textColor = [UIColor orangeColor];
     }if ([model.zhuangtai isEqualToString:@"2"]) {
         _ztLabel.text = [NSString stringWithFormat:@"生产中"];
-        _ztLabel.textColor = [UIColor greenColor];
+//        _ztLabel.textColor = [UIColor greenColor];
     }if ([model.zhuangtai isEqualToString:@"3"]) {
         _ztLabel.text = [NSString stringWithFormat:@"已完成"];
     }if ([model.zhuangtai isEqualToString:@"-1"]) {
