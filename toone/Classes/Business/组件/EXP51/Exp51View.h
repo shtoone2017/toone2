@@ -15,4 +15,5 @@ typedef void(^Exp51Block_t) (ExpButtonType,id,id);
 @interface Exp51View : UIView
 @property (nonatomic,copy) Exp51Block_t expBlock;
 @property (nonatomic,copy) NSString * useLabel;
+
 @end

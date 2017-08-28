@@ -120,6 +120,7 @@
     GCB_JCH_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCH_Cell" forIndexPath:indexPath];
 //    cell.datas = _ChartDatas;
     [cell setchart:_ChartDatas add:_datas];
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
     return cell;
 }
 

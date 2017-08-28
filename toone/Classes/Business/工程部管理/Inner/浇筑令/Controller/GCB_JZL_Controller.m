@@ -187,7 +187,6 @@
 }
 #pragma mark - 网络请求
 -(void)loadData{
-    
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:AppJZL,_departId,_ztstate,startTimeStamp,endTimeStamp,_sjqd,_renwuno,self.pageNo,self.maxPageItems];
@@ -433,8 +432,9 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         if (type == ExpButtonTypeRwdText) {
-            UITextField *text  = (UITextField*)obj1;
-            _renwuno = text.text;
+//            UITextField *text  = (UITextField*)obj1;
+//            _renwuno = text.text;
+            _renwuno = obj1;
             [self loadData];
         }
         if (type == ExpButtonTypeUsePosition) {//组织

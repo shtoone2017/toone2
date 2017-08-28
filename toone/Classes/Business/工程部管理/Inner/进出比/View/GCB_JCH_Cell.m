@@ -23,14 +23,18 @@
 }
 
 -(void)setchart:(NSMutableArray *)ax add:(NSMutableArray *)ay {
-    DVBarChartView *chartView = [[DVBarChartView alloc] initWithFrame:CGRectMake(0,0,Screen_w,350)];
+    DVBarChartView *chartView = [[DVBarChartView alloc] initWithFrame:CGRectMake(0,0,Screen_w,365)];
     chartView.yAxisViewWidth = 52;
-    NSArray *sortArray = [[NSArray alloc] initWithObjects:@"6",@"5",@"13",@"20",@"28",@"1",nil];
-    CGFloat maxValue = [[sortArray valueForKeyPath:@"@max.intValue"] integerValue];
-    NSLog(@"%zd",maxValue);
-    
-    chartView.yAxisMaxValue = maxValue;
-    chartView.numberOfYAxisElements = 5;
+    NSString *max;
+    max = ax[0];
+    for (NSUInteger j = 0; j<ax.count; j++) {
+        if ([ax[j] intValue]>[max intValue]) {
+            max = ax[j];
+//            NSLog(@"=====%@",max);
+        }
+    }
+    chartView.yAxisMaxValue = [max floatValue];
+    chartView.numberOfYAxisElements = 6;
     chartView.xAxisTitleArray = ay;
     chartView.xValues = ax;
     //    chartView.barUserInteractionEnabled = NO;

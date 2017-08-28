@@ -36,7 +36,7 @@
         [self.xib.sbButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.usePositionButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.earthworkButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-        [self.xib.rwdhText addTarget:self action:@selector(clikText:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.rwdhText addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [SGAnimationType show:self animation:0];
     }
     return self;
@@ -91,11 +91,10 @@
     }
     
 }
--(void)clikText:(UITextField *)text {
-    if (text == self.xib.rwdhText) {
-        if (self.expBlock) {
-            _expBlock(ExpButtonTypeRwdText,self.xib.rwdhText.text,nil);
-        }
+-(void)textFieldDidChange :(UITextField *)theTextField{
+//    NSLog( @"text changed: %@", theTextField.text);
+    if (self.expBlock) {
+        _expBlock(ExpButtonTypeRwdText,theTextField.text,nil);
     }
 }
 

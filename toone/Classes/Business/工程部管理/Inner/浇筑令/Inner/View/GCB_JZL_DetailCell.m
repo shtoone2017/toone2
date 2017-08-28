@@ -12,6 +12,7 @@
 #import "NodeViewController.h"
 #import "JZL_JZBW_Controller.h"
 #import "GCB_JZL_Controller.h"
+#import "SGDateTools.h"
 
 @interface GCB_JZL_DetailCell ()
 @property (weak, nonatomic) IBOutlet UITextField *rwbhText;//任务编号+1
@@ -74,8 +75,10 @@
 
 //开盘时间
 - (IBAction)kpTimeClick:(UIButton *)sender {
-    
-    
+    SGymd *ymd = [[SGymd alloc] init];
+    ymd.block = ^(NSString * string){
+        [sender setTitle:string forState:UIControlStateNormal];
+    };
 }
 //浇筑部位
 - (IBAction)jzbwClick:(UIButton *)sender {
