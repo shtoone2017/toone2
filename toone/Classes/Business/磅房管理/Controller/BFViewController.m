@@ -116,7 +116,7 @@
 
 - (void)createScreenView
 {
-    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间:",@"出场时间:",@"批次:",@"车牌号:"];
+    NSArray *titleArr = @[@"所属机构:",@"磅房名称:",@"材料名称:",@"进场时间:",@"出场时间:"];
     scView = [[ScreenView alloc] initWithFrame: CGRectMake(Screen_w, 60, Screen_w, Screen_h) titleArr:titleArr type:ScreenViewTypeBF_JC];
     scView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     scView.block = ^(BOOL isShow) {
