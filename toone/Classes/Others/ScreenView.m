@@ -93,8 +93,8 @@
 {
     if (_type == ScreenViewTypeBF_JC)
     {
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",cheliangbianhao:@"",orgcode:[UserDefaultsSetting shareSetting].departId,apici:@"",gprsbianha:@"",cailiaono:@""}];
-        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_PICI:@"",LIST_CAR_NUM:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",orgcode:[UserDefaultsSetting shareSetting].departId,gprsbianha:@"",cailiaono:@""}];
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
     }
     else if (_type == ScreenViewTypeLC)
     {
@@ -205,7 +205,6 @@
                         cell.txtField.text = _nameDic[LIST_CCTime1];
                     }
                 }
-                    
             }
         }
         else if(_type == ScreenViewTypeLC)
@@ -249,64 +248,61 @@
 {
     if (_type == ScreenViewTypeBF_JC)
     {
-        if (indexPath.row < 5)
+        if (indexPath.row == 0)
         {
-            if (indexPath.row == 0)
-            {
-                //所属机构
-                NodeViewController *vc = [[NodeViewController alloc] init];
-                vc.type = NodeTypeZZJG;
-                vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
-                    [self.nameDic setObject: name forKey:LIST_ZZJG];
-                    [self.paraDic setObject:identifier forKey:orgcode];
-                };
-                [[self viewController].navigationController pushViewController:vc animated:YES];
-            }
-            else if(indexPath.row == 1)
-            {
-                //磅房设备列表
-                HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
-                vc.type = SBListTypeBF;
-                vc.callBlock = ^(NSString *name, NSString *bfID) {
-                    [self.nameDic setObject:name forKey:LIST_SB_NUM];
-                    [self.paraDic setObject:bfID forKey:gprsbianha];
-                };
-                [[self viewController].navigationController pushViewController:vc animated:YES];
-            }
-            else if (indexPath.row == 2)
-            {
-                //材料
-                NodeViewController *vc = [[NodeViewController alloc] init];
-                vc.type = NodeTypeCL;
-                vc.CLBlock = ^(NSString *name, NSString *identifier) {
-                    [self.nameDic setObject: name forKey:LIST_CL_NUM];
-                    [self.paraDic setObject:identifier forKey:cailiaono];
-                };
+            //所属机构
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                [self.nameDic setObject: name forKey:LIST_ZZJG];
+                [self.paraDic setObject:identifier forKey:orgcode];
+            };
+            [[self viewController].navigationController pushViewController:vc animated:YES];
+        }
+        else if(indexPath.row == 1)
+        {
+            //磅房设备列表
+            HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+            vc.type = SBListTypeBF;
+            vc.callBlock = ^(NSString *name, NSString *bfID) {
+                [self.nameDic setObject:name forKey:LIST_SB_NUM];
+                [self.paraDic setObject:bfID forKey:gprsbianha];
+            };
+            [[self viewController].navigationController pushViewController:vc animated:YES];
+        }
+        else if (indexPath.row == 2)
+        {
+            //材料
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeCL;
+            vc.CLBlock = ^(NSString *name, NSString *identifier) {
+                [self.nameDic setObject: name forKey:LIST_CL_NUM];
+                [self.paraDic setObject:identifier forKey:cailiaono];
+            };
+            
+            [[self viewController].navigationController pushViewController:vc animated:YES];
+        }
+        else if (indexPath.row == 3 || indexPath.row == 4)
+        {
+            LabelTextFieldCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            BFViewController *vc = (BFViewController *)[self viewController];
+            vc.block = ^{
+                if (indexPath.row == 3)
+                {
+                    [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian1];
+                    
+                    NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
+                    [self.paraDic setObject:startTime forKey:LIST_JCTime1];
+                }
+                else
+                {
+                    [self.nameDic setObject:cell.txtField.text forKey:chuchangshijian1];
+                    NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
+                    [self.paraDic setObject:endTime forKey:LIST_CCTime1];
+                }
                 
-                [[self viewController].navigationController pushViewController:vc animated:YES];
-            }
-            else if (indexPath.row == 3 || indexPath.row == 4)
-            {
-                LabelTextFieldCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-                BFViewController *vc = (BFViewController *)[self viewController];
-                vc.block = ^{
-                    if (indexPath.row == 3)
-                    {
-                        [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian1];
-                        
-                        NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
-                        [self.paraDic setObject:startTime forKey:LIST_JCTime1];
-                    }
-                    else
-                    {
-                        [self.nameDic setObject:cell.txtField.text forKey:chuchangshijian1];
-                        NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
-                        [self.paraDic setObject:endTime forKey:LIST_CCTime1];
-                    }
-                   
-                };
-                [vc calendarWithTimeString:nil obj:cell.txtField];
-            }
+            };
+            [vc calendarWithTimeString:nil obj:cell.txtField];
         }
     }
     else if(_type == ScreenViewTypeLC)
