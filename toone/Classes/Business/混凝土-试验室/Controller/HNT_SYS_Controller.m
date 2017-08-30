@@ -20,12 +20,15 @@
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
 
 @property (strong, nonatomic)  BBFlashCtntLabel *departName_Label2;
+@property (nonatomic,copy) NSString * departId;//组织机构id
+@property (nonatomic,copy)NSString *depName;//
 @end
 
 @implementation HNT_SYS_Controller
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
+//    _depName = @"";
+    NSString * zjjg = FormatString(@"组织机构 : ", _depName?:[UserDefaultsSetting shareSetting].departName);
     self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
     self.departName_Label.textColor = [UIColor whiteColor];
     self.departName_Label.font = [UIFont systemFontOfSize:12.0];
@@ -36,6 +39,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self addPanGestureRecognizer];
     [self loadUI];
+    _departId = @"";
 //    [self loadData];
 }
 -(void)dealloc{
@@ -62,7 +66,12 @@
 -(void)loadData{
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
+    NSString * userGroupId;
+    if (_departId) {
+        userGroupId = _departId;
+    }else {
+        userGroupId = [UserDefaultsSetting shareSetting].departId;
+    }
     NSString * urlString = [NSString stringWithFormat:sysHome_3,userGroupId,startTimeStamp,endTimeStamp];
 //    NSLog(@"GET 地址 \n %@",urlString);
     __weak __typeof(self)  weakSelf = self;
@@ -132,6 +141,7 @@
 }
 
 - (IBAction)searchButtonClick:(UIButton *)sender {
+    __weak __typeof(self)  weakSelf = self;
     switch (sender.tag) {
         case 1:{
             sender.enabled = NO;
@@ -148,7 +158,6 @@
             //2.
             Exp1View * e = [[Exp1View alloc] init];
             e.frame = CGRectMake(0, 64+35, Screen_w, 150);
-            __weak __typeof(self)  weakSelf = self;
             e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
                 NSLog(@"%d",type);
                 if (type == ExpButtonTypeCancel) {
@@ -181,10 +190,17 @@
         }
         default:
             FuncLog;//组织机构代码块
-            [self performSegueWithIdentifier:@"HNT_SYS_Controller2" sender:nil];
-            
-            NSNumber *number = [NSNumber numberWithInt:3];
-            [UserDefaultsSetting shareSetting].funtype = number;
+//            [self performSegueWithIdentifier:@"HNT_SYS_Controller2" sender:nil];
+//            NSNumber *number = [NSNumber numberWithInt:3];
+//            [UserDefaultsSetting shareSetting].funtype = number;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.departId = identifier;
+                weakSelf.depName = name;
+                [self loadData];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
             break;
     }
 }
