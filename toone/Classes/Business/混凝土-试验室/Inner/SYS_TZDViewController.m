@@ -234,9 +234,10 @@
         }
         else
         {
-            //任务
+//            //任务
             GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
             vc.detailId = model.renwuNo;
+            vc.biaoshi = @"1";
             [self.navigationController pushViewController:vc animated:YES];
         }
     };

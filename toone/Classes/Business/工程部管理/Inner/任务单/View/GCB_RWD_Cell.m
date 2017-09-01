@@ -78,6 +78,7 @@
 - (IBAction)renwuClick:(UIButton *)sender {//任务单
     GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
     vc.detailId = [NSString stringWithFormat:@"%@",self.model.detailId];
+    vc.biaoshi = @"0";
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 

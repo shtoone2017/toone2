@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="345" height="198"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DkP-OW-70e" id="6Fq-aL-TFo">
-                <rect key="frame" x="0.0" y="0.0" width="345" height="197.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="345" height="198"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所属机构 :   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO7-0s-Dxt">
@@ -123,7 +123,7 @@
                         <rect key="frame" x="105" y="105" width="225" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="China NO.1">
-                            <color key="titleColor" red="0.19150522351264954" green="0.47823673486709595" blue="0.92690789699554443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
                             <action selector="btnAction:" destination="DkP-OW-70e" eventType="touchUpInside" id="t9H-XK-jFJ"/>
@@ -203,7 +203,7 @@
                 <outlet property="TZD_List_TZD_NUM" destination="kOD-hS-srN" id="Jcz-5s-jTr"/>
                 <outlet property="TZD_List_ZZJG" destination="Y2a-Zh-QUL" id="Zy5-oi-TRi"/>
             </connections>
-            <point key="canvasLocation" x="-187.5" y="-57"/>
+            <point key="canvasLocation" x="-15" y="-57"/>
         </tableViewCell>
     </objects>
 </document>

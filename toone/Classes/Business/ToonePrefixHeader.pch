@@ -59,8 +59,8 @@
 
 //云部署地址
 
-#define baseUrl      @"http://192.168.11.104:8082/gxzjzqms/"
-//#define baseUrl         @"http://192.168.11.112:8080/jeecg/"
+//#define baseUrl      @"http://192.168.11.110:8082/gxzjzqms/"
+#define baseUrl         @"http://192.168.11.100:8080/jeecg/"
 /*
  3-----------------------
  */
@@ -102,7 +102,7 @@
 //出场过磅详情
 #define AppCCB_Detail_2 FormatString(baseUrl,@"AppWZYCLChuChangGBCountInterfaceController.do?AppWZYCLChuChangGBDetail&id=%@&guobangleibie=%@&cailiaono=%@&gongyingshangdanweibianma=%@&pici=%@&shebeibianhao=%@&jcmin=%@&jcmax=%@&ccmin=%@&ccmax=%@")
 //浇筑令详情(任务单详情)
-#define AppJZL_Detail FormatString(baseUrl,@"appWZproject.do?AppTaskListDetail&id=%@")
+#define AppJZL_Detail FormatString(baseUrl,@"appWZproject.do?AppTaskListDetail&id=%@&biaoshi=%@")
 //任务单编辑
 #define AppJZL_BJDetail FormatString(baseUrl,@"appWZproject.do?AppRenwudanSkip&id=%@")
 //任务单提交

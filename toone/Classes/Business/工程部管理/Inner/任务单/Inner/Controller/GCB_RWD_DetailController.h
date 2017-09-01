@@ -10,5 +10,5 @@
 
 @interface GCB_RWD_DetailController : MyViewController
 @property (nonatomic,copy)NSString *detailId;
-
+@property (nonatomic,copy)NSString *biaoshi;
 @end

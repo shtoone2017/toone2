@@ -250,21 +250,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HNT_SYS_InnerController *vc = [[HNT_SYS_InnerController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
     
-//    BFListModel *model = self.dataArr[indexPath.row];
-//    BFDetailViewController *vc = [[BFDetailViewController alloc] init];
-//    vc.identifier = [NSString stringWithFormat:@"%@",model.id];
-//    if (_currentSegIndex == 0)
-//    {
-//        vc.urlStr = [NSString stringWithFormat:@"%@AppGB.do?JinChangGBDetail",baseUrl];
-//    }
-//    else
-//    {
-//        vc.urlStr = [NSString stringWithFormat:@"%@AppGB.do?ChuChangGBDetail",baseUrl];
-//    }
-//    [self.navigationController pushViewController:vc animated:YES];
+    BFListModel *model = self.dataArr[indexPath.row];
+    BFDetailViewController *vc = [[BFDetailViewController alloc] init];
+    vc.identifier = [NSString stringWithFormat:@"%@",model.id];
+    if (_currentSegIndex == 0)
+    {
+        vc.urlStr = [NSString stringWithFormat:@"%@AppGB.do?JinChangGBDetail",baseUrl];
+    }
+    else
+    {
+        vc.urlStr = [NSString stringWithFormat:@"%@AppGB.do?ChuChangGBDetail",baseUrl];
+    }
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)seg

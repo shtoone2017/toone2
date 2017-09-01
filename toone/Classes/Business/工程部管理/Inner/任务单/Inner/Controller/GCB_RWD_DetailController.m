@@ -46,8 +46,7 @@
 -(void)loadData{
     //添加指示器
     [Tools showActivityToView:self.view];
-    
-    NSString * urlString = [NSString stringWithFormat:AppJZL_Detail,_detailId];
+    NSString * urlString = [NSString stringWithFormat:AppJZL_Detail,_detailId,_biaoshi];
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         

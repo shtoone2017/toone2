@@ -38,5 +38,6 @@
 
 @property(nonatomic,strong)NSString * sjqd;
 
+@property(nonatomic,strong)NSString * id;
 
 @end

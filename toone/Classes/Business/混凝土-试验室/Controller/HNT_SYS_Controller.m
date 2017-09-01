@@ -39,7 +39,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self addPanGestureRecognizer];
     [self loadUI];
-    _departId = @"";
+//    _departId = @"";
 //    [self loadData];
 }
 -(void)dealloc{
