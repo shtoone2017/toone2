@@ -38,19 +38,20 @@
 @property (nonatomic, copy) NSString *biaoshiid;
 
 @property (nonatomic, copy) NSString *baseUrlString;
-@property (nonatomic, assign) int wdIndex;//标记温度Label
+@property (nonatomic, assign) NSInteger wdIndex;//标记温度Label
+@property (nonatomic, copy) NSString *testLabel;
 @end
 @implementation TP_NY_Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.wdIndex = 2;
+    self.wdIndex = 1;
     self.pageNo = @"1";
     self.maxPageItems = @"10";
     self.shebeibianhao = @"";
     self.biaoshiid = @"";
     _baseUrlString = TP_NYSD;
-    
+    self.testLabel = @"速度";
     [self loadUI];
     [self loadListTableView];
     [self reloadData];
@@ -65,12 +66,12 @@
     __weak __typeof(self) weakSelf = self;
     self.ListTableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
         weakSelf.pageNo = @"1";
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"%@查询列表--第%@页--",self.testLabel,weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     self.ListTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.pageNo = FormatInt([weakSelf.pageNo intValue]+1);
-        weakSelf.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
+        weakSelf.listLabel.text = [NSString stringWithFormat:@"%@查询列表--第%@页--",_testLabel,weakSelf.pageNo];
         [weakSelf reloadData];
     }];
     [self.ListTableView registerNib:[UINib nibWithNibName:@"TP_NYSDList_Cell" bundle:nil] forCellReuseIdentifier:@"TP_NYSDList_Cell"];
@@ -85,14 +86,14 @@
     self.sjLabel.numberOfLines = 2;
     self.sjLabel.text = [NSString stringWithFormat:@"%@开始~%@结束",self.startTime,self.endTime];
     
-//    MyTPSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MyTPSegmentedControl" owner:nil options:nil][0];
-//    seg.frame = CGRectMake(0, 0, 220, 24);
-//    self.navigationItem.titleView = seg;
+    MyTPSegmentedControl * seg = [[NSBundle mainBundle] loadNibNamed:@"MyTPSegmentedControl" owner:nil options:nil][0];
+    seg.frame = CGRectMake(0, 0, 220, 24);
+    self.navigationItem.titleView = seg;
     self.navigationItem.title = @"碾压速度";
     __weak typeof(self)  weakSelf = self;
-//    seg.segBlock = ^(int tag){
-//        switch (tag) {
-//            case 1:{//速度
+    seg.segBlock = ^(int tag){
+        switch (tag) {
+            case 1:{//速度
                 self.wdIndex = 1;
                 self.pageNo = @"1";
                 self.listLabel.text = [NSString stringWithFormat:@"速度查询列表--第%@页--",weakSelf.pageNo];
@@ -104,25 +105,25 @@
 ////                weakSelf.urlString = urlString;
                     _baseUrlString = TP_NYSD;
                 [self reloadData];
-//                break;
-//            }
-//            case 2:{//温度
-//                self.wdIndex = 2;
-//                self.pageNo = @"1";
-//                self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
-//                self.chartLabel.text = @"温度走势图(℃)";
+                break;
+            }
+            case 2:{//温度
+                self.wdIndex = 2;
+                self.pageNo = @"1";
+                self.listLabel.text = [NSString stringWithFormat:@"温度查询列表--第%@页--",weakSelf.pageNo];
+                self.chartLabel.text = @"温度走势图(℃)";
 //                NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
 //                NSString *startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
 //                NSString *endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
 //                NSString *urlString = [NSString stringWithFormat:TP_NYWD_List,userGroupId,weakSelf.shebeibianhao,startTimeStamp,endTimeStamp,weakSelf.pageNo,self.maxPageItems];
 //                weakSelf.urlString = urlString;
-//                _baseUrlString = TP_NYSD;
-//                [self reloadData];
-//                break;
-//            }
-//        }
-//    };
-//    [seg switchToNY];
+                _baseUrlString = TP_ZYWD;
+                [self reloadData];
+                break;
+            }
+        }
+    };
+    [seg switchToNY];
 }
 #pragma mark - 网络请求
 -(void)reloadData {

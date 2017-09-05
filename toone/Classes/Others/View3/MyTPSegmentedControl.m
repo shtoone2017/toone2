@@ -27,7 +27,7 @@
 
 -(void)switchToNY{
     [self.button1 setTitle:@"碾压速度" forState:UIControlStateNormal];
-    [self.button2 setTitle:@"碾压温度" forState:UIControlStateNormal];
+    [self.button2 setTitle:@"终压温度" forState:UIControlStateNormal];
 }
 -(void)switchToTP{
     [self.button1 setTitle:@"摊铺速度" forState:UIControlStateNormal];
