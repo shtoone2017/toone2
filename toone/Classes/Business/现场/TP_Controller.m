@@ -30,7 +30,7 @@
     [super viewWillAppear:animated];
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
     _clView.hidden = YES;
-    _dwView.hidden = YES;
+//    _dwView.hidden = YES;
 //    _zyView.hidden = YES;
 //
 //    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
