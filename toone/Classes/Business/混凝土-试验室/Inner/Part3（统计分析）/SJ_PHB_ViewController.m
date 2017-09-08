@@ -69,6 +69,7 @@
     //创建列表
     _tbView = [[TPKeyboardAvoidingTableView alloc] initWithFrame:CGRectMake(0,70,Screen_w,Screen_h-70) style:UITableViewStyleGrouped];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _tbView.sectionFooterHeight = 0.00001;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
     _tbView.delegate = self;

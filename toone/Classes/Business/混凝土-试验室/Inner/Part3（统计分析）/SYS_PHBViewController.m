@@ -63,9 +63,9 @@
     
     UIButton * navigationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    navigationBtn.backgroundColor = [UIColor blackColor];
-    navigationBtn.frame = CGRectMake(Screen_w-50, 0, 50, 30);
+    navigationBtn.frame = CGRectMake(Screen_w-80, 0, 80, 30);
     [navigationBtn setImage:[UIImage imageNamed:@"ic_format_list_numbered_white_24dp"] forState:UIControlStateNormal];
-    [navigationBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 15, 5, 15)];
+    [navigationBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 45, 5, 15)];
     [navigationBtn addTarget:self action:@selector(controlScreenView) forControlEvents:UIControlEventTouchUpInside];
     [navigationView addSubview:navigationBtn];
     
