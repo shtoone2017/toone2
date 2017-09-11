@@ -60,12 +60,15 @@
     self.navigationItem.titleView = seg;
     
     HNT_YLSY_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_YLSY_Controller"];
+    ylVC.userGroupId = self.userGroupId;
     [self addChildViewController:ylVC];
     
     HNT_WNSY_Controller *wnVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_WNSY_Controller"];
+    wnVC.userGroupId = self.userGroupId;
     [self addChildViewController:wnVC];
     
     HNT_TJFX_Controller *tjVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_TJFX_Controller"];
+    tjVC.userGroupId = self.userGroupId;
     [self addChildViewController:tjVC];
     
     SYS_PHBViewController *phbVC = [[SYS_PHBViewController alloc] init];

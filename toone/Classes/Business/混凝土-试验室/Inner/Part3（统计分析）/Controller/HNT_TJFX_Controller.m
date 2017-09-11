@@ -56,6 +56,7 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = self.userGroupId;
+//    NSString *userGroupId= [UserDefaultsSetting shareSetting].departId;
     NSString * urlString = [NSString stringWithFormat:sysCountAnalyze_3,userGroupId,startTimeStamp,endTimeStamp];
     __weak __typeof(self)  weakSelf = self;
     

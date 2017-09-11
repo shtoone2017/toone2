@@ -112,6 +112,7 @@
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
+    [self.view bringSubviewToFront:scView];
 }
 
 - (void)createScreenView
