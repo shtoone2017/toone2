@@ -42,21 +42,35 @@
 
 -(void)setModel:(GCB_RWD_Model *)model {
     _model = model;
-    NSString *jin = [NSString stringWithFormat:@"%@",model.baifenbi];
-    progress.progressValue = [NSString stringWithFormat:@"%.2f",[jin doubleValue]*0.01];
-    progress.progressColor = [UIColor orangeColor];
-    
-    _baifenbiLabel.text = [NSString stringWithFormat:@"%@%%",jin];
+    if (model.baifenbi) {
+
+        NSString *jin = [NSString stringWithFormat:@"%@",model.baifenbi];
+        progress.progressValue = [NSString stringWithFormat:@"%.2f",[jin doubleValue]*0.01];
+        progress.progressColor = [UIColor orangeColor];
+        _baifenbiLabel.text = [NSString stringWithFormat:@"%@%%",jin];
+    }
     _kaipanriqiLabel.text = model.kaipanriqi;
     _gcmcLabel.text = model.gcmc;
     _jzbwLabel.text = model.jzbw;
     _shuinibiaohaoLabel.text = model.shuinibiaohao;
     [_renwuBut setTitle:model.renwuNo forState:UIControlStateNormal];
     [_sgphbBut setTitle:model.sgphbNo forState:UIControlStateNormal];
-    _shejifangliangLabel.text = [NSString stringWithFormat:@"%@",model.shejifangliang];
-    _jihuafangliangLabel.text = model.jihuafangliang;
-    _shijifangliangLabel.text = [NSString stringWithFormat:@"%@",model.shijifangliang];
-    _jiechaoLabel.text = [NSString stringWithFormat:@"%@",model.jiechao];
+    if (![model.shejifangliang isKindOfClass:[NSNull class]] && model.shejifangliang) {
+        
+        _shejifangliangLabel.text = [NSString stringWithFormat:@"%@",model.shejifangliang];
+    }
+    if (![model.jihuafangliang isKindOfClass:[NSNull class]] && model.jihuafangliang) {
+        
+        _jihuafangliangLabel.text = model.jihuafangliang;
+    }
+    if (![model.shijifangliang isKindOfClass:[NSNull class]] && model.shijifangliang) {
+        
+        _shijifangliangLabel.text = [NSString stringWithFormat:@"%@",model.shijifangliang];
+    }
+    if (![model.jiechao isKindOfClass:[NSNull class]] && model.jiechao) {
+        
+        _jiechaoLabel.text = [NSString stringWithFormat:@"%@",model.jiechao];
+    }
     
     if ([model.zhuangtai isEqualToString:@"0"]) {
         _zhutLabel.text = [NSString stringWithFormat:@"未配料"];

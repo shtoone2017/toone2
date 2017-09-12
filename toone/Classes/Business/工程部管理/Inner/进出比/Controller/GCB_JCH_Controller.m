@@ -12,6 +12,7 @@
 #import "GCB_JCH_ChartModel.h"
 #import "BarModel.h"
 #import "NodeViewController.h"
+#import "GCB_JCH_1Cell.h"
 
 @interface GCB_JCH_Controller ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,6 +23,7 @@
 @property (nonatomic,strong) NSMutableArray * ChartDatas;
 @property (nonatomic,copy) NSString * departId;//组织机构id
 
+@property (nonatomic,strong) NSMutableArray * data;
 @end
 @implementation GCB_JCH_Controller
 
@@ -38,6 +40,7 @@
     self.view.backgroundColor = [UIColor snowColor];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GCB_JCH_Cell" bundle:nil] forCellReuseIdentifier:@"GCB_JCH_Cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"GCB_JCH_1Cell" bundle:nil] forCellReuseIdentifier:@"GCB_JCH_1Cell"];
 }
 #pragma mark - 网络请求
 -(void)loadData {
@@ -100,6 +103,7 @@
         }
         weakSelf.ChartDatas = bars;
         weakSelf.datas = a;
+        weakSelf.data = datas;
 //        weakSelf.ChartDatas = bars;
 //        weakSelf.datas = datas;
         [weakSelf.tableView reloadData];
@@ -111,17 +115,32 @@
 }
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.data.count+1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 400;
+    if (indexPath.row == 0) {
+        return 468;
+    }else{
+        return 20;
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GCB_JCH_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCH_Cell" forIndexPath:indexPath];
-//    cell.datas = _ChartDatas;
-    [cell setchart:_ChartDatas add:_datas];
-    cell.selectionStyle =UITableViewCellSelectionStyleNone;
-    return cell;
+    if (indexPath.row == 0) {
+        GCB_JCH_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCH_Cell" forIndexPath:indexPath];
+        //    cell.datas = _ChartDatas;
+        [cell setchart:_ChartDatas add:_datas];
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        return cell;
+        
+    }else{
+        
+        GCB_JCH_1Cell * cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCH_1Cell"];
+        GCB_JCH_Model * data = self.data[indexPath.row-1];
+        cell.model = data;
+        cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+        return cell;
+    }
+    return nil;
 }
 
 - (IBAction)searchButtonClick:(UIButton *)sender {

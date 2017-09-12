@@ -14,7 +14,6 @@
 #import "GCB_YSC_Cell.h"
 #import "GCB_JZL_Model.h"
 #import "GCB_JZL_DetailController.h"
-#import "GCB_JZL_BkView.h"
 #import "YBPopupMenu.h"
 #define TITLES @[@"新增", @"编辑", @"删除",@"提交"]
 

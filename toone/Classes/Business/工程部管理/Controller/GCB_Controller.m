@@ -31,8 +31,10 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSString * zjjg = FormatString(@"分部分项 : ",_parentName);
-    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+    if (_parentName) {
+        NSString * zjjg = FormatString(@"分部分项 : ",_parentName);
+        self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+    }
     self.departName_Label.textColor = [UIColor whiteColor];
     self.departName_Label.font = [UIFont systemFontOfSize:12.0];
     self.departName_Label.speed = BBFlashCtntSpeedSlow;

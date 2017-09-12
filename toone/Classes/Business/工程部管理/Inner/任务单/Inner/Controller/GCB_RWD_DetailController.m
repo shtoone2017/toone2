@@ -98,14 +98,14 @@
     if (section == 1) {
         return self.zxData.count+1;
     }
-    if (section == 2) {
+    if (section == 3) {//转移
         if (self.xgData.count == 0) {
             return 1;
         }else {
             return self.xgData.count+1;
         }
     }
-    if (section == 3) {
+    if (section == 2) {
 //        if (self.zyData.count == 0) {
 //            return 1;
 //        }else {
@@ -118,8 +118,8 @@
     switch (section) {
         case 0:return @"基础信息";
         case 1:return @"执行情况";
-        case 2:return @"修改记录";
-        case 3:return @"转移记录";
+        case 3:return @"修改记录";
+        case 2:return @"转移记录";
     }
     return nil;
 }
@@ -130,10 +130,10 @@
     if (indexPath.section == 1) {
         return 20;
     }
-    if (indexPath.section == 2) {
+    if (indexPath.section == 3) {
         return 20;
     }
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         return 140.0f;
     }
     return 0.0;
@@ -151,21 +151,22 @@
         if (indexPath.row > 0) {
             GCB_RWD_DetailModel * data = indexPath.row ==0 ? nil :self.zxData[indexPath.row-1];
             cell.color = [UIColor blackColor];
+            cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
             cell.model= data;
         }
         return cell;
     }
-    if (indexPath.section == 2) {
+    if (indexPath.section == 3) {
         GCB_RWD_Detail_XGCell * cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_RWD_Detail_XGCell"];
         if (indexPath.row > 0) {
             GCB_RWD_DetailModel * data = indexPath.row ==0 ? nil :self.xgData[indexPath.row-1];
-            //cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+            cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
             cell.color = [UIColor blackColor];
             cell.model= data;
         }
         return cell;
     }
-    if (indexPath.section == 3) {//转移
+    if (indexPath.section == 2) {//修改
         GCB_RWD_Detail_ZYCell * cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_RWD_Detail_ZYCell"];
 //        for (NSInteger i=0; i<=_zyData.count; i++) {
 //            GCB_RWD_DetailModel * data = indexPath.row ==0 ? nil :self.zyData[indexPath.row];
