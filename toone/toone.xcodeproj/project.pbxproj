@@ -344,6 +344,7 @@
 		9CAB0FA21F4A6CB700F47B92 /* TZD_ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA01F4A6CB700F47B92 /* TZD_ListCell.m */; };
 		9CAB0FA31F4A6CB700F47B92 /* TZD_ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */; };
 		9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */; };
+		9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */; };
 		9CD8DDAB1F416FF100F67C8B /* LCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAA1F416FF100F67C8B /* LCListModel.m */; };
 		9CD8DDAF1F41725E00F67C8B /* LCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAD1F41725E00F67C8B /* LCListCell.m */; };
 		9CD8DDB01F41725E00F67C8B /* LCListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAE1F41725E00F67C8B /* LCListCell.xib */; };
@@ -1146,6 +1147,8 @@
 		9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TZD_ListCell.xib; sourceTree = "<group>"; };
 		9CAB0FA51F4A704900F47B92 /* TZD_ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_ListModel.h; sourceTree = "<group>"; };
 		9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_ListModel.m; sourceTree = "<group>"; };
+		9CCBDBD41F67818700A86267 /* SYS_TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_TZD_DetailViewController.h; sourceTree = "<group>"; };
+		9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_TZD_DetailViewController.m; sourceTree = "<group>"; };
 		9CD8DDA91F416FF100F67C8B /* LCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListModel.h; path = "Classes/Business/磅房管理/Controller/LCListModel.h"; sourceTree = SOURCE_ROOT; };
 		9CD8DDAA1F416FF100F67C8B /* LCListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCListModel.m; path = "Classes/Business/磅房管理/Controller/LCListModel.m"; sourceTree = SOURCE_ROOT; };
 		9CD8DDAC1F41725E00F67C8B /* LCListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListCell.h; path = "Classes/Business/磅房管理/Controller/LCListCell.h"; sourceTree = SOURCE_ROOT; };
@@ -3437,6 +3440,8 @@
 				9CAB0F9E1F4A6C8700F47B92 /* view */,
 				9CAB0F9B1F4A696D00F47B92 /* SYS_TZDViewController.h */,
 				9CAB0F9C1F4A696D00F47B92 /* SYS_TZDViewController.m */,
+				9CCBDBD41F67818700A86267 /* SYS_TZD_DetailViewController.h */,
+				9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */,
 				9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */,
 				9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */,
 			);
@@ -4737,6 +4742,7 @@
 				D200645D1DFF86800021E293 /* AppDelegate.m in Sources */,
 				9C05F07D1F3BFC4400BF4627 /* JSONHTTPClient.m in Sources */,
 				D20065191DFF86B30021E293 /* XYMarkerView.swift in Sources */,
+				9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */,
 				42AC71BB1E30C423007D8F57 /* SGChartZBX.m in Sources */,
 				42AC71541E30C393007D8F57 /* TotalTableController.m in Sources */,
 				D246B2A81E00DEBA00E83159 /* HNT_CBCZ_Cell.m in Sources */,

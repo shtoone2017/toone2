@@ -112,6 +112,7 @@
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
+    [self.view bringSubviewToFront:scView];
 }
 
 - (void)createScreenView
@@ -232,6 +233,7 @@
             cell.JC_SJ.text = model.jinchangshijian;
             cell.JC_CL_Name.text = model.cailiaoName;
             cell.JC_GYS_Name.text = model.gongyingshangName;
+            cell.JC_JZ.text = model.jingzhong;
         }
         else
         {

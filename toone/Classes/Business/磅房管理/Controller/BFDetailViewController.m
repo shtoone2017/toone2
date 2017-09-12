@@ -60,7 +60,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -69,9 +69,6 @@
     {
         case 0:
             return 1;
-            break;
-        case 2:
-            return 0;
             break;
         default:
             return 1;
@@ -136,11 +133,7 @@
         }
         return cell;
     }
-    else
-    {
-        return nil;
-    }
-    
+    return nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -155,7 +148,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSArray *titleArr = @[@"基本信息",@"材料明细",@"进出场情况"];
+    //@"进出场情况"
+    NSArray *titleArr = @[@"基本信息",@"材料明细"];
     UIView *headerView = [UIView new];
     UILabel *titleLab = [UILabel new];
     titleLab.frame = CGRectMake(25, 10, 150, 25);

@@ -267,6 +267,7 @@
 -(void)loadData{
 
     NSString * userGroupId = self.userGroupId;
+//    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:hntkangya_9,userGroupId,_isQualified,startTimeStamp,endTimeStamp,_pageNo,_shebeibianhao,_isReal,_maxPageItems,_testId];
