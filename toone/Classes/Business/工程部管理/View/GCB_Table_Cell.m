@@ -40,8 +40,13 @@
     progress.progressColor = [UIColor orangeColor];
     
     _bxLabl.text = [NSString stringWithFormat:@"%@",model.uesid];
-    _sjLabel.text = [NSString stringWithFormat:@"%@",model.shejifangliang];
-    _ssjLabel.text = [NSString stringWithFormat:@"%@",model.shijifangliang];
+    if (![model.shejifangliang isKindOfClass:[NSNull class]] && model.shejifangliang) {
+        _sjLabel.text = [NSString stringWithFormat:@"%@",model.shejifangliang];
+    }
+    if (![model.shijifangliang isKindOfClass:[NSNull class]] && model.shejifangliang) {
+        
+        _ssjLabel.text = [NSString stringWithFormat:@"%@",model.shijifangliang];
+    }
     if ([[model.projectType stringValue] isEqual: @"0"]) {
         _gcLabel.text = [NSString stringWithFormat:@"单位工程"];
     }if ([model.projectType isEqual:@"1"]) {
