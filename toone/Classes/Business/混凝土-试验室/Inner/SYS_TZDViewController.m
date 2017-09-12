@@ -13,6 +13,8 @@
 #import "SJ_PHB_ViewController.h"
 #import "TZD_DetailViewController.h"
 #import "GCB_RWD_DetailController.h"
+#import "SYS_TZD_DetailViewController.h"
+
 
 @interface SYS_TZDViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -202,7 +204,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WS(weakSelf);
+    //WS(weakSelf);
     static NSString *cellID = @"TZD_ListCell1";
     TZD_ListModel *model = [self.dataArr objectAtIndex:indexPath.row];
     TZD_ListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
@@ -216,35 +218,42 @@
     [cell.TZD_List_SJ_NUM setTitle:model.llphbNo forState:UIControlStateNormal];
     cell.TZD_List_SY_Date.text = model.createDateTime;
     cell.TZD_List_JZBW.text = model.jzbw;
-    cell.block = ^(NSInteger tag)
-    {
-        if (tag == 100)
-        {
-            //通知单
-            TZD_DetailViewController *vc = [[TZD_DetailViewController alloc] init];
-            vc.detailNum = model.sgphbNo;
-            [weakSelf.navigationController pushViewController:vc animated:YES];
-        }
-        else if (tag == 101)
-        {
-            //设计
-            SJ_PHB_ViewController *vc = [[SJ_PHB_ViewController alloc] init];
-            vc.detailNum = model.llphbNo;
-            [weakSelf.navigationController pushViewController:vc animated:YES];
-        }
-        else
-        {
-//            //任务
-            GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
-            vc.detailId = model.renwuNo;
-            vc.biaoshi = @"1";
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    };
+//    cell.block = ^(NSInteger tag)
+//    {
+//        if (tag == 100)
+//        {
+//            //通知单
+//            TZD_DetailViewController *vc = [[TZD_DetailViewController alloc] init];
+//            vc.detailNum = model.sgphbNo;
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+//        }
+//        else if (tag == 101)
+//        {
+//            //设计
+//            SJ_PHB_ViewController *vc = [[SJ_PHB_ViewController alloc] init];
+//            vc.detailNum = model.llphbNo;
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+//        }
+//        else
+//        {
+////            //任务
+//            GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
+//            vc.detailId = model.renwuNo;
+//            vc.biaoshi = @"1";
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
+//    };
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TZD_ListModel *model = _dataArr[indexPath.row];
+    SYS_TZD_DetailViewController *vc = [[SYS_TZD_DetailViewController alloc] init];
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

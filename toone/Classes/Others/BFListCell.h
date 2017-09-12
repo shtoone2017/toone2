@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *JC_CL_Name;
 @property (weak, nonatomic) IBOutlet UILabel *JC_GYS_Name;
 @property (weak, nonatomic) IBOutlet UILabel *JC_SJ;
+@property (weak, nonatomic) IBOutlet UILabel *JC_JZ;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *CC_BF_Name;
