@@ -229,8 +229,6 @@
 		42E288D31F4AE5480002AF72 /* GCB_JZL_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288D21F4AE5480002AF72 /* GCB_JZL_DetailModel.m */; };
 		42E288D61F4AE6800002AF72 /* GCB_JZL_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288D51F4AE6800002AF72 /* GCB_JZL_DetailController.m */; };
 		42E288D91F4BCF110002AF72 /* MyInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E288D81F4BCF110002AF72 /* MyInputController.m */; };
-		42E7CA091F4D7A1E00708235 /* GCB_JZL_BkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA081F4D7A1E00708235 /* GCB_JZL_BkView.m */; };
-		42E7CA0B1F4D7A3800708235 /* GCB_JZL_BkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E7CA0A1F4D7A3800708235 /* GCB_JZL_BkView.xib */; };
 		42E7CA1D1F4E6BBC00708235 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */; };
 		42E7CA1E1F4E6BBC00708235 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA1A1F4E6BBC00708235 /* YBPopupMenuPath.m */; };
 		42E7CA1F1F4E6BBC00708235 /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA1C1F4E6BBC00708235 /* YBRectConst.m */; };
@@ -942,9 +940,6 @@
 		42E288D51F4AE6800002AF72 /* GCB_JZL_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JZL_DetailController.m; sourceTree = "<group>"; };
 		42E288D71F4BCF110002AF72 /* MyInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyInputController.h; path = View/MyInputController.h; sourceTree = "<group>"; };
 		42E288D81F4BCF110002AF72 /* MyInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyInputController.m; path = View/MyInputController.m; sourceTree = "<group>"; };
-		42E7CA071F4D7A1E00708235 /* GCB_JZL_BkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JZL_BkView.h; sourceTree = "<group>"; };
-		42E7CA081F4D7A1E00708235 /* GCB_JZL_BkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JZL_BkView.m; sourceTree = "<group>"; };
-		42E7CA0A1F4D7A3800708235 /* GCB_JZL_BkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCB_JZL_BkView.xib; sourceTree = "<group>"; };
 		42E7CA171F4E6BBC00708235 /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
 		42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
 		42E7CA191F4E6BBC00708235 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
@@ -2554,9 +2549,6 @@
 				42E2889B1F4963660002AF72 /* GCB_YSC_Cell.h */,
 				42E2889C1F4963660002AF72 /* GCB_YSC_Cell.m */,
 				42E2889D1F4963660002AF72 /* GCB_YSC_Cell.xib */,
-				42E7CA071F4D7A1E00708235 /* GCB_JZL_BkView.h */,
-				42E7CA081F4D7A1E00708235 /* GCB_JZL_BkView.m */,
-				42E7CA0A1F4D7A3800708235 /* GCB_JZL_BkView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4626,7 +4618,6 @@
 				D20065A41DFFE12D0021E293 /* Exp5_Xib_View.xib in Resources */,
 				D200648F1DFF86800021E293 /* ZZJG_View.xib in Resources */,
 				D20064921DFF86800021E293 /* Exp1_Xib_View.xib in Resources */,
-				42E7CA0B1F4D7A3800708235 /* GCB_JZL_BkView.xib in Resources */,
 				42E288D01F4AD9A80002AF72 /* GCB_JZL_DetailCell.xib in Resources */,
 				42E2889F1F4963660002AF72 /* GCB_YSC_Cell.xib in Resources */,
 				42E287BC1F41C04F0002AF72 /* GCB_Table_Cell.xib in Resources */,
@@ -4909,7 +4900,6 @@
 				42E2886C1F4565FB0002AF72 /* GCB_RWD_Cell.m in Sources */,
 				9C05F05B1F3BF83800BF4627 /* BFListCell.m in Sources */,
 				9CD8DDB61F41856500F67C8B /* LCDetailXZModel.m in Sources */,
-				42E7CA091F4D7A1E00708235 /* GCB_JZL_BkView.m in Sources */,
 				D20064A51DFF86800021E293 /* NoCopyTextField.m in Sources */,
 				187C73031E30B1810072F33A /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				D200649A1DFF86800021E293 /* NSArray+Log.m in Sources */,
