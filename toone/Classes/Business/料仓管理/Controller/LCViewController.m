@@ -19,6 +19,9 @@
 }
 @property (nonatomic,strong) NSMutableArray *dataArr;
 
+@property (nonatomic,strong) NSMutableDictionary *paraDic;
+
+
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
@@ -35,6 +38,15 @@
     return _dataArr;
 }
 
+- (NSMutableDictionary *)paraDic
+{
+    if (!_paraDic)
+    {
+        _paraDic = [NSMutableDictionary dictionary];
+    }
+    return _paraDic;
+}
+
 - (void)loadView
 {
     [super loadView];
@@ -47,14 +59,12 @@
     [super viewDidLoad];
     _containerView.hidden = YES;
     [self loadUI];
-    _currentPage = 1;
-    [self refreshDataWithParaDic:[self getParaDic]];
+    [self tableViewAddMJRefresh];
     WS(weakSelf);
-    self.scView.paraBlock = ^(NSDictionary *paraDic)
+    self.scView.paraBlock = ^(NSDictionary *dic)
     {
-        NSMutableDictionary *tempDic = [weakSelf getParaDic];
-        [tempDic setValuesForKeysWithDictionary:paraDic];
-        [weakSelf refreshDataWithParaDic:tempDic];
+        weakSelf.paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+        [weakSelf tableViewAddMJRefresh];
     };
 }
 
@@ -77,39 +87,82 @@
     [self.view sendSubviewToBack:_tbView];
 }
 
-- (NSMutableDictionary *)getParaDic
+
+- (BOOL)isExistKey:(NSString *)key inDic:(NSDictionary *)dic
 {
-    NSDictionary *dic = @{@"maxPageItems":[NSString stringWithFormat:@"%d",kPageSize],@"pageNo":[NSString stringWithFormat:@"%ld",(long)_currentPage]};
-    NSMutableDictionary *paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:LC_PARA_ZZJG];
-    
-    return paraDic;
+    BOOL isExist = NO;
+    for (NSString *oneKey in [dic allKeys])
+    {
+        if ([oneKey isEqualToString:key])
+        {
+            return YES;
+        }
+    }
+    return isExist;
 }
 
-- (void)refreshDataWithParaDic:(NSDictionary *)paraDic
+- (void)paraDicAddKeys:(NSString *)key AndValues:(NSString *)value
 {
-    __weak typeof(self) weakSelf = self;
+    if ([self isExistKey:key inDic:self.paraDic] == YES)
+    {
+        NSString *valueStr =self.paraDic[key];
+        if (valueStr && valueStr.length > 0)
+        {
+        }
+        else
+        {
+            [self.paraDic setObject:value forKey:key];
+        }
+    }
+    else
+    {
+        [self.paraDic setObject:value forKey:key];
+    }
+    
+}
+
+/**
+ 检测当前必传参数是否齐全
+ */
+- (NSMutableDictionary *)checkParaDic
+{
+    NSArray *keys = @[LC_PARA_ZZJG];
+    [self paraDicAddKeys:keys[0] AndValues:[UserDefaultsSetting shareSetting].departId];
+    
+    [self.paraDic setObject:[NSString stringWithFormat:@"%d",kPageSize] forKey:@"maxPageItems"];
+    [self.paraDic setObject:[NSString stringWithFormat:@"%ld",(long)_currentPage] forKey:@"pageNo"];
+    return self.paraDic;
+}
+
+- (void)tableViewAddMJRefresh
+{
+    WS(weakSelf);
     _tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [_tbView.mj_footer resetNoMoreData];
-        [weakSelf loadingDataWithTag:1 paraDic:paraDic];
+        _currentPage = 1;
+        [weakSelf requestDataWithUpOrDown:1];
     }];
     [_tbView.mj_header beginRefreshing];
     
     _tbView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadingDataWithTag:0 paraDic:paraDic];
+        [weakSelf requestDataWithUpOrDown:0];
     }];
 }
 
 
-#pragma mark - Data request
-
-- (void)loadingDataWithTag:(NSInteger)tag paraDic:(NSDictionary *)paraDic
+/**
+ 请求数据
+ 
+ @param tag 下拉刷新:1  上拉加载:0
+ */
+- (void)requestDataWithUpOrDown:(NSInteger)tag
 {
     __weak typeof(self) weakSelf = self;
     NSString *urlString;
     urlString = [NSString stringWithFormat:@"%@AppKuCunInterfaceController.do?AppkuCunList",baseUrl];
     
-    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString parmas:paraDic completeBlock:^(id result) {
+    NSMutableDictionary *tempDic = [self checkParaDic];
+    
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString parmas:tempDic completeBlock:^(id result) {
         [_tbView.mj_header endRefreshing];
         [_tbView.mj_footer endRefreshing];
         if (result && result != nil)
@@ -123,17 +176,18 @@
             [weakSelf.dataArr addObjectsFromArray:tempArr];
             if ([tempArr count] == kPageSize)
             {
-                _currentPage ++ ;//有下一页  show 加载按钮
+                _currentPage ++ ;
+                //有下一页 显示加载按钮
+                [_tbView.mj_footer resetNoMoreData];
             }else
             {
-                //没有下一页  hide 加载按钮
+                //没有下一页   隐藏加载按钮
                 [_tbView.mj_footer endRefreshingWithNoMoreData];
             }
             [_tbView reloadData];
         }
         
     }];
-    
     
 }
 

@@ -27,6 +27,8 @@
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
 
+@property (nonatomic,strong) NSMutableDictionary *paraDic;
+
 @end
 
 @implementation BFViewController
@@ -54,11 +56,20 @@
     return _dataArr;
 }
 
+- (NSMutableDictionary *)paraDic
+{
+    if (!_paraDic)
+    {
+        _paraDic = [NSMutableDictionary dictionary];
+    }
+    return _paraDic;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadUI];
-    _currentPage = 1;
-    [self refreshDataWithParaDic:[self getParaDic]];
+    [self tableViewAddMJRefresh];
+    
     
 }
 
@@ -105,7 +116,7 @@
 - (void)createTableView
 {
     //创建列表
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,Screen_w,Screen_h) style:UITableViewStylePlain];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,Screen_w,Screen_h-55) style:UITableViewStylePlain];
     _tbView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _tbView.estimatedRowHeight = 30.0;
     _tbView.rowHeight = UITableViewAutomaticDimension;
@@ -125,53 +136,97 @@
     };
     
     WS(weakSelf);
-    scView.paraBlock = ^(NSDictionary *paraDic) {
-        NSMutableDictionary *tempDic = [weakSelf getParaDic];
-        [tempDic setValuesForKeysWithDictionary:paraDic];
-        [tempDic setObject:@"1341763200" forKey:jinchangshijian1];
-        [tempDic setObject:@"1246723200" forKey:chuchangshijian1];
-        [weakSelf refreshDataWithParaDic:tempDic];
+    scView.paraBlock = ^(NSDictionary *dic) {
+        weakSelf.paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+        [weakSelf tableViewAddMJRefresh];
     };
     [self.view addSubview:scView];
     [self.view bringSubviewToFront:scView];
 }
 
-- (NSMutableDictionary *)getParaDic
+- (BOOL)isExistKey:(NSString *)key inDic:(NSDictionary *)dic
 {
-    NSDictionary *dic = @{@"maxPageItems":[NSString stringWithFormat:@"%d",kPageSize],@"pageNo":[NSString stringWithFormat:@"%ld",(long)_currentPage]};
-    NSMutableDictionary *paraDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-    //加入时间,组织机构参数
-    [paraDic setObject:@"1341763200" forKey:jinchangshijian1];
-    [paraDic setObject:@"1246723200" forKey:chuchangshijian1];
-//    [paraDic setObject:[TimeTools timeStampWithTimeString:self.startTime] forKey:jinchangshijian1];
-//    [paraDic setObject:[TimeTools timeStampWithTimeString:self.endTime] forKey:chuchangshijian1];
-    [paraDic setObject:[UserDefaultsSetting shareSetting].departId forKey:orgcode];
-    
-    return paraDic;
+    BOOL isExist = NO;
+    for (NSString *oneKey in [dic allKeys])
+    {
+        if ([oneKey isEqualToString:key])
+        {
+            return YES;
+        }
+    }
+    return isExist;
 }
 
-
-- (void)refreshDataWithParaDic:(NSDictionary *)paraDic
+- (void)paraDicAddKeys:(NSString *)key AndValues:(NSString *)value
 {
+    if ([self isExistKey:key inDic:self.paraDic] == YES)
+    {
+        NSString *valueStr =self.paraDic[key];
+        if (valueStr && valueStr.length > 0)
+        {
+        }
+        else
+        {
+            [self.paraDic setObject:value forKey:key];
+        }
+    }
+    else
+    {
+        [self.paraDic setObject:value forKey:key];
+    }
+
+}
+
+/**
+ 检测当前必传参数是否齐全
+ */
+- (NSMutableDictionary *)checkParaDic
+{
+    NSArray *keys = @[jinchangshijian1,chuchangshijian1,orgcode];
+    for (int i = 0; i<keys.count; i++)
+    {
+        if (i == 0)
+        {
+            [self paraDicAddKeys:keys[i] AndValues:[TimeTools timeStampWithTimeString:self.startTime]];
+        }
+        else if (i==1)
+        {
+            [self paraDicAddKeys:keys[i] AndValues:[TimeTools timeStampWithTimeString:self.endTime]];
+        }
+        else
+        {
+            [self paraDicAddKeys:keys[i] AndValues:[UserDefaultsSetting shareSetting].departId];
+        }
+    }
     
-    __weak typeof(self) weakSelf = self;
+    [self.paraDic setObject:[NSString stringWithFormat:@"%d",kPageSize] forKey:@"maxPageItems"];
+    [self.paraDic setObject:[NSString stringWithFormat:@"%ld",(long)_currentPage] forKey:@"pageNo"];
+    return self.paraDic;
+}
+
+- (void)tableViewAddMJRefresh
+{
+    WS(weakSelf);
     _tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [_tbView.mj_footer resetNoMoreData];
-        [weakSelf loadingDataWithTag:1 paraDic:paraDic];
+        _currentPage = 1;
+        [weakSelf requestDataWithUpOrDown:1];
     }];
     [_tbView.mj_header beginRefreshing];
-    
+
     _tbView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadingDataWithTag:0 paraDic:paraDic];
+        [weakSelf requestDataWithUpOrDown:0];
     }];
 }
 
 
-#pragma mark - Data request
+/**
+ 请求数据
 
-- (void)loadingDataWithTag:(NSInteger)tag paraDic:(NSDictionary *)paraDic
+ @param tag 下拉刷新:1  上拉加载:0
+ */
+- (void)requestDataWithUpOrDown:(NSInteger)tag
 {
-    __weak typeof(self) weakSelf = self;
+    WS(weakSelf);
     NSString *urlString;
     if (_currentSegIndex == 0)
     {
@@ -182,12 +237,15 @@
         urlString = [NSString stringWithFormat:@"%@AppGB.do?ChuChangGB",baseUrl];
     }
     
-    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString parmas:paraDic completeBlock:^(id result) {
+    NSMutableDictionary *tempDic = [self checkParaDic];
+    
+    [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString parmas:tempDic completeBlock:^(id result) {
         [_tbView.mj_header endRefreshing];
         [_tbView.mj_footer endRefreshing];
         if (result && result != nil)
         {
-            if (tag == 1) {
+            if (tag == 1)
+            {
                 [weakSelf.dataArr removeAllObjects];
             }
             NSDictionary *dict = (NSDictionary *)result;
@@ -196,10 +254,12 @@
             [weakSelf.dataArr addObjectsFromArray:tempArr];
             if ([tempArr count] == kPageSize)
             {
-                _currentPage ++ ;//有下一页  show 加载按钮
+                _currentPage ++ ;
+                //有下一页 显示加载按钮
+                [_tbView.mj_footer resetNoMoreData];
             }else
             {
-                //没有下一页  hide 加载按钮
+                //没有下一页   隐藏加载按钮
                 [_tbView.mj_footer endRefreshingWithNoMoreData];
             }
             [_tbView reloadData];
@@ -207,9 +267,7 @@
         
     }];
 
-    
 }
-
 
 #pragma mark - UITableViewDelegate
 
@@ -231,8 +289,8 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] firstObject];
             cell.JC_BF_Name.text = model.banhezhanminchen;
             cell.JC_SJ.text = model.jinchangshijian;
-            cell.JC_CL_Name.text = model.cailiaoName;
-            cell.JC_GYS_Name.text = model.gongyingshangName;
+            cell.JC_CL_Name.text = model.cailiaoname;
+            cell.JC_GYS_Name.text = model.gongyingshangname;
             cell.JC_JZ.text = model.jingzhong;
         }
         else
@@ -240,8 +298,8 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:1];
             cell.CC_BF_Name.text = model.banhezhanminchen;
             cell.CC_SJ.text = model.jinchangshijian;
-            cell.CC_CL_Name.text = model.cailiaoName;
-            cell.CC_GYS_Name.text = model.gongyingshangName;
+            cell.CC_CL_Name.text = model.cailiaoname;
+            cell.CC_GYS_Name.text = model.gongyingshangname;
             cell.CC_TYPE.text = model.remark;
         }
         
@@ -269,6 +327,8 @@
 
 - (void)segmentControlAction:(UISegmentedControl *)seg
 {
+    _currentPage = 1;
+
     if(_tbView)
     {
         [_tbView removeFromSuperview];
@@ -276,9 +336,8 @@
     }
         
     [self createTableView];
-    _tbView.frame = CGRectMake(0, 60, Screen_w, Screen_h);
     _currentSegIndex = [seg selectedSegmentIndex];
-    [self refreshDataWithParaDic:[self getParaDic]];
+    [self tableViewAddMJRefresh];
 }
 
 -(void)searchButtonClick:(UIButton *)sender {

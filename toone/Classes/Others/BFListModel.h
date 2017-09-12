@@ -12,14 +12,6 @@
 
 @property (nonatomic, strong) NSString *banhezhanminchen;
 
-/**
- 列表使用字段
- */
-@property(nonatomic,strong)NSString *cailiaoName;
-
-/**
- 详情使用字段
- */
 @property(nonatomic,strong)NSString *cailiaoname;
 
 @property(nonatomic,strong)NSString *cailiaoNo;
@@ -28,15 +20,6 @@
 
 @property(nonatomic,strong)NSString *departid;
 
-/**
- 列表使用字段
- */
-@property(nonatomic,strong)NSString *gongyingshangName;
-
-
-/**
- 详情使用字段
- */
 @property(nonatomic,strong)NSString *gongyingshangname;
 
 @property(nonatomic,strong)NSString *gongyingshangdanweibianma;
@@ -49,14 +32,6 @@
 
 @property(nonatomic,strong)NSString *jinchangshijian;
 
-/**
- 列表使用字段
- */
-@property(nonatomic,strong)NSString *jinchuliaodanNo;
-
-/**
- 详情使用字段
- */
 @property(nonatomic,strong)NSString *jinchuliaodanno;
 
 @property(nonatomic,strong)NSString * jingzhong;

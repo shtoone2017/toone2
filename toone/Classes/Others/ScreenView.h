@@ -14,7 +14,7 @@ typedef void(^ScreenBlock)(NSDictionary *paraDic);
 
 #define jinchangshijian1 @"jinchangshijian1"
 #define chuchangshijian1 @"chuchangshijian1"
-#define orgcode @"orgcode"
+#define orgcode @"departid"
 #define apici @"pici"
 #define cheliangbianhao @"cheliangbianhao"
 #define gprsbianha @"gprsbianhao"

@@ -93,14 +93,14 @@
 {
     if (_type == ScreenViewTypeBF_JC)
     {
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",orgcode:[UserDefaultsSetting shareSetting].departId,gprsbianha:@"",cailiaono:@""}];
-        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:[UserDefaultsSetting shareSetting].departName,LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{jinchangshijian1:@"",chuchangshijian1:@"",orgcode:@"",gprsbianha:@"",cailiaono:@""}];
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LIST_JCTime1:@"",LIST_CCTime1:@"",LIST_ZZJG:@"",LIST_SB_NUM:@"",LIST_CL_NUM:@""}];
     }
     else if (_type == ScreenViewTypeLC)
     {
-        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_Title_ZZJG:[UserDefaultsSetting shareSetting].departName,LC_Title_CLMC:@""}];
+        self.nameDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_Title_ZZJG:@"",LC_Title_CLMC:@""}];
         
-        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_PARA_ZZJG:[UserDefaultsSetting shareSetting].departId,LC_PARA_CLMC:@""}];
+        self.paraDic = [NSMutableDictionary dictionaryWithDictionary:@{LC_PARA_ZZJG:@"",LC_PARA_CLMC:@""}];
     }
     else if (_type == ScreenViewTypePHB)
     {
@@ -156,14 +156,7 @@
                 if (indexPath.row == 0)
                 {
                     //所属机构
-                    if ([_nameDic[LIST_ZZJG] isEqualToString:@""]) {
-                        cell.txtField.text = [UserDefaultsSetting shareSetting].departName;
-                    }
-                    else
-                    {
-                        cell.txtField.text = _nameDic[LIST_ZZJG];
-                    }
-                    
+                    cell.txtField.text = _nameDic[LIST_ZZJG];
                 }
                 else if (indexPath.row == 1)
                 {
@@ -177,33 +170,12 @@
                 }
                 else if (indexPath.row == 3)
                 {
-                    if ([_nameDic[LIST_JCTime1] isEqualToString:@""]) {
-                        cell.txtField.text = self.parentVC.startTime;
-                        [_nameDic setObject:self.parentVC.startTime forKey:LIST_JCTime1];
-                        NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
-                        
-                        [_paraDic setObject:startTime forKey:jinchangshijian1];
-                    }
-                    else
-                    {
-                        cell.txtField.text = _nameDic[LIST_JCTime1];
-                    }
+                    cell.txtField.text = _nameDic[LIST_JCTime1];
                     
                 }
                 else if (indexPath.row == 4)
                 {
-                    if ([_nameDic[LIST_CCTime1] isEqualToString:@""])
-                    {
-                        cell.txtField.text = self.parentVC.endTime;
-                        [_nameDic setObject:self.parentVC.endTime forKey:LIST_CCTime1];
-                        NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
-                        
-                        [_paraDic setObject:endTime forKey:chuchangshijian1];
-                    }
-                    else
-                    {
-                        cell.txtField.text = _nameDic[LIST_CCTime1];
-                    }
+                    cell.txtField.text = _nameDic[LIST_CCTime1];
                 }
             }
         }
@@ -213,13 +185,7 @@
             if (indexPath.row == 0)
             {
                 //所属机构
-                if ([_nameDic[LC_Title_ZZJG] isEqualToString:@""]) {
-                    cell.txtField.text = [UserDefaultsSetting shareSetting].departName;
-                }
-                else
-                {
-                    cell.txtField.text = _nameDic[LC_Title_ZZJG];
-                }
+                cell.txtField.text = _nameDic[LC_Title_ZZJG];
             }
             else
             {
@@ -289,16 +255,23 @@
             vc.block = ^{
                 if (indexPath.row == 3)
                 {
-                    [self.nameDic setObject:cell.txtField.text forKey:jinchangshijian1];
+                    [self.nameDic setObject:cell.txtField.text forKey:LIST_JCTime1];
                     
-                    NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
-                    [self.paraDic setObject:startTime forKey:LIST_JCTime1];
+                    if (cell.txtField.text.length > 0)
+                    {
+                        NSString *startTime = [TimeTools timeStampWithTimeString:cell.txtField.text];
+                        [self.paraDic setObject:startTime forKey:jinchangshijian1];
+                    }
                 }
                 else
                 {
-                    [self.nameDic setObject:cell.txtField.text forKey:chuchangshijian1];
-                    NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
-                    [self.paraDic setObject:endTime forKey:LIST_CCTime1];
+                    [self.nameDic setObject:cell.txtField.text forKey:LIST_CCTime1];
+                    if (cell.txtField.text.length > 0)
+                    {
+                        NSString *endTime = [TimeTools timeStampWithTimeString:cell.txtField.text];
+                        [self.paraDic setObject:endTime forKey:chuchangshijian1];
+                    }
+                    
                 }
                 
             };
@@ -366,15 +339,23 @@
                     if (indexPath.row == 2)
                     {
                         [self.nameDic setObject:cell.txtField.text forKey:PHB_Title_TIME1];
-                        
-                        NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
-                        [self.paraDic setObject:startTime forKey:PHB_PARA_TIME1];
+                        if (cell.txtField.text.length > 0)
+                        {
+                            NSString *startTime = [TimeTools timeStampWithTimeString:cell.txtField.text];
+                            [self.paraDic setObject:startTime forKey:PHB_PARA_TIME1];
+                        }
+                       
                     }
                     else
                     {
                         [self.nameDic setObject:cell.txtField.text forKey:PHB_Title_TIME2];
-                        NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
-                        [self.paraDic setObject:endTime forKey:PHB_PARA_TIME2];
+                        if (cell.txtField.text.length > 0)
+                        {
+                            NSString *endTime = [TimeTools timeStampWithTimeString:cell.txtField.text];
+                            [self.paraDic setObject:endTime forKey:PHB_PARA_TIME2];
+                            
+                        }
+                        
                     }
                     
                 };
@@ -406,14 +387,20 @@
                 {
                     [self.nameDic setObject:cell.txtField.text forKey:TZD_Title_TIME1];
                     
-                    NSString *startTime = [TimeTools timeStampWithTimeString:self.parentVC.startTime];
-                    [self.paraDic setObject:startTime forKey:TZD_PARA_TIME1];
+                    if (cell.txtField.text.length > 0)
+                    {
+                        NSString *startTime = [TimeTools timeStampWithTimeString:cell.txtField.text];
+                        [self.paraDic setObject:startTime forKey:TZD_PARA_TIME1];
+                    }
                 }
                 else
                 {
                     [self.nameDic setObject:cell.txtField.text forKey:TZD_Title_TIME2];
-                    NSString *endTime = [TimeTools timeStampWithTimeString:self.parentVC.endTime];
-                    [self.paraDic setObject:endTime forKey:TZD_PARA_TIME2];
+                    if (cell.txtField.text.length > 0)
+                    {
+                        NSString *endTime = [TimeTools timeStampWithTimeString:cell.txtField.text];
+                        [self.paraDic setObject:endTime forKey:TZD_PARA_TIME2];
+                    }
                 }
                 
             };
