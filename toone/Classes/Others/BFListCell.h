@@ -54,6 +54,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *Detail_CL_SJZL;
 
 
+/**
+ 进出场图片
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *Detail_Pic;
 
 
 

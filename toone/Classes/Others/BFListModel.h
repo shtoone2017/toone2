@@ -62,5 +62,20 @@
 
 @property (nonatomic, strong)NSString *pici;
 
+@property (nonatomic, strong)NSString *JCHCPPic;
+
+@property (nonatomic, strong)NSString *JCBFPic;
+
+@property (nonatomic, strong)NSString *JCGKPic;
+
+@property (nonatomic, strong)NSString *JCCPPic;
+
+@property (nonatomic, strong)NSString *CCGKPic;
+
+@property (nonatomic, strong)NSString *CCCPPic;
+
+@property (nonatomic, strong)NSString *CCHCPPic;
+
+@property (nonatomic, strong)NSString *CCBFPic;
 
 @end

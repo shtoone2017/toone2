@@ -10,12 +10,15 @@
 #import "BFListModel.h"
 #import "BFListCell.h"
 #import "HNT_SYS_InnerController.h"
+#import "UIImageView+WebCache.h"
 
 @interface BFDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     
     UITableView *_tbView;
     BFListModel *dataModel;
+    NSMutableArray *jcPicArr;
+    NSMutableArray *ccPicArr;
 }
 @end
 
@@ -49,30 +52,63 @@
         {
             NSDictionary *dict = (NSDictionary *)result;
             dataModel = [[BFListModel alloc] initWithDictionary:dict[@"data"] error:nil];
+            [weakSelf integrateThePicsWithData:dict[@"data"]];
+            
         }
         [weakSelf setUpUI];
     }];
+}
 
+
+/**
+ 整合图片资源数据
+
+ @param dic 数据源
+ */
+- (void)integrateThePicsWithData:(NSDictionary *)dic
+{
+    NSArray *picKeyArr = @[@[@"JCHCPPic",@"JCBFPic",@"JCGKPic",@"JCCPPic"],@[@"CCGKPic",@"CCCPPic",@"CCHCPPic",@"CCBFPic"]];
+    
+    jcPicArr = [NSMutableArray array];
+    ccPicArr = [NSMutableArray array];
+    for (int i = 0 ; i<picKeyArr.count; i++)
+    {
+        for (NSString *picKey in picKeyArr[i])
+        {
+            if (i==0)
+            {
+                [jcPicArr addObject:[dic objectForKey:picKey]];
+            }
+            else
+            {
+                [ccPicArr addObject:[dic objectForKey:picKey]];
+            }
+        }
+    }
     
 }
+
 
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section)
+    if (section == 2)
     {
-        case 0:
-            return 1;
-            break;
-        default:
-            return 1;
-            break;
+        return jcPicArr.count;
+    }
+    else if (section == 3)
+    {
+        return ccPicArr.count;
+    }
+    else
+    {
+        return 1;
     }
 }
 
@@ -133,7 +169,24 @@
         }
         return cell;
     }
-    return nil;
+    else
+    {
+        static NSString *cellId = @"PicCell";
+        BFListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"BFListCell" owner:self options:nil] objectAtIndex:4];
+        }
+        if (indexPath.section == 2)
+        {
+            [cell.Detail_Pic sd_setImageWithURL:[NSURL URLWithString:AppGB_Detail_Pic(jcPicArr[indexPath.row])]];
+        }
+        else
+        {
+            [cell.Detail_Pic sd_setImageWithURL:[NSURL URLWithString:AppGB_Detail_Pic(ccPicArr[indexPath.row])]];
+        }
+        return cell;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,7 +202,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     //@"进出场情况"
-    NSArray *titleArr = @[@"基本信息",@"材料明细"];
+    NSArray *titleArr = @[@"基本信息",@"材料明细",@"进场图片",@"出场图片"];
     UIView *headerView = [UIView new];
     UILabel *titleLab = [UILabel new];
     titleLab.frame = CGRectMake(25, 10, 150, 25);
