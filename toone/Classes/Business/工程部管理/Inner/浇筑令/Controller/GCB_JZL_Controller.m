@@ -16,6 +16,8 @@
 #import "GCB_JZL_DetailController.h"
 #import "YBPopupMenu.h"
 #define TITLES @[@"新增", @"编辑", @"删除",@"提交"]
+#define ITLES @[@"新增", @"编辑"]
+
 
 @interface GCB_JZL_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate,UITextFieldDelegate,UIAlertViewDelegate>
 
@@ -280,14 +282,25 @@
         _rwdid = model.renwuno;
         if ([UserDefaultsSetting shareSetting].wzgcbReal) {
             CGPoint a = CGPointMake(Screen_w*0.5, rect.origin.y+220);
-            [YBPopupMenu showAtPoint:a titles:TITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
-                popupMenu.dismissOnSelected = YES;
-                popupMenu.isShowShadow = YES;
-                popupMenu.delegate = self;
-                popupMenu.offset = 10;
-                popupMenu.type = YBPopupMenuTypeDark;
-                popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
-            }];
+            if ([_zhuant isEqualToString:@"-1"]) {//未提交
+                [YBPopupMenu showAtPoint:a titles:TITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
+                    popupMenu.dismissOnSelected = YES;
+                    popupMenu.isShowShadow = YES;
+                    popupMenu.delegate = self;
+                    popupMenu.offset = 10;
+                    popupMenu.type = YBPopupMenuTypeDark;
+                    popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
+                }];
+            }else {
+                [YBPopupMenu showAtPoint:a titles:ITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
+                    popupMenu.dismissOnSelected = YES;
+                    popupMenu.isShowShadow = YES;
+                    popupMenu.delegate = self;
+                    popupMenu.offset = 10;
+                    popupMenu.type = YBPopupMenuTypeDark;
+                    popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
+                }];
+            }
         }
     }
     if (tableView == self.tableView3) {//完工
