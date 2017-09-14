@@ -38,7 +38,7 @@
 }
 
 -(void)loadUI{
-    NSArray *titles = @[@"压力",@"万能",@"统计",@"配合比",@"通知单"];
+    NSArray *titles = @[@"配合比",@"通知单",@"压力",@"万能",@"统计"];
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:titles];
     seg.frame = CGRectMake(0,0,220,24);
     seg.selectedSegmentIndex = 0;
@@ -77,11 +77,11 @@
     SYS_TZDViewController *tzdVC = [[SYS_TZDViewController alloc] init];
     [self addChildViewController:tzdVC];
     
-    _vcsArr = @[ylVC,wnVC,tjVC,phbVC,tzdVC];
+    _vcsArr = @[phbVC,tzdVC,ylVC,wnVC,tjVC];
     
     //设置默认vc
-    self.currentVC = ylVC;
-    [self.view addSubview:ylVC.view];
+    self.currentVC = phbVC;
+    [self.view addSubview:phbVC.view];
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)seg
