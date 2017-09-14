@@ -274,9 +274,10 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TZD_ListCell" owner:self options:nil] objectAtIndex:0];
     }
     cell.TZD_List_ZZJG.text = model.departname;
-    [cell.TZD_List_TZD_NUM setTitle:model.sgphbNo forState:UIControlStateNormal];
-    [cell.TZD_List_RWD_NUM setTitle:model.renwuNo forState:UIControlStateNormal];
-    [cell.TZD_List_SJ_NUM setTitle:model.llphbNo forState:UIControlStateNormal];
+    cell.TZD_List_TZD_NUM.text = model.sgphbNo;
+    cell.TZD_List_RWD_NUM.text = model.renwuNo;
+    cell.TZD_List_SJ_NUM.text = model.llphbNo;
+
     cell.TZD_List_SY_Date.text = model.createDateTime;
     cell.TZD_List_JZBW.text = model.jzbw;
 //    cell.block = ^(NSInteger tag)
