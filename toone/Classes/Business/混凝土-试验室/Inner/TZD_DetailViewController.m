@@ -9,6 +9,7 @@
 #import "TZD_DetailViewController.h"
 #import "TZD_DetailModel.h"
 #import "TZD_DetailCell.h"
+#import "QR_Tool.h"
 
 @interface TZD_DetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -72,6 +73,7 @@
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
+    
 }
 
 - (void)getData
@@ -94,7 +96,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 5;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -223,6 +225,10 @@
             cell.YC_NAME_Shui.text = dataModel.shuimingzi;
             cell.YC_PB_Shui.text = dataModel.shuiphb;
             cell.YC_SG_Shui.text = dataModel.shuitzl;
+        }
+        else if (indexPath.section == 4)
+        {
+            cell.QR_ImageView.image = [QR_Tool qrImageForString:dataModel.sgphbno imageSize:100 logoImageSize:100];
         }
         else
         {
@@ -436,7 +442,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSArray *titleArr = @[@"任务单信息",@"基本信息",@"原材设置",@"掺量信息"];
+    NSArray *titleArr = @[@"任务单信息",@"基本信息",@"原材设置",@"掺量信息",@"通知单号二维码"];
     UIView *headerView = [UIView new];
     UILabel *titleLab = [UILabel new];
     titleLab.frame = CGRectMake(25, 10, 150, 25);

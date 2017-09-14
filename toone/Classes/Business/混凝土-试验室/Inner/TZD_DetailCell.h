@@ -89,4 +89,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *CL_SL;
 @property (weak, nonatomic) IBOutlet UITextField *CL_BZ;
 
+//二维码
+
+@property (weak, nonatomic) IBOutlet UIImageView *QR_ImageView;
+
+
 @end

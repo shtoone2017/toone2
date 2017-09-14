@@ -346,6 +346,7 @@
 		9CAB0FA21F4A6CB700F47B92 /* TZD_ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA01F4A6CB700F47B92 /* TZD_ListCell.m */; };
 		9CAB0FA31F4A6CB700F47B92 /* TZD_ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */; };
 		9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */; };
+		9CADC9A61F6A58DC0051BD8A /* QR_Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */; };
 		9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */; };
 		9CD8DDAB1F416FF100F67C8B /* LCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAA1F416FF100F67C8B /* LCListModel.m */; };
 		9CD8DDAF1F41725E00F67C8B /* LCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDAD1F41725E00F67C8B /* LCListCell.m */; };
@@ -1152,6 +1153,8 @@
 		9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TZD_ListCell.xib; sourceTree = "<group>"; };
 		9CAB0FA51F4A704900F47B92 /* TZD_ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_ListModel.h; sourceTree = "<group>"; };
 		9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_ListModel.m; sourceTree = "<group>"; };
+		9CADC9A41F6A58DC0051BD8A /* QR_Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QR_Tool.h; sourceTree = "<group>"; };
+		9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QR_Tool.m; sourceTree = "<group>"; };
 		9CCBDBD41F67818700A86267 /* SYS_TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_TZD_DetailViewController.h; sourceTree = "<group>"; };
 		9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_TZD_DetailViewController.m; sourceTree = "<group>"; };
 		9CD8DDA91F416FF100F67C8B /* LCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListModel.h; path = "Classes/Business/磅房管理/Controller/LCListModel.h"; sourceTree = SOURCE_ROOT; };
@@ -3628,6 +3631,8 @@
 				D20063721DFF86800021E293 /* AppDelegate.m */,
 				D200637B1DFF86800021E293 /* Toone-Bridging-Header.h */,
 				D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */,
+				9CADC9A41F6A58DC0051BD8A /* QR_Tool.h */,
+				9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */,
 				8CBD73461E09320C00A0C991 /* 组织机构 */,
 				D200637E1DFF86800021E293 /* 抽屉 */,
 				425AE0E21F3418F00048D96B /* 工程部管理 */,
@@ -4800,6 +4805,7 @@
 				187C72F41E30B1810072F33A /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				D20065A91DFFE28D0021E293 /* HNT_BHZ_SB_Controller.m in Sources */,
 				42E287C21F41C5A40002AF72 /* GCB_Model.m in Sources */,
+				9CADC9A61F6A58DC0051BD8A /* QR_Tool.m in Sources */,
 				D200649C1DFF86800021E293 /* NSString+Separate.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				D20065211DFF86B30021E293 /* CandleStickChartViewController.m in Sources */,

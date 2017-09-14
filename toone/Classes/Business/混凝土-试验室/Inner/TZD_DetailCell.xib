@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1190,6 +1190,32 @@
                 <outlet property="CL_XS" destination="Vl9-Pc-ESx" id="wnL-LO-VBm"/>
             </connections>
             <point key="canvasLocation" x="-231" y="-661"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QR_Cell" rowHeight="186" id="RQ7-cd-yBi" customClass="TZD_DetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="186"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQ7-cd-yBi" id="woG-Qb-aO6">
+                <rect key="frame" x="0.0" y="0.0" width="409" height="185.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4HZ-wG-K9n">
+                        <rect key="frame" x="130" y="15" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="3gi-cF-rX6"/>
+                            <constraint firstAttribute="height" constant="150" id="5Qy-va-zGw"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4HZ-wG-K9n" firstAttribute="centerX" secondItem="woG-Qb-aO6" secondAttribute="centerX" id="PRT-XJ-Akd"/>
+                    <constraint firstItem="4HZ-wG-K9n" firstAttribute="top" secondItem="woG-Qb-aO6" secondAttribute="top" constant="15" id="d9M-6b-cPZ"/>
+                    <constraint firstAttribute="bottom" secondItem="4HZ-wG-K9n" secondAttribute="bottom" constant="20.5" id="pDo-GY-eia"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="QR_ImageView" destination="4HZ-wG-K9n" id="3q0-KW-TpQ"/>
+            </connections>
+            <point key="canvasLocation" x="-253.5" y="-332"/>
         </tableViewCell>
     </objects>
 </document>
