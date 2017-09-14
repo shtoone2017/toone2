@@ -338,6 +338,7 @@
     [self createTableView];
     _currentSegIndex = [seg selectedSegmentIndex];
     [self tableViewAddMJRefresh];
+    _tbView.frame = CGRectMake(0,60,Screen_w,Screen_h-55);
 }
 
 -(void)searchButtonClick:(UIButton *)sender {
