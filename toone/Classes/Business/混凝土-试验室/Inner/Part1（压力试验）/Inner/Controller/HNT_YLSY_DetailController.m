@@ -138,7 +138,7 @@
                     default:
                         break;
                 }
-                //处理数据
+             /*   //处理数据
                 NSArray * arrY = [model.f_LZ separatedWithFirstString:@"&" withSecondCharacter:@","];
                 NSArray * arrX = [model.f_SJ separatedWithFirstString:@"&" withSecondCharacter:@","];
                 
@@ -194,9 +194,9 @@
                     vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
                     [weakSelf addChildViewController:vc];
                     [weakSelf.chart_sc addSubview:vc.view];
-
                 }
-                
+              */
+
                 //移除指示器
                 [Tools removeActivity];
             }

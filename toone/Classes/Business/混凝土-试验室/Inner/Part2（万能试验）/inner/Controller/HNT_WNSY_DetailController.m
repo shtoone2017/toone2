@@ -141,7 +141,7 @@
                     default:
                         break;
                 }
-                //处理数据
+          /*      //处理数据
                 NSArray * arrY = [model.f_LZ separatedWithFirstString:@"&" withSecondCharacter:@","];
                 NSArray * arrX = [model.f_SJ separatedWithFirstString:@"&" withSecondCharacter:@","];
                 
@@ -173,15 +173,19 @@
                     //1.取出最大值和最小值
                     int y_Min = CGFLOAT_MAX;
                     int y_Max = CGFLOAT_MIN;
-                    for (int j; j<arrY.count; j++) {
-                        int value = [(NSString*)arrY[i][j] intValue];
-                        if (value>y_Max) {
-                            y_Max = value;
-                        }
-                        if (value<y_Min) {
-                            y_Min = value;
+                    if (arrY.count >= 1) {
+                        
+                        for (int j; j<arrY.count; j++) {
+                            int value = [(NSString*)arrY[i][j] intValue];
+                            if (value>y_Max) {
+                                y_Max = value;
+                            }
+                            if (value<y_Min) {
+                                y_Min = value;
+                            }
                         }
                     }
+                    
                     
                     NSDictionary * dict = @{@"y_Max":FormatInt(y_Max),
                                             @"y_Min":FormatInt(y_Min),
@@ -198,7 +202,7 @@
                     [weakSelf addChildViewController:vc];
                     [weakSelf.chart_sc addSubview:vc.view];
                     
-                }
+                }*/
                 //移除指示器
                 [Tools removeActivity];
             }
