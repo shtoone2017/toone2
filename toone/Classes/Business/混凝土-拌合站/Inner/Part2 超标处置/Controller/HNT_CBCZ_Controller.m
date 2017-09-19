@@ -216,6 +216,7 @@
                 
                 for (NSDictionary * dict in json[@"data"]) {
                     HNT_CBCZ_Model * model = [HNT_CBCZ_Model modelWithDict:dict];
+//                    model.Sid = dict[@"id"];
                     [datas addObject:model];
                 }
                 

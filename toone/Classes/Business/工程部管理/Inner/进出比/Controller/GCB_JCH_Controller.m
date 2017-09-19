@@ -89,11 +89,13 @@
 //                }
 //            }
 //        }
-        for (GCB_JCH_Model *model in datas) {
-            [bars addObject:model.xiaohao];
-            [bars addObject:model.chuchang];
-            [bars addObject:model.jinchang];
-            [names addObject:model.cailiaoName];
+        if (datas.count) {
+            for (GCB_JCH_Model *model in datas) {
+                [bars addObject:model.xiaohao];
+                [bars addObject:model.chuchang];
+                [bars addObject:model.jinchang];
+                [names addObject:model.cailiaoName];
+            }
         }
         NSMutableArray *a = [NSMutableArray array];
         for (NSInteger j = 0; j<names.count; j++) {
