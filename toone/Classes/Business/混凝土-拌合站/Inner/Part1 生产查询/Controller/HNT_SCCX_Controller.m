@@ -68,6 +68,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     HNT_SCCX_Model * model = [HNT_SCCX_Model modelWithDict:dict];
+                    model.sid = dict[@"id"];
                     [datas addObject:model];
                 }
             }

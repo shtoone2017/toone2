@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *usePositionButton;//组织机构
 @property (weak, nonatomic) IBOutlet UILabel *useLabel;//机构
 
+@property (weak, nonatomic) IBOutlet UIButton *userZhuanTBut;//状态
+@property (weak, nonatomic) IBOutlet UILabel *ztLabel;//状态
+
+
+
 @property (weak, nonatomic) IBOutlet UIButton *earthworkButton;//设计强度
 
 

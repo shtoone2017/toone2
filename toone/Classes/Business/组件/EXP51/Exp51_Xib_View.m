@@ -30,6 +30,9 @@
     
     self.earthworkButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.earthworkButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
+    
+    self.userZhuanTBut.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.userZhuanTBut.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
 }
 
 @end

@@ -45,7 +45,7 @@
 @property (nonatomic,copy)NSString *sjqd;//设计强度
 @property (nonatomic,copy)NSString *renwuno;//任务单号
 @property (nonatomic,copy)NSString *ztstate;//未生产：0 生产中及已完工 : 1
-
+@property (nonatomic,copy)NSString *zt;//状态
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
 //不同页面记录的页码
 @property (nonatomic,copy) NSString * pageNo2;
@@ -69,6 +69,7 @@
     self.sjqd = @"";
     self.departId = @"";
     self.renwuno = @"";
+    self.zt = @"";
     self.tableViewSigner = @"1";
     
     [self loadUI];
@@ -190,7 +191,7 @@
 -(void)loadData{
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = [NSString stringWithFormat:AppJZL,_departId,_ztstate,startTimeStamp,endTimeStamp,_sjqd,_renwuno,self.pageNo,self.maxPageItems];
+    NSString * urlString = [NSString stringWithFormat:AppJZL,_departId,_ztstate,startTimeStamp,endTimeStamp,_sjqd,_renwuno,self.pageNo,self.maxPageItems,_zt];
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -420,7 +421,7 @@
     
     //2.
     Exp51View * e = [[Exp51View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 275);
+    e.frame = CGRectMake(0, 64+36, Screen_w, 320);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         if (type == ExpButtonTypeCancel) {
@@ -473,6 +474,29 @@
             };
             [self.navigationController pushViewController:controller animated:YES];
         }
+        if (type == ExpButtonTypeZTText) {//状态
+            UIButton * btn = (UIButton*)obj1;
+            __weak typeof(self) weakSelf = self;
+            HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+            if ([_tableViewSigner intValue] == 2) {
+                vc.type = SBListTypeRWSCZ;
+                vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
+                    [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                    weakSelf.zt = departid;
+                    [self loadData];
+                };
+                [self.navigationController pushViewController:vc animated:YES];
+            }else {//生产中
+                vc.type = SBListTypeRWWSC;
+                vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
+                    [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                    weakSelf.zt = departid;
+                    [self loadData];
+                };
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }
+        
     };
     [self.view addSubview:e];
 }

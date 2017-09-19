@@ -330,6 +330,8 @@
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
 		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
+		9C40A2B81F7112E800E2A324 /* wsc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C40A2B61F7112E800E2A324 /* wsc.plist */; };
+		9C40A2B91F7112E800E2A324 /* scz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C40A2B71F7112E800E2A324 /* scz.plist */; };
 		9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */; };
 		9CA7D9081F4BC07500BA2C91 /* TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */; };
 		9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */; };
@@ -1125,6 +1127,8 @@
 		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
 		9C2024111F38052700F79559 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelTextFieldCell.m; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.m"; sourceTree = SOURCE_ROOT; };
 		9C2024121F38052700F79559 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LabelTextFieldCell.xib; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.xib"; sourceTree = SOURCE_ROOT; };
+		9C40A2B61F7112E800E2A324 /* wsc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wsc.plist; sourceTree = "<group>"; };
+		9C40A2B71F7112E800E2A324 /* scz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scz.plist; sourceTree = "<group>"; };
 		9CA7D9031F4BBF5100BA2C91 /* TZD_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailModel.h; sourceTree = "<group>"; };
 		9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailModel.m; sourceTree = "<group>"; };
 		9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailViewController.h; sourceTree = "<group>"; };
@@ -3537,6 +3541,8 @@
 		D20063151DFF86800021E293 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				9C40A2B61F7112E800E2A324 /* wsc.plist */,
+				9C40A2B71F7112E800E2A324 /* scz.plist */,
 				42E2887E1F45AF8A0002AF72 /* states.plist */,
 				42E2887F1F45AF8A0002AF72 /* tongjitype.plist */,
 				42E2887C1F45A2AC0002AF72 /* zhuangtai.plist */,
@@ -4583,6 +4589,7 @@
 				9CAB0FA31F4A6CB700F47B92 /* TZD_ListCell.xib in Resources */,
 				42AC71471E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
+				9C40A2B91F7112E800E2A324 /* scz.plist in Resources */,
 				42E2887A1F4592DB0002AF72 /* Exp71_Xib_View.xib in Resources */,
 				D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */,
 				8C283F461EB0A01C00440413 /* icon_location@3x.png in Resources */,
@@ -4608,6 +4615,7 @@
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
 				42E2886D1F4565FB0002AF72 /* GCB_RWD_Cell.xib in Resources */,
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
+				9C40A2B81F7112E800E2A324 /* wsc.plist in Resources */,
 				42E7CA2E1F4EE06D00708235 /* JZL_JZBW_Cell.xib in Resources */,
 				8CBD72E61E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
