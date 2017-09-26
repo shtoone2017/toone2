@@ -15,13 +15,13 @@
 @interface HNT_WNSY_DetailController ()<UITextFieldDelegate,UIScrollViewDelegate>
 //1.万能试验
 @property (weak, nonatomic) IBOutlet UILabel * SYRQ_Label;//日期
-@property (weak, nonatomic) IBOutlet UILabel * shebeiname_Label;//设备
-@property (weak, nonatomic) IBOutlet UILabel * GCMC_Label;//工程名称
+//@property (weak, nonatomic) IBOutlet UILabel * shebeiname_Label;//设备
+//@property (weak, nonatomic) IBOutlet UILabel * GCMC_Label;//工程名称
 @property (weak, nonatomic) IBOutlet UILabel * SGBW_Label;//施工部位
-@property (weak, nonatomic) IBOutlet UILabel * testName_Label;//试验类型
+//@property (weak, nonatomic) IBOutlet UILabel * testName_Label;//试验类型
 @property (weak, nonatomic) IBOutlet UILabel * SJBH_Label;//试件编号
 @property (weak, nonatomic) IBOutlet UILabel * GGZL_Label;//公称直径
-@property (weak, nonatomic) IBOutlet UILabel * PZBM_Label;//品种
+//@property (weak, nonatomic) IBOutlet UILabel * PZBM_Label;//品种
 
 //2.力值曲线
 @property (weak, nonatomic) IBOutlet UIButton *button1;
@@ -35,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel * LZQD_Label;//抗拉强度
 @property (weak, nonatomic) IBOutlet UILabel * QFLZ_Label;//屈服力值
 @property (weak, nonatomic) IBOutlet UILabel * QFQD_Label;//屈服强度
-@property (weak, nonatomic) IBOutlet UILabel * SCL_Label;//伸长率
+//@property (weak, nonatomic) IBOutlet UILabel * SCL_Label;//伸长率
 
 //3.0 处置原因
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *big_sc_containerHeight;
@@ -93,19 +93,19 @@
                 weakSelf.model = model;
                 //赋值
                 weakSelf.SYRQ_Label.text = model.SYRQ;//日期
-                weakSelf.shebeiname_Label.text = model.shebeiname;//设备
-                weakSelf.GCMC_Label.text = model.GCMC;//工程名称
+//                weakSelf.shebeiname_Label.text = model.shebeiname;//设备
+//                weakSelf.GCMC_Label.text = model.GCMC;//工程名称
                 weakSelf.SGBW_Label.text = model.SGBW;//施工部位
-                weakSelf.testName_Label.text = model.testName;//试验类型
+//                weakSelf.testName_Label.text = model.testName;//试验类型
                 weakSelf.SJBH_Label.text = model.SJBH;//试件编号
-                weakSelf.GGZL_Label.text = model.GGZL;//公称直径
-                weakSelf.PZBM_Label.text = model.PZBM;//品种
+                weakSelf.GGZL_Label.text = model.GCZJ;//公称直径
+//                weakSelf.PZBM_Label.text = model.PZBM;//品种
                 
                 weakSelf.LZ_Label.text = [model.LZ componentsSeparatedByString:@"&"].firstObject;//最大力值
                 weakSelf.LZQD_Label.text = [model.LZQD componentsSeparatedByString:@"&"].firstObject;//抗拉强度
                 weakSelf.QFLZ_Label.text = [model.QFLZ componentsSeparatedByString:@"&"].firstObject;//屈服力值
                 weakSelf.QFQD_Label.text = [model.QFQD componentsSeparatedByString:@"&"].firstObject;//屈服强度
-                weakSelf.SCL_Label.text = [model.SCL componentsSeparatedByString:@"&"].firstObject;//伸长率
+//                weakSelf.SCL_Label.text = [model.SCL componentsSeparatedByString:@"&"].firstObject;//伸长率
                 
                 
 //                weakSelf.txf.text = model.chuli;
@@ -231,7 +231,7 @@
         self.LZQD_Label.text = [self.model.LZQD componentsSeparatedByString:@"&"][sender.tag-1];//抗拉强度
         self.QFLZ_Label.text = [self.model.QFLZ componentsSeparatedByString:@"&"][sender.tag-1];//屈服力值
         self.QFQD_Label.text = [self.model.QFQD componentsSeparatedByString:@"&"][sender.tag-1];//屈服强度
-        self.SCL_Label.text = [self.model.SCL componentsSeparatedByString:@"&"][sender.tag-1];//伸长率
+//        self.SCL_Label.text = [self.model.SCL componentsSeparatedByString:@"&"][sender.tag-1];//伸长率
     }];
 }
 #pragma mark - 进入处置界面

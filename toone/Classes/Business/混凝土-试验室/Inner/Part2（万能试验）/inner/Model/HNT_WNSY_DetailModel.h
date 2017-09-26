@@ -10,7 +10,7 @@
 
 @interface HNT_WNSY_DetailModel : MyModel
 @property (nonatomic,copy) NSString * GCMC ;//工程名称
-@property (nonatomic,copy) NSString * GGZL ;// 公称直径
+@property (nonatomic,copy) NSString * GCZJ ;// 公称直径
 @property (nonatomic,copy) NSString * LZ ;// 最大力值
 @property (nonatomic,copy) NSString * LZQD ;// 抗拉强度
 @property (nonatomic,copy) NSString * PDJG ;// 评定及格 0.不合格 1.合格
