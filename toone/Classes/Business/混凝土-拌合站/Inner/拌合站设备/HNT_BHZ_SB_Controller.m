@@ -89,7 +89,7 @@
         {
             urlString = [NSString stringWithFormat:@"%@app.do?appTypes&typegroupcode=%@",baseUrl,@"JZFS"];
         }
-        else
+        else if (_type == SBListTypeCBCZ)
         {
             urlString = [NSString stringWithFormat:getShebeiList_1,departId];
         }

@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeStat,     //出场类别
     SBListTypeRWSCZ,     //生产中
     SBListTypeRWWSC,     //未生产
+    SBListTypeCBCZ    //超标处置
 };
 
 @interface HNT_BHZ_SB_Controller : UIViewController
