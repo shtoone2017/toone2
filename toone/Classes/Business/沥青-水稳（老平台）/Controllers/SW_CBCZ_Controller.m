@@ -78,7 +78,7 @@
 }
 
 -(void)loadUI{
-    self.ContainerWidth.constant = Screen_w*3;
+    self.ContainerWidth.constant = Screen_w*2;
     self.title_sc.backgroundColor = [UIColor snowColor];
     //self.searchButton.backgroundColor = [UIColor snowColor];//black75PercentColor
     
@@ -147,7 +147,7 @@
     switch (count) {
         case 1://初级
             self.pageNo = self.pageNo1;
-            self.chaobiaolx =@"1";
+            self.chaobiaolx =@"2";
             
             if(self.datas1==nil) {
                 self.cllx = @"0";
@@ -156,20 +156,20 @@
             break;
         case 2://中级
             self.pageNo = self.pageNo2;
-            self.chaobiaolx =@"2";
+            self.chaobiaolx =@"3";
             if(self.datas2==nil) {
                 self.cllx = @"0";
                 [self loadData];
             }
             break;
-        case 3://高级
-            self.pageNo = self.pageNo3;
-            self.chaobiaolx =@"3";
-            if(self.datas3==nil) {
-                self.cllx = @"0";
-                [self loadData];
-            }
-            break;
+//        case 3://高级
+//            self.pageNo = self.pageNo3;
+//            self.chaobiaolx =@"3";
+//            if(self.datas3==nil) {
+//                self.cllx = @"0";
+//                [self loadData];
+//            }
+//            break;
         default:
             break;
     }
@@ -354,9 +354,9 @@
     if (tableView == self.tableView2) {
         return [self rowHeightWithModel:self.datas2[indexPath.row]];
     }
-    if (tableView == self.tableView3) {
-        return [self rowHeightWithModel:self.datas3[indexPath.row]];
-    }
+//    if (tableView == self.tableView3) {
+//        return [self rowHeightWithModel:self.datas3[indexPath.row]];
+//    }
     return 0.1;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -367,9 +367,9 @@
     if (tableView == self.tableView2) {
         model = self.datas2[indexPath.row];
     }
-    if (tableView == self.tableView3) {
-        model = self.datas3[indexPath.row];
-    }
+//    if (tableView == self.tableView3) {
+//        model = self.datas3[indexPath.row];
+//    }
   NSDictionary * dic=@{@"bianhao":model.bianhao,
                        @"shebeibianhao":model.sbbh,
                        @"chuli":model.chuli,

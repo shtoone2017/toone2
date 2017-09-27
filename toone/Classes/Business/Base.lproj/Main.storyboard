@@ -4444,30 +4444,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4me-HW-JPB">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="34"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3N-JL-Yz2">
                                                         <rect key="frame" x="70" y="0.0" width="70" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="中级" image="circle_yellow">
+                                                        <state key="normal" title="高级" image="circle_red">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="titleButtonClick:" destination="g7W-Ol-QZD" eventType="touchUpInside" id="Mg3-Zx-N4k"/>
                                                             <action selector="titleButtonClick:" destination="Qh2-c9-ZG7" eventType="touchUpInside" id="jmC-r0-DcP"/>
                                                             <action selector="titleButtonClick:" destination="mRe-E9-eAL" eventType="touchUpInside" id="sx5-38-j5Y"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1E-mf-Yc1">
-                                                        <rect key="frame" x="140" y="0.0" width="70" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <state key="normal" title="高级" image="circle_red">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="titleButtonClick:" destination="mRe-E9-eAL" eventType="touchUpInside" id="4zl-AN-Dvw"/>
-                                                            <action selector="titleButtonClick:" destination="Qh2-c9-ZG7" eventType="touchUpInside" id="BCj-aR-0US"/>
-                                                            <action selector="titleButtonClick:" destination="g7W-Ol-QZD" eventType="touchUpInside" id="Cue-w5-BrT"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="363-XQ-ROT">
@@ -4486,24 +4474,20 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="363-XQ-ROT" firstAttribute="top" secondItem="4me-HW-JPB" secondAttribute="top" id="6Xe-w5-8Fe"/>
-                                                    <constraint firstItem="c3N-JL-Yz2" firstAttribute="width" secondItem="X1E-mf-Yc1" secondAttribute="width" id="DUt-mE-8XN"/>
                                                     <constraint firstItem="363-XQ-ROT" firstAttribute="leading" secondItem="4me-HW-JPB" secondAttribute="leading" id="KAY-OC-kcD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="c3N-JL-Yz2" secondAttribute="trailing" id="QtP-4I-yt0"/>
                                                     <constraint firstItem="c3N-JL-Yz2" firstAttribute="leading" secondItem="363-XQ-ROT" secondAttribute="trailing" id="V3z-6B-pnB"/>
                                                     <constraint firstAttribute="bottom" secondItem="c3N-JL-Yz2" secondAttribute="bottom" id="Xrs-6z-4Ph"/>
-                                                    <constraint firstAttribute="width" constant="210" id="YIL-bv-hWx"/>
-                                                    <constraint firstAttribute="bottom" secondItem="X1E-mf-Yc1" secondAttribute="bottom" id="cgb-Vx-Lcp"/>
+                                                    <constraint firstAttribute="width" constant="140" id="YIL-bv-hWx"/>
                                                     <constraint firstAttribute="bottom" secondItem="363-XQ-ROT" secondAttribute="bottom" id="dRs-eu-dd8"/>
-                                                    <constraint firstItem="X1E-mf-Yc1" firstAttribute="top" secondItem="4me-HW-JPB" secondAttribute="top" id="iGQ-bh-haD"/>
                                                     <constraint firstItem="363-XQ-ROT" firstAttribute="width" secondItem="c3N-JL-Yz2" secondAttribute="width" id="rsJ-kH-0Ei"/>
                                                     <constraint firstItem="c3N-JL-Yz2" firstAttribute="top" secondItem="4me-HW-JPB" secondAttribute="top" id="uSj-G1-4Yx"/>
-                                                    <constraint firstItem="X1E-mf-Yc1" firstAttribute="leading" secondItem="c3N-JL-Yz2" secondAttribute="trailing" id="x7L-P9-dqo"/>
-                                                    <constraint firstAttribute="trailing" secondItem="X1E-mf-Yc1" secondAttribute="trailing" id="yYE-th-S84"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="4me-HW-JPB" secondAttribute="bottom" constant="1" id="1n7-7t-6CU"/>
-                                            <constraint firstAttribute="trailing" secondItem="4me-HW-JPB" secondAttribute="trailing" constant="125" id="H3T-QI-5yJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="4me-HW-JPB" secondAttribute="trailing" id="H3T-QI-5yJ"/>
                                             <constraint firstItem="4me-HW-JPB" firstAttribute="leading" secondItem="Sot-Th-gCs" secondAttribute="leading" id="H8o-Mr-tDM"/>
                                             <constraint firstItem="4me-HW-JPB" firstAttribute="centerY" secondItem="Sot-Th-gCs" secondAttribute="centerY" id="Jwa-2j-sbY"/>
                                             <constraint firstItem="4me-HW-JPB" firstAttribute="top" secondItem="Sot-Th-gCs" secondAttribute="top" id="ea7-YJ-TJw"/>
@@ -4524,23 +4508,15 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="611"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j5w-cm-jrZ">
-                                                        <rect key="frame" x="100" y="0.0" width="100" height="611"/>
+                                                        <rect key="frame" x="150" y="0.0" width="150" height="611"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="mRe-E9-eAL" id="kEU-b6-OOV"/>
                                                             <outlet property="delegate" destination="mRe-E9-eAL" id="RtQ-yN-x3a"/>
                                                         </connections>
                                                     </tableView>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBd-0p-Hg8">
-                                                        <rect key="frame" x="200" y="0.0" width="100" height="611"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="mRe-E9-eAL" id="9Tg-r6-dus"/>
-                                                            <outlet property="delegate" destination="mRe-E9-eAL" id="4PO-pH-qvt"/>
-                                                        </connections>
-                                                    </tableView>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q1t-O1-XLU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="611"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="611"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="mRe-E9-eAL" id="U6s-lC-EaN"/>
@@ -4550,19 +4526,15 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="rBd-0p-Hg8" secondAttribute="bottom" id="2ck-MO-6U5"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rBd-0p-Hg8" secondAttribute="trailing" id="6in-sl-pBP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="j5w-cm-jrZ" secondAttribute="trailing" id="BZl-De-DDO"/>
                                                     <constraint firstAttribute="width" constant="300" id="DIG-FT-Hux"/>
                                                     <constraint firstItem="q1t-O1-XLU" firstAttribute="top" secondItem="DL2-23-KPU" secondAttribute="top" id="FnU-2p-lkz"/>
                                                     <constraint firstItem="q1t-O1-XLU" firstAttribute="leading" secondItem="DL2-23-KPU" secondAttribute="leading" id="Uba-gE-qh5"/>
                                                     <constraint firstAttribute="bottom" secondItem="j5w-cm-jrZ" secondAttribute="bottom" id="Y7V-lx-lTA"/>
-                                                    <constraint firstItem="rBd-0p-Hg8" firstAttribute="width" secondItem="j5w-cm-jrZ" secondAttribute="width" id="b3P-a6-Ss9"/>
                                                     <constraint firstItem="j5w-cm-jrZ" firstAttribute="top" secondItem="DL2-23-KPU" secondAttribute="top" id="dz1-Jx-Rdv"/>
                                                     <constraint firstItem="q1t-O1-XLU" firstAttribute="width" secondItem="j5w-cm-jrZ" secondAttribute="width" id="eq6-Ej-fPB"/>
                                                     <constraint firstAttribute="bottom" secondItem="q1t-O1-XLU" secondAttribute="bottom" id="f3C-Np-BMY"/>
                                                     <constraint firstItem="j5w-cm-jrZ" firstAttribute="leading" secondItem="q1t-O1-XLU" secondAttribute="trailing" id="g4P-Oe-cv4"/>
-                                                    <constraint firstItem="rBd-0p-Hg8" firstAttribute="top" secondItem="DL2-23-KPU" secondAttribute="top" id="pfL-0Z-A3Y"/>
-                                                    <constraint firstItem="rBd-0p-Hg8" firstAttribute="leading" secondItem="j5w-cm-jrZ" secondAttribute="trailing" id="yp4-jP-XRp"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -4607,12 +4579,10 @@
                         <outlet property="ContainerWidth" destination="DIG-FT-Hux" id="UCG-v3-s4s"/>
                         <outlet property="button1" destination="363-XQ-ROT" id="E1R-IM-w1h"/>
                         <outlet property="button2" destination="c3N-JL-Yz2" id="0A0-kR-5vA"/>
-                        <outlet property="button3" destination="X1E-mf-Yc1" id="vj9-RF-vDw"/>
                         <outlet property="redLine" destination="WoA-t8-3AQ" id="Vhg-pl-xNE"/>
                         <outlet property="redLine_x" destination="k2n-dc-SkU" id="LIb-cH-u17"/>
                         <outlet property="tableView1" destination="q1t-O1-XLU" id="fHi-5t-sfu"/>
                         <outlet property="tableView2" destination="j5w-cm-jrZ" id="Szh-4T-1V6"/>
-                        <outlet property="tableView3" destination="rBd-0p-Hg8" id="lZJ-pg-SSx"/>
                         <outlet property="text_sc" destination="ez9-Ue-YcH" id="t0n-pa-KrV"/>
                         <outlet property="title_sc" destination="Sot-Th-gCs" id="3Fc-gv-v2d"/>
                         <segue destination="Djo-mE-R5u" kind="push" identifier="LQ_SB_Controller" id="tGP-vX-aEz"/>
@@ -5950,7 +5920,6 @@
         <image name="black_SX" width="288" height="113"/>
         <image name="circle_green" width="16" height="16"/>
         <image name="circle_red" width="16" height="16"/>
-        <image name="circle_yellow" width="16" height="16"/>
         <image name="factory" width="32" height="32"/>
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
@@ -5962,10 +5931,10 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WQO-SS-2jJ"/>
-        <segue reference="ClF-l9-kJF"/>
-        <segue reference="QDb-Wk-kot"/>
-        <segue reference="h6h-V1-R2o"/>
+        <segue reference="tGP-vX-aEz"/>
+        <segue reference="GDo-QE-0uU"/>
         <segue reference="2qa-au-FyR"/>
+        <segue reference="h6h-V1-R2o"/>
+        <segue reference="WQO-SS-2jJ"/>
     </inferredMetricsTieBreakers>
 </document>
