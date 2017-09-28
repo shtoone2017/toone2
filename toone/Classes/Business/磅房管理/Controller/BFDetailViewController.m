@@ -47,7 +47,9 @@
 - (void)getData
 {
     WS(weakSelf);
-    [[NetworkTool sharedNetworkTool] getObjectWithURLString:_urlStr parmas:@{@"id":_identifier} completeBlock:^(id result) {
+    NetworkTool *net = [NetworkTool sharedNetworkTool];
+    net.showLoading = YES;
+    [net getObjectWithURLString:_urlStr parmas:@{@"id":_identifier} completeBlock:^(id result) {
         if (result && result != nil)
         {
             NSDictionary *dict = (NSDictionary *)result;
@@ -77,11 +79,18 @@
         {
             if (i==0)
             {
-                [jcPicArr addObject:[dic objectForKey:picKey]];
+                if ([dic objectForKey:picKey] && ![[dic objectForKey:picKey] isEqualToString:@""])
+                {
+                    [jcPicArr addObject:[dic objectForKey:picKey]];
+                }
+                
             }
             else
             {
-                [ccPicArr addObject:[dic objectForKey:picKey]];
+                if ([dic objectForKey:picKey] && ![[dic objectForKey:picKey] isEqualToString:@""])
+                {
+                    [ccPicArr addObject:[dic objectForKey:picKey]];
+                }
             }
         }
     }

@@ -42,4 +42,6 @@
 +(void)showActivityToView:(UIView*)backView;
 //移除指示器
 +(void)removeActivity;
+
++ (void)showActivityToWindow;
 @end
