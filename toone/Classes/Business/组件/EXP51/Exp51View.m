@@ -36,6 +36,8 @@
         [self.xib.sbButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.usePositionButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.earthworkButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.userZhuanTBut addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        
         [self.xib.rwdhText addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [SGAnimationType show:self animation:0];
     }
@@ -89,7 +91,11 @@
             _expBlock(ExpButtonTypeEarthwork,self.xib.earthworkButton,nil);
         }
     }
-    
+    if (sender == self.xib.userZhuanTBut) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeZTText,self.xib.userZhuanTBut,nil);
+        }
+    }
 }
 -(void)textFieldDidChange :(UITextField *)theTextField{
 //    NSLog( @"text changed: %@", theTextField.text);

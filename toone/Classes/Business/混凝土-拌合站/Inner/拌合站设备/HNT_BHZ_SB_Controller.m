@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSArray * ztArr;
 @property (nonatomic, strong) NSArray * statesArr;
 @property (nonatomic, strong) NSArray * tongtypeArr;
+@property (nonatomic, strong) NSArray * wscArr;//未生产
+@property (nonatomic, strong) NSArray * sczArr;//生产中
 @end
 
 @implementation HNT_BHZ_SB_Controller
@@ -87,7 +89,7 @@
         {
             urlString = [NSString stringWithFormat:@"%@app.do?appTypes&typegroupcode=%@",baseUrl,@"JZFS"];
         }
-        else
+        else if (_type == SBListTypeCBCZ)
         {
             urlString = [NSString stringWithFormat:getShebeiList_1,departId];
         }
@@ -117,6 +119,19 @@
     }
     return _ztArr;
 }
+-(NSArray *)sczArr {//生产中
+    if (_sczArr == nil) {
+        _sczArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"scz.plist" ofType:nil]];
+    }
+    return _sczArr;
+}
+-(NSArray *)wscArr {
+    if (_wscArr == nil) {
+        _wscArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"wsc.plist" ofType:nil]];
+    }
+    return _wscArr;
+}
+
 -(NSArray *)statesArr {
     if (_statesArr == nil) {
         _statesArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"states.plist" ofType:nil]];
@@ -138,6 +153,10 @@
         return self.tongtypeArr.count;
     }else if (_type == SBListTypeStat) {
         return self.statesArr.count;
+    }else if (_type == SBListTypeRWSCZ) {//生产中
+        return self.sczArr.count;
+    }else if (_type == SBListTypeRWWSC) {
+        return self.wscArr.count;
     }else {
         return self.datas.count;
     }
@@ -146,6 +165,12 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_BHZ_SB_Controller" forIndexPath:indexPath];
     if (_type == SBListTypeRWDZT) {//任务单
         NSDictionary * dict = self.ztArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeRWSCZ) {//生产中
+        NSDictionary * dict = self.sczArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeRWWSC) {//
+        NSDictionary * dict = self.wscArr[indexPath.row];
         cell.textLabel.text = dict[@"banhezhanminchen"];
     }else if (_type == SBListTypeTon) {//时间类型
         NSDictionary * dict = self.tongtypeArr[indexPath.row];
@@ -174,6 +199,14 @@
     if (_type == SBListTypeRWDZT) {
         
         NSDictionary * dict = self.ztArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeRWSCZ) {//生产中
+        
+        NSDictionary * dict = self.sczArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeRWWSC) {
+        
+        NSDictionary * dict = self.wscArr[indexPath.row];
         self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
     }else if (_type == SBListTypeTon) {
         

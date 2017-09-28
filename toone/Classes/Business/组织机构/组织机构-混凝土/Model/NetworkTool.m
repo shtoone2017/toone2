@@ -54,7 +54,12 @@ static NetworkTool *_instance;
  @param completeBlock <#completeBlock description#>
  */
 - (void)getObjectWithURLString:(NSString *)URLString parmas:(NSDictionary *)params completeBlock:(CompleteBlock)completeBlock{
+    if (_showLoading)
+    {
+        [Tools showActivityToWindow];
+    }
     [self GET:URLString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [Tools removeActivity];
         NSLog(@"\nGET 地址\n %@ \n",URLString);
         NSLog(@"\nGET 参数 %@ \n",params);
         if (completeBlock) {
@@ -64,6 +69,8 @@ static NetworkTool *_instance;
 
     }];
 }
+
+
 
 
 @end

@@ -11,6 +11,8 @@ typedef void(^CompleteBlock)(id result);
 
 @interface NetworkTool : AFHTTPSessionManager
 
+@property (nonatomic,assign) BOOL showLoading;
+
 + (instancetype)sharedNetworkTool;
 
 - (void)getObjectWithURLString:(NSString *)URLString completeBlock:(CompleteBlock)completeBlock;

@@ -195,6 +195,7 @@
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
         controller.departId = self.departId;
+        controller.type = SBListTypeCBCZ;
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;

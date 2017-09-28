@@ -93,6 +93,21 @@ static DGActivityIndicatorView * activityIndicatorView = nil;
     [weakView addSubview:activityIndicatorView];
     [activityIndicatorView startAnimating];
 }
+
++ (void)showActivityToWindow
+{
+    UIWindow *window = [[UIApplication sharedApplication] delegate].window;
+    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor lightGrayColor]];
+    
+    activityIndicatorView.backgroundColor = [UIColor clearColor];
+    activityIndicatorView.userInteractionEnabled = NO;
+    activityIndicatorView.frame = window.frame;
+    [window addSubview:activityIndicatorView];
+    
+    [activityIndicatorView startAnimating];
+}
+
+
 +(void)removeActivity{
     if (activityIndicatorView) {
 //        [activityIndicatorView removeFromSuperview];

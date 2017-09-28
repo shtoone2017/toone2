@@ -68,6 +68,7 @@
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     HNT_SCCX_Model * model = [HNT_SCCX_Model modelWithDict:dict];
+                    model.sid = dict[@"id"];
                     [datas addObject:model];
                 }
             }
@@ -163,6 +164,7 @@
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
         controller.departId = self.departId;
+        controller.type = SBListTypeCBCZ;
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;

@@ -19,7 +19,7 @@
 @property (nonatomic,strong) UIView * containerView;
 @property (nonatomic,strong) HNT_SYS_HeaderView * headerView;
 @end
-
+ 
 @implementation HNT_SYS_Cell
 /*
  // Whites
