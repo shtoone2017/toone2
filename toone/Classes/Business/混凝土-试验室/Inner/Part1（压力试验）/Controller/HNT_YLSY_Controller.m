@@ -11,6 +11,7 @@
 #import "HNT_YLSY_Model.h"
 #import "HNT_SYS_typeAndSB_Controller.h"
 #import "HNT_YLSY_DetailController.h"
+#import "HNT_BHZ_SB_Controller.h"
 @interface HNT_YLSY_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -49,6 +50,8 @@
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * isReal;//0全部 1未处理 2已处理 可以为空
 @property (nonatomic,copy) NSString * testId;//试验id
+@property (nonatomic,copy) NSString * sjqd;//设计强度
+@property (nonatomic,copy) NSString * lq;//龄期
 @property (nonatomic,copy) NSString * tableViewSigner;//列表标记
 //不同页面记录的页码
 @property (nonatomic,copy) NSString * pageNo1;
@@ -78,6 +81,8 @@
         self.shebeibianhao = @"";
         self.testId = @"";
         self.tableViewSigner = @"1";
+        _lq = @"";
+        _sjqd = @"";
     
     }
     
@@ -270,7 +275,7 @@
 //    NSString *userGroupId = [UserDefaultsSetting shareSetting].departId;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = [NSString stringWithFormat:hntkangya_9,userGroupId,_isQualified,startTimeStamp,endTimeStamp,_pageNo,_shebeibianhao,_isReal,_maxPageItems,_testId];
+    NSString * urlString = [NSString stringWithFormat:hntkangya_9,userGroupId,_isQualified,startTimeStamp,endTimeStamp,_pageNo,_shebeibianhao,_isReal,_maxPageItems,_testId,_sjqd,_lq];
 //    NSLog(@"urlString = %@",urlString);
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -471,7 +476,7 @@
     
     //2.
     Exp2View * e = [[Exp2View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 240);
+    e.frame = CGRectMake(0, 64+36, Screen_w, 320);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
 //        NSLog(@"ExpButtonType~~~ %d",type);
@@ -503,6 +508,29 @@
              UIButton * btn = (UIButton*)obj1;
             [weakSelf performSegueWithIdentifier:@"HNT_YLSY_Controller" sender:btn];
         }
+        if (type == ExpButtonTypeSJQDText) {//设计强度
+            UIButton * btn = (UIButton*)obj1;
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeYLQD;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.sjqd = banhezhanminchen;
+//                [self loadData];
+            };
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        if (type == ExpButtonTypeLQText) {//龄期
+            UIButton * btn = (UIButton*)obj1;
+            HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+            controller.type = SBListTypeYLLQ;
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                weakSelf.lq = banhezhanminchen;
+//                [self loadData];
+            };
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        
     };
     [self.view addSubview:e];
 

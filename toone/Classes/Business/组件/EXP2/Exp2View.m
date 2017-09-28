@@ -35,6 +35,8 @@
         [self.xib.cancelButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.sbButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.typeButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.sjqdButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.lqButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [SGAnimationType show:self animation:0];
     }
     return self;
@@ -76,6 +78,16 @@
     if (sender == self.xib.typeButton) {
         if (self.expBlock) {
             _expBlock(ExpButtonTypeChoiceTypeButton,self.xib.typeButton,nil);
+        }
+    }
+    if (sender == self.xib.sjqdButton) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeSJQDText,self.xib.sjqdButton,nil);
+        }
+    }
+    if (sender == self.xib.lqButton) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeLQText,self.xib.lqButton,nil);
         }
     }
 }

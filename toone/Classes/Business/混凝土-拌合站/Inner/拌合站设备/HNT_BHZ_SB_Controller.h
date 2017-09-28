@@ -18,7 +18,9 @@ typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeStat,     //出场类别
     SBListTypeRWSCZ,     //生产中
     SBListTypeRWWSC,     //未生产
-    SBListTypeCBCZ    //超标处置
+    SBListTypeCBCZ,    //超标处置
+    SBListTypeYLQD,    //压力设计强度
+    SBListTypeYLLQ,    //龄期
 };
 
 @interface HNT_BHZ_SB_Controller : UIViewController

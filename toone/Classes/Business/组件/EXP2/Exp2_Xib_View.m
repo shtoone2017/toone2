@@ -27,6 +27,12 @@
     
     self.typeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.typeButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
+    
+    self.sjqdButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.sjqdButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
+    
+    self.lqButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.lqButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
 }
 
 @end

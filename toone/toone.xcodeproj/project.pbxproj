@@ -61,6 +61,8 @@
 		425AE0EB1F341C610048D96B /* LCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0EA1F341C610048D96B /* LCViewController.m */; };
 		425AE0EE1F341C720048D96B /* BFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0ED1F341C720048D96B /* BFViewController.m */; };
 		4261D2821F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2811F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m */; };
+		42A0D8A21F7D17E300500540 /* lq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A01F7D17E300500540 /* lq.plist */; };
+		42A0D8A31F7D17E300500540 /* sjqd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A11F7D17E300500540 /* sjqd.plist */; };
 		42A7A07A1F36F5C600290DB8 /* TreeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A7A0761F36F5C600290DB8 /* TreeTableView.m */; };
 		42A7A07B1F36F5C600290DB8 /* TreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A7A0781F36F5C600290DB8 /* TreeTableViewCell.m */; };
 		42A7A07C1F36F5C600290DB8 /* TreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A7A0791F36F5C600290DB8 /* TreeTableViewCell.xib */; };
@@ -640,6 +642,8 @@
 		425AE0ED1F341C720048D96B /* BFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFViewController.m; sourceTree = "<group>"; };
 		4261D2801F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_Detail_HeadModel.h; sourceTree = "<group>"; };
 		4261D2811F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_SCCX_Detail_HeadModel.m; sourceTree = "<group>"; };
+		42A0D8A01F7D17E300500540 /* lq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lq.plist; sourceTree = "<group>"; };
+		42A0D8A11F7D17E300500540 /* sjqd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sjqd.plist; sourceTree = "<group>"; };
 		42A7A0751F36F5C600290DB8 /* TreeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableView.h; sourceTree = "<group>"; };
 		42A7A0761F36F5C600290DB8 /* TreeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableView.m; sourceTree = "<group>"; };
 		42A7A0771F36F5C600290DB8 /* TreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableViewCell.h; sourceTree = "<group>"; };
@@ -3541,6 +3545,8 @@
 		D20063151DFF86800021E293 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				42A0D8A01F7D17E300500540 /* lq.plist */,
+				42A0D8A11F7D17E300500540 /* sjqd.plist */,
 				9C40A2B61F7112E800E2A324 /* wsc.plist */,
 				9C40A2B71F7112E800E2A324 /* scz.plist */,
 				42E2887E1F45AF8A0002AF72 /* states.plist */,
@@ -4591,6 +4597,7 @@
 				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
 				9C40A2B91F7112E800E2A324 /* scz.plist in Resources */,
 				42E2887A1F4592DB0002AF72 /* Exp71_Xib_View.xib in Resources */,
+				42A0D8A31F7D17E300500540 /* sjqd.plist in Resources */,
 				D2938B9C1EAD996500770D90 /* LQ_ZJM_Cell2.xib in Resources */,
 				8C283F461EB0A01C00440413 /* icon_location@3x.png in Resources */,
 				42E288811F45AF8A0002AF72 /* tongjitype.plist in Resources */,
@@ -4655,6 +4662,7 @@
 				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
 				42E288901F4695BD0002AF72 /* JCB_DetailCell_1.xib in Resources */,
 				9C05F05C1F3BF83800BF4627 /* BFListCell.xib in Resources */,
+				42A0D8A21F7D17E300500540 /* lq.plist in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
 				D20065301DFF86B30021E293 /* LineChart2ViewController.xib in Resources */,

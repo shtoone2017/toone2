@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSArray * tongtypeArr;
 @property (nonatomic, strong) NSArray * wscArr;//未生产
 @property (nonatomic, strong) NSArray * sczArr;//生产中
+@property (nonatomic, strong) NSArray * ylqdArr;//压力设计强度
+@property (nonatomic, strong) NSArray * yllqArr;//压力龄期
 @end
 
 @implementation HNT_BHZ_SB_Controller
@@ -125,6 +127,18 @@
     }
     return _sczArr;
 }
+-(NSArray *)yllqArr {//压力龄期
+    if (_yllqArr == nil) {
+        _yllqArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"lq.plist" ofType:nil]];
+    }
+    return _yllqArr;
+}
+-(NSArray *)ylqdArr {//压力设计强度
+    if (_ylqdArr == nil) {
+        _ylqdArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sjqd.plist" ofType:nil]];
+    }
+    return _ylqdArr;
+}
 -(NSArray *)wscArr {
     if (_wscArr == nil) {
         _wscArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"wsc.plist" ofType:nil]];
@@ -157,6 +171,10 @@
         return self.sczArr.count;
     }else if (_type == SBListTypeRWWSC) {
         return self.wscArr.count;
+    }else if (_type == SBListTypeYLQD) {//压力设计强度
+        return self.ylqdArr.count;
+    }else if (_type == SBListTypeYLLQ) {//龄期
+        return self.yllqArr.count;
     }else {
         return self.datas.count;
     }
@@ -178,6 +196,12 @@
     }else if (_type == SBListTypeStat) {//出场类型
         NSDictionary * dict = self.statesArr[indexPath.row];
         cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeYLQD) {//压力设计强度
+        NSDictionary * dict = self.ylqdArr[indexPath.row];
+        cell.textLabel.text = dict[@"name"];
+    }else if (_type == SBListTypeYLLQ) {//龄期
+        NSDictionary * dict = self.yllqArr[indexPath.row];
+        cell.textLabel.text = dict[@"name"];
     }else {
         
         HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
@@ -216,6 +240,14 @@
         
         NSDictionary * dict = self.statesArr[indexPath.row];
         self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeYLQD) {//压力设计强度
+        
+        NSDictionary * dict = self.ylqdArr[indexPath.row];
+        self.callBlock(dict[@"name"], nil);
+    }else if (_type == SBListTypeYLLQ) {//龄期
+        
+        NSDictionary * dict = self.yllqArr[indexPath.row];
+        self.callBlock(dict[@"name"], nil);
     }else {
         
         HNT_BHZ_SB_Model * model = self.datas[indexPath.row];

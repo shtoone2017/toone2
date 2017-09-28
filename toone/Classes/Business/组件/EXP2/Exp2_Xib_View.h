@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *sbButton;
 @property (weak, nonatomic) IBOutlet UIButton *typeButton;
+@property (weak, nonatomic) IBOutlet UIButton *sjqdButton;
+@property (weak, nonatomic) IBOutlet UIButton *lqButton;
 
 @end
