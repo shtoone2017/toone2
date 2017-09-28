@@ -102,7 +102,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    if (jcPicArr.count > 0 && ccPicArr.count > 0)
+    {
+        return 4;
+    }
+    else if(jcPicArr.count == 0 && ccPicArr.count == 0)
+    {
+        return 2;
+    }
+    else
+    {
+        return 3;
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -211,7 +223,24 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     //@"进出场情况"
-    NSArray *titleArr = @[@"基本信息",@"材料明细",@"进场图片",@"出场图片"];
+    NSArray *titleArr;
+    if (jcPicArr.count > 0 && ccPicArr.count > 0)
+    {
+        titleArr = @[@"基本信息",@"材料明细",@"进场图片",@"出场图片"];
+    }
+    else if(jcPicArr.count == 0 && ccPicArr.count == 0)
+    {
+        titleArr = @[@"基本信息",@"材料明细"];
+    }
+    else if(jcPicArr.count >0 && ccPicArr.count==0)
+    {
+        titleArr = @[@"基本信息",@"材料明细",@"进场图片"];
+    }
+    else
+    {
+        titleArr = @[@"基本信息",@"材料明细",@"出场图片"];
+    }
+    
     UIView *headerView = [UIView new];
     UILabel *titleLab = [UILabel new];
     titleLab.frame = CGRectMake(25, 10, 150, 25);
