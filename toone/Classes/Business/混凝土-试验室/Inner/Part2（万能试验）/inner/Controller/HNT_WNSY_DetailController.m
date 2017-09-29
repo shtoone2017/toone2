@@ -174,14 +174,16 @@
                     int y_Min = CGFLOAT_MAX;
                     int y_Max = CGFLOAT_MIN;
                     if (arrY.count >= 1) {
-                        
-                        for (int j; j<arrY.count; j++) {
-                            int value = [(NSString*)arrY[i][j] intValue];
-                            if (value>y_Max) {
-                                y_Max = value;
-                            }
-                            if (value<y_Min) {
-                                y_Min = value;
+                        NSArray *temparr = arrY[0];
+                        if (temparr.count!=0) {
+                            for (int j= 0; j<arrY.count; j++) {
+                                int value = [(NSString*)arrY[i][j] intValue];
+                                if (value>y_Max) {
+                                    y_Max = value;
+                                }
+                                if (value<y_Min) {
+                                    y_Min = value;
+                                }
                             }
                         }
                     }
@@ -227,11 +229,14 @@
         
         self.chart_sc.contentOffset = CGPointMake(self.view.bounds.size.width*(sender.tag-1), 0);
     }completion:^(BOOL finished) {
-        self.LZ_Label.text = [self.model.LZ componentsSeparatedByString:@"&"][sender.tag-1];//最大力值
-        self.LZQD_Label.text = [self.model.LZQD componentsSeparatedByString:@"&"][sender.tag-1];//抗拉强度
-        self.QFLZ_Label.text = [self.model.QFLZ componentsSeparatedByString:@"&"][sender.tag-1];//屈服力值
-        self.QFQD_Label.text = [self.model.QFQD componentsSeparatedByString:@"&"][sender.tag-1];//屈服强度
-//        self.SCL_Label.text = [self.model.SCL componentsSeparatedByString:@"&"][sender.tag-1];//伸长率
+        if (![self.model.LZ isEqualToString:@""])
+        {
+            self.LZ_Label.text = [self.model.LZ componentsSeparatedByString:@"&"][sender.tag-1];//最大力值
+            self.LZQD_Label.text = [self.model.LZQD componentsSeparatedByString:@"&"][sender.tag-1];//抗拉强度
+            self.QFLZ_Label.text = [self.model.QFLZ componentsSeparatedByString:@"&"][sender.tag-1];//屈服力值
+            self.QFQD_Label.text = [self.model.QFQD componentsSeparatedByString:@"&"][sender.tag-1];//屈服强度
+            //        self.SCL_Label.text = [self.model.SCL componentsSeparatedByString:@"&"][sender.tag-1];//伸长率
+        }
     }];
 }
 #pragma mark - 进入处置界面

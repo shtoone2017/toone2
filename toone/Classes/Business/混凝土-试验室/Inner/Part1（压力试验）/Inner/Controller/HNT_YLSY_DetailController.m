@@ -170,13 +170,18 @@
                     //1.取出最大值和最小值
                     int y_Min = CGFLOAT_MAX;
                     int y_Max = CGFLOAT_MIN;
-                    for (int j; j<arrY.count; j++) {
-                        int value = [(NSString*)arrY[i][j] intValue];
-                        if (value>y_Max) {
-                            y_Max = value;
-                        }
-                        if (value<y_Min) {
-                            y_Min = value;
+                    for (int j=0; j<arrY.count; j++) {
+                        
+                        NSArray *temparr = arrY[0];
+                        if (temparr.count!=0)
+                        {
+                            int value = [(NSString*)arrY[i][j] intValue];
+                            if (value>y_Max) {
+                                y_Max = value;
+                            }
+                            if (value<y_Min) {
+                                y_Min = value;
+                            }
                         }
                     }
                     
