@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeTLD,    //塌落度
     SBListTypeJZFS,     //浇注方式
     SBListTypeRWDZT,     //任务单状态
-    SBListTypeTon,    //时间类型
+    SBListTypeTon,    //统计类型
     SBListTypeStat,     //出场类别
     SBListTypeRWSCZ,     //生产中
     SBListTypeRWWSC,     //未生产

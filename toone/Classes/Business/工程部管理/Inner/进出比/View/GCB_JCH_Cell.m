@@ -26,7 +26,10 @@
     DVBarChartView *chartView = [[DVBarChartView alloc] initWithFrame:CGRectMake(0,0,Screen_w,365)];
     chartView.yAxisViewWidth = 52;
     NSString *max;
-    max = ax[0];
+    if (ax.count) {
+        
+        max = ax[0];
+    }
     for (NSUInteger j = 0; j<ax.count; j++) {
         if ([ax[j] intValue]>[max intValue]) {
             max = ax[j];

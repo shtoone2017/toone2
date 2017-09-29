@@ -136,8 +136,9 @@
 {
     NSString *urlString = [NSString stringWithFormat:@"%@appWZproject.do?AppCaiLiaoNameDict",baseUrl];
     __weak typeof(self) weakSelf = self;
+    [Tools showActivityToView:self.view];
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
-        
+        [Tools removeActivity];
         NSDictionary *dict = (NSDictionary *)result;
         
         NSArray *dictArr = dict[@"data"];

@@ -31,28 +31,72 @@
         case SBListTypeSJQD:
         {
             self.title = @"选择设计强度";
-
+            [self datas];
         }
             break;
         case SBListTypeTLD:
         {
             self.title = @"选择塌落度";
-
+            [self datas];
         }
             break;
         case SBListTypeJZFS:
         {
             self.title = @"选择浇注方式";
-
+            [self datas];
         }
             break;
+        case SBListTypeYLQD:
+        {
+            self.title = @"设计强度";
+            
+        }
+            break;
+        case SBListTypeYLLQ:
+        {
+            self.title = @"龄期";
+            
+        }
+            break;
+        case SBListTypeRWDZT:
+        {
+            self.title = @"任务单状态";
+            
+        }
+            break;
+        case SBListTypeTon:
+        {
+            self.title = @"选择时间";
+            
+        }
+            break;
+        case SBListTypeStat:
+        {
+            self.title = @"出场类型";
+            
+        }
+            break;
+        case SBListTypeRWSCZ:
+        {
+            self.title = @"选择状态";
+            
+        }
+            break;
+        case SBListTypeRWWSC:
+        {
+            self.title = @"选择状态";
+            
+        }
+            break;
+
         default:
             self.title = @"选择设备";
-
+            [self datas];
             break;
     }
-        [self datas];
+    
 }
+
 
 
 - (void)viewDidLoad {
@@ -71,7 +115,8 @@
     if (!_datas) {
         [Tools showActivityToView:self.view];
         
-        NSString * departId = self.departId;
+        NSString * departId = departId = self.departId ?:@"";
+        
         NSString * urlString;
         if (_type == SBListTypeBF)
         {
@@ -146,13 +191,13 @@
     return _wscArr;
 }
 
--(NSArray *)statesArr {
+-(NSArray *)statesArr {//
     if (_statesArr == nil) {
         _statesArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"states.plist" ofType:nil]];
     }
     return _statesArr;
 }
--(NSArray *)tongtypeArr {
+-(NSArray *)tongtypeArr {//
     if (_tongtypeArr == nil) {
         _tongtypeArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"tongjitype.plist" ofType:nil]];
     }
