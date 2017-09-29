@@ -135,7 +135,7 @@
         for (int i=0; i<_data.count; i++)
         {
             Node *node = [_data objectAtIndex:i];
-            if (node.parentId == parentNode.nodeId)
+            if ([node.parentId isEqualToString:parentNode.nodeId])
             {
                 node.expand = !node.expand;
                 if (node.expand)
@@ -214,7 +214,7 @@
     BOOL flag = NO;
     for (Node *tempNode in _data)
     {
-        if (node.nodeId == tempNode.parentId) //只要有一个就证明他有子节点
+        if ([node.nodeId isEqualToString:tempNode.parentId]) //只要有一个就证明他有子节点
         {
             flag = YES;
             break;

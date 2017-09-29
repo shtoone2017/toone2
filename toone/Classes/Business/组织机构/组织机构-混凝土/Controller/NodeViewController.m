@@ -24,7 +24,6 @@
 @property (nonatomic, strong) NSMutableArray *channArr;
 @property (nonatomic, strong) Node *node;
 @property (nonatomic, strong) TreeTableView *treeTableView;
-
 @end
 @implementation NodeViewController
 
@@ -177,9 +176,10 @@
         }
         Node *node = _channs[i];
         node.depth = level;
-//        if (!node.depth) {
+        if (!node.depth) {
             node.expand = true;
-//        }
+        }
+        
     }
     for (int i = 0; i < self.channs.count; i++) {
         if ([[self.channs[i] parentId]  isEqual: @""] || ![self.channs[i] parentId]) {
