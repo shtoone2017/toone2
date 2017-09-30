@@ -11,8 +11,6 @@
 #import "HNT_YLSY_Controller.h"
 #import "HNT_WNSY_Controller.h"
 #import "HNT_TJFX_Controller.h"
-#import "SYS_PHBViewController.h"
-#import "SYS_TZDViewController.h"
 
 @interface HNT_SYS_InnerController ()
 
@@ -38,7 +36,7 @@
 }
 
 -(void)loadUI{
-    NSArray *titles = @[@"配合比",@"通知单",@"压力",@"万能",@"统计"];
+    NSArray *titles = @[@"压力",@"万能",@"统计"];
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:titles];
     seg.frame = CGRectMake(0,0,220,24);
     seg.selectedSegmentIndex = 0;
@@ -71,17 +69,12 @@
     tjVC.userGroupId = self.userGroupId;
     [self addChildViewController:tjVC];
     
-    SYS_PHBViewController *phbVC = [[SYS_PHBViewController alloc] init];
-    [self addChildViewController:phbVC];
     
-    SYS_TZDViewController *tzdVC = [[SYS_TZDViewController alloc] init];
-    [self addChildViewController:tzdVC];
-    
-    _vcsArr = @[phbVC,tzdVC,ylVC,wnVC,tjVC];
+    _vcsArr = @[ylVC,wnVC,tjVC];
     
     //设置默认vc
-    self.currentVC = phbVC;
-    [self.view addSubview:phbVC.view];
+    self.currentVC = ylVC;
+    [self.view addSubview:ylVC.view];
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)seg

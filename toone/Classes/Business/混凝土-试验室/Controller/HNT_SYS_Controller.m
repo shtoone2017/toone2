@@ -12,6 +12,10 @@
 #import "HNT_SYS_Cell.h"
 #import "HNT_SYS_InnerController.h"
 #import "NodeViewController.h"
+#import "SYS_PHBViewController.h"
+#import "SYS_TZDViewController.h"
+#import "SYS_MAIN_Cell.h"
+
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
@@ -59,6 +63,7 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[HNT_SYS_Cell class] forCellReuseIdentifier:@"HNT_SYS_Cell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [self.tableView.mj_header beginRefreshing];
@@ -102,27 +107,97 @@
     }];
 }
 #pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(section == 0)
+    {
+        return 2;
+    }
     return self.datas.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0)
+    {
+        return 50;
+    }
     HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
     return frameModel.cellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HNT_SYS_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_SYS_Cell" forIndexPath:indexPath];
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
-    cell.frameModel = frameModel;
-    return cell;
+    if (indexPath.section == 0)
+    {
+        NSArray *titleArr = @[@"设计配合比",@"配比通知单"];
+        NSArray *imgArr = @[@"SJ_PHB",@"PB_TZD"];
+        static NSString *cellId = @"CELLID";
+        SYS_MAIN_Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"SYS_MAIN_Cell" owner:self options:nil] firstObject];
+        }
+        cell.title.text = titleArr[indexPath.row];
+        cell.img.image = [UIImage imageNamed:imgArr[indexPath.row]];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else
+    {
+        HNT_SYS_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_SYS_Cell" forIndexPath:indexPath];
+        HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
+        cell.frameModel = frameModel;
+        return cell;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
-    HNT_SYS_Model * model = frameModel.models.firstObject;
-    [self performSegueWithIdentifier:@"HNT_SYS_InnerController" sender:model.userGroupId];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0)
+    {
+        if (indexPath.row == 0)
+        {
+            //设计配合比
+            SYS_PHBViewController *vc = [[SYS_PHBViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else
+        {
+            //配比通知单
+            SYS_TZDViewController *vc = [[SYS_TZDViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+
+        }
+    }
+    else
+    {
+        HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
+        HNT_SYS_Model * model = frameModel.models.firstObject;
+        [self performSegueWithIdentifier:@"HNT_SYS_InnerController" sender:model.userGroupId];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 38.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *titleArr = @[@"物资试验",@"压力万能试验"];
+    UIView *headerView = [UIView new];
+    UILabel *titleLab = [UILabel new];
+    titleLab.frame = CGRectMake(15, 10, 150, 25);
+    titleLab.text = titleArr[section];
+    titleLab.textColor = BLUECOLOR;
+    [headerView addSubview:titleLab];
+    headerView.backgroundColor = [UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1];
+    return headerView;
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
     if ([vc isKindOfClass:[HNT_SYS_InnerController class]]) {

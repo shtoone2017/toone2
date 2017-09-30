@@ -69,6 +69,7 @@
 
 - (void)loadUI
 {
+    self.title = @"配比通知单";
     UIView *navigationView = [UIView new];
     navigationView.frame = CGRectMake(0, 60, Screen_w, 30);
     navigationView.backgroundColor = BLUECOLOR;
