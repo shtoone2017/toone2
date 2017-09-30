@@ -32,6 +32,7 @@
     self.view.backgroundColor = [UIColor snowColor];
     self.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",super.startTime,super.endTime];
     [self loadData];
+    self.title =@"统计分析";
 }
 -(void)loadData{
     //添加指示器

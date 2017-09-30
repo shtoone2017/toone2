@@ -78,7 +78,7 @@
         self.tableViewSigner = @"1";
         
     }
-    
+    self.title =@"万能试验";
     [self loadUI];
     [self loadData];
 }

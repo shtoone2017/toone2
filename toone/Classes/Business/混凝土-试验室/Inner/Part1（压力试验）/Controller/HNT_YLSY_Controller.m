@@ -85,7 +85,7 @@
         _sjqd = @"";
     
     }
-    
+    self.title =@"压力试验";
     [self loadUI];
     [self loadData];
 }
