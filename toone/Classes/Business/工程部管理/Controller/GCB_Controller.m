@@ -34,6 +34,9 @@
     if (_parentName) {
         NSString * zjjg = FormatString(@"分部分项 : ",_parentName);
         self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+    }else {
+        NSString * zjjg = Format(@"分部分项 : ");
+        self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
     }
     self.departName_Label.textColor = [UIColor whiteColor];
     self.departName_Label.font = [UIFont systemFontOfSize:12.0];
@@ -45,7 +48,6 @@
     self.pageNo = @"1";
     self.maxPageItems = @"5";
     self.parentno = @"";
-    [self addPanGestureRecognizer];
     [self loadTb];
     [self loadUI];
     [self loadData];
@@ -78,10 +80,10 @@
     [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
-    UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
-    btn3.tag  = 3;
-    [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
+//    UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
+//    btn3.tag  = 3;
+//    [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
     
 }
 #pragma mark - loadData
@@ -130,12 +132,12 @@
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    WZ_TaBar_Controller * vc = (WZ_TaBar_Controller*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WZ_TaBar_Controller"];
-    WZ_GCB_InnerController *vc = [[WZ_GCB_InnerController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-//    [self performSegueWithIdentifier:@"WZ_TaBar_Controller" sender:nil];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+////    WZ_TaBar_Controller * vc = (WZ_TaBar_Controller*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"WZ_TaBar_Controller"];
+//    WZ_GCB_InnerController *vc = [[WZ_GCB_InnerController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+////    [self performSegueWithIdentifier:@"WZ_TaBar_Controller" sender:nil];
+//}
 
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
@@ -149,10 +151,6 @@
                 [self loadData];
             };
             [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 3:{
-            [super pan];
             break;
         }
         default:

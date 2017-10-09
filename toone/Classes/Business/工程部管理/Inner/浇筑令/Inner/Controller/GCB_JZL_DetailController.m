@@ -71,8 +71,11 @@
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCB_JZL_DetailModel * model;
     GCB_JZL_DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JZL_DetailCell" forIndexPath:indexPath];
-    GCB_JZL_DetailModel * model = self.datas[indexPath.row];
+    if (self.datas.count) {
+        model = self.datas[indexPath.row];
+    }
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
     switch (_jzlName) {
         case 1://编辑

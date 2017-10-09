@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -183,7 +183,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-dD-c0D">
-                    <rect key="frame" x="137" y="280" width="100" height="34"/>
+                    <rect key="frame" x="137" y="245" width="100" height="34"/>
                     <color key="backgroundColor" red="0.062745098040000002" green="0.59215686270000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="Bkg-qY-seS"/>
@@ -245,7 +245,7 @@
                         <constraint firstItem="Stq-3x-c6L" firstAttribute="top" secondItem="Tai-Fx-TNo" secondAttribute="bottom" id="vna-l1-fjo"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tH-GF-tXb">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tH-GF-tXb">
                     <rect key="frame" x="20" y="240" width="335" height="35"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-g4-grD" userLabel="线">
@@ -309,7 +309,7 @@
                 <constraint firstAttribute="trailing" secondItem="XjA-kQ-hua" secondAttribute="trailing" constant="20" id="di7-Hn-FNS"/>
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="top" secondItem="CGk-kH-2JP" secondAttribute="bottom" id="dzh-NR-EmT"/>
                 <constraint firstItem="Xmh-dD-e8A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="gVV-yK-zw6"/>
-                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="uOa-8j-mJI" secondAttribute="bottom" constant="50" id="gjW-lJ-ely"/>
+                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="uOa-8j-mJI" secondAttribute="bottom" constant="15" id="gjW-lJ-ely"/>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwd-HD-Qzb"/>
                 <constraint firstItem="3tH-GF-tXb" firstAttribute="top" secondItem="uOa-8j-mJI" secondAttribute="bottom" constant="10" id="prZ-jx-ZSh"/>
                 <constraint firstAttribute="trailing" secondItem="uOa-8j-mJI" secondAttribute="trailing" constant="20" id="xal-qY-wAE"/>

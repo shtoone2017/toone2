@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.departId = @"";
-    
+    self.title = @"原材料进耗对比";
     [self loadUI];
     [self loadData];
     

@@ -55,6 +55,9 @@
 		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
+		4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C29E1F8B0DC700FA321F /* GCB_NewController.m */; };
+		4255C2A21F8B450A00FA321F /* GCB_WPLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A11F8B450A00FA321F /* GCB_WPLController.m */; };
+		4255C2A51F8B574D00FA321F /* GCB_WC_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */; };
 		42565DDA1F678DAA00D21620 /* GCB_JCH_1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42565DD81F678DAA00D21620 /* GCB_JCH_1Cell.m */; };
 		42565DDB1F678DAA00D21620 /* GCB_JCH_1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42565DD91F678DAA00D21620 /* GCB_JCH_1Cell.xib */; };
 		425AE0E81F341C360048D96B /* GCB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0E71F341C360048D96B /* GCB_Controller.m */; };
@@ -633,6 +636,12 @@
 		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
 		18DA4FE51E1E15B800229C81 /* Exmp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp2.h; sourceTree = "<group>"; };
 		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
+		4255C29D1F8B0DC700FA321F /* GCB_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_NewController.h; sourceTree = "<group>"; };
+		4255C29E1F8B0DC700FA321F /* GCB_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_NewController.m; sourceTree = "<group>"; };
+		4255C2A01F8B450A00FA321F /* GCB_WPLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_WPLController.h; sourceTree = "<group>"; };
+		4255C2A11F8B450A00FA321F /* GCB_WPLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_WPLController.m; sourceTree = "<group>"; };
+		4255C2A31F8B574D00FA321F /* GCB_WC_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_WC_Controller.h; sourceTree = "<group>"; };
+		4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_WC_Controller.m; sourceTree = "<group>"; };
 		42565DD71F678DAA00D21620 /* GCB_JCH_1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JCH_1Cell.h; sourceTree = "<group>"; };
 		42565DD81F678DAA00D21620 /* GCB_JCH_1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JCH_1Cell.m; sourceTree = "<group>"; };
 		42565DD91F678DAA00D21620 /* GCB_JCH_1Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCB_JCH_1Cell.xib; sourceTree = "<group>"; };
@@ -1677,6 +1686,8 @@
 			children = (
 				425AE0E61F341C360048D96B /* GCB_Controller.h */,
 				425AE0E71F341C360048D96B /* GCB_Controller.m */,
+				4255C29D1F8B0DC700FA321F /* GCB_NewController.h */,
+				4255C29E1F8B0DC700FA321F /* GCB_NewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2551,6 +2562,10 @@
 			children = (
 				42E288371F43E0AC0002AF72 /* GCB_JZL_Controller.h */,
 				42E288381F43E0AC0002AF72 /* GCB_JZL_Controller.m */,
+				4255C2A01F8B450A00FA321F /* GCB_WPLController.h */,
+				4255C2A11F8B450A00FA321F /* GCB_WPLController.m */,
+				4255C2A31F8B574D00FA321F /* GCB_WC_Controller.h */,
+				4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4923,6 +4938,7 @@
 				8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */,
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
 				8CBD72E51E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.m in Sources */,
+				4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */,
 				42AC71661E30C393007D8F57 /* DayDetailsCell.m in Sources */,
 				42E288C71F4AB7900002AF72 /* GCB_RWD_HeadModel.m in Sources */,
 				9CAAAF911F43DEF6008F43BA /* SYS_PHBListModel.m in Sources */,
@@ -4959,6 +4975,7 @@
 				8C28406B1EB1127500440413 /* TP_NYSDList_Model.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */,
+				4255C2A51F8B574D00FA321F /* GCB_WC_Controller.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
 				D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */,
@@ -4992,6 +5009,7 @@
 				D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */,
 				42AC720C1E30C576007D8F57 /* MASConstraint.m in Sources */,
 				42E2884B1F4415EB0002AF72 /* GCB_RWD_Model.m in Sources */,
+				4255C2A21F8B450A00FA321F /* GCB_WPLController.m in Sources */,
 				42E2888B1F4693A90002AF72 /* JCB_DetailModel.m in Sources */,
 				42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */,
 				9CAAAF961F43E106008F43BA /* PHBListCell.m in Sources */,
