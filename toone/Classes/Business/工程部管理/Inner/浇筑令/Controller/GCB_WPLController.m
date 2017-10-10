@@ -165,13 +165,13 @@
 }
 #pragma mark - YBPopupMenuDelegate
 - (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu {
-    if ([ITLES[index] isEqualToString:@"新增"]) {
+    if ([TITLES[index] isEqualToString:@"新增"]) {
         GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
         vc.detailId = _dearid;
         vc.jzlName = 2;
         [self.navigationController pushViewController:vc animated:YES];
     }
-    if ([ITLES[index] isEqualToString:@"编辑"]) {
+    if ([TITLES[index] isEqualToString:@"编辑"]) {
         GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
         vc.detailId = _dearid;
         vc.jzlName = 1;

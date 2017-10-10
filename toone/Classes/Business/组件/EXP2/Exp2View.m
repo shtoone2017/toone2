@@ -41,6 +41,11 @@
     }
     return self;
 }
+-(void)hiddenView {
+    self.xib.lqView.hidden = YES;
+    self.xib.sjqdView.hidden = YES;
+    self.xib.okTop.constant = 10;
+}
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
         if (self.expBlock) {

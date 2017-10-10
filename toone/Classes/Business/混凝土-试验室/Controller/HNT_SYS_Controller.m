@@ -115,6 +115,7 @@
 //            HNT_WNSY_Controller *vc = [[HNT_WNSY_Controller alloc] init];
             HNT_WNSY_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_WNSY_Controller"];
             ylVC.userGroupId = _departId;
+            ylVC.zt = @"1";
             [self.navigationController pushViewController:ylVC animated:YES];
         }
             break;

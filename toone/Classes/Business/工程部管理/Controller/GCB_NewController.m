@@ -12,99 +12,146 @@
 #import "GCB_Controller.h"
 #import "GCB_WPLController.h"
 #import "GCB_WC_Controller.h"
+#import "GCB_RWD_Controller.h"
+#import "GCB_JCB_NewController.h"
+#import "GCB_Model.h"
+#import "SeView.h"
 
-@interface GCB_NewController ()
+@interface GCB_NewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tb;
+@property (nonatomic,strong) NSMutableArray * datas;
+@property (nonatomic, strong) SeView *seView;
 
 @end
 @implementation GCB_NewController
-
+//-(void)viewDidAppear:(BOOL)animated {
+//    self.seView = [[SeView alloc] init];
+//    self.tb.tableHeaderView = _seView;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.seView = [[SeView alloc] init];
+    self.tb.tableHeaderView = _seView;
     [self loadUI];
+    [self loadData];
     [self addPanGestureRecognizer];
     self.view.backgroundColor = [UIColor colorWithRed:240/255.f green:240/255.f blue:244/255.f alpha:1];
     
 }
+-(void)loadData{
+    NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
+    NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
+    NSString * userGroupId;
+    userGroupId = [UserDefaultsSetting shareSetting].departId;
+    NSString * urlString = [NSString stringWithFormat:GCB_Home,userGroupId,startTimeStamp,endTimeStamp];
+
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        NSMutableArray * datas = [NSMutableArray array];
+        if ([json[@"success"] boolValue]) {
+            if ([json[@"data"] isKindOfClass:[NSArray class]]) {
+                for (NSDictionary * dict in json[@"data"]) {
+                    GCB_Model * model = [GCB_Model modelWithDict:dict];
+                    [datas addObject:model];
+//                    _seView.wplLabel.text = dict[@"notijiaoCount"];
+//                    _seView.yplLabel.text = dict[@"nsrCount"];
+//                    _seView.wtjLabel.text = dict[@"isrCount"];
+//                    _seView.sczLabel.text = dict[@"shengchaningCount"];
+//                    _seView.wcLabel.text = dict[@"isshengchancount"];
+                }
+            }
+        }
+        
+        self.datas = datas;
+        [self.tb reloadData];
+        [self.tb.mj_header endRefreshing];
+    } failure:^(NSError *error) {
+    }];
+}
+
 -(void)loadUI{
+    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
+    btn.tag  = 2;
+    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
     UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
     btn3.tag  = 3;
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tb.tableFooterView = [[UIView alloc] init];
+    self.tb.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [self.tb.mj_header beginRefreshing];
 }
-
+#pragma mark - tableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    GCB_Model * model;
+    if (self.datas.count) {
+        model = self.datas[0];
+    }
+    _seView.model = model;
+    return 1;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * ID = @"cell";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    cell.textLabel.text = @"";
+    return cell;
+}
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
-        case 101:{//新增
-            GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
-            vc.jzlName = 2;
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 102:{//未配料
-            GCB_WPLController *vc = [[GCB_WPLController alloc] init];
-            vc.zt = @"0";
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 103:{//已配料
-            GCB_WPLController *vc = [[GCB_WPLController alloc] init];
-            vc.zt = @"1";
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 201:{//未提交
-            GCB_WPLController *vc = [[GCB_WPLController alloc] init];
-            vc.zt = @"-1";
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 202:{//生产中
-            GCB_WC_Controller *vc = [[GCB_WC_Controller alloc] init];
-            vc.zt = @"2";
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 203:{//已完成
-            GCB_WC_Controller *vc = [[GCB_WC_Controller alloc] init];
-            vc.zt = @"3";
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 301:{//进出耗
-            GCB_JCH_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GCB_JCH_Controller"];
-            [self.navigationController pushViewController:ylVC animated:YES];
-            break;
-        }
-        case 302:{//工程进度
-            GCB_Controller *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GCB_Controller"];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 303:{//进场
-            
-            break;
-        }
-        case 304:{//出场
-            
-            break;
-        }
         case 3:{
             [super pan];
+            break;
+        }
+        case 2:{
+            sender.enabled = NO;
+            //1.
+            UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
+            backView.frame = CGRectMake(0, 64+35, Screen_w, Screen_h - 49 -64-35);
+            backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+            backView.hidden = YES;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
+                backView.hidden = NO;
+            });
+            [self.view addSubview:backView];
+            
+            //2.
+            Exp1View * e = [[Exp1View alloc] init];
+            e.frame = CGRectMake(0, 64, Screen_w, 150);
+            e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
+                NSLog(@"%d",type);
+                if (type == ExpButtonTypeCancel) {
+                    sender.enabled = YES;
+                    [backView removeFromSuperview];
+                }
+                if (type == ExpButtonTypeOk) {
+                    sender.enabled = YES;
+                    [backView removeFromSuperview];
+                    //
+                    self.startTime = (NSString*)obj1;
+                    self.endTime = (NSString*)obj2;
+                    [self loadData];
+                    FuncLog;
+                }
+                if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
+                    UIButton * btn = (UIButton*)obj1;
+                    [self calendarWithTimeString:btn.currentTitle obj:btn];
+                }
+//                self.tableView.userInteractionEnabled = YES;
+            };
+            [self.view addSubview:e];
             break;
         }
         default:
             break;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

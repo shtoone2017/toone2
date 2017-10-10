@@ -20,4 +20,5 @@ typedef void(^Exp71Block_t) (ExpButtonType,id,id);
 @property (nonatomic,copy) NSString * tjlxLabel;//
 @property (nonatomic,copy) NSString * cclxLabel;//
 
+-(void)hiddenView;
 @end

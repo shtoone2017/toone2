@@ -357,7 +357,6 @@
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="IJz-uB-tmp"/>
                 <constraint firstItem="XjA-kQ-hua" firstAttribute="top" secondItem="Xmh-dD-e8A" secondAttribute="bottom" id="IMx-oE-UpX"/>
                 <constraint firstItem="uOa-8j-mJI" firstAttribute="top" secondItem="XjA-kQ-hua" secondAttribute="bottom" id="KH1-mS-jP0"/>
-                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="qOw-CZ-7Ix" secondAttribute="bottom" constant="8" id="Mis-dC-3nh"/>
                 <constraint firstAttribute="trailing" secondItem="vjO-AD-idK" secondAttribute="trailing" id="Peo-Lz-IoI"/>
                 <constraint firstItem="Xmh-dD-e8A" firstAttribute="top" secondItem="KK1-QP-yjV" secondAttribute="bottom" id="RZb-Gb-U3w"/>
                 <constraint firstAttribute="trailing" secondItem="fwz-bz-nUW" secondAttribute="trailing" constant="20" id="Rah-JU-dW7"/>
@@ -369,6 +368,7 @@
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="top" secondItem="CGk-kH-2JP" secondAttribute="bottom" id="dzh-NR-EmT"/>
                 <constraint firstItem="Xmh-dD-e8A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="gVV-yK-zw6"/>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwd-HD-Qzb"/>
+                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="wJd-1i-ubC" secondAttribute="bottom" constant="43" id="tSZ-Rv-c1M"/>
                 <constraint firstAttribute="trailing" secondItem="uOa-8j-mJI" secondAttribute="trailing" constant="20" id="xal-qY-wAE"/>
                 <constraint firstAttribute="trailing" secondItem="KK1-QP-yjV" secondAttribute="trailing" constant="20" id="yLz-EC-CXw"/>
                 <constraint firstItem="XjA-kQ-hua" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="zdL-HW-1sA"/>
@@ -378,10 +378,12 @@
                 <outlet property="cancelButton" destination="vjO-AD-idK" id="UeD-e5-syH"/>
                 <outlet property="cclxBut" destination="8aP-Zj-uaw" id="PMF-bR-hpz"/>
                 <outlet property="cclxLabel" destination="QJM-Eh-2Aa" id="bhh-UB-XH7"/>
+                <outlet property="czView" destination="qOw-CZ-7Ix" id="vMX-zn-KHo"/>
                 <outlet property="earthLabel" destination="WX6-Se-alg" id="Fw4-XU-6sd"/>
                 <outlet property="earthworkButton" destination="Tai-Fx-TNo" id="8tY-1L-DCG"/>
                 <outlet property="endTimeButton" destination="o7W-2d-q6J" id="GfA-c9-xQc"/>
                 <outlet property="okButton" destination="cVs-dD-c0D" id="l4Q-Tp-vbd"/>
+                <outlet property="okTop" destination="tSZ-Rv-c1M" id="uHP-YI-Xaq"/>
                 <outlet property="sbButton" destination="5bK-95-J1A" id="b6Q-cE-yPp"/>
                 <outlet property="sbLabel" destination="ohT-xP-w2s" id="xoz-Ws-Jjf"/>
                 <outlet property="startTimeButton" destination="wyS-R0-S0o" id="5fb-gU-tKk"/>

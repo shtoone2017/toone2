@@ -17,4 +17,12 @@
 @property (nonatomic,copy)NSString *projectName;//工程名称
 @property (nonatomic,strong)NSNumber *uesid;//
 
+/*home*/
+@property (nonatomic, copy) NSString *isrCount;//浇筑令已配料
+@property (nonatomic, copy) NSString *nsrCount;//浇筑令未配料
+@property (nonatomic, copy) NSString *notijiaoCount;//未提交
+@property (nonatomic, copy) NSString *isshengchancount;//已完工
+@property (nonatomic, copy) NSString *shengchaningCount;//生产中
+@property (nonatomic, copy) NSString *userGroupId;
+
 @end

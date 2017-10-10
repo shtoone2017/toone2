@@ -302,7 +302,6 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="Ter-DG-Jcs" secondAttribute="bottom" constant="50" id="01Q-Fh-k4r"/>
                 <constraint firstItem="bRb-Tz-3uU" firstAttribute="top" secondItem="XjA-kQ-hua" secondAttribute="bottom" constant="10" id="06O-fq-b9D"/>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="leading" secondItem="CGk-kH-2JP" secondAttribute="trailing" id="1Eo-z6-YZB"/>
                 <constraint firstItem="cVs-dD-c0D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1ei-JI-2yx"/>
@@ -315,6 +314,7 @@
                 <constraint firstAttribute="trailing" secondItem="vjO-AD-idK" secondAttribute="trailing" id="Peo-Lz-IoI"/>
                 <constraint firstAttribute="trailing" secondItem="Ter-DG-Jcs" secondAttribute="trailing" constant="20" id="PkJ-EZ-gUi"/>
                 <constraint firstAttribute="trailing" secondItem="fwz-bz-nUW" secondAttribute="trailing" constant="20" id="Rah-JU-dW7"/>
+                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="bRb-Tz-3uU" secondAttribute="bottom" constant="95" id="S0c-8e-Fj4"/>
                 <constraint firstItem="KK1-QP-yjV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Tl4-6N-DJG"/>
                 <constraint firstItem="CGk-kH-2JP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VQt-1J-oyR"/>
                 <constraint firstItem="Ter-DG-Jcs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="WaX-0B-ean"/>
@@ -333,9 +333,12 @@
                 <outlet property="cancelButton" destination="vjO-AD-idK" id="UeD-e5-syH"/>
                 <outlet property="endTimeButton" destination="o7W-2d-q6J" id="GfA-c9-xQc"/>
                 <outlet property="lqButton" destination="UNM-xO-XVe" id="Blv-9t-Ba0"/>
+                <outlet property="lqView" destination="rRf-Wa-GwW" id="1BM-Im-pZJ"/>
                 <outlet property="okButton" destination="cVs-dD-c0D" id="l4Q-Tp-vbd"/>
+                <outlet property="okTop" destination="S0c-8e-Fj4" id="bL5-tR-F5U"/>
                 <outlet property="sbButton" destination="5bK-95-J1A" id="b6Q-cE-yPp"/>
                 <outlet property="sjqdButton" destination="gcH-Kp-hXl" id="GOP-uY-cJ7"/>
+                <outlet property="sjqdView" destination="Ter-DG-Jcs" id="1Js-ZY-ddS"/>
                 <outlet property="startTimeButton" destination="wyS-R0-S0o" id="5fb-gU-tKk"/>
                 <outlet property="typeButton" destination="bqT-ql-ztM" id="tYj-O2-Gro"/>
             </connections>

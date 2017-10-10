@@ -31,4 +31,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *cclxLabel;
 
 
+@property (weak, nonatomic) IBOutlet UIView *czView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *okTop;
+
+
 @end

@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"任务单执行情况";
     self.pageNo = @"1";
     self.maxPageItems = @"5";
     self.departId = @"";

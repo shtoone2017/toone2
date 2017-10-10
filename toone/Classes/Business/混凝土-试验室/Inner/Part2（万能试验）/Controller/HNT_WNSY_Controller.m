@@ -383,7 +383,10 @@
     
     //2.
     Exp2View * e = [[Exp2View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 240);
+    if ([_zt isEqualToString:@"1"]) {
+        e.frame = CGRectMake(0, 64+36, Screen_w, 240);
+        [e hiddenView];
+    }
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         //        NSLog(@"ExpButtonType~~~ %d",type);

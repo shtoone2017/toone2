@@ -58,6 +58,10 @@
 		4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C29E1F8B0DC700FA321F /* GCB_NewController.m */; };
 		4255C2A21F8B450A00FA321F /* GCB_WPLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A11F8B450A00FA321F /* GCB_WPLController.m */; };
 		4255C2A51F8B574D00FA321F /* GCB_WC_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */; };
+		4255C2AB1F8B62AB00FA321F /* GCB_JCB_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2AA1F8B62AB00FA321F /* GCB_JCB_NewController.m */; };
+		4255C2AE1F8B6E9300FA321F /* UpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2AD1F8B6E9300FA321F /* UpButton.m */; };
+		4255C2B21F8B85DA00FA321F /* SeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2B01F8B85DA00FA321F /* SeView.m */; };
+		4255C2B31F8B85DA00FA321F /* SeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4255C2B11F8B85DA00FA321F /* SeView.xib */; };
 		42565DDA1F678DAA00D21620 /* GCB_JCH_1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42565DD81F678DAA00D21620 /* GCB_JCH_1Cell.m */; };
 		42565DDB1F678DAA00D21620 /* GCB_JCH_1Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42565DD91F678DAA00D21620 /* GCB_JCH_1Cell.xib */; };
 		425AE0E81F341C360048D96B /* GCB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0E71F341C360048D96B /* GCB_Controller.m */; };
@@ -642,6 +646,13 @@
 		4255C2A11F8B450A00FA321F /* GCB_WPLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_WPLController.m; sourceTree = "<group>"; };
 		4255C2A31F8B574D00FA321F /* GCB_WC_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_WC_Controller.h; sourceTree = "<group>"; };
 		4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_WC_Controller.m; sourceTree = "<group>"; };
+		4255C2A91F8B62AB00FA321F /* GCB_JCB_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JCB_NewController.h; sourceTree = "<group>"; };
+		4255C2AA1F8B62AB00FA321F /* GCB_JCB_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JCB_NewController.m; sourceTree = "<group>"; };
+		4255C2AC1F8B6E9300FA321F /* UpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpButton.h; sourceTree = "<group>"; };
+		4255C2AD1F8B6E9300FA321F /* UpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpButton.m; sourceTree = "<group>"; };
+		4255C2AF1F8B85DA00FA321F /* SeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeView.h; sourceTree = "<group>"; };
+		4255C2B01F8B85DA00FA321F /* SeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeView.m; sourceTree = "<group>"; };
+		4255C2B11F8B85DA00FA321F /* SeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeView.xib; sourceTree = "<group>"; };
 		42565DD71F678DAA00D21620 /* GCB_JCH_1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_JCH_1Cell.h; sourceTree = "<group>"; };
 		42565DD81F678DAA00D21620 /* GCB_JCH_1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_JCH_1Cell.m; sourceTree = "<group>"; };
 		42565DD91F678DAA00D21620 /* GCB_JCH_1Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCB_JCH_1Cell.xib; sourceTree = "<group>"; };
@@ -1704,6 +1715,9 @@
 		425AE0E51F3418F00048D96B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4255C2AF1F8B85DA00FA321F /* SeView.h */,
+				4255C2B01F8B85DA00FA321F /* SeView.m */,
+				4255C2B11F8B85DA00FA321F /* SeView.xib */,
 				42E287B81F41C04F0002AF72 /* GCB_Table_Cell.h */,
 				42E287B91F41C04F0002AF72 /* GCB_Table_Cell.m */,
 				42E287BA1F41C04F0002AF72 /* GCB_Table_Cell.xib */,
@@ -2688,6 +2702,8 @@
 		42E288281F43DE580002AF72 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4255C2A91F8B62AB00FA321F /* GCB_JCB_NewController.h */,
+				4255C2AA1F8B62AB00FA321F /* GCB_JCB_NewController.m */,
 				42E2883A1F43E0CA0002AF72 /* GCB_JCB_Controller.h */,
 				42E2883B1F43E0CA0002AF72 /* GCB_JCB_Controller.m */,
 			);
@@ -4202,6 +4218,8 @@
 				D20064241DFF86800021E293 /* UserDefaultsSetting.m */,
 				42AC71951E30C3F0007D8F57 /* MyTableViewController.h */,
 				42AC71961E30C3F0007D8F57 /* MyTableViewController.m */,
+				4255C2AC1F8B6E9300FA321F /* UpButton.h */,
+				4255C2AD1F8B6E9300FA321F /* UpButton.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -4612,6 +4630,7 @@
 				42E2889A1F4963450002AF72 /* GCB_WSC_Cell.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
+				4255C2B31F8B85DA00FA321F /* SeView.xib in Resources */,
 				8C283F491EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib in Resources */,
 				42E288B51F4984E30002AF72 /* GCB_RWD_Detail_ZYCell.xib in Resources */,
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
@@ -5055,6 +5074,7 @@
 				D2938B9F1EAD9EB300770D90 /* LQ_SGModel.m in Sources */,
 				8C28406E1EB1127500440413 /* TP_NYSDList_Cell1.m in Sources */,
 				9CAB0F9D1F4A696D00F47B92 /* SYS_TZDViewController.m in Sources */,
+				4255C2AE1F8B6E9300FA321F /* UpButton.m in Sources */,
 				8C28404C1EB1123600440413 /* TP_SB_Controller.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
@@ -5062,6 +5082,7 @@
 				D20064A81DFF86800021E293 /* TimeTools.m in Sources */,
 				42E288601F4447E80002AF72 /* GCB_JCH_Model.m in Sources */,
 				42AC71581E30C393007D8F57 /* ExcessiveModel.m in Sources */,
+				4255C2B21F8B85DA00FA321F /* SeView.m in Sources */,
 				9C05F07C1F3BFC4400BF4627 /* JSONAPI.m in Sources */,
 				42E2887B1F4592DB0002AF72 /* Exp71View.m in Sources */,
 				42E288D61F4AE6800002AF72 /* GCB_JZL_DetailController.m in Sources */,
@@ -5113,6 +5134,7 @@
 				42E288711F4578920002AF72 /* GCB_JCB_Cell.m in Sources */,
 				18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				8C283F471EB0A01C00440413 /* BackgroundLocationViewController.m in Sources */,
+				4255C2AB1F8B62AB00FA321F /* GCB_JCB_NewController.m in Sources */,
 				42AC71591E30C393007D8F57 /* MaterialViewController.m in Sources */,
 				D200652D1DFF86B30021E293 /* LineChart1ViewController.m in Sources */,
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,

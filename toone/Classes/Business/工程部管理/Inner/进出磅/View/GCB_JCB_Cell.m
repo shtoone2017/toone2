@@ -49,7 +49,9 @@
     _jinchuliaodanNo.hidden = YES;
     _picLabel.text = [NSString stringWithFormat:@"%@",ccModel.pizhong];
     _maocLabel.text = [NSString stringWithFormat:@"%@",ccModel.maozhong];
-    _jincLabel.text = [NSString stringWithFormat:@"%@",ccModel.jingzhong];
+    if (ccModel.jingzhong) {
+        _jincLabel.text = [NSString stringWithFormat:@"%@",ccModel.jingzhong];
+    }
     _gysLabel.text = ccModel.gongyingshangName;
     _piciLabel.text = ccModel.pici;
 }

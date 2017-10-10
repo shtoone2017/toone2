@@ -53,7 +53,9 @@
     _shbhLabel.text = model.jinchuliaodanNo;
     _mzLabel.text = [NSString stringWithFormat:@"%@",model.maozhong];
     _pzLabel.text = [NSString stringWithFormat:@"%@",model.pizhong];
-    _jzLabel.text = [NSString stringWithFormat:@"%@",model.jingzhong];
+    if (model.jingzhong) {
+        _jzLabel.text = [NSString stringWithFormat:@"%@",model.jingzhong];
+    }
     _kzLabel.text = [NSString stringWithFormat:@"%@",model.kouzhong];
 }
 
