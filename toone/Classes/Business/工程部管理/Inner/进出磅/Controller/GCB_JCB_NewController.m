@@ -59,7 +59,7 @@
     self.tb.tableFooterView = [[UIView alloc] init];
     [self.view addSubview:self.tb];
     
-    UIButton * rightBut = [UIButton img_20WithName:@"black_SX"];
+    UIButton * rightBut = [UIButton img_20WithName:@"white_SX"];
     [rightBut addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBut];
     
