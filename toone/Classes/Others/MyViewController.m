@@ -52,9 +52,9 @@
     return _startTime;
 }
 -(NSString *)endTime{
-    if (!_endTime) {
+//    if (!_endTime) {
         self.endTime = [TimeTools currentTime];
-    }
+//    }
     return _endTime;
 }
 
