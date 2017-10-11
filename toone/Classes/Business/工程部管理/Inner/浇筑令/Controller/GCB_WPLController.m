@@ -223,6 +223,10 @@
         if ([json[@"success"] boolValue]) {
             [self loadData];
             [SVProgressHUD showSuccessWithStatus:@"任务单删除成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [UserDefaultsSetting shareSetting].GCBSeed = [NSString stringWithFormat:@"%d",arc4random()%1000];
+                [self.navigationController popViewControllerAnimated:YES];
+            });
         }
     } failure:^(NSError *error) {
         [Tools tip:@"服务器异常"];
