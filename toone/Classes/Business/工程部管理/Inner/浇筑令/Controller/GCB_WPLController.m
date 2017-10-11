@@ -202,6 +202,12 @@
             hud.label.text = @"任务单提交成功";
             [hud hideAnimated:YES afterDelay:2.0];
             [self loadData];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [UserDefaultsSetting shareSetting].GCBSeed = [NSString stringWithFormat:@"%d",arc4random()%1000];
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+
         }if(![json[@"success"] boolValue]) {
             hud.mode = MBProgressHUDModeText;
             hud.label.text = @"任务单提交失败";

@@ -153,5 +153,18 @@
             break;
     }
 }
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"GCBSeed" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self loadData];
+}
+-(void)dealloc{
+    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"GCBSeed"];
+    FuncLog;
+}
 
 @end
