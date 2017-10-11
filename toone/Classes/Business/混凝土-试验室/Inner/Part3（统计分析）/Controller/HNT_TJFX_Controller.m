@@ -12,6 +12,8 @@
 #import "BarChartViewController.h"
 #import "HNT_TJFX_HeaderView.h"
 #import "HNT_TJFX_TxtView.h"
+#import "NodeViewController.h"
+
 @interface HNT_TJFX_Controller ()
 @property (nonatomic,strong) NSMutableArray * datas;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -141,7 +143,10 @@
         
         //2.
         Exp1View * e = [[Exp1View alloc] init];
-        e.frame = CGRectMake(0, 64+35, Screen_w, 150);
+        if ([_zt isEqualToString:@"1"]) {
+            e.frame = CGRectMake(0, 64+35, Screen_w, 190);
+            [e hiddenView];
+        }
         __weak __typeof(self)  weakSelf = self;
         e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
             NSLog(@"%d",type);
@@ -158,6 +163,16 @@
                 weakSelf.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",weakSelf.startTime,weakSelf.endTime];
                 [weakSelf loadData];
                 FuncLog;
+            }
+            if (type == ExpButtonTypeUsePosition) {//组织机构
+                UIButton * btn = (UIButton*)obj1;
+                NodeViewController *vc = [[NodeViewController alloc] init];
+                vc.type = NodeTypeZZJG;
+                vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                    weakSelf.userGroupId = identifier;
+                    [btn setTitle:name forState:UIControlStateNormal];
+                };
+                [self.navigationController pushViewController:vc animated:YES];
             }
             if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
                 UIButton * btn = (UIButton*)obj1;

@@ -13,5 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *endTimeButton;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *zzjgButton;
+@property (weak, nonatomic) IBOutlet UIView *zzjgView;//组织机构
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *okTop;
+
 
 @end

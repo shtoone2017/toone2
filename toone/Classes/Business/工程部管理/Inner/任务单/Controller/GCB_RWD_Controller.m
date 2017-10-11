@@ -171,7 +171,6 @@
                 [self loadData];
             };
             [self.navigationController pushViewController:vc animated:YES];
-
         }
         if (type == ExpButtonTypeEarthwork) {//设计
             UIButton * btn = (UIButton*)obj1;

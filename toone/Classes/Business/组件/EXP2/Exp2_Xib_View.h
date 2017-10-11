@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *okTop;
 @property (weak, nonatomic) IBOutlet UIView *lqView;//临期
 @property (weak, nonatomic) IBOutlet UIView *sjqdView;//设计强度
+@property (weak, nonatomic) IBOutlet UILabel *sjqdLabel;//设计强度
 
+@property (weak, nonatomic) IBOutlet UIButton *zzjgButton;
+@property (weak, nonatomic) IBOutlet UIView *zzgjView;
 
 @end

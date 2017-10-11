@@ -20,5 +20,7 @@ typedef void(^ExpBlock_t) (ExpButtonType,id,id);
 
 @interface Exp2View : UIView
 @property (nonatomic,copy) ExpBlock_t expBlock;
--(void)hiddenView;
+@property (nonatomic,copy) NSString * useLabel;//万能
+-(void)hiddenView;//压力
+
 @end

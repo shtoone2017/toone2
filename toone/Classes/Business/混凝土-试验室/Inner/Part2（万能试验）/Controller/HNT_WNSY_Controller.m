@@ -18,6 +18,7 @@
 #import "HNT_WNSY_Model.h"
 #import "HNT_SYS_typeAndSB_Controller.h"
 #import "HNT_WNSY_DetailController.h"
+#import "NodeViewController.h"
 @interface HNT_WNSY_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -383,10 +384,12 @@
     
     //2.
     Exp2View * e = [[Exp2View alloc] init];
-    if ([_zt isEqualToString:@"1"]) {
-        e.frame = CGRectMake(0, 64+36, Screen_w, 240);
-        [e hiddenView];
-    }
+    e.frame = CGRectMake(0, 64+36, Screen_w, 275);
+    e.useLabel = @"组织机构";
+//    if ([_zt isEqualToString:@"1"]) {
+//        e.frame = CGRectMake(0, 64+36, Screen_w, 240);
+//        [e hiddenView];
+//    }
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         //        NSLog(@"ExpButtonType~~~ %d",type);
@@ -409,7 +412,6 @@
             UIButton * btn = (UIButton*)obj1;
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
-        
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
             [weakSelf performSegueWithIdentifier:@"HNT_WNSY_Controller" sender:btn];
@@ -417,6 +419,16 @@
         if (type == ExpButtonTypeChoiceTypeButton) {
             UIButton * btn = (UIButton*)obj1;
             [weakSelf performSegueWithIdentifier:@"HNT_WNSY_Controller" sender:btn];
+        }
+        if (type == ExpButtonTypeSJQDText) {//组织机构
+            UIButton * btn = (UIButton*)obj1;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.userGroupId = identifier;
+                [btn setTitle:name forState:UIControlStateNormal];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
     };
     [self.view addSubview:e];

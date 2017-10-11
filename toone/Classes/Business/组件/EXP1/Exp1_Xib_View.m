@@ -19,11 +19,12 @@
     _startTimeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     _startTimeButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
     
-    
-    
     [_endTimeButton setTitle:[UserDefaultsSetting shareSetting].endTime forState:UIControlStateNormal];
     _endTimeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     _endTimeButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
+    
+    self.zzjgButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.zzjgButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
 }
 
 @end

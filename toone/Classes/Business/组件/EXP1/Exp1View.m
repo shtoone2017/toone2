@@ -42,10 +42,14 @@
         [self.xib.endTimeButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.okButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.cancelButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-        
+        [self.xib.zzjgButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [SGAnimationType show:self animation:0];
     }
     return self;
+}
+-(void)hiddenView {
+    self.xib.zzjgView.hidden = NO;
+    self.xib.okTop.constant = 55;
 }
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
@@ -56,6 +60,11 @@
     if (sender == self.xib.endTimeButton) {
         if (self.expBlock) {
             self.expBlock(ExpButtonTypeEndTimeButton,self.xib.endTimeButton,nil);
+        }
+    }
+    if (sender == self.xib.zzjgButton) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeUsePosition,self.xib.zzjgButton,nil);
         }
     }
     if (sender == self.xib.okButton) {

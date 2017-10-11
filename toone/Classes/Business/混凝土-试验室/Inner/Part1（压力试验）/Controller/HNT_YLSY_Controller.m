@@ -12,6 +12,8 @@
 #import "HNT_SYS_typeAndSB_Controller.h"
 #import "HNT_YLSY_DetailController.h"
 #import "HNT_BHZ_SB_Controller.h"
+#import "NodeViewController.h"
+
 @interface HNT_YLSY_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -476,7 +478,10 @@
     
     //2.
     Exp2View * e = [[Exp2View alloc] init];
-    e.frame = CGRectMake(0, 64+36, Screen_w, 320);
+    if ([_zt isEqualToString:@"1"]) {
+        e.frame = CGRectMake(0, 64+36, Screen_w, 365);
+        [e hiddenView];
+    }
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
 //        NSLog(@"ExpButtonType~~~ %d",type);
@@ -515,7 +520,6 @@
             controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.sjqd = banhezhanminchen;
-//                [self loadData];
             };
             [self.navigationController pushViewController:controller animated:YES];
         }
@@ -526,9 +530,18 @@
             controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
                 weakSelf.lq = banhezhanminchen;
-//                [self loadData];
             };
             [self.navigationController pushViewController:controller animated:YES];
+        }
+        if (type == ExpButtonTypeUsePosition) {//组织机构
+            UIButton * btn = (UIButton*)obj1;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                weakSelf.userGroupId = identifier;
+                [btn setTitle:name forState:UIControlStateNormal];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
         
     };

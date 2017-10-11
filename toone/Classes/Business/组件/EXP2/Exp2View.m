@@ -37,14 +37,19 @@
         [self.xib.typeButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.sjqdButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self.xib.lqButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [self.xib.zzjgButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [SGAnimationType show:self animation:0];
     }
     return self;
 }
 -(void)hiddenView {
+    self.xib.zzgjView.hidden = NO;
+    self.xib.okTop.constant = 140;
+}
+-(void)setUseLabel:(NSString *)useLabel {
+    self.xib.sjqdLabel.text = useLabel;
+    self.xib.okTop.constant = 50;
     self.xib.lqView.hidden = YES;
-    self.xib.sjqdView.hidden = YES;
-    self.xib.okTop.constant = 10;
 }
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
@@ -93,6 +98,11 @@
     if (sender == self.xib.lqButton) {
         if (self.expBlock) {
             _expBlock(ExpButtonTypeLQText,self.xib.lqButton,nil);
+        }
+    }
+    if (sender == self.xib.zzjgButton) {
+        if (self.expBlock) {
+            _expBlock(ExpButtonTypeUsePosition,self.xib.zzjgButton,nil);
         }
     }
 }

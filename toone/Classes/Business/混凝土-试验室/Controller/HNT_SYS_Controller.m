@@ -106,6 +106,7 @@
 //            HNT_YLSY_Controller *vc = [[HNT_YLSY_Controller alloc] init];
             HNT_YLSY_Controller *VC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_YLSY_Controller"];
             VC.userGroupId = _departId;
+            VC.zt = @"1";
             [self.navigationController pushViewController:VC animated:YES];
         }
             break;
@@ -115,7 +116,7 @@
 //            HNT_WNSY_Controller *vc = [[HNT_WNSY_Controller alloc] init];
             HNT_WNSY_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_WNSY_Controller"];
             ylVC.userGroupId = _departId;
-            ylVC.zt = @"1";
+//            ylVC.zt = @"1";
             [self.navigationController pushViewController:ylVC animated:YES];
         }
             break;
@@ -126,6 +127,7 @@
 //            HNT_TJFX_Controller *vc = [[HNT_TJFX_Controller alloc] init];
 //            vc.userGroupId = _departId;
             HNT_TJFX_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_TJFX_Controller"];
+            ylVC.zt = @"1";
             ylVC.userGroupId = _departId;
             [self.navigationController pushViewController:ylVC animated:YES];
         }

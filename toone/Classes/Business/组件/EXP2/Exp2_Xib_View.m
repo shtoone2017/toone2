@@ -33,6 +33,9 @@
     
     self.lqButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.lqButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
+    
+    self.zzjgButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    self.zzjgButton.titleEdgeInsets = UIEdgeInsetsMake(26, 0, 0, 0);
 }
 
 @end

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -131,14 +131,58 @@
                     </constraints>
                     <state key="normal" image="ic_cancel_share_activity"/>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-1y-r9v">
+                    <rect key="frame" x="20" y="105" width="335" height="35"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztb-DP-cMg" userLabel="线">
+                            <rect key="frame" x="0.0" y="34" width="335" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="f3O-lf-KUQ"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="组织机构" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqK-Gq-Ltk">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="33R-He-tPD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMj-WF-nyx">
+                            <rect key="frame" x="0.0" y="-5" width="335" height="39"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="全部">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="sqK-Gq-Ltk" secondAttribute="trailing" id="1H3-2u-2iE"/>
+                        <constraint firstItem="YMj-WF-nyx" firstAttribute="leading" secondItem="1b8-1y-r9v" secondAttribute="leading" id="4W6-uv-qFb"/>
+                        <constraint firstAttribute="trailing" secondItem="ztb-DP-cMg" secondAttribute="trailing" id="BQz-ky-niQ"/>
+                        <constraint firstItem="ztb-DP-cMg" firstAttribute="top" secondItem="YMj-WF-nyx" secondAttribute="bottom" id="EFF-Ua-ySy"/>
+                        <constraint firstAttribute="bottom" secondItem="ztb-DP-cMg" secondAttribute="bottom" id="Lnr-QQ-H7i"/>
+                        <constraint firstItem="ztb-DP-cMg" firstAttribute="leading" secondItem="1b8-1y-r9v" secondAttribute="leading" id="T8h-F6-7bb"/>
+                        <constraint firstItem="sqK-Gq-Ltk" firstAttribute="top" secondItem="1b8-1y-r9v" secondAttribute="top" id="UyH-qE-hr1"/>
+                        <constraint firstItem="sqK-Gq-Ltk" firstAttribute="leading" secondItem="1b8-1y-r9v" secondAttribute="leading" id="VZ2-Us-gxK"/>
+                        <constraint firstAttribute="trailing" secondItem="YMj-WF-nyx" secondAttribute="trailing" id="YsS-6u-dqx"/>
+                        <constraint firstAttribute="height" constant="35" id="a0j-7Z-DMF"/>
+                        <constraint firstItem="YMj-WF-nyx" firstAttribute="top" secondItem="sqK-Gq-Ltk" secondAttribute="bottom" constant="-20" id="lFh-cc-XnB"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="leading" secondItem="CGk-kH-2JP" secondAttribute="trailing" id="1Eo-z6-YZB"/>
                 <constraint firstItem="cVs-dD-c0D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1ei-JI-2yx"/>
                 <constraint firstItem="KK1-QP-yjV" firstAttribute="top" secondItem="fwz-bz-nUW" secondAttribute="bottom" constant="10" id="2kn-kG-vx5"/>
+                <constraint firstAttribute="trailing" secondItem="1b8-1y-r9v" secondAttribute="trailing" constant="20" id="7CU-eZ-CUK"/>
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="IJz-uB-tmp"/>
                 <constraint firstAttribute="trailing" secondItem="vjO-AD-idK" secondAttribute="trailing" id="Peo-Lz-IoI"/>
+                <constraint firstItem="1b8-1y-r9v" firstAttribute="top" secondItem="KK1-QP-yjV" secondAttribute="bottom" constant="10" id="QvW-5L-Ifa"/>
                 <constraint firstAttribute="trailing" secondItem="fwz-bz-nUW" secondAttribute="trailing" constant="20" id="Rah-JU-dW7"/>
                 <constraint firstItem="KK1-QP-yjV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Tl4-6N-DJG"/>
                 <constraint firstItem="CGk-kH-2JP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VQt-1J-oyR"/>
@@ -146,6 +190,7 @@
                 <constraint firstItem="CGk-kH-2JP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="d7p-s8-4ye"/>
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="top" secondItem="CGk-kH-2JP" secondAttribute="bottom" id="dzh-NR-EmT"/>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwd-HD-Qzb"/>
+                <constraint firstItem="1b8-1y-r9v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="h0f-bZ-UTz"/>
                 <constraint firstAttribute="trailing" secondItem="KK1-QP-yjV" secondAttribute="trailing" constant="20" id="yLz-EC-CXw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -153,7 +198,10 @@
                 <outlet property="cancelButton" destination="vjO-AD-idK" id="UeD-e5-syH"/>
                 <outlet property="endTimeButton" destination="o7W-2d-q6J" id="GfA-c9-xQc"/>
                 <outlet property="okButton" destination="cVs-dD-c0D" id="l4Q-Tp-vbd"/>
+                <outlet property="okTop" destination="cxl-ad-8hP" id="q5K-fa-iUb"/>
                 <outlet property="startTimeButton" destination="wyS-R0-S0o" id="5fb-gU-tKk"/>
+                <outlet property="zzjgButton" destination="YMj-WF-nyx" id="mRZ-7I-pBQ"/>
+                <outlet property="zzjgView" destination="1b8-1y-r9v" id="sae-FZ-C0H"/>
             </connections>
             <point key="canvasLocation" x="85.5" y="-374.5"/>
         </view>
