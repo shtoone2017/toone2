@@ -27,5 +27,6 @@
 @property (nonatomic,copy)NSString *shuinibiaohao;//设计强度
 
 @property (nonatomic,strong) NSNumber *tjId;//编辑id
+@property (nonatomic, copy) NSString *shigongteamid;//施工队id
 
 @end

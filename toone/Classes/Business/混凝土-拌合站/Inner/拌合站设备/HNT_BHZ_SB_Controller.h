@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeCBCZ,    //超标处置
     SBListTypeYLQD,    //压力设计强度
     SBListTypeYLLQ,    //龄期
+    SBListTypeSGD,    //施工队
 };
 
 @interface HNT_BHZ_SB_Controller : UIViewController

@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *jgBut;//组织机构+1
 @property (weak, nonatomic) IBOutlet UIButton *sjqdBut;//设计强度
 @property (weak, nonatomic) IBOutlet UIButton *tldBut;//塌落度
+@property (weak, nonatomic) IBOutlet UIButton *sgdBut;//施工队
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;//创建人
 @property (weak, nonatomic) IBOutlet UITextField *ksdjText;//抗滲等级
 @property (weak, nonatomic) IBOutlet UITextField *bzText;//备注
@@ -35,6 +36,8 @@
 
 @property (nonatomic,copy)NSString *tjID;//当前id
 @property (nonatomic,copy)NSString *identifier;//组织机构ID
+@property (nonatomic, copy) NSString *sgdId;//施工队id
+
 
 @end
 @implementation GCB_JZL_DetailCell
@@ -53,7 +56,7 @@
     _cjtimeLabel.text = [TimeTools currentTime];
 }
 
--(void)setModel:(GCB_JZL_DetailModel *)model {
+-(void)setModel:(GCB_JZL_DetailModel *)model {//编辑
     _model = model;
     _rwbhText.text = model.renwuno;
     [_kptimeBut setTitle:model.kaipanriqi forState:UIControlStateNormal];
@@ -66,6 +69,28 @@
     [_jgBut setTitle:model.departname forState:UIControlStateNormal];
     [_sjqdBut setTitle:model.shuinibiaohao forState:UIControlStateNormal];
     [_tldBut setTitle:model.tanluodu forState:UIControlStateNormal];
+    [_sgdBut setTitle:_sgdId forState:UIControlStateNormal];
+    _userLabel.text = model.createperson;
+    _ksdjText.text = model.kangshendengji;
+    _bzText.text = model.remark;
+    _tjID = [NSString stringWithFormat:@"%@",model.tjId];
+    _identifier = model.org_code;
+    
+}
+-(void)loadModel:(GCB_JZL_DetailModel *)model :(NSString *)name {
+    _model = model;
+    _rwbhText.text = model.renwuno;
+    [_kptimeBut setTitle:model.kaipanriqi forState:UIControlStateNormal];
+    [_jzbwBut setTitle:model.jzbw forState:UIControlStateNormal];
+    _gcmcText.text = model.gcmc;
+    _kddjText.text = model.kangdongdengji;
+    [_jzfsBut setTitle:model.jiaozhufangshi forState:UIControlStateNormal];
+    _cjtimeLabel.text = model.createtime;
+    _jhflText.text = model.jihuafangliang;
+    [_jgBut setTitle:model.departname forState:UIControlStateNormal];
+    [_sjqdBut setTitle:model.shuinibiaohao forState:UIControlStateNormal];
+    [_tldBut setTitle:model.tanluodu forState:UIControlStateNormal];
+    [_sgdBut setTitle:name forState:UIControlStateNormal];
     _userLabel.text = model.createperson;
     _ksdjText.text = model.kangshendengji;
     _bzText.text = model.remark;
@@ -125,6 +150,18 @@
     };
     [self.viewController.navigationController pushViewController:controller animated:YES];
 }
+//施工队
+- (IBAction)sgdButton:(UIButton *)sender {
+    HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
+    controller.type = SBListTypeSGD;
+    controller.departId = [UserDefaultsSetting shareSetting].departId;
+    controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+        _sgdId = gprsbianhao;
+        [sender setTitle:banhezhanminchen forState:UIControlStateNormal];
+    };
+    [self.viewController.navigationController pushViewController:controller animated:YES];
+}
+
 
 //提交
 - (IBAction)submitClick:(id)sender {
@@ -146,7 +183,8 @@
                     @"tanluodu":self.tldBut.titleLabel.text?:@"",
                     @"username":self.userLabel.text?:[UserDefaultsSetting shareSetting].userFullName,
                     @"kangshendengji":self.ksdjText.text?:@"",
-                    @"remark":self.bzText.text?:@""
+                    @"remark":self.bzText.text?:@"",
+                    @"shigongteamid":_sgdId?:@"",
                     };
             break;
         }
@@ -166,7 +204,8 @@
                     @"tanluodu":self.tldBut.titleLabel.text?:@"",
                     @"createperson":self.userLabel.text?:[UserDefaultsSetting shareSetting].userFullName,
                     @"kangshendengji":self.ksdjText.text?:@"",
-                    @"remark":self.bzText.text?:@""
+                    @"remark":self.bzText.text?:@"",
+                    @"shigongteamid":_sgdId?:@"",
                     };
             break;
         }

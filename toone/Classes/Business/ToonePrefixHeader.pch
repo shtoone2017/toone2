@@ -58,9 +58,9 @@
 #import "UpButton.h"
 
 //云部署地址
-//#define baseUrl      @"http://192.168.1.181:8082/jeecg/"
+#define baseUrl      @"http://192.168.1.181:8082/jeecg/"
 
-#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"
+//#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"
 
 /*
  3-----------------------
@@ -122,6 +122,9 @@
 #define AppDepartTree_gcb FormatString(baseUrl,@"app.do?AppDepartTree&updateDepartTime=%@&userGroupId=%@")
 //工程部统计条数
 #define GCB_Home    FormatString(baseUrl,@"appWZSys.do?wzRenWuDanHome&userGroupId=%@&startTime=%@&endTime=%@")
+//施工队
+#define App_SGD  FormatString(baseUrl,@"appWZproject.do?AppWzshigongteam&departId=%@")
+
 
 /*
  2-----------------------

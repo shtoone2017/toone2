@@ -40,6 +40,12 @@
             [self datas];
         }
             break;
+        case SBListTypeSGD:
+        {
+            self.title = @"选择施工队";
+            [self datas];
+        }
+            break;
         case SBListTypeJZFS:
         {
             self.title = @"选择浇注方式";
@@ -140,6 +146,10 @@
         {
             urlString = [NSString stringWithFormat:getShebeiList_1,departId];
         }
+        else if (_type == SBListTypeSGD)
+        {
+            urlString = [NSString stringWithFormat:App_SGD,departId];
+        }
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
             NSMutableArray * datas = [NSMutableArray array];
@@ -147,6 +157,7 @@
                 if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"data"]) {
                         HNT_BHZ_SB_Model * model = [HNT_BHZ_SB_Model modelWithDict:dict];
+                        model.useId = dict[@"id"];
                         [datas addObject:model];
                     }
                 }
@@ -254,6 +265,9 @@
         {
             cell.textLabel.text = model.typecode;
         }
+        else if (_type == SBListTypeSGD) {
+            cell.textLabel.text = model.name;
+        }
         else
         {
             cell.textLabel.text = model.banhezhanminchen;
@@ -300,6 +314,9 @@
             if (_type == SBListTypeJZFS || _type == SBListTypeSJQD || _type == SBListTypeTLD)
             {
                 self.callBlock(model.typename,model.typecode);
+            }
+            else if (_type == SBListTypeSGD) {
+                self.callBlock(model.name,model.useId);
             }
             else
             {

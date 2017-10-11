@@ -13,4 +13,5 @@
 @property (nonatomic,strong) GCB_JZL_DetailModel *xzmodel;//新增
 
 @property (nonatomic,assign) NSInteger isbjti;//1 新增 2 编辑
+-(void)loadModel:(GCB_JZL_DetailModel *)model :(NSString *)name;
 @end

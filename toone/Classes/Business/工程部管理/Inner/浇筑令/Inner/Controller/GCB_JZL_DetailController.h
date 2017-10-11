@@ -12,5 +12,5 @@
 @property (nonatomic,copy)NSString *detailId;//编辑ID
 @property (nonatomic,assign) NSInteger jzlName;//1.编辑 2.新增
 
-
+@property (nonatomic, copy) NSString *sgdName;//施工队
 @end

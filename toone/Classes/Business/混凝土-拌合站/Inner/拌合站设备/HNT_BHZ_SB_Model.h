@@ -13,6 +13,9 @@
 @property (nonatomic,copy) NSString * departid ;// 组织机构id
 @property (nonatomic,copy) NSString * gprsbianhao ;// 设备编号
 
+//施工队
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *useId;
 
 //设计强度 SJQD 坍塌度 TLD 浇筑方式 JZFS
 /*

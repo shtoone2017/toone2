@@ -9,11 +9,12 @@
 #import "GCB_JZL_DetailController.h"
 #import "GCB_JZL_DetailModel.h"
 #import "GCB_JZL_DetailCell.h"
-
+#import "HNT_BHZ_SB_Model.h"
 
 @interface GCB_JZL_DetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tb;
 @property (nonatomic,strong) NSMutableArray *datas;
+@property (nonatomic,strong) NSMutableArray *dataId;
 
 @end
 @implementation GCB_JZL_DetailController
@@ -64,6 +65,24 @@
     } failure:^(NSError *error) {
         
     }];
+}
+-(void)loadModel:(NSString *)departId {
+    NSString *urlString = [NSString stringWithFormat:App_SGD,departId];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        NSMutableArray * datas = [NSMutableArray array];
+        if ([json[@"success"] boolValue]) {
+            if ([json[@"data"] isKindOfClass:[NSArray class]]) {
+                for (NSDictionary * dict in json[@"data"]) {
+                    HNT_BHZ_SB_Model * model = [HNT_BHZ_SB_Model modelWithDict:dict];
+                    model.useId = dict[@"id"];
+                    [datas addObject:model];
+                }
+            }
+        }
+        self.dataId = datas;
+    } failure:^(NSError *error) {
+    }];
+
 }
 
 #pragma mark - Table view data source
