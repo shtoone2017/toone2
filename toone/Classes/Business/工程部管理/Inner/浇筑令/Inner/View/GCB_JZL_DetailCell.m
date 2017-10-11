@@ -69,33 +69,13 @@
     [_jgBut setTitle:model.departname forState:UIControlStateNormal];
     [_sjqdBut setTitle:model.shuinibiaohao forState:UIControlStateNormal];
     [_tldBut setTitle:model.tanluodu forState:UIControlStateNormal];
-    [_sgdBut setTitle:_sgdId forState:UIControlStateNormal];
+    [_sgdBut setTitle:model.shigongteamname forState:UIControlStateNormal];
     _userLabel.text = model.createperson;
     _ksdjText.text = model.kangshendengji;
     _bzText.text = model.remark;
     _tjID = [NSString stringWithFormat:@"%@",model.tjId];
     _identifier = model.org_code;
     
-}
--(void)loadModel:(GCB_JZL_DetailModel *)model :(NSString *)name {
-    _model = model;
-    _rwbhText.text = model.renwuno;
-    [_kptimeBut setTitle:model.kaipanriqi forState:UIControlStateNormal];
-    [_jzbwBut setTitle:model.jzbw forState:UIControlStateNormal];
-    _gcmcText.text = model.gcmc;
-    _kddjText.text = model.kangdongdengji;
-    [_jzfsBut setTitle:model.jiaozhufangshi forState:UIControlStateNormal];
-    _cjtimeLabel.text = model.createtime;
-    _jhflText.text = model.jihuafangliang;
-    [_jgBut setTitle:model.departname forState:UIControlStateNormal];
-    [_sjqdBut setTitle:model.shuinibiaohao forState:UIControlStateNormal];
-    [_tldBut setTitle:model.tanluodu forState:UIControlStateNormal];
-    [_sgdBut setTitle:name forState:UIControlStateNormal];
-    _userLabel.text = model.createperson;
-    _ksdjText.text = model.kangshendengji;
-    _bzText.text = model.remark;
-    _tjID = [NSString stringWithFormat:@"%@",model.tjId];
-    _identifier = model.org_code;
 }
 
 //开盘时间

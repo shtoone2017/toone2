@@ -66,24 +66,6 @@
         
     }];
 }
--(void)loadModel:(NSString *)departId {
-    NSString *urlString = [NSString stringWithFormat:App_SGD,departId];
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
-        NSMutableArray * datas = [NSMutableArray array];
-        if ([json[@"success"] boolValue]) {
-            if ([json[@"data"] isKindOfClass:[NSArray class]]) {
-                for (NSDictionary * dict in json[@"data"]) {
-                    HNT_BHZ_SB_Model * model = [HNT_BHZ_SB_Model modelWithDict:dict];
-                    model.useId = dict[@"id"];
-                    [datas addObject:model];
-                }
-            }
-        }
-        self.dataId = datas;
-    } failure:^(NSError *error) {
-    }];
-
-}
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

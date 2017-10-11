@@ -28,5 +28,6 @@
 
 @property (nonatomic,strong) NSNumber *tjId;//编辑id
 @property (nonatomic, copy) NSString *shigongteamid;//施工队id
+@property (nonatomic, copy) NSString *shigongteamname;//施工队
 
 @end

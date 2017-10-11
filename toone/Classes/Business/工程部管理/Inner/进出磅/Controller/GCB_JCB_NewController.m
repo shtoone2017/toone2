@@ -53,7 +53,7 @@
     [btn setTitle:@"" forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.view.backgroundColor = [UIColor snowColor];
-    self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, Screen_w, Screen_h) style:UITableViewStylePlain];
+    self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, Screen_w, Screen_h-50) style:UITableViewStylePlain];
     _tb.delegate =self;
     _tb.dataSource = self;
     self.tb.tableFooterView = [[UIView alloc] init];
