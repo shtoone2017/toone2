@@ -69,13 +69,13 @@
     [_jgBut setTitle:model.departname forState:UIControlStateNormal];
     [_sjqdBut setTitle:model.shuinibiaohao forState:UIControlStateNormal];
     [_tldBut setTitle:model.tanluodu forState:UIControlStateNormal];
-    [_sgdBut setTitle:model.shigongteamname forState:UIControlStateNormal];
+    [_sgdBut setTitle:model.shigongteamname forState:UIControlStateNormal];//施工
     _userLabel.text = model.createperson;
     _ksdjText.text = model.kangshendengji;
     _bzText.text = model.remark;
     _tjID = [NSString stringWithFormat:@"%@",model.tjId];
-    _identifier = model.org_code;
-    
+    _identifier = model.departid;//组织机构
+    _sgdId = model.shigongteamid;
 }
 
 //开盘时间
@@ -210,9 +210,10 @@
                 if ([responseObject[@"success"] boolValue]) {
                     [SVProgressHUD showSuccessWithStatus:responseObject[@"message"]];
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                        [UserDefaultsSetting shareSetting].GCBSeed = [NSString stringWithFormat:@"%d",arc4random()%1000];
+                        [UserDefaultsSetting shareSetting].GCBedit = [NSString stringWithFormat:@"%d",arc4random()%1000];
                         UIViewController *vc = self.viewController.navigationController.viewControllers[self.viewController.navigationController.viewControllers.count-2];
                         [self.viewController.navigationController popToViewController:vc animated:YES];
+//                        [self.viewController.navigationController popViewControllerAnimated:YES];
                     });
                 }else {
                     [SVProgressHUD showErrorWithStatus:@"保存失败"];

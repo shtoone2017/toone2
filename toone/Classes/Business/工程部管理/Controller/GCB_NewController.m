@@ -88,8 +88,8 @@
     GCB_Model * model;
     if (self.datas.count) {
         model = self.datas[0];
+        _seView.model = model;
     }
-    _seView.model = model;
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -153,6 +153,7 @@
             break;
     }
 }
+#pragma mark - 删除提交刷新
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super initWithCoder:aDecoder]) {
         [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"GCBSeed" options:NSKeyValueObservingOptionNew context:nil];

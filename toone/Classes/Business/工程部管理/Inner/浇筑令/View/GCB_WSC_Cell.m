@@ -40,7 +40,7 @@
     _gcmcLabel.text = model.gcmc;
     _jzbwLabel.text = model.jzbw;
     _sjqdLabel.text = model.shuinibiaohao;
-    _sjflLabel.text = model.shejifangliang;
+    _sjflLabel.text = model.jihuafangliang;
     _cjsjLabel.text = model.createtime;
     _userLabel.text = model.createperson;
     [_rwbhBut setTitle:model.renwuno forState:UIControlStateNormal];

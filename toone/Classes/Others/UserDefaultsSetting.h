@@ -61,4 +61,5 @@
 
 @property (nonatomic) NSString * randomSeed;
 @property (nonatomic) NSString * GCBSeed;
+@property (nonatomic) NSString * GCBedit;
 @end

@@ -17,7 +17,7 @@
 #import "HNT_BHZ_SB_Controller.h"
 
 #define ITLES @[@"新增", @"编辑"]
-#define TITLES @[@"新增", @"编辑", @"删除",@"提交"]
+#define TITLES @[@"编辑", @"删除",@"提交"]
 
 @interface GCB_WPLController ()<UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate>
 @property (nonatomic,strong) UITableView *tb;
@@ -149,28 +149,29 @@
                 popupMenu.type = YBPopupMenuTypeDark;
                 popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
             }];
-        }else {
-            [YBPopupMenu showAtPoint:a titles:ITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
-                popupMenu.dismissOnSelected = YES;
-                popupMenu.isShowShadow = YES;
-                popupMenu.delegate = self;
-                popupMenu.offset = 10;
-                popupMenu.type = YBPopupMenuTypeDark;
-                popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
-            }];
         }
+//        else {
+//            [YBPopupMenu showAtPoint:a titles:ITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
+//                popupMenu.dismissOnSelected = YES;
+//                popupMenu.isShowShadow = YES;
+//                popupMenu.delegate = self;
+//                popupMenu.offset = 10;
+//                popupMenu.type = YBPopupMenuTypeDark;
+//                popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
+//            }];
+//        }
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 #pragma mark - YBPopupMenuDelegate
 - (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu {
-    if ([TITLES[index] isEqualToString:@"新增"]) {
-        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
-        vc.detailId = _dearid;
-        vc.jzlName = 2;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+//    if ([TITLES[index] isEqualToString:@"新增"]) {
+//        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
+//        vc.detailId = _dearid;
+//        vc.jzlName = 2;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
     if ([TITLES[index] isEqualToString:@"编辑"]) {
         GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
         vc.detailId = _dearid;
@@ -304,7 +305,19 @@
     [self.view addSubview:e];
 }
 
-
-
+#pragma mark - 编辑刷新
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//    if (self = [super initWithCoder:aDecoder]) {
+//        [[UserDefaultsSetting shareSetting] addObserver:self forKeyPath:@"GCBedit" options:NSKeyValueObservingOptionNew context:nil];
+//    }
+//    return self;
+//}
+//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    [self loadData];
+//}
+//-(void)dealloc{
+//    [[UserDefaultsSetting shareSetting] removeObserver:self forKeyPath:@"GCBedit"];
+//    FuncLog;
+//}
 
 @end

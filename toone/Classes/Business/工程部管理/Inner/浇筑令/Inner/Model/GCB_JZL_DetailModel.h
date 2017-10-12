@@ -10,7 +10,7 @@
 
 @interface GCB_JZL_DetailModel : MyModel
 @property (nonatomic,copy)NSString *departname;//所属机构
-@property (nonatomic,copy)NSString *departid;//部门id
+@property (nonatomic,copy)NSString *departid;//组织机构id
 @property (nonatomic,copy)NSString *jzbw;//浇筑部位
 @property (nonatomic,copy)NSString *jiaozhufangshi;//浇筑方式
 @property (nonatomic,copy)NSString *tanluodu;//坍落度
@@ -21,7 +21,7 @@
 @property (nonatomic,copy)NSString *createtime;//创建时间
 @property (nonatomic,copy)NSString *gcmc;//工程名称
 @property (nonatomic,copy)NSString *renwuno;//任务编号
-@property (nonatomic,copy)NSString *org_code;//组织机构id
+@property (nonatomic,copy)NSString *org_code;//
 @property (nonatomic,copy)NSString *kangdongdengji;//抗冻等级
 @property (nonatomic,copy)NSString *kangshendengji;//抗滲等级
 @property (nonatomic,copy)NSString *shuinibiaohao;//设计强度
