@@ -26,14 +26,14 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right_next" translatesAutoresizingMaskIntoConstraints="NO" id="yTP-OK-mNg">
-                        <rect key="frame" x="458" y="18.5" width="13" height="13"/>
+                        <rect key="frame" x="448" y="18.5" width="13" height="13"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="13" id="M3W-Sw-cEO"/>
                             <constraint firstAttribute="height" constant="13" id="cbF-zk-VOy"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSb-52-oBK">
-                        <rect key="frame" x="60" y="10" width="378" height="30"/>
+                        <rect key="frame" x="60" y="10" width="368" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="zu7-a2-YTH"/>
                         </constraints>
@@ -46,7 +46,7 @@
                     <constraint firstItem="XSb-52-oBK" firstAttribute="leading" secondItem="1uC-uu-cOD" secondAttribute="trailing" constant="15" id="Fc7-MY-NxW"/>
                     <constraint firstItem="1uC-uu-cOD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Sqc-nl-5w6"/>
                     <constraint firstItem="yTP-OK-mNg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TOv-tN-E3J"/>
-                    <constraint firstAttribute="trailing" secondItem="yTP-OK-mNg" secondAttribute="trailing" constant="10" id="qi8-qH-SO0"/>
+                    <constraint firstAttribute="trailing" secondItem="yTP-OK-mNg" secondAttribute="trailing" constant="20" id="qi8-qH-SO0"/>
                     <constraint firstItem="XSb-52-oBK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tUb-rm-oMr"/>
                     <constraint firstItem="yTP-OK-mNg" firstAttribute="leading" secondItem="XSb-52-oBK" secondAttribute="trailing" constant="20" id="wh1-kD-6AU"/>
                     <constraint firstItem="1uC-uu-cOD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xVe-uo-OxE"/>
@@ -56,7 +56,7 @@
                 <outlet property="img" destination="1uC-uu-cOD" id="Pm6-s9-kGQ"/>
                 <outlet property="title" destination="XSb-52-oBK" id="kH5-5q-R89"/>
             </connections>
-            <point key="canvasLocation" x="31.5" y="24"/>
+            <point key="canvasLocation" x="-159" y="38"/>
         </tableViewCell>
     </objects>
     <resources>
