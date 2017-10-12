@@ -59,6 +59,7 @@
 -(void)setModel:(GCB_JZL_DetailModel *)model {//编辑
     _model = model;
     _rwbhText.text = model.renwuno;
+    _rwbhText.enabled = NO;
     [_kptimeBut setTitle:model.kaipanriqi forState:UIControlStateNormal];
     [_jzbwBut setTitle:model.jzbw forState:UIControlStateNormal];
     _gcmcText.text = model.gcmc;
@@ -216,7 +217,7 @@
 //                        [self.viewController.navigationController popViewControllerAnimated:YES];
                     });
                 }else {
-                    [SVProgressHUD showErrorWithStatus:@"保存失败"];
+                    [SVProgressHUD showErrorWithStatus:responseObject[@"message"]];
                 }
             }else {
                 NSLog(@"Error: %@, %@, %@", error, response, responseObject);

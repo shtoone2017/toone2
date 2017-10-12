@@ -118,7 +118,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GCB_YSC_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_YSC_Cell" forIndexPath:indexPath];
     GCB_JZL_Model * model = self.datas[indexPath.row];
-    cell.selectionStyle =UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle =UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor oldLaceColor];
     cell.model = model;
     return cell;
 }
@@ -129,8 +130,6 @@
     if ([UserDefaultsSetting shareSetting].wzgcbReal) {
         if ([model.zhuangtai isEqualToString:@"2"]) {//生产中
             [self rwdAlert];
-        }else {
-//            [SVProgressHUD showErrorWithStatus:@"生产中任务单才能结束"];
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

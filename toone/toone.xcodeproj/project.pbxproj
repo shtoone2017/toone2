@@ -67,6 +67,8 @@
 		425AE0E81F341C360048D96B /* GCB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0E71F341C360048D96B /* GCB_Controller.m */; };
 		425AE0EB1F341C610048D96B /* LCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0EA1F341C610048D96B /* LCViewController.m */; };
 		425AE0EE1F341C720048D96B /* BFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AE0ED1F341C720048D96B /* BFViewController.m */; };
+		426037E11F8F67420053A2C3 /* WTJ_DetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426037DF1F8F67420053A2C3 /* WTJ_DetailsController.m */; };
+		426037E21F8F67420053A2C3 /* WTJ_DetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426037E01F8F67420053A2C3 /* WTJ_DetailsController.xib */; };
 		4261D2821F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261D2811F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m */; };
 		42A0D8A21F7D17E300500540 /* lq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A01F7D17E300500540 /* lq.plist */; };
 		42A0D8A31F7D17E300500540 /* sjqd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A11F7D17E300500540 /* sjqd.plist */; };
@@ -662,6 +664,9 @@
 		425AE0EA1F341C610048D96B /* LCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCViewController.m; sourceTree = "<group>"; };
 		425AE0EC1F341C720048D96B /* BFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFViewController.h; sourceTree = "<group>"; };
 		425AE0ED1F341C720048D96B /* BFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFViewController.m; sourceTree = "<group>"; };
+		426037DE1F8F67420053A2C3 /* WTJ_DetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTJ_DetailsController.h; sourceTree = "<group>"; };
+		426037DF1F8F67420053A2C3 /* WTJ_DetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTJ_DetailsController.m; sourceTree = "<group>"; };
+		426037E01F8F67420053A2C3 /* WTJ_DetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WTJ_DetailsController.xib; sourceTree = "<group>"; };
 		4261D2801F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_Detail_HeadModel.h; sourceTree = "<group>"; };
 		4261D2811F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_SCCX_Detail_HeadModel.m; sourceTree = "<group>"; };
 		42A0D8A01F7D17E300500540 /* lq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lq.plist; sourceTree = "<group>"; };
@@ -1723,6 +1728,24 @@
 				42E287BA1F41C04F0002AF72 /* GCB_Table_Cell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		426037DC1F8F66DB0053A2C3 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+				426037DD1F8F66DB0053A2C3 /* Controller */,
+			);
+			path = "详情";
+			sourceTree = "<group>";
+		};
+		426037DD1F8F66DB0053A2C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				426037DE1F8F67420053A2C3 /* WTJ_DetailsController.h */,
+				426037DF1F8F67420053A2C3 /* WTJ_DetailsController.m */,
+				426037E01F8F67420053A2C3 /* WTJ_DetailsController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
@@ -2865,6 +2888,7 @@
 		42E288C81F4AD9230002AF72 /* Inner */ = {
 			isa = PBXGroup;
 			children = (
+				426037DC1F8F66DB0053A2C3 /* 详情 */,
 				42E7CA201F4ED9B600708235 /* 浇筑部位 */,
 				42E288C91F4AD9230002AF72 /* Controller */,
 				42E288CA1F4AD9230002AF72 /* Model */,
@@ -4715,6 +4739,7 @@
 				42E288721F4578920002AF72 /* GCB_JCB_Cell.xib in Resources */,
 				D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */,
 				42E288C41F49856E0002AF72 /* GCB_RWD_Detail_DataCell.xib in Resources */,
+				426037E21F8F67420053A2C3 /* WTJ_DetailsController.xib in Resources */,
 				D20064651DFF86800021E293 /* DrawerController.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
 				8C2840471EB1123600440413 /* TP_CLSB_Controller.xib in Resources */,
@@ -5124,6 +5149,7 @@
 				42E2889E1F4963660002AF72 /* GCB_YSC_Cell.m in Sources */,
 				42E2884E1F4428550002AF72 /* GCB_JZL_Model.m in Sources */,
 				42AC716B1E30C393007D8F57 /* MaterialTableViewController.m in Sources */,
+				426037E11F8F67420053A2C3 /* WTJ_DetailsController.m in Sources */,
 				8CBD73391E091B8800A0C991 /* HNT_CLHS_Model.m in Sources */,
 				42E7CA2D1F4EE06D00708235 /* JZL_JZBW_Cell.m in Sources */,
 				D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */,

@@ -15,9 +15,10 @@
 #import "NodeViewController.h"
 #import "HNT_BHZ_SB_Controller.h"
 #import "HNT_BHZ_SB_Controller.h"
+#import "WTJ_DetailsController.h"
 
-//#define ITLES @[@"新增", @"编辑"]
-#define TITLES @[@"编辑", @"删除",@"提交"]
+//#define ITLES @[@"详情"]
+#define TITLES @[@"详情",@"编辑", @"删除",@"提交"]
 
 @interface GCB_WPLController ()<UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate>
 @property (nonatomic,strong) UITableView *tb;
@@ -126,8 +127,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GCB_WSC_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_WSC_Cell" forIndexPath:indexPath];
     GCB_JZL_Model * model = self.datas[indexPath.row];
-//    cell.selectionStyle =UITableViewCellSelectionStyleNone;
     cell.model = model;
+    cell.backgroundColor = [UIColor oldLaceColor];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,28 +151,26 @@
                 popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
             }];
         }
-//        else {
-//            [YBPopupMenu showAtPoint:a titles:ITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
-//                popupMenu.dismissOnSelected = YES;
-//                popupMenu.isShowShadow = YES;
-//                popupMenu.delegate = self;
-//                popupMenu.offset = 10;
-//                popupMenu.type = YBPopupMenuTypeDark;
-//                popupMenu.rectCorner = UIRectCornerBottomLeft | UIRectCornerBottomRight;
-//            }];
-//        }
+        else {
+            WTJ_DetailsController *vc = [[WTJ_DetailsController alloc] init];
+            vc.detailId = _dearid;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }else {
+        WTJ_DetailsController *vc = [[WTJ_DetailsController alloc] init];
+        vc.detailId = _dearid;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 #pragma mark - YBPopupMenuDelegate
 - (void)ybPopupMenuDidSelectedAtIndex:(NSInteger)index ybPopupMenu:(YBPopupMenu *)ybPopupMenu {
-//    if ([TITLES[index] isEqualToString:@"新增"]) {
-//        GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
-//        vc.detailId = _dearid;
-//        vc.jzlName = 2;
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }
+    if ([TITLES[index] isEqualToString:@"详情"]) {
+        WTJ_DetailsController *vc = [[WTJ_DetailsController alloc] init];
+        vc.detailId = _dearid;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     if ([TITLES[index] isEqualToString:@"编辑"]) {
         GCB_JZL_DetailController *vc = [[GCB_JZL_DetailController alloc] init];
         vc.detailId = _dearid;
@@ -180,37 +179,33 @@
     }
     if ([TITLES[index] isEqualToString:@"删除"]) {
         if ([_zhuant isEqualToString:@"-1"]) {
-            [self loadDeleting];
+            [self submitAlert:@"是否确定删除"];
         }else {
             [SVProgressHUD showErrorWithStatus:@"任务单已提交，无法删除"];
         }
     }
     if ([TITLES[index] isEqualToString:@"提交"]) {
         if ([_zhuant isEqualToString:@"-1"]) {
-            [self loadSubmit];
+            [self submitAlert:@"是否确定提交"];
         }else {
             [SVProgressHUD showErrorWithStatus:@"任务单已提交，无法再次提交"];
         }
     }
 }
--(void)rwdAlert:(NSString *)messsage {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AlertViewTest"
-                                                    message:@"message"
-                                                   delegate:self
-                                          cancelButtonTitle:@"取消"
-                                          otherButtonTitles:@"确定",nil];
-    alert.title = @"提示";
-    alert.message = @"是否立即结束任务单";
-    //显示AlertView
-    [alert show];
+-(void)submitAlert:(NSString *)message {
+    UIAlertController* alert=[UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* cancel=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction* confirm=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([message isEqualToString:@"是否确定提交"]) {
+            [self loadSubmit];
+        }else if ([message isEqualToString:@"是否确定删除"]) {
+            [self loadDeleting];
+        }
+    }];
+    [alert addAction:cancel];
+    [alert addAction:confirm];
+    [self presentViewController:alert animated:YES completion:nil];
 }
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-//        [self loadSubmit];
-    }
-}
-
-
 #pragma mark - 未提交
 -(void)loadSubmit {//提交
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
