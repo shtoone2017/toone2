@@ -16,7 +16,7 @@
 #import "HNT_BHZ_SB_Controller.h"
 #import "HNT_BHZ_SB_Controller.h"
 
-#define ITLES @[@"新增", @"编辑"]
+//#define ITLES @[@"新增", @"编辑"]
 #define TITLES @[@"编辑", @"删除",@"提交"]
 
 @interface GCB_WPLController ()<UITableViewDelegate,UITableViewDataSource,YBPopupMenuDelegate>
@@ -126,7 +126,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GCB_WSC_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_WSC_Cell" forIndexPath:indexPath];
     GCB_JZL_Model * model = self.datas[indexPath.row];
-    cell.selectionStyle =UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle =UITableViewCellSelectionStyleNone;
     cell.model = model;
     return cell;
 }
@@ -193,6 +193,24 @@
         }
     }
 }
+-(void)rwdAlert:(NSString *)messsage {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AlertViewTest"
+                                                    message:@"message"
+                                                   delegate:self
+                                          cancelButtonTitle:@"取消"
+                                          otherButtonTitles:@"确定",nil];
+    alert.title = @"提示";
+    alert.message = @"是否立即结束任务单";
+    //显示AlertView
+    [alert show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+//        [self loadSubmit];
+    }
+}
+
+
 #pragma mark - 未提交
 -(void)loadSubmit {//提交
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

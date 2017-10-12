@@ -130,7 +130,7 @@
         if ([model.zhuangtai isEqualToString:@"2"]) {//生产中
             [self rwdAlert];
         }else {
-            [SVProgressHUD showErrorWithStatus:@"生产中任务单才能结束"];
+//            [SVProgressHUD showErrorWithStatus:@"生产中任务单才能结束"];
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
