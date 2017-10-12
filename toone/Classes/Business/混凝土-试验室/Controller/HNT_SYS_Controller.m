@@ -54,7 +54,7 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[HNT_SYS_Cell class] forCellReuseIdentifier:@"HNT_SYS_Cell"];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 #pragma mark - Table view data source
@@ -63,7 +63,7 @@
     return 5;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 55;
 
 }
 
@@ -134,6 +134,18 @@
             break;
     }
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 150;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIImageView *headerImg = [UIImageView new];
+    headerImg.image = [UIImage imageNamed:@"SYS_Header_IMG2.jpg"];
+    return headerImg;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
