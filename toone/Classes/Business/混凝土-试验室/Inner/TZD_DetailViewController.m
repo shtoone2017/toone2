@@ -197,12 +197,12 @@
             cell.YC_NAME_CG1.text = dataModel.guliao2mingzi;
             cell.YC_PB_CG1.text = dataModel.guliao2phb;
             cell.YC_HS_CG1.text = dataModel.guliao2hsl;
-            cell.YC_PB_CG1.text = dataModel.guliao2tzl;
+            cell.YC_SG_CG1.text = dataModel.guliao2tzl;
             
             cell.YC_NAME_CG2.text = dataModel.guliao3mingzi;
             cell.YC_PB_CG2.text = dataModel.guliao3phb;
             cell.YC_HS_CG2.text = dataModel.guliao3hsl;
-            cell.YC_PB_CG2.text = dataModel.guliao3tzl;
+            cell.YC_SG_CG2.text = dataModel.guliao3tzl;
             
             cell.YC_NAME_CG3.text = dataModel.guliao4mingzi;
             cell.YC_PB_CG3.text = dataModel.guliao4phb;
