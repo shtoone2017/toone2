@@ -16,7 +16,10 @@
 @property (nonatomic,copy)NSString *jiechao;//节超
 @property (nonatomic,copy)NSString *shijipanshu;//盘数量
 //修改记录
-
+@property (nonatomic, copy) NSString *xiugairen;//name
+@property (nonatomic, copy) NSString *xiugaishijian;//time
+@property (nonatomic, copy) NSString *renwuno;//编号
+@property (nonatomic, copy) NSString *xgtype;//
 
 //转移记录
 @property (nonatomic,copy)NSString *caozuozhe;//操作者

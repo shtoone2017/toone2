@@ -77,6 +77,7 @@
 - (IBAction)rwdClick:(UIButton *)sender {
     GCB_RWD_DetailController *vc = [[GCB_RWD_DetailController alloc] init];
     vc.detailId = [NSString stringWithFormat:@"%@",self.model.rwdId];
+    vc.biaoshi = @"0";
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 //配比单

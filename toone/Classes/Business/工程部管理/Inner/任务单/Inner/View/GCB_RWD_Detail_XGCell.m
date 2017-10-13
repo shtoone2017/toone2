@@ -26,8 +26,20 @@
 
 -(void)setModel:(GCB_RWD_DetailModel *)model {
     _model = model;
-    
-    
+    _rwdbhLabel.text = model.renwuno;
+    _czrLabel.text = model.xiugairen;
+    _cztimeLabel.text = model.xiugaishijian;
+    if ([model.xgtype isEqualToString:@"0"]) {
+        _czfsLabel.text = @"新增";
+    }else if ([model.xgtype isEqualToString:@"1"]) {
+        _czfsLabel.text = @"修改";
+    }else if ([model.xgtype isEqualToString:@"2"]) {
+        _czfsLabel.text = @"提交";
+    }else if ([model.xgtype isEqualToString:@"3"]) {
+        _czfsLabel.text = @"删除";
+    }else if ([model.xgtype isEqualToString:@"4"]) {
+        _czfsLabel.text = @"结束";
+    }
 }
 
 -(void)setColor:(UIColor *)color {

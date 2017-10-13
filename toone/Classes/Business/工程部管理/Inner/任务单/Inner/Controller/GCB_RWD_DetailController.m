@@ -64,6 +64,7 @@
             if ([json[@"XGJLData"] isKindOfClass:[NSArray class]]) {//修改
                 for (NSDictionary * dict in json[@"XGJLData"]) {
                     GCB_RWD_DetailModel * xgModel = [GCB_RWD_DetailModel modelWithDict:dict];
+                    xgModel.xgtype = dict[@"type"];
                     [xgDatas addObject:xgModel];
                 }
             }
