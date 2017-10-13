@@ -76,14 +76,14 @@
     leftAxis.spaceTop = 0.15;
     leftAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
     
-    ChartYAxis *rightAxis = _chartView.rightAxis;
-    rightAxis.enabled = YES;
-    rightAxis.drawGridLinesEnabled = NO;
-    rightAxis.labelFont = [UIFont systemFontOfSize:10.f];
-    rightAxis.labelCount = 8;
-    rightAxis.valueFormatter = leftAxis.valueFormatter;
-    rightAxis.spaceTop = 0.15;
-    rightAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
+//    ChartYAxis *rightAxis = _chartView.rightAxis;
+//    rightAxis.enabled = YES;
+//    rightAxis.drawGridLinesEnabled = NO;
+//    rightAxis.labelFont = [UIFont systemFontOfSize:10.f];
+//    rightAxis.labelCount = 8;
+//    rightAxis.valueFormatter = leftAxis.valueFormatter;
+//    rightAxis.spaceTop = 0.15;
+//    rightAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
     
     ChartLegend *l = _chartView.legend;
     l.horizontalAlignment = ChartLegendHorizontalAlignmentLeft;
