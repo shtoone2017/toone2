@@ -35,7 +35,9 @@
     _jinchuliaodanNo.text = jcModel.jinchuliaodanNo;
     _picLabel.text = [NSString stringWithFormat:@"%@",jcModel.pizhong];
     _maocLabel.text = [NSString stringWithFormat:@"%@",jcModel.maozhong];
-    _jincLabel.text = [NSString stringWithFormat:@"%@",jcModel.jingzhong];
+    if (jcModel.jingzhong) {
+        _jincLabel.text = [NSString stringWithFormat:@"%@",jcModel.jingzhong];
+    }
     _gysLabel.text = jcModel.gongyingshangName;
     _piciLabel.text = jcModel.pici;
 }
