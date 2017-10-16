@@ -33,6 +33,12 @@
     [super viewDidLoad];
     [self loadData];
     self.navigationItem.title = @"详情";
+    _rwbhText.enabled = NO;
+    _gcmcText.enabled = NO;
+    _kddjText.enabled = NO;
+    _jhflText.enabled = NO;
+    _ksdjText.enabled = NO;
+    _bzText.enabled = NO;
 }
 
 -(void)loadData {
