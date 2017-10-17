@@ -89,8 +89,9 @@
 //浇筑部位
 - (IBAction)jzbwClick:(UIButton *)sender {
     JZL_JZBW_Controller *controller = [[JZL_JZBW_Controller alloc] init];
-    controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+    controller.callsBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao,NSString *sjfl){
         _gcmcText.text = gprsbianhao;
+        _jhflText.text = sjfl;
         [sender setTitle:banhezhanminchen forState:UIControlStateNormal];
     };
     [self.viewController.navigationController pushViewController:controller animated:YES];

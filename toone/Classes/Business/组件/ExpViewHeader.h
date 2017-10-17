@@ -22,4 +22,5 @@
 #import "Exp52View.h"
 #import "Exp51View.h"
 #import "Exp71View.h"
+#import "Exp72View.h"
 #endif /* ExpViewHeader_h */

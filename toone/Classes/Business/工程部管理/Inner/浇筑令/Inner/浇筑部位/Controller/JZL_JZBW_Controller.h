@@ -10,4 +10,5 @@
 
 @interface JZL_JZBW_Controller : MyInputController
 @property (nonatomic,copy) void (^callBlock)(NSString*,NSString*);
+@property (nonatomic,copy) void (^callsBlock)(NSString*,NSString*,NSString*);
 @end

@@ -115,7 +115,7 @@
 //任务单删除
 #define AppJZL_Dele FormatString(baseUrl,@"appWZproject.do?AppWzRenwudandel&id=%@")
 //浇筑部位
-#define AppJZBW FormatString(baseUrl,@"appWZproject.do?AppjzbwList&departId=%@&page=%@&rows=%@")
+#define AppJZBW FormatString(baseUrl,@"appWZproject.do?AppjzbwList&departId=%@&page=%@&rows=%@&keyword=%@")
 //结束任务单
 #define AppJSRWD FormatString(baseUrl,@"appWZproject.do?AppWzRenwudanFinish&id=%@&username=%@")
 //组织机构

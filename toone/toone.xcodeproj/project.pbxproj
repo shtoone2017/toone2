@@ -338,6 +338,9 @@
 		9C05F0831F3BFC9400BF4627 /* BFListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0821F3BFC9400BF4627 /* BFListModel.m */; };
 		9C05F0861F3C490F00BF4627 /* BFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0851F3C490F00BF4627 /* BFDetailViewController.m */; };
 		9C05F0891F3C586500BF4627 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05F0871F3C586500BF4627 /* BaseModel.m */; };
+		9C1AB46C1F95D2E900CFE673 /* Exp72_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1AB4681F95D2E900CFE673 /* Exp72_Xib_View.m */; };
+		9C1AB46D1F95D2E900CFE673 /* Exp72_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1AB4691F95D2E900CFE673 /* Exp72_Xib_View.xib */; };
+		9C1AB46E1F95D2E900CFE673 /* Exp72View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1AB46B1F95D2E900CFE673 /* Exp72View.m */; };
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C2024131F38052700F79559 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2024111F38052700F79559 /* LabelTextFieldCell.m */; };
 		9C2024141F38052700F79559 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2024121F38052700F79559 /* LabelTextFieldCell.xib */; };
@@ -1153,6 +1156,11 @@
 		9C05F0851F3C490F00BF4627 /* BFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFDetailViewController.m; sourceTree = "<group>"; };
 		9C05F0871F3C586500BF4627 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		9C05F0881F3C586500BF4627 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		9C1AB4671F95D2E900CFE673 /* Exp72_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp72_Xib_View.h; sourceTree = "<group>"; };
+		9C1AB4681F95D2E900CFE673 /* Exp72_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp72_Xib_View.m; sourceTree = "<group>"; };
+		9C1AB4691F95D2E900CFE673 /* Exp72_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp72_Xib_View.xib; sourceTree = "<group>"; };
+		9C1AB46A1F95D2E900CFE673 /* Exp72View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp72View.h; sourceTree = "<group>"; };
+		9C1AB46B1F95D2E900CFE673 /* Exp72View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp72View.m; sourceTree = "<group>"; };
 		9C20240D1F38021200F79559 /* ScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
 		9C20240E1F38021200F79559 /* ScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		9C2024101F38052700F79559 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelTextFieldCell.h; path = "Classes/Business/磅房管理/Controller/LabelTextFieldCell.h"; sourceTree = SOURCE_ROOT; };
@@ -3474,6 +3482,18 @@
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
+		9C1AB4661F95D2E900CFE673 /* EXP72 */ = {
+			isa = PBXGroup;
+			children = (
+				9C1AB4671F95D2E900CFE673 /* Exp72_Xib_View.h */,
+				9C1AB4681F95D2E900CFE673 /* Exp72_Xib_View.m */,
+				9C1AB4691F95D2E900CFE673 /* Exp72_Xib_View.xib */,
+				9C1AB46A1F95D2E900CFE673 /* Exp72View.h */,
+				9C1AB46B1F95D2E900CFE673 /* Exp72View.m */,
+			);
+			path = EXP72;
+			sourceTree = "<group>";
+		};
 		9CAAAF8A1F43D9DB008F43BA /* Part4(配合比) */ = {
 			isa = PBXGroup;
 			children = (
@@ -4143,6 +4163,7 @@
 		D20063FA1DFF86800021E293 /* 组件 */ = {
 			isa = PBXGroup;
 			children = (
+				9C1AB4661F95D2E900CFE673 /* EXP72 */,
 				42E288731F4592DB0002AF72 /* EXP71 */,
 				42E2884F1F442A700002AF72 /* EXP51 */,
 				42E288401F43F2A20002AF72 /* EXP52 */,
@@ -4730,6 +4751,7 @@
 				9C05F05C1F3BF83800BF4627 /* BFListCell.xib in Resources */,
 				42A0D8A21F7D17E300500540 /* lq.plist in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
+				9C1AB46D1F95D2E900CFE673 /* Exp72_Xib_View.xib in Resources */,
 				9CB851CE1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
 				D20065301DFF86B30021E293 /* LineChart2ViewController.xib in Resources */,
@@ -4920,6 +4942,7 @@
 				42E288CF1F4AD9A80002AF72 /* GCB_JZL_DetailCell.m in Sources */,
 				D20064481DFF86800021E293 /* MJDIYHeader2.m in Sources */,
 				42AC71B91E30C423007D8F57 /* SGBarChart.m in Sources */,
+				9C1AB46E1F95D2E900CFE673 /* Exp72View.m in Sources */,
 				42AC71781E30C393007D8F57 /* ProduQueryModel.m in Sources */,
 				42AC71761E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.m in Sources */,
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
@@ -5039,6 +5062,7 @@
 				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
 				9C20240F1F38021200F79559 /* ScreenView.m in Sources */,
 				9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */,
+				9C1AB46C1F95D2E900CFE673 /* Exp72_Xib_View.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
 				187C73021E30B1810072F33A /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				D200646E1DFF86800021E293 /* HNT_SYS_Controller.m in Sources */,
