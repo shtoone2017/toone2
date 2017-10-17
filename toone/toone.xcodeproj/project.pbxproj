@@ -256,6 +256,18 @@
 		42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC72031E30C576007D8F57 /* LqTreeTableView.m */; };
 		42AC721F1E30C668007D8F57 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC721D1E30C668007D8F57 /* MySegmentedControl.m */; };
 		42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AC721E1E30C668007D8F57 /* MySegmentedControl.xib */; };
+		42B9C2181F949516000706FA /* Car_localController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C2171F949516000706FA /* Car_localController.m */; };
+		42B9C21B1F94954E000706FA /* Car_YSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C21A1F94954E000706FA /* Car_YSController.m */; };
+		42B9C21E1F949752000706FA /* Car_ScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C21D1F949752000706FA /* Car_ScanController.m */; };
+		42B9C2221F94A55D000706FA /* Car_YSD_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C2201F94A55D000706FA /* Car_YSD_Cell.m */; };
+		42B9C2231F94A55D000706FA /* Car_YSD_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B9C2211F94A55D000706FA /* Car_YSD_Cell.xib */; };
+		42B9C2261F94AD8C000706FA /* Car_YSD_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C2251F94AD8C000706FA /* Car_YSD_Model.m */; };
+		42B9C2281F95D98D000706FA /* stutas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B9C2271F95D98D000706FA /* stutas.plist */; };
+		42B9C22B1F95E939000706FA /* Car_YSD_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C22A1F95E939000706FA /* Car_YSD_DetailController.m */; };
+		42B9C22F1F95EBEB000706FA /* Car_YSD_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C22D1F95EBEB000706FA /* Car_YSD_DetailCell.m */; };
+		42B9C2301F95EBEB000706FA /* Car_YSD_DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B9C22E1F95EBEB000706FA /* Car_YSD_DetailCell.xib */; };
+		42B9C2341F95F602000706FA /* Car_YSD_IconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9C2321F95F602000706FA /* Car_YSD_IconCell.m */; };
+		42B9C2351F95F602000706FA /* Car_YSD_IconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B9C2331F95F602000706FA /* Car_YSD_IconCell.xib */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD72D51E07A75000A0C991 /* HNT_SCCX_DetailController.m */; };
@@ -1048,6 +1060,26 @@
 		42AC721C1E30C668007D8F57 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
 		42AC721D1E30C668007D8F57 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
 		42AC721E1E30C668007D8F57 /* MySegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySegmentedControl.xib; sourceTree = "<group>"; };
+		42B9C2161F949516000706FA /* Car_localController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_localController.h; sourceTree = "<group>"; };
+		42B9C2171F949516000706FA /* Car_localController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_localController.m; sourceTree = "<group>"; };
+		42B9C2191F94954E000706FA /* Car_YSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_YSController.h; sourceTree = "<group>"; };
+		42B9C21A1F94954E000706FA /* Car_YSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_YSController.m; sourceTree = "<group>"; };
+		42B9C21C1F949752000706FA /* Car_ScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_ScanController.h; sourceTree = "<group>"; };
+		42B9C21D1F949752000706FA /* Car_ScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_ScanController.m; sourceTree = "<group>"; };
+		42B9C21F1F94A55D000706FA /* Car_YSD_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_YSD_Cell.h; sourceTree = "<group>"; };
+		42B9C2201F94A55D000706FA /* Car_YSD_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_YSD_Cell.m; sourceTree = "<group>"; };
+		42B9C2211F94A55D000706FA /* Car_YSD_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Car_YSD_Cell.xib; sourceTree = "<group>"; };
+		42B9C2241F94AD8C000706FA /* Car_YSD_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_YSD_Model.h; sourceTree = "<group>"; };
+		42B9C2251F94AD8C000706FA /* Car_YSD_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_YSD_Model.m; sourceTree = "<group>"; };
+		42B9C2271F95D98D000706FA /* stutas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stutas.plist; sourceTree = "<group>"; };
+		42B9C2291F95E939000706FA /* Car_YSD_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_YSD_DetailController.h; sourceTree = "<group>"; };
+		42B9C22A1F95E939000706FA /* Car_YSD_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_YSD_DetailController.m; sourceTree = "<group>"; };
+		42B9C22C1F95EBEB000706FA /* Car_YSD_DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_YSD_DetailCell.h; sourceTree = "<group>"; };
+		42B9C22D1F95EBEB000706FA /* Car_YSD_DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_YSD_DetailCell.m; sourceTree = "<group>"; };
+		42B9C22E1F95EBEB000706FA /* Car_YSD_DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Car_YSD_DetailCell.xib; sourceTree = "<group>"; };
+		42B9C2311F95F602000706FA /* Car_YSD_IconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_YSD_IconCell.h; sourceTree = "<group>"; };
+		42B9C2321F95F602000706FA /* Car_YSD_IconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_YSD_IconCell.m; sourceTree = "<group>"; };
+		42B9C2331F95F602000706FA /* Car_YSD_IconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Car_YSD_IconCell.xib; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CBD72D41E07A75000A0C991 /* HNT_SCCX_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_DetailController.h; sourceTree = "<group>"; };
@@ -3134,6 +3166,128 @@
 			path = View2;
 			sourceTree = "<group>";
 		};
+		42B9C2091F948ABA000706FA /* 车辆运输 */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C20A1F948ABA000706FA /* 扫码 */,
+				42B9C20E1F948ABA000706FA /* 本地 */,
+				42B9C2121F948ABA000706FA /* 运输单 */,
+			);
+			path = "车辆运输";
+			sourceTree = "<group>";
+		};
+		42B9C20A1F948ABA000706FA /* 扫码 */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C20B1F948ABA000706FA /* Controller */,
+				42B9C20C1F948ABA000706FA /* Model */,
+				42B9C20D1F948ABA000706FA /* View */,
+			);
+			path = "扫码";
+			sourceTree = "<group>";
+		};
+		42B9C20B1F948ABA000706FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C21C1F949752000706FA /* Car_ScanController.h */,
+				42B9C21D1F949752000706FA /* Car_ScanController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42B9C20C1F948ABA000706FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42B9C20D1F948ABA000706FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42B9C20E1F948ABA000706FA /* 本地 */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C20F1F948ABA000706FA /* Controller */,
+				42B9C2101F948ABA000706FA /* Model */,
+				42B9C2111F948ABA000706FA /* View */,
+			);
+			path = "本地";
+			sourceTree = "<group>";
+		};
+		42B9C20F1F948ABA000706FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C2161F949516000706FA /* Car_localController.h */,
+				42B9C2171F949516000706FA /* Car_localController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42B9C2101F948ABA000706FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42B9C2111F948ABA000706FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42B9C2121F948ABA000706FA /* 运输单 */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C2131F948ABA000706FA /* Controller */,
+				42B9C2141F948ABA000706FA /* Model */,
+				42B9C2151F948ABA000706FA /* View */,
+			);
+			path = "运输单";
+			sourceTree = "<group>";
+		};
+		42B9C2131F948ABA000706FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C2191F94954E000706FA /* Car_YSController.h */,
+				42B9C21A1F94954E000706FA /* Car_YSController.m */,
+				42B9C2291F95E939000706FA /* Car_YSD_DetailController.h */,
+				42B9C22A1F95E939000706FA /* Car_YSD_DetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42B9C2141F948ABA000706FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C2241F94AD8C000706FA /* Car_YSD_Model.h */,
+				42B9C2251F94AD8C000706FA /* Car_YSD_Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42B9C2151F948ABA000706FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42B9C21F1F94A55D000706FA /* Car_YSD_Cell.h */,
+				42B9C2201F94A55D000706FA /* Car_YSD_Cell.m */,
+				42B9C2211F94A55D000706FA /* Car_YSD_Cell.xib */,
+				42B9C22C1F95EBEB000706FA /* Car_YSD_DetailCell.h */,
+				42B9C22D1F95EBEB000706FA /* Car_YSD_DetailCell.m */,
+				42B9C22E1F95EBEB000706FA /* Car_YSD_DetailCell.xib */,
+				42B9C2311F95F602000706FA /* Car_YSD_IconCell.h */,
+				42B9C2321F95F602000706FA /* Car_YSD_IconCell.m */,
+				42B9C2331F95F602000706FA /* Car_YSD_IconCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3410,6 +3564,7 @@
 				D20063721DFF86800021E293 /* AppDelegate.m */,
 				D200637B1DFF86800021E293 /* Toone-Bridging-Header.h */,
 				D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */,
+				42B9C2091F948ABA000706FA /* 车辆运输 */,
 				D280AAE21EA7529200EB6E69 /* 二维码扫一扫 */,
 				8CBD73461E09320C00A0C991 /* 组织机构 */,
 				D26AE9931E7A37A90090761D /* 沥青-拌合站（老平台） */,
@@ -3885,6 +4040,7 @@
 		D200641A1DFF86800021E293 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				42B9C2271F95D98D000706FA /* stutas.plist */,
 				18B871C01E1F719900F9DD53 /* Controller */,
 				42A887711EE003140010B053 /* View4 */,
 				42A887481EDFEDF90010B053 /* View3 */,
@@ -4671,8 +4827,8 @@
 				TargetAttributes = {
 					D20062F81DFF85CB0021E293 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = MWKKG6D7EX;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = ZKBSBDQVH2;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4738,6 +4894,7 @@
 				8CEB5BC91E0A6C0D00A5C4AA /* Login.storyboard in Resources */,
 				D235E32B1E84C64900EE4459 /* LLQ_LSSJ_Detail_ChartCell.xib in Resources */,
 				42A8881A1EE658120010B053 /* LLQ_SYS_Cell.xib in Resources */,
+				42B9C2281F95D98D000706FA /* stutas.plist in Resources */,
 				D2E04DDD1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */,
 				42A887431EDFEBBC0010B053 /* TP_DW_Controller.xib in Resources */,
@@ -4748,6 +4905,7 @@
 				42A887B61EE3E37A0010B053 /* LLQ_MXE_Cell.xib in Resources */,
 				D20065361DFF86B30021E293 /* MultipleBarChartViewController.xib in Resources */,
 				8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */,
+				42B9C2301F95EBEB000706FA /* Car_YSD_DetailCell.xib in Resources */,
 				42AC71491E30C393007D8F57 /* DCZ_CJ_Inner_Cell.xib in Resources */,
 				D2E838691EA75AF7003E0A7B /* sound.caf in Resources */,
 				D200652A1DFF86B30021E293 /* HalfPieChartViewController.xib in Resources */,
@@ -4756,6 +4914,7 @@
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D21944271E8120E000FC0B38 /* SW_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				8CBD72E61E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.xib in Resources */,
+				42B9C2351F95F602000706FA /* Car_YSD_IconCell.xib in Resources */,
 				42A8872D1EDFEBBC0010B053 /* TP_CL_Cell.xib in Resources */,
 				D272EFC21E7BBE3A00D0991D /* SW_CBCZ_View.xib in Resources */,
 				D21944201E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
@@ -4837,6 +4996,7 @@
 				42AC71671E30C393007D8F57 /* DayDetailsCell.xib in Resources */,
 				8CBD72E81E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.xib in Resources */,
 				42A887351EDFEBBC0010B053 /* TP_TP_Controller.xib in Resources */,
+				42B9C2231F94A55D000706FA /* Car_YSD_Cell.xib in Resources */,
 				42A887331EDFEBBC0010B053 /* TP_CLSB_Controller.xib in Resources */,
 				D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */,
 				D2E838791EA83D7B003E0A7B /* arrow.png in Resources */,
@@ -4939,6 +5099,7 @@
 				42A887941EE2596E0010B053 /* LLQ_SYS_Controller.m in Sources */,
 				D20065141DFF86B30021E293 /* AxisModel.m in Sources */,
 				42A887361EDFEBBC0010B053 /* TP_TP_SB_Controller.m in Sources */,
+				42B9C2341F95F602000706FA /* Car_YSD_IconCell.m in Sources */,
 				D272EFD61E7BC36F00D0991D /* LLQ_CBCZ_View.m in Sources */,
 				42AC71461E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D20064971DFF86800021E293 /* Exp3View.m in Sources */,
@@ -5009,6 +5170,7 @@
 				D272EFBD1E7BBE3A00D0991D /* SW_CLHS_Model.m in Sources */,
 				D20064961DFF86800021E293 /* Exp2View.m in Sources */,
 				D20065311DFF86B30021E293 /* LineChartFilledViewController.m in Sources */,
+				42B9C2261F94AD8C000706FA /* Car_YSD_Model.m in Sources */,
 				D235E32F1E84C64900EE4459 /* LLQ_LSSJ_Detail_Head.m in Sources */,
 				42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */,
 				D20064481DFF86800021E293 /* MJDIYHeader2.m in Sources */,
@@ -5032,6 +5194,7 @@
 				D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */,
 				D20065931DFFCC080021E293 /* HNT_SCCX_Model.m in Sources */,
 				187C730F1E30B1810072F33A /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
+				42B9C2221F94A55D000706FA /* Car_YSD_Cell.m in Sources */,
 				42AC71BD1E30C423007D8F57 /* SGConst.m in Sources */,
 				42AC71551E30C393007D8F57 /* EXPTotalModel.m in Sources */,
 				42A887DA1EE5520F0010B053 /* LLQ_MXE_Detail_Chart.m in Sources */,
@@ -5141,6 +5304,7 @@
 				42AC71C01E30C423007D8F57 /* SGLineDIY.m in Sources */,
 				42AC72181E30C576007D8F57 /* LqNode.m in Sources */,
 				42A887CF1EE521D50010B053 /* LLQ_MXE_Detail_DataCell.m in Sources */,
+				42B9C22B1F95E939000706FA /* Car_YSD_DetailController.m in Sources */,
 				D235E2FF1E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.m in Sources */,
 				D20065841DFFC5AB0021E293 /* HNT_SCCX_Controller.m in Sources */,
 				42A888411EE6A9920010B053 /* WSLineChartView.m in Sources */,
@@ -5171,6 +5335,7 @@
 				D219438B1E81059400FC0B38 /* LQ_SB_Model.m in Sources */,
 				D21944011E81204800FC0B38 /* HNT_CLHS_Cell.m in Sources */,
 				42AC720C1E30C576007D8F57 /* MASConstraint.m in Sources */,
+				42B9C22F1F95EBEB000706FA /* Car_YSD_DetailCell.m in Sources */,
 				42AC71921E30C3B6007D8F57 /* Exp8View.m in Sources */,
 				187C73061E30B1810072F33A /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				D2E04DDA1E83ADCC009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Cell.m in Sources */,
@@ -5270,10 +5435,12 @@
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,
 				D272EFB71E7BBE3A00D0991D /* LQ_SW_Controller.m in Sources */,
 				187C72FB1E30B1810072F33A /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				42B9C2181F949516000706FA /* Car_localController.m in Sources */,
 				187C730C1E30B1810072F33A /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				D21943971E810FE200FC0B38 /* LLQ_LSSJ_Controller.m in Sources */,
 				4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */,
 				8CBD72F71E07B1D200A0C991 /* HNT_CBCZ_Detail_HeadMsg.m in Sources */,
+				42B9C21E1F949752000706FA /* Car_ScanController.m in Sources */,
 				42AC72141E30C576007D8F57 /* ViewController+MASAdditions.m in Sources */,
 				187C730A1E30B1810072F33A /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				D200646C1DFF86800021E293 /* HNT_BHZ_Cell.m in Sources */,
@@ -5318,6 +5485,7 @@
 				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,
 				D2CF6B671E011728003AE61D /* Exp6View.m in Sources */,
 				D219438E1E8105F900FC0B38 /* LQ_UsePosition_Controller.m in Sources */,
+				42B9C21B1F94954E000706FA /* Car_YSController.m in Sources */,
 				42A8872F1EDFEBBC0010B053 /* TP_CL_Controller.m in Sources */,
 				D20064A01DFF86800021E293 /* MyNavigationController.m in Sources */,
 				187C72F81E30B1810072F33A /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
@@ -5481,17 +5649,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				DEVELOPMENT_TEAM = MWKKG6D7EX;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZKBSBDQVH2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym..;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "047cb7df-d281-4c01-a90a-0d50802ecad2";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distuibution_hnym;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
@@ -5504,17 +5672,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				DEVELOPMENT_TEAM = MWKKG6D7EX;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZKBSBDQVH2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym..;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "047cb7df-d281-4c01-a90a-0d50802ecad2";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distuibution_hnym;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};

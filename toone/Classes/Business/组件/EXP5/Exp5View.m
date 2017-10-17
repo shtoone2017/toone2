@@ -73,6 +73,9 @@
         }
     }
 }
+-(void)setStutas:(NSString *)stutas {
+    self.xib.sbLabel.text = stutas;
+}
 
 -(void)remove{
      [SGAnimationType remove:self animation:AnimationBottomTop completion:^{

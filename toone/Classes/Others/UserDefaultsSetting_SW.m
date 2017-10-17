@@ -43,6 +43,11 @@ static UserDefaultsSetting_SW * setting = nil;
 //    setting.zzjgName   = [defaults objectForKey:@"zzjgName_SWKey"];
     setting.userFullName   = [defaults objectForKey:@"userFullName_SWKey"];
     setting.randomSeed = [defaults objectForKey:@"seed_SWKey"];
+    
+//车辆运输存贮数据
+    setting.Token = [defaults objectForKey:@"TokenKey"];
+    setting.Jgdm = [defaults objectForKey:@"JgdmKey"];
+    
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -65,6 +70,12 @@ static UserDefaultsSetting_SW * setting = nil;
     [defaults setObject:self.userFullName   forKey:@"userFullName_SWKey"];
     
     [defaults setObject:self.randomSeed   forKey:@"seed_SWKey"];
+    
+    
+//车辆运输存贮数据
+    [defaults setObject:self.Token   forKey:@"TokenKey"];
+    [defaults setObject:self.Jgdm   forKey:@"JgdmKey"];
+    
     [defaults synchronize];
 }
 

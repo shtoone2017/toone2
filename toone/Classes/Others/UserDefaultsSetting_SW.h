@@ -33,6 +33,12 @@
 //@property (nonatomic,copy) NSString * zzjgName;
 @property (nonatomic,copy) NSString * userFullName;
 
+
+//车辆运输存贮数据
+@property (nonatomic, copy) NSString *Token;
+@property (nonatomic, copy) NSString *Jgdm;//用户所属拌和站编码
+
+
 //获取一个随机种子
 @property (nonatomic,copy) NSString * randomSeed;
 @end

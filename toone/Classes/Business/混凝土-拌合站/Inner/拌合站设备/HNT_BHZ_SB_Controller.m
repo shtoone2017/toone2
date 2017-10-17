@@ -9,17 +9,31 @@
 #import "HNT_BHZ_SB_Controller.h"
 #import "HNT_BHZ_SB_Model.h"
 @interface HNT_BHZ_SB_Controller ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic)  UITableView *tbleView;
 @property (nonatomic,strong) NSMutableArray * datas;
+@property (nonatomic, strong) NSArray * statesArr;
+
 @end
 
 @implementation HNT_BHZ_SB_Controller
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (_type == SBListTypeStatu) {
+        self.title = @"选择签收状态";
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.rowHeight = 40;
-    self.tableView.tableFooterView = [[UIView alloc] init];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_BHZ_SB_Controller"];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.tbleView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, Screen_w, Screen_h) style:UITableViewStylePlain];
+    _tbleView.delegate =self;
+    _tbleView.dataSource = self;
+    self.tbleView.rowHeight = 40;
+    self.tbleView.tableFooterView = [[UIView alloc] init];
+    [self.tbleView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HNT_BHZ_SB_Controller"];
+    [self.view addSubview:self.tbleView];
 }
 -(NSMutableArray *)datas{
     if (!_datas) {
@@ -39,7 +53,7 @@
                 }
             }
             weakSelf.datas = datas;
-            [weakSelf.tableView reloadData];
+            [weakSelf.tbleView reloadData];
             [Tools removeActivity];
         } failure:^(NSError *error) {
         }];
@@ -50,22 +64,45 @@
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
+    if (_type == SBListTypeStatu) {
+        return self.statesArr.count;
+    }else {
+        return self.datas.count;
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_BHZ_SB_Controller" forIndexPath:indexPath];
-    HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
-    cell.textLabel.text = model.banhezhanminchen;
+    if (_type == SBListTypeStatu) {
+        NSDictionary * dict = self.statesArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else {
+        HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
+        cell.textLabel.text = model.banhezhanminchen;
+    }
     cell.textLabel.font = [UIFont systemFontOfSize:12.0f];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor oldLaceColor];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
-    if (self.callBlock) {
-        self.callBlock(model.banhezhanminchen,model.gprsbianhao);
+    if (_type == SBListTypeStatu) {
+
+        NSDictionary * dict = self.statesArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else {
+        
+        HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
+        if (self.callBlock) {
+            self.callBlock(model.banhezhanminchen,model.gprsbianhao);
+        }
     }
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(NSArray *)statesArr {//
+    if (_statesArr == nil) {
+        _statesArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stutas.plist" ofType:nil]];
+    }
+    return _statesArr;
 }
 @end

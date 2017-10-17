@@ -14,4 +14,6 @@ typedef void(^ExpBlock_t) (ExpButtonType,id,id);
 
 @interface Exp5View : UIView
 @property (nonatomic,copy) ExpBlock_t expBlock;
+@property (nonatomic, copy) NSString *stutas;
+
 @end

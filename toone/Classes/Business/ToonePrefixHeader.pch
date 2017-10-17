@@ -71,15 +71,8 @@
 #import "WSLineChartView.h"
 
 //
-#define baseUrl       @"http://112.124.12.254:8082/hnymmss/"
-//#define baseUrl     @"http://192.168.11.109:8080/gdnhmssNew/"
-//@"http://192.168.11.107:8080/jbgsmss/"
-
-//@"http://192.168.11.126:8081/jbgsmss/"
-
-
-
-
+#define baseUrl         @"http://61.237.239.105:18190/FCDService/FCDService.asmx/"
+#define iconUrl         @"http://61.237.239.105:18190/FIELS/FILES/"
 
 //二维码上传
 #define LqClassUpdata   FormatString(baseUrl,@"appLq/LqClassUpdata?")
@@ -255,4 +248,27 @@
 
 //沥青拌合站材料用量查询
 #define LQMaterial FormatString(baseUrl,@"lqSCcounController.do?materialcount&shebeibianhao=%@&startTime=%@&endTime=%@&userGroupId=%@")
+
+
+
+
+/**************************车辆运输*********************************/
+#define Car_Detail_Icon(picUrl) FormatString(iconUrl,picUrl)
+//登录
+#define CarLogin   FormatString(baseUrl,@"Login")
+//列表
+#define CarList   FormatString(baseUrl,@"GetFCDListByPageQS?token=%@&index=%@&size=%@&jgdm=%@&status=%@&begintime=%@&endtime=%@")
+//详情
+#define CarDetail   FormatString(baseUrl,@"GetFCDDetail?token=%@&fcdbh=%@&bhzbh=%@")
+
+
+
+
+
+
+
+
+
+
+
 #endif /* ToonePrefixHeader_pch */
