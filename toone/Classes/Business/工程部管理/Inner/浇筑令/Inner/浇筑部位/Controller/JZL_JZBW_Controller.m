@@ -110,7 +110,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     JZL_JZBW_Model *model = self.datas[indexPath.row];
     if (self.callBlock) {
-        self.callBlock(model.projectname,model.jzbwId);
+        self.callBlock(model.projectname,model.zjiedian);
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

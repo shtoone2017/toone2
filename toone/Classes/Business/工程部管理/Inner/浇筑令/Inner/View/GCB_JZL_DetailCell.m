@@ -90,6 +90,7 @@
 - (IBAction)jzbwClick:(UIButton *)sender {
     JZL_JZBW_Controller *controller = [[JZL_JZBW_Controller alloc] init];
     controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+        _gcmcText.text = gprsbianhao;
         [sender setTitle:banhezhanminchen forState:UIControlStateNormal];
     };
     [self.viewController.navigationController pushViewController:controller animated:YES];
