@@ -291,7 +291,7 @@
             cell.JC_SJ.text = model.jinchangshijian;
             cell.JC_CL_Name.text = model.cailiaoname;
             cell.JC_GYS_Name.text = model.gongyingshangname;
-            cell.JC_JZ.text = model.jingzhong;
+            cell.JC_JZ.text = [NSString stringWithFormat:@"%.2f",[model.jingzhong floatValue]];
         }
         else
         {
