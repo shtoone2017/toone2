@@ -70,6 +70,14 @@
 		42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F7B1EE8FC9100931544 /* LLQ_YD_DetailController.m */; };
 		42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */; };
 		422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */; };
+		4261F36B1F96E9A900B0706F /* ScanResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261F36A1F96E9A900B0706F /* ScanResultController.m */; };
+		4261F36F1F96ECEF00B0706F /* ScanResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261F36D1F96ECEF00B0706F /* ScanResultCell.m */; };
+		4261F3701F96ECEF00B0706F /* ScanResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4261F36E1F96ECEF00B0706F /* ScanResultCell.xib */; };
+		4261F3731F97233100B0706F /* Car_ScanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261F3721F97233100B0706F /* Car_ScanModel.m */; };
+		4261F3771F9730E800B0706F /* ResultIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261F3751F9730E800B0706F /* ResultIconCell.m */; };
+		4261F3781F9730E800B0706F /* ResultIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4261F3761F9730E800B0706F /* ResultIconCell.xib */; };
+		4261F37B1F973F3E00B0706F /* rejection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4261F3791F973F3E00B0706F /* rejection.plist */; };
+		4261F37C1F973F3E00B0706F /* restul.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4261F37A1F973F3E00B0706F /* restul.plist */; };
 		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -720,6 +728,18 @@
 		42022F7C1EE8FC9100931544 /* LLQ_YD_DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLQ_YD_DetailController.xib; sourceTree = "<group>"; };
 		422D692B1EE79C1F00820275 /* LLQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_SB_Controller.h; sourceTree = "<group>"; };
 		422D692C1EE79C1F00820275 /* LLQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_SB_Controller.m; sourceTree = "<group>"; };
+		4261F3691F96E9A900B0706F /* ScanResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultController.h; sourceTree = "<group>"; };
+		4261F36A1F96E9A900B0706F /* ScanResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultController.m; sourceTree = "<group>"; };
+		4261F36C1F96ECEF00B0706F /* ScanResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultCell.h; sourceTree = "<group>"; };
+		4261F36D1F96ECEF00B0706F /* ScanResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultCell.m; sourceTree = "<group>"; };
+		4261F36E1F96ECEF00B0706F /* ScanResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultCell.xib; sourceTree = "<group>"; };
+		4261F3711F97233100B0706F /* Car_ScanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_ScanModel.h; sourceTree = "<group>"; };
+		4261F3721F97233100B0706F /* Car_ScanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_ScanModel.m; sourceTree = "<group>"; };
+		4261F3741F9730E800B0706F /* ResultIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultIconCell.h; sourceTree = "<group>"; };
+		4261F3751F9730E800B0706F /* ResultIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultIconCell.m; sourceTree = "<group>"; };
+		4261F3761F9730E800B0706F /* ResultIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultIconCell.xib; sourceTree = "<group>"; };
+		4261F3791F973F3E00B0706F /* rejection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rejection.plist; sourceTree = "<group>"; };
+		4261F37A1F973F3E00B0706F /* restul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restul.plist; sourceTree = "<group>"; };
 		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
 		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -3191,6 +3211,8 @@
 			children = (
 				42B9C21C1F949752000706FA /* Car_ScanController.h */,
 				42B9C21D1F949752000706FA /* Car_ScanController.m */,
+				4261F3691F96E9A900B0706F /* ScanResultController.h */,
+				4261F36A1F96E9A900B0706F /* ScanResultController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3198,6 +3220,8 @@
 		42B9C20C1F948ABA000706FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4261F3711F97233100B0706F /* Car_ScanModel.h */,
+				4261F3721F97233100B0706F /* Car_ScanModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3205,6 +3229,12 @@
 		42B9C20D1F948ABA000706FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4261F36C1F96ECEF00B0706F /* ScanResultCell.h */,
+				4261F36D1F96ECEF00B0706F /* ScanResultCell.m */,
+				4261F36E1F96ECEF00B0706F /* ScanResultCell.xib */,
+				4261F3741F9730E800B0706F /* ResultIconCell.h */,
+				4261F3751F9730E800B0706F /* ResultIconCell.m */,
+				4261F3761F9730E800B0706F /* ResultIconCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4040,6 +4070,8 @@
 		D200641A1DFF86800021E293 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				4261F3791F973F3E00B0706F /* rejection.plist */,
+				4261F37A1F973F3E00B0706F /* restul.plist */,
 				42B9C2271F95D98D000706FA /* stutas.plist */,
 				18B871C01E1F719900F9DD53 /* Controller */,
 				42A887711EE003140010B053 /* View4 */,
@@ -4897,6 +4929,7 @@
 				42B9C2281F95D98D000706FA /* stutas.plist in Resources */,
 				D2E04DDD1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */,
+				4261F37C1F973F3E00B0706F /* restul.plist in Resources */,
 				42A887431EDFEBBC0010B053 /* TP_DW_Controller.xib in Resources */,
 				42A887301EDFEBBC0010B053 /* TP_CL_Controller.xib in Resources */,
 				42022F791EE8F7CC00931544 /* LLQ_ZR_DetailController.xib in Resources */,
@@ -4977,14 +5010,17 @@
 				D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */,
 				42A887761EE003140010B053 /* MySYSSegmentedControl.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
+				4261F3781F9730E800B0706F /* ResultIconCell.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
 				D2E04DE51E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				42022F5D1EE7D39300931544 /* LLQ_RH_DetailCell.xib in Resources */,
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
+				4261F37B1F973F3E00B0706F /* rejection.plist in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
 				42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				D220E2C31E8D00E1001A1C14 /* DrawerController.xib in Resources */,
+				4261F3701F96ECEF00B0706F /* ScanResultCell.xib in Resources */,
 				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
 				D2E8384F1EA756A9003E0A7B /* JumpVC.xib in Resources */,
 				42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */,
@@ -5147,6 +5183,7 @@
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
 				D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */,
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
+				4261F36F1F96ECEF00B0706F /* ScanResultCell.m in Sources */,
 				42A887951EE2596E0010B053 /* LLQ_SYS_InnerController.m in Sources */,
 				42A887D71EE53CA90010B053 /* LLQ_MXE_Detail_Data.m in Sources */,
 				42AC71721E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_ moreModel.m in Sources */,
@@ -5255,6 +5292,7 @@
 				D20064891DFF86800021E293 /* HNT_SYS_Cell.m in Sources */,
 				42A887CA1EE51EF70010B053 /* LLQ_MXE_Detail_ChartCell.m in Sources */,
 				42AC71521E30C393007D8F57 /* EXPrimaryCell.m in Sources */,
+				4261F3771F9730E800B0706F /* ResultIconCell.m in Sources */,
 				187C73081E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				42A887371EDFEBBC0010B053 /* TP_SB_Model.m in Sources */,
 				18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */,
@@ -5286,6 +5324,7 @@
 				187C730B1E30B1810072F33A /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				D20065471DFF86B30021E293 /* StackedBarChartViewController.m in Sources */,
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				4261F3731F97233100B0706F /* Car_ScanModel.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
@@ -5331,6 +5370,7 @@
 				42AC720A1E30C576007D8F57 /* TreeTableView.m in Sources */,
 				D20062FE1DFF85CB0021E293 /* main.m in Sources */,
 				42A887311EDFEBBC0010B053 /* TP_CL_DataModel.m in Sources */,
+				4261F36B1F96E9A900B0706F /* ScanResultController.m in Sources */,
 				D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */,
 				D219438B1E81059400FC0B38 /* LQ_SB_Model.m in Sources */,
 				D21944011E81204800FC0B38 /* HNT_CLHS_Cell.m in Sources */,

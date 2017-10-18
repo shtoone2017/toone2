@@ -14,7 +14,6 @@
 
 @interface Car_YSD_DetailController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tb;
-@property (nonatomic,strong) NSMutableArray * datas;
 @property (nonatomic,strong) Car_YSD_Model * headModel;
 
 @end

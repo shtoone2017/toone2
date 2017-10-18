@@ -12,7 +12,9 @@
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)  UITableView *tbleView;
 @property (nonatomic,strong) NSMutableArray * datas;
-@property (nonatomic, strong) NSArray * statesArr;
+@property (nonatomic, strong) NSArray * statesArr;//列表查询签收状态
+@property (nonatomic, strong) NSArray * qsArr;
+@property (nonatomic, strong) NSArray * jsyyArr;
 
 @end
 
@@ -21,6 +23,10 @@
     [super viewWillAppear:animated];
     if (_type == SBListTypeStatu) {
         self.title = @"选择签收状态";
+    }else if (_type == SBListTypeQS) {
+        self.title = @"选择状态";
+    }else if (_type == SBListTypeJSYY) {
+        self.title = @"选择拒收原因";
     }
 }
 
@@ -66,7 +72,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_type == SBListTypeStatu) {
         return self.statesArr.count;
-    }else {
+    }else if (_type == SBListTypeQS) {
+        return self.qsArr.count;
+    }else if (_type == SBListTypeJSYY) {
+        return self.jsyyArr.count;
+    }
+    else {
         return self.datas.count;
     }
 }
@@ -75,7 +86,14 @@
     if (_type == SBListTypeStatu) {
         NSDictionary * dict = self.statesArr[indexPath.row];
         cell.textLabel.text = dict[@"banhezhanminchen"];
-    }else {
+    }else if (_type == SBListTypeQS) {
+        NSDictionary * dict = self.qsArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeJSYY) {
+        NSDictionary * dict = self.jsyyArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }
+    else {
         HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
         cell.textLabel.text = model.banhezhanminchen;
     }
@@ -89,7 +107,16 @@
 
         NSDictionary * dict = self.statesArr[indexPath.row];
         self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
-    }else {
+    }else if (_type == SBListTypeQS) {
+        
+        NSDictionary * dict = self.qsArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeJSYY) {
+        
+        NSDictionary * dict = self.jsyyArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }
+    else {
         
         HNT_BHZ_SB_Model * model = self.datas[indexPath.row];
         if (self.callBlock) {
@@ -99,10 +126,23 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(NSArray *)statesArr {//
+-(NSArray *)statesArr {
     if (_statesArr == nil) {
         _statesArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stutas.plist" ofType:nil]];
     }
     return _statesArr;
 }
+-(NSArray *)qsArr {
+    if (_qsArr == nil) {
+        _qsArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"restul.plist" ofType:nil]];
+    }
+    return _qsArr;
+}
+-(NSArray *)jsyyArr {
+    if (_jsyyArr == nil) {
+        _jsyyArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rejection.plist" ofType:nil]];
+    }
+    return _jsyyArr;
+}
+
 @end

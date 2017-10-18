@@ -22,7 +22,7 @@
 #import "SGAlertView.h"
 
 
-#import "JumpVC.h"
+#import "ScanResultController.h"
 @interface SGScanningQRCodeVC () <AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 会话对象 */
 @property (nonatomic, strong) AVCaptureSession *session;
@@ -202,10 +202,9 @@
         }
 #endif
         
-        JumpVC *jumpVC = [[JumpVC alloc] init];
-        jumpVC.jump_shebeibianhao = obj.stringValue;
-        NSLog(@"stringValue = = %@", obj.stringValue);
-        [self.navigationController pushViewController:jumpVC animated:YES];
+        ScanResultController *vc = [[ScanResultController alloc] init];
+        vc.result = obj.stringValue;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

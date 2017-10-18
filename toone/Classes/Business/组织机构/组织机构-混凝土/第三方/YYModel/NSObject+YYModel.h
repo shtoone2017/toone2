@@ -97,7 +97,6 @@ NS_ASSUME_NONNULL_BEGIN
      `NSString` -> SEL, Class.
  */
 + (nullable instancetype)yy_modelWithDictionary:(NSDictionary *)dictionary;
-
 /**
  Set the receiver's properties with a json object.
  
