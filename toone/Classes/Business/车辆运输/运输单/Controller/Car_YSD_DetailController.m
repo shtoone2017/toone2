@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"数据详情";
-    [self loadUI];
+    
     [self loadData];
     
 }
@@ -49,7 +49,7 @@
                 Car_YSD_Model * head = [Car_YSD_Model modelWithDict:json[@"data"]];
                 weakSelf.headModel = head;
             }
-            [weakSelf.tb reloadData];
+            [self loadUI];
             [Tools removeActivity];
         }
     } failure:^(NSError *error) {
@@ -97,7 +97,10 @@
         Car_YSD_Model * model = self.headModel;
         NSString *icon = Car_Detail_Icon(model.QSZP);
         cell.qsIcon = icon;
-//        [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:icon]];
+        icon = [icon stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *iconUrl1 = [NSURL URLWithString:icon];
+        [cell.iconImage sd_setImageWithURL:iconUrl1];
+//        cell.iconImage.backgroundColor = [UIColor cyanColor];
         return cell;
     }
     if (indexPath.section == 2) {
@@ -105,7 +108,10 @@
         Car_YSD_Model * model = self.headModel;
         NSString *icon = Car_Detail_Icon(model.JSPZ);
         cell.iconName = icon;
-//        [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:Car_Detail_Icon(model.JSPZ)] placeholderImage:nil];
+        icon = [icon stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:icon]];
+//        cell.iconImage.backgroundColor = [UIColor cyanColor];
+
         return cell;
     }
     return nil;
