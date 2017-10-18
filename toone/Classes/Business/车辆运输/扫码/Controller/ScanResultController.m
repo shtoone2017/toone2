@@ -39,7 +39,7 @@
 }
 
 -(void)loadData {
-    NSLog(@"扫码结果 == %@",_result);
+//    NSLog(@"扫码结果 == %@",_result);
     NSData* data = [self.result dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
