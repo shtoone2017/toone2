@@ -69,7 +69,6 @@
         if (![banhezhanminchen isEqualToString:@"签收"]) {
             _jsyyView.hidden = NO;
             _bzView.hidden = NO;
-            [UserDefaultsSetting_SW shareSetting].jsicon = [NSString stringWithFormat:@"%d",arc4random()%1000];
         }else {
             _jsyyView.hidden = YES;
             _bzView.hidden = YES;

@@ -23,6 +23,7 @@
 @property (nonatomic,strong)UITableView *tb;
 @property (nonatomic, strong) Car_ScanModel *Headmodel;
 @property (nonatomic,strong) UIImage *filePathImage;
+@property (nonatomic,strong) UIImage *jsImage;
 
 @end
 @implementation ScanResultController

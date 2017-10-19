@@ -126,7 +126,8 @@
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
-    NSString * urlString = CarLogin;
+//    NSString * urlString = CarLogin;
+    NSString *urlString = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/Login";
     NSDictionary *dict = @{@"account":_acountTextField.text?:@"",
                            @"pwd":_passwordTextField.text?:@"",
                            };
