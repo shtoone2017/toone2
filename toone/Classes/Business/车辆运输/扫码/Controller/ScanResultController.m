@@ -11,8 +11,15 @@
 #import "ScanResultCell.h"
 #import "Car_ScanModel.h"
 #import "ResultIconCell.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ScanResultController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface ScanResultController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate>
+{
+    CLLocationManager *locationmanager;//定位服务
+    NSString *currentCity;//当前城市
+    NSString *strlatitude;//经度
+    NSString *strlongitude;//纬度
+}
 @property (nonatomic,strong)UITableView *tb;
 @property (nonatomic, strong) Car_ScanModel *Headmodel;
 @property (nonatomic,strong) UIImage *filePathImage;
@@ -25,6 +32,7 @@
     self.title = @"运输单编辑";
     [self loadData];
     [self loadUI];
+    [self getLocation];//定位
 }
 
 -(void)loadUI{
@@ -82,9 +90,83 @@
     //获取修改后的图片
     self.filePathImage = info[UIImagePickerControllerEditedImage];
     
+    [self loadIcon:_filePathImage];
+    
     [self.tb reloadData];
     //移除图片选择的控制器
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)loadIcon:(UIImage *)img {
+    NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
+    NSData *data = UIImageJPEGRepresentation(img, 1.0f);
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSDictionary *dict = @{@"filestr":encodedImageStr?:@"",
+                           @"filename":@"submit.jpg",
+                           };
+    
+    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
+        if ([json[@"code"] integerValue] == 1) {
+            [UserDefaultsSetting_SW shareSetting].qsImg = json[@"data"];
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+#pragma mark - 定位
+-(void)getLocation {
+    //判断定位功能是否打开
+    if ([CLLocationManager locationServicesEnabled]) {
+        locationmanager = [[CLLocationManager alloc]init];
+        locationmanager.delegate = self;
+        [locationmanager requestAlwaysAuthorization];
+        currentCity = [NSString new];
+        [locationmanager requestWhenInUseAuthorization];
+        
+        //设置寻址精度
+        locationmanager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationmanager.distanceFilter = 5.0;
+        [locationmanager startUpdatingLocation];
+    }
+}
+#pragma mark CoreLocation delegate (定位失败)
+//定位失败后调用此代理方法
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    //设置提示提醒用户打开定位服务
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"允许定位提示" message:@"请在设置中打开定位" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"打开定位" style:UIAlertActionStyleDefault handler:nil];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+#pragma mark 定位成功后则执行此代理方法
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    [locationmanager stopUpdatingHeading];
+    //旧址
+    CLLocation *currentLocation = [locations lastObject];
+    [UserDefaultsSetting_SW shareSetting].loation = [NSString stringWithFormat:@"%zd,%zd",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude];
+    NSLog(@"%f,%f",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude);
+    
+    //    CLGeocoder *geoCoder = [[CLGeocoder alloc]init];
+    //    //反地理编码
+    //    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+    //        if (placemarks.count > 0) {
+    //            CLPlacemark *placeMark = placemarks[0];
+    //            currentCity = placeMark.locality;
+    //            if (!currentCity) {
+    //                currentCity = @"无法定位当前城市";
+    //            }
+    //            NSLog(@"----%@",placeMark.country);//当前国家
+    //            NSLog(@"%@",currentCity);//当前的城市
+    //            NSLog(@"%@",placeMark.subLocality);//当前的位置
+    //            //            NSLog(@"%@",placeMark.thoroughfare);//当前街道
+    //            //            NSLog(@"%@",placeMark.name);//具体地址
+    //            
+    //        }
+    //    }];
 }
 
 #pragma mark - Table view data source
@@ -99,7 +181,7 @@
         return 340;
     }
     if (indexPath.section == 1) {
-        return 260;
+        return 480;
     }
     return 0.0;
 }
@@ -126,6 +208,7 @@
     }
     return nil;
 }
+
 
 
 @end

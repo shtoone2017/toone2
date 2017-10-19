@@ -37,8 +37,15 @@
 //车辆运输存贮数据
 @property (nonatomic, copy) NSString *Token;
 @property (nonatomic, copy) NSString *Jgdm;//用户所属拌和站编码
+@property (nonatomic, copy) NSString *loation;//坐标
+@property (nonatomic, copy) NSString *qsImg;//图片参数
+@property (nonatomic, copy) NSString *jsImg;
 
 
+@property (nonatomic,copy) NSString * carSubmit;//提交
+@property (nonatomic,copy) NSString * jsicon;//拒收
 //获取一个随机种子
 @property (nonatomic,copy) NSString * randomSeed;
+
+
 @end

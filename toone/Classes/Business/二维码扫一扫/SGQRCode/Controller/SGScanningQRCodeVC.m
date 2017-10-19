@@ -183,7 +183,7 @@
     if (metadataObjects.count > 0) {
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
         
-        NSLog(@"metadataObjects = %@", metadataObjects);
+//        NSLog(@"metadataObjects = %@", metadataObjects);
 #if 0
         if ([obj.stringValue hasPrefix:@"http"]) {
 

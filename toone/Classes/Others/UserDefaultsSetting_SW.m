@@ -44,9 +44,14 @@ static UserDefaultsSetting_SW * setting = nil;
     setting.userFullName   = [defaults objectForKey:@"userFullName_SWKey"];
     setting.randomSeed = [defaults objectForKey:@"seed_SWKey"];
     
+    setting.carSubmit = [defaults objectForKey:@"carSubmitKey"];
+    
 //车辆运输存贮数据
     setting.Token = [defaults objectForKey:@"TokenKey"];
     setting.Jgdm = [defaults objectForKey:@"JgdmKey"];
+    setting.loation = [defaults objectForKey:@"loationKey"];
+    setting.qsImg = [defaults objectForKey:@"qsImgKey"];
+    setting.jsImg = [defaults objectForKey:@"jsImgKey"];
     
 }
 -(void)saveToSandbox{
@@ -70,11 +75,15 @@ static UserDefaultsSetting_SW * setting = nil;
     [defaults setObject:self.userFullName   forKey:@"userFullName_SWKey"];
     
     [defaults setObject:self.randomSeed   forKey:@"seed_SWKey"];
+    [defaults setObject:self.carSubmit   forKey:@"carSubmitKey"];
     
     
 //车辆运输存贮数据
     [defaults setObject:self.Token   forKey:@"TokenKey"];
     [defaults setObject:self.Jgdm   forKey:@"JgdmKey"];
+    [defaults setObject:self.loation   forKey:@"loationKey"];
+    [defaults setObject:self.qsImg   forKey:@"qsImgKey"];
+    [defaults setObject:self.jsImg   forKey:@"jsImgKey"];
     
     [defaults synchronize];
 }

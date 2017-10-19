@@ -78,6 +78,7 @@
 		4261F3781F9730E800B0706F /* ResultIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4261F3761F9730E800B0706F /* ResultIconCell.xib */; };
 		4261F37B1F973F3E00B0706F /* rejection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4261F3791F973F3E00B0706F /* rejection.plist */; };
 		4261F37C1F973F3E00B0706F /* restul.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4261F37A1F973F3E00B0706F /* restul.plist */; };
+		4261F37E1F98390900B0706F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261F37D1F98390900B0706F /* CoreLocation.framework */; };
 		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -740,6 +741,7 @@
 		4261F3761F9730E800B0706F /* ResultIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultIconCell.xib; sourceTree = "<group>"; };
 		4261F3791F973F3E00B0706F /* rejection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rejection.plist; sourceTree = "<group>"; };
 		4261F37A1F973F3E00B0706F /* restul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restul.plist; sourceTree = "<group>"; };
+		4261F37D1F98390900B0706F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
 		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -1656,6 +1658,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4261F37E1F98390900B0706F /* CoreLocation.framework in Frameworks */,
 				77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3321,6 +3324,7 @@
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4261F37D1F98390900B0706F /* CoreLocation.framework */,
 				B53090449FE82B8AD028BA89 /* Pods_toone.framework */,
 			);
 			name = Frameworks;
@@ -5696,7 +5700,7 @@
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym..;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym........;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -5719,7 +5723,7 @@
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym..;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym........;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

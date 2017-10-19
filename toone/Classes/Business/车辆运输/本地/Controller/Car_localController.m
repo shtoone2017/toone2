@@ -1,4 +1,4 @@
-//
+ //
 //  Car_localController.m
 //  toone
 //
@@ -7,8 +7,14 @@
 //
 
 #import "Car_localController.h"
+#import "HNT_BHZ_SB_Controller.h"
 
 @interface Car_localController ()
+@property (nonatomic,strong) UITableView *tb;
+@property (nonatomic,strong) NSMutableArray * datas;
+@property (nonatomic,copy) NSString * pageNo;//当前页数
+@property (nonatomic,copy) NSString *maxPageItems;//一页最多显示条数
+@property (nonatomic, copy) NSString *status;//状态
 
 @end
 @implementation Car_localController
@@ -18,6 +24,7 @@
     self.title = @"本地查询";
     [self loadUI];
     [self addPanGestureRecognizer];
+//    [self getLocation];
 }
 -(void)loadUI {
     UIButton * btn = [UIButton img_20WithName:@"white_SX"];
@@ -30,6 +37,7 @@
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
 }
+
 
 -(void)searchButtonClick:(UIButton*)sender{
     switch (sender.tag) {
@@ -46,11 +54,11 @@
             [self.view addSubview:backView];
             
             //2.
-            Exp1View * e = [[Exp1View alloc] init];
-            e.frame = CGRectMake(0, 64, Screen_w, 150);
+            Exp5View * e = [[Exp5View alloc] init];
+            e.stutas = @"选择状态";
+            e.frame = CGRectMake(0, 64, Screen_w, 195);
             __weak __typeof(self)  weakSelf = self;
             e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
-                NSLog(@"%d",type);
                 if (type == ExpButtonTypeCancel) {
                     sender.enabled = YES;
                     [backView removeFromSuperview];
@@ -59,16 +67,29 @@
                     sender.enabled = YES;
                     [backView removeFromSuperview];
                     //
-                    self.startTime = (NSString*)obj1;
-                    self.endTime = (NSString*)obj2;
-                    //                    [weakSelf loadData];
+                    weakSelf.startTime = (NSString*)obj1;
+                    weakSelf.endTime = (NSString*)obj2;
+                    //重新切换titleButton ， 搜索页码应该回归第一页码
+                    weakSelf.pageNo = @"1";
+//                    [weakSelf loadData];
                     FuncLog;
                 }
                 if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
                     UIButton * btn = (UIButton*)obj1;
-                    [self calendarWithTimeString:btn.currentTitle obj:btn];
+                    [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
                 }
-                //                weakSelf.tableView.userInteractionEnabled = YES;
+                
+                if (type == ExpButtonTypeChoiceSBButton) {
+                    UIButton * btn = (UIButton*)obj1;
+                    __weak typeof(self) weakSelf = self;
+                    HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+                    vc.type = SBListTypeStatu;
+                    vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
+                        [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                        weakSelf.status = departid;
+                    };
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
             };
             [self.view addSubview:e];
             break;

@@ -2,7 +2,7 @@
 //  APIKey.h
 //  OfficialDemoLoc
 //
-//  Created by AutoNavi on 15-9-14.
+//  Created by AutoNavi on 15-9-14.500f61f3e53f80a0feae129d0ec8bb1f
 //  Copyright (c) 2013年 AutoNavi. All rights reserved.
 //
 
@@ -11,6 +11,6 @@
 
 /* 使用高德地图API，请注册Key，注册地址：http://lbs.amap.com/console/key */
 
-const static NSString *APIKey = @"500f61f3e53f80a0feae129d0ec8bb1f";
+const static NSString *APIKey = @"ccbccdf6f29802b98d7e72149cbd9c17";
 
 #endif

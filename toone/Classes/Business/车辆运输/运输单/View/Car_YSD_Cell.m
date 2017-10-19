@@ -53,6 +53,7 @@
         _container1_label.backgroundColor = [UIColor redColor];
     }else if ([model.STATUS isEqualToString:@"0"]) {
         _container1_label.text = @"待签收";
+        _container1_label.backgroundColor = [UIColor yellowGreenColor];
     }else if ([model.STATUS isEqualToString:@"1"]) {
         _container1_label.text = @"正常签收";
         _container1_label.backgroundColor = [UIColor greenColor];
