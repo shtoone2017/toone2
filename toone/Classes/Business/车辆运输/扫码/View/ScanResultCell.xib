@@ -294,7 +294,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -646,6 +646,7 @@
                 <outlet property="facdBh_Label" destination="KEX-Y3-3J0" id="jwg-gm-7uC"/>
                 <outlet property="fcTiemTf" destination="Wpn-8f-TyH" id="RtS-kC-e4N"/>
                 <outlet property="gongName_Label" destination="3mU-8j-ngU" id="Rwy-3d-7PS"/>
+                <outlet property="jsBut" destination="AbL-LW-TIX" id="Ss5-X6-ZxS"/>
                 <outlet property="jsyyView" destination="pXj-cQ-Bxf" id="ALZ-tT-Bd7"/>
                 <outlet property="qiangdudengji_Label" destination="Dg6-fb-qOd" id="pgU-E7-23U"/>
                 <outlet property="qlwzTf" destination="rCT-D6-fAS" id="kiI-PV-8j8"/>

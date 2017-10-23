@@ -26,7 +26,7 @@ static AFHTTPSessionManager *afnManager = nil;
         networking = [[HTTP alloc] init];
         afnManager = [AFHTTPSessionManager manager];
         afnManager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        afnManager.requestSerializer.timeoutInterval = 20;
+        afnManager.requestSerializer.timeoutInterval = 30;
     });
     return networking;
 }

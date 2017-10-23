@@ -16,14 +16,7 @@
     // Initialization code
 }
 
--(void)setIconName:(NSString *)iconName {
-    
-    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:iconName] placeholderImage:nil];
-}
 
--(void)setQsIcon:(NSString *)qsIcon {
-    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:qsIcon]];
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

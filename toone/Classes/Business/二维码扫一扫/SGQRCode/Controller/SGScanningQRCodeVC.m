@@ -23,6 +23,7 @@
 
 
 #import "ScanResultController.h"
+//#import "Car_ScanResuController.h"
 @interface SGScanningQRCodeVC () <AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 会话对象 */
 @property (nonatomic, strong) AVCaptureSession *session;

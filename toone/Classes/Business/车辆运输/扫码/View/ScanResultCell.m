@@ -25,10 +25,14 @@
 @property (weak, nonatomic) IBOutlet UITextField * user_Label;// 发车人1
 @property (weak, nonatomic) IBOutlet UITextField *fcTiemTf;//发车时间1
 @property (weak, nonatomic) IBOutlet UITextField *qlwzTf;//卸料位置1
-@property (weak, nonatomic) IBOutlet UITextField *bzTf;//备注
+
 
 @property (weak, nonatomic) IBOutlet UIView *jsyyView;//拒收
+@property (weak, nonatomic) IBOutlet UIButton *jsBut;
+
 @property (weak, nonatomic) IBOutlet UIView *bzView;//备注
+@property (weak, nonatomic) IBOutlet UITextField *bzTf;
+
 @property (weak, nonatomic) IBOutlet UIButton *xzBut;//状态显示
 @property (weak, nonatomic) IBOutlet UIView *xzStatusView;//状态
 
@@ -63,7 +67,6 @@
     HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
     vc.type = SBListTypeQS;
     vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
-//        [sender setTitle:banhezhanminchen forState:UIControlStateNormal];
         [_xzBut setTitle:banhezhanminchen forState:UIControlStateNormal];
         _status = banhezhanminchen;
         if (![banhezhanminchen isEqualToString:@"签收"]) {
@@ -81,9 +84,9 @@
     HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
     vc.type = SBListTypeJSYY;
     vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
-        [sender setTitle:banhezhanminchen forState:UIControlStateNormal];
-        _jsyy = banhezhanminchen;
+        [_jsBut setTitle:banhezhanminchen forState:UIControlStateNormal];
         _jsyylx = departid;
+        _jsyy = banhezhanminchen;
         if ([departid isEqualToString:@"5"]) {
             _jsyy = _bzTf.text;
         }
@@ -92,71 +95,128 @@
 }
 
 -(void)submitClick:(UIButton *)sender {
-    _dataImg = [UserDefaultsSetting_SW shareSetting].qsImg;
-    _loation = [UserDefaultsSetting_SW shareSetting].loation;
-    if ([_status isEqualToString:@"签收"]) {
-        if (![_qsflTf.text isEqualToString:@""] && ![_status isEqualToString:@""] && !(_dataImg==nil)) {
-            NSString *urlSting = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/UploadQSXX";
-            NSDictionary *dict = @{@"token":[UserDefaultsSetting_SW shareSetting].Token,
-                                   @"fcdbh":_facdBh_Label.text?:@"",
-                                   @"bhzbh":_bhz_Label.text?:@"",
-                                   @"qsfl":_qsflTf.text?:@"",
-                                   @"qsr":_qsrLabel.text?:@"",
-                                   @"xlwzmc":_qlwzTf.text?:@"",
-                                   @"xlwzcode":@"1",
-                                   @"xlwzzb":_loation?:@"",
-                                   @"qszp":_dataImg?:@"",
-                                   @"qssj":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
-                                   };
-            [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
-                if ([json isKindOfClass:[NSDictionary class]]) {
-                    if ([json[@"code"] integerValue] == 1) {
-                        [Tools tip:json[@"message"]];
-                    }else {  
-                        [Tools tip:json[@"message"]];
-                    }
-                }
-            } failure:^(NSError *error) {
-                
-            }];
-        }else {
-            [Tools tip:@"必填项不可为空，请填写完整信息"];
-        }
-    }else if ([_status isEqualToString:@"拒收"]) {
-        if (![_qsflTf.text isEqualToString:@""] && ![_status isEqualToString:@""] && ![_xzBut.titleLabel.text isEqualToString:@""]) {
-            NSString *urlSting = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/UploadJSXX";
-            NSDictionary *dict = @{@"token":[UserDefaultsSetting_SW shareSetting].Token,
-                                   @"fcdbh":_facdBh_Label.text?:@"",
-                                   @"bhzbh":_bhz_Label.text?:@"",
-                                   @"qsfl":_qsflTf.text?:@"",
-                                   @"qsr":_qsrLabel.text?:@"",
-                                   @"xlwzmc":_qlwzTf.text?:@"",
-                                   @"xlwzcode":@"1",
-                                   @"xlwzzb":_loation?:@"",
-                                   @"qszp":_dataImg?:@"",//签收
-                                   @"qssj":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
-                                   @"jsyylx":_jsyylx?:@"",
-                                   @"jsyy":_jsyy?:@"",
-                                   @"jspz":_dataImg?:@"",//拒收
-                                   };
-            
-             [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
-                 
-             } failure:^(NSError *error) {
-                 
-             }];
-            
-        }else {
-            [Tools tip:@"必填项不可为空，请填写完整信息"];
-        }
-    }
-    else {
+    _dataImg = [[NSUserDefaults standardUserDefaults] objectForKey:@"qsImg"];
+    _jsImg = [[NSUserDefaults standardUserDefaults] objectForKey:@"jsImg"];
+    _loation = [[NSUserDefaults standardUserDefaults] objectForKey:@"loation"];
+    if (_qsflTf.text.length == 0 || [_status isEqualToString:@""]) {
         [Tools tip:@"必填项不可为空，请填写完整信息"];
+        return;
     }
-    
+    if ([_status isEqualToString:@"签收"]) {
+        if (_dataImg==nil) {
+            [Tools tip:@"请上传图片"];
+            return;
+        }
+        NSString *urlSting = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/UploadQSXX";
+        NSDictionary *dict = @{@"token":[UserDefaultsSetting_SW shareSetting].Token,
+                               @"fcdbh":_facdBh_Label.text?:@"",
+                               @"bhzbh":_model.BHZBH?:@"",
+                               @"qsfl":_qsflTf.text?:@"",
+                               @"qsr":_qsrLabel.text?:@"",
+                               @"xlwzmc":_qlwzTf.text?:@"",
+                               @"xlwzcode":@"1",
+                               @"xlwzzb":_loation?:@"",
+                               @"qszp":_dataImg,
+                               @"qssj":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
+                               };
+        
+        [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
+            if ([json isKindOfClass:[NSDictionary class]]) {
+                if ([json[@"code"] integerValue] == 1) {
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"qsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"loation"];
+                    [SVProgressHUD showImage:nil status:@"提交成功，请刷新数据"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        UIViewController * vc = self.viewController.navigationController.viewControllers[self.viewController.navigationController.viewControllers.count-3];
+                        [self.viewController.navigationController popToViewController:vc animated:YES];
+                    });
+                }else {
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"qsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"loation"];
+                    [SVProgressHUD showImage:nil status:json[@"message"]];
+                }
+                
+                
+            }
+        } failure:^(NSError *error) {
+            [SVProgressHUD showImage:nil status:@"服务器异常"];
+        }];
+        
+    }else if ([_status isEqualToString:@"拒收"]) {
+        if (([_jsyylx isEqualToString:@"5"] && _bzTf.text.length == 0) || _xzBut.titleLabel.text.length == 0 || _jsBut.titleLabel.text.length == 0) {
+            [Tools tip:@"必填项不可为空，请填写完整信息"];
+            return;
+        }
+        if (_dataImg==nil || _jsImg == nil) {
+            [Tools tip:@"请上传两张图片"];
+            return;
+        }
+        NSString *urlSting = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/UploadJSXX";
+        NSDictionary *dict = @{@"token":[UserDefaultsSetting_SW shareSetting].Token,
+                               @"fcdbh":_facdBh_Label.text?:@"",
+                               @"bhzbh":_model.BHZBH?:@"",
+                               @"qsfl":_qsflTf.text?:@"",
+                               @"qsr":_qsrLabel.text?:@"",
+                               @"xlwzmc":_qlwzTf.text?:@"",
+                               @"xlwzcode":@"1",
+                               @"xlwzzb":_loation?:@"",
+                               @"qszp":_dataImg?:@"",//签收
+                               @"qssj":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
+                               @"jsyylx":_jsyylx?:@"",
+                               @"jsyy":_jsyy?:@"",
+                               @"jspz":_jsImg?:@"",//拒收
+                               };
+        
+        [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
+            if ([json isKindOfClass:[NSDictionary class]]) {
+                if ([json[@"code"] integerValue] == 1) {
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"qsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"loation"];
+                    [SVProgressHUD showImage:nil status:@"提交成功，请刷新数据"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        UIViewController * vc = self.viewController.navigationController.viewControllers[self.viewController.navigationController.viewControllers.count-3];
+                        [self.viewController.navigationController popToViewController:vc animated:YES];
+                    });
+                }else {
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"qsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"jsImg"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"loation"];
+                    [SVProgressHUD showImage:nil status:json[@"message"]];
+                }
+            }
+        } failure:^(NSError *error) {
+            [SVProgressHUD showImage:nil status:@"服务器异常"];
+        }];
+        
+    }
 }
 
-
+-(NSString *)loadIcon:(NSString *)imgStr {
+    NSString *jsonData;
+    NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
+    
+    NSDictionary *dict = @{@"filestr":imgStr?:@"",
+                           @"filename":[NSString stringWithFormat:@"%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
+                           };
+    
+    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
+        if ([json[@"code"] integerValue] == 1) {
+//            [[NSUserDefaults standardUserDefaults] setObject:json[@"data"] forKey:@"qsImg"];
+            NSDictionary *dict = json[@"data"];
+            NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+//           jsonData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//            返回之后也没法确定啥时回来
+        }else {
+            [SVProgressHUD showImage:nil status:@"请重新提交照片"];
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    return jsonData;
+}
 
 
 -(void)setModel:(Car_ScanModel *)model {
@@ -192,6 +252,7 @@
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.qsflTf resignFirstResponder];
+    [self.bzTf resignFirstResponder];
 }
 
 - (UIViewController *)viewController {

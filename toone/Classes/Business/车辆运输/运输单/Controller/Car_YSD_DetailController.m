@@ -57,20 +57,20 @@
 }
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    if (_type == 1) {//正常签收
+        return 2;
+    }else {
+        return 3;
+    }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return 320;
-    }
-    if (indexPath.section == 1) {
-        return 220;
-    }
-    if (indexPath.section == 2) {
-        return 220;
+    switch (indexPath.section) {
+        case 0:return 320;
+        case 1:return 220;
+        case 2:return 220;
     }
     return 0.0;
 }
@@ -95,22 +95,19 @@
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         Car_YSD_Model * model = self.headModel;
         NSString *icon = Car_Detail_Icon(model.QSZP);
-        cell.qsIcon = icon;
+//        cell.qsIcon = icon;
         icon = [icon stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *iconUrl1 = [NSURL URLWithString:icon];
         [cell.iconImage sd_setImageWithURL:iconUrl1];
-//        cell.iconImage.backgroundColor = [UIColor cyanColor];
         return cell;
     }
     if (indexPath.section == 2) {
         Car_YSD_IconCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Car_YSD_IconCell"];
         Car_YSD_Model * model = self.headModel;
         NSString *icon = Car_Detail_Icon(model.JSPZ);
-        cell.iconName = icon;
+//        cell.iconName = icon;
         icon = [icon stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:icon]];
-//        cell.iconImage.backgroundColor = [UIColor cyanColor];
-
         return cell;
     }
     return nil;

@@ -43,7 +43,6 @@
 
 
 @property (nonatomic,copy) NSString * carSubmit;//提交
-//@property (nonatomic,copy) NSString * jsicon;//拒收
 //获取一个随机种子
 @property (nonatomic,copy) NSString * randomSeed;
 

@@ -12,6 +12,7 @@
 @property (nonatomic, strong) Car_ScanModel *model;
 
 @property (nonatomic, copy) NSString *dataImg;//图片参数
+@property (nonatomic, copy) NSString *jsImg;//图片参数
 @property (nonatomic, copy) NSString *loation;
 
 @end

@@ -1,29 +1,33 @@
 //
-//  ResultIconCell.m
+//  Car_ResultCell.m
 //  toone
 //
-//  Created by 上海同望 on 2017/10/18.
+//  Created by 上海同望 on 2017/10/19.
 //  Copyright © 2017年 shtoone. All rights reserved.
 //
 
-#import "ResultIconCell.h"
+#import "Car_ResultCell.h"
 
-@interface ResultIconCell ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *jsimageView;
+@interface Car_ResultCell ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *qsImg;
+@property (weak, nonatomic) IBOutlet UIImageView *jsImg;
 @property (nonatomic,strong) UIImage *Img;
 
 @end
-@implementation ResultIconCell
+@implementation Car_ResultCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
 }
-- (IBAction)jsBut:(UIButton *)sender {
+- (IBAction)qsBut:(UIButton *)sender {
     [self choosePhoto];
 }
 
-- (IBAction)butClick:(UIButton *)sender {
-    [UserDefaultsSetting_SW shareSetting].carSubmit = [NSString stringWithFormat:@"%d",arc4random()%1000];
+- (IBAction)jsBut:(UIButton *)sender {//
+}
+
+- (IBAction)submitClick:(UIButton *)sender {//
 }
 
 -(void)choosePhoto{
@@ -58,25 +62,28 @@
     //获取修改后的图片
     self.Img = info[UIImagePickerControllerEditedImage];
     
-    _jsimageView.image = info[UIImagePickerControllerEditedImage];
+    _qsImg.image = info[UIImagePickerControllerEditedImage];
     
-    [self loadIcon:_Img];
+//    图片上传
+    NSData *  data =[Tools compressOriginalImage:self.Img toMaxDataSizeKBytes:200];
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    [[NSUserDefaults standardUserDefaults] setObject:encodedImageStr forKey:@"qsImg"];
+//    [self loadIcon:data];
     
     //移除图片选择的控制器
     [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
--(void)loadIcon:(UIImage *)img {
+-(void)loadIcon:(NSData *)imgData {
     NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
-    NSData *data = UIImageJPEGRepresentation(img, 1.0f);
-    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *encodedImageStr = [imgData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     
     NSDictionary *dict = @{@"filestr":encodedImageStr?:@"",
-                           @"filename":[NSString stringWithFormat:@"js%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
+                           @"filename":[NSString stringWithFormat:@"%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
                            };
     
     [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
         if ([json[@"code"] integerValue] == 1) {
-            [[NSUserDefaults standardUserDefaults] setObject:json[@"data"] forKey:@"jsImg"];
+            [[NSUserDefaults standardUserDefaults] setObject:json[@"data"] forKey:@"qsImg"];
         }else {
             [SVProgressHUD showImage:nil status:@"请重新提交照片"];
         }
@@ -84,6 +91,7 @@
         NSLog(@"%@",error);
     }];
 }
+
 
 
 - (UIViewController *)viewController {
@@ -98,7 +106,5 @@
     }
     return viewController;
 }
-
-
 
 @end

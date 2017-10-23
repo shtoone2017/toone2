@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Car_YSD_IconCell;
+
+@protocol Car_YSD_IconCellDelegate <NSObject>
+@optional
+- (void)didClickImage:(UIImage *)image Car_YSD_IconCell:(Car_YSD_IconCell *)iconCell;
+
+@end
 
 @interface Car_YSD_IconCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconImage;
 
-@property (nonatomic, copy) NSString *iconName;
-@property (nonatomic, copy) NSString *qsIcon;
+@property (nonatomic, weak) id<Car_YSD_IconCellDelegate> delegate;
+
+
 
 @end

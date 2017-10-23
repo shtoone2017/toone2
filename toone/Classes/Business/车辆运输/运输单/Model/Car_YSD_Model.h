@@ -37,7 +37,7 @@
 @property (nonatomic, copy) NSString *CZSJ;
 @property (nonatomic, copy) NSString *CZNR;
 @property (nonatomic, copy) NSString *CZTP;
-@property (nonatomic, copy) NSString *STATUS;
+@property (nonatomic, copy) NSString *STATUS;//签收状态
 @property (nonatomic, copy) NSString *QSFL;
 @property (nonatomic, copy) NSString *JSYYLX;
 @property (nonatomic, copy) NSString *XLWZCODE;

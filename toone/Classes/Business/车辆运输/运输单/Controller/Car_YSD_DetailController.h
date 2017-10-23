@@ -11,5 +11,6 @@
 @interface Car_YSD_DetailController : UIViewController
 @property (nonatomic, copy) NSString *fcdbh;//发车
 @property (nonatomic, copy) NSString *bhzbh;//拌合站
+@property (nonatomic,assign) NSInteger type;
 
 @end

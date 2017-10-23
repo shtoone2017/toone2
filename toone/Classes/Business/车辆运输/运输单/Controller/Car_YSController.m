@@ -26,7 +26,7 @@
     [super viewDidLoad];
     self.title = @"发车单查询";
     self.pageNo = @"1";
-    self.maxPageItems = @"10";
+    self.maxPageItems = @"100";
     _status = @"";
     [self addPanGestureRecognizer];
     [self loadUI];
@@ -113,6 +113,7 @@
     Car_YSD_Model * model = self.datas[indexPath.row];
     vc.fcdbh = model.FCDBH;
     vc.bhzbh = model.BHZBH;
+    vc.type = model.STATUS.integerValue;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

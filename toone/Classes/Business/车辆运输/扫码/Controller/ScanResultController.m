@@ -8,10 +8,13 @@
 
 #import "ScanResultController.h"
 #import "YYModel.h"
-#import "ScanResultCell.h"
 #import "Car_ScanModel.h"
-#import "ResultIconCell.h"
 #import <CoreLocation/CoreLocation.h>
+#import "ScanResultCell.h"
+#import "Car_ResultCell.h"
+
+#import "ResultIconCell.h"
+
 
 @interface ScanResultController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate>
 {
@@ -37,18 +40,19 @@
 }
 
 -(void)loadUI{
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(choosePhoto)];
     self.tb.tableFooterView = [[UIView alloc] init];
     self.tb = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-65) style:UITableViewStylePlain];
     self.tb.delegate = self;
     self.tb.dataSource = self;
     [self.view addSubview:self.tb];
     [self.tb registerNib:[UINib nibWithNibName:@"ScanResultCell" bundle:nil] forCellReuseIdentifier:@"ScanResultCell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"Car_ResultCell" bundle:nil] forCellReuseIdentifier:@"Car_ResultCell"];
     [self.tb registerNib:[UINib nibWithNibName:@"ResultIconCell" bundle:nil] forCellReuseIdentifier:@"ResultIconCell"];
+    
 }
 
 -(void)loadData {
-//    NSLog(@"扫码结果 == %@",_result);
+    NSLog(@"扫码结果 == %@",_result);
     NSData* data = [self.result dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
@@ -57,62 +61,6 @@
     if ([dic isKindOfClass:[NSDictionary class]]) {
         _Headmodel = [Car_ScanModel modelWithDict:dic];
     }
-}
-
--(void)choosePhoto{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"请选择" message:@"打开一个图片源" preferredStyle: UIAlertControllerStyleActionSheet];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    
-    // 图片选择器
-    UIImagePickerController *imgPC = [[UIImagePickerController alloc] init];
-    
-    //设置代理
-    imgPC.delegate = self;
-    
-    //允许编辑图片
-    imgPC.allowsEditing = YES;
-    
-    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"照相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        imgPC.sourceType =  UIImagePickerControllerSourceTypeCamera;
-        [self presentViewController:imgPC animated:YES completion:nil];
-    }];
-    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        imgPC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [self presentViewController:imgPC animated:YES completion:nil];
-    }];
-    [alertController addAction:cancelAction];
-    [alertController addAction:deleteAction];
-    [alertController addAction:archiveAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-    
-}
-#pragma mark 图片选择器的代理
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    //获取修改后的图片
-    self.filePathImage = info[UIImagePickerControllerEditedImage];
-    
-    [self loadIcon:_filePathImage];
-    
-    [self.tb reloadData];
-    //移除图片选择的控制器
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(void)loadIcon:(UIImage *)img {
-    NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
-    NSData *data = UIImageJPEGRepresentation(img, 1.0f);
-    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    NSDictionary *dict = @{@"filestr":encodedImageStr?:@"",
-                           @"filename":@"submit.jpg",
-                           };
-    
-    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
-        if ([json[@"code"] integerValue] == 1) {
-            [UserDefaultsSetting_SW shareSetting].qsImg = json[@"data"];
-        }
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
 }
 
 #pragma mark - 定位
@@ -148,7 +96,8 @@
     [locationmanager stopUpdatingHeading];
     //旧址
     CLLocation *currentLocation = [locations lastObject];
-    [UserDefaultsSetting_SW shareSetting].loation = [NSString stringWithFormat:@"%zd,%zd",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude];
+//    [UserDefaultsSetting_SW shareSetting].loation = [NSString stringWithFormat:@"%zd,%zd",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%zd,%zd",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude] forKey:@"loation"];
     NSLog(@"%f,%f",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude);
     
     //    CLGeocoder *geoCoder = [[CLGeocoder alloc]init];
@@ -172,17 +121,16 @@
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return 340;
-    }
-    if (indexPath.section == 1) {
-        return 480;
+    switch (indexPath.section) {
+        case 0:return 340;
+        case 1:return 190;
+        case 2:return 230;
     }
     return 0.0;
 }
@@ -201,9 +149,13 @@
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1 ) {
+        Car_ResultCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Car_ResultCell"];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+        return cell;
+    }
+    if (indexPath.section == 2) {
         ResultIconCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ResultIconCell"];
-        cell.iconImag.image = self.filePathImage;
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }

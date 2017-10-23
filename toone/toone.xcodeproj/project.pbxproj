@@ -79,6 +79,8 @@
 		4261F37B1F973F3E00B0706F /* rejection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4261F3791F973F3E00B0706F /* rejection.plist */; };
 		4261F37C1F973F3E00B0706F /* restul.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4261F37A1F973F3E00B0706F /* restul.plist */; };
 		4261F37E1F98390900B0706F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4261F37D1F98390900B0706F /* CoreLocation.framework */; };
+		4261F42E1F98C89100B0706F /* Car_ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261F42C1F98C89100B0706F /* Car_ResultCell.m */; };
+		4261F42F1F98C89100B0706F /* Car_ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4261F42D1F98C89100B0706F /* Car_ResultCell.xib */; };
 		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -742,6 +744,9 @@
 		4261F3791F973F3E00B0706F /* rejection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rejection.plist; sourceTree = "<group>"; };
 		4261F37A1F973F3E00B0706F /* restul.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restul.plist; sourceTree = "<group>"; };
 		4261F37D1F98390900B0706F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4261F42B1F98C89100B0706F /* Car_ResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_ResultCell.h; sourceTree = "<group>"; };
+		4261F42C1F98C89100B0706F /* Car_ResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_ResultCell.m; sourceTree = "<group>"; };
+		4261F42D1F98C89100B0706F /* Car_ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Car_ResultCell.xib; sourceTree = "<group>"; };
 		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
 		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -3235,6 +3240,9 @@
 				4261F36C1F96ECEF00B0706F /* ScanResultCell.h */,
 				4261F36D1F96ECEF00B0706F /* ScanResultCell.m */,
 				4261F36E1F96ECEF00B0706F /* ScanResultCell.xib */,
+				4261F42B1F98C89100B0706F /* Car_ResultCell.h */,
+				4261F42C1F98C89100B0706F /* Car_ResultCell.m */,
+				4261F42D1F98C89100B0706F /* Car_ResultCell.xib */,
 				4261F3741F9730E800B0706F /* ResultIconCell.h */,
 				4261F3751F9730E800B0706F /* ResultIconCell.m */,
 				4261F3761F9730E800B0706F /* ResultIconCell.xib */,
@@ -5016,6 +5024,7 @@
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				4261F3781F9730E800B0706F /* ResultIconCell.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
+				4261F42F1F98C89100B0706F /* Car_ResultCell.xib in Resources */,
 				D2E04DE51E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				42022F5D1EE7D39300931544 /* LLQ_RH_DetailCell.xib in Resources */,
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
@@ -5461,6 +5470,7 @@
 				D20064981DFF86800021E293 /* Exp4View.m in Sources */,
 				42AC71711E30C393007D8F57 /* NQ_BHZ_SCCX_Innel_Controller.m in Sources */,
 				D20064991DFF86800021E293 /* CALayer+Animation.m in Sources */,
+				4261F42E1F98C89100B0706F /* Car_ResultCell.m in Sources */,
 				D20065291DFF86B30021E293 /* HalfPieChartViewController.m in Sources */,
 				D272EFC01E7BBE3A00D0991D /* SW_CBCZ_Cell.m in Sources */,
 				D200643F1DFF86800021E293 /* CJMonthDayViewController.m in Sources */,

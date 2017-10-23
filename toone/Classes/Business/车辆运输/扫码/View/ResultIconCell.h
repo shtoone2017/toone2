@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultIconCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *iconImag;
-@property (weak, nonatomic) IBOutlet UIImageView *jsimageView;
+
 
 @end
