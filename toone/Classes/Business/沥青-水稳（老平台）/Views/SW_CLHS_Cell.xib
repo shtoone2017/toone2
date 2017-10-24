@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,25 +22,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="材料名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yp-5y-fzB">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-LH-lji">
-                                <rect key="frame" x="80" y="0.0" width="80" height="20"/>
+                                <rect key="frame" x="150" y="0.0" width="150" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="理论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-AE-zRR">
-                                <rect key="frame" x="160" y="0.0" width="80" height="20"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="理论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-AE-zRR">
+                                <rect key="frame" x="300" y="0.0" width="10" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="gmG-BV-Z8e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="误差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-mW-kcc">
-                                <rect key="frame" x="240" y="0.0" width="80" height="20"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="误差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-mW-kcc">
+                                <rect key="frame" x="310" y="0.0" width="10" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +54,6 @@
                             <constraint firstItem="WYV-LH-lji" firstAttribute="top" secondItem="MsO-xI-uja" secondAttribute="top" id="0D5-5u-NM7"/>
                             <constraint firstItem="3Yp-5y-fzB" firstAttribute="leading" secondItem="MsO-xI-uja" secondAttribute="leading" id="0bm-mV-R5v"/>
                             <constraint firstAttribute="bottom" secondItem="Cfd-mW-kcc" secondAttribute="bottom" id="3nv-sf-Iqj"/>
-                            <constraint firstItem="WYV-LH-lji" firstAttribute="width" secondItem="SZ8-AE-zRR" secondAttribute="width" id="7xr-Ht-Pbk"/>
                             <constraint firstItem="3Yp-5y-fzB" firstAttribute="top" secondItem="MsO-xI-uja" secondAttribute="top" id="84z-uH-uQV"/>
                             <constraint firstAttribute="bottom" secondItem="3Yp-5y-fzB" secondAttribute="bottom" id="E1x-Uj-k4l"/>
                             <constraint firstItem="Cfd-mW-kcc" firstAttribute="leading" secondItem="SZ8-AE-zRR" secondAttribute="trailing" id="H76-MM-2K4"/>

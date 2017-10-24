@@ -105,7 +105,6 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
     NSString * departType;
     switch ([self.condition.departType intValue]) {
         case 1:
@@ -117,6 +116,9 @@
         case 3:
         case 5:
             departType = @"5";
+            break;
+        case 6:
+            departType = @"6";
             break;
         default:
             departType =@"1";
