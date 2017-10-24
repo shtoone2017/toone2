@@ -118,6 +118,9 @@
         case 5:
             departType = @"5";
             break;
+        case 6:
+            departType = @"6";
+            break;
         default:
             departType =@"1";
             break;

@@ -104,7 +104,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 865;
+        return 460;
     }
         
     return 20;
@@ -115,7 +115,7 @@
         SW_CLHS_ChatCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CLHS_ChatCell"];
         cell.datas1 = self.datas1;
         cell.datas2 = self.datas2;
-        [cell.unitButton addTarget:self action:@selector(choiceUnit:) forControlEvents:UIControlEventTouchUpInside];
+//        [cell.unitButton addTarget:self action:@selector(choiceUnit:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }else{
         
