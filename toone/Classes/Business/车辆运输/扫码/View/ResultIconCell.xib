@@ -65,7 +65,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="IconBut" destination="REt-Bo-lmE" id="ljK-FP-emQ"/>
                 <outlet property="jsimageView" destination="bx6-lP-N0P" id="ibN-SO-ciU"/>
+                <outlet property="submitBut" destination="Hlf-Fp-4WH" id="egL-7g-wHr"/>
             </connections>
         </tableViewCell>
     </objects>

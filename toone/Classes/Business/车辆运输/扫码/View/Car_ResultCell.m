@@ -9,8 +9,6 @@
 #import "Car_ResultCell.h"
 
 @interface Car_ResultCell ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *qsImg;
-@property (weak, nonatomic) IBOutlet UIImageView *jsImg;
 @property (nonatomic,strong) UIImage *Img;
 
 @end
@@ -22,12 +20,6 @@
 }
 - (IBAction)qsBut:(UIButton *)sender {
     [self choosePhoto];
-}
-
-- (IBAction)jsBut:(UIButton *)sender {//
-}
-
-- (IBAction)submitClick:(UIButton *)sender {//
 }
 
 -(void)choosePhoto{
@@ -73,24 +65,24 @@
     //移除图片选择的控制器
     [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
--(void)loadIcon:(NSData *)imgData {
-    NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
-    NSString *encodedImageStr = [imgData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    NSDictionary *dict = @{@"filestr":encodedImageStr?:@"",
-                           @"filename":[NSString stringWithFormat:@"%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
-                           };
-    
-    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
-        if ([json[@"code"] integerValue] == 1) {
-            [[NSUserDefaults standardUserDefaults] setObject:json[@"data"] forKey:@"qsImg"];
-        }else {
-            [SVProgressHUD showImage:nil status:@"请重新提交照片"];
-        }
-    } failure:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
-}
+//-(void)loadIcon:(NSData *)imgData {
+//    NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
+//    NSString *encodedImageStr = [imgData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    
+//    NSDictionary *dict = @{@"filestr":encodedImageStr?:@"",
+//                           @"filename":[NSString stringWithFormat:@"%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
+//                           };
+//    
+//    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
+//        if ([json[@"code"] integerValue] == 1) {
+//            [[NSUserDefaults standardUserDefaults] setObject:json[@"data"] forKey:@"qsImg"];
+//        }else {
+//            [SVProgressHUD showImage:nil status:@"请重新提交照片"];
+//        }
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+//}
 
 
 

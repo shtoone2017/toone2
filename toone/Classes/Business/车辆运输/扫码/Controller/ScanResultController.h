@@ -11,4 +11,7 @@
 @interface ScanResultController : UIViewController
 @property (nonatomic, copy) NSString *result;
 
+typedef void (^imgBlock) (NSDictionary *);
+@property (nonatomic,copy) imgBlock imgBlock;
+
 @end

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Car_ResultCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *qsImg;
+@property (weak, nonatomic) IBOutlet UIButton *qsImgBut;//上传图片
 
 @end

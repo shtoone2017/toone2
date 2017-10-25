@@ -76,7 +76,7 @@
         if ([json[@"code"] integerValue] == 1) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
-                    Car_YSD_Model * model = [Car_YSD_Model modelWithDict:dict];;
+                    Car_YSD_Model * model = [Car_YSD_Model modelWithDict:dict];
                     [datas addObject:model];
                 }
             }

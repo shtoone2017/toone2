@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultIconCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *jsimageView;
+@property (weak, nonatomic) IBOutlet UIButton *IconBut;//上传图片
+@property (weak, nonatomic) IBOutlet UIButton *submitBut;//提交
 
 
 @end
