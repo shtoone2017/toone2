@@ -300,6 +300,7 @@
 		8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC61E0A6C0D00A5C4AA /* Welcome.storyboard */; };
 		8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */; };
 		9C276A041FA1D231001DA363 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C276A031FA1D231001DA363 /* Singleton.m */; };
+		9C276A061FA1E4DB001DA363 /* QRCodes.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9C276A051FA1E4DB001DA363 /* QRCodes.sqlite */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1146,6 +1147,7 @@
 		8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGButton.m; sourceTree = "<group>"; };
 		9C276A021FA1D231001DA363 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		9C276A031FA1D231001DA363 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		9C276A051FA1E4DB001DA363 /* QRCodes.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = QRCodes.sqlite; sourceTree = "<group>"; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -3473,6 +3475,7 @@
 		D20062F01DFF85CB0021E293 = {
 			isa = PBXGroup;
 			children = (
+				9C276A051FA1E4DB001DA363 /* QRCodes.sqlite */,
 				42A8874E1EDFF4CB0010B053 /* GDRes */,
 				D20064B81DFF86B30021E293 /* ChartClasses */,
 				D20063141DFF86800021E293 /* Classes */,
@@ -4921,6 +4924,7 @@
 				D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */,
 				D2E838951EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib in Resources */,
 				42AC71531E30C393007D8F57 /* EXPrimaryCell.xib in Resources */,
+				9C276A061FA1E4DB001DA363 /* QRCodes.sqlite in Resources */,
 				D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */,
 				18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
 				D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */,
