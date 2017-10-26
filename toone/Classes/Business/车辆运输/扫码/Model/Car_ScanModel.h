@@ -7,8 +7,9 @@
 //
 
 #import "MyModel.h"
+#import "YYModel.h"
 
-@interface Car_ScanModel : MyModel
+@interface Car_ScanModel : MyModel<NSCoding, NSCopying>
 @property (nonatomic, copy) NSString *BHZMC;//拌合站
 @property (nonatomic, copy) NSString *JZLBH;//浇筑令编号
 @property (nonatomic, copy) NSString *GCMC;//工程名称
@@ -21,15 +22,17 @@
 @property (nonatomic, copy) NSString *FCR;
 @property (nonatomic, copy) NSString *FCSJ;
 @property (nonatomic, copy) NSString *BZ;
-@property (nonatomic, copy) NSString *FCDBH;
+@property (nonatomic, copy) NSString *FCDBH;//发车单编号
 @property (nonatomic, copy) NSString *SCRQ;
 @property (nonatomic, copy) NSString *PHBBH;
 @property (nonatomic, copy) NSString *LJCC;
 @property (nonatomic, copy) NSString *SJ;
 @property (nonatomic, copy) NSString *QSSJ;
 @property (nonatomic, copy) NSString *QSR;
-@property (nonatomic, copy) NSString *XLWZ;
-@property (nonatomic, copy) NSString *BHZBH;
+@property (nonatomic, copy) NSString *XLWZ;//卸料位置
+@property (nonatomic, copy) NSString *BHZBH;//拌合站编号
+
+@property (nonatomic, copy) NSString *loation;//坐标
 
 
 @end

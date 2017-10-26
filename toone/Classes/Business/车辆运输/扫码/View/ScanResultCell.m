@@ -171,6 +171,24 @@
     _qsrLabel.text = model.QSR;
     _qlwzTf.text = model.XLWZ;
 }
+-(void)setData:(Car_ScanModel *)model :(NSDictionary *)dict {
+    _bhz_Label.text = model.BHZMC;
+    _fcTiemTf.text = model.FCSJ;
+    _facdBh_Label.text = model.FCDBH;
+    _bhzBh_Label.text = model.JZLBH;
+    _gongName_Label.text = model.GCMC;
+    _qiangdudengji_Label.text = model.QDDJ;
+    _user_Label.text = model.FCR;
+    _tldLabel.text = model.TLD;
+    _bcflLabel.text = model.BCFL;
+    _sjflLabel.text = model.SJFL;
+    _cphLabel.text = model.CH;
+    _qsrLabel.text = model.QSR;
+    _qlwzTf.text = model.XLWZ;
+    _qsflTf.text = dict[@"qsfl"];
+    [_xzBut setTitle:dict[@"status"] forState:UIControlStateNormal];
+}
+
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.qsflTf resignFirstResponder];

@@ -1,47 +1,31 @@
 //
-//  ScanResultController.m
+//  Car_localDetailController.m
 //  toone
 //
-//  Created by 上海同望 on 2017/10/18.
+//  Created by 上海同望 on 2017/10/26.
 //  Copyright © 2017年 shtoone. All rights reserved.
 //
 
-#import "ScanResultController.h"
-#import "YYModel.h"
+#import "Car_localDetailController.h"
 #import "Car_ScanModel.h"
-#import <CoreLocation/CoreLocation.h>
 #import "ScanResultCell.h"
 #import "Car_ResultCell.h"
-
 #import "ResultIconCell.h"
 
-
-@interface ScanResultController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate>
-{
-    CLLocationManager *locationmanager;//定位服务
-    NSString *currentCity;//当前城市
-    NSString *strlatitude;//经度
-    NSString *strlongitude;//纬度
-}
+@interface Car_localDetailController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic,strong)UITableView *tb;
-@property (nonatomic, strong) Car_ScanModel *Headmodel;
 @property (nonatomic, strong) Car_ResultCell *cell1;
 @property (nonatomic, strong) ScanResultCell *submitCell;
 @property (nonatomic, strong) ResultIconCell *cell2;
-//@property (nonatomic,strong) UIImage *filePathImage;
-//@property (nonatomic,strong) UIImage *jsImage;
-@property (nonatomic, copy) NSString *loation;//坐标
-//@property (nonatomic, strong) NSDictionary *dict;
 
 @end
-@implementation ScanResultController
+@implementation Car_localDetailController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"运输单编辑";
-    [self loadData];
+    self.title = @"运输单再编辑";
     [self loadUI];
-    [self getLocation];//定位
+
 }
 
 -(void)loadUI{
@@ -55,74 +39,7 @@
     [self.tb registerNib:[UINib nibWithNibName:@"ResultIconCell" bundle:nil] forCellReuseIdentifier:@"ResultIconCell"];
 }
 
--(void)loadData {
-//    NSLog(@"扫码结果 == %@",_result);
-    NSData* data = [self.result dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *err;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
-                                                        options:NSJSONReadingMutableContainers
-                                                          error:&err];
-    if ([dic isKindOfClass:[NSDictionary class]]) {
-        _Headmodel = [Car_ScanModel modelWithDict:dic];
-    }
-}
 
-#pragma mark - 定位
--(void)getLocation {
-    //判断定位功能是否打开
-    if ([CLLocationManager locationServicesEnabled]) {
-        locationmanager = [[CLLocationManager alloc]init];
-        locationmanager.delegate = self;
-        [locationmanager requestAlwaysAuthorization];
-        currentCity = [NSString new];
-        [locationmanager requestWhenInUseAuthorization];
-        
-        //设置寻址精度
-        locationmanager.desiredAccuracy = kCLLocationAccuracyBest;
-        locationmanager.distanceFilter = 5.0;
-        [locationmanager startUpdatingLocation];
-    }
-}
-#pragma mark CoreLocation delegate (定位失败)
-//定位失败后调用此代理方法
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    //设置提示提醒用户打开定位服务
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"允许定位提示" message:@"请在设置中打开定位" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"打开定位" style:UIAlertActionStyleDefault handler:nil];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:okAction];
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-#pragma mark 定位成功后则执行此代理方法
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    [locationmanager stopUpdatingHeading];
-    //旧址
-    CLLocation *currentLocation = [locations lastObject];
-    _loation = [NSString stringWithFormat:@"%zd,%zd",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude];
-//    NSLog(@"%f,%f",currentLocation.coordinate.latitude,currentLocation.coordinate.longitude);
-    
-    //    CLGeocoder *geoCoder = [[CLGeocoder alloc]init];
-    //    //反地理编码
-    //    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-    //        if (placemarks.count > 0) {
-    //            CLPlacemark *placeMark = placemarks[0];
-    //            currentCity = placeMark.locality;
-    //            if (!currentCity) {
-    //                currentCity = @"无法定位当前城市";
-    //            }
-    //            NSLog(@"----%@",placeMark.country);//当前国家
-    //            NSLog(@"%@",currentCity);//当前的城市
-    //            NSLog(@"%@",placeMark.subLocality);//当前的位置
-    //            //            NSLog(@"%@",placeMark.thoroughfare);//当前街道
-    //            //            NSLog(@"%@",placeMark.name);//具体地址
-    //            
-    //        }
-    //    }];
-}
-
-#pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }
@@ -149,20 +66,28 @@
         ScanResultCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ScanResultCell"];
         self.submitCell = cell;
         Car_ScanModel *model = self.Headmodel;
-        cell.model = model;
+        NSDictionary *dict = @{@"status":_status?:@"",
+                               @"qsfl":_qsfl?:@"",
+                               @"jsyy":_jsyy?:@"",
+                               @"jsyylx":_jsyylx?:@"",
+                               @"jsbz":_jsbz?:@"",
+                               };
+        [cell setData:model :dict];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
     if (indexPath.section == 1 ) {
         Car_ResultCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Car_ResultCell"];
         self.cell1 = cell;
+        cell.qsImg.image = _qsIcon;
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
     if (indexPath.section == 2) {
         ResultIconCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ResultIconCell"];
         self.cell2 = cell;
-        [cell.submitBut addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchUpInside];
+        cell.jsimageView.image = _jsIcon;
+        [cell.submitBut addTarget:self action:@selector(loadIcon:) forControlEvents:UIControlEventTouchUpInside];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -199,7 +124,6 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak typeof(self)  weakSelf = self;
     __block NSDictionary *dicQs;
-//    __block NSDictionary *dicJs;
     if (_submitCell.status.length == 0 || _submitCell.qsflTf.text.length == 0) {
         hud.mode = MBProgressHUDModeText;
         hud.label.text = @"必填项不可为空，请填写完整信息";
@@ -213,32 +137,6 @@
             [hud hideAnimated:YES afterDelay:2.0];
             return;
         }else {
-            //
-            if (Car_ScanModelInfoPath) {
-                NSArray *Arr =[NSKeyedUnarchiver unarchiveObjectWithFile:Car_ScanModelInfoPath];
-                NSMutableArray *arr = [NSMutableArray array];
-                [arr addObject:_Headmodel];
-                [arr addObject:_loation];
-                [arr addObject:_submitCell.qsflTf.text];
-                [arr addObject:_submitCell.status];
-                [arr addObject:_cell1.qsImg.image];
-                
-                NSMutableArray *dataArr = [NSMutableArray array];
-                [dataArr addObject:Arr];
-                [dataArr addObject:arr];
-                BOOL ret =  [NSKeyedArchiver archiveRootObject:dataArr toFile:Car_ScanModelInfoPath];
-                NSLog(@"%zd",ret);
-            }else {
-                NSMutableArray *arr = [NSMutableArray array];
-                [arr addObject:_Headmodel];
-                [arr addObject:_loation];
-                [arr addObject:_submitCell.qsflTf.text];
-                [arr addObject:_submitCell.status];
-                [arr addObject:_cell1.qsImg.image];
-                BOOL ret =  [NSKeyedArchiver archiveRootObject:arr toFile:Car_ScanModelInfoPath];
-                NSLog(@"%zd",ret);
-            }
-            return;
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
@@ -283,7 +181,7 @@
                     [hud hideAnimated:YES afterDelay:2.0];
                 }];
             };
-   
+            
         }
     }
     if ([_submitCell.status isEqualToString:@"拒收"]) {
@@ -304,7 +202,7 @@
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
             [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
-//            [weakSelf chop:_cell2.jsimageView.image add:@"jsImg"];
+            //            [weakSelf chop:_cell2.jsimageView.image add:@"jsImg"];
             self.imgBlock = ^(NSDictionary *img) {
                 __block NSDictionary *dicIcon;
                 NSString *urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
@@ -312,8 +210,8 @@
                 NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
                 
                 NSDictionary *dic = @{@"filestr":encodedImageStr?:@"",
-                                       @"filename":[NSString stringWithFormat:@"jsImg%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
-                                       };
+                                      @"filename":[NSString stringWithFormat:@"jsImg%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
+                                      };
                 
                 [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dic success:^(id json) {
                     if ([json[@"code"] integerValue] == 1) {
@@ -358,18 +256,13 @@
                 } failure:^(NSError *error) {
                     NSLog(@"%@",error);
                 }];
-
+                
             };
             
         }
     }
     
 }
-
--(void)submitClick {
-    [self loadIcon:nil];
-}
-
 
 
 

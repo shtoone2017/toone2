@@ -264,7 +264,8 @@
 #define CarDetail   FormatString(baseUrl,@"GetFCDDetail?token=%@&fcdbh=%@&bhzbh=%@")
 
 
-
+#define DocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject]
+#define Car_ScanModelInfoPath [DocumentPath stringByAppendingPathComponent:@"Car_ScanModelInfo.archiver"]
 
 
 

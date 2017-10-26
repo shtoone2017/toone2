@@ -8,6 +8,7 @@
 
 #import "Car_YSD_Cell.h"
 #import "Car_YSD_Model.h"
+#import "Car_ScanModel.h"
 
 @interface Car_YSD_Cell ()
 @property (weak, nonatomic) IBOutlet UILabel * fcTime_Label         ;// 发车时间
@@ -61,6 +62,20 @@
 //    else if ([model.STATUS isEqualToString:@"3"]) {
 //        _container1_label.text = @"签收异常";
 //    }
+}
+
+-(void)setLocalModel:(Car_ScanModel *)localModel {
+    _localModel = localModel;
+    _fcTime_Label.text = localModel.FCSJ;
+    _facdBh_Label.text = localModel.FCDBH;
+    _bhzBh_Label.text = localModel.BHZBH;
+    _gongName_Label.text = localModel.GCMC;
+    _sigongdidian_Label.text = localModel.SGBW;
+    _qiangdudengji_Label.text = localModel.QDDJ;
+    _user_Label.text = localModel.FCR;
+    
+    _container1_label.text = @"待签收";
+    _container1_label.backgroundColor = [UIColor yellowGreenColor];
 }
 
 

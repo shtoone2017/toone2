@@ -10,6 +10,7 @@
 @class Car_ScanModel;
 @interface ScanResultCell : UITableViewCell
 @property (nonatomic, strong) Car_ScanModel *model;
+-(void)setData:(Car_ScanModel *)model :(NSDictionary *)dict;
 
 @property (nonatomic, copy) NSString *dataImg;//图片参数
 @property (nonatomic, copy) NSString *jsImg;//图片参数

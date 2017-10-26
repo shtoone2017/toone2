@@ -63,25 +63,7 @@
     //移除图片选择的控制器
     [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
-//-(void)loadIcon:(UIImage *)img {
-//    NSString * urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
-//    NSData *data = UIImageJPEGRepresentation(img, 1.0f);
-//    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-//    
-//    NSDictionary *dict = @{@"filestr":encodedImageStr?:@"",
-//                           @"filename":[NSString stringWithFormat:@"js%zd.jpg",[TimeTools timeStampWithTimeString:[TimeTools currentTime]]],
-//                           };
-//    
-//    [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
-//        if ([json[@"code"] integerValue] == 1) {
-//            [[NSUserDefaults standardUserDefaults] setObject:json[@"data"] forKey:@"jsImg"];
-//        }else {
-//            [SVProgressHUD showImage:nil status:@"请重新提交照片"];
-//        }
-//    } failure:^(NSError *error) {
-//        NSLog(@"%@",error);
-//    }];
-//}
+
 
 
 - (UIViewController *)viewController {
