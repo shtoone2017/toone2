@@ -105,7 +105,7 @@ static  Singleton *_instance;
     }
     if ([fmdb open])
     {
-        if ([fmdb executeUpdate:@"INSERT INTO orderTable (orderStatus,JZLBH,BHZMC,GCMC,SGBW,FCDBH,XLWZ,BHZBH,loation,QDDJ,TLD,SJFL,BCFL,CH,FCR,FCSJ,BZ,SCRQ,PHBBH,LJCC,SJ,QSSJ,QSR,QS_img,JS_img,QSFL,JSYY,JSYYLX,JSBZ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",model.orderStatus,model.JZLBH,model.BHZMC,model.GCMC,model.SGBW,model.FCDBH,model.XLWZ,model.BHZBH,model.loation,model.QDDJ,model.TLD,model.SJFL,model.BCFL,model.CH,model.FCR,model.FCSJ,model.BZ,model.SCRQ,model.PHBBH,model.LJCC,model.SJ,model.QSSJ,model.QSR,model.QS_img,model.JS_img,model.QSFL,model.JSYY,model.JSYYLX,model.JSBZ])
+        if ([fmdb executeUpdate:@"INSERT INTO orderTable (orderStatus,outsideStatus,JZLBH,BHZMC,GCMC,SGBW,FCDBH,XLWZ,BHZBH,loation,QDDJ,TLD,SJFL,BCFL,CH,FCR,FCSJ,BZ,SCRQ,PHBBH,LJCC,SJ,QSSJ,QSR,QS_img,JS_img,QSFL,JSYY,JSYYLX,JSBZ,) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",model.orderStatus,model.outsideStatus,model.JZLBH,model.BHZMC,model.GCMC,model.SGBW,model.FCDBH,model.XLWZ,model.BHZBH,model.loation,model.QDDJ,model.TLD,model.SJFL,model.BCFL,model.CH,model.FCR,model.FCSJ,model.BZ,model.SCRQ,model.PHBBH,model.LJCC,model.SJ,model.QSSJ,model.QSR,model.QS_img,model.JS_img,model.QSFL,model.JSYY,model.JSYYLX,model.JSBZ])
         {
             NSLog(@"新增数据成功");
             [fmdb close];
@@ -166,6 +166,7 @@ static  Singleton *_instance;
         {
             Car_ScanModel *model = [[Car_ScanModel alloc] init];
             model.orderStatus = [resultSet stringForColumn:@"orderStatus"];
+            model.outsideStatus = [resultSet stringForColumn:@"outsideStatus"];
             model.JZLBH = [resultSet stringForColumn:@"JZLBH"];
             model.BHZMC = [resultSet stringForColumn:@"BHZMC"];
             model.GCMC = [resultSet stringForColumn:@"GCMC"];
@@ -223,6 +224,7 @@ static  Singleton *_instance;
         {
             Car_ScanModel *model = [[Car_ScanModel alloc] init];
             model.orderStatus = [resultSet stringForColumn:@"orderStatus"];
+            model.outsideStatus = [resultSet stringForColumn:@"outsideStatus"];
             model.JZLBH = [resultSet stringForColumn:@"JZLBH"];
             model.BHZMC = [resultSet stringForColumn:@"BHZMC"];
             model.GCMC = [resultSet stringForColumn:@"GCMC"];

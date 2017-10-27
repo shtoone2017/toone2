@@ -11,6 +11,7 @@
 
 @interface Car_ScanModel : MyModel<NSCoding, NSCopying>
 @property (nonatomic,copy) NSString *orderStatus;//单子状态
+@property (nonatomic,copy) NSString *outsideStatus;//外面的状态
 @property (nonatomic, copy) NSString *JZLBH;//浇筑令编号
 @property (nonatomic, copy) NSString *BHZMC;//拌合站
 @property (nonatomic, copy) NSString *GCMC;//工程名称
