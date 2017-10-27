@@ -56,6 +56,18 @@
 //        }
         
     }
+    
+    
+    //测试代码
+//    Car_ScanModel *model = [[Car_ScanModel alloc] init];
+//    model.orderStatus = @"2";
+//    model.JZLBH = @"a";
+//    model.BHZBH = @"b";
+//    
+//    [[Singleton shareSingleton] insertData:model];
+////    [[Singleton shareSingleton] deleteData:model];
+//    NSArray *arr = [[Singleton shareSingleton] queryData];
+    
     return YES;
 }
 /**
