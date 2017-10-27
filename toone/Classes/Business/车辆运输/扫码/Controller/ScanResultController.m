@@ -214,30 +214,11 @@
             return;
         }else {
             //
-            if (Car_ScanModelInfoPath) {
-                NSArray *Arr =[NSKeyedUnarchiver unarchiveObjectWithFile:Car_ScanModelInfoPath];
-                NSMutableArray *arr = [NSMutableArray array];
-                [arr addObject:_Headmodel];
-                [arr addObject:_loation];
-                [arr addObject:_submitCell.qsflTf.text];
-                [arr addObject:_submitCell.status];
-                [arr addObject:_cell1.qsImg.image];
-                
-                NSMutableArray *dataArr = [NSMutableArray array];
-                [dataArr addObject:Arr];
-                [dataArr addObject:arr];
-                BOOL ret =  [NSKeyedArchiver archiveRootObject:dataArr toFile:Car_ScanModelInfoPath];
-                NSLog(@"%zd",ret);
-            }else {
-                NSMutableArray *arr = [NSMutableArray array];
-                [arr addObject:_Headmodel];
-                [arr addObject:_loation];
-                [arr addObject:_submitCell.qsflTf.text];
-                [arr addObject:_submitCell.status];
-                [arr addObject:_cell1.qsImg.image];
-                BOOL ret =  [NSKeyedArchiver archiveRootObject:arr toFile:Car_ScanModelInfoPath];
-                NSLog(@"%zd",ret);
-            }
+            Car_ScanModel *model = [[Car_ScanModel alloc] init];
+            model.QSFL = _submitCell.qsflTf.text;
+            model = _Headmodel;
+            model.loation = _loation;
+            [[Singleton shareSingleton] insertData:model];
             return;
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
