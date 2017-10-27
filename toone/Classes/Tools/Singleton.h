@@ -14,7 +14,6 @@
 + (instancetype)shareSingleton;
 - (NSArray *)queryData;
 - (BOOL)deleteData:(Car_ScanModel *)model;
-- (BOOL)insertData:(Car_ScanModel *)model
-;
-
+- (BOOL)insertData:(Car_ScanModel *)model;
+- (NSArray *)queryDataWithKeyStr:(NSString *)KeyStr valueStr:(NSString *)valueStr;
 @end

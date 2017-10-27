@@ -59,13 +59,23 @@
     
     
     //测试代码
+//    for (int i = 0; i<5; i++)
+//    {
+//        Car_ScanModel *model = [[Car_ScanModel alloc] init];
+//        model.orderStatus = @"1";
+//        model.JZLBH = @"123";
+//        model.BHZBH = @"d";
+//        [[Singleton shareSingleton] insertData:model];
+//    }
+    
 //    Car_ScanModel *model = [[Car_ScanModel alloc] init];
-//    model.orderStatus = @"2";
-//    model.JZLBH = @"a";
-//    model.BHZBH = @"b";
-//    
+//    model.orderStatus = @"1";
+//    model.JZLBH = @"123";
+//    model.BHZBH = @"d";
 //    [[Singleton shareSingleton] insertData:model];
-////    [[Singleton shareSingleton] deleteData:model];
+//    NSArray *arr = [[Singleton shareSingleton] queryDataWithKeyStr:@"orderStatus" valueStr:@"2"];
+
+//    [[Singleton shareSingleton] deleteData:model];
 //    NSArray *arr = [[Singleton shareSingleton] queryData];
     
     return YES;
