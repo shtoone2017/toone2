@@ -66,13 +66,7 @@
         ScanResultCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ScanResultCell"];
         self.submitCell = cell;
         Car_ScanModel *model = self.Headmodel;
-        NSDictionary *dict = @{@"status":_status?:@"",
-                               @"qsfl":_qsfl?:@"",
-                               @"jsyy":_jsyy?:@"",
-                               @"jsyylx":_jsyylx?:@"",
-                               @"jsbz":_jsbz?:@"",
-                               };
-        [cell setData:model :dict];
+        [cell setData:model :nil];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -88,7 +82,12 @@
     if (indexPath.section == 2) {
         ResultIconCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ResultIconCell"];
         self.cell2 = cell;
-        cell.jsimageView.image = _jsIcon;
+        if ([_Headmodel.orderStatus isEqualToString:@"拒收"]) {
+            NSData *ImageData = [[NSData alloc] initWithBase64EncodedString:_Headmodel.JS_img options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            UIImage *Image = [UIImage imageWithData:ImageData];
+            cell.jsimageView.image = Image;
+        }
+//        cell.jsimageView.image = _jsIcon;
         [cell.submitBut addTarget:self action:@selector(loadIcon:) forControlEvents:UIControlEventTouchUpInside];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;

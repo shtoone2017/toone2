@@ -13,7 +13,7 @@
 
 @interface Car_localController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tb;
-@property (nonatomic,strong) NSMutableArray * datas;
+@property (nonatomic,strong) NSArray *datas;
 @property (nonatomic, copy) NSString *status;//状态
 
 @end
@@ -53,7 +53,7 @@
 }
 
 -(void)loadData{
-    NSMutableArray *arr = [NSKeyedUnarchiver unarchiveObjectWithFile:Car_ScanModelInfoPath];
+    NSArray *arr = [[Singleton shareSingleton] queryData];
     self.datas = arr;
     [self.tb reloadData];
     [self.tb.mj_header endRefreshing];
@@ -65,28 +65,15 @@
     return self.datas.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Car_ScanModel * model;
     Car_YSD_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"Car_YSD_Cell" forIndexPath:indexPath];
-    if (indexPath.row == 0) {
-        model = [self.datas[indexPath.row] objectAtIndex:2];
-    }else {
-        model = [self.datas[indexPath.row] objectAtIndex:0];
-    }
+    Car_ScanModel *model = self.datas[indexPath.row];
     cell.localModel = model;
     cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Car_localDetailController *vc = [[Car_localDetailController alloc] init];
-    if (indexPath.row == 0) {
-        vc.Headmodel = [self.datas[indexPath.row] objectAtIndex:2];
-    }else {
-        vc.Headmodel = [self.datas[indexPath.row] objectAtIndex:0];
-        vc.loation = [self.datas[indexPath.row] objectAtIndex:1];
-        vc.qsfl = [self.datas[indexPath.row] objectAtIndex:2];
-        vc.status = [self.datas[indexPath.row] objectAtIndex:3];
-        vc.qsIcon = [self.datas[indexPath.row] objectAtIndex:4];
-    }
+    vc.Headmodel = self.datas[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

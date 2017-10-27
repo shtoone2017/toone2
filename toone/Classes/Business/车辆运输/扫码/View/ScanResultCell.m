@@ -185,8 +185,11 @@
     _cphLabel.text = model.CH;
     _qsrLabel.text = model.QSR;
     _qlwzTf.text = model.XLWZ;
-    _qsflTf.text = dict[@"qsfl"];
-    [_xzBut setTitle:dict[@"status"] forState:UIControlStateNormal];
+    _qsflTf.text = model.QSFL;
+
+    [_jsBut setTitle:model.JSYY forState:UIControlStateNormal];
+    _bzTf.text = model.JSBZ;
+    [_xzBut setTitle:model.orderStatus forState:UIControlStateNormal];
 }
 
 

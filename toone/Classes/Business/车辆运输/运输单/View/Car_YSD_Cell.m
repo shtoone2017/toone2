@@ -74,7 +74,7 @@
     _qiangdudengji_Label.text = localModel.QDDJ;
     _user_Label.text = localModel.FCR;
     
-    _container1_label.text = @"待签收";
+    _container1_label.text = localModel.orderStatus;
     _container1_label.backgroundColor = [UIColor yellowGreenColor];
 }
 
