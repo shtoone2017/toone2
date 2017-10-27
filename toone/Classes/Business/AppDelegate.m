@@ -68,11 +68,11 @@
 //        [[Singleton shareSingleton] insertData:model];
 //    }
     
-    Car_ScanModel *model = [[Car_ScanModel alloc] init];
-    model.orderStatus = @"1";
-    model.JZLBH = @"123";
-    model.BHZBH = @"d";
-    [[Singleton shareSingleton] insertData:model];
+//    Car_ScanModel *model = [[Car_ScanModel alloc] init];
+//    model.orderStatus = @"1";
+//    model.JZLBH = @"123";
+//    model.BHZBH = @"d";
+//    [[Singleton shareSingleton] insertData:model];
 //    NSArray *arr = [[Singleton shareSingleton] queryDataWithKeyStr:@"orderStatus" valueStr:@"2"];
 
 //    [[Singleton shareSingleton] deleteData:model];
