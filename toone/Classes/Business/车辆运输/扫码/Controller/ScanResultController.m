@@ -215,9 +215,13 @@
         }else {
             //
             Car_ScanModel *model = [[Car_ScanModel alloc] init];
-            model.QSFL = _submitCell.qsflTf.text;
             model = _Headmodel;
+            model.QSFL = _submitCell.qsflTf.text;
             model.loation = _loation;
+            model.orderStatus = _submitCell.status;
+            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 1.0f);
+            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+            model.QS_img = imgStr;
             [[Singleton shareSingleton] insertData:model];
             return;
             hud.mode = MBProgressHUDModeDeterminate;

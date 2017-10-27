@@ -79,7 +79,9 @@
     if (indexPath.section == 1 ) {
         Car_ResultCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Car_ResultCell"];
         self.cell1 = cell;
-        cell.qsImg.image = _qsIcon;
+        NSData *ImageData = [[NSData alloc] initWithBase64EncodedString:_Headmodel.QS_img options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage *Image = [UIImage imageWithData:ImageData];
+        cell.qsImg.image = Image;
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
