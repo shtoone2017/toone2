@@ -104,6 +104,7 @@ static  Singleton *_instance;
         [self deleteData:model];
     }
     if ([fmdb open])
+        
     {
         if ([fmdb executeUpdate:@"INSERT INTO orderTable (orderStatus,outsideStatus,JZLBH,BHZMC,GCMC,SGBW,FCDBH,XLWZ,BHZBH,loation,QDDJ,TLD,SJFL,BCFL,CH,FCR,FCSJ,BZ,SCRQ,PHBBH,LJCC,SJ,QSSJ,QSR,QS_img,JS_img,QSFL,JSYY,JSYYLX,JSBZ,) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",model.orderStatus,model.outsideStatus,model.JZLBH,model.BHZMC,model.GCMC,model.SGBW,model.FCDBH,model.XLWZ,model.BHZBH,model.loation,model.QDDJ,model.TLD,model.SJFL,model.BCFL,model.CH,model.FCR,model.FCSJ,model.BZ,model.SCRQ,model.PHBBH,model.LJCC,model.SJ,model.QSSJ,model.QSR,model.QS_img,model.JS_img,model.QSFL,model.JSYY,model.JSYYLX,model.JSBZ])
         {

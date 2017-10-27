@@ -218,6 +218,7 @@
             model = _Headmodel;
             model.QSFL = _submitCell.qsflTf.text;
             model.loation = _loation;
+            model.orderStatus = _submitCell.status;
             NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 1.0f);
             NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
             model.QS_img = imgStr;
@@ -244,14 +245,13 @@
                 [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                     if ([json isKindOfClass:[NSDictionary class]]) {
                         if ([json[@"code"] integerValue] == 1) {
-                            model.orderStatus = @"签收";
                             [[Singleton shareSingleton] insertData:model];
                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                                 UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
                             });
                         }else {
-                            model.orderStatus = @"未提交";
+                            model.outsideStatus = @"未提交";
                             [[Singleton shareSingleton] insertData:model];
                             hud.mode = MBProgressHUDModeText;
                             hud.label.text = json[@"message"];
@@ -259,7 +259,7 @@
                         [hud hideAnimated:YES afterDelay:2.0];
                     }
                 } failure:^(NSError *error) {
-                    model.orderStatus = @"未提交";
+                    model.outsideStatus = @"未提交";
                     [[Singleton shareSingleton] insertData:model];
                     hud.mode = MBProgressHUDModeText;
                     hud.label.text = @"网络连接异常";
@@ -290,6 +290,7 @@
             model.JSYY = _submitCell.jsyy;
             model.JSYYLX = _submitCell.jsyylx;
             model.JSBZ = _submitCell.bzTf.text;
+            model.orderStatus = _submitCell.status;
             NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 1.0f);
             NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
             model.QS_img = imgStr;
@@ -334,14 +335,13 @@
                         [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                             if ([json isKindOfClass:[NSDictionary class]]) {
                                 if ([json[@"code"] integerValue] == 1) {
-                                    model.orderStatus = @"拒收";
                                     [[Singleton shareSingleton] insertData:model];
                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                                         UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                                         [weakSelf.navigationController popToViewController:vc animated:YES];
                                     });
                                 }else {
-                                    model.orderStatus = @"未提交";
+                                    model.outsideStatus = @"未提交";
                                     [[Singleton shareSingleton] insertData:model];
                                     hud.mode = MBProgressHUDModeText;
                                     hud.label.text = json[@"message"];
@@ -349,19 +349,19 @@
                                 [hud hideAnimated:YES afterDelay:2.0];
                             }
                         } failure:^(NSError *error) {
-                            model.orderStatus = @"未提交";
+                            model.outsideStatus = @"未提交";
                             [[Singleton shareSingleton] insertData:model];
                             hud.mode = MBProgressHUDModeText;
                             hud.label.text = @"网络连接异常";
                             [hud hideAnimated:YES afterDelay:2.0];
                         }];
                     }else {
-                        model.orderStatus = @"未提交";
+                        model.outsideStatus = @"未提交";
                         [[Singleton shareSingleton] insertData:model];
                         [SVProgressHUD showImage:nil status:@"请重新提交照片"];
                     }
                 } failure:^(NSError *error) {
-                    model.orderStatus = @"未提交";
+                    model.outsideStatus = @"未提交";
                     [[Singleton shareSingleton] insertData:model];
                     NSLog(@"%@",error);
                 }];
