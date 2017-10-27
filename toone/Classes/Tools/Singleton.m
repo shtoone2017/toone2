@@ -187,6 +187,7 @@ static  Singleton *_instance;
             
             [dataArr addObject:model];
         }
+        [fmdb close];
         return dataArr;
     }
     else
