@@ -10,7 +10,7 @@
 
 #define FileManager [NSFileManager defaultManager]
 #define SandboxPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES) lastObject]
-#define DBPath [SandboxPath stringByAppendingPathComponent:@"QRCodes.sqlite"]
+#define DBPath [SandboxPath stringByAppendingPathComponent:@"orders.sqlite"]
 
 @implementation Singleton
 
@@ -65,14 +65,14 @@ static  Singleton *_instance;
     }
     else
     {
-        NSLog(@"error:'QRCodes.sqlite'不存在");
+        NSLog(@"error:文件不存在");
         return NO;
     }
 }
 
 - (BOOL)copyDatabaseFileToSandboxPath
 {
-    [FileManager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"QRCodes" ofType:@".sqlite"] toPath:DBPath error:nil];
+    [FileManager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"orders" ofType:@".sqlite"] toPath:DBPath error:nil];
     if ([self isExistTheDatabaseFile])
     {
         return YES;
@@ -93,10 +93,12 @@ static  Singleton *_instance;
 
 - (BOOL)insertData:(Car_ScanModel *)model
 {
+    [self getDatabaseFile];
     FMDatabase *fmdb = [FMDatabase databaseWithPath:DBPath];
+    NSString *str = fmdb.databasePath;
     if ([fmdb open])
     {
-        if ([fmdb executeUpdate:@"insert into CarTrastion_Orders(orderStatus,JZLBH,BHZMC,GCMC,SGBW,FCDBH,XLWZ,BHZBH,loation,QDDJ,TLD,SJFL,BCFL,CH,FCR,FCSJ,BZ,SCRQ,PHBBH,LJCC,SJ,QSSJ,QSR,QS_img,JS_img,QSFL,JSYY,JSYYLX,JSBZ)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",model.orderStatus,model.JZLBH,model.BHZMC,model.GCMC,model.SGBW,model.FCDBH,model.XLWZ,model.BHZBH,model.loation,model.QDDJ,model.TLD,model.SJFL,model.BCFL,model.CH,model.FCR,model.FCSJ,model.BZ,model.SCRQ,model.PHBBH,model.LJCC,model.SJ,model.QSSJ,model.QSR,model.QS_img,model.JS_img,model.QSFL,model.JSYY,model.JSYYLX,model.JSBZ])
+        if ([fmdb executeUpdate:@"INSERT INTO orderTable (orderStatus,JZLBH,BHZMC,GCMC,SGBW,FCDBH,XLWZ,BHZBH,loation,QDDJ,TLD,SJFL,BCFL,CH,FCR,FCSJ,BZ,SCRQ,PHBBH,LJCC,SJ,QSSJ,QSR,QS_img,JS_img,QSFL,JSYY,JSYYLX,JSBZ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",model.orderStatus,model.JZLBH,model.BHZMC,model.GCMC,model.SGBW,model.FCDBH,model.XLWZ,model.BHZBH,model.loation,model.QDDJ,model.TLD,model.SJFL,model.BCFL,model.CH,model.FCR,model.FCSJ,model.BZ,model.SCRQ,model.PHBBH,model.LJCC,model.SJ,model.QSSJ,model.QSR,model.QS_img,model.JS_img,model.QSFL,model.JSYY,model.JSYYLX,model.JSBZ])
         {
             NSLog(@"新增数据成功");
             [fmdb close];
@@ -119,10 +121,11 @@ static  Singleton *_instance;
 
 - (BOOL)deleteData:(Car_ScanModel *)model
 {
+    [self getDatabaseFile];
     FMDatabase *fmdb = [FMDatabase databaseWithPath:DBPath];
     if ([fmdb open])
     {
-        if ([fmdb executeUpdate:@"delete from CarTrastion_Orders where JZLBH = ?",model.JZLBH])
+        if ([fmdb executeUpdate:@"delete from orderTable where JZLBH = ?",model.JZLBH])
         {
             NSLog(@"删除数据成功");
             [fmdb close];
@@ -145,17 +148,17 @@ static  Singleton *_instance;
 
 - (NSArray *)queryData
 {
-    
+    [self getDatabaseFile];
     NSMutableArray *dataArr = [NSMutableArray array];
     Car_ScanModel *model = [[Car_ScanModel alloc] init];
     FMDatabase *fmdb = [FMDatabase databaseWithPath:DBPath];
 
     if ([fmdb open])
     {
-        FMResultSet *resultSet = [fmdb executeQuery:@"select * from CarTrastion_Orders"];
+        FMResultSet *resultSet = [fmdb executeQuery:@"select * from orderTable"];
         while ([resultSet next])
         {
-            model.orderStatus = [resultSet intForColumn:@"orderStatus"];
+            model.orderStatus = [resultSet stringForColumn:@"orderStatus"];
             model.JZLBH = [resultSet stringForColumn:@"JZLBH"];
             model.BHZMC = [resultSet stringForColumn:@"BHZMC"];
             model.GCMC = [resultSet stringForColumn:@"GCMC"];
