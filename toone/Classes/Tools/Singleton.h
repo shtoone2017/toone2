@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Car_ScanModel.h"
 
 @interface Singleton : NSObject
 
 + (instancetype)shareSingleton;
-
+- (NSArray *)queryData;
+- (BOOL)deleteData:(Car_ScanModel *)model;
+- (BOOL)insertData:(Car_ScanModel *)model
+;
 
 @end
