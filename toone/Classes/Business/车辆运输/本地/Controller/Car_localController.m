@@ -14,7 +14,7 @@
 @interface Car_localController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tb;
 @property (nonatomic,strong) NSArray *datas;
-@property (nonatomic, copy) NSString *status;//状态
+//@property (nonatomic, copy) NSString *status;//状态
 
 @end
 @implementation Car_localController
@@ -22,13 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"本地查询";
-    _status = @"";
+//    _status = @"";
     [self loadUI];
     [self addPanGestureRecognizer];
     [self loadData];
 }
 
 -(void)loadUI {
+    UIButton * btn = [UIButton img_20WithName:@"white_SX"];
+    btn.tag  = 2;
+    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
     btn3.tag  = 3;
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -60,6 +64,15 @@
     [self.tb.mj_footer endRefreshing];
     [self.tb.mj_footer endRefreshingWithNoMoreData];
 }
+-(void)loadQuerData:(NSString *)str {
+    NSArray *arr = [[Singleton shareSingleton] queryDataWithKeyStr:@"outsideStatus" valueStr:str];
+    self.datas = arr;
+    [self.tb reloadData];
+    [self.tb.mj_header endRefreshing];
+    [self.tb.mj_footer endRefreshing];
+    [self.tb.mj_footer endRefreshingWithNoMoreData];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datas.count;
@@ -76,10 +89,79 @@
     vc.Headmodel = self.datas[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    Car_ScanModel *model = self.datas[indexPath.row];
+    [[Singleton shareSingleton] deleteData:model];
+    NSArray *arr = [[Singleton shareSingleton] queryData];
+    self.datas = arr;
+    [self.tb reloadData];
+}
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
 
 -(void)searchButtonClick:(UIButton*)sender{
-    [super pan];
+    switch (sender.tag) {
+        case 2:{
+            sender.enabled = NO;
+            //1.
+            UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
+            backView.frame = CGRectMake(0, 64+35, Screen_w, Screen_h - 49 -64-35);
+            backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+            backView.hidden = YES;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
+                backView.hidden = NO;
+            });
+            [self.view addSubview:backView];
+            
+            //2.
+            Exp5View * e = [[Exp5View alloc] init];
+            e.stutas = @"选择状态";
+            [e loadHidden];
+            e.frame = CGRectMake(0, 64, Screen_w, 120);
+            __weak __typeof(self)  weakSelf = self;
+            e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
+                if (type == ExpButtonTypeCancel) {
+                    sender.enabled = YES;
+                    [backView removeFromSuperview];
+                }
+                if (type == ExpButtonTypeOk) {
+                    sender.enabled = YES;
+                    [backView removeFromSuperview];
+                    //
+                    weakSelf.startTime = (NSString*)obj1;
+                    weakSelf.endTime = (NSString*)obj2;
+//                    [weakSelf loadData];
+                    FuncLog;
+                }
+                if (type == ExpButtonTypeChoiceSBButton) {
+                    UIButton * btn = (UIButton*)obj1;
+                    __weak typeof(self) weakSelf = self;
+                    HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
+                    vc.type = SBListTypeLocal;
+                    vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
+                        [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+//                        weakSelf.status = departid;
+                        [weakSelf loadQuerData:banhezhanminchen];
+                    };
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+            };
+            [self.view addSubview:e];
+            break;
+        }
+        case 3:{
+            [super pan];
+            break;
+        }
+        default:
+            FuncLog;
+            break;
+    }
 }
 
 @end

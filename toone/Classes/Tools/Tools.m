@@ -63,7 +63,7 @@
         data = UIImagePNGRepresentation(image);
     }else {
         //返回为JPEG图像。
-        data = UIImageJPEGRepresentation(image, 1.0);
+        data = UIImageJPEGRepresentation(image, 0.5);
     }
     
 //    NSData * data = UIImageJPEGRepresentation(image, 1.0);

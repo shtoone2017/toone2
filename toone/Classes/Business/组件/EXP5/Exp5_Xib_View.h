@@ -17,4 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *sbLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *startView;
+@property (weak, nonatomic) IBOutlet UIView *endView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topView;//状态top
+
 @end

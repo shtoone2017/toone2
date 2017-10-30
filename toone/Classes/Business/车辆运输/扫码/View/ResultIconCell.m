@@ -25,6 +25,13 @@
 - (IBAction)butClick:(UIButton *)sender {
 }
 
+-(void)setHiddeStr:(NSString *)hiddeStr {
+    _hiddeStr = hiddeStr;
+    if ([hiddeStr isEqualToString:@"拒收"] || [hiddeStr isEqualToString:@"签收"]) {
+        _submitBut.hidden = YES;
+    }
+}
+
 -(void)choosePhoto{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"请选择" message:@"打开一个图片源" preferredStyle: UIAlertControllerStyleActionSheet];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];

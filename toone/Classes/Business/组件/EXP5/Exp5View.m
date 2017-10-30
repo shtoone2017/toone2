@@ -76,6 +76,11 @@
 -(void)setStutas:(NSString *)stutas {
     self.xib.sbLabel.text = stutas;
 }
+-(void)loadHidden {
+    self.xib.topView.constant = 10;
+    self.xib.startView.hidden = YES;
+    self.xib.endView.hidden = YES;
+}
 
 -(void)remove{
      [SGAnimationType remove:self animation:AnimationBottomTop completion:^{

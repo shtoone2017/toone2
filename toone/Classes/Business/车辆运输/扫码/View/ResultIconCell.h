@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *IconBut;//上传图片
 @property (weak, nonatomic) IBOutlet UIButton *submitBut;//提交
 
+@property (nonatomic, copy) NSString *hiddeStr;
 
 @end

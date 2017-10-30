@@ -87,7 +87,7 @@
             UIImage *Image = [UIImage imageWithData:ImageData];
             cell.jsimageView.image = Image;
         }
-//        cell.jsimageView.image = _jsIcon;
+        cell.hiddeStr = _Headmodel.outsideStatus;
         [cell.submitBut addTarget:self action:@selector(loadIcon:) forControlEvents:UIControlEventTouchUpInside];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
@@ -95,8 +95,9 @@
     return nil;
 }
 
+
 #pragma mark - 上传图片
--(void)chop:(UIImage *)img add:(NSString *)str{
+-(void)chop:(UIImage *)img add:(NSString *)str :(MBProgressHUD *)hud{
     __block NSDictionary *dic;
     NSString *urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
     NSData *data =[Tools compressOriginalImage:img toMaxDataSizeKBytes:100];
@@ -116,7 +117,10 @@
             [SVProgressHUD showImage:nil status:@"请重新提交照片"];
         }
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"请求超时";
+        [hud hideAnimated:YES afterDelay:2.0];
+//        NSLog(@"%@",error);
     }];
 }
 
@@ -138,10 +142,19 @@
             [hud hideAnimated:YES afterDelay:2.0];
             return;
         }else {
+            Car_ScanModel *model = [[Car_ScanModel alloc] init];
+            model = _Headmodel;
+            model.QSFL = _submitCell.qsflTf.text;
+            model.orderStatus = _submitCell.status;
+            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
+            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+            model.QS_img = imgStr;
+            
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
-            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
+//            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
+            [weakSelf chop:_cell1.qsImg.image add:@"qsImg" :hud];
             self.imgBlock = ^(NSDictionary *iconDic) {
                 dicQs = iconDic;
                 NSString *urlSting = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/UploadQSXX";
@@ -152,7 +165,7 @@
                                        @"qsr":weakSelf.Headmodel.QSR?:@"",
                                        @"xlwzmc":weakSelf.Headmodel.XLWZ?:@"",
                                        @"xlwzcode":@"1",
-                                       @"xlwzzb":weakSelf.loation?:@"",
+                                       @"xlwzzb":weakSelf.Headmodel.loation?:@"",
                                        @"qszp":iconDic?:@"",
                                        @"qssj":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
                                        };
@@ -160,12 +173,9 @@
                 [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                     if ([json isKindOfClass:[NSDictionary class]]) {
                         if ([json[@"code"] integerValue] == 1) {
-                            NSMutableArray *Arr = [NSKeyedUnarchiver unarchiveObjectWithFile:Car_ScanModelInfoPath];
-                            if (Arr.count > 1) {
-                                [Arr removeObjectAtIndex:Arr.count];
-                            }else {
-                                [[NSFileManager defaultManager] removeItemAtPath:Car_ScanModelInfoPath error:nil];
-                            }
+                            model.orderStatus = @"签收";
+                            model.outsideStatus = @"签收";
+                            [[Singleton shareSingleton] insertData:model];
                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                                 UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
@@ -199,11 +209,24 @@
             return;
         }else {
             //
+            Car_ScanModel *model = [[Car_ScanModel alloc] init];
+            model = _Headmodel;
+            model.QSFL = _submitCell.qsflTf.text;
+            model.JSYY = _submitCell.jsyy;
+            model.JSYYLX = _submitCell.jsyylx;
+            model.JSBZ = _submitCell.bzTf.text;
+            model.orderStatus = _submitCell.status;
+            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
+            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+            model.QS_img = imgStr;
+            NSData *data2 = UIImageJPEGRepresentation(_cell2.jsimageView.image, 0.5f);
+            NSString *imgStr2 = [data2 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+            model.JS_img = imgStr2;
+            
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
-            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
-            //            [weakSelf chop:_cell2.jsimageView.image add:@"jsImg"];
+            [weakSelf chop:_cell1.qsImg.image add:@"qsImg" :hud];
             self.imgBlock = ^(NSDictionary *img) {
                 __block NSDictionary *dicIcon;
                 NSString *urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
@@ -225,7 +248,7 @@
                                                @"qsr":weakSelf.Headmodel.QSR?:@"",
                                                @"xlwzmc":weakSelf.Headmodel.XLWZ?:@"",
                                                @"xlwzcode":@"1",
-                                               @"xlwzzb":weakSelf.loation?:@"",
+                                               @"xlwzzb":weakSelf.Headmodel.loation?:@"",
                                                @"qszp":img?:@"",//签收
                                                @"qssj":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
                                                @"jsyylx":weakSelf.submitCell.jsyylx?:@"",
@@ -236,6 +259,9 @@
                         [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                             if ([json isKindOfClass:[NSDictionary class]]) {
                                 if ([json[@"code"] integerValue] == 1) {
+                                    model.orderStatus = @"拒收";
+                                    model.outsideStatus = @"拒收";
+                                    [[Singleton shareSingleton] insertData:model];
                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                                         UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                                         [weakSelf.navigationController popToViewController:vc animated:YES];

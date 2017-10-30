@@ -186,10 +186,17 @@
     _qsrLabel.text = model.QSR;
     _qlwzTf.text = model.XLWZ;
     _qsflTf.text = model.QSFL;
-
+    
+    if ([model.orderStatus isEqualToString:@"拒收"]) {
+        _jsyyView.hidden = NO;
+        _bzView.hidden = NO;
+    }
     [_jsBut setTitle:model.JSYY forState:UIControlStateNormal];
+    _jsyy = model.JSYY;
+    _jsyylx = model.JSYYLX;
     _bzTf.text = model.JSBZ;
     [_xzBut setTitle:model.orderStatus forState:UIControlStateNormal];
+    _status = model.orderStatus;
 }
 
 

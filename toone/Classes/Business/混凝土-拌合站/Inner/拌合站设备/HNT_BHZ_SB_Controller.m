@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray * statesArr;//列表查询签收状态
 @property (nonatomic, strong) NSArray * qsArr;
 @property (nonatomic, strong) NSArray * jsyyArr;
+@property (nonatomic, strong) NSArray * carArr;
 
 @end
 
@@ -23,7 +24,7 @@
     [super viewWillAppear:animated];
     if (_type == SBListTypeStatu) {
         self.title = @"选择签收状态";
-    }else if (_type == SBListTypeQS) {
+    }else if (_type == SBListTypeQS || _type == SBListTypeLocal) {
         self.title = @"选择状态";
     }else if (_type == SBListTypeJSYY) {
         self.title = @"选择拒收原因";
@@ -76,6 +77,8 @@
         return self.qsArr.count;
     }else if (_type == SBListTypeJSYY) {
         return self.jsyyArr.count;
+    }else if (_type == SBListTypeLocal) {
+        return self.carArr.count;
     }
     else {
         return self.datas.count;
@@ -91,6 +94,9 @@
         cell.textLabel.text = dict[@"banhezhanminchen"];
     }else if (_type == SBListTypeJSYY) {
         NSDictionary * dict = self.jsyyArr[indexPath.row];
+        cell.textLabel.text = dict[@"banhezhanminchen"];
+    }else if (_type == SBListTypeLocal) {
+        NSDictionary * dict = self.carArr[indexPath.row];
         cell.textLabel.text = dict[@"banhezhanminchen"];
     }
     else {
@@ -114,6 +120,10 @@
     }else if (_type == SBListTypeJSYY) {
         
         NSDictionary * dict = self.jsyyArr[indexPath.row];
+        self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
+    }else if (_type == SBListTypeLocal) {
+        
+        NSDictionary * dict = self.carArr[indexPath.row];
         self.callBlock(dict[@"banhezhanminchen"], dict[@"departid"]);
     }
     else {
@@ -144,5 +154,12 @@
     }
     return _jsyyArr;
 }
+-(NSArray *)carArr {
+    if (_carArr == nil) {
+        _carArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Car_local.plist" ofType:nil]];
+    }
+    return _carArr;
+}
+
 
 @end

@@ -82,6 +82,7 @@
 		4261F42E1F98C89100B0706F /* Car_ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4261F42C1F98C89100B0706F /* Car_ResultCell.m */; };
 		4261F42F1F98C89100B0706F /* Car_ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4261F42D1F98C89100B0706F /* Car_ResultCell.xib */; };
 		42659F981FA1BFB700B05DFA /* Car_localDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42659F971FA1BFB700B05DFA /* Car_localDetailController.m */; };
+		427388551FA6B66F008844AB /* Car_local.plist in Resources */ = {isa = PBXBuildFile; fileRef = 427388541FA6B66F008844AB /* Car_local.plist */; };
 		4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */; };
 		42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886ED1EDFEBBC0010B053 /* TP_Controller.m */; };
 		42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A886F01EDFEBBC0010B053 /* TP_CL_Cell.m */; };
@@ -752,6 +753,7 @@
 		4261F42D1F98C89100B0706F /* Car_ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Car_ResultCell.xib; sourceTree = "<group>"; };
 		42659F961FA1BFB700B05DFA /* Car_localDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car_localDetailController.h; sourceTree = "<group>"; };
 		42659F971FA1BFB700B05DFA /* Car_localDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car_localDetailController.m; sourceTree = "<group>"; };
+		427388541FA6B66F008844AB /* Car_local.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Car_local.plist; sourceTree = "<group>"; };
 		4285E7981EF9303D00932F97 /* LLQ_MXE_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLQ_MXE_Controller.h; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.h"; sourceTree = SOURCE_ROOT; };
 		4285E7991EF9303D00932F97 /* LLQ_MXE_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLQ_MXE_Controller.m; path = "Classes/Business/沥青-试验室/Controller/LLQ_MXE_Controller.m"; sourceTree = SOURCE_ROOT; };
 		42A886EC1EDFEBBC0010B053 /* TP_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TP_Controller.h; sourceTree = "<group>"; };
@@ -4093,6 +4095,7 @@
 		D200641A1DFF86800021E293 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				427388541FA6B66F008844AB /* Car_local.plist */,
 				4261F3791F973F3E00B0706F /* rejection.plist */,
 				4261F37A1F973F3E00B0706F /* restul.plist */,
 				42B9C2271F95D98D000706FA /* stutas.plist */,
@@ -5056,6 +5059,7 @@
 				42AC716A1E30C393007D8F57 /* DayQueryTableViewCell.xib in Resources */,
 				D20064811DFF86800021E293 /* HNT_TJFX_TxtView.xib in Resources */,
 				D235E3031E84A9B000EE4459 /* SW_LSSJ_Detail_HeadCell.xib in Resources */,
+				427388551FA6B66F008844AB /* Car_local.plist in Resources */,
 				42AC71671E30C393007D8F57 /* DayDetailsCell.xib in Resources */,
 				8CBD72E81E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.xib in Resources */,
 				42A887351EDFEBBC0010B053 /* TP_TP_Controller.xib in Resources */,

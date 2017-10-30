@@ -89,6 +89,16 @@
     [self.view  addGestureRecognizer:pan];
     //FuncLog;
 }
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    // 输出点击的view的类名
+//    NSLog(@"%@", NSStringFromClass([touch.view class]));
+    // 若为UITableViewCellContentView（即点击了tableViewCell），则不截获Touch事件_UITableViewCellActionButton
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UIView"]) {
+        return NO;
+    }
+    return  YES;
+}
 // 和抽屉有关
 -(DrawerController *)drawer{
     if (!_drawer) {

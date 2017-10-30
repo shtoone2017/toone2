@@ -170,7 +170,7 @@
 }
 
 #pragma mark - 上传图片
--(void)chop:(UIImage *)img add:(NSString *)str{
+-(void)chop:(UIImage *)img add:(NSString *)str :(MBProgressHUD *)hud{
     __block NSDictionary *dic;
     NSString *urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
     NSData *data =[Tools compressOriginalImage:img toMaxDataSizeKBytes:100];
@@ -190,7 +190,10 @@
             [SVProgressHUD showImage:nil status:@"请重新提交照片"];
         }
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"请求超时";
+        [hud hideAnimated:YES afterDelay:2.0];
+//        NSLog(@"%@",error);
     }];
 }
 
@@ -222,11 +225,15 @@
             NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 1.0f);
             NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
             model.QS_img = imgStr;
+            model.orderStatus = @"签收";
+            model.outsideStatus = @"未提交";
+            [[Singleton shareSingleton] insertData:model];
             
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
-            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
+//            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
+            [weakSelf chop:_cell1.qsImg.image add:@"qsImg" :hud];
             self.imgBlock = ^(NSDictionary *iconDic) {
                 dicQs = iconDic;
                 NSString *urlSting = @"http://61.237.239.105:18190/FCDService/FCDService.asmx/UploadQSXX";
@@ -245,12 +252,16 @@
                 [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                     if ([json isKindOfClass:[NSDictionary class]]) {
                         if ([json[@"code"] integerValue] == 1) {
-                            [[Singleton shareSingleton] insertData:model];
+                            model.orderStatus = @"签收";
+                            model.outsideStatus = @"签收";
+                            [[Singleton shareSingleton] insertData:model]
+                            ;
                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                                 UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
                             });
                         }else {
+                            model.orderStatus = @"签收";
                             model.outsideStatus = @"未提交";
                             [[Singleton shareSingleton] insertData:model];
                             hud.mode = MBProgressHUDModeText;
@@ -259,6 +270,7 @@
                         [hud hideAnimated:YES afterDelay:2.0];
                     }
                 } failure:^(NSError *error) {
+                    model.orderStatus = @"签收";
                     model.outsideStatus = @"未提交";
                     [[Singleton shareSingleton] insertData:model];
                     hud.mode = MBProgressHUDModeText;
@@ -291,18 +303,22 @@
             model.JSYYLX = _submitCell.jsyylx;
             model.JSBZ = _submitCell.bzTf.text;
             model.orderStatus = _submitCell.status;
-            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 1.0f);
+            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
             NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
             model.QS_img = imgStr;
-            NSData *data2 = UIImageJPEGRepresentation(_cell2.jsimageView.image, 1.0f);
+            NSData *data2 = UIImageJPEGRepresentation(_cell2.jsimageView.image, 0.5f);
             NSString *imgStr2 = [data2 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
             model.JS_img = imgStr2;
+            model.orderStatus = @"拒收";
+            model.outsideStatus = @"未提交";
+            [[Singleton shareSingleton] insertData:model];
             
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
-            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];//第一张
-//            [weakSelf chop:_cell2.jsimageView.image add:@"jsImg"];
+//            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
+//                        [weakSelf chop:_cell2.jsimageView.image add:@"jsImg"];
+            [weakSelf chop:_cell1.qsImg.image add:@"qsImg" :hud];//第一张
             self.imgBlock = ^(NSDictionary *img) {
                 __block NSDictionary *dicIcon;
                 NSString *urlString = @"http://61.237.239.105:18190/FCDService/FilesUpload.asmx/FileUpload";
@@ -335,12 +351,15 @@
                         [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                             if ([json isKindOfClass:[NSDictionary class]]) {
                                 if ([json[@"code"] integerValue] == 1) {
+                                    model.orderStatus = @"拒收";
+                                    model.outsideStatus = @"拒收";
                                     [[Singleton shareSingleton] insertData:model];
                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                                         UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                                         [weakSelf.navigationController popToViewController:vc animated:YES];
                                     });
                                 }else {
+                                    model.orderStatus = @"拒收";
                                     model.outsideStatus = @"未提交";
                                     [[Singleton shareSingleton] insertData:model];
                                     hud.mode = MBProgressHUDModeText;
@@ -349,6 +368,7 @@
                                 [hud hideAnimated:YES afterDelay:2.0];
                             }
                         } failure:^(NSError *error) {
+                            model.orderStatus = @"拒收";
                             model.outsideStatus = @"未提交";
                             [[Singleton shareSingleton] insertData:model];
                             hud.mode = MBProgressHUDModeText;

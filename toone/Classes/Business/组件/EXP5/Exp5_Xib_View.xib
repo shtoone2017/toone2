@@ -185,11 +185,11 @@
                 <constraint firstAttribute="trailing" secondItem="fwz-bz-nUW" secondAttribute="trailing" constant="20" id="Rah-JU-dW7"/>
                 <constraint firstItem="KK1-QP-yjV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Tl4-6N-DJG"/>
                 <constraint firstItem="CGk-kH-2JP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VQt-1J-oyR"/>
-                <constraint firstItem="XjA-kQ-hua" firstAttribute="top" secondItem="KK1-QP-yjV" secondAttribute="bottom" constant="10" id="XYW-J6-dsq"/>
                 <constraint firstItem="CGk-kH-2JP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="d7p-s8-4ye"/>
                 <constraint firstAttribute="trailing" secondItem="XjA-kQ-hua" secondAttribute="trailing" constant="20" id="di7-Hn-FNS"/>
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="top" secondItem="CGk-kH-2JP" secondAttribute="bottom" id="dzh-NR-EmT"/>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwd-HD-Qzb"/>
+                <constraint firstItem="XjA-kQ-hua" firstAttribute="top" secondItem="CGk-kH-2JP" secondAttribute="bottom" constant="90" id="hLX-8c-H2n"/>
                 <constraint firstAttribute="trailing" secondItem="KK1-QP-yjV" secondAttribute="trailing" constant="20" id="yLz-EC-CXw"/>
                 <constraint firstItem="XjA-kQ-hua" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="zdL-HW-1sA"/>
             </constraints>
@@ -197,10 +197,13 @@
             <connections>
                 <outlet property="cancelButton" destination="vjO-AD-idK" id="UeD-e5-syH"/>
                 <outlet property="endTimeButton" destination="o7W-2d-q6J" id="GfA-c9-xQc"/>
+                <outlet property="endView" destination="KK1-QP-yjV" id="ajB-Ui-wRU"/>
                 <outlet property="okButton" destination="cVs-dD-c0D" id="l4Q-Tp-vbd"/>
                 <outlet property="sbButton" destination="5bK-95-J1A" id="b6Q-cE-yPp"/>
                 <outlet property="sbLabel" destination="ohT-xP-w2s" id="b8Y-82-4Ij"/>
                 <outlet property="startTimeButton" destination="wyS-R0-S0o" id="5fb-gU-tKk"/>
+                <outlet property="startView" destination="fwz-bz-nUW" id="ZLI-eA-0Cz"/>
+                <outlet property="topView" destination="hLX-8c-H2n" id="EvO-54-beB"/>
             </connections>
             <point key="canvasLocation" x="85.5" y="-511"/>
         </view>

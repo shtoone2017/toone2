@@ -16,4 +16,5 @@ typedef void(^ExpBlock_t) (ExpButtonType,id,id);
 @property (nonatomic,copy) ExpBlock_t expBlock;
 @property (nonatomic, copy) NSString *stutas;
 
+-(void)loadHidden;
 @end
