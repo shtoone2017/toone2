@@ -15,6 +15,7 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 
+
 @interface Car_ScanController ()
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (nonatomic, strong) AMapLocationManager *locationManager;

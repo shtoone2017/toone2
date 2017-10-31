@@ -23,9 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"运输单再编辑";
+    if ([_Headmodel.outsideStatus isEqualToString:@"未提交"]) {
+        self.title = @"未提交编辑";
+    }else if ([_Headmodel.outsideStatus isEqualToString:@"签收"]) {
+        self.title = @"签收详情";
+    }else if ([_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
+        self.title = @"拒收详情";
+    }
     [self loadUI];
-
 }
 
 -(void)loadUI{
@@ -41,7 +46,11 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    if ([_Headmodel.outsideStatus isEqualToString:@"签收"]) {
+        return 2;
+    }else {
+        return 3;
+    }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -55,9 +64,17 @@
     return 0.0;
 }
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    switch (section) {
-        case 0:return @"基本信息";
-        case 1:return @"提交照片";
+    if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
+        switch (section) {
+            case 0:return @"基本信息";
+            case 1:return @"签收照片";
+            case 2:return @"拒收照片";
+        }
+    }else {
+        switch (section) {
+            case 0:return @"基本信息";
+            case 1:return @"提交照片";
+        }
     }
     return nil;
 }
@@ -67,6 +84,9 @@
         self.submitCell = cell;
         Car_ScanModel *model = self.Headmodel;
         [cell setData:model :nil];
+        if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
+            [cell didDetailCell];
+        }
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -76,6 +96,9 @@
         NSData *ImageData = [[NSData alloc] initWithBase64EncodedString:_Headmodel.QS_img options:NSDataBase64DecodingIgnoreUnknownCharacters];
         UIImage *Image = [UIImage imageWithData:ImageData];
         cell.qsImg.image = Image;
+        if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
+            cell.qsImgBut.userInteractionEnabled = NO;
+        }
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -89,6 +112,9 @@
         }
         cell.hiddeStr = _Headmodel.outsideStatus;
         [cell.submitBut addTarget:self action:@selector(loadIcon:) forControlEvents:UIControlEventTouchUpInside];
+        if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
+            cell.IconBut.userInteractionEnabled = NO;
+        }
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -177,7 +203,7 @@
                             model.outsideStatus = @"签收";
                             [[Singleton shareSingleton] insertData:model];
                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                                UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
+                                UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
                             });
                         }else {
@@ -263,7 +289,7 @@
                                     model.outsideStatus = @"拒收";
                                     [[Singleton shareSingleton] insertData:model];
                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                                        UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
+                                        UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
                                         [weakSelf.navigationController popToViewController:vc animated:YES];
                                     });
                                 }else {

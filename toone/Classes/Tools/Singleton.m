@@ -96,8 +96,8 @@ static  Singleton *_instance;
     [self getDatabaseFile];
     FMDatabase *fmdb = [FMDatabase databaseWithPath:DBPath];
     NSString *str = fmdb.databasePath;
-    
-    NSArray *tempArr = [self queryDataWithKeyStr:@"JZLBH" valueStr:model.JZLBH];
+    NSLog(@"DatabaseURL--------%@",str);
+    NSArray *tempArr = [self queryDataWithKeyStr:@"FCDBH" valueStr:model.FCDBH];
     if (tempArr.count > 0)
     {
         //该单子已存在,删除
@@ -133,7 +133,7 @@ static  Singleton *_instance;
     FMDatabase *fmdb = [FMDatabase databaseWithPath:DBPath];
     if ([fmdb open])
     {
-        if ([fmdb executeUpdate:@"delete from orderTable where JZLBH = ?",model.JZLBH])
+        if ([fmdb executeUpdate:@"delete from orderTable where FCDBH = ?",model.FCDBH])
         {
             NSLog(@"删除数据成功");
             [fmdb close];
@@ -214,8 +214,9 @@ static  Singleton *_instance;
     [self getDatabaseFile];
     NSMutableArray *dataArr = [NSMutableArray array];
     FMDatabase *fmdb = [FMDatabase databaseWithPath:DBPath];
-    
-    NSString *sqlStr = [NSString stringWithFormat:@"select * from orderTable where %@ like %@",keyStr,valueStr];
+    NSString *str = fmdb.databasePath;
+    NSLog(@"DatabaseURL--------%@",str);
+    NSString *sqlStr = [NSString stringWithFormat:@"select * from orderTable where %@ like '%@'",keyStr,valueStr];
     
     if ([fmdb open])
     {
