@@ -29,10 +29,10 @@
 }
 
 -(void)loadUI {
-    UIButton * btn = [UIButton img_20WithName:@"white_SX"];
-    btn.tag  = 2;
-    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+//    UIButton * btn = [UIButton img_20WithName:@"white_SX"];
+//    btn.tag  = 2;
+//    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
     btn3.tag  = 3;
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -64,14 +64,15 @@
     [self.tb.mj_footer endRefreshing];
     [self.tb.mj_footer endRefreshingWithNoMoreData];
 }
--(void)loadQuerData:(NSString *)str {
-    NSArray *arr = [[Singleton shareSingleton] queryDataWithKeyStr:@"outsideStatus" valueStr:str];
-    self.datas = arr;
-    [self.tb reloadData];
-    [self.tb.mj_header endRefreshing];
-    [self.tb.mj_footer endRefreshing];
-    [self.tb.mj_footer endRefreshingWithNoMoreData];
-}
+
+//-(void)loadQuerData:(NSString *)str {
+//    NSArray *arr = [[Singleton shareSingleton] queryDataWithKeyStr:@"outsideStatus" valueStr:str];
+//    self.datas = arr;
+//    [self.tb reloadData];
+//    [self.tb.mj_header endRefreshing];
+//    [self.tb.mj_footer endRefreshing];
+//    [self.tb.mj_footer endRefreshingWithNoMoreData];
+//}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -140,13 +141,12 @@
                 }
                 if (type == ExpButtonTypeChoiceSBButton) {
                     UIButton * btn = (UIButton*)obj1;
-                    __weak typeof(self) weakSelf = self;
+//                    __weak typeof(self) weakSelf = self;
                     HNT_BHZ_SB_Controller *vc = [[HNT_BHZ_SB_Controller alloc] init];
                     vc.type = SBListTypeLocal;
                     vc.callBlock = ^(NSString *banhezhanminchen, NSString *departid) {
                         [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
-//                        weakSelf.status = departid;
-                        [weakSelf loadQuerData:banhezhanminchen];
+//                        [weakSelf loadQuerData:banhezhanminchen];
                     };
                     [self.navigationController pushViewController:vc animated:YES];
                 }
@@ -162,6 +162,20 @@
             FuncLog;
             break;
     }
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        [[UserDefaultsSetting_SW shareSetting] addObserver:self forKeyPath:@"carLoad" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self loadData];
+}
+-(void)dealloc{
+    [[UserDefaultsSetting_SW shareSetting] removeObserver:self forKeyPath:@"carLoad"];
+    FuncLog;
 }
 
 @end

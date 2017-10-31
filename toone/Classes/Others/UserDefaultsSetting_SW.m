@@ -48,6 +48,7 @@ static UserDefaultsSetting_SW * setting = nil;
 //车辆运输存贮数据
     setting.Token = [defaults objectForKey:@"TokenKey"];
     setting.Jgdm = [defaults objectForKey:@"JgdmKey"];
+    setting.carLoad = [defaults objectForKey:@"carLoadKey"];
     
 }
 -(void)saveToSandbox{
@@ -76,6 +77,7 @@ static UserDefaultsSetting_SW * setting = nil;
 //车辆运输存贮数据
     [defaults setObject:self.Token   forKey:@"TokenKey"];
     [defaults setObject:self.Jgdm   forKey:@"JgdmKey"];
+    [defaults setObject:self.carLoad   forKey:@"carLoadKey"];
     
     [defaults synchronize];
 }

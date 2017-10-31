@@ -239,10 +239,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lz-bR-2se" userLabel="容器1">
-                                <rect key="frame" x="270" y="-30" width="80" height="70"/>
+                                <rect key="frame" x="260" y="-30" width="100" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未处置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xca-3r-eUL">
-                                        <rect key="frame" x="0.0" y="50" width="80" height="20"/>
+                                        <rect key="frame" x="0.0" y="50" width="100" height="20"/>
                                         <color key="backgroundColor" red="1" green="0.77287463339999996" blue="0.33795529590000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Q6E-h8-ktR"/>
@@ -258,7 +258,7 @@
                                     <constraint firstAttribute="trailing" secondItem="xca-3r-eUL" secondAttribute="trailing" id="ILN-bb-aKm"/>
                                     <constraint firstAttribute="height" constant="70" id="Mp3-Ix-sq2"/>
                                     <constraint firstAttribute="bottom" secondItem="xca-3r-eUL" secondAttribute="bottom" id="VPK-oR-wtm"/>
-                                    <constraint firstAttribute="width" constant="80" id="h8L-aL-H8C"/>
+                                    <constraint firstAttribute="width" constant="100" id="h8L-aL-H8C"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qt0-Om-U0W" userLabel="容器2">
@@ -309,7 +309,7 @@
                             <constraint firstAttribute="trailing" secondItem="cRg-3R-dNC" secondAttribute="trailing" id="pgq-3N-6Md"/>
                             <constraint firstItem="sEm-FP-4um" firstAttribute="leading" secondItem="iHt-W7-7lh" secondAttribute="leading" id="pkW-Q2-7xQ"/>
                             <constraint firstItem="vSb-Dv-pP3" firstAttribute="leading" secondItem="iHt-W7-7lh" secondAttribute="leading" id="tDH-6E-bKu"/>
-                            <constraint firstAttribute="trailing" secondItem="0Lz-bR-2se" secondAttribute="trailing" constant="-30" id="vIe-PU-rUl"/>
+                            <constraint firstAttribute="trailing" secondItem="0Lz-bR-2se" secondAttribute="trailing" constant="-40" id="vIe-PU-rUl"/>
                             <constraint firstItem="uM0-qD-0UT" firstAttribute="leading" secondItem="iHt-W7-7lh" secondAttribute="leading" id="yuR-7w-CH7"/>
                         </constraints>
                     </view>

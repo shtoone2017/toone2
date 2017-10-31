@@ -23,13 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([_Headmodel.outsideStatus isEqualToString:@"未提交"]) {
+//    if ([_Headmodel.outsideStatus isEqualToString:@"未提交"]) {
         self.title = @"未提交编辑";
-    }else if ([_Headmodel.outsideStatus isEqualToString:@"签收"]) {
-        self.title = @"签收详情";
-    }else if ([_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
-        self.title = @"拒收详情";
-    }
+//    }else if ([_Headmodel.outsideStatus isEqualToString:@"签收"]) {
+//        self.title = @"签收详情";
+//    }else if ([_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
+//        self.title = @"拒收详情";
+//    }
     [self loadUI];
 }
 
@@ -84,9 +84,7 @@
         self.submitCell = cell;
         Car_ScanModel *model = self.Headmodel;
         [cell setData:model :nil];
-        if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
-            [cell didDetailCell];
-        }
+        [cell didDetailCell];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -96,9 +94,7 @@
         NSData *ImageData = [[NSData alloc] initWithBase64EncodedString:_Headmodel.QS_img options:NSDataBase64DecodingIgnoreUnknownCharacters];
         UIImage *Image = [UIImage imageWithData:ImageData];
         cell.qsImg.image = Image;
-        if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
-            cell.qsImgBut.userInteractionEnabled = NO;
-        }
+        cell.qsImgBut.userInteractionEnabled = NO;
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -112,9 +108,7 @@
         }
         cell.hiddeStr = _Headmodel.outsideStatus;
         [cell.submitBut addTarget:self action:@selector(loadIcon:) forControlEvents:UIControlEventTouchUpInside];
-        if ([_Headmodel.outsideStatus isEqualToString:@"签收"] || [_Headmodel.outsideStatus isEqualToString:@"拒收"]) {
-            cell.IconBut.userInteractionEnabled = NO;
-        }
+        cell.IconBut.userInteractionEnabled = NO;
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }
@@ -170,16 +164,15 @@
         }else {
             Car_ScanModel *model = [[Car_ScanModel alloc] init];
             model = _Headmodel;
-            model.QSFL = _submitCell.qsflTf.text;
-            model.orderStatus = _submitCell.status;
-            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
-            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-            model.QS_img = imgStr;
+//            model.QSFL = _submitCell.qsflTf.text;
+//            model.orderStatus = _submitCell.status;
+//            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
+//            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//            model.QS_img = imgStr;
             
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
             hud.contentColor = [UIColor colorWithRed:0.f green:0.6f blue:0.7f alpha:1.f];
-//            [weakSelf chop:_cell1.qsImg.image add:@"qsImg"];
             [weakSelf chop:_cell1.qsImg.image add:@"qsImg" :hud];
             self.imgBlock = ^(NSDictionary *iconDic) {
                 dicQs = iconDic;
@@ -199,10 +192,9 @@
                 [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                     if ([json isKindOfClass:[NSDictionary class]]) {
                         if ([json[@"code"] integerValue] == 1) {
-                            model.orderStatus = @"签收";
-                            model.outsideStatus = @"签收";
-                            [[Singleton shareSingleton] insertData:model];
+                            [[Singleton shareSingleton] deleteData:model];
                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                                [UserDefaultsSetting_SW shareSetting].carLoad = [NSString stringWithFormat:@"%d",arc4random()%1000];
                                 UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
                                 [weakSelf.navigationController popToViewController:vc animated:YES];
                             });
@@ -237,17 +229,17 @@
             //
             Car_ScanModel *model = [[Car_ScanModel alloc] init];
             model = _Headmodel;
-            model.QSFL = _submitCell.qsflTf.text;
-            model.JSYY = _submitCell.jsyy;
-            model.JSYYLX = _submitCell.jsyylx;
-            model.JSBZ = _submitCell.bzTf.text;
-            model.orderStatus = _submitCell.status;
-            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
-            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-            model.QS_img = imgStr;
-            NSData *data2 = UIImageJPEGRepresentation(_cell2.jsimageView.image, 0.5f);
-            NSString *imgStr2 = [data2 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-            model.JS_img = imgStr2;
+//            model.QSFL = _submitCell.qsflTf.text;
+//            model.JSYY = _submitCell.jsyy;
+//            model.JSYYLX = _submitCell.jsyylx;
+//            model.JSBZ = _submitCell.bzTf.text;
+//            model.orderStatus = _submitCell.status;
+//            NSData *data = UIImageJPEGRepresentation(_cell1.qsImg.image, 0.5f);
+//            NSString *imgStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//            model.QS_img = imgStr;
+//            NSData *data2 = UIImageJPEGRepresentation(_cell2.jsimageView.image, 0.5f);
+//            NSString *imgStr2 = [data2 base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//            model.JS_img = imgStr2;
             
             hud.mode = MBProgressHUDModeDeterminate;
             hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
@@ -285,10 +277,9 @@
                         [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlSting parameter:dict success:^(id json) {
                             if ([json isKindOfClass:[NSDictionary class]]) {
                                 if ([json[@"code"] integerValue] == 1) {
-                                    model.orderStatus = @"拒收";
-                                    model.outsideStatus = @"拒收";
-                                    [[Singleton shareSingleton] insertData:model];
+                                    [[Singleton shareSingleton] deleteData:model];
                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                                        [UserDefaultsSetting_SW shareSetting].carLoad = [NSString stringWithFormat:@"%d",arc4random()%1000];
                                         UIViewController * vc = weakSelf.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
                                         [weakSelf.navigationController popToViewController:vc animated:YES];
                                     });

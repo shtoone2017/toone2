@@ -38,6 +38,7 @@
 @property (nonatomic, copy) NSString *Token;
 @property (nonatomic, copy) NSString *Jgdm;//用户所属拌和站编码
 
+@property (nonatomic,copy) NSString * carLoad;//随机
 
 //获取一个随机种子
 @property (nonatomic,copy) NSString * randomSeed;

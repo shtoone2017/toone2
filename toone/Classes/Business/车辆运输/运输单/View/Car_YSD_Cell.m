@@ -75,7 +75,7 @@
     _user_Label.text = localModel.FCR;
     
     _container1_label.text = localModel.outsideStatus;
-    _container1_label.backgroundColor = [UIColor yellowGreenColor];
+    _container1_label.backgroundColor = [UIColor pastelPurpleColor];
 }
 
 
