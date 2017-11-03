@@ -23,4 +23,6 @@ typedef NS_ENUM(NSInteger,NodeType) {
 
 @property (nonatomic,assign) NSInteger type;
 
+@property (nonatomic, copy) NSString *typeStr;//后台数据重复使用区分分部分项
+
 @end

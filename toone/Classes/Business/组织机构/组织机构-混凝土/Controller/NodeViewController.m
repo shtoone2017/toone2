@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _typeStr = @"";
     self.view.backgroundColor = [UIColor whiteColor];
     if (_type == NodeTypeCL)
     {
@@ -38,6 +39,7 @@
     if (_type == NodeTypeFBFX)//分部分项
     {
         self.navigationItem.title = @"分部分项";
+        _typeStr = @"1";
         [self initWithFbfx];
     }
      if(_type == NodeTypeZZJG)
@@ -176,10 +178,13 @@
         }
         Node *node = _channs[i];
         node.depth = level;
-        if (!node.depth) {
+        if (_type == NodeTypeFBFX) {//数据有误使用
             node.expand = true;
+        }else {
+            if (!node.depth) {//正常
+                node.expand = true;
+            }
         }
-        
     }
     for (int i = 0; i < self.channs.count; i++) {
         if ([[self.channs[i] parentId]  isEqual: @""] || ![self.channs[i] parentId]) {
@@ -195,7 +200,7 @@
     }
     
     
-    TreeTableView *tableview = [[TreeTableView alloc] initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) withData:_channArr];
+    TreeTableView *tableview = [[TreeTableView alloc] initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-100) withData:_channArr :_typeStr];
     
     tableview.backgroundColor = [UIColor clearColor];
     tableview.bounces = NO;

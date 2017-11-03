@@ -22,12 +22,13 @@
 
 @implementation TreeTableView
 
--(instancetype)initWithFrame:(CGRect)frame withData : (id )data{
+-(instancetype)initWithFrame:(CGRect)frame withData : (id )data :(NSString *)type{
     self = [super initWithFrame:frame style:UITableViewStyleGrouped];
     if (self) {
         self.dataSource = self;
         self.delegate = self;
         _data = data;
+        _type = type;
         _tempData = [self createTempData:data];
         [self registerNib:[UINib nibWithNibName:@"TreeTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"node_cell_id"];
     }
@@ -168,8 +169,10 @@
         }
         else
         {
-            [self resetAllDeletedCellStates:indexPathArray tableView:tableView];// 先恢复 将要 "删除" 掉cell 的状态
-            [self deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationAutomatic];
+            if (![_type isEqualToString:@"1"]) {//数据有误使用
+                [self resetAllDeletedCellStates:indexPathArray tableView:tableView];// 先恢复 将要 "删除" 掉cell 的状态
+                [self deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
         }
 
     }

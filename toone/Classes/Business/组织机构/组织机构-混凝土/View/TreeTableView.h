@@ -30,6 +30,8 @@ typedef void(^SendParaBlock)(NSString *name,NSString *identifier);
 
 @property (nonatomic,copy) SendParaBlock block;
 
--(instancetype)initWithFrame:(CGRect)frame withData : (id )data;
+-(instancetype)initWithFrame:(CGRect)frame withData : (id )data :(NSString *)type;
+
+@property (nonatomic, copy) NSString *type;//区分分部分项
 
 @end
