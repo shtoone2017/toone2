@@ -276,7 +276,15 @@
         cell.PHB_SJB_Label.text = model.shuijiaobi;
         cell.PHB_SJQD_Label.text = model.sjqd;
         cell.PHB_TIME_Label.text = model.createdatetime;
-        cell.PHB_STATE_Label.text = model.zhuangtai;
+        if ([model.zhuangtai isEqualToString:@"0"])
+        {
+            cell.PHB_STATE_Label.text = @"未提交";
+        }
+        else
+        {
+            cell.PHB_STATE_Label.text = @"已提交";
+        }
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
