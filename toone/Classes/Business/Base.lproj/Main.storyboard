@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,13 +20,13 @@
                         <color key="tintColor" red="1" green="0.1228944468" blue="0.26459482950000002" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="uAq-kk-dww" kind="relationship" relationship="viewControllers" id="DFx-us-9ka"/>
-                        <segue destination="loA-KU-Dd0" kind="relationship" relationship="viewControllers" id="hfW-ao-F0d"/>
+                        <segue destination="fhn-Kh-DR2" kind="relationship" relationship="viewControllers" id="9U7-0e-jYx"/>
+                        <segue destination="Qff-ou-NCO" kind="relationship" relationship="viewControllers" id="jUK-F4-Iax"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYl-q3-mLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3070" y="5857"/>
+            <point key="canvasLocation" x="-2062" y="238"/>
         </scene>
         <!--混凝土拌和站-->
         <scene sceneID="arX-PB-IVc">
@@ -2916,7 +2916,7 @@
                                             <rect key="frame" x="0.0" y="90" width="374" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z62-AA-9ee">
-                                                    <rect key="frame" x="45" y="0.0" width="120" height="40"/>
+                                                    <rect key="frame" x="44.5" y="0.0" width="120" height="40"/>
                                                     <color key="backgroundColor" red="0.61960784310000006" green="0.93333333330000001" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="o9S-s2-1CE"/>
@@ -2927,7 +2927,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yda-rL-Jm4">
-                                                    <rect key="frame" x="209" y="0.0" width="120" height="40"/>
+                                                    <rect key="frame" x="209.5" y="0.0" width="120" height="40"/>
                                                     <color key="backgroundColor" red="0.99215686270000003" green="0.98039215690000003" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="GD4-nw-Vx4"/>
@@ -2938,21 +2938,21 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-50-hGE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="44.5" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-TZ-jri">
-                                                    <rect key="frame" x="329" y="0.0" width="45" height="40"/>
+                                                    <rect key="frame" x="329.5" y="0.0" width="44.5" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCV-pp-3dc">
-                                                    <rect key="frame" x="165" y="0.0" width="44" height="40"/>
+                                                    <rect key="frame" x="164.5" y="0.0" width="45" height="40"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -4922,7 +4922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-HV-cQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="7252"/>
+            <point key="canvasLocation" x="1222" y="7216"/>
         </scene>
     </scenes>
     <resources>
