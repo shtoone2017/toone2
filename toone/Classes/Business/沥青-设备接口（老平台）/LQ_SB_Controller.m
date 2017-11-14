@@ -25,7 +25,7 @@
     if (!_datas) {
         [Tools showActivityToView:self.view];
         
-        NSString * urlString = machineList;
+        NSString * urlString = SBList;
         NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
                                 @"biaoshiid":self.conditonDict[@"biaoshiid"],
                                 @"machineType":self.conditonDict[@"machineType"],

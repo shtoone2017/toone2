@@ -31,9 +31,9 @@
 }
 -(void)setHeadMsg:(HNT_CBCZ_Detail_HeadMsg *)headMsg{
     _headMsg = headMsg;
-    self.shenpiren.text = headMsg.shenpiren;//  审批：审批人
-    self.jianliresult.text = headMsg.jianliresult ;//  审批：监理结果
-    self.jianlishenpi.text = headMsg.jianlishenpi ;//  审批：监理审批
+    self.shenpiren.text = headMsg.yezhuren;//  审批：审批人
+    self.jianliresult.text = headMsg.yezhuyijian ;//  审批：监理结果
+    self.jianlishenpi.text = headMsg.beizhu ;//  审批：监理审批
     self.confirmdate.text = headMsg.confirmdate ;//  审批：确认时间
     self.shenpidate.text = headMsg.shenpidate ;//  审批：审批时间
 }

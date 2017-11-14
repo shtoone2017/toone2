@@ -61,6 +61,7 @@
 #import "SGTextView.h"
 #import "DGActivityIndicatorView.h"
 #import "RATreeView.h"
+#import "AAGlobalMacro.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 #import "DWURunLoopWorkDistribution.h"
@@ -135,6 +136,8 @@
 #define AppLogin   FormatString(baseUrl,@"appHnt/AppLogin?userName=%@&userPwd=%@&OSType=3")
 //组织机构
 #define GDdepartTree   FormatString(baseUrl,@"appHnt/departTree?")
+//设备
+#define SBList   FormatString(baseUrl,@"appHnt/machineList?")
 //拌合站
 #define AppHntMain FormatString(baseUrl,@"appHnt/AppHntMain?")
 //生产数据列表

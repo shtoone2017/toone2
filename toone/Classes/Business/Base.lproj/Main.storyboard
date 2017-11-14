@@ -605,40 +605,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vzm-4Z-6tL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
-                                <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di7-rX-wdR">
-                                        <rect key="frame" x="323" y="0.0" width="52" height="35"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="52" id="9gP-av-hdi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <state key="normal" title="筛选" image="white_SX"/>
-                                        <connections>
-                                            <action selector="searchButtonClick:" destination="vre-lu-qAL" eventType="touchUpInside" id="crG-Fh-FSw"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRE-At-OpK" customClass="BBFlashCtntLabel">
-                                        <rect key="frame" x="3" y="0.0" width="318" height="35"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.27843137254901962" green="0.43137254901960786" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="di7-rX-wdR" firstAttribute="leading" secondItem="iRE-At-OpK" secondAttribute="trailing" constant="2" id="5ZF-U0-hYC"/>
-                                    <constraint firstAttribute="height" constant="35" id="8Ey-8L-uRl"/>
-                                    <constraint firstAttribute="bottom" secondItem="di7-rX-wdR" secondAttribute="bottom" id="Ahg-hV-6V7"/>
-                                    <constraint firstItem="iRE-At-OpK" firstAttribute="top" secondItem="Vzm-4Z-6tL" secondAttribute="top" id="CmL-pD-6tv"/>
-                                    <constraint firstItem="di7-rX-wdR" firstAttribute="top" secondItem="Vzm-4Z-6tL" secondAttribute="top" id="IVy-a7-lu5"/>
-                                    <constraint firstAttribute="trailing" secondItem="di7-rX-wdR" secondAttribute="trailing" id="YjG-Vb-e06"/>
-                                    <constraint firstItem="iRE-At-OpK" firstAttribute="leading" secondItem="Vzm-4Z-6tL" secondAttribute="leading" constant="3" id="dgj-Hv-joR"/>
-                                    <constraint firstAttribute="bottom" secondItem="iRE-At-OpK" secondAttribute="bottom" id="wkw-TN-Rmf"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ozi-vl-cB4">
-                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -649,19 +617,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ozi-vl-cB4" firstAttribute="top" secondItem="Vzm-4Z-6tL" secondAttribute="bottom" id="45h-T6-Hwd"/>
-                            <constraint firstAttribute="trailing" secondItem="Vzm-4Z-6tL" secondAttribute="trailing" id="9fC-Yy-ksg"/>
                             <constraint firstItem="tN6-s6-8ap" firstAttribute="top" secondItem="Ozi-vl-cB4" secondAttribute="bottom" id="DYn-zK-Ms9"/>
                             <constraint firstItem="Ozi-vl-cB4" firstAttribute="leading" secondItem="L75-Dr-cHy" secondAttribute="leading" id="Q4f-gV-cbN"/>
                             <constraint firstAttribute="trailing" secondItem="Ozi-vl-cB4" secondAttribute="trailing" id="Z4O-Qa-t43"/>
-                            <constraint firstItem="Vzm-4Z-6tL" firstAttribute="leading" secondItem="L75-Dr-cHy" secondAttribute="leading" id="g9j-in-GX4"/>
-                            <constraint firstItem="Vzm-4Z-6tL" firstAttribute="top" secondItem="L75-Dr-cHy" secondAttribute="top" constant="64" id="zft-u7-oiz"/>
+                            <constraint firstItem="Ozi-vl-cB4" firstAttribute="top" secondItem="zd1-Tm-6gb" secondAttribute="bottom" id="kLa-Hh-Ihh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="试验室" id="14h-yn-WhI"/>
                     <connections>
-                        <outlet property="containerView" destination="Vzm-4Z-6tL" id="fzi-GN-Bpl"/>
-                        <outlet property="departName_Label" destination="iRE-At-OpK" id="TdF-Rd-I8M"/>
                         <outlet property="tableView" destination="Ozi-vl-cB4" id="dEd-Y4-c55"/>
                         <segue destination="buc-tj-t80" kind="show" identifier="HNT_SYS_InnerController" id="4Lg-mJ-Com"/>
                         <segue destination="iHw-8o-W0V" kind="push" identifier="SW_ZZJG_Controller2" id="huJ-hq-5Ls"/>
@@ -3544,7 +3507,7 @@
         <!--Controller-->
         <scene sceneID="PKL-19-gtQ">
             <objects>
-                <viewController id="byI-bw-Xq5" customClass="HNT_BHZ_SB_Controller" sceneMemberID="viewController">
+                <viewController id="byI-bw-Xq5" customClass="LQ_SB_Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fI8-D0-lbM"/>
                         <viewControllerLayoutGuide type="bottom" id="1pv-WH-dNv"/>
@@ -4938,11 +4901,11 @@
         <image name="white_SX" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tCK-of-Mkh"/>
-        <segue reference="OFf-sM-NiC"/>
-        <segue reference="tGP-vX-aEz"/>
-        <segue reference="2qa-au-FyR"/>
-        <segue reference="eyg-Cx-bjM"/>
+        <segue reference="huJ-hq-5Ls"/>
         <segue reference="ogj-aY-kSm"/>
+        <segue reference="tCK-of-Mkh"/>
+        <segue reference="tGP-vX-aEz"/>
+        <segue reference="eyg-Cx-bjM"/>
+        <segue reference="2qa-au-FyR"/>
     </inferredMetricsTieBreakers>
 </document>

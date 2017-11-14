@@ -9,8 +9,10 @@
 #import "HNT_SCCX_Controller.h"
 #import "HNT_SCCX_Model.h"
 #import "HNT_SCCX_Cell.h"
-#import "HNT_BHZ_SB_Controller.h"
+//#import "HNT_BHZ_SB_Controller.h"
+#import "LQ_SB_Controller.h"
 #import "HNT_SCCX_DetailController.h"
+
 @interface HNT_SCCX_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -166,17 +168,19 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
-    if ([vc isKindOfClass:[HNT_BHZ_SB_Controller class]]) {
-        HNT_BHZ_SB_Controller * controller = vc;
+    if ([vc isKindOfClass:[LQ_SB_Controller class]]) {
+        LQ_SB_Controller * controller = vc;
         __weak UIButton * weakBtn = sender;
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
-//        controller.departId = self.departId;
+        controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
+                                    @"biaoshiid":self.conditonDict[@"biaoshiid"],
+                                    @"machineType":@"1",
+                                    };
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;
         };
-        
     }
     
     if ([vc isKindOfClass:[HNT_SCCX_DetailController class]]) {

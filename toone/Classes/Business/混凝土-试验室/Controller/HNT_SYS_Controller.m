@@ -12,13 +12,13 @@
 #import "HNT_SYS_Cell.h"
 #import "HNT_SYS_InnerController.h"
 #import "SW_ZZJG_Controller.h"
+#import "SYS_MAIN_Cell.h"
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,strong) NSMutableArray * datas;
-@property (nonatomic,strong)  SW_ZZJG_Data * condition;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-- (IBAction)searchButtonClick:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
+//@property (nonatomic,strong) NSMutableArray * datas;
+//@property (nonatomic,strong)  SW_ZZJG_Data * condition;
+//@property (weak, nonatomic) IBOutlet UIView *containerView;
+//@property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
 @end
 
 @implementation HNT_SYS_Controller
@@ -33,11 +33,11 @@
     FuncLog;
 }
 -(void)loadUI{
-    self.containerView.backgroundColor = BLUECOLOR;
-    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
-    btn.tag  = 2;
-    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+//    self.containerView.backgroundColor = BLUECOLOR;
+//    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
+//    btn.tag  = 2;
+//    [btn addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
     btn3.tag  = 3;
@@ -46,157 +46,44 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[HNT_SYS_Cell class] forCellReuseIdentifier:@"HNT_SYS_Cell"];
-    
-    self.tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    [self.tableView.mj_header beginRefreshing];
-}
--(void)loadData{
-    NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
-    NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
-    NSString * urlString = AppHntMain;
-    if (!self.condition|| [self.condition.name isEqualToString:@"组织机构"]) {
-        SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
-        condition.departType = [UserDefaultsSetting shareSetting].userType;
-        condition.biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
-        condition.shebeibianhao = @"";
-        self.condition = condition;
-    }
-    if (!self.condition.shebeibianhao) {
-        self.condition.shebeibianhao = @"";
-    }
-    NSDictionary * dict = @{@"departType":self.condition.departType,
-                            @"biaoshiid":self.condition.biaoshiid,
-                            @"startTime":startTimeStamp,
-                            @"endTime":endTimeStamp,
-                            @"shebeibianhao":self.condition.shebeibianhao
-                            };
-    __weak typeof(self)  weakSelf = self;
-    if(self.datas){
-        self.datas = nil;
-        [self.tableView reloadData];
-    }
-    
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
-        NSMutableArray * datas = [NSMutableArray array];
-        if ([json[@"success"] boolValue]) {
-            if ([json[@"data"] isKindOfClass:[NSArray class]]) {
-                
-                for (NSArray * subArray in json[@"data"]) {
-                    HNT_SYS_FrameModel * frameModel = [[HNT_SYS_FrameModel alloc] init];
-                    NSMutableArray * models = [NSMutableArray array];
-                    for (NSDictionary * dict in subArray) {
-                        HNT_SYS_Model * model = [HNT_SYS_Model modelWithDict:dict];
-                        [models addObject:model];
-                    }
-                    frameModel.models = models;
-                    [datas addObject:frameModel];
-                }
-                
-            }
-        }
-        weakSelf.datas = datas;
-        [weakSelf.tableView reloadData];
-        // 拿到当前的下拉刷新控件，结束刷新状态
-        [weakSelf.tableView.mj_header endRefreshing];
-    } failure:^(NSError *error) {
-        
-    }];
-}
-#pragma mark - Table view data source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
-    return frameModel.cellHeight;
 }
 
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 55;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HNT_SYS_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_SYS_Cell" forIndexPath:indexPath];
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
-    cell.frameModel = frameModel;
+    NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析"];
+    NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ"];
+    static NSString *cellId = @"CELLID";
+    SYS_MAIN_Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"SYS_MAIN_Cell" owner:self options:nil] firstObject];
+    }
+    cell.title.text = titleArr[indexPath.row];
+    cell.img.image = [UIImage imageNamed:imgArr[indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
-    HNT_SYS_Model * model = frameModel.models.firstObject;
-    [self performSegueWithIdentifier:@"HNT_SYS_InnerController" sender:model.userGroupId];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
+//    HNT_SYS_Model * model = frameModel.models.firstObject;
+//    [self performSegueWithIdentifier:@"HNT_SYS_InnerController" sender:model.userGroupId];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    id vc = segue.destinationViewController;
-    if ([vc isKindOfClass:[HNT_SYS_InnerController class]]) {
-        HNT_SYS_InnerController * controller = vc;
-        controller.userGroupId = (NSString*)sender;
-    }
-    if ([vc isKindOfClass:[SW_ZZJG_Controller class]]) {
-        SW_ZZJG_Controller * controller = vc;
-        __weak typeof(self) weakSelf = self;
-        controller.modelType = @"3,4";
-        controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
-            weakSelf.condition = data;
-            NSString * zjjg = FormatString(@"组织机构 : ", data.name);
-            weakSelf.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
-            weakSelf.departName_Label.textColor = [UIColor whiteColor];
-            weakSelf.departName_Label.font = [UIFont systemFontOfSize:12.0];
-            weakSelf.departName_Label.speed = BBFlashCtntSpeedSlow;
-            
-            [weakSelf loadData];
-        };
-    }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 150;
 }
 
-- (IBAction)searchButtonClick:(UIButton *)sender {
-    switch (sender.tag) {
-        case 1:{
-            sender.enabled = NO;
-            //1.
-           UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
-            backView.frame = CGRectMake(0, 64+35, Screen_w, Screen_h - 49 -64-35);
-            backView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-            backView.hidden = YES;
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-                backView.hidden = NO;
-            });
-            [self.view addSubview:backView];
-            
-            //2.
-            Exp1View * e = [[Exp1View alloc] init];
-            e.frame = CGRectMake(0, 64+35, Screen_w, 150);
-            __weak __typeof(self)  weakSelf = self;
-            e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
-                NSLog(@"%d",type);
-                if (type == ExpButtonTypeCancel) {
-                    sender.enabled = YES;
-                    [backView removeFromSuperview];
-                }
-                if (type == ExpButtonTypeOk) {
-                    sender.enabled = YES;
-                    [backView removeFromSuperview];
-                    //
-                    weakSelf.startTime = (NSString*)obj1;
-                    weakSelf.endTime = (NSString*)obj2;
-                    [weakSelf loadData];
-                    FuncLog;
-                }
-                if (type == ExpButtonTypeStartTimeButton || type == ExpButtonTypeEndTimeButton) {
-                    UIButton * btn = (UIButton*)obj1;
-                    [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
-                }
-            };
-            [self.view addSubview:e];
-            break;
-        }
-        case 3:{
-            [super pan];
-            break;
-        }
-        default:
-            FuncLog;//组织机构代码块
-            [self performSegueWithIdentifier:@"SW_ZZJG_Controller2" sender:nil];
-            break;
-    }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIImageView *headerImg = [UIImageView new];
+    headerImg.image = [UIImage imageNamed:@"SYS_Header_IMG2.jpg"];
+    return headerImg;
 }
+
 @end

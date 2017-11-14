@@ -36,7 +36,7 @@
     hud.mode = MBProgressHUDModeDeterminate;
     hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
     
-    NSString * urlString = FormatString(baseUrl, @"app.do?AppHntChaobiaoShenpi");
+    NSString * urlString = FormatString(baseUrl, @"appHnt/AppHntChaobiaoShenpi");
     NSDictionary * dic = @{@"jieguobianhao":self.bianhao,
                            @"jianliresult":self.txt1.text,
                            @"jianlishenpi":self.txt2.text,
@@ -46,18 +46,6 @@
                            };
     
     [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dic success:^(id json) {
-//        if ([json[@"success"] boolValue]){
-//            [Tools tip:@"提交成功,请刷新数据"];
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//                UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
-//                [self.navigationController popToViewController:vc animated:YES];
-//            });
-//        }else{
-//            [Tools tip:@"抱歉，提交失败"];
-//        }
-//    } failure:^(NSError *error) {
-//        [Tools tip:@"网络故障，提交失败"];
-//    }];
         if ([json[@"success"] boolValue]){
             hud.mode = MBProgressHUDModeText;
             hud.label.text = @"提交成功,请刷新数据";

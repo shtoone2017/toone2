@@ -131,10 +131,6 @@
                            };
     [self performSegueWithIdentifier:@"HNT_BHZ_InnerController" sender:dict];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-//     HNT_BHZ_Model * model = self.datas[indexPath.row];
-//    [self performSegueWithIdentifier:@"HNT_BHZ_InnerController" sender:model.departId];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;

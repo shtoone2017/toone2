@@ -43,8 +43,8 @@
 @property (nonatomic, copy) NSString *chaobiaoyuanyin;//沥青超标原因
 
 @property (nonatomic,copy) NSString *  confirmdate ;//  审批：确认时间
-@property (nonatomic,copy) NSString *  jianliresult ;//  审批：监理结果
-@property (nonatomic,copy) NSString *  jianlishenpi ;//  审批：监理审批
+@property (nonatomic,copy) NSString *  yezhuyijian ;//  审批：监理结果
+@property (nonatomic,copy) NSString *  beizhu ;//  审批：监理审批
 @property (nonatomic,copy) NSString *  shenpidate ;//  审批：审批时间
-@property (nonatomic,copy) NSString *  shenpiren ;//  审批：审批人
+@property (nonatomic,copy) NSString *  yezhuren ;//  审批：审批人
 @end

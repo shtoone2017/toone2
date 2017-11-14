@@ -126,7 +126,7 @@
             }
         }else if (indexPath.row == self.datas.count+2){
             if (EqualToString(self.shenhe, @"1")) {
-                return 220;
+                return 190;
             }else{
                 return 40;
             }
@@ -219,13 +219,11 @@
 }
 -(void)goto_chuzhi{
     HNT_CBCZ_Detail_ChuLi_Controller * vc = [[HNT_CBCZ_Detail_ChuLi_Controller alloc] init];
-    vc.SId = self.headMsg.SId;
     vc.bianhao = self.bianhao;
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)goto_shenpi{
     HNT_CBCZ_Detail_ShenPi_Controller * vc = [[HNT_CBCZ_Detail_ShenPi_Controller alloc] init];
-    vc.SId = self.headMsg.SId;
     vc.bianhao = self.bianhao;
     [self.navigationController pushViewController:vc animated:YES];
 }
