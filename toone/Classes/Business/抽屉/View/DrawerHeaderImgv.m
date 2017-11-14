@@ -34,7 +34,8 @@
     UILabel * nameLb = [[UILabel alloc] init];
     nameLb.frame = CGRectMake(0, 0, Screen_w, 20);
     nameLb.center = CGPointMake(headerBtn.center.x, CGRectGetMaxY(headerBtn.frame)+20);
-    NSString * acount = [UserDefaultsSetting_SW shareSetting].userFullName;
+//    NSString * acount = [UserDefaultsSetting_SW shareSetting].userFullName;
+    NSString * acount = [UserDefaultsSetting shareSetting].userFullName;
     nameLb.text = [NSString stringWithFormat:@"用户：%@",acount ?acount :@""];
     nameLb.textAlignment = NSTextAlignmentCenter;
     nameLb.font = [UIFont systemFontOfSize:14.0];

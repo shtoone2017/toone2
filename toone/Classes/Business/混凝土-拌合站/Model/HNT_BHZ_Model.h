@@ -36,6 +36,8 @@
 @property (nonatomic,copy) NSString * hczlv;//处置率
 //----
 @property (nonatomic,copy) NSString * departId;  //组织机构id
+@property (nonatomic, copy) NSString *bsId;
+
 /*
 
  剩余属性

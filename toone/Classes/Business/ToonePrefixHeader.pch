@@ -66,11 +66,9 @@
 #import "DWURunLoopWorkDistribution.h"
 
 //
-//#define baseUrl  @"http://192.168.1.181:8083/jbgsmss/"
-#define baseUrl  @"http://112.124.50.253:8082/gdyzmss/"
-//@"http://114.215.239.38:8082/yzgsmss/"
-//@"http://192.168.11.115:8080/jbgsmss/"
-//@"http://192.168.11.126:8081/jbgsmss/"
+//#define baseUrl  @"http://192.168.1.111:8888/zsfcsmss/"
+#define baseUrl  @"http://192.168.1.181:8083/zsfcsmss/"
+//#define baseUrl  @"http://112.124.50.253:8082/gdyzmss/"
 
 
 
@@ -131,7 +129,24 @@
 //沥青历史数据查询
 #define lqgallclList   FormatString(baseUrl,@"appLq/lqgallclList?")
 
+/****广东项目新增混凝土和试验室****/
+//----------------------------------------------------------------------------------------------------//
 
+#define AppLogin   FormatString(baseUrl,@"appHnt/AppLogin?userName=%@&userPwd=%@&OSType=3")
+//组织机构
+#define GDdepartTree   FormatString(baseUrl,@"appHnt/departTree?")
+//拌合站
+#define AppHntMain FormatString(baseUrl,@"appHnt/AppHntMain?")
+//生产数据列表
+#define SCCXList FormatString(baseUrl,@"appHnt/AppHntXiangxiList?")
+//生产数据详情
+#define SCCXDetail  FormatString(baseUrl,@"appHnt/AppHntXiangxiDetail?bianhao=%@")
+//材料核算
+#define CLHSList FormatString(baseUrl,@"appHnt/AppHntMaterial?")
+//超标处置列表
+#define CBCZList FormatString(baseUrl,@"appHnt/AppHntChaobiaoList?")
+//超标处置详情
+#define CBCZDetail  FormatString(baseUrl,@"appHnt/AppHntChaobiaoDetail?bianhao=%@")
 
 
 

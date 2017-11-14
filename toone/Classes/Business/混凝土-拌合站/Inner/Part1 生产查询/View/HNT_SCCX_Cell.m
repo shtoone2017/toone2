@@ -32,10 +32,10 @@
 }
 
 -(void)setModel:(HNT_SCCX_Model *)model{
-    self.chuliaoshijian_Label.text = model.chuliaoshijian;
-    self.banhezhanminchen_Label.text = model.banhezhanminchen;
-    self.gongchengmingcheng_Label.text = model.gongchengmingcheng;
-    self.jiaozuobuwei_Label.text = model.jiaozuobuwei;
+    self.chuliaoshijian_Label.text = model.shijian;
+    self.banhezhanminchen_Label.text = model.banhezhanmingchen;
+    self.gongchengmingcheng_Label.text = model.gcmc;
+    self.jiaozuobuwei_Label.text = model.jzbw;
     self.sigongdidian_Label.text = model.sigongdidian;
     self.qiangdudengji_Label.text = model.qiangdudengji;
     self.gujifangshu_Label.text = model.gujifangshu;

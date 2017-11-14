@@ -22,6 +22,7 @@
 
 //***************
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
+@property (nonatomic, copy) NSString *jiaozhubuwei;
 @end
 
 @implementation HNT_CLHS_Controller
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.shebeibianhao = @"";
+    self.jiaozhubuwei = @"";
     
     [self loadUi];
     [self loadData];
@@ -45,15 +47,19 @@
 -(void)loadData{
     //添加指示器
     [Tools showActivityToView:self.view];
-    
-    
-    NSString * departId = self.departId;
+    NSString * urlString = CLHSList;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = [NSString stringWithFormat:AppHntMaterial_4,departId,startTimeStamp,endTimeStamp,self.shebeibianhao];
-        NSLog(@"urlString = %@",urlString);
+    
+    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+                            @"endTime":endTimeStamp,
+                            @"startTime":startTimeStamp,
+                            @"shebeibianhao":self.shebeibianhao,
+                            @"jiaozhubuwei":self.jiaozhubuwei,
+                            };
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -194,7 +200,7 @@
         __weak UIButton * weakBtn = sender;
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
-        controller.departId = self.departId;
+//        controller.departId = self.departId;
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;

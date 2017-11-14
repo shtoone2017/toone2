@@ -23,10 +23,10 @@
 }
 -(void)loadData{
     [Tools showActivityToView:self.view];
-    NSString * urlString = departTree;
-    NSDictionary * dict = @{@"userType":[UserDefaultsSetting_SW shareSetting].userType,
-                            @"biaoshiid":[UserDefaultsSetting_SW shareSetting].biaoshi,
-                            @"modelType":self.modelType,
+    NSString * urlString = GDdepartTree;
+    NSDictionary * dict = @{@"userType":[UserDefaultsSetting shareSetting].userType,
+                            @"biaoshiid":[UserDefaultsSetting shareSetting].biaoshi?:@"",
+                            @"modelType":self.modelType?:@"",
                             };
     __weak typeof(self)  weakSelf = self;
     
@@ -35,7 +35,7 @@
         //业主：1  标段：2  项目部：3  拌合站：5
         if ([json[@"success"] boolValue]) {
             
-            if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"1"]) {
+            if ([[UserDefaultsSetting shareSetting].userType isEqualToString:@"1"]) {
                 if ([json[@"userGroup"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary *dict in json[@"userGroup"]) {
                         SW_ZZJG_Data * yz = [[SW_ZZJG_Data alloc] init];
@@ -107,7 +107,7 @@
                 }
                 
             }//1
-            if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"3"]) {
+            if ([[UserDefaultsSetting shareSetting].userType isEqualToString:@"3"]) {
                 if ([json[@"xmb"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"xmb"]) {
                         SW_ZZJG_Data * xmb = [[SW_ZZJG_Data alloc] init];
@@ -138,7 +138,7 @@
                 }
                 
             }//3
-            if ([[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"2"] || [[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"5"] || [[UserDefaultsSetting_SW shareSetting].userType isEqualToString:@"6"]) {
+            if ([[UserDefaultsSetting shareSetting].userType isEqualToString:@"2"] || [[UserDefaultsSetting shareSetting].userType isEqualToString:@"5"] || [[UserDefaultsSetting shareSetting].userType isEqualToString:@"6"]) {
                 if ([json[@"biaoduan"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json[@"biaoduan"]) {
                         SW_ZZJG_Data * biaoduan = [[SW_ZZJG_Data alloc] init];

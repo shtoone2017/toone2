@@ -30,7 +30,7 @@
 
 -(void)setHeadMsg:(HNT_CBCZ_Detail_HeadMsg *)headMsg{
     _headMsg = headMsg;
-    self.chulifangshi.text = headMsg.chulifangshi;//  处置：处理方式
+    self.chulifangshi.text = headMsg.chuzhifangshi;//  处置：处理方式
     self.chulijieguo.text = headMsg.chulijieguo;//  处置：处理结果
     self.chuliren.text = headMsg.chuzhiren;//  处置：处理人
     self.chulishijian.text = headMsg.chuzhishijian;

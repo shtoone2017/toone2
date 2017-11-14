@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HNT_BHZ_InnerController : UIViewController
-@property (nonatomic,copy) NSString * departId;
+@property (nonatomic,strong) NSDictionary * conditonDict;
 @end

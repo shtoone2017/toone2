@@ -26,4 +26,7 @@
 @property (nonatomic,copy) NSString *sigongdidian       ;// 施工地点
 @property (nonatomic,copy) NSString *waijiajipingzhong  ;// 外加剂品种
 @property (nonatomic,copy) NSString *xinxibianhao       ;// 信息编号
+
+@property (nonatomic, copy) NSString *bianhaoId;
+
 @end

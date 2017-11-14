@@ -56,7 +56,7 @@
         //添加指示器
         [Tools showActivityToView:self.view];
         
-        NSString * urlString = [NSString stringWithFormat:AppHntChaobiaoDetail_1,self.bianhao];
+        NSString * urlString = [NSString stringWithFormat:CBCZDetail,self.bianhao];
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
             NSMutableArray * datas = [NSMutableArray array];
@@ -220,11 +220,13 @@
 -(void)goto_chuzhi{
     HNT_CBCZ_Detail_ChuLi_Controller * vc = [[HNT_CBCZ_Detail_ChuLi_Controller alloc] init];
     vc.SId = self.headMsg.SId;
+    vc.bianhao = self.bianhao;
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)goto_shenpi{
     HNT_CBCZ_Detail_ShenPi_Controller * vc = [[HNT_CBCZ_Detail_ShenPi_Controller alloc] init];
     vc.SId = self.headMsg.SId;
+    vc.bianhao = self.bianhao;
     [self.navigationController pushViewController:vc animated:YES];
 }
 @end

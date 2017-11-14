@@ -10,4 +10,5 @@
 
 @interface HNT_CBCZ_Detail_ChuLi_Controller : UIViewController
 @property (nonatomic,copy) NSString *  SId;
+@property (nonatomic, copy) NSString *bianhao;
 @end

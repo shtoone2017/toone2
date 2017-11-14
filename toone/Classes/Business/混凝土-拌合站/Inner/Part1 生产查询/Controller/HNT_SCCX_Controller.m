@@ -22,6 +22,7 @@
 @property (nonatomic,copy) NSString * pageNo;//当前页数
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
+@property (nonatomic, copy) NSString *usePosition;//浇筑部位
 @end
 
 @implementation HNT_SCCX_Controller
@@ -29,7 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageNo = @"1";
-    self.maxPageItems = @"30";
+    self.maxPageItems = @"15";
+    self.usePosition = @"";
     self.shebeibianhao = @"";
     [self loadUI];
     [self loadData];
@@ -54,15 +56,22 @@
 }
 #pragma mark - 网络请求
 -(void)loadData{
-    
-    NSString * departId = self.departId;
+    NSString * urlString = SCCXList;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    //departId=%@&startTime=%@&endTime=%@&pageNo=%@&shebeibianhao=%@&maxPageItems=%@
-    NSString * urlString = [NSString stringWithFormat:AppHntXiangxiList_6,departId,startTimeStamp,endTimeStamp,self.pageNo,self.shebeibianhao,self.maxPageItems];
-    //    NSLog(@"urlString = %@",urlString);
+    
+    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+                            @"startTime":startTimeStamp,
+                            @"endTime":endTimeStamp,
+                            @"pageNo":self.pageNo,
+                            @"maxPageItems":self.maxPageItems,
+                            @"shebeibianhao":self.shebeibianhao,
+                            @"usePosition":self.usePosition,
+                            };
+    
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -105,7 +114,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      HNT_SCCX_Model * model = self.datas[indexPath.row];
     
-    [self performSegueWithIdentifier:@"HNT_SCCX_DetailController" sender:model.SId];
+    [self performSegueWithIdentifier:@"HNT_SCCX_DetailController" sender:model.bianhao];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
@@ -162,7 +171,7 @@
         __weak UIButton * weakBtn = sender;
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
-        controller.departId = self.departId;
+//        controller.departId = self.departId;
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;

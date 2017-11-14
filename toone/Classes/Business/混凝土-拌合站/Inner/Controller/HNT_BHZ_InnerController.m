@@ -21,12 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    
     self.index =1;
     self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_SCCX_Controller"];
     if ([self.vc isKindOfClass:[HNT_SCCX_Controller class]]) {
         HNT_SCCX_Controller * controller = (HNT_SCCX_Controller *)self.vc;
-        controller.departId = self.departId;
+        controller.conditonDict = self.conditonDict;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
     }
@@ -48,7 +47,7 @@
                     weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_SCCX_Controller"];
                     if ([weakSelf.vc isKindOfClass:[HNT_SCCX_Controller class]]) {
                         HNT_SCCX_Controller * controller = (HNT_SCCX_Controller *)weakSelf.vc;
-                        controller.departId = weakSelf.departId;
+                        controller.conditonDict = self.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }
@@ -64,7 +63,7 @@
                     weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_CBCZ_Controller"];
                     if ([weakSelf.vc isKindOfClass:[HNT_CBCZ_Controller class]]) {
                         HNT_CBCZ_Controller * controller = (HNT_CBCZ_Controller *)weakSelf.vc;
-                        controller.departId = weakSelf.departId;
+                        controller.conditonDict = self.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }
@@ -80,7 +79,7 @@
                     weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_CLHS_Controller"];
                     if ([weakSelf.vc isKindOfClass:[HNT_CLHS_Controller class]]) {
                         HNT_CLHS_Controller * controller = (HNT_CLHS_Controller *)weakSelf.vc;
-                        controller.departId = weakSelf.departId;
+                        controller.conditonDict = self.conditonDict;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }

@@ -10,26 +10,18 @@
 #import "HNT_BHZ_Controller.h"
 #import "HNT_BHZ_Model.h"
 #import "HNT_BHZ_Cell.h"
-#import "NodeViewController.h"
+#import "SW_ZZJG_Controller.h"
 @interface HNT_BHZ_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-
+@property (nonatomic,strong)  SW_ZZJG_Data * condition;
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
 @end
 
 @implementation HNT_BHZ_Controller
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
-    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
-    self.departName_Label.textColor = [UIColor whiteColor];
-    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
-    self.departName_Label.speed = BBFlashCtntSpeedSlow;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addPanGestureRecognizer];
@@ -63,10 +55,30 @@
 -(void)loadData{
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
-    NSString * urlString = [NSString stringWithFormat:AppHntMain_3,userGroupId,startTimeStamp,endTimeStamp];
-//    __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    NSString * urlString = AppHntMain;
+    if (!self.condition|| [self.condition.name isEqualToString:@"组织机构"]) {
+        SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
+        condition.departType = [UserDefaultsSetting shareSetting].userType;
+        condition.biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
+        condition.shebeibianhao = @"";
+        self.condition = condition;
+    }
+    if (!self.condition.shebeibianhao) {
+        self.condition.shebeibianhao = @"";
+    }
+    NSDictionary * dict = @{@"departType":self.condition.departType,
+                            @"biaoshiid":self.condition.biaoshiid,
+                            @"startTime":startTimeStamp,
+                            @"endTime":endTimeStamp,
+                            @"shebeibianhao":self.condition.shebeibianhao
+                            };
+    __weak typeof(self)  weakSelf = self;
+    if(self.datas){
+        self.datas = nil;
+        [self.tableView reloadData];
+    }
+    
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -77,10 +89,10 @@
             }
         }
         
-        self.datas = datas;
-        [self.tableView reloadData];
+        weakSelf.datas = datas;
+        [weakSelf.tableView reloadData];
         // 拿到当前的下拉刷新控件，结束刷新状态
-        [self.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
     }];
 }
@@ -96,22 +108,53 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     HNT_BHZ_Model * model = self.datas[indexPath.row];
-    [self performSegueWithIdentifier:@"HNT_BHZ_InnerController" sender:model.departId];
+    NSString * departType;
+    switch ([self.condition.departType intValue]) {
+        case 1:
+            departType = @"2";
+            break;
+        case 2:
+            departType = @"3";
+            break;
+        case 3:
+        case 5:
+            departType = @"5";
+            break;
+        default:
+            departType =@"1";
+            break;
+    }
+    
+    HNT_BHZ_Model * model = self.datas[indexPath.row];
+    NSDictionary * dict =@{@"biaoshiid":model.bsId,
+                           @"departType":departType
+                           };
+    [self performSegueWithIdentifier:@"HNT_BHZ_InnerController" sender:dict];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+//     HNT_BHZ_Model * model = self.datas[indexPath.row];
+//    [self performSegueWithIdentifier:@"HNT_BHZ_InnerController" sender:model.departId];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
     if ([vc isKindOfClass:[HNT_BHZ_InnerController class]]) {
         HNT_BHZ_InnerController * controller = vc;
-        controller.departId = (NSString*)sender;
+        controller.conditonDict = (NSDictionary*)sender;
     }
-    __weak typeof(self) weakSelf = self;
-    if ([vc isKindOfClass:[NodeViewController class]]) {
-        NodeViewController * controller = vc;
-        controller.callBlock = ^(){
-            [weakSelf.datas removeAllObjects];
-            [weakSelf.tableView reloadData];
+    
+    if ([vc isKindOfClass:[SW_ZZJG_Controller class]]) {
+        SW_ZZJG_Controller * controller = vc;
+        __weak typeof(self) weakSelf = self;
+        controller.modelType = @"1";
+        controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
+            weakSelf.condition = data;
+            NSString * zjjg = FormatString(@"组织机构 : ", data.name);
+            weakSelf.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+            weakSelf.departName_Label.textColor = [UIColor whiteColor];
+            weakSelf.departName_Label.font = [UIFont systemFontOfSize:12.0];
+            weakSelf.departName_Label.speed = BBFlashCtntSpeedSlow;
+            
             [weakSelf loadData];
         };
     }
@@ -166,11 +209,7 @@
         default:
             FuncLog;
             //组织机构代码块
-            //组织机构代码块
-            [self performSegueWithIdentifier:@"HNT_BHZ_Controller2" sender:nil];
-            
-            NSNumber *number = [NSNumber numberWithInt:1];
-            [UserDefaultsSetting shareSetting].funtype = number;
+            [self performSegueWithIdentifier:@"SW_ZZJG_Controller" sender:nil];
             break;
     }
 }

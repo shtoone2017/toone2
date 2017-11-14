@@ -126,44 +126,34 @@
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
     
-    NSString * urlString = [NSString stringWithFormat:AppLogin_2,_acountTextField.text,_passwordTextField.text];
+    NSString * urlString = [NSString stringWithFormat:AppLogin,_acountTextField.text,_passwordTextField.text];
     
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
             if ([json[@"success"] boolValue]) {
                 //数据存储到本地
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
+                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting];
                     setting.acount = _acountTextField.text;
                     setting.password = _passwordTextField.text;
-                    setting.departId  = json[@"departId"];
-                    setting.departName  = json[@"departName"];
-                    setting.userPhoneNum = json[@"userPhoneNum"];
+                    setting.biaoshi  = json[@"biaoshi"];
+                    setting.userType  = json[@"userType"];
                     setting.userFullName = json[@"userFullName"];
-                    setting.hntchaobiaoReal = json[@"chuzhi"];
-                    setting.hntchaobiaoSp = json[@"shenehe"];
+                    setting.hntchaobiaoReal = [json[@"chuzhi"] boolValue];
+                    setting.hntchaobiaoSp = [json[@"shenehe"] boolValue];
+                    
 //                    setting.syschaobiaoReal = json[@"syschaobiaoReal"];
                     setting.login = YES;
-                    
-                    
-                    setting.loginDepartId  = json[@"departId"];
-                    setting.userRole  = json[@"userRole"];
+
                     [setting saveToSandbox];
                     
                 });
                 
                 //界面跳转
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    if(EqualToString(Format(json[@"lqupdata"]), @"1")){//进入扫码界面
-                        PersonVC * vc = [[PersonVC alloc] init];
-                        vc.userFullName = json[@"userFullName"];
-                        MyNavigationController * nc = [[MyNavigationController alloc] initWithRootViewController:vc];
-                        [UIApplication sharedApplication].keyWindow.rootViewController = nc;
-                        
-                    }else{
                         id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
                         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-                    }
+//                    }
                    
                     [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });

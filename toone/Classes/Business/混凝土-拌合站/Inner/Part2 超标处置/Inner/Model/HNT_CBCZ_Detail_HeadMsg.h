@@ -30,7 +30,7 @@
 @property (nonatomic,copy) NSString *  xinxibianhao ;//  信息编号
 
 
-@property (nonatomic,copy) NSString *  chulifangshi ;//  处置：处理方式
+@property (nonatomic,copy) NSString *  chuzhifangshi ;//  处置：处理方式
 @property (nonatomic,copy) NSString *  chulijieguo ;//  处置：处理结果
 @property (nonatomic,copy) NSString *  chuliren ;//  处置：处理人
 @property (nonatomic,copy) NSString *  chulishijian ;//  处置：处理时间
@@ -40,7 +40,6 @@
 
 @property (nonatomic, copy) NSString *chuzhishijian;//超标处置时间
 @property (nonatomic, copy) NSString *chuzhiren;//超标处置人
-//@property (nonatomic, copy) NSString *chuzhifangshi;//沥青超标处置方式
 @property (nonatomic, copy) NSString *chaobiaoyuanyin;//沥青超标原因
 
 @property (nonatomic,copy) NSString *  confirmdate ;//  审批：确认时间

@@ -9,5 +9,6 @@
 #import "MyViewController.h"
 
 @interface HNT_SCCX_Controller : MyViewController
-@property (nonatomic,copy) NSString * departId;
+@property (nonatomic,strong) NSDictionary * conditonDict;
+
 @end

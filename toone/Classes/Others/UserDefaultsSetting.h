@@ -17,10 +17,12 @@
 @property (nonatomic,copy) NSString * password;
 @property (nonatomic,copy) NSString * loginDepartId;
 @property (nonatomic,copy) NSString * departId;
+@property (nonatomic, copy) NSString *biaoshi;//
+@property (nonatomic, copy) NSString *userType;//
 @property (nonatomic,copy) NSString * departName;
 @property (nonatomic,copy) NSString * userRole;
 @property (nonatomic,copy) NSString * userPhoneNum;
-@property (nonatomic,copy) NSString * userFullName;
+@property (nonatomic,copy) NSString * userFullName;//
 @property (nonatomic, strong) NSNumber *funtype;
 
 

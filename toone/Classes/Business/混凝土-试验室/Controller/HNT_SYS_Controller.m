@@ -11,30 +11,23 @@
 #import "HNT_SYS_FrameModel.h"
 #import "HNT_SYS_Cell.h"
 #import "HNT_SYS_InnerController.h"
-#import "NodeViewController.h"
+#import "SW_ZZJG_Controller.h"
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray * datas;
+@property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
 @end
 
 @implementation HNT_SYS_Controller
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    NSString * zjjg = FormatString(@"组织机构 : ", [UserDefaultsSetting shareSetting].departName);
-    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
-    self.departName_Label.textColor = [UIColor whiteColor];
-    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
-    self.departName_Label.speed = BBFlashCtntSpeedSlow;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self addPanGestureRecognizer];
     [self loadUI];
-    [self loadData];
+//    [self loadData];
 }
 -(void)dealloc{
     FuncLog;
@@ -61,8 +54,28 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * userGroupId = [UserDefaultsSetting shareSetting].departId;
-    NSString * urlString = [NSString stringWithFormat:sysHome_3,userGroupId,startTimeStamp,endTimeStamp];
-    __weak __typeof(self)  weakSelf = self;
+    NSString * urlString = AppHntMain;
+    if (!self.condition|| [self.condition.name isEqualToString:@"组织机构"]) {
+        SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
+        condition.departType = [UserDefaultsSetting shareSetting].userType;
+        condition.biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
+        condition.shebeibianhao = @"";
+        self.condition = condition;
+    }
+    if (!self.condition.shebeibianhao) {
+        self.condition.shebeibianhao = @"";
+    }
+    NSDictionary * dict = @{@"departType":self.condition.departType,
+                            @"biaoshiid":self.condition.biaoshiid,
+                            @"startTime":startTimeStamp,
+                            @"endTime":endTimeStamp,
+                            @"shebeibianhao":self.condition.shebeibianhao
+                            };
+    __weak typeof(self)  weakSelf = self;
+    if(self.datas){
+        self.datas = nil;
+        [self.tableView reloadData];
+    }
     
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
@@ -118,12 +131,18 @@
         HNT_SYS_InnerController * controller = vc;
         controller.userGroupId = (NSString*)sender;
     }
-    __weak typeof(self) weakSelf = self;
-    if ([vc isKindOfClass:[NodeViewController class]]) {
-        NodeViewController * controller = vc;
-        controller.callBlock = ^(){
-            [weakSelf.datas removeAllObjects];
-            [weakSelf.tableView reloadData];
+    if ([vc isKindOfClass:[SW_ZZJG_Controller class]]) {
+        SW_ZZJG_Controller * controller = vc;
+        __weak typeof(self) weakSelf = self;
+        controller.modelType = @"3,4";
+        controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
+            weakSelf.condition = data;
+            NSString * zjjg = FormatString(@"组织机构 : ", data.name);
+            weakSelf.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+            weakSelf.departName_Label.textColor = [UIColor whiteColor];
+            weakSelf.departName_Label.font = [UIFont systemFontOfSize:12.0];
+            weakSelf.departName_Label.speed = BBFlashCtntSpeedSlow;
+            
             [weakSelf loadData];
         };
     }
@@ -168,9 +187,6 @@
                 }
             };
             [self.view addSubview:e];
-            
-            
-            
             break;
         }
         case 3:{
@@ -179,10 +195,7 @@
         }
         default:
             FuncLog;//组织机构代码块
-            [self performSegueWithIdentifier:@"HNT_SYS_Controller2" sender:nil];
-            
-            NSNumber *number = [NSNumber numberWithInt:3];
-            [UserDefaultsSetting shareSetting].funtype = number;
+            [self performSegueWithIdentifier:@"SW_ZZJG_Controller2" sender:nil];
             break;
     }
 }

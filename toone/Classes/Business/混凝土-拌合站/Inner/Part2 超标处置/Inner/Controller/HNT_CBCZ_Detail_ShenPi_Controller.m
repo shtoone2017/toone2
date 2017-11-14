@@ -37,12 +37,12 @@
     hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
     
     NSString * urlString = FormatString(baseUrl, @"app.do?AppHntChaobiaoShenpi");
-    NSDictionary * dic = @{@"jieguobianhao":self.SId,
+    NSDictionary * dic = @{@"jieguobianhao":self.bianhao,
                            @"jianliresult":self.txt1.text,
                            @"jianlishenpi":self.txt2.text,
-                           @"confirmdate":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
                            @"shenpiren":[UserDefaultsSetting shareSetting].userFullName,
                            @"shenpidate":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
+//                           @"confirmdate":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
                            };
     
     [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dic success:^(id json) {

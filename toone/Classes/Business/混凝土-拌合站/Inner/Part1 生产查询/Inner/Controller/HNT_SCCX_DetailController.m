@@ -37,7 +37,7 @@
         [Tools showActivityToView:self.view];
         
         
-        NSString * urlString = [NSString stringWithFormat:AppHntXiangxiDetail_1,self.bianhao];
+        NSString * urlString = [NSString stringWithFormat:SCCXDetail,self.bianhao];
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
             NSMutableArray * datas = [NSMutableArray array];

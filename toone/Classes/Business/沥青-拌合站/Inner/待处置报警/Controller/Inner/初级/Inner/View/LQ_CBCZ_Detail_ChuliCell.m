@@ -91,7 +91,7 @@
 -(void)setHeadMsg:(HNT_CBCZ_Detail_HeadMsg *)headMsg{
     _headMsg = headMsg;
     
-    self.chulifangshi.text = headMsg.chulifangshi;//  处置：处理方式
+    self.chulifangshi.text = headMsg.chuzhifangshi;//  处置：处理方式
     self.chulijieguo.text = headMsg.chulijieguo;//  处置：处理结果
     self.chuliren.text = headMsg.chuliren;//  处置：处理人
     if (headMsg.chuliren.length < 1) {
@@ -168,7 +168,7 @@
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
 
     if (textField == self.chulifangshi) {
-        self.headMsg.chulifangshi = textField.text;
+        self.headMsg.chuzhifangshi = textField.text;
     }
     if (textField == self.chulijieguo) {
         self.headMsg.chulijieguo = textField.text;

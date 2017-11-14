@@ -42,7 +42,8 @@
 @property (nonatomic,copy) NSString * maxPageItems                          ;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao                         ;//设备编号
 @property (nonatomic,copy) NSString * dengji;//超标等级 0:全部 1：初级 2：中级 3：高级
-@property (nonatomic,copy) NSString * chuzhileixing;//处置类型 0:未处置 1:已处置 2:已审批 3:未审批
+@property (nonatomic,copy) NSString * chuzhileixing;//处置类型 0全部 1未处理 2已处理 3未审批 4已审批
+@property (nonatomic, copy) NSString *jiaozhubuwei;
 
 
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
@@ -67,7 +68,7 @@
         self.shebeibianhao = @"";
         self.chuzhileixing = @"";
         self.tableViewSigner = @"1";
-        
+        _jiaozhubuwei = @"";
     }
     
     [self loadUI];
@@ -200,22 +201,31 @@
 }
 #pragma mark - 网络请求
 -(void)loadData{
-    
+    NSString * urlString = CBCZList;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    //@"app.do?AppHntChaobiaoList&departId=%@&startTime=%@&endTime=%@&dengji=%@&chuzhileixing=%@&pageNo=%@&shebeibianhao=%@&maxPageItems=%@"
-    NSString * urlString = [NSString stringWithFormat:AppHntChaobiaoList_8,self.departId,startTimeStamp,endTimeStamp,self.dengji,self.chuzhileixing,self.pageNo,self.shebeibianhao,self.maxPageItems];
-//            NSLog(@"urlString = %@",urlString);
+    
+    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+                            @"startTime":startTimeStamp,
+                            @"endTime":endTimeStamp,
+                            @"shebeibianhao":self.shebeibianhao,
+                            @"chaobiaolx":self.dengji,
+                            @"cllx":self.chuzhileixing,
+                            @"pageNo":self.pageNo,
+                            @"maxPageItems":self.maxPageItems,
+                            @"jiaozhubuwei":self.jiaozhubuwei,
+                            };
     __weak typeof(self)  weakSelf = self;
     
-    
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 
                 for (NSDictionary * dict in json[@"data"]) {
                     HNT_CBCZ_Model * model = [HNT_CBCZ_Model modelWithDict:dict];
+                    model.bianhaoId = dict[@"id"];
                     [datas addObject:model];
                 }
                 
@@ -317,7 +327,7 @@
     if (tableView == self.tableView3) {
         model = self.datas3[indexPath.row];
     }
-  NSDictionary * dic=@{@"bianhao":model.xinxibianhao,
+  NSDictionary * dic=@{@"bianhao":model.bianhaoId,
                        @"chuli":model.chuli,
                        @"shenhe":model.shenhe};
     [self performSegueWithIdentifier:@"HNT_CBCZ_DetailController" sender:dic];
@@ -355,21 +365,21 @@
             weakSelf.pageNo = @"1";
             weakSelf.chuzhileixing = @"";
             switch (buttonTag) {
-                case 10:
-                    weakSelf.chuzhileixing = @"";
-                    break;
-                case 20:
+                case 10://全部
                     weakSelf.chuzhileixing = @"0";
                     break;
-                case 30:
-                case 40:
+                case 20://未处置
                     weakSelf.chuzhileixing = @"1";
                     break;
-                case 50:
+                case 30://处置
+                case 40:
+                    weakSelf.chuzhileixing = @"2";
+                    break;
+                case 50://未审批
                     weakSelf.chuzhileixing = @"3";
                     break;
-                case 60:
-                    weakSelf.chuzhileixing = @"2";
+                case 60://审批
+                    weakSelf.chuzhileixing = @"4";
                     break;
             }
             [weakSelf loadData];
@@ -395,7 +405,7 @@
         __weak UIButton * weakBtn = sender;
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
-        controller.departId = self.departId;
+//        controller.departId = self.departId;
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
             [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
             weakSelf.shebeibianhao = gprsbianhao;
