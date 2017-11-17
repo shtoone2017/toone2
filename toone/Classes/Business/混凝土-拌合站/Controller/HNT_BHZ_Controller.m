@@ -56,7 +56,7 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = AppHntMain;
-    if (!self.condition|| [self.condition.name isEqualToString:@"组织机构"]) {
+    if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
         SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
         condition.departType = [UserDefaultsSetting shareSetting].userType;
         condition.biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
@@ -127,7 +127,8 @@
     
     HNT_BHZ_Model * model = self.datas[indexPath.row];
     NSDictionary * dict =@{@"biaoshiid":model.bsId,
-                           @"departType":departType
+//                           @"departType":departType
+                           @"departType":self.condition.departType
                            };
     [self performSegueWithIdentifier:@"HNT_BHZ_InnerController" sender:dict];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

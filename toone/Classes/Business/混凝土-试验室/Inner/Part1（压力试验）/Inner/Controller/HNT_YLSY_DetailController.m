@@ -10,6 +10,7 @@
 #import "HNT_YLSY_DetailModel.h"
 #import "LineChart1ViewController.h"
 #import "AxisModel.h"
+#import "AAChartView.h"
 
 #import "HNT_ChuZhi_Controller.h"
 @interface HNT_YLSY_DetailController ()<UIScrollViewDelegate,UITextFieldDelegate>
@@ -42,7 +43,8 @@
 
 @property (nonatomic,strong) HNT_YLSY_DetailModel * model;
 
-
+@property (nonatomic, strong) AAChartModel *aaChartModel;
+@property (nonatomic, strong) AAChartView  *aaChartView;
 @end
 
 @implementation HNT_YLSY_DetailController
@@ -62,12 +64,12 @@
     switch ([self.tableViewSigner integerValue]) {
         case 1:
         case 4:
+        case 5:
         case 6:{
             break;
         }
         case 2:
-        case 3:
-        case 5:{
+        case 3:{
             self.big_sc_containerHeight.constant = 980-150-10;
             [self.containerView3 removeFromSuperview];
             break;
@@ -81,7 +83,7 @@
     [Tools showActivityToView:self.view];
     
     
-    NSString * urlString = [NSString stringWithFormat:hntkangyaDetail_1,self.SYJID];
+    NSString * urlString = [NSString stringWithFormat:YLSYDetail,self.SYJID];
     __weak __typeof(self)  weakSelf = self;
   
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -108,6 +110,7 @@
                 switch ([weakSelf.tableViewSigner integerValue]) {
                     case 1:
                     case 4:
+                    case 5:
                     case 6:{
                         if (model.chuli.length >0) {
                             NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
@@ -125,12 +128,14 @@
                             [weakSelf.containerView3 addSubview:chuZhi_label];
                         }
                         else{
-                            UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
-                            chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
-                            [chuZhi_btn setTitle:@"尚未处置，点击这里进入处置界面..." forState:UIControlStateNormal];
-                            chuZhi_btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
-                            [weakSelf.containerView3 addSubview:chuZhi_btn];
-                            [chuZhi_btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
+                            if ([UserDefaultsSetting shareSetting].syschaobiaoReal) {
+                                UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                                chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
+                                [chuZhi_btn setTitle:@"尚未处置，点击这里进入处置界面..." forState:UIControlStateNormal];
+                                chuZhi_btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                                [weakSelf.containerView3 addSubview:chuZhi_btn];
+                                [chuZhi_btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
+                            }
                         }
                         break;
                     }
@@ -167,31 +172,59 @@
                 //加载曲线图
                 for (int i = 0 ; i<totalArray.count; i++) {
                     //1.取出最大值和最小值
-                    int y_Min = CGFLOAT_MAX;
-                    int y_Max = CGFLOAT_MIN;
-                    for (int j; j<arrY.count; j++) {
-                        int value = [(NSString*)arrY[i][j] intValue];
-                        if (value>y_Max) {
-                            y_Max = value;
-                        }
-                        if (value<y_Min) {
-                            y_Min = value;
-                        }
+//                    int y_Min = CGFLOAT_MAX;
+//                    int y_Max = CGFLOAT_MIN;
+//                    for (int j; j<arrY.count; j++) {
+//                        int value = [(NSString*)arrY[i][j] intValue];
+//                        if (value>y_Max) {
+//                            y_Max = value;
+//                        }
+//                        if (value<y_Min) {
+//                            y_Min = value;
+//                        }
+//                    }
+//                    
+//                    NSDictionary * dict = @{@"y_Max":FormatInt(y_Max),
+//                                            @"y_Min":FormatInt(y_Min),
+//                                            @"datas":totalArray[i],
+//                                            };
+                    if ([totalArray[i] count] == 0) {
+                        [Tools tip:@"没有数据"];
+                        //移除指示器
+                        [Tools removeActivity];
+                        return ;
                     }
+                    self.aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360)];
+                    self.aaChartView.contentHeight = 360;
+                    [weakSelf.chart_sc addSubview:weakSelf.aaChartView];
                     
-                    NSDictionary * dict = @{@"y_Max":FormatInt(y_Max),
-                                            @"y_Min":FormatInt(y_Min),
-                                            @"datas":totalArray[i],
-                                            };
-                    LineChart1ViewController * vc = [[LineChart1ViewController alloc] initWithDict:dict];
-                    vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
-                    [weakSelf addChildViewController:vc];
-                    [weakSelf.chart_sc addSubview:vc.view];
+                    self.aaChartModel = AAObject(AAChartModel)
+                    .chartTypeSet(AAChartTypeAreaspline)//图表的类型
+                    .titleSet(@"")//图表标题
+                    .subtitleSet(@"")//图表副标题
+                    .categoriesSet(@[@""])//设置图表横轴的内容
+                    .yAxisTitleSet(@"")//设置图表 y 轴的单位
+                    .seriesSet(@[
+                                 AAObject(AASeriesElement)
+                                 .nameSet(@"")
+                                 .dataSet(totalArray[i]),
+                                 ]);
+                    
+                    self.aaChartModel.dataLabelEnabled = YES;
+                    [self.aaChartView aa_drawChartWithChartModel:_aaChartModel];
+                    
+                    
+//                    LineChart1ViewController * vc = [[LineChart1ViewController alloc] initWithDict:dict];
+//                    vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
+//                    [weakSelf addChildViewController:vc];
+//                    [weakSelf.chart_sc addSubview:vc.view];
 
                 }
-                
                 //移除指示器
-                [Tools removeActivity];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [Tools removeActivity];
+                });
+                
             }
         }
     } failure:^(NSError *error) {
@@ -231,6 +264,7 @@
     if ([vc isKindOfClass:[HNT_ChuZhi_Controller class]]) {
         HNT_ChuZhi_Controller * controller = vc;
         controller.SYJID = self.SYJID;
+//        controller.xxid = self.xxid;
     }
 }
 @end

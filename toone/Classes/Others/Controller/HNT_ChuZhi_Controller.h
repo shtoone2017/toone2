@@ -10,4 +10,5 @@
 
 @interface HNT_ChuZhi_Controller : UIViewController
 @property (nonatomic,copy) NSString * SYJID;
+@property (nonatomic, copy) NSString *xxid;
 @end

@@ -11,6 +11,8 @@
 #import "HNT_YLSY_Model.h"
 #import "HNT_SYS_typeAndSB_Controller.h"
 #import "HNT_YLSY_DetailController.h"
+#import "SW_ZZJG_Controller.h"
+#import "LQ_SB_Controller.h"
 @interface HNT_YLSY_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -48,8 +50,10 @@
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * isReal;//0全部 1未处理 2已处理 可以为空
-@property (nonatomic,copy) NSString * testId;//试验id
+//@property (nonatomic,copy) NSString * testId;//试验id
 @property (nonatomic,copy) NSString * tableViewSigner;//列表标记
+@property (nonatomic,copy) NSString * lingqi;//龄期
+@property (nonatomic,strong)  SW_ZZJG_Data * condition;
 //不同页面记录的页码
 @property (nonatomic,copy) NSString * pageNo1;
 @property (nonatomic,copy) NSString * pageNo2;
@@ -63,6 +67,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     {//设置初始请求条件
         self.pageNo1 = @"1";
         self.pageNo2 = @"1";
@@ -76,11 +81,11 @@
         self.maxPageItems = @"30";
         self.isReal = @"";//全部
         self.shebeibianhao = @"";
-        self.testId = @"";
+//        self.testId = @"";
         self.tableViewSigner = @"1";
     
     }
-    
+    self.title =@"压力试验";
     [self loadUI];
     [self loadData];
 }
@@ -265,19 +270,36 @@
 }
 #pragma mark - 网络请求
 -(void)loadData{
-
-    NSString * userGroupId = self.userGroupId;
+    NSString * urlString = YLSYList;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = [NSString stringWithFormat:hntkangya_9,userGroupId,_isQualified,startTimeStamp,endTimeStamp,_pageNo,_shebeibianhao,_isReal,_maxPageItems,_testId];
-//    NSLog(@"urlString = %@",urlString);
+    if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
+        SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
+        condition.departType = [UserDefaultsSetting shareSetting].userType;
+        condition.biaoshiid = @"0";
+        condition.shebeibianhao = @"";
+        self.condition = condition;
+    }
+    NSDictionary * dict = @{@"departType":self.condition.departType?:@"",
+                            @"biaoshiid":self.condition.biaoshiid?:@"",
+                            @"startTime":startTimeStamp,
+                            @"endTime":endTimeStamp,
+                            @"shebeibianhao":self.shebeibianhao?:@"",
+                            @"pageNo":self.pageNo,
+                            @"maxPageItems":self.maxPageItems,
+                            @"lingqi":self.lingqi?:@"",
+                            @"pdjg":self.isQualified,
+                            @"isReal":self.isReal,
+                            };
+
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
                     HNT_YLSY_Model * model = [HNT_YLSY_Model modelWithDict:dict];
+                    model.xxid = [NSString stringWithFormat:@"%@",dict[@"id"]];
                     [datas addObject:model];
                 }
             }
@@ -453,7 +475,7 @@
     if (tableView == self.tableView6) {
         model = self.datas6[indexPath.row];
     }
-    [self performSegueWithIdentifier:@"HNT_YLSY_DetailController" sender:@{@"SYJID":model.SYJID,@"tableViewSigner":self.tableViewSigner}];
+    [self performSegueWithIdentifier:@"HNT_YLSY_DetailController" sender:@{@"SYJID":model.SYJID,@"xxid":model.xxid,@"tableViewSigner":self.tableViewSigner}];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
@@ -469,7 +491,8 @@
     [self.view addSubview:backView];
     
     //2.
-    Exp2View * e = [[Exp2View alloc] init];
+    Exp52View * e = [[Exp52View alloc] init];
+    e.useLabel = @"组织机构";
     e.frame = CGRectMake(0, 64+36, Screen_w, 240);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
@@ -494,11 +517,17 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         
-        if (type == ExpButtonTypeChoiceSBButton) {
+        if (type == ExpButtonTypeUsePosition) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"HNT_YLSY_Controller" sender:btn];
+            SW_ZZJG_Controller * controller = [[SW_ZZJG_Controller alloc] init];
+            controller.modelType = @"3";
+            controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
+                weakSelf.condition = data;
+                [btn setTitle:weakSelf.condition.name forState:UIControlStateNormal];
+            };
+            [self.navigationController pushViewController:controller animated:YES];
         }
-        if (type == ExpButtonTypeChoiceTypeButton) {
+        if (type == ExpButtonTypeChoiceSBButton) {
              UIButton * btn = (UIButton*)obj1;
             [weakSelf performSegueWithIdentifier:@"HNT_YLSY_Controller" sender:btn];
         }
@@ -508,37 +537,25 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
-    if ([vc isKindOfClass:[HNT_SYS_typeAndSB_Controller class]]) {
-        HNT_SYS_typeAndSB_Controller * controller = vc;
+    if ([vc isKindOfClass:[LQ_SB_Controller class]]) {
+        LQ_SB_Controller * controller = vc;
         __weak UIButton * weakBtn = sender;
         __weak __typeof(self)  weakSelf = self;
-        switch (weakBtn.tag) {
-            case 3:{
-                controller.title = @"选择设备";
-                controller.typeAndSB  = HNT_SYS_YLJ_SB;
-                controller.typeSBBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
-                    [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
-                    weakSelf.shebeibianhao = gprsbianhao;
-                };
-                break;
-            }
-            case 4:{
-                controller.title = @"选择试验类型";
-                controller.typeAndSB  = HNT_SYS_YLJ_SY;
-                controller.typeSBBlock = ^(NSString * testName,NSString*testId){
-                    [weakBtn setTitle:testName forState:UIControlStateNormal];
-                    weakSelf.testId = testId;
-                };
-                break;
-            }
-            default:
-                break;
-        }
+        controller.title = @"选择设备";
+        controller.conditonDict = @{@"departType":weakSelf.condition.departType?:@"",
+                                    @"biaoshiid":weakSelf.condition.biaoshiid?:@"",
+                                    @"machineType":@"3",
+                                    };
+        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+            [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
+            weakSelf.shebeibianhao = gprsbianhao;
+        };
     }
     
     if ([vc isKindOfClass:[HNT_YLSY_DetailController class]]) {
         HNT_YLSY_DetailController * controller = vc;
         controller.SYJID = ((NSDictionary*)sender)[@"SYJID"];
+        controller.xxid = ((NSDictionary*)sender)[@"xxid"];
         controller.tableViewSigner = ((NSDictionary*)sender)[@"tableViewSigner"];
         controller.title = @"详情";
     }

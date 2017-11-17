@@ -12,6 +12,7 @@
 #import "BarChartViewController.h"
 #import "HNT_TJFX_HeaderView.h"
 #import "HNT_TJFX_TxtView.h"
+#import "SW_ZZJG_Controller.h"
 @interface HNT_TJFX_Controller ()
 @property (nonatomic,strong) NSMutableArray * datas;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -22,13 +23,14 @@
 @property (weak, nonatomic) IBOutlet UIView *container3; //表格视图父视图
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sc_container_height;
 
-
+@property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @end
 
 @implementation HNT_TJFX_Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title =@"统计分析";
     self.view.backgroundColor = [UIColor snowColor];
     self.sjLabel.text = [NSString stringWithFormat:@"%@  ->  %@",super.startTime,super.endTime];
     [self loadData];
@@ -52,14 +54,29 @@
             [subView removeFromSuperview];
         }
     }
-
+    NSString * urlString = TJFXList;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * userGroupId = self.userGroupId;
-    NSString * urlString = [NSString stringWithFormat:sysCountAnalyze_3,userGroupId,startTimeStamp,endTimeStamp];
+    NSString * biaoshi = @"";
+    NSString * departType = @"";
+    if ([self.condition.departType isEqualToString:@"1"] || !self.condition) {//第一次
+        departType = @"1";
+        
+    }else if ([[UserDefaultsSetting shareSetting].userType isEqualToString:@"6"]) {
+        biaoshi = [UserDefaultsSetting shareSetting].biaoshi;
+        departType = @"6";
+    }else {
+        biaoshi = self.condition.biaoshiid;
+        departType = self.condition.departType;
+    }
+    NSDictionary * dict = @{@"departType":departType,
+                            @"biaoshiid":biaoshi,
+                            @"endTime":endTimeStamp,
+                            @"startTime":startTimeStamp,
+                            };
     __weak __typeof(self)  weakSelf = self;
     
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -138,11 +155,12 @@
         [self.view addSubview:backView];
         
         //2.
-        Exp1View * e = [[Exp1View alloc] init];
-        e.frame = CGRectMake(0, 64+35, Screen_w, 150);
+        Exp52View * e = [[Exp52View alloc] init];
+        e.txfx = @"组织机构";
+        e.frame = CGRectMake(0, 64+35, Screen_w, 190);
         __weak __typeof(self)  weakSelf = self;
         e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
-            NSLog(@"%d",type);
+//            NSLog(@"%d",type);
             if (type == ExpButtonTypeCancel) {
                 sender.enabled = YES;
                 [backView removeFromSuperview];
@@ -161,8 +179,25 @@
                 UIButton * btn = (UIButton*)obj1;
                 [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
             }
+//            if (type == ExpButtonTypeChoiceSBButton) {
+//            }
+            if (type == ExpButtonTypeUsePosition) {
+                UIButton * btn = (UIButton*)obj1;
+                SW_ZZJG_Controller * controller = [[SW_ZZJG_Controller alloc] init];
+                __weak typeof(self) weakSelf = self;
+                controller.modelType = @"3,4";
+                controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
+                    weakSelf.condition = data;
+                    [btn setTitle:weakSelf.condition.name forState:UIControlStateNormal];
+                };
+                [self.navigationController pushViewController:controller animated:YES];
+            }
         };
         [self.view addSubview:e];
+}
+
+-(void)loadEquipment {
+    
 }
 
 

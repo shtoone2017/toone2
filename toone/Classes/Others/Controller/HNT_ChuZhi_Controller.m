@@ -36,8 +36,8 @@
     hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
     hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
     
-    NSString * urlString = hntkangyaPost;
-    NSDictionary * dict = @{@"SYJID":self.SYJID,@"chaobiaoyuanyin":self.txt.text};
+    NSString * urlString = CHUZHI;
+    NSDictionary * dict = @{@"xxid":self.SYJID?:@"",@"beizhu":self.txt.text};
     [[HTTP shareAFNNetworking] requestMethod:POST urlString:urlString parameter:dict success:^(id json) {
         if ([json[@"success"] boolValue]) {
             
@@ -45,14 +45,22 @@
                 // Do something useful in the background and update the HUD periodically.
                 [self doSomeWorkWithProgress];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [hud hideAnimated:YES];
+//                    [hud hideAnimated:YES];
                     UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
                     [self.navigationController popToViewController:vc animated:YES];
                     [Tools tip:@"数据已经更新 ，请刷新界面"];
                 });
             });
+        }else{
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"抱歉，提交失败";
         }
-    } failure:nil];
+        [hud hideAnimated:YES afterDelay:2.0];
+    } failure:^(NSError *error) {
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"网络故障，提交失败";
+        [hud hideAnimated:YES afterDelay:2.0];
+    }];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.txt resignFirstResponder];

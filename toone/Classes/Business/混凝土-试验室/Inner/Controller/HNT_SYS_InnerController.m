@@ -26,7 +26,7 @@
     self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_YLSY_Controller"];
     if ([self.vc isKindOfClass:[HNT_YLSY_Controller class]]) {
         HNT_YLSY_Controller * controller = (HNT_YLSY_Controller *)self.vc;
-        controller.userGroupId = self.userGroupId;
+//        controller.userGroupId = self.userGroupId;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
     }
@@ -48,7 +48,7 @@
                     weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_YLSY_Controller"];
                     if ([weakSelf.vc isKindOfClass:[HNT_YLSY_Controller class]]) {
                         HNT_YLSY_Controller * controller = (HNT_YLSY_Controller *)weakSelf.vc;
-                        controller.userGroupId = weakSelf.userGroupId;
+//                        controller.userGroupId = weakSelf.userGroupId;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }
@@ -64,7 +64,7 @@
                     weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_WNSY_Controller"];
                     if ([weakSelf.vc isKindOfClass:[HNT_WNSY_Controller class]]) {
                         HNT_WNSY_Controller * controller = (HNT_WNSY_Controller *)weakSelf.vc;
-                        controller.userGroupId = weakSelf.userGroupId;
+//                        controller.userGroupId = weakSelf.userGroupId;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }
@@ -80,7 +80,7 @@
                     weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_TJFX_Controller"];
                     if ([weakSelf.vc isKindOfClass:[HNT_TJFX_Controller class]]) {
                         HNT_TJFX_Controller * controller = (HNT_TJFX_Controller *)weakSelf.vc;
-                        controller.userGroupId = weakSelf.userGroupId;
+//                        controller.userGroupId = weakSelf.userGroupId;
                         [weakSelf addChildViewController:controller];
                         [weakSelf.view addSubview:controller.view];
                     }

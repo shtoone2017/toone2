@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "MyViewController.h"
 @interface HNT_YLSY_Controller : MyViewController
-@property (nonatomic,copy) NSString * userGroupId;
-@end  //
+//@property (nonatomic,copy) NSString * userGroupId;
+@end  

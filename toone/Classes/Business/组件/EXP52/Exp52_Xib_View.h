@@ -16,4 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *sbButton;
 @property (weak, nonatomic) IBOutlet UIButton *usePositionButton;
 @property (weak, nonatomic) IBOutlet UILabel *useLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *lastView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *okTop;
+
+
 @end

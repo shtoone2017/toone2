@@ -130,7 +130,7 @@
 //沥青历史数据查询
 #define lqgallclList   FormatString(baseUrl,@"appLq/lqgallclList?")
 
-/****广东项目新增混凝土和试验室****/
+                                    /****广东项目新增混凝土和试验室****/
 //----------------------------------------------------------------------------------------------------//
 
 #define AppLogin   FormatString(baseUrl,@"appHnt/AppLogin?userName=%@&userPwd=%@&OSType=3")
@@ -151,16 +151,18 @@
 //超标处置详情
 #define CBCZDetail  FormatString(baseUrl,@"appHnt/AppHntChaobiaoDetail?bianhao=%@")
 
-
-
-
-
-
-
-
-
-
-
+//压力试验
+#define YLSYList FormatString(baseUrl,@"appSys/hntkangya?")
+//压力试验详情
+#define YLSYDetail  FormatString(baseUrl,@"appSys/hntkangyaDetail?xxid=%@")
+//万能试验
+#define WNSYList FormatString(baseUrl,@"appSys/hntwanneng?")
+//万能试验详情
+#define WNSYDetail  FormatString(baseUrl,@"appSys/hntwannengDetail?xxid=%@")
+//统计分析
+#define TJFXList FormatString(baseUrl,@"appSys/sysCountAnalyze?")
+//试验室处置
+#define CHUZHI FormatString(baseUrl,@"appSys/hntsyschuzhi?")
 
 
 

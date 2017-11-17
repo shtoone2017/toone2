@@ -42,6 +42,11 @@
 -(void)setUseLabel:(NSString *)useLabel{
     self.xib.useLabel.text = useLabel;
 }
+-(void)setTxfx:(NSString *)txfx {
+    self.xib.useLabel.text = txfx;
+    self.xib.lastView.hidden = YES;
+    self.xib.okTop.constant = 10;
+}
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
         if (self.expBlock) {

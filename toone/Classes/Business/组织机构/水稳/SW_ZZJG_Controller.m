@@ -40,7 +40,7 @@
                     for (NSDictionary *dict in json[@"userGroup"]) {
                         SW_ZZJG_Data * yz = [[SW_ZZJG_Data alloc] init];
                         yz.name = dict[@"userGroupId"];
-//                        yz.departType = @"1";
+                        yz.departType = @"1";
                         [datas addObject:yz];
                     }
                 }

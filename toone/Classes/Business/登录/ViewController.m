@@ -138,13 +138,13 @@
                     setting.password = _passwordTextField.text;
                     setting.biaoshi  = json[@"biaoshi"];
                     setting.userType  = json[@"userType"];
+//                    setting.departId  = json[@"cid"];
                     setting.userFullName = json[@"userFullName"];
                     setting.hntchaobiaoReal = [json[@"chuzhi"] boolValue];
                     setting.hntchaobiaoSp = [json[@"shenehe"] boolValue];
-                    
-//                    setting.syschaobiaoReal = json[@"syschaobiaoReal"];
+                    setting.syschaobiaoReal = [json[@"sysChuzhi"] boolValue];
                     setting.login = YES;
-
+                    
                     [setting saveToSandbox];
                     
                 });

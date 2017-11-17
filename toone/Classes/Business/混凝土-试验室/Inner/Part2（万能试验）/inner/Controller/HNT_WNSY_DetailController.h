@@ -10,5 +10,6 @@
 
 @interface HNT_WNSY_DetailController : UIViewController
 @property (nonatomic,copy) NSString * SYJID;
+@property (nonatomic,copy) NSString * xxid;
 @property (nonatomic,copy) NSString * tableViewSigner;
 @end

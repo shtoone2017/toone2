@@ -13,12 +13,12 @@
 #import "HNT_SYS_InnerController.h"
 #import "SW_ZZJG_Controller.h"
 #import "SYS_MAIN_Cell.h"
+#import "HNT_YLSY_Controller.h"
+#import "HNT_WNSY_Controller.h"
+#import "HNT_TJFX_Controller.h"
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-//@property (nonatomic,strong) NSMutableArray * datas;
-//@property (nonatomic,strong)  SW_ZZJG_Data * condition;
-//@property (weak, nonatomic) IBOutlet UIView *containerView;
-//@property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
+
 @end
 
 @implementation HNT_SYS_Controller
@@ -27,7 +27,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self addPanGestureRecognizer];
     [self loadUI];
-//    [self loadData];
 }
 -(void)dealloc{
     FuncLog;
@@ -71,15 +70,32 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    HNT_SYS_FrameModel * frameModel = self.datas[indexPath.row];
-//    HNT_SYS_Model * model = frameModel.models.firstObject;
-//    [self performSegueWithIdentifier:@"HNT_SYS_InnerController" sender:model.userGroupId];
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row){
+        case 0:{
+            //压力
+            HNT_YLSY_Controller *VC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_YLSY_Controller"];
+            [self.navigationController pushViewController:VC animated:YES];
+        }
+            break;
+        case 1:{
+            //万能
+            HNT_WNSY_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_WNSY_Controller"];
+            [self.navigationController pushViewController:ylVC animated:YES];
+        }
+            break;
+        case 2:{
+            //统计分析
+            HNT_TJFX_Controller *ylVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"HNT_TJFX_Controller"];
+            [self.navigationController pushViewController:ylVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 150;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIImageView *headerImg = [UIImageView new];
     headerImg.image = [UIImage imageNamed:@"SYS_Header_IMG2.jpg"];

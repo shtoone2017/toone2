@@ -1,19 +1,12 @@
-
-
-
-
-
-
-
 //
-//  HNT_WNSY_Controller.m
+//  HNT_WNSY_NewController.m
 //  toone
 //
-//  Created by 十国 on 16/12/2.
-//  Copyright © 2016年 shtoone. All rights reserved.
+//  Created by 上海同望 on 2017/11/16.
+//  Copyright © 2017年 shtoone. All rights reserved.
 //
 
-#import "HNT_WNSY_Controller.h"
+#import "HNT_WNSY_NewController.h"
 #import "HNT_WNSY_Cell.h"
 #import "HNT_WNSY_Model.h"
 #import "HNT_SYS_typeAndSB_Controller.h"
@@ -21,39 +14,43 @@
 #import "SW_ZZJG_Controller.h"
 #import "LQ_SB_Controller.h"
 
-@interface HNT_WNSY_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface HNT_WNSY_NewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ContainerWidth;
 @property (weak, nonatomic) IBOutlet UIScrollView *title_sc;//标题scrollView
 @property (weak, nonatomic) IBOutlet UIScrollView *text_sc;//正文scrollView
 @property (weak, nonatomic) IBOutlet UIView *redLine;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *redLineWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *redLine_x;
 - (IBAction)titleButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *button1;//不合格
 @property (weak, nonatomic) IBOutlet UIButton *button2;//合格
-@property (weak, nonatomic) IBOutlet UIButton *button3;//未处置
-@property (weak, nonatomic) IBOutlet UIButton *button4;//已处置
-
+@property (weak, nonatomic) IBOutlet UIButton *button3;//有效
+@property (weak, nonatomic) IBOutlet UIButton *button4;//无效
+@property (weak, nonatomic) IBOutlet UIButton *button5;//已处置
+@property (weak, nonatomic) IBOutlet UIButton *button6;//未处置
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView1;//不合格
 @property (weak, nonatomic) IBOutlet UITableView *tableView2;//合格
-@property (weak, nonatomic) IBOutlet UITableView *tableView3;//未处置
-@property (weak, nonatomic) IBOutlet UITableView *tableView4;//已处置
+@property (weak, nonatomic) IBOutlet UITableView *tableView3;//有效
+@property (weak, nonatomic) IBOutlet UITableView *tableView4;//无效
+@property (weak, nonatomic) IBOutlet UITableView *tableView5;//已处置
+@property (weak, nonatomic) IBOutlet UITableView *tableView6;//未处置
 //******************************************************************
 @property (nonatomic,strong) NSMutableArray * datas1;
 @property (nonatomic,strong) NSMutableArray * datas2;
 @property (nonatomic,strong) NSMutableArray * datas3;
 @property (nonatomic,strong) NSMutableArray * datas4;
+@property (nonatomic,strong) NSMutableArray * datas5;
+@property (nonatomic,strong) NSMutableArray * datas6;
 
 //参数
-@property (nonatomic,copy) NSString * isQualified;//0.不合格 1.合格
+@property (nonatomic,copy) NSString * isQualified;//0.不合格 1.合格 2.有效 3.无效
 @property (nonatomic,copy) NSString * pageNo;//当前页数
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * isReal;//0全部 1未处理 2已处理 可以为空
-//@property (nonatomic,copy) NSString * testId;//试验id
 @property (nonatomic,copy) NSString * tableViewSigner;//列表标记
 @property (nonatomic,copy) NSString * lingqi;//龄期
 @property (nonatomic,strong)  SW_ZZJG_Data * condition;
@@ -62,24 +59,30 @@
 @property (nonatomic,copy) NSString * pageNo2;
 @property (nonatomic,copy) NSString * pageNo3;
 @property (nonatomic,copy) NSString * pageNo4;
-@end
+@property (nonatomic,copy) NSString * pageNo5;
+@property (nonatomic,copy) NSString * pageNo6;
 
-@implementation HNT_WNSY_Controller
+
+
+@end
+@implementation HNT_WNSY_NewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     {//设置初始请求条件
         self.pageNo1 = @"1";
         self.pageNo2 = @"1";
         self.pageNo3 = @"1";
         self.pageNo4 = @"1";
-
+        self.pageNo5 = @"1";
+        self.pageNo6 = @"1";
+        
         self.isQualified  = @"0";
         self.pageNo = _pageNo1;
         self.maxPageItems = @"30";
         self.isReal = @"";//全部
         self.shebeibianhao = @"";
-//        self.testId = @"";
         self.tableViewSigner = @"1";
         
     }
@@ -87,21 +90,24 @@
     [self loadUI];
     [self loadData];
 }
-
 -(void)loadUI{
-    self.ContainerWidth.constant = Screen_w*4;
+    self.ContainerWidth.constant = Screen_w*6;
     self.title_sc.backgroundColor = [UIColor snowColor];
     self.searchButton.backgroundColor = [UIColor snowColor];//black75PercentColor
-
+    self.redLineWidth.constant = 70;
     
     [self registerTableView:self.tableView1];
     [self registerTableView:self.tableView2];
     [self registerTableView:self.tableView3];
     [self registerTableView:self.tableView4];
-
+    [self registerTableView:self.tableView5];
+    [self registerTableView:self.tableView6];
 }
 -(void)registerTableView:(UITableView*)tableView{
     tableView.tableFooterView = [[UIView alloc] init];
+    //    tableView.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    //    [tableView.mj_header beginRefreshing];
+    //    tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     __weak __typeof(self) weakSelf = self;
     tableView.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
         switch ([weakSelf.tableViewSigner intValue]) {
@@ -116,6 +122,12 @@
                 break;
             case 4:
                 weakSelf.pageNo4 = @"1";
+                break;
+            case 5:
+                weakSelf.pageNo5 = @"1";
+                break;
+            case 6:
+                weakSelf.pageNo6 = @"1";
                 break;
             default:
                 break;
@@ -135,7 +147,7 @@
             case 2:
                 weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo2;
-                NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
+//                NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
                 break;
             case 3:
                 weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
@@ -144,6 +156,14 @@
             case 4:
                 weakSelf.pageNo4 = FormatInt([weakSelf.pageNo4 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo4;
+                break;
+            case 5:
+                weakSelf.pageNo5 = FormatInt([weakSelf.pageNo5 intValue]+1);
+                weakSelf.pageNo = weakSelf.pageNo5;
+                break;
+            case 6:
+                weakSelf.pageNo6 = FormatInt([weakSelf.pageNo6 intValue]+1);
+                weakSelf.pageNo = weakSelf.pageNo6;
                 break;
             default:
                 break;
@@ -158,6 +178,10 @@
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
+    //网络请求添加控制条件   bug:重复请求
+    //    self.tableViewSigner = FormatInt((int)sender.tag);
+    //    [self conditionsInt:(int)sender.tag];
+    
     //视图切换
     [self addTitleButtonAnimaiton:sender];
     [self addTextScAnimaiton:sender];
@@ -176,17 +200,29 @@
             self.isReal =@"";
             if(self.datas2==nil) [self loadData];
             break;
-        case 3://未处理
+        case 3://有效
             self.pageNo = self.pageNo3;
-            self.isQualified = @"";
-            self.isReal =@"1";
+            self.isQualified = @"2";
+            self.isReal =@"";
             if(self.datas3==nil) [self loadData];
             break;
-        case 4://已处理
+        case 4://无效
             self.pageNo = self.pageNo4;
-            self.isQualified = @"";
-            self.isReal =@"2";
+            self.isQualified = @"3";
+            self.isReal =@"";
             if(self.datas4==nil) [self loadData];
+            break;
+        case 5://已处置
+            self.pageNo = self.pageNo5;
+            self.isReal = @"2";
+            self.isQualified = @"";
+            if(self.datas5==nil) [self loadData];
+            break;
+        case 6://未处置
+            self.pageNo = self.pageNo6;
+            self.isReal = @"1";
+            self.isQualified = @"";
+            if(self.datas6==nil) [self loadData];
             break;
         default:
             break;
@@ -197,17 +233,21 @@
     [self.button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.button4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.button5 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.button6 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.button1 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     self.button2 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     self.button3 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     self.button4 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
+    self.button5 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
+    self.button6 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     
     [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     sender.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-//    CGFloat offset = (420-Screen_w+40)*(sender.tag-1)/3;
+    CGFloat offset = (420-Screen_w+40)*(sender.tag-1)/5;
     [UIView animateWithDuration:0.2 animations:^{
-//        self.title_sc.contentOffset = CGPointMake(offset, 0);
-        self.redLine_x.constant = 70*(sender.tag-1);
+        self.title_sc.contentOffset = CGPointMake(offset, 0);
+        self.redLine_x.constant = (Screen_w-40-self.redLineWidth.constant)*(sender.tag-1)/5;
         [self.redLine.superview layoutIfNeeded];
     }];
 }
@@ -231,19 +271,18 @@
 }
 #pragma mark - 网络请求
 -(void)loadData{
-    NSString * urlString = WNSYList;
+    NSString * urlString = YLSYList;
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-//    NSString * urlString = [NSString stringWithFormat:gangjin_9,userGroupId,_isQualified,startTimeStamp,endTimeStamp,_pageNo,_shebeibianhao,_isReal,_maxPageItems,_testId];
     if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
         SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
         condition.departType = [UserDefaultsSetting shareSetting].userType;
-//        condition.biaoshiid = @"0";
+        condition.biaoshiid = @"0";
         condition.shebeibianhao = @"";
         self.condition = condition;
     }
     NSDictionary * dict = @{@"departType":self.condition.departType?:@"",
-                            @"biaoshiid":self.condition.biaoshiid?:@"",
+                            @"biaoshiid":self.condition.biaoshiid,
                             @"startTime":startTimeStamp,
                             @"endTime":endTimeStamp,
                             @"shebeibianhao":self.shebeibianhao?:@"",
@@ -253,19 +292,16 @@
                             @"pdjg":self.isQualified,
                             @"isReal":self.isReal,
                             };
-
+    
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
-                
                 for (NSDictionary * dict in json[@"data"]) {
                     HNT_WNSY_Model * model = [HNT_WNSY_Model modelWithDict:dict];
-                    model.xxid = [NSString stringWithFormat:@"%@",dict[@"id"]];
                     [datas addObject:model];
                 }
-                
             }
         }
         
@@ -326,6 +362,32 @@
                     [weakSelf.tableView4.mj_footer endRefreshingWithNoMoreData];
                 }
                 break;
+            case 5:
+                if ([weakSelf.pageNo5 intValue] == 1) {
+                    weakSelf.datas5 = datas;
+                }else{
+                    [weakSelf.datas5 addObjectsFromArray:datas];
+                }
+                [weakSelf.tableView5 reloadData];
+                [weakSelf.tableView5.mj_header endRefreshing];
+                [weakSelf.tableView5.mj_footer endRefreshing];
+                if (weakSelf.datas5.count < ([weakSelf.pageNo5 intValue]* [weakSelf.maxPageItems intValue])) {
+                    [weakSelf.tableView5.mj_footer endRefreshingWithNoMoreData];
+                }
+                break;
+            case 6:
+                if ([weakSelf.pageNo6 intValue] == 1) {
+                    weakSelf.datas6 = datas;
+                }else{
+                    [weakSelf.datas6 addObjectsFromArray:datas];
+                }
+                [weakSelf.tableView6 reloadData];
+                [weakSelf.tableView6.mj_header endRefreshing];
+                [weakSelf.tableView6.mj_footer endRefreshing];
+                if (weakSelf.datas6.count < ([weakSelf.pageNo6 intValue]* [weakSelf.maxPageItems intValue])) {
+                    [weakSelf.tableView6.mj_footer endRefreshingWithNoMoreData];
+                }
+                break;
         }
     } failure:^(NSError *error) {
     }];
@@ -344,6 +406,12 @@
     }
     if (tableView == self.tableView4) {
         return self.datas4.count;
+    }
+    if (tableView == self.tableView5) {
+        return self.datas5.count;
+    }
+    if (tableView == self.tableView6) {
+        return self.datas6.count;
     }
     return 0;
 }
@@ -373,6 +441,18 @@
         cell.model = model;
         return cell;
     }
+    if (tableView == self.tableView5) {
+        HNT_WNSY_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_WNSY_Cell" forIndexPath:indexPath];
+        HNT_WNSY_Model * model = self.datas5[indexPath.row];
+        cell.model = model;
+        return cell;
+    }
+    if (tableView == self.tableView6) {
+        HNT_WNSY_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"HNT_WNSY_Cell" forIndexPath:indexPath];
+        HNT_WNSY_Model * model = self.datas6[indexPath.row];
+        cell.model = model;
+        return cell;
+    }
     return nil;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -389,7 +469,13 @@
     if (tableView == self.tableView4) {
         model = self.datas4[indexPath.row];
     }
-    [self performSegueWithIdentifier:@"HNT_WNSY_DetailController" sender:@{@"SYJID":model.SYJID,@"xxid":model.xxid,@"tableViewSigner":self.tableViewSigner}];
+    if (tableView == self.tableView5) {
+        model = self.datas5[indexPath.row];
+    }
+    if (tableView == self.tableView6) {
+        model = self.datas6[indexPath.row];
+    }
+    [self performSegueWithIdentifier:@"HNT_WNSY_DetailController" sender:@{@"SYJID":model.SYJID,@"tableViewSigner":self.tableViewSigner}];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
@@ -405,7 +491,6 @@
     [self.view addSubview:backView];
     
     //2.
-//    Exp2View * e = [[Exp2View alloc] init];
     Exp52View * e = [[Exp52View alloc] init];
     e.useLabel = @"组织机构";
     e.frame = CGRectMake(0, 64+36, Screen_w, 240);
@@ -444,7 +529,7 @@
         }
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"HNT_WNSY_Controller" sender:btn];
+            [weakSelf performSegueWithIdentifier:@"HNT_WNSY_NewController" sender:btn];
         }
     };
     [self.view addSubview:e];
@@ -457,8 +542,8 @@
         __weak UIButton * weakBtn = sender;
         __weak __typeof(self)  weakSelf = self;
         controller.title = @"选择设备";
-        controller.conditonDict = @{@"departType":weakSelf.condition.departType?:@"",
-                                    @"biaoshiid":weakSelf.condition.biaoshiid?:@"",
+        controller.conditonDict = @{@"departType":weakSelf.condition.departType,
+                                    @"biaoshiid":weakSelf.condition.biaoshiid,
                                     @"machineType":@"4",
                                     };
         controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
@@ -466,17 +551,13 @@
             weakSelf.shebeibianhao = gprsbianhao;
         };
     }
-
+    
     if ([vc isKindOfClass:[HNT_WNSY_DetailController class]]) {
         HNT_WNSY_DetailController * controller = vc;
         controller.SYJID = ((NSDictionary*)sender)[@"SYJID"];
-        controller.xxid = ((NSDictionary*)sender)[@"xxid"];
         controller.tableViewSigner = ((NSDictionary*)sender)[@"tableViewSigner"];
         controller.title = @"详情";
     }
-}
--(void)dealloc{
-    FuncLog;
 }
 
 @end

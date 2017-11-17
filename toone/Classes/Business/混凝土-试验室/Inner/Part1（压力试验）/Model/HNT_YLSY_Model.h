@@ -18,13 +18,19 @@
 
 @property (nonatomic,copy) NSString * GCMC;
 @property (nonatomic,copy) NSString * SGBW;
-@property (nonatomic,copy) NSString * testName;
+@property (nonatomic,copy) NSString * testname;
 @property (nonatomic,copy) NSString * shebeiname;
 
 @property (nonatomic,copy) NSString * PDJG;
 @property (nonatomic,copy) NSString * chuzhi;
 
 @property (nonatomic,copy) NSString * SYJID;// 试验机id
+
+@property (nonatomic, copy) NSString *WTBH;//工程名称
+@property (nonatomic, copy) NSString *CJMC;//施工部位
+@property (nonatomic, copy) NSString *banhezhanminchen;
+@property (nonatomic, copy) NSString *BEIZHU;//是否处置
+@property (nonatomic, copy) NSString *xxid;
 /*
  GCMC true string 工程名称
  PDJG true string 评定及格 0.不合格 1.合格 2.有效 3.无效

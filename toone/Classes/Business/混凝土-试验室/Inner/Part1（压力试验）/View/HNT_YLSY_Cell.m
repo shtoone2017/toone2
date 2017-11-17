@@ -40,10 +40,10 @@
     self.sjbhLabel.text = model.SJBH;
     self.sjqdLabel.text = model.SJQD;
     self.qddbLabel.text = model.QDDBZ;
-    self.gcmcLabel.text = model.GCMC;
-    self.sgbwLabel.text = model.SGBW;
-    self.sylxLabel.text = model.testName;
-    self.sbmcLabel.text = model.shebeiname;
+    self.gcmcLabel.text = model.WTBH;
+    self.sgbwLabel.text = model.CJMC;
+    self.sylxLabel.text = model.testname;
+    self.sbmcLabel.text = model.banhezhanminchen;
     
     self.container1_label.text = model.PDJG;
     if(EqualToString(model.PDJG, @"不合格")){
@@ -57,14 +57,21 @@
     }
     
     
-    
-    if (EqualToString(model.chuzhi, @"0")) {
-        self.container2_label.text = @"未处置";
-        self.container2.backgroundColor = [UIColor bananaColor];
-    }else if (EqualToString(model.chuzhi, @"1")){
+    if (model.BEIZHU.length > 0) {
         self.container2_label.text = @"已处置";
         self.container2.backgroundColor = [UIColor emeraldColor];
+    }else if (model.BEIZHU.length == 0) {
+        self.container2_label.text = @"未处置";
+        self.container2.backgroundColor = [UIColor bananaColor];
     }
+    
+//    if (EqualToString(model.chuzhi, @"0")) {
+//        self.container2_label.text = @"未处置";
+//        self.container2.backgroundColor = [UIColor bananaColor];
+//    }else if (EqualToString(model.chuzhi, @"1")){
+//        self.container2_label.text = @"已处置";
+//        self.container2.backgroundColor = [UIColor emeraldColor];
+//    }
 }
 /*
  // Greens

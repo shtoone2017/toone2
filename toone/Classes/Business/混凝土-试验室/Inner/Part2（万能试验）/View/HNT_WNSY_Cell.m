@@ -54,12 +54,12 @@
  */
 -(void)setModel:(HNT_WNSY_Model *)model{
     self.sgrqLabel.text = model.SYRQ;
-    self.sysbLabel.text = model.shebeiname;
-    self.gcmcLabel.text = model.GCMC;
+    self.sysbLabel.text = model.banhezhanminchen;
+    self.gcmcLabel.text = model.WTBH;
     self.sjbhLabel.text = model.SJBH;
-    self.sgbwLabel.text = model.SGBW;
+    self.sgbwLabel.text = model.CJMC;
     self.pzLabel.text = model.PZBM;
-    self.sylxLabel.text = model.testName;
+    self.sylxLabel.text = model.testname;
     
     self.container1_label.text = model.PDJG;
     if(EqualToString(model.PDJG, @"不合格")){
@@ -70,12 +70,12 @@
     
     
     
-    if (EqualToString(model.chuzhi, @"0")) {
-        self.container2_label.text = @"未处置";
-        self.container2.backgroundColor = [UIColor bananaColor];
-    }else if (EqualToString(model.chuzhi, @"1")){
+    if (model.BEIZHU.length > 0) {
         self.container2_label.text = @"已处置";
         self.container2.backgroundColor = [UIColor emeraldColor];
+    }else if (model.BEIZHU.length == 0) {
+        self.container2_label.text = @"未处置";
+        self.container2.backgroundColor = [UIColor bananaColor];
     }
 }
 @end

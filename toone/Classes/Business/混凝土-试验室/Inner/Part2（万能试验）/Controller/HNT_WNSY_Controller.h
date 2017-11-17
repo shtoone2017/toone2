@@ -9,5 +9,5 @@
 #import "MyViewController.h"
 
 @interface HNT_WNSY_Controller : MyViewController
-@property (nonatomic,copy) NSString * userGroupId;
+//@property (nonatomic,copy) NSString * userGroupId;
 @end

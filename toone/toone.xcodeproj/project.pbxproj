@@ -55,6 +55,7 @@
 		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
+		4214BE061FBDABE500397ADA /* HNT_WNSY_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214BE051FBDABE500397ADA /* HNT_WNSY_NewController.m */; };
 		421CDF2E1FBA9DB500BA0852 /* SYS_MAIN_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF2C1FBA9DB500BA0852 /* SYS_MAIN_Cell.m */; };
 		421CDF2F1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CDF2D1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib */; };
 		421CDF7A1FBAD21D00BA0852 /* AAChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF341FBAD21D00BA0852 /* AAChartModel.m */; };
@@ -635,6 +636,8 @@
 		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
 		18DA4FE51E1E15B800229C81 /* Exmp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp2.h; sourceTree = "<group>"; };
 		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
+		4214BE041FBDABE500397ADA /* HNT_WNSY_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_WNSY_NewController.h; sourceTree = "<group>"; };
+		4214BE051FBDABE500397ADA /* HNT_WNSY_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_WNSY_NewController.m; sourceTree = "<group>"; };
 		421CDF2B1FBA9DB500BA0852 /* SYS_MAIN_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_MAIN_Cell.h; sourceTree = "<group>"; };
 		421CDF2C1FBA9DB500BA0852 /* SYS_MAIN_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_MAIN_Cell.m; sourceTree = "<group>"; };
 		421CDF2D1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYS_MAIN_Cell.xib; sourceTree = "<group>"; };
@@ -3015,6 +3018,8 @@
 			children = (
 				D20063BD1DFF86800021E293 /* HNT_WNSY_Controller.h */,
 				D20063BE1DFF86800021E293 /* HNT_WNSY_Controller.m */,
+				4214BE041FBDABE500397ADA /* HNT_WNSY_NewController.h */,
+				4214BE051FBDABE500397ADA /* HNT_WNSY_NewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4026,7 +4031,7 @@
 				TargetAttributes = {
 					D20062F81DFF85CB0021E293 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = MWKKG6D7EX;
+						DevelopmentTeam = ZKBSBDQVH2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -4560,6 +4565,7 @@
 				D200643F1DFF86800021E293 /* CJMonthDayViewController.m in Sources */,
 				187C73011E30B1810072F33A /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				D200653B1DFF86B30021E293 /* PieChartViewController.m in Sources */,
+				4214BE061FBDABE500397ADA /* HNT_WNSY_NewController.m in Sources */,
 				D20064401DFF86800021E293 /* CJYearViewController.m in Sources */,
 				42AC716B1E30C393007D8F57 /* MaterialTableViewController.m in Sources */,
 				D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */,
@@ -4784,13 +4790,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZKBSBDQVH2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gdyz.xy;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.shtoone.gdyz.xy--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4807,13 +4813,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZKBSBDQVH2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.gdyz.xy;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.shtoone.gdyz.xy--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

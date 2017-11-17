@@ -16,7 +16,7 @@
 @property (nonatomic,copy) NSString * acount;
 @property (nonatomic,copy) NSString * password;
 @property (nonatomic,copy) NSString * loginDepartId;
-@property (nonatomic,copy) NSString * departId;
+@property (nonatomic,copy) NSString * departId;//cid
 @property (nonatomic, copy) NSString *biaoshi;//
 @property (nonatomic, copy) NSString *userType;//
 @property (nonatomic,copy) NSString * departName;
