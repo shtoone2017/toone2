@@ -12,6 +12,8 @@
 @interface JumpVC ()
 - (IBAction)click:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *shebeibianhaoLabel;
+
+
 @property (weak, nonatomic) IBOutlet UISwitch *sw;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
@@ -29,7 +31,6 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.shebeibianhaoLabel.text = self.jump_shebeibianhao;
-    
 }
 -(void)back{
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -84,25 +85,22 @@
                             };
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    
     hud.mode = MBProgressHUDModeText;
     if (self.typeLabel.text.length == 0 || self.cengmianLabel.text.length == 0 || self.shebeibianhaoLabel.text.length == 0) {
         hud.label.text = NSLocalizedString(@"信息不完整无法提交", @"HUD cleanining up title");
         [hud hideAnimated:YES afterDelay:2.0];
         return;
     }
-    
     hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
     hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
     
     [HTTP requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
         if ([json[@"success"] boolValue]) {
             dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-                // Do something useful in the background and update the HUD periodically.
                 [self doSomeWorkWithProgress];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [hud hideAnimated:YES];
-                    [Tools tip:@"数据上传成功！"];
+                    [Tools tip:@"数据上传成功"];
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 });
             });

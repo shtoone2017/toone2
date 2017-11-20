@@ -22,7 +22,8 @@
 #import "SGAlertView.h"
 
 
-#import "JumpVC.h"
+//#import "JumpVC.h"
+#import "PersonVC.h"
 @interface SGScanningQRCodeVC () <AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 会话对象 */
 @property (nonatomic, strong) AVCaptureSession *session;
@@ -202,10 +203,12 @@
         }
 #endif
         
-        JumpVC *jumpVC = [[JumpVC alloc] init];
-        jumpVC.jump_shebeibianhao = obj.stringValue;
+//        JumpVC *jumpVC = [[JumpVC alloc] init];
+//          jumpVC.jump_shebeibianhao = obj.stringValue;
+        PersonVC *vc = [[PersonVC alloc] init];
+        vc.jump_shebeibianhao = obj.stringValue;
         NSLog(@"stringValue = = %@", obj.stringValue);
-        [self.navigationController pushViewController:jumpVC animated:YES];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

@@ -10,4 +10,5 @@
 
 @interface PersonVC : UIViewController
 @property (nonatomic,copy) NSString * userFullName;
+@property (nonatomic, copy) NSString *jump_shebeibianhao;
 @end

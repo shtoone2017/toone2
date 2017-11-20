@@ -16,6 +16,7 @@
 @interface PersonVC ()
 - (IBAction)click:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *biaohao;
 
 @end
 
@@ -23,27 +24,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"设置";
-    self.userLabel.text = self.userFullName;
+    self.title = @"上传";
+//    self.userLabel.text = self.userFullName;
+    self.userLabel.text = [UserDefaultsSetting shareSetting].userFullName;
+    self.biaohao.text = self.jump_shebeibianhao;
 }
 
 
 - (IBAction)click:(UIButton *)sender {
     switch (sender.tag) {
         case 2:{
-            [self openQRCode];
             break;
         }
         case 3:{
-            id vc = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateInitialViewController];
-            [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-            [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                [UserDefaultsSetting_SW shareSetting].login = NO;
-                [[UserDefaultsSetting_SW shareSetting] saveToSandbox];
-            });
-            
+            [self loadData];
             break;
         }
             
@@ -51,43 +45,30 @@
             break;
     }
 }
-
--(void)openQRCode{
-    // 1、 获取摄像设备
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if (device) {
-        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        if (status == AVAuthorizationStatusNotDetermined) {
-            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-                if (granted) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        SGScanningQRCodeVC *scanningQRCodeVC = [[SGScanningQRCodeVC alloc] init];
-                        [self.navigationController pushViewController:scanningQRCodeVC animated:YES];
-                        NSLog(@"主线程 - - %@", [NSThread currentThread]);
-                    });
-                    NSLog(@"当前线程 - - %@", [NSThread currentThread]);
-                    
-                    // 用户第一次同意了访问相机权限
-                    NSLog(@"用户第一次同意了访问相机权限");
-                    
-                } else {
-                    
-                    // 用户第一次拒绝了访问相机权限
-                    NSLog(@"用户第一次拒绝了访问相机权限");
-                }
-            }];
-        } else if (status == AVAuthorizationStatusAuthorized) { // 用户允许当前应用访问相机
-            SGScanningQRCodeVC *scanningQRCodeVC = [[SGScanningQRCodeVC alloc] init];
-            [self.navigationController pushViewController:scanningQRCodeVC animated:YES];
-        } else if (status == AVAuthorizationStatusDenied) { // 用户拒绝当前应用访问相机
-            SGAlertView *alertView = [SGAlertView alertViewWithTitle:@"⚠️ 警告" delegate:nil contentTitle:@"请去-> [设置 - 隐私 - 相机 - SGQRCodeExample] 打开访问开关" alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-            [alertView show];
-        } else if (status == AVAuthorizationStatusRestricted) {
-            NSLog(@"因为系统原因, 无法访问相册");
+-(void)loadData {
+    NSString *urlString = [NSString stringWithFormat:AppQrcod,_jump_shebeibianhao,_userLabel.text];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        hud.mode = MBProgressHUDModeDeterminate;
+    hud.label.text = NSLocalizedString(@"正在提交", @"HUD loading title");
+    
+    [HTTP requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        if ([json[@"success"] boolValue]){
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = json[@"description"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
+                [self.navigationController popToViewController:vc animated:YES];
+            });
+        }else{
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = json[@"description"];
         }
-    } else {
-        SGAlertView *alertView = [SGAlertView alertViewWithTitle:@"⚠️ 警告" delegate:nil contentTitle:@"未检测到您的摄像头, 请在真机上测试" alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-        [alertView show];
-    }
+        [hud hideAnimated:YES afterDelay:2.0];
+    } failure:^(NSError *error) {
+        
+    }];
 }
+
+
 @end

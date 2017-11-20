@@ -132,8 +132,10 @@
 
                                     /****广东项目新增混凝土和试验室****/
 //----------------------------------------------------------------------------------------------------//
-
+//登录
 #define AppLogin   FormatString(baseUrl,@"appHnt/AppLogin?userName=%@&userPwd=%@&OSType=3")
+//二维码
+#define AppQrcod   FormatString(baseUrl,@"appSys/QrcodeUpdata?uuid=%@&username=%@")
 //组织机构
 #define GDdepartTree   FormatString(baseUrl,@"appHnt/departTree?")
 //设备
