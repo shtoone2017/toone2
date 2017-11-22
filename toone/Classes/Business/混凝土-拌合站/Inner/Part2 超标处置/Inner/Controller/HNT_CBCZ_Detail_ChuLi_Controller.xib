@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HNT_CBCZ_Detail_ChuLi_Controller">
             <connections>
                 <outlet property="imgv" destination="PJ6-bb-hi3" id="6eZ-0R-XWV"/>
+                <outlet property="tishiView1" destination="qpM-xb-s48" id="ofM-A1-uc7"/>
+                <outlet property="tishiView2" destination="q2J-2f-Nm5" id="ir9-WE-s2f"/>
                 <outlet property="txt1" destination="aj7-SX-AiJ" id="w6i-82-Uue"/>
                 <outlet property="txt2" destination="HhE-Ke-bDQ" id="GAF-NB-ZRR"/>
                 <outlet property="txt3" destination="Z0m-PH-nUR" id="Dcc-Hl-JXA"/>

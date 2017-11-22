@@ -12,6 +12,8 @@
 #import "HNT_CLHS_Cell.h"
 #import "HNT_BHZ_SB_Controller.h"
 #import "BarModel.h"
+
+#import "AAChartView.h"
 @interface HNT_CLHS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSMutableArray * datas;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -66,15 +68,29 @@
         NSMutableArray * bars1 = [NSMutableArray array];
         NSMutableArray * bars2 = [NSMutableArray array];
         for (HNT_CLHS_Model * model in datas) {
-            BarModel * bar1 = [[BarModel alloc] init];
-            bar1.name = model.name;
-            bar1.value = model.shiji;
-            [bars1 addObject:bar1];
+//            BarModel * bar1 = [[BarModel alloc] init];
+//            bar1.name = model.name;
+//            bar1.value = model.shiji;
+//            [bars1 addObject:bar1];
+//            
+//            BarModel * bar2 = [[BarModel alloc] init];
+//            bar2.name = model.name;
+//            bar2.value = model.peibi;
+//            [bars2 addObject:bar2];
             
-            BarModel * bar2 = [[BarModel alloc] init];
-            bar2.name = model.name;
-            bar2.value = model.peibi;
-            [bars2 addObject:bar2];
+            AASeriesElement *mode1 = [[AASeriesElement alloc] init];
+            mode1.nameSet(model.name);
+            double value1 =  [(NSString*)model.shiji doubleValue];
+            NSNumber *num1 = [NSNumber numberWithDouble:value1];
+            mode1.dataSet(@[num1]);
+            [bars1 addObject:mode1];
+            
+            AASeriesElement *mode = [[AASeriesElement alloc] init];
+            mode.nameSet(model.name);
+            double value =  [(NSString*)model.peibi doubleValue];
+            NSNumber *num = [NSNumber numberWithDouble:value];
+            mode.dataSet(@[num]);
+            [bars2 addObject:mode];
             
         }
         weakSelf.datas1 = bars1;
@@ -84,7 +100,9 @@
         [weakSelf.tableView reloadData];
         
         //移除指示器
-        [Tools removeActivity];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [Tools removeActivity];
+//        });
     } failure:^(NSError *error) {
     }];
     

@@ -26,4 +26,10 @@
 @property (nonatomic,copy) NSString *SJQD;//"C50",
 @property (nonatomic,copy) NSString *f_GUID;//
 @property (nonatomic,copy) NSString *QDDBZ;//"39.1"
+
+@property (nonatomic, copy) NSString *chuliren;
+@property (nonatomic, copy) NSString *chulishijian;
+@property (nonatomic, copy) NSString *chulifangshi;
+@property (nonatomic, copy) NSString *wentiyuanyin;
+@property (nonatomic, copy) NSString *chulijieguo;
 @end

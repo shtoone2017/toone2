@@ -12,6 +12,8 @@
 #import "BarChartViewController.h"
 #import "HNT_TJFX_HeaderView.h"
 #import "HNT_TJFX_TxtView.h"
+
+#import "AAChartView.h"
 @interface HNT_TJFX_Controller ()
 @property (nonatomic,strong) NSMutableArray * datas;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -22,7 +24,9 @@
 @property (weak, nonatomic) IBOutlet UIView *container3; //表格视图父视图
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sc_container_height;
 
-
+@property (nonatomic, strong) AAChartModel *aaChartModel;
+@property (nonatomic, strong) AAChartView  *aaChartView1;
+@property (nonatomic, strong) AAChartView  *aaChartView2;
 @end
 
 @implementation HNT_TJFX_Controller
@@ -74,30 +78,74 @@
         
         //数据处理加载ui
         //1.试验总数
-        NSMutableArray * tests = [NSMutableArray array];
+//        NSMutableArray * tests = [NSMutableArray array];
+        NSMutableArray * setData = [NSMutableArray array];
         for (HNT_TJFX_Model * model in datas) {
-            BarModel * bar = [[BarModel alloc] init];
-            bar.name = model.testName;
-            bar.value = model.testCount;
-            [tests addObject:bar];
+//            BarModel * bar = [[BarModel alloc] init];
+//            bar.name = model.testName;
+//            bar.value = model.testCount;
+//            [tests addObject:bar];
+//            [tests addObject:model.testName];
+            AASeriesElement *mode = [[AASeriesElement alloc] init];
+            mode.nameSet(model.testName);
+            double value =  [(NSString*)model.testCount doubleValue];
+            NSNumber *num = [NSNumber numberWithDouble:value];
+            mode.dataSet(@[num]);
+            [setData addObject:mode];
         }
-        BarChartViewController * chat1VC = [[BarChartViewController alloc] initWithArr:tests];
-        chat1VC.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 360);
-        [self addChildViewController:chat1VC];
-        [self.container1 addSubview:chat1VC.view];
+        self.aaChartView1 = [[AAChartView alloc]initWithFrame:CGRectMake(0, 0, weakSelf.view.bounds.size.width, 360)];
+        self.aaChartView1.contentHeight = 360;
+        [self.container1 addSubview:weakSelf.aaChartView1];
+        
+        self.aaChartModel = AAObject(AAChartModel)
+        .chartTypeSet(AAChartTypeColumn)//图表的类型
+        .titleSet(@"")//图表标题
+        .subtitleSet(@"")//图表副标题
+        .categoriesSet(@[@""])//设置图表横轴的内容
+        .yAxisTitleSet(@"")//设置图表 y 轴的单位
+        .seriesSet(setData);
+        self.aaChartModel.dataLabelEnabled = YES;
+        [self.aaChartView1 aa_drawChartWithChartModel:_aaChartModel];
+
+        
+//        BarChartViewController * chat1VC = [[BarChartViewController alloc] initWithArr:tests];
+//        chat1VC.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 360);
+//        [self addChildViewController:chat1VC];
+//        [self.container1 addSubview:chat1VC.view];
         
         //2.notqualifiedCount  不合格的试验数
         NSMutableArray * notqs = [NSMutableArray array];
         for (HNT_TJFX_Model * model in datas) {
-            BarModel * bar = [[BarModel alloc] init];
-            bar.name = model.testName;
-            bar.value = model.notqualifiedCount;
-            [notqs addObject:bar];
+//            BarModel * bar = [[BarModel alloc] init];
+//            bar.name = model.testName;
+//            bar.value = model.notqualifiedCount;
+//            [notqs addObject:bar];
+            AASeriesElement *mode = [[AASeriesElement alloc] init];
+            mode.nameSet(model.testName);
+            double value =  [(NSString*)model.notqualifiedCount doubleValue];
+            NSNumber *num = [NSNumber numberWithDouble:value];
+            mode.dataSet(@[num]);
+            [notqs addObject:mode];
         }
-        BarChartViewController * chat2VC = [[BarChartViewController alloc] initWithArr:notqs];
-        chat2VC.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 360);
-        [self addChildViewController:chat2VC];
-        [self.container2 addSubview:chat2VC.view];
+        self.aaChartView2 = [[AAChartView alloc]initWithFrame:CGRectMake(0, 0, weakSelf.view.bounds.size.width, 360)];
+        self.aaChartView2.contentHeight = 360;
+        [self.container2 addSubview:weakSelf.aaChartView2];
+        
+        self.aaChartModel = AAObject(AAChartModel)
+        .chartTypeSet(AAChartTypeColumn)//图表的类型
+        .titleSet(@"")//图表标题
+        .subtitleSet(@"")//图表副标题
+        .categoriesSet(@[@""])//设置图表横轴的内容
+        .yAxisTitleSet(@"")//设置图表 y 轴的单位
+        .seriesSet(notqs);
+        self.aaChartModel.dataLabelEnabled = YES;
+        [self.aaChartView2 aa_drawChartWithChartModel:_aaChartModel];
+        
+        
+//        BarChartViewController * chat2VC = [[BarChartViewController alloc] initWithArr:notqs];
+//        chat2VC.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, 360);
+//        [self addChildViewController:chat2VC];
+//        [self.container2 addSubview:chat2VC.view];
         
         //3.0
         HNT_TJFX_HeaderView * header = [[NSBundle mainBundle] loadNibNamed:@"HNT_TJFX_HeaderView" owner:self options:nil].firstObject;

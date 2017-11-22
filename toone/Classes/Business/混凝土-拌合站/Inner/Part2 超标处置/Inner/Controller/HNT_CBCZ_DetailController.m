@@ -221,6 +221,7 @@
 }
 -(void)goto_chuzhi{
     HNT_CBCZ_Detail_ChuLi_Controller * vc = [[HNT_CBCZ_Detail_ChuLi_Controller alloc] init];
+    vc.type = 1;
     vc.SId = self.headMsg.SId;
     [self.navigationController pushViewController:vc animated:YES];
 }

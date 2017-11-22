@@ -27,4 +27,10 @@
 @property (nonatomic,copy) NSString * f_SJ ;// 图形X轴
 @property (nonatomic,copy) NSString * shebeiname ;// 设备名称
 @property (nonatomic,copy) NSString * testName ;// 试验名称
+
+@property (nonatomic, copy) NSString *chuliren;
+@property (nonatomic, copy) NSString *chulishijian;
+@property (nonatomic, copy) NSString *chulifangshi;
+@property (nonatomic, copy) NSString *wentiyuanyin;
+@property (nonatomic, copy) NSString *chulijieguo;
 @end

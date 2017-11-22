@@ -67,14 +67,16 @@
 #import "Tools.h"
 #import "SGTextView.h"
 #import "DGActivityIndicatorView.h"
+
+#import "AAGlobalMacro.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 
 
 //云部署地址
-#define baseUrl    @"http://121.40.163.88:8081/zjlq/"
+//#define baseUrl    @"http://121.40.163.88:8081/zjlq/"
 
-//#define baseUrl    @"http://192.168.11.115:8081/zjlq/"
+#define baseUrl    @"http://192.168.1.181:8081/zgjjqmsbakNew/"
 
 //@"http://192.168.11.115:8081/zgjjqmsbak/"
 //@"http://120.26.127.135:8083/xztl/"

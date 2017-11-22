@@ -148,7 +148,7 @@
                     
                     setting.loginDepartId  = json[@"departId"];
                     setting.userRole  = json[@"userRole"];
-                    setting.type  = json[@"type"];//层级
+                    setting.type  = json[@"type"];//层级ad
                     [setting saveToSandbox];
                 });
                 

@@ -10,7 +10,9 @@
 #import "HNT_WNSY_DetailModel.h"
 #import "LineChart1ViewController.h"
 #import "AxisModel.h"
+#import "HNT_CBCZ_Detail_ChuLi_Controller.h"
 
+#import "AAChartView.h"
 #import "HNT_ChuZhi_Controller.h"
 @interface HNT_WNSY_DetailController ()<UITextFieldDelegate,UIScrollViewDelegate>
 //1.万能试验
@@ -42,8 +44,15 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView3;
 @property (weak, nonatomic) IBOutlet UIScrollView *big_sc;
 
-
+@property (weak, nonatomic) IBOutlet UIView *chuliBgView;
+@property (nonatomic,weak) IBOutlet UILabel  * chuliren ;//  处置：处理人
+@property (nonatomic,weak) IBOutlet UILabel  * chulishijian ;//  处置：处理时间
+@property (nonatomic,weak) IBOutlet UILabel  * wentiyuanyin ;//  处置：处置原因
+@property (nonatomic,weak) IBOutlet UILabel  * chulifangshi ;//  处置：处理方式
+@property (nonatomic,weak) IBOutlet UILabel  * chulijieguo ;//  处置：处理结果
 /******************************/
+@property (nonatomic, strong) AAChartModel *aaChartModel;
+@property (nonatomic, strong) AAChartView  *aaChartView;
 
 @property (nonatomic,strong) HNT_WNSY_DetailModel * model;
 //指示器MB用
@@ -110,22 +119,29 @@
                 switch ([weakSelf.tableViewSigner integerValue]) {
                     case 1:
                     case 3:{
-                        if (model.chuli.length >0) {
-                            NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
-                            CGSize maxSize = CGSizeMake(Screen_w-20, MAXFLOAT);
-                            CGSize size = [model.chuli boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
-                            CGFloat height = size.height;
-                            if (height > 100) {
-                                height = 100;
-                            }
-                            UILabel * chuZhi_label = [[UILabel alloc] init];
-                            chuZhi_label.frame = CGRectMake(10, 40, Screen_w-20, height);
-                            chuZhi_label.font = [UIFont systemFontOfSize:12.0];
-                            chuZhi_label.text = model.chuli;
-                            chuZhi_label.numberOfLines=0;
-                            [weakSelf.containerView3 addSubview:chuZhi_label];
+                        if (model.chulijieguo.length >0) {
+                            _chuliBgView.hidden = NO;
+                            self.chulifangshi.text = model.chulifangshi;//  处置：处理方式
+                            self.chulijieguo.text = model.chulijieguo;//  处置：处理结果
+                            self.chuliren.text = model.chuliren;//  处置：处理人
+                            self.chulishijian.text = model.chulishijian;
+                            self.wentiyuanyin.text = model.wentiyuanyin;
+//                            NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
+//                            CGSize maxSize = CGSizeMake(Screen_w-20, MAXFLOAT);
+//                            CGSize size = [model.chuli boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+//                            CGFloat height = size.height;
+//                            if (height > 100) {
+//                                height = 100;
+//                            }
+//                            UILabel * chuZhi_label = [[UILabel alloc] init];
+//                            chuZhi_label.frame = CGRectMake(10, 40, Screen_w-20, height);
+//                            chuZhi_label.font = [UIFont systemFontOfSize:12.0];
+//                            chuZhi_label.text = model.chuli;
+//                            chuZhi_label.numberOfLines=0;
+//                            [weakSelf.containerView3 addSubview:chuZhi_label];
                         }
                         else{
+                            _chuliBgView.hidden = YES;
                             UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
                             chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
                             [chuZhi_btn setTitle:@"尚未处置，点击这里开始处置..." forState:UIControlStateNormal];
@@ -168,32 +184,50 @@
                 //加载曲线图
                 for (int i = 0 ; i<totalArray.count; i++) {
                     //1.取出最大值和最小值
-                    int y_Min = CGFLOAT_MAX;
-                    int y_Max = CGFLOAT_MIN;
-                    for (int j; j<arrY.count; j++) {
-                        int value = [(NSString*)arrY[i][j] intValue];
-                        if (value>y_Max) {
-                            y_Max = value;
-                        }
-                        if (value<y_Min) {
-                            y_Min = value;
-                        }
-                    }
-                    
-                    NSDictionary * dict = @{@"y_Max":FormatInt(y_Max),
-                                            @"y_Min":FormatInt(y_Min),
-                                            @"datas":totalArray[i],
-                                            };
+//                    int y_Min = CGFLOAT_MAX;
+//                    int y_Max = CGFLOAT_MIN;
+//                    for (int j; j<arrY.count; j++) {
+//                        int value = [(NSString*)arrY[i][j] intValue];
+//                        if (value>y_Max) {
+//                            y_Max = value;
+//                        }
+//                        if (value<y_Min) {
+//                            y_Min = value;
+//                        }
+//                    }
+//                    NSDictionary * dict = @{@"y_Max":FormatInt(y_Max),
+//                                            @"y_Min":FormatInt(y_Min),
+//                                            @"datas":totalArray[i],
+//                                            };
                     if ([totalArray[i] count] == 0) {
                         [Tools tip:@"没有数据"];
                         //移除指示器
                         [Tools removeActivity];
                         return ;
                     }
-                    LineChart1ViewController * vc = [[LineChart1ViewController alloc] initWithDict:dict];
-                    vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
-                    [weakSelf addChildViewController:vc];
-                    [weakSelf.chart_sc addSubview:vc.view];
+                    self.aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360)];
+                    self.aaChartView.contentHeight = 360;
+                    [weakSelf.chart_sc addSubview:weakSelf.aaChartView];
+                    
+                    self.aaChartModel = AAObject(AAChartModel)
+                    .chartTypeSet(AAChartTypeAreaspline)//图表的类型
+                    .titleSet(@"")//图表标题
+                    .subtitleSet(@"")//图表副标题
+                    .categoriesSet(@[@""])//设置图表横轴的内容
+                    .yAxisTitleSet(@"")//设置图表 y 轴的单位
+                    .seriesSet(@[
+                                 AAObject(AASeriesElement)
+                                 .nameSet(@"")
+                                 .dataSet(totalArray[i]),
+                                 ]);
+                    
+                    self.aaChartModel.dataLabelEnabled = YES;
+                    [self.aaChartView aa_drawChartWithChartModel:_aaChartModel];
+                    
+//                    LineChart1ViewController * vc = [[LineChart1ViewController alloc] initWithDict:dict];
+//                    vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
+//                    [weakSelf addChildViewController:vc];
+//                    [weakSelf.chart_sc addSubview:vc.view];
                     
                 }
                 //移除指示器
@@ -229,7 +263,11 @@
 }
 #pragma mark - 进入处置界面
 -(void)goto_chuzhi{
-    [self performSegueWithIdentifier:@"HNT_WNSY_DetailController_chuzhi" sender:nil];
+    HNT_CBCZ_Detail_ChuLi_Controller * vc = [[HNT_CBCZ_Detail_ChuLi_Controller alloc] init];
+    vc.type = 2;
+    vc.SYJID = _SYJID;
+    [self.navigationController pushViewController:vc animated:YES];
+//    [self performSegueWithIdentifier:@"HNT_WNSY_DetailController_chuzhi" sender:nil];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
