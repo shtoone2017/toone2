@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
-#define PGY_APPID @"104a4a3a2bee7f5ec505f41d198f9952"
+#define PGY_APPID @"f08aac06fc0b628949348dc449851e64"
 
 @interface AppDelegate ()<UIAlertViewDelegate>
 
