@@ -49,6 +49,8 @@
 #define Color1                  SGCOLOR(224,243,241,1.0)
 #define Color2                  SGCOLOR(232,232,253,1.0)
 
+#define PGY_APP_ID @"ce6be689ca22c30cf42ecba4bd1ea5f4"
+
 #import "UserDefaultsSetting.h"
 #import "UIView+Frame.h"
 #import "UIView+Shape.h"
@@ -74,9 +76,9 @@
 
 
 //云部署地址
-#define baseUrl    @"* http://114.115.130.221:8086/ehgsqms/"
+#define baseUrl    @"http://114.115.130.221:8086/ehgsqms/"
 
-//#define baseUrl    @"http://192.168.1.181:8081/zgjjqmsbakNew/"
+//#define baseUrl    @"http://192.168.1.185:8081/qms/"
 
 
 

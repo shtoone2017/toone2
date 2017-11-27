@@ -124,7 +124,7 @@
                             _chuliBgView.hidden = NO;
                             self.chulifangshi.text = model.chulifangshi;//  处置：处理方式
                             self.chulijieguo.text = model.chulijieguo;//  处置：处理结果
-                            self.chuliren.text = model.chuliren;//  处置：处理人
+                            self.chuliren.text = [UserDefaultsSetting shareSetting].userFullName;//  处置：处理人
                             self.chulishijian.text = model.chulishijian;
                             self.wentiyuanyin.text = model.wentiyuanyin;
 //                            NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};

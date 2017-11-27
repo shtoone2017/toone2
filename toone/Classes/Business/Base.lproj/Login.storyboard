@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,13 +29,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ql-6ty" userLabel="logo">
-                                        <rect key="frame" x="120" y="60" width="80" height="80"/>
+                                        <rect key="frame" x="85" y="60" width="150" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="9b4-lY-qYj"/>
-                                            <constraint firstAttribute="width" constant="80" id="Xfw-XF-XEx"/>
+                                            <constraint firstAttribute="height" constant="50" id="9b4-lY-qYj"/>
+                                            <constraint firstAttribute="width" constant="150" id="Xfw-XF-XEx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="混凝土信息管理系统" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="四川铁投公路质量监督管理平台" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-Cb-PxP">
                                         <rect key="frame" x="0.0" y="180" width="320" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="PyK-MR-vJD"/>
@@ -229,7 +229,7 @@
     </scenes>
     <resources>
         <image name="ic_lock_outline_blue_500_18dp" width="54" height="54"/>
-        <image name="ic_logo_login" width="288" height="113"/>
+        <image name="ic_logo_login" width="500" height="500"/>
         <image name="ic_person_outline_blue_500_18dp" width="54" height="54"/>
     </resources>
 </document>

@@ -34,7 +34,7 @@
     _acountLine.backgroundColor = [UIColor pastelBlueColor];
     _passwordLine.backgroundColor = [UIColor pastelBlueColor];
     _loginButton.layer.cornerRadius = 20.0f;
-    self.bottomLabel.text = @"Copyright © 2014 中国交通信息中心";
+    self.bottomLabel.text = @"Copyright © 四川铁投信息技术产业投资有限公司";
    
     
     [[NSNotificationCenter  defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification  object:nil];
