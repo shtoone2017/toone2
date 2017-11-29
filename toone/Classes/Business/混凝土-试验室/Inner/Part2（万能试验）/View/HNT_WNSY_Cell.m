@@ -65,6 +65,7 @@
     if(EqualToString(model.PDJG, @"不合格")){
         self.container1_label.backgroundColor = [UIColor salmonColor];
     }else if(EqualToString(model.PDJG, @"合格")){
+        self.container2.hidden = YES;
         self.container1_label.backgroundColor = [UIColor grassColor];
     }
     

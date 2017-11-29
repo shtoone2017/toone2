@@ -215,7 +215,7 @@
         case 6://未处置
             self.pageNo = self.pageNo6;
             self.isReal = @"1";
-            self.isQualified = @"";
+            self.isQualified = @"0";
             if(self.datas6==nil) [self loadData];
             break;
         default:

@@ -8,7 +8,7 @@
 
 #import "HNT_YLSY_DetailController.h"
 #import "HNT_YLSY_DetailModel.h"
-#import "LineChart1ViewController.h"
+//#import "LineChart1ViewController.h"
 #import "AxisModel.h"
 #import "HNT_CBCZ_Detail_ChuLi_Controller.h"
 
@@ -73,12 +73,13 @@
     switch ([self.tableViewSigner integerValue]) {
         case 1:
         case 4:
+        case 5:
         case 6:{
             break;
         }
-        case 2:
+        
         case 3:
-        case 5:{
+        case 2:{
             self.big_sc_containerHeight.constant = 980-150-10;
             [self.containerView3 removeFromSuperview];
             break;
@@ -119,6 +120,7 @@
                 switch ([weakSelf.tableViewSigner integerValue]) {
                     case 1:
                     case 4:
+                    case 5:
                     case 6:{
                         if (model.chulijieguo.length >0) {
                             _chuliBgView.hidden = NO;
@@ -127,28 +129,20 @@
                             self.chuliren.text = [UserDefaultsSetting shareSetting].userFullName;//  处置：处理人
                             self.chulishijian.text = model.chulishijian;
                             self.wentiyuanyin.text = model.wentiyuanyin;
-//                            NSDictionary * dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
-//                            CGSize maxSize = CGSizeMake(Screen_w-20, MAXFLOAT);
-//                            CGSize size = [model.chulijieguo boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
-//                            CGFloat height = size.height;
-//                            if (height > 100) {
-//                                height = 100;
-//                            }
-//                            UILabel * chuZhi_label = [[UILabel alloc] init];
-//                            chuZhi_label.frame = CGRectMake(10, 40, Screen_w-20, height);
-//                            chuZhi_label.font = [UIFont systemFontOfSize:12.0];
-//                            chuZhi_label.text = model.chuli;
-//                            chuZhi_label.numberOfLines=0;
-//                            [weakSelf.containerView3 addSubview:chuZhi_label];
                         }
                         else{
                             _chuliBgView.hidden = YES;
-                            UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
-                            chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
-                            [chuZhi_btn setTitle:@"尚未处置，点击这里进入处置界面..." forState:UIControlStateNormal];
-                            chuZhi_btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
-                            [weakSelf.containerView3 addSubview:chuZhi_btn];
-                            [chuZhi_btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
+                            if ([UserDefaultsSetting shareSetting].syschaobiaoReal) {
+                                UIButton * chuZhi_btn = [UIButton buttonWithType:UIButtonTypeSystem];
+                                chuZhi_btn.frame = CGRectMake(0, 40, Screen_w, 30);
+                                [chuZhi_btn setTitle:@"尚未处置，点击这里进入处置界面..." forState:UIControlStateNormal];
+                                chuZhi_btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
+                                [weakSelf.containerView3 addSubview:chuZhi_btn];
+                                [chuZhi_btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
+                            }else {
+                                self.big_sc_containerHeight.constant = 980-150-10;
+                                [self.containerView3 removeFromSuperview];
+                            }
                         }
                         break;
                     }
@@ -218,7 +212,7 @@
                     .yAxisTitleSet(@"")//设置图表 y 轴的单位
                     .seriesSet(@[
                                  AAObject(AASeriesElement)
-                                 .nameSet(@"")
+                                 .nameSet(@"力值(KN)--时间(S) 曲线图")
                                  .dataSet(totalArray[i]),
                                  ]);
                     

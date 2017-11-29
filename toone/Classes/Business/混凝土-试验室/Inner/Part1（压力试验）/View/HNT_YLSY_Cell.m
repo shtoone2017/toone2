@@ -49,8 +49,10 @@
     if(EqualToString(model.PDJG, @"不合格")){
         self.container1_label.backgroundColor = [UIColor salmonColor];
     }else if(EqualToString(model.PDJG, @"合格")){
+        self.container2.hidden = YES;
         self.container1_label.backgroundColor = [UIColor emeraldColor];
     }else if(EqualToString(model.PDJG, @"有效")){
+        self.container2.hidden = YES;
         self.container1_label.backgroundColor = [UIColor emeraldColor];
     }else if(EqualToString(model.PDJG, @"无效")){
         self.container1_label.backgroundColor = [UIColor brickRedColor];

@@ -173,7 +173,7 @@
             break;
         case 3://未处理
             self.pageNo = self.pageNo3;
-            self.isQualified = @"";
+            self.isQualified = @"0";
             self.isReal =@"1";
             if(self.datas3==nil) [self loadData];
             break;
