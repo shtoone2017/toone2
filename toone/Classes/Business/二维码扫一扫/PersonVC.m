@@ -36,7 +36,7 @@
         case 2:{
             break;
         }
-        case 3:{
+        case 3:{//上传
             [self loadData];
             break;
         }
