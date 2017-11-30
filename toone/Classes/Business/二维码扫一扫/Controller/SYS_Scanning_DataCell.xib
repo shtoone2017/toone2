@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SYS_Scanning_DataCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dR5-cR-fse">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="养护人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOl-FR-tvo">
+                                <rect key="frame" x="5" y="0.0" width="75" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="WGj-fd-b6M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="养护时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ld1-dM-ism">
+                                <rect key="frame" x="80" y="0.0" width="235" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LOl-FR-tvo" secondAttribute="bottom" id="6L4-YY-XS3"/>
+                            <constraint firstItem="Ld1-dM-ism" firstAttribute="top" secondItem="dR5-cR-fse" secondAttribute="top" id="9bS-ue-NIp"/>
+                            <constraint firstAttribute="bottom" secondItem="Ld1-dM-ism" secondAttribute="bottom" id="IJv-5v-9by"/>
+                            <constraint firstItem="LOl-FR-tvo" firstAttribute="top" secondItem="dR5-cR-fse" secondAttribute="top" id="LQu-83-jlE"/>
+                            <constraint firstItem="LOl-FR-tvo" firstAttribute="leading" secondItem="dR5-cR-fse" secondAttribute="leading" constant="5" id="MUl-xz-k2A"/>
+                            <constraint firstAttribute="height" constant="20" id="PIi-0x-b1O"/>
+                            <constraint firstItem="Ld1-dM-ism" firstAttribute="leading" secondItem="LOl-FR-tvo" secondAttribute="trailing" id="S6J-bx-jS8"/>
+                            <constraint firstAttribute="trailing" secondItem="Ld1-dM-ism" secondAttribute="trailing" constant="5" id="iT8-lq-tgT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dR5-cR-fse" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PQO-Wn-KAm"/>
+                    <constraint firstItem="dR5-cR-fse" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bsr-ez-c51"/>
+                    <constraint firstAttribute="trailing" secondItem="dR5-cR-fse" secondAttribute="trailing" id="nfp-gW-CV4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="startTime" destination="Ld1-dM-ism" id="Svr-Zc-aNw"/>
+                <outlet property="userName" destination="LOl-FR-tvo" id="K7j-W3-QaB"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

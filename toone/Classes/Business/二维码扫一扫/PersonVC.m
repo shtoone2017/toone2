@@ -7,7 +7,7 @@
 //
 
 #import "PersonVC.h"
-
+#import "SYS_ScanningController.h"
 
 #import "SGGenerateQRCodeVC.h"
 #import "SGScanningQRCodeVC.h"
@@ -54,12 +54,29 @@
     
     [HTTP requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json[@"success"] boolValue]){
-            hud.mode = MBProgressHUDModeText;
-            hud.label.text = json[@"description"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
-                [self.navigationController popToViewController:vc animated:YES];
-            });
+            if (EqualToString(json[@"status"], @"2")) {
+                [hud hideAnimated:YES];
+                SYS_ScanningController *vc = [[SYS_ScanningController alloc] init];
+                NSDictionary *dict = @{@"lq":json[@"data"][@"lq"],
+                                       @"startTime":json[@"data"][@"startTime"],
+                                       @"userName":json[@"data"][@"userName"],
+                                       };
+                vc.conditonDict = dict;
+                [self presentViewController:vc animated:YES completion:^{
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                        UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
+                        [self.navigationController popToViewController:vc animated:YES];
+                    });
+                }];                
+                return ;
+            }else if (EqualToString(json[@"status"], @"1")) {
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = @"上传成功，开始养护";
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
+                    [self.navigationController popToViewController:vc animated:YES];
+                });
+            }
         }else{
             hud.mode = MBProgressHUDModeText;
             hud.label.text = json[@"description"];

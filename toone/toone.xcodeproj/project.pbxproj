@@ -56,6 +56,11 @@
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
 		4214BE061FBDABE500397ADA /* HNT_WNSY_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214BE051FBDABE500397ADA /* HNT_WNSY_NewController.m */; };
+		421886F61FCFA03200BC9FE2 /* SYS_ScanningController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421886F51FCFA03200BC9FE2 /* SYS_ScanningController.m */; };
+		421886FB1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421886F91FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.m */; };
+		421886FC1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421886FA1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.xib */; };
+		421887001FCFA30600BC9FE2 /* SYS_Scanning_DataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421886FE1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.m */; };
+		421887011FCFA30600BC9FE2 /* SYS_Scanning_DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421886FF1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.xib */; };
 		421CDF2E1FBA9DB500BA0852 /* SYS_MAIN_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF2C1FBA9DB500BA0852 /* SYS_MAIN_Cell.m */; };
 		421CDF2F1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CDF2D1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib */; };
 		421CDF7A1FBAD21D00BA0852 /* AAChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF341FBAD21D00BA0852 /* AAChartModel.m */; };
@@ -638,6 +643,14 @@
 		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
 		4214BE041FBDABE500397ADA /* HNT_WNSY_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_WNSY_NewController.h; sourceTree = "<group>"; };
 		4214BE051FBDABE500397ADA /* HNT_WNSY_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_WNSY_NewController.m; sourceTree = "<group>"; };
+		421886F41FCFA03200BC9FE2 /* SYS_ScanningController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYS_ScanningController.h; path = ../SYS_ScanningController.h; sourceTree = "<group>"; };
+		421886F51FCFA03200BC9FE2 /* SYS_ScanningController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYS_ScanningController.m; path = ../SYS_ScanningController.m; sourceTree = "<group>"; };
+		421886F81FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_Scanning_HeadCell.h; sourceTree = "<group>"; };
+		421886F91FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_Scanning_HeadCell.m; sourceTree = "<group>"; };
+		421886FA1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYS_Scanning_HeadCell.xib; sourceTree = "<group>"; };
+		421886FD1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_Scanning_DataCell.h; sourceTree = "<group>"; };
+		421886FE1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_Scanning_DataCell.m; sourceTree = "<group>"; };
+		421886FF1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYS_Scanning_DataCell.xib; sourceTree = "<group>"; };
 		421CDF2B1FBA9DB500BA0852 /* SYS_MAIN_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_MAIN_Cell.h; sourceTree = "<group>"; };
 		421CDF2C1FBA9DB500BA0852 /* SYS_MAIN_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_MAIN_Cell.m; sourceTree = "<group>"; };
 		421CDF2D1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYS_MAIN_Cell.xib; sourceTree = "<group>"; };
@@ -1579,6 +1592,21 @@
 			children = (
 				18B871C61E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.h */,
 				18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		421886F71FCFA0FC00BC9FE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				421886F41FCFA03200BC9FE2 /* SYS_ScanningController.h */,
+				421886F51FCFA03200BC9FE2 /* SYS_ScanningController.m */,
+				421886F81FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.h */,
+				421886F91FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.m */,
+				421886FA1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.xib */,
+				421886FD1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.h */,
+				421886FE1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.m */,
+				421886FF1FCFA30600BC9FE2 /* SYS_Scanning_DataCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3869,6 +3897,7 @@
 				D2E838461EA75651003E0A7B /* PersonVC.h */,
 				D2E838471EA75651003E0A7B /* PersonVC.m */,
 				D2E838481EA75651003E0A7B /* PersonVC.xib */,
+				421886F71FCFA0FC00BC9FE2 /* Controller */,
 			);
 			path = "二维码扫一扫";
 			sourceTree = "<group>";
@@ -4114,6 +4143,7 @@
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
 				421CDF841FBAD21D00BA0852 /* AAHighchartsMore.js in Resources */,
+				421887011FCFA30600BC9FE2 /* SYS_Scanning_DataCell.xib in Resources */,
 				421CDF2F1FBA9DB500BA0852 /* SYS_MAIN_Cell.xib in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
@@ -4165,6 +4195,7 @@
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
 				421CDF811FBAD21D00BA0852 /* AAFunnel.js in Resources */,
 				421CDF7E1FBAD21D00BA0852 /* AAChartKit.podspec in Resources */,
+				421886FC1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.xib in Resources */,
 				D2E04DE51E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
@@ -4316,6 +4347,7 @@
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				421CDF901FBAD21D00BA0852 /* AALine.m in Sources */,
 				42AC71721E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_ moreModel.m in Sources */,
+				421886F61FCFA03200BC9FE2 /* SYS_ScanningController.m in Sources */,
 				42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */,
 				D21944281E8120E000FC0B38 /* SW_CBCZ_DetailController.m in Sources */,
 				D21944311E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.m in Sources */,
@@ -4449,7 +4481,9 @@
 				D200648A1DFF86800021E293 /* HNT_SYS_HeaderView.m in Sources */,
 				D235E3081E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.m in Sources */,
 				D272EFCC1E7BBEEC00D0991D /* LLQ_CBCZ_Controller.m in Sources */,
+				421887001FCFA30600BC9FE2 /* SYS_Scanning_DataCell.m in Sources */,
 				421CDF9E1FBAD21D00BA0852 /* AAXAxis.m in Sources */,
+				421886FB1FCFA18600BC9FE2 /* SYS_Scanning_HeadCell.m in Sources */,
 				D25977711E76B0BC00507BF2 /* SW_ZZJG_Cell.m in Sources */,
 				42AC71C01E30C423007D8F57 /* SGLineDIY.m in Sources */,
 				42AC72181E30C576007D8F57 /* LqNode.m in Sources */,
