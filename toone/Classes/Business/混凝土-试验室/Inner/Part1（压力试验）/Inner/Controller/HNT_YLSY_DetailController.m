@@ -206,7 +206,7 @@
                     .yAxisTitleSet(@"")//设置图表 y 轴的单位
                     .seriesSet(@[
                                  AAObject(AASeriesElement)
-                                 .nameSet(@"")
+                                 .nameSet(@"力值(KN)--时间(S) 曲线图")
                                  .dataSet(totalArray[i]),
                                  ]);
                     
