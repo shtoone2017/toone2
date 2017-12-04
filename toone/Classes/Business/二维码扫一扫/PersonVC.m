@@ -70,6 +70,10 @@
                 hud.mode = MBProgressHUDModeText;
                 hud.label.text = @"上传成功，开始养护";
                 [self pop];
+            }else if (EqualToString(json[@"status"], @"0")) {
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = json[@"description"];
+                [self pop];
             }
         }else{
             hud.mode = MBProgressHUDModeText;

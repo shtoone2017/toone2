@@ -11,4 +11,6 @@
 @interface SYS_Scanning_HeadCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *starLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endLabel;
 @end

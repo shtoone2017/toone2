@@ -52,7 +52,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 200;
+        return 250;
     }else{
         
         return 20;
@@ -62,6 +62,10 @@
     if (indexPath.row == 0) {
         SYS_Scanning_HeadCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SYS_Scanning_HeadCell"];
         cell.dayLabel.text = _conditonDict[@"lq"];
+        if (_time.count) {
+            cell.starLabel.text = [[NSString stringWithFormat:@"%@",_time[0]] substringToIndex:11];;
+            cell.endLabel.text = [[NSString stringWithFormat:@"%@",[_time lastObject]] substringToIndex:11];
+        }
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
         return cell;
     }else{
