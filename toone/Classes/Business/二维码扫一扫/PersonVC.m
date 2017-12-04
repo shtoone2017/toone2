@@ -63,28 +63,29 @@
                                        };
                 vc.conditonDict = dict;
                 [self presentViewController:vc animated:YES completion:^{
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                        UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
-                        [self.navigationController popToViewController:vc animated:YES];
-                    });
-                }];                
+                    [self pop];
+                }];
                 return ;
             }else if (EqualToString(json[@"status"], @"1")) {
                 hud.mode = MBProgressHUDModeText;
                 hud.label.text = @"上传成功，开始养护";
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                    UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
-                    [self.navigationController popToViewController:vc animated:YES];
-                });
+                [self pop];
             }
         }else{
             hud.mode = MBProgressHUDModeText;
             hud.label.text = json[@"description"];
+            [self pop];
         }
         [hud hideAnimated:YES afterDelay:2.0];
     } failure:^(NSError *error) {
         
     }];
+}
+-(void)pop {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        UIViewController * vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-3];
+        [self.navigationController popToViewController:vc animated:YES];
+    });
 }
 
 
