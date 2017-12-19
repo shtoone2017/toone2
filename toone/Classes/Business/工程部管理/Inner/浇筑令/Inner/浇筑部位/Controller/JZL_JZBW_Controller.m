@@ -112,8 +112,13 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     JZL_JZBW_Model *model = self.datas[indexPath.row];
-    if (self.callsBlock) {
-        self.callsBlock(model.projectname,model.zjiedian,model.shejifangliang);
+    if (self.callBlock) {
+        NSDictionary *dict = @{@"projectname":model.projectname?:@"",
+                               @"zjiedian":model.zjiedian?:@"",
+                               @"shejifangliang":model.shejifangliang?:@"",
+                               @"treeguid":model.treeguid?:@"",
+                               };
+        self.callBlock(dict);
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

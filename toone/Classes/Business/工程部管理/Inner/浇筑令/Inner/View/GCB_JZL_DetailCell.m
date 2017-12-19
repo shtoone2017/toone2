@@ -38,6 +38,7 @@
 @property (nonatomic,copy)NSString *identifier;//组织机构ID
 @property (nonatomic, copy) NSString *sgdId;//施工队id
 
+@property (nonatomic, copy) NSString *treeguid;//新增uuid(平台)
 
 @end
 @implementation GCB_JZL_DetailCell
@@ -77,6 +78,7 @@
     _tjID = [NSString stringWithFormat:@"%@",model.tjId];
     _identifier = model.departid;//组织机构
     _sgdId = model.shigongteamid;
+    _treeguid = model.treeguid;
 }
 
 //开盘时间
@@ -89,10 +91,11 @@
 //浇筑部位
 - (IBAction)jzbwClick:(UIButton *)sender {
     JZL_JZBW_Controller *controller = [[JZL_JZBW_Controller alloc] init];
-    controller.callsBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao,NSString *sjfl){
-        _gcmcText.text = gprsbianhao;
-        _jhflText.text = sjfl;
-        [sender setTitle:banhezhanminchen forState:UIControlStateNormal];
+    controller.callBlock = ^(NSDictionary *dict) {
+        _gcmcText.text = dict[@"zjiedian"];
+        _jhflText.text = dict[@"shejifangliang"];
+        [sender setTitle:dict[@"projectname"] forState:UIControlStateNormal];
+        _treeguid = dict[@"treeguid"];
     };
     [self.viewController.navigationController pushViewController:controller animated:YES];
 }
@@ -168,6 +171,7 @@
                     @"kangshendengji":self.ksdjText.text?:@"",
                     @"remark":self.bzText.text?:@"",
                     @"shigongteamid":_sgdId?:@"",
+                    @"treeguid":_treeguid?:@"",
                     };
             break;
         }
@@ -189,6 +193,7 @@
                     @"kangshendengji":self.ksdjText.text?:@"",
                     @"remark":self.bzText.text?:@"",
                     @"shigongteamid":_sgdId?:@"",
+                    @"treeguid":_treeguid?:@"",
                     };
             break;
         }

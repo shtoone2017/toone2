@@ -30,4 +30,6 @@
 @property (nonatomic, copy) NSString *shigongteamid;//施工队id
 @property (nonatomic, copy) NSString *shigongteamname;//施工队
 
+@property (nonatomic,copy)NSString *treeguid;//新增uuid（平台）
+
 @end
