@@ -99,12 +99,12 @@
         });
     }
     
-    if(EqualToString(@"版本", drawer.title)){
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 200ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-            NSString * address = @"https://www.pgyer.com/DxPd";
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:address]];
-        });
-    }
+//    if(EqualToString(@"版本", drawer.title)){
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 200ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
+//            NSString * address = @"https://www.pgyer.com/DxPd";
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:address]];
+//        });
+//    }
 }
 
 -(void)dealloc{
