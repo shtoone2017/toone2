@@ -19,8 +19,15 @@
 #import "SGScanningQRCodeVC.h"
 #import <AVFoundation/AVFoundation.h>
 #import "SGAlertView.h"
+#import "HNT_XZ_Controller.h"
+#import "HNT_DQ_Controller.h"
+#import "InputController.h"
+
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, copy) NSString *dataNum;//到期数量
+@property (nonatomic, copy) NSString *departType;
+@property (nonatomic, copy) NSString *biaoshiid;
 
 @end
 
@@ -29,11 +36,36 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self addPanGestureRecognizer];
+    [self loadData];
     [self loadUI];
 }
 -(void)dealloc{
     FuncLog;
 }
+
+-(void)loadData {
+        NSString *currentTime = [TimeTools timeStampWithTimeString:self.endTime];
+//    NSString *currentTime = @"1516420800";
+        NSString *endTime = [TimeTools timeStampWithTimeString:[TimeTools time_1_dayAgo:1]];
+//    NSString *endTime = @"1516507200";
+    
+    _departType = [UserDefaultsSetting shareSetting].userType;
+    _biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
+    
+    NSString * urlString = [NSString stringWithFormat:Hnt_SYS_list,_departType,_biaoshiid,currentTime,endTime];
+    __weak typeof(self)  weakSelf = self;
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
+        if ([json[@"success"] boolValue]) {
+            
+            _dataNum = [NSString stringWithFormat:@"%@",json[@"data"]];
+        }
+        [weakSelf.tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 -(void)loadUI{
 //    self.containerView.backgroundColor = BLUECOLOR;
 //    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
@@ -52,19 +84,27 @@
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 6;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 55;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"扫一扫"];
-    NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ",@"SYS_sys"];
+    NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"新增",@"龄期到期提醒",@"试验信息查看"];
+    NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ",@"SYS_XZ",@"SYS_TX",@"SYS_CK"];
     static NSString *cellId = @"CELLID";
     SYS_MAIN_Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell)
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SYS_MAIN_Cell" owner:self options:nil] firstObject];
+    }
+    if (indexPath.row == 4) {
+        cell.numLabel.hidden = NO;
+        if (_dataNum) {
+            cell.numLabel.text = _dataNum;
+        }
+    }else {
+        cell.numLabel.hidden = YES;
     }
     cell.title.text = titleArr[indexPath.row];
     cell.img.image = [UIImage imageNamed:imgArr[indexPath.row]];
@@ -92,8 +132,20 @@
             [self.navigationController pushViewController:ylVC animated:YES];
         }
             break;
-        case 3:{
-            [self loadScan];
+        case 3:{//新增
+            [self.navigationController pushViewController:[[HNT_XZ_Controller alloc] init] animated:YES];
+        }
+            break;
+        case 4:{//提醒
+            [self.navigationController pushViewController:[[HNT_DQ_Controller alloc] init] animated:YES];
+        }
+            break;
+        case 5:{//查看
+            InputController *vc = [[InputController alloc] init];
+            vc.callBlock = ^(NSString * banhezhanminchen){
+//                NSLog(@"====%@===",banhezhanminchen);
+            };
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         default:
@@ -107,43 +159,6 @@
     UIImageView *headerImg = [UIImageView new];
     headerImg.image = [UIImage imageNamed:@"SYS_Header_IMG2.jpg"];
     return headerImg;
-}
--(void)loadScan {
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if (device) {
-        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        if (status == AVAuthorizationStatusNotDetermined) {
-            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-                if (granted) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        SGScanningQRCodeVC *scanningQRCodeVC = [[SGScanningQRCodeVC alloc] init];
-                        [self.navigationController pushViewController:scanningQRCodeVC animated:YES];
-                        NSLog(@"主线程 - - %@", [NSThread currentThread]);
-                    });
-                    NSLog(@"当前线程 - - %@", [NSThread currentThread]);
-                    
-                    // 用户第一次同意了访问相机权限
-                    NSLog(@"用户第一次同意了访问相机权限");
-                    
-                } else {
-                    
-                    // 用户第一次拒绝了访问相机权限
-                    NSLog(@"用户第一次拒绝了访问相机权限");
-                }
-            }];
-        } else if (status == AVAuthorizationStatusAuthorized) { // 用户允许当前应用访问相机
-            SGScanningQRCodeVC *scanningQRCodeVC = [[SGScanningQRCodeVC alloc] init];
-            [self.navigationController pushViewController:scanningQRCodeVC animated:YES];
-        } else if (status == AVAuthorizationStatusDenied) { // 用户拒绝当前应用访问相机
-            SGAlertView *alertView = [SGAlertView alertViewWithTitle:@"⚠️ 警告" delegate:nil contentTitle:@"请去-> [设置 - 隐私 - 相机 - SGQRCodeExample] 打开访问开关" alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-            [alertView show];
-        } else if (status == AVAuthorizationStatusRestricted) {
-            NSLog(@"因为系统原因, 无法访问相册");
-        }
-    } else {
-        SGAlertView *alertView = [SGAlertView alertViewWithTitle:@"⚠️ 警告" delegate:nil contentTitle:@"未检测到您的摄像头, 请在真机上测试" alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-        [alertView show];
-    }
 }
 
 @end

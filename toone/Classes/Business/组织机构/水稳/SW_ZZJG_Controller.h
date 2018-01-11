@@ -16,4 +16,6 @@ typedef void(^zzjgCallBackBlock_t)(SW_ZZJG_Data* data);
 @property (nonatomic,copy) zzjgCallBackBlock_t  zzjgCallBackBlock;
 
 @property (nonatomic,copy) NSString * modelType;
+
+@property (nonatomic, copy) NSString *type;
 @end

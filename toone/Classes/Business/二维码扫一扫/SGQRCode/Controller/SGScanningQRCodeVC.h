@@ -16,5 +16,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SGScanningQRCodeVC : UIViewController
-
+@property (nonatomic,copy) void (^callBlock)(NSString*);
 @end

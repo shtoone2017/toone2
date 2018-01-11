@@ -92,4 +92,6 @@ static AFHTTPSessionManager *afnManager = nil;
          if(failureBlock) failureBlock(error);
     }];
 }
+
+
 @end

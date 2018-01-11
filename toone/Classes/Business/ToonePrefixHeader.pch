@@ -62,14 +62,15 @@
 #import "DGActivityIndicatorView.h"
 #import "RATreeView.h"
 #import "AAGlobalMacro.h"
+#import "UpButton.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 #import "DWURunLoopWorkDistribution.h"
 
 //
 //#define baseUrl  @"http://192.168.1.111:8888/zsfcsmss/"
-//#define baseUrl  @"http://192.168.1.181:8080/zsfcsmss/"
-#define baseUrl   @"http://121.40.163.88:8081/zsfcsmss/"
+#define baseUrl  @"http://192.168.1.181:8080/zsfcsmss/"
+//#define baseUrl   @"http://121.40.163.88:8081/zsfcsmss/"
 
 
 
@@ -77,6 +78,13 @@
 
 //二维码上传
 #define LqClassUpdata   FormatString(baseUrl,@"appLq/LqClassUpdata?")
+//到期数
+#define Hnt_SYS_list   FormatString(baseUrl,@"appSys/sysSkip?departType=%@&biaoshiid=%@&currentTime=%@&endTime=%@")
+//到期提醒
+#define Hnt_Dqlist   FormatString(baseUrl,@"appSys/todaySysQuery?departType=%@&biaoshiid=%@&currentTime=%@&endTime=%@&pageNo=%@&maxPageItems=%@&lingqi=%@&jiaozhubuwei=%@&sjqd=%@")
+
+
+
 
 //水稳
 //登录

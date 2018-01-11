@@ -14,6 +14,7 @@
 
 +(NSString*)current_HH_mm_SS;
 
++(NSString*)time_1_dayAgo:(NSInteger)day;
 
 //获取当前时间   格式：HH:mm
 +(NSString*)current_HH_mm;

@@ -101,6 +101,23 @@
 		421CDF9D1FBAD21D00BA0852 /* AATooltip.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF751FBAD21D00BA0852 /* AATooltip.m */; };
 		421CDF9E1FBAD21D00BA0852 /* AAXAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF771FBAD21D00BA0852 /* AAXAxis.m */; };
 		421CDF9F1FBAD21D00BA0852 /* AAYAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CDF791FBAD21D00BA0852 /* AAYAxis.m */; };
+		426DE3472004A25E0016ACB2 /* HNT_XZ_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3462004A25E0016ACB2 /* HNT_XZ_Controller.m */; };
+		426DE34B2005A3AA0016ACB2 /* HNT_XZ_HeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3492005A3AA0016ACB2 /* HNT_XZ_HeadCell.m */; };
+		426DE34C2005A3AA0016ACB2 /* HNT_XZ_HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426DE34A2005A3AA0016ACB2 /* HNT_XZ_HeadCell.xib */; };
+		426DE34E2005ABF20016ACB2 /* qddj.plist in Resources */ = {isa = PBXBuildFile; fileRef = 426DE34D2005ABF20016ACB2 /* qddj.plist */; };
+		426DE3572005E0960016ACB2 /* SGym.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3522005E0960016ACB2 /* SGym.m */; };
+		426DE3582005E0960016ACB2 /* SGymd.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3542005E0960016ACB2 /* SGymd.m */; };
+		426DE3592005E0960016ACB2 /* YMTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3562005E0960016ACB2 /* YMTimePicker.m */; };
+		426DE35D2005E5640016ACB2 /* HNT_XZ_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE35B2005E5640016ACB2 /* HNT_XZ_Cell1.m */; };
+		426DE35E2005E5640016ACB2 /* HNT_XZ_Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426DE35C2005E5640016ACB2 /* HNT_XZ_Cell1.xib */; };
+		426DE3692005F7CE0016ACB2 /* InputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3682005F7CE0016ACB2 /* InputController.m */; };
+		426DE36C2005FCCA0016ACB2 /* HNT_DQ_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE36B2005FCCA0016ACB2 /* HNT_DQ_Controller.m */; };
+		426DE3702005FDD10016ACB2 /* HNT_DQ_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE36E2005FDD10016ACB2 /* HNT_DQ_DetailCell.m */; };
+		426DE3712005FDD10016ACB2 /* HNT_DQ_DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426DE36F2005FDD10016ACB2 /* HNT_DQ_DetailCell.xib */; };
+		426DE3742005FFB40016ACB2 /* HNT_DQ_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3732005FFB40016ACB2 /* HNT_DQ_DetailModel.m */; };
+		426DE37720063DBA0016ACB2 /* UpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE37620063DBA0016ACB2 /* UpButton.m */; };
+		426DE37B20073A370016ACB2 /* HNT_XZ_SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE37920073A370016ACB2 /* HNT_XZ_SubmitCell.m */; };
+		426DE37C20073A370016ACB2 /* HNT_XZ_SubmitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426DE37A20073A370016ACB2 /* HNT_XZ_SubmitCell.xib */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -724,6 +741,36 @@
 		421CDF771FBAD21D00BA0852 /* AAXAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAXAxis.m; sourceTree = "<group>"; };
 		421CDF781FBAD21D00BA0852 /* AAYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAYAxis.h; sourceTree = "<group>"; };
 		421CDF791FBAD21D00BA0852 /* AAYAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAYAxis.m; sourceTree = "<group>"; };
+		426DE3452004A25E0016ACB2 /* HNT_XZ_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_XZ_Controller.h; sourceTree = "<group>"; };
+		426DE3462004A25E0016ACB2 /* HNT_XZ_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_XZ_Controller.m; sourceTree = "<group>"; };
+		426DE3482005A3AA0016ACB2 /* HNT_XZ_HeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_XZ_HeadCell.h; sourceTree = "<group>"; };
+		426DE3492005A3AA0016ACB2 /* HNT_XZ_HeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_XZ_HeadCell.m; sourceTree = "<group>"; };
+		426DE34A2005A3AA0016ACB2 /* HNT_XZ_HeadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_XZ_HeadCell.xib; sourceTree = "<group>"; };
+		426DE34D2005ABF20016ACB2 /* qddj.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = qddj.plist; sourceTree = "<group>"; };
+		426DE3502005E0960016ACB2 /* SGDateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDateTools.h; sourceTree = "<group>"; };
+		426DE3512005E0960016ACB2 /* SGym.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGym.h; sourceTree = "<group>"; };
+		426DE3522005E0960016ACB2 /* SGym.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGym.m; sourceTree = "<group>"; };
+		426DE3532005E0960016ACB2 /* SGymd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGymd.h; sourceTree = "<group>"; };
+		426DE3542005E0960016ACB2 /* SGymd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGymd.m; sourceTree = "<group>"; };
+		426DE3552005E0960016ACB2 /* YMTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTimePicker.h; sourceTree = "<group>"; };
+		426DE3562005E0960016ACB2 /* YMTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTimePicker.m; sourceTree = "<group>"; };
+		426DE35A2005E5640016ACB2 /* HNT_XZ_Cell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_XZ_Cell1.h; sourceTree = "<group>"; };
+		426DE35B2005E5640016ACB2 /* HNT_XZ_Cell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_XZ_Cell1.m; sourceTree = "<group>"; };
+		426DE35C2005E5640016ACB2 /* HNT_XZ_Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_XZ_Cell1.xib; sourceTree = "<group>"; };
+		426DE3672005F7CE0016ACB2 /* InputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputController.h; sourceTree = "<group>"; };
+		426DE3682005F7CE0016ACB2 /* InputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputController.m; sourceTree = "<group>"; };
+		426DE36A2005FCCA0016ACB2 /* HNT_DQ_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_DQ_Controller.h; sourceTree = "<group>"; };
+		426DE36B2005FCCA0016ACB2 /* HNT_DQ_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_DQ_Controller.m; sourceTree = "<group>"; };
+		426DE36D2005FDD10016ACB2 /* HNT_DQ_DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_DQ_DetailCell.h; sourceTree = "<group>"; };
+		426DE36E2005FDD10016ACB2 /* HNT_DQ_DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_DQ_DetailCell.m; sourceTree = "<group>"; };
+		426DE36F2005FDD10016ACB2 /* HNT_DQ_DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_DQ_DetailCell.xib; sourceTree = "<group>"; };
+		426DE3722005FFB40016ACB2 /* HNT_DQ_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_DQ_DetailModel.h; sourceTree = "<group>"; };
+		426DE3732005FFB40016ACB2 /* HNT_DQ_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_DQ_DetailModel.m; sourceTree = "<group>"; };
+		426DE37520063DBA0016ACB2 /* UpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpButton.h; sourceTree = "<group>"; };
+		426DE37620063DBA0016ACB2 /* UpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpButton.m; sourceTree = "<group>"; };
+		426DE37820073A370016ACB2 /* HNT_XZ_SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_XZ_SubmitCell.h; sourceTree = "<group>"; };
+		426DE37920073A370016ACB2 /* HNT_XZ_SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_XZ_SubmitCell.m; sourceTree = "<group>"; };
+		426DE37A20073A370016ACB2 /* HNT_XZ_SubmitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_XZ_SubmitCell.xib; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -1710,6 +1757,133 @@
 				421CDF791FBAD21D00BA0852 /* AAYAxis.m */,
 			);
 			path = AAOptionsModel;
+			sourceTree = "<group>";
+		};
+		426DE3412004A17A0016ACB2 /* 新增 */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3422004A17A0016ACB2 /* Controller */,
+				426DE3432004A17A0016ACB2 /* Model */,
+				426DE3442004A17A0016ACB2 /* View */,
+			);
+			path = "新增";
+			sourceTree = "<group>";
+		};
+		426DE3422004A17A0016ACB2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3452004A25E0016ACB2 /* HNT_XZ_Controller.h */,
+				426DE3462004A25E0016ACB2 /* HNT_XZ_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		426DE3432004A17A0016ACB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3672005F7CE0016ACB2 /* InputController.h */,
+				426DE3682005F7CE0016ACB2 /* InputController.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		426DE3442004A17A0016ACB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3482005A3AA0016ACB2 /* HNT_XZ_HeadCell.h */,
+				426DE3492005A3AA0016ACB2 /* HNT_XZ_HeadCell.m */,
+				426DE34A2005A3AA0016ACB2 /* HNT_XZ_HeadCell.xib */,
+				426DE35A2005E5640016ACB2 /* HNT_XZ_Cell1.h */,
+				426DE35B2005E5640016ACB2 /* HNT_XZ_Cell1.m */,
+				426DE35C2005E5640016ACB2 /* HNT_XZ_Cell1.xib */,
+				426DE37820073A370016ACB2 /* HNT_XZ_SubmitCell.h */,
+				426DE37920073A370016ACB2 /* HNT_XZ_SubmitCell.m */,
+				426DE37A20073A370016ACB2 /* HNT_XZ_SubmitCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		426DE34F2005E0960016ACB2 /* SGDate */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3502005E0960016ACB2 /* SGDateTools.h */,
+				426DE3512005E0960016ACB2 /* SGym.h */,
+				426DE3522005E0960016ACB2 /* SGym.m */,
+				426DE3532005E0960016ACB2 /* SGymd.h */,
+				426DE3542005E0960016ACB2 /* SGymd.m */,
+				426DE3552005E0960016ACB2 /* YMTimePicker.h */,
+				426DE3562005E0960016ACB2 /* YMTimePicker.m */,
+			);
+			path = SGDate;
+			sourceTree = "<group>";
+		};
+		426DE35F2005ED390016ACB2 /* 试验信息查看 */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3602005ED390016ACB2 /* Controller */,
+				426DE3612005ED390016ACB2 /* Model */,
+				426DE3622005ED390016ACB2 /* View */,
+			);
+			path = "试验信息查看";
+			sourceTree = "<group>";
+		};
+		426DE3602005ED390016ACB2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		426DE3612005ED390016ACB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		426DE3622005ED390016ACB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		426DE3632005ED400016ACB2 /* 到期提醒 */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3642005ED400016ACB2 /* Controller */,
+				426DE3652005ED400016ACB2 /* Model */,
+				426DE3662005ED400016ACB2 /* View */,
+			);
+			path = "到期提醒";
+			sourceTree = "<group>";
+		};
+		426DE3642005ED400016ACB2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				426DE36A2005FCCA0016ACB2 /* HNT_DQ_Controller.h */,
+				426DE36B2005FCCA0016ACB2 /* HNT_DQ_Controller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		426DE3652005ED400016ACB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				426DE3722005FFB40016ACB2 /* HNT_DQ_DetailModel.h */,
+				426DE3732005FFB40016ACB2 /* HNT_DQ_DetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		426DE3662005ED400016ACB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				426DE36D2005FDD10016ACB2 /* HNT_DQ_DetailCell.h */,
+				426DE36E2005FDD10016ACB2 /* HNT_DQ_DetailCell.m */,
+				426DE36F2005FDD10016ACB2 /* HNT_DQ_DetailCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
@@ -2707,6 +2881,8 @@
 		D20063151DFF86800021E293 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				426DE34D2005ABF20016ACB2 /* qddj.plist */,
+				426DE34F2005E0960016ACB2 /* SGDate */,
 				421CDF301FBAD21D00BA0852 /* AAChartKitLib */,
 				42AC71991E30C423007D8F57 /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
@@ -2934,6 +3110,9 @@
 				D20063A81DFF86800021E293 /* Part1（压力试验） */,
 				D20063BB1DFF86800021E293 /* Part2（万能试验） */,
 				D20063CD1DFF86800021E293 /* Part3（统计分析） */,
+				426DE35F2005ED390016ACB2 /* 试验信息查看 */,
+				426DE3632005ED400016ACB2 /* 到期提醒 */,
+				426DE3412004A17A0016ACB2 /* 新增 */,
 				D20063DB1DFF86800021E293 /* View */,
 				D20063DF1DFF86800021E293 /* 试验类型和设备 */,
 			);
@@ -3317,6 +3496,8 @@
 				D200642F1DFF86800021E293 /* TimeTools.m */,
 				D20064301DFF86800021E293 /* Tools.h */,
 				D20064311DFF86800021E293 /* Tools.m */,
+				426DE37520063DBA0016ACB2 /* UpButton.h */,
+				426DE37620063DBA0016ACB2 /* UpButton.m */,
 				D20064321DFF86800021E293 /* 颜色篇 */,
 			);
 			path = Tools;
@@ -4091,17 +4272,20 @@
 				D2E04DE11E83ADCD009E9C6A /* LLQ_CBCZ_Detail_HeadCell.xib in Resources */,
 				D20064671DFF86800021E293 /* DrawerList.plist in Resources */,
 				18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
+				426DE3712005FDD10016ACB2 /* HNT_DQ_DetailCell.xib in Resources */,
 				D219441E1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D2CF6B661E011728003AE61D /* Exp6_Xib_View.xib in Resources */,
 				D2E838951EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.xib in Resources */,
 				42AC71531E30C393007D8F57 /* EXPrimaryCell.xib in Resources */,
 				D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */,
+				426DE35E2005E5640016ACB2 /* HNT_XZ_Cell1.xib in Resources */,
 				18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
 				D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
 				D235E3111E84B49900EE4459 /* SW_LSSJ_Detail_Chart2Cell.xib in Resources */,
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
+				426DE34E2005ABF20016ACB2 /* qddj.plist in Resources */,
 				D235E32E1E84C64900EE4459 /* LLQ_LSSJ_Detail_DataCell.xib in Resources */,
 				D2E04DDB1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D2E8387F1EA84466003E0A7B /* qr2.png in Resources */,
@@ -4133,9 +4317,11 @@
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D21944271E8120E000FC0B38 /* SW_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
+				426DE37C20073A370016ACB2 /* HNT_XZ_SubmitCell.xib in Resources */,
 				8CBD72E61E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.xib in Resources */,
 				D272EFC21E7BBE3A00D0991D /* SW_CBCZ_View.xib in Resources */,
 				D21944201E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
+				426DE34C2005A3AA0016ACB2 /* HNT_XZ_HeadCell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
 				D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */,
 				42AC714D1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
@@ -4311,6 +4497,7 @@
 				D2CF6B6C1E011D98003AE61D /* UIView+Shape.m in Sources */,
 				187C72F21E30B1810072F33A /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				D20065231DFF86B30021E293 /* ColoredLineChartViewController.m in Sources */,
+				426DE37B20073A370016ACB2 /* HNT_XZ_SubmitCell.m in Sources */,
 				D200654A1DFF86B30021E293 /* DayAxisValueFormatter.m in Sources */,
 				D20064861DFF86800021E293 /* SYS_testTypeModel.m in Sources */,
 				187C73041E30B1810072F33A /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
@@ -4335,6 +4522,7 @@
 				D26AE9991E7A38A50090761D /* LLQ_BHZ_Controller.m in Sources */,
 				D200649C1DFF86800021E293 /* NSString+Separate.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				426DE37720063DBA0016ACB2 /* UpButton.m in Sources */,
 				D20065211DFF86B30021E293 /* CandleStickChartViewController.m in Sources */,
 				D2E04DE71E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqjg.m in Sources */,
 				42AC72131E30C576007D8F57 /* View+MASAdditions.m in Sources */,
@@ -4344,6 +4532,7 @@
 				187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
 				D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */,
+				426DE3572005E0960016ACB2 /* SGym.m in Sources */,
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				421CDF901FBAD21D00BA0852 /* AALine.m in Sources */,
 				42AC71721E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_ moreModel.m in Sources */,
@@ -4357,6 +4546,7 @@
 				42AC71431E30C393007D8F57 /* EXPMiddleModel.m in Sources */,
 				D25977321E76715300507BF2 /* SW_ZZJG_Controller.m in Sources */,
 				42AC71741E30C393007D8F57 /* ProductionDetailsG.m in Sources */,
+				426DE3472004A25E0016ACB2 /* HNT_XZ_Controller.m in Sources */,
 				D2E04DDC1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				42AC71561E30C393007D8F57 /* SeniorExcessiveTableConller.m in Sources */,
@@ -4369,6 +4559,7 @@
 				42AC71B91E30C423007D8F57 /* SGBarChart.m in Sources */,
 				42AC71781E30C393007D8F57 /* ProduQueryModel.m in Sources */,
 				42AC71761E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.m in Sources */,
+				426DE3692005F7CE0016ACB2 /* InputController.m in Sources */,
 				D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */,
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
@@ -4380,6 +4571,7 @@
 				D20064771DFF86800021E293 /* HNT_WNSY_DetailController.m in Sources */,
 				D26AE99C1E7A38AE0090761D /* LLQ_BHZ_Model.m in Sources */,
 				D26AE9A01E7A38BD0090761D /* LLQ_BHZ_Cell.m in Sources */,
+				426DE3742005FFB40016ACB2 /* HNT_DQ_DetailModel.m in Sources */,
 				D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */,
 				D20065931DFFCC080021E293 /* HNT_SCCX_Model.m in Sources */,
 				187C730F1E30B1810072F33A /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
@@ -4391,6 +4583,7 @@
 				D20064851DFF86800021E293 /* SYS_SB_Model.m in Sources */,
 				421CDF9B1FBAD21D00BA0852 /* AASubtitle.m in Sources */,
 				D2E04DE91E83ADCD009E9C6A /* LLQ_CDCZ_Detail_lqData.m in Sources */,
+				426DE36C2005FCCA0016ACB2 /* HNT_DQ_Controller.m in Sources */,
 				D235E3011E84A9B000EE4459 /* SW_LSSJ_Detail_Head.m in Sources */,
 				421CDF2E1FBA9DB500BA0852 /* SYS_MAIN_Cell.m in Sources */,
 				D235E2FD1E84A9B000EE4459 /* SW_LSSJ_Detail_Chart.m in Sources */,
@@ -4455,6 +4648,7 @@
 				D2E8388A1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D272EFD51E7BC36F00D0991D /* LLQ_CBCZ_Cell.m in Sources */,
 				D200658F1DFFC9F10021E293 /* HNT_SCCX_Cell.m in Sources */,
+				426DE3582005E0960016ACB2 /* SGymd.m in Sources */,
 				42AC716D1E30C393007D8F57 /* LQ_CLHS_ModelG.m in Sources */,
 				D21944261E8120E000FC0B38 /* SW_CBCZ_Detail_ShenPi_Controller.m in Sources */,
 				D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */,
@@ -4549,6 +4743,7 @@
 				42AC71681E30C393007D8F57 /* DayQueryModel.m in Sources */,
 				42AC715B1E30C393007D8F57 /* LQ_ZCL_CL_Model.m in Sources */,
 				D20065571DFF931B0021E293 /* HNT_BHZ_InnerController.m in Sources */,
+				426DE3592005E0960016ACB2 /* YMTimePicker.m in Sources */,
 				42AC715C1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.m in Sources */,
 				421CDF7A1FBAD21D00BA0852 /* AAChartModel.m in Sources */,
 				D200652B1DFF86B30021E293 /* HorizontalBarChartViewController.m in Sources */,
@@ -4557,6 +4752,7 @@
 				42AC72061E30C576007D8F57 /* Node.m in Sources */,
 				D200649B1DFF86800021E293 /* NSDictionary+Log.m in Sources */,
 				421CDF971FBAD21D00BA0852 /* AASeries.m in Sources */,
+				426DE3702005FDD10016ACB2 /* HNT_DQ_DetailCell.m in Sources */,
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
 				D20064721DFF86800021E293 /* HNT_YLSY_DetailModel.m in Sources */,
 				D21944031E81204800FC0B38 /* HNT_CLHS_ChatCell.m in Sources */,
@@ -4570,6 +4766,7 @@
 				42AC71581E30C393007D8F57 /* ExcessiveModel.m in Sources */,
 				D20065161DFF86B30021E293 /* BalloonMarker.swift in Sources */,
 				D20064A31DFF86800021E293 /* UserDefaultsSetting.m in Sources */,
+				426DE34B2005A3AA0016ACB2 /* HNT_XZ_HeadCell.m in Sources */,
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,
 				8CE976551E0BF1FF0016A858 /* MySJView.m in Sources */,
 				42AC714E1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.m in Sources */,
@@ -4634,6 +4831,7 @@
 				8CE976561E0BF1FF0016A858 /* MySJxib.m in Sources */,
 				42AC718F1E30C3B6007D8F57 /* Exp7View.m in Sources */,
 				42AC72111E30C576007D8F57 /* NSArray+MASAdditions.m in Sources */,
+				426DE35D2005E5640016ACB2 /* HNT_XZ_Cell1.m in Sources */,
 				42AC716C1E30C393007D8F57 /* LQ_CLHS_DataModel.m in Sources */,
 				187C72FC1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				D21943731E80CEBF00FC0B38 /* SW_LSSJ_Cell.m in Sources */,

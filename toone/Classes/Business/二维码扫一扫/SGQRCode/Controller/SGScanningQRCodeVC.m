@@ -196,19 +196,27 @@
         } else { // 扫描结果为条形码
         
 //            JumpVC *jumpVC = [[JumpVC alloc] init];
-             ScanSuccessJumpVC *jumpVC = [[ScanSuccessJumpVC alloc] init];
-            jumpVC.jump_bar_code = obj.stringValue;
-            NSLog(@"stringValue = = %@", obj.stringValue);
-            [self.navigationController pushViewController:jumpVC animated:YES];
+//             ScanSuccessJumpVC *jumpVC = [[ScanSuccessJumpVC alloc] init];
+//            jumpVC.jump_bar_code = obj.stringValue;
+//            NSLog(@"stringValue = = %@", obj.stringValue);
+//            [self.navigationController pushViewController:jumpVC animated:YES];
+            if (self.callBlock) {
+                self.callBlock(obj.stringValue);
+            }
+            [self.navigationController popViewControllerAnimated:YES];
         }
 #endif
         
 //        JumpVC *jumpVC = [[JumpVC alloc] init];
 //          jumpVC.jump_shebeibianhao = obj.stringValue;
-        PersonVC *vc = [[PersonVC alloc] init];
-        vc.jump_shebeibianhao = obj.stringValue;
-        NSLog(@"stringValue = = %@", obj.stringValue);
-        [self.navigationController pushViewController:vc animated:YES];
+//        PersonVC *vc = [[PersonVC alloc] init];
+//        vc.jump_shebeibianhao = obj.stringValue;
+//        NSLog(@"stringValue = = %@", obj.stringValue);
+//        [self.navigationController pushViewController:vc animated:YES];
+        if (self.callBlock) {
+            self.callBlock(obj.stringValue);
+        }
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

@@ -11,5 +11,6 @@
 @interface SYS_MAIN_Cell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *numLabel;
 
 @end

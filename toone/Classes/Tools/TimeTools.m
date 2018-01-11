@@ -28,6 +28,7 @@
     NSString * time = [dateFormater stringFromDate:[NSDate date]];
     return time;
 }
+
 +(NSString*)time_3_monthsAgo{
     NSDate * mydate = [NSDate date];
 
@@ -52,6 +53,29 @@
 //     DebugLog(@"---前两个月 =%@",beforDate);
     return beforDate;
 }
++(NSString*)time_1_dayAgo:(NSInteger)day{
+    NSDate * mydate = [NSDate date];
+    
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comps = nil;
+    
+    comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitMonth fromDate:mydate];
+    
+    NSDateComponents *adcomps = [[NSDateComponents alloc] init];
+    
+    [adcomps setYear:0];
+    
+    [adcomps setMonth:0];
+    
+    [adcomps setDay: + day];
+    NSDate *newdate = [calendar dateByAddingComponents:adcomps toDate:mydate options:0];
+    NSString *beforDate = [dateFormatter stringFromDate:newdate];
+    
+    return beforDate;
+}
+
 +(NSString*)timeStampWithTimeString:(NSString*)timeString{
     NSDateFormatter  * dateFormater = [[NSDateFormatter alloc] init];
     [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm"];

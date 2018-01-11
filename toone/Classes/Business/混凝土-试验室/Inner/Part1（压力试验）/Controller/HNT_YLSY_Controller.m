@@ -520,7 +520,7 @@
         if (type == ExpButtonTypeUsePosition) {
             UIButton * btn = (UIButton*)obj1;
             SW_ZZJG_Controller * controller = [[SW_ZZJG_Controller alloc] init];
-            controller.modelType = @"3";
+            controller.modelType = @"3,4";
             controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
                 weakSelf.condition = data;
                 [btn setTitle:weakSelf.condition.name forState:UIControlStateNormal];
