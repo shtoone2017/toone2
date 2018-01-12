@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    _submitBut.layer.cornerRadius = 25;
+    _submitBut.layer.masksToBounds = YES;
+    _submitBut.backgroundColor = BLUECOLOR;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

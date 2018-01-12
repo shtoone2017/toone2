@@ -304,15 +304,29 @@
             };
     NSDictionary *dic1 = @{
                            @"uuid":_uuid2?:@"",
-                           @"timestampID":_cell1.strText2.text?:@"",
                            @"userName":_userFullName?:@"",
+                           @"timestampID":_cell1.strText2.text?:@"",
+                           @"lq":@"",
+                           @"gcmc":@"",
+                           @"sjqd":@"",
+                           @"sgbw":@"",
                            @"startTime":startTime?:@"",
+                           @"endTime":@"",
+                           @"departType":@"",
+                           @"biaoshiid":@"",
                            };
     NSDictionary *dic2 = @{
                            @"uuid":_uuid3?:@"",
-                           @"timestampID":_cell1.strText3.text?:@"",
                            @"userName":_userFullName?:@"",
+                           @"timestampID":_cell1.strText3.text?:@"",
+                           @"lq":@"",
+                           @"gcmc":@"",
+                           @"sjqd":@"",
+                           @"sgbw":@"",
                            @"startTime":startTime?:@"",
+                           @"endTime":@"",
+                           @"departType":@"",
+                           @"biaoshiid":@"",
                            };
     NSMutableArray *arry = [NSMutableArray array];
     [arry addObject:dic];
@@ -333,7 +347,7 @@
     
     [[manager dataTaskWithRequest:req completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (!error) {
-            if ([responseObject[0][@"success"] boolValue]) {//不知是否给值
+            if ([responseObject[0][@"success"] boolValue]) {
                 hud.mode = MBProgressHUDModeText;
                 hud.label.text = @"上传成功";
                 [hud hideAnimated:YES afterDelay:2.0];

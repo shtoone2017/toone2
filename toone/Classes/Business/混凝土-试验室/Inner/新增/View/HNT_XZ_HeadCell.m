@@ -84,6 +84,7 @@
 }
 -(void)gcmcClick {
     InputController *vc = [[InputController alloc] init];
+    vc.oldString = _gcmcLabel.text;
     vc.title = @"请输入工程名称";
     vc.callBlock = ^(NSString * banhezhanminchen){
         _gcmcLabel.text = banhezhanminchen;
@@ -92,6 +93,7 @@
 }
 -(void)sgbwClick {
     InputController *vc = [[InputController alloc] init];
+    vc.oldString = _sgbwLabel.text;
     vc.title = @"请输入施工部位";
     vc.callBlock = ^(NSString * banhezhanminchen){
         _sgbwLabel.text = banhezhanminchen;
