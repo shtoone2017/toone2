@@ -250,6 +250,11 @@
 		8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC41E0A6C0D00A5C4AA /* Main.storyboard */; };
 		8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CEB5BC61E0A6C0D00A5C4AA /* Welcome.storyboard */; };
 		8CEB5BD41E0A7DAA00A5C4AA /* SGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */; };
+		9C62870C2007651F00A0DDF7 /* XXCXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C62870A2007651F00A0DDF7 /* XXCXViewController.m */; };
+		9C62870D2007651F00A0DDF7 /* XXCXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C62870B2007651F00A0DDF7 /* XXCXViewController.xib */; };
+		9C916152200842BA009CD220 /* XXCXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C916150200842BA009CD220 /* XXCXCell.m */; };
+		9C916153200842BA009CD220 /* XXCXCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C916151200842BA009CD220 /* XXCXCell.xib */; };
+		9C9161562008439F009CD220 /* XXCXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9161552008439F009CD220 /* XXCXModel.m */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1018,6 +1023,14 @@
 		8CEB5BCF1E0A6D1900A5C4AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Welcome.strings"; sourceTree = "<group>"; };
 		8CEB5BD21E0A7DAA00A5C4AA /* SGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGButton.h; sourceTree = "<group>"; };
 		8CEB5BD31E0A7DAA00A5C4AA /* SGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGButton.m; sourceTree = "<group>"; };
+		9C6287092007651F00A0DDF7 /* XXCXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XXCXViewController.h; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXViewController.h"; sourceTree = SOURCE_ROOT; };
+		9C62870A2007651F00A0DDF7 /* XXCXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XXCXViewController.m; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXViewController.m"; sourceTree = SOURCE_ROOT; };
+		9C62870B2007651F00A0DDF7 /* XXCXViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XXCXViewController.xib; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXViewController.xib"; sourceTree = SOURCE_ROOT; };
+		9C91614F200842BA009CD220 /* XXCXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XXCXCell.h; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXCell.h"; sourceTree = SOURCE_ROOT; };
+		9C916150200842BA009CD220 /* XXCXCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XXCXCell.m; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXCell.m"; sourceTree = SOURCE_ROOT; };
+		9C916151200842BA009CD220 /* XXCXCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XXCXCell.xib; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXCell.xib"; sourceTree = SOURCE_ROOT; };
+		9C9161542008439F009CD220 /* XXCXModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XXCXModel.h; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXModel.h"; sourceTree = SOURCE_ROOT; };
+		9C9161552008439F009CD220 /* XXCXModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XXCXModel.m; path = "Classes/Business/混凝土-试验室/Inner/信息查询/XXCXModel.m"; sourceTree = SOURCE_ROOT; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1823,6 +1836,9 @@
 				426DE3602005ED390016ACB2 /* Controller */,
 				426DE3612005ED390016ACB2 /* Model */,
 				426DE3622005ED390016ACB2 /* View */,
+				9C6287092007651F00A0DDF7 /* XXCXViewController.h */,
+				9C62870A2007651F00A0DDF7 /* XXCXViewController.m */,
+				9C62870B2007651F00A0DDF7 /* XXCXViewController.xib */,
 			);
 			path = "试验信息查看";
 			sourceTree = "<group>";
@@ -1837,6 +1853,8 @@
 		426DE3612005ED390016ACB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C9161542008439F009CD220 /* XXCXModel.h */,
+				9C9161552008439F009CD220 /* XXCXModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1844,6 +1862,9 @@
 		426DE3622005ED390016ACB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C91614F200842BA009CD220 /* XXCXCell.h */,
+				9C916150200842BA009CD220 /* XXCXCell.m */,
+				9C916151200842BA009CD220 /* XXCXCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4286,6 +4307,7 @@
 				D235E3111E84B49900EE4459 /* SW_LSSJ_Detail_Chart2Cell.xib in Resources */,
 				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
 				426DE34E2005ABF20016ACB2 /* qddj.plist in Resources */,
+				9C62870D2007651F00A0DDF7 /* XXCXViewController.xib in Resources */,
 				D235E32E1E84C64900EE4459 /* LLQ_LSSJ_Detail_DataCell.xib in Resources */,
 				D2E04DDB1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D2E8387F1EA84466003E0A7B /* qr2.png in Resources */,
@@ -4308,6 +4330,7 @@
 				D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */,
 				D200648D1DFF86800021E293 /* HNT_SYS_TestView.xib in Resources */,
 				D200646D1DFF86800021E293 /* HNT_BHZ_Cell.xib in Resources */,
+				9C916153200842BA009CD220 /* XXCXCell.xib in Resources */,
 				D20065361DFF86B30021E293 /* MultipleBarChartViewController.xib in Resources */,
 				8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */,
 				42AC71491E30C393007D8F57 /* DCZ_CJ_Inner_Cell.xib in Resources */,
@@ -4477,6 +4500,7 @@
 				D20065191DFF86B30021E293 /* XYMarkerView.swift in Sources */,
 				42AC71BB1E30C423007D8F57 /* SGChartZBX.m in Sources */,
 				42AC71541E30C393007D8F57 /* TotalTableController.m in Sources */,
+				9C916152200842BA009CD220 /* XXCXCell.m in Sources */,
 				421CDF981FBAD21D00BA0852 /* AASeriesElement.m in Sources */,
 				D246B2A81E00DEBA00E83159 /* HNT_CBCZ_Cell.m in Sources */,
 				D20064871DFF86800021E293 /* HNT_SYS_FrameModel.m in Sources */,
@@ -4628,6 +4652,7 @@
 				D2E04DE81E83ADCD009E9C6A /* LLQ_CBCZ_DetailController.m in Sources */,
 				D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */,
 				42AC71BA1E30C423007D8F57 /* SGBarSuper.m in Sources */,
+				9C9161562008439F009CD220 /* XXCXModel.m in Sources */,
 				8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */,
 				D2E838941EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
@@ -4865,6 +4890,7 @@
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
 				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,
 				D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */,
+				9C62870C2007651F00A0DDF7 /* XXCXViewController.m in Sources */,
 				D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */,
 				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
 				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,
