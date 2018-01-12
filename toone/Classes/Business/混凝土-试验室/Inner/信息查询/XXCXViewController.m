@@ -22,6 +22,8 @@ static NSString *pageNum = @"20";
 
 @property (nonatomic,copy) NSString *departId;//组织机构
 
+@property (nonatomic,copy) NSString *biaoshiId;//组织机构
+
 @property (nonatomic,strong)  SW_ZZJG_Data * condition;
 
 
@@ -34,6 +36,7 @@ static NSString *pageNum = @"20";
     self.title = @"试验信息查看";
     NSString *url = [NSString stringWithFormat:@"%@appSys/sysTempQuery",baseUrl];
     _departId = [UserDefaultsSetting shareSetting].userType;
+    _biaoshiId = [UserDefaultsSetting shareSetting].biaoshi;
     _yPage = @"1";
     
     [_tabview registerNib:[UINib nibWithNibName:@"XXCXCell" bundle:nil  ] forCellReuseIdentifier:cellId];
@@ -67,13 +70,22 @@ static NSString *pageNum = @"20";
     controller.type = @"新增";
     controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
         weakSelf.condition = data;
-        _departId = weakSelf.condition.departType;
+        if (weakSelf.condition.biaoshi.length == 0) {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"请选择试验室";
+            [hud hideAnimated:YES afterDelay:2.0];
+        }else {
+            _departId = weakSelf.condition.departType;
+            _biaoshiId = weakSelf.condition.biaoshi;
+        }
+        [_tabview.mj_header beginRefreshing];
     };
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)reloadData:(NSString *)urlString {
-    urlString = [NSString stringWithFormat:@"%@?pageNo=%@&maxPageItems=%@&departType=%@&biaoshiid=%@",urlString,_yPage,pageNum,_departId,[UserDefaultsSetting shareSetting].biaoshi];
+    urlString = [NSString stringWithFormat:@"%@?pageNo=%@&maxPageItems=%@&departType=%@&biaoshiid=%@",urlString,_yPage,pageNum,_departId,_biaoshiId];
     __weak typeof(self)  weakSelf = self;
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         NSDictionary *dict = (NSDictionary *)result;
