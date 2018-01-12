@@ -118,6 +118,9 @@
 		426DE37720063DBA0016ACB2 /* UpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE37620063DBA0016ACB2 /* UpButton.m */; };
 		426DE37B20073A370016ACB2 /* HNT_XZ_SubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE37920073A370016ACB2 /* HNT_XZ_SubmitCell.m */; };
 		426DE37C20073A370016ACB2 /* HNT_XZ_SubmitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426DE37A20073A370016ACB2 /* HNT_XZ_SubmitCell.xib */; };
+		426DE3832008423E0016ACB2 /* Exp51_Xib_View.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE37F2008423E0016ACB2 /* Exp51_Xib_View.m */; };
+		426DE3842008423E0016ACB2 /* Exp51_Xib_View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426DE3802008423E0016ACB2 /* Exp51_Xib_View.xib */; };
+		426DE3852008423E0016ACB2 /* Exp51View.m in Sources */ = {isa = PBXBuildFile; fileRef = 426DE3822008423E0016ACB2 /* Exp51View.m */; };
 		42AC713F1E30C393007D8F57 /* LQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70911E30C392007D8F57 /* LQViewController.m */; };
 		42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70951E30C392007D8F57 /* ManageViewController.m */; };
 		42AC71411E30C393007D8F57 /* ExcessiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC70991E30C392007D8F57 /* ExcessiveViewController.m */; };
@@ -776,6 +779,11 @@
 		426DE37820073A370016ACB2 /* HNT_XZ_SubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_XZ_SubmitCell.h; sourceTree = "<group>"; };
 		426DE37920073A370016ACB2 /* HNT_XZ_SubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_XZ_SubmitCell.m; sourceTree = "<group>"; };
 		426DE37A20073A370016ACB2 /* HNT_XZ_SubmitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_XZ_SubmitCell.xib; sourceTree = "<group>"; };
+		426DE37E2008423E0016ACB2 /* Exp51_Xib_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp51_Xib_View.h; sourceTree = "<group>"; };
+		426DE37F2008423E0016ACB2 /* Exp51_Xib_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp51_Xib_View.m; sourceTree = "<group>"; };
+		426DE3802008423E0016ACB2 /* Exp51_Xib_View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Exp51_Xib_View.xib; sourceTree = "<group>"; };
+		426DE3812008423E0016ACB2 /* Exp51View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exp51View.h; sourceTree = "<group>"; };
+		426DE3822008423E0016ACB2 /* Exp51View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exp51View.m; sourceTree = "<group>"; };
 		42AC70901E30C392007D8F57 /* LQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQViewController.h; sourceTree = "<group>"; };
 		42AC70911E30C392007D8F57 /* LQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQViewController.m; sourceTree = "<group>"; };
 		42AC70941E30C392007D8F57 /* ManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageViewController.h; sourceTree = "<group>"; };
@@ -1905,6 +1913,18 @@
 				426DE36F2005FDD10016ACB2 /* HNT_DQ_DetailCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		426DE37D2008423E0016ACB2 /* EXP51 */ = {
+			isa = PBXGroup;
+			children = (
+				426DE37E2008423E0016ACB2 /* Exp51_Xib_View.h */,
+				426DE37F2008423E0016ACB2 /* Exp51_Xib_View.m */,
+				426DE3802008423E0016ACB2 /* Exp51_Xib_View.xib */,
+				426DE3812008423E0016ACB2 /* Exp51View.h */,
+				426DE3822008423E0016ACB2 /* Exp51View.m */,
+			);
+			path = EXP51;
 			sourceTree = "<group>";
 		};
 		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
@@ -3408,6 +3428,7 @@
 				D2CF6B5F1E011728003AE61D /* EXP6 */,
 				D21943751E81006700FC0B38 /* EXP52 */,
 				D200659D1DFFE12D0021E293 /* EXP5 */,
+				426DE37D2008423E0016ACB2 /* EXP51 */,
 				D20063FB1DFF86800021E293 /* EXP1 */,
 				D20064011DFF86800021E293 /* EXP2 */,
 				D20064071DFF86800021E293 /* EXP3 */,
@@ -4331,6 +4352,7 @@
 				D200648D1DFF86800021E293 /* HNT_SYS_TestView.xib in Resources */,
 				D200646D1DFF86800021E293 /* HNT_BHZ_Cell.xib in Resources */,
 				9C916153200842BA009CD220 /* XXCXCell.xib in Resources */,
+				426DE3842008423E0016ACB2 /* Exp51_Xib_View.xib in Resources */,
 				D20065361DFF86B30021E293 /* MultipleBarChartViewController.xib in Resources */,
 				8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */,
 				42AC71491E30C393007D8F57 /* DCZ_CJ_Inner_Cell.xib in Resources */,
@@ -4783,6 +4805,7 @@
 				D21944031E81204800FC0B38 /* HNT_CLHS_ChatCell.m in Sources */,
 				D2E838671EA75AF7003E0A7B /* SGScanningQRCodeVC.m in Sources */,
 				D21943941E810F6C00FC0B38 /* LLQ_LSSJ_Model.m in Sources */,
+				426DE3832008423E0016ACB2 /* Exp51_Xib_View.m in Sources */,
 				42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
@@ -4801,6 +4824,7 @@
 				421CDF9A1FBAD21D00BA0852 /* AAStyle.m in Sources */,
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
 				D2E04DE61E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqHead.m in Sources */,
+				426DE3852008423E0016ACB2 /* Exp51View.m in Sources */,
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */,
 				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,

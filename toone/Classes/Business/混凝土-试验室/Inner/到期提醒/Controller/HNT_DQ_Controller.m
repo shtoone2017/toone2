@@ -9,18 +9,22 @@
 #import "HNT_DQ_Controller.h"
 #import "HNT_DQ_DetailModel.h"
 #import "HNT_DQ_DetailCell.h"
+#import "SW_ZZJG_Controller.h"
+#import "HNT_BHZ_SB_Controller.h"
 
 @interface HNT_DQ_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tb;
 @property (nonatomic,strong) NSMutableArray *datas;
 @property (nonatomic,copy) NSString *pageNo;//当前页数
 @property (nonatomic,copy) NSString *maxPageItems;//一页最多显示条数
-@property (nonatomic, copy) NSString *departType;
-@property (nonatomic, copy) NSString *biaoshiid;
+
 @property (nonatomic, copy) NSString *jiaozhubuwei;//浇筑部位
 @property (nonatomic, copy) NSString *lingqi;
 @property (nonatomic, copy) NSString *sjqd;//强度
 
+@property (nonatomic,strong)  SW_ZZJG_Data * condition;
+@property (nonatomic, copy) NSString *departType;
+@property (nonatomic, copy) NSString *biaoshiid;
 @end
 @implementation HNT_DQ_Controller
 
@@ -120,7 +124,6 @@
 }
 
 -(void)searchButtonClick:(UIButton *)sender {
-    /*
     sender.enabled = NO;
     //1.
     UIButton * backView = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -134,7 +137,7 @@
     
     //2.
     Exp51View * e = [[Exp51View alloc] init];
-    e.frame = CGRectMake(0, 64, Screen_w, 285);
+    e.frame = CGRectMake(0, 64, Screen_w, 250);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         if (type == ExpButtonTypeCancel) {
@@ -145,8 +148,8 @@
             sender.enabled = YES;
             [backView removeFromSuperview];
             //
-            weakSelf.startTime = (NSString*)obj1;
-            weakSelf.endTime = (NSString*)obj2;
+//            weakSelf.startTime = (NSString*)obj1;
+//            weakSelf.endTime = (NSString*)obj2;
             //重新切换titleButton ， 搜索页码应该回归第一页码
             //            weakSelf.pageNo = @"1";
             //            weakSelf.cllx = @"0";
@@ -157,38 +160,47 @@
             UIButton * btn = (UIButton*)obj1;
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
-        if (type == ExpButtonTypeRwdText) {
+        if (type == ExpButtonTypeLQText) {
             //            UITextField *text  = (UITextField*)obj1;
             //            _renwuno = text.text;
-            _renwuno = obj1;
-            [self loadData];
+            _lingqi = obj1;
+        }
+        if (type == ExpButtonTypeJZBWext) {
+            _jiaozhubuwei = obj1;
         }
         if (type == ExpButtonTypeUsePosition) {//组织
             UIButton * btn = (UIButton*)obj1;
             __weak typeof(self) weakSelf = self;
-            NodeViewController *vc = [[NodeViewController alloc] init];
-            vc.type = NodeTypeZZJG;
-            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
-                weakSelf.departId = identifier;
-                [btn setTitle:name forState:UIControlStateNormal];
-                [self loadData];
+            SW_ZZJG_Controller * controller = [[SW_ZZJG_Controller alloc] init];
+            controller.modelType = @"3,4";
+            controller.type = @"新增";
+            controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
+                weakSelf.condition = data;
+                if (weakSelf.condition.biaoshiid.length == 0) {
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.mode = MBProgressHUDModeText;
+                    hud.label.text = @"请选择试验室";
+                    [hud hideAnimated:YES afterDelay:2.0];
+                }else {
+                    [btn setTitle:weakSelf.condition.name forState:UIControlStateNormal];
+                    _biaoshiid = weakSelf.condition.biaoshiid;
+                    _departType = weakSelf.condition.departType;
+                }
             };
-            [self.navigationController pushViewController:vc animated:YES];
+            [self.navigationController pushViewController:controller animated:YES];
         }
-        if (type == ExpButtonTypeEarthwork) {//设计
+        if (type == ExpButtonTypeSJQDText) {//强度
             UIButton * btn = (UIButton*)obj1;
             HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
             controller.type = SBListTypeSJQD;
-            //            controller.departId = self.departId;
-            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+            controller.callBlock = ^(NSString *banhezhanminchen,NSString *gprsbianhao){
                 [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
-                weakSelf.sjqd = gprsbianhao;
-                [self loadData];
+                _sjqd = banhezhanminchen;
             };
             [self.navigationController pushViewController:controller animated:YES];
         }
     };
     [self.view addSubview:e];
-     */
+     
 }
 @end

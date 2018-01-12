@@ -278,7 +278,7 @@
 #pragma mark - 上传
 -(void)submitClick {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSLog(@"====%@=====%@",_headCell.biaoshiid,_headCell.departType);
+//    NSLog(@"====%@=====%@",_headCell.biaoshiid,_headCell.departType);
     if (_headCell.lqLabel.text.length == 0 || _headCell.gcmcLabel.text.length == 0 || _headCell.sgbwLabel.text.length == 0 || _headCell.qddjLabel.text.length == 0 || _headCell.startTimeLabel.text.length == 0 || _cell1.strText1.text.length == 0 || _cell1.strText2.text.length == 0 || _cell1.strText3.text.length == 0 || _uuid1.length == 0 || _uuid2.length == 0 || _uuid3.length == 0 || _headCell.zzjgLabel.text.length == 0) {
         
         hud.mode = MBProgressHUDModeText;
@@ -286,14 +286,19 @@
         [hud hideAnimated:YES afterDelay:2.0];
         return;
     }
-    NSString *startTime = [TimeTools timeStampWithTimeString:[TimeTools currentTime]];
+    NSString *startTime = [TimeTools timeStampWithTimeString:_headCell.startTimeLabel.text];
     NSInteger num = _headCell.lqLabel.text.integerValue;
     NSString *endTime = [TimeTools timeStampWithTimeString:[TimeTools time_1_dayAgo:num]];
+    
+    if (!(_headCell.biaoshiid.length == 0) || !(_headCell.departType.length == 0)) {//业主选为主
+        _departType = _headCell.departType;
+        _biaoshiid = _headCell.biaoshiid;
+    }
     
     NSString *urlString = FormatString(baseUrl, @"appSys/QrcodeUpload");
     NSDictionary *dic = @{
                           @"uuid":_uuid1?:@"",
-                          @"userName":@"1",
+                          @"userName":_userFullName?:@"",
                           @"timestampID":_cell1.strText1.text?:@"",
                           @"lq":_headCell.lqLabel.text?:@"",
                           @"gcmc":_headCell.gcmcLabel.text?:@"",
@@ -301,17 +306,19 @@
                           @"sgbw":_headCell.sgbwLabel.text?:@"",
                           @"startTime":startTime?:@"",
                           @"endTime":endTime?:@"",
-                          @"departType":@"1",
-                          @"biaoshiid":@"1",
+                          @"departType":_departType?:@"",
+                          @"biaoshiid":_biaoshiid?:@"",
             };
-    NSDictionary *dic1 = @{@"uuid":_uuid2?:@"",
-                          @"timestampID":_cell1.strText2.text?:@"",
-                           @"userName":@"1",
+    NSDictionary *dic1 = @{
+                           @"uuid":_uuid2?:@"",
+                           @"timestampID":_cell1.strText2.text?:@"",
+                           @"userName":_userFullName?:@"",
                            @"startTime":startTime?:@"",
                            };
-    NSDictionary *dic2 = @{@"uuid":_uuid3?:@"",
+    NSDictionary *dic2 = @{
+                           @"uuid":_uuid3?:@"",
                            @"timestampID":_cell1.strText3.text?:@"",
-                           @"userName":@"1",
+                           @"userName":_userFullName?:@"",
                            @"startTime":startTime?:@"",
                            };
     NSMutableArray *arry = [NSMutableArray array];
