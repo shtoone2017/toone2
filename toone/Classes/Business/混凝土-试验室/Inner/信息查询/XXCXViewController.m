@@ -42,7 +42,7 @@ static NSString *pageNum = @"20";
     [_tabview registerNib:[UINib nibWithNibName:@"XXCXCell" bundle:nil  ] forCellReuseIdentifier:cellId];
     _tabview.estimatedRowHeight = 40;
     _tabview.rowHeight = UITableViewAutomaticDimension;
-    
+    _tabview.separatorStyle = UITableViewCellSeparatorStyleNone;
     __weak typeof(self) weakSelf = self;
     _tabview.mj_header = [MJDIYHeader2 headerWithRefreshingBlock:^{
         [weakSelf  reloadData:url];

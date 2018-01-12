@@ -272,7 +272,7 @@
 -(void)submitClick {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 //    NSLog(@"====%@=====%@",_headCell.biaoshi,_headCell.departType);
-    if (_headCell.lqLabel.text.length == 0 || _headCell.gcmcLabel.text.length == 0 || _headCell.sgbwLabel.text.length == 0 || _headCell.qddjLabel.text.length == 0 || _headCell.startTimeLabel.text.length == 0 || _cell1.strText1.text.length == 0 || _cell1.strText2.text.length == 0 || _cell1.strText3.text.length == 0 || _uuid1.length == 0 || _uuid2.length == 0 || _uuid3.length == 0 || _headCell.zzjgLabel.text.length == 0) {
+    if (_headCell.lqLabel.text.length == 0 || _headCell.gcmcLabel.text.length == 0 || _headCell.sgbwLabel.text.length == 0 || _headCell.qddjLabel.text.length == 0 || _headCell.startTimeLabel.text.length == 0 || _cell1.strText1.text.length == 0 || _cell1.strText2.text.length == 0 || _cell1.strText3.text.length == 0 || _uuid1.length == 0 || _uuid2.length == 0 || _uuid3.length == 0 || _departType.length == 0) {
         
         hud.mode = MBProgressHUDModeText;
         hud.label.text = @"请填写完整信息";
@@ -347,18 +347,30 @@
     
     [[manager dataTaskWithRequest:req completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (!error) {
-            if ([responseObject[0][@"success"] boolValue]) {
+            if ([responseObject[0][@"status"] integerValue] == 2 && [responseObject[1][@"status"] integerValue] == 2 && [responseObject[2][@"status"] integerValue] == 2) {
+                
                 hud.mode = MBProgressHUDModeText;
                 hud.label.text = @"上传成功";
                 [hud hideAnimated:YES afterDelay:2.0];
-
+                
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                     UIViewController *vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
                     [self.navigationController popToViewController:vc animated:YES];
                 });
-            }else {
+            }
+            else if ([responseObject[0][@"status"] integerValue] == 1 || [responseObject[1][@"status"] integerValue] == 1 || [responseObject[2][@"status"] integerValue] == 1) {
                 hud.mode = MBProgressHUDModeText;
-                hud.label.text = responseObject[0][@"description"];
+                hud.label.text = @"二维码已上传过";
+                [hud hideAnimated:YES afterDelay:2.0];
+            }
+            else if ([responseObject[0][@"status"] integerValue] == 0 || [responseObject[1][@"status"] integerValue] == 0 || [responseObject[2][@"status"] integerValue] == 0) {
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = @"平台无此二维码";
+                [hud hideAnimated:YES afterDelay:2.0];
+            }
+            else {
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = @"上传失败";
                 [hud hideAnimated:YES afterDelay:2.0];
             }
         }else {

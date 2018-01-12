@@ -36,6 +36,7 @@
     if (_oldString) {
         _textField.text = _oldString;
     }
+    [_textField becomeFirstResponder];
     [textFile addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 #pragma mark - 保存按钮
