@@ -21,8 +21,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    UITapGestureRecognizer *startTime = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startTimeClick)];
-    [self.startTimeView addGestureRecognizer:startTime];
+    [self startTimeClick];
+//    UITapGestureRecognizer *startTime = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startTimeClick)];
+//    [self.startTimeView addGestureRecognizer:startTime];
     UITapGestureRecognizer *qddj = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(qddjClick)];
     [self.qddjView addGestureRecognizer:qddj];
     UITapGestureRecognizer *lq = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lqClick)];
@@ -42,7 +43,7 @@
 }
 
 -(void)startTimeClick {
-    _startTimeLabel.text = [TimeTools timeStampWithTimeString:[TimeTools currentTime]];
+    _startTimeLabel.text = [TimeTools currentTime];
 }
 -(void)qddjClick {
     HNT_BHZ_SB_Controller *controller = [[HNT_BHZ_SB_Controller alloc] init];
@@ -52,16 +53,23 @@
     };
     [self.viewController.navigationController pushViewController:controller animated:YES];
 }
--(void)zzjgClick {
+-(void)zzjgClick {//组织机构
     SW_ZZJG_Controller * controller = [[SW_ZZJG_Controller alloc] init];
     controller.modelType = @"3,4";
     controller.type = @"新增";
     __weak __typeof(self)  weakSelf = self;
     controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
         weakSelf.condition = data;
-        _zzjgLabel.text = weakSelf.condition.name;
-        _biaoshiid = weakSelf.condition.biaoshiid;
-        _departType = weakSelf.condition.departType;
+        if (weakSelf.condition.biaoshiid.length == 0) {
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.viewController.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"请选择试验室";
+            [hud hideAnimated:YES afterDelay:2.0];
+        }else {
+            _zzjgLabel.text = weakSelf.condition.name;
+            _biaoshiid = weakSelf.condition.biaoshiid;
+            _departType = weakSelf.condition.departType;
+        }
     };
     [self.viewController.navigationController pushViewController:controller animated:YES];
 }
