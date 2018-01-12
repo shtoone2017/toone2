@@ -48,7 +48,7 @@
                     for (NSDictionary * dict in json[@"biaoduan"]) {
                         SW_ZZJG_Data * biaoduan = [[SW_ZZJG_Data alloc] init];
                         biaoduan.name = dict[@"biaoduanminchen"];
-//                        biaoduan.biaoshiid = Format(dict[@"id"]);
+                        biaoduan.biaoshiid = Format(dict[@"id"]);
                         biaoduan.departType = @"2";
                         //                        [datas addObject:biaoduan];
                         for (SW_ZZJG_Data *yz in datas) {
@@ -64,7 +64,8 @@
                     for (NSDictionary * dict in json[@"xmb"]) {
                         SW_ZZJG_Data * xmb = [[SW_ZZJG_Data alloc] init];
                         xmb.name = dict[@"xiangmubuminchen"];
-                        xmb.biaoshiid = Format(dict[@"biaoduanid"]);
+                        xmb.biaoshiid = Format(dict[@"id"]);
+                        xmb.biaoshi = Format(dict[@"biaoduanid"]);
                         xmb.departType = @"3";
                         NSString * parentId = Format(dict[@"biaoduanid"]);
                         for (SW_ZZJG_Data *yz in datas) {

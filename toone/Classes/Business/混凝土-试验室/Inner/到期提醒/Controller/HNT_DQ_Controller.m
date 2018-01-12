@@ -176,14 +176,14 @@
             controller.type = @"新增";
             controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
                 weakSelf.condition = data;
-                if (weakSelf.condition.biaoshiid.length == 0) {
+                if (weakSelf.condition.biaoshi.length == 0) {
                     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                     hud.mode = MBProgressHUDModeText;
                     hud.label.text = @"请选择试验室";
                     [hud hideAnimated:YES afterDelay:2.0];
                 }else {
                     [btn setTitle:weakSelf.condition.name forState:UIControlStateNormal];
-                    _biaoshiid = weakSelf.condition.biaoshiid;
+                    _biaoshiid = weakSelf.condition.biaoshi;
                     _departType = weakSelf.condition.departType;
                 }
             };

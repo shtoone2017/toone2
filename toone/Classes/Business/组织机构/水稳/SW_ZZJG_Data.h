@@ -24,4 +24,5 @@
 @property (strong, nonatomic) NSString * biaoshiid;
 @property (strong, nonatomic) NSString * departType;
 @property (strong, nonatomic) NSString * shebeibianhao;
+@property (nonatomic, copy) NSString *biaoshi;
 @end

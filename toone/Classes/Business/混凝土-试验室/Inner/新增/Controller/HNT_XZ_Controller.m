@@ -78,13 +78,6 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 35;
 }
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    switch (section) {
-//        case 0:return @"基本信息";
-//        case 1:return @"签收照片";
-//    }
-//    return nil;
-//}
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 300, 10)];
@@ -278,7 +271,7 @@
 #pragma mark - 上传
 -(void)submitClick {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    NSLog(@"====%@=====%@",_headCell.biaoshiid,_headCell.departType);
+//    NSLog(@"====%@=====%@",_headCell.biaoshi,_headCell.departType);
     if (_headCell.lqLabel.text.length == 0 || _headCell.gcmcLabel.text.length == 0 || _headCell.sgbwLabel.text.length == 0 || _headCell.qddjLabel.text.length == 0 || _headCell.startTimeLabel.text.length == 0 || _cell1.strText1.text.length == 0 || _cell1.strText2.text.length == 0 || _cell1.strText3.text.length == 0 || _uuid1.length == 0 || _uuid2.length == 0 || _uuid3.length == 0 || _headCell.zzjgLabel.text.length == 0) {
         
         hud.mode = MBProgressHUDModeText;
@@ -340,16 +333,19 @@
     
     [[manager dataTaskWithRequest:req completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (!error) {
-            if ([responseObject[@"success"] boolValue]) {//不知是否给值
-                
-//                [SVProgressHUD showSuccessWithStatus:responseObject[@"message"]];
-//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//                    [UserDefaultsSetting shareSetting].GCBedit = [NSString stringWithFormat:@"%d",arc4random()%1000];
-//                    UIViewController *vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
-//                    [self.navigationController popToViewController:vc animated:YES];
-//                });
+            if ([responseObject[0][@"success"] boolValue]) {//不知是否给值
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = @"上传成功";
+                [hud hideAnimated:YES afterDelay:2.0];
+
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2ull*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    UIViewController *vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count-2];
+                    [self.navigationController popToViewController:vc animated:YES];
+                });
             }else {
-//                [SVProgressHUD showErrorWithStatus:responseObject[@"message"]];
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = responseObject[0][@"description"];
+                [hud hideAnimated:YES afterDelay:2.0];
             }
         }else {
             NSLog(@"Error: %@, %@, %@", error, response, responseObject);
