@@ -22,6 +22,7 @@
 #import "HNT_XZ_Controller.h"
 #import "HNT_DQ_Controller.h"
 #import "InputController.h"
+#import "XXCXViewController.h"
 
 @interface HNT_SYS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -141,10 +142,7 @@
         }
             break;
         case 5:{//查看
-            InputController *vc = [[InputController alloc] init];
-            vc.callBlock = ^(NSString * banhezhanminchen){
-//                NSLog(@"====%@===",banhezhanminchen);
-            };
+            XXCXViewController *vc = [[XXCXViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
