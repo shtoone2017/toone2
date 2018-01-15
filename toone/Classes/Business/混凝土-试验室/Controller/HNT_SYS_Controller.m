@@ -91,7 +91,7 @@
     return 55;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"新增",@"龄期到期提醒",@"试验信息查看"];
+    NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"新增养护功能",@"今日试验提醒",@"养护试验查阅"];
     NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ",@"SYS_XZ",@"SYS_TX",@"SYS_CK"];
     static NSString *cellId = @"CELLID";
     SYS_MAIN_Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
