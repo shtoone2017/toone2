@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GCB_JCH_Cell : UITableViewCell
-@property (nonatomic,strong) NSArray * datas;
 -(void)setchart:(NSMutableArray *)ax add:(NSMutableArray *)ay;
 @end

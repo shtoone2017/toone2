@@ -7,7 +7,7 @@
 //
 
 #import "LQ_ZCL_Cl_Cell.h"
-#import "BarChartViewController.h"
+#import "AAChartView.h"
 #import "LQ_ZCL_CL_Model.h"
 
 @interface LQ_ZCL_Cl_Cell ()
@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIView *productionView;//产量图
 @property (weak, nonatomic) IBOutlet UIView *bkView;
 
-
+@property (nonatomic, strong) AAChartView  *aaChartView1;
+@property (nonatomic, strong) AAChartView  *aaChartView2;
+@property (nonatomic, strong) AAChartModel *aaChartModel;
 
 @end
 @implementation LQ_ZCL_Cl_Cell
@@ -47,14 +49,18 @@
 
 -(void)setDatas1:(NSArray *)datas1 {
     _datas1 = datas1;
-    BarChartViewController * chart;
-    if (chart) {
-        [chart.view removeFromSuperview];
-        [chart removeFromParentViewController];
-    }
-    chart = [[BarChartViewController alloc] initWithArr:datas1];
-    chart.view.frame = CGRectMake(0, 50, self.bounds.size.width, 330);
-    [self.productionView addSubview:chart.view];
+    self.aaChartView1 = [[AAChartView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 360)];
+    self.aaChartView1.contentHeight = 360;
+    [self.productionView addSubview:self.aaChartView1];
+    self.aaChartModel = AAObject(AAChartModel)
+    .chartTypeSet(AAChartTypeColumn)
+    .titleSet(@"")
+    .subtitleSet(@"")
+    .categoriesSet(@[@""])
+    .yAxisTitleSet(@"")
+    .seriesSet(datas1);
+    self.aaChartModel.dataLabelEnabled = YES;
+    [self.aaChartView1 aa_drawChartWithChartModel:_aaChartModel];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

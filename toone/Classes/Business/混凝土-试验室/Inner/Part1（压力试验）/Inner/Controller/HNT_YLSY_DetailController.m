@@ -8,7 +8,7 @@
 
 #import "HNT_YLSY_DetailController.h"
 #import "HNT_YLSY_DetailModel.h"
-#import "LineChart1ViewController.h"
+#import "AAChartView.h"
 #import "AxisModel.h"
 
 #import "HNT_ChuZhi_Controller.h"
@@ -42,7 +42,8 @@
 
 @property (nonatomic,strong) HNT_YLSY_DetailModel * model;
 
-
+@property (nonatomic, strong) AAChartModel *aaChartModel;
+@property (nonatomic, strong) AAChartView  *aaChartView;
 @end
 
 @implementation HNT_YLSY_DetailController
@@ -167,38 +168,30 @@
 
                 //加载曲线图
                 for (int i = 0 ; i<totalArray.count; i++) {
-                    //1.取出最大值和最小值
-                    int y_Min = CGFLOAT_MAX;
-                    int y_Max = CGFLOAT_MIN;
-                    for (int j=0; j<arrY.count; j++) {
-                        
-                        NSArray *temparr = arrY[0];
-                        if (temparr.count!=0)
-                        {
-                            int value = [(NSString*)arrY[i][j] intValue];
-                            if (value>y_Max) {
-                                y_Max = value;
-                            }
-                            if (value<y_Min) {
-                                y_Min = value;
-                            }
-                        }
-                    }
-                    
-                    NSDictionary * dict = @{@"y_Max":FormatInt(y_Max),
-                                            @"y_Min":FormatInt(y_Min),
-                                            @"datas":totalArray[i],
-                                            };
                     if ([totalArray[i] count] == 0) {
                         [Tools tip:@"没有数据"];
                         //移除指示器
                         [Tools removeActivity];
                         return ;
                     }
-                    LineChart1ViewController * vc = [[LineChart1ViewController alloc] initWithDict:dict];
-                    vc.view.frame = CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360);
-                    [weakSelf addChildViewController:vc];
-                    [weakSelf.chart_sc addSubview:vc.view];
+                    self.aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(weakSelf.view.bounds.size.width*i, 0, weakSelf.view.bounds.size.width, 360)];
+                    self.aaChartView.contentHeight = 360;
+                    [weakSelf.chart_sc addSubview:weakSelf.aaChartView];
+                    
+                    self.aaChartModel = AAObject(AAChartModel)
+                    .chartTypeSet(AAChartTypeAreaspline)//图表的类型
+                    .titleSet(@"")//图表标题
+                    .subtitleSet(@"")//图表副标题
+                    .categoriesSet(@[@""])//设置图表横轴的内容
+                    .yAxisTitleSet(@"")//设置图表 y 轴的单位
+                    .seriesSet(@[
+                                 AAObject(AASeriesElement)
+                                 .nameSet(@"力值(KN)--时间(S) 曲线图")
+                                 .dataSet(totalArray[i]),
+                                 ]);
+                    
+                    self.aaChartModel.dataLabelEnabled = YES;
+                    [self.aaChartView aa_drawChartWithChartModel:_aaChartModel];
                 }
               
 

@@ -34,7 +34,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, Screen_w, 20)];
+    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -44, Screen_w, 44)];
     statusBarView.backgroundColor= BLUECOLOR;
     [self.navigationBar addSubview:statusBarView];
     self.statusBarView = statusBarView;

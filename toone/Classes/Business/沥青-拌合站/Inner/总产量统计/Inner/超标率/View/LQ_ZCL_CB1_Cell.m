@@ -9,15 +9,13 @@
 #import "LQ_ZCL_CB1_Cell.h"
 #import "SGChart.h"
 
-@import Charts;
-@interface LQ_ZCL_CB1_Cell ()<ChartViewDelegate>
+@interface LQ_ZCL_CB1_Cell ()
 @property (weak, nonatomic) IBOutlet UILabel *jiduLabel;
 @property (weak, nonatomic) IBOutlet UIView *chaoBView;
 //@property (nonatomic, strong) PNLineChart * lineChart;//折线图
 @property (nonatomic, assign) float max;
 @property (nonatomic, assign) float min;
 
-@property (nonatomic,strong) LineChartView * lineView;
 @end
 @implementation LQ_ZCL_CB1_Cell
 

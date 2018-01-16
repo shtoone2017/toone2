@@ -14,72 +14,50 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AMap3DMap (4.6.1):
+  - AMap3DMap (5.4.0):
     - AMapFoundation (~> 1.3)
-  - AMapFoundation (1.3.3)
-  - AMapLocation (2.3.0):
-    - AMapFoundation (~> 1.3)
-  - AMapSearch (4.5.0):
-    - AMapFoundation (~> 1.2)
-  - Charts (3.0.1):
-    - Charts/Core (= 3.0.1)
-  - Charts/Core (3.0.1)
-  - Charts/Realm (3.0.1):
-    - Charts/Core
-    - RealmSwift (~> 1.1)
+  - AMapFoundation (1.4.2)
+  - AMapLocation (2.5.0):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (5.4.0):
+    - AMapFoundation (~> 1.4)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (3.1.12)
-  - Pgyer (2.8.5)
-  - PgyUpdate (1.3)
-  - PNChart (0.8.9):
-    - UICountingLabel (~> 1.2.0)
-  - Realm (1.1.0):
-    - Realm/Headers (= 1.1.0)
-  - Realm/Headers (1.1.0)
-  - RealmSwift (1.1.0):
-    - Realm (= 1.1.0)
+  - MJRefresh (3.1.15)
+  - Pgyer (2.8.7)
+  - PgyUpdate (1.5)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.1.2)
   - TPKeyboardAvoiding (1.3.1)
-  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - AMap3DMap
   - AMapLocation
   - AMapSearch
-  - Charts
-  - Charts/Realm
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh
   - Pgyer
   - PgyUpdate
-  - PNChart
   - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 2.1.2)
   - TPKeyboardAvoiding (~> 1.3.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AMap3DMap: eb6656fb441ed7eb310b3c121032e947d4d649e5
-  AMapFoundation: c086329a1f19afec00e4c197863665235eb43dc2
-  AMapLocation: 5fb51fe0e35e68a899199651942e6234d6257d91
-  AMapSearch: 7a6ebc20a42e34a021b042b047f198082fc2fc30
-  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  AMap3DMap: 3eb906ac6b9d488413ab26c24f67eca4b4ad4641
+  AMapFoundation: 6c0471c9a6a0ad17dad46e3d800ad56ca170f82a
+  AMapLocation: d02bd8c0081b0bc51b2e4cf89925ef57448263c9
+  AMapSearch: 97042f81c1c8ea8adc4b1dadf1b1a688210aa141
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Pgyer: 69f8fba661dc99f0f5c2bba705441cc2f3cc827d
-  PgyUpdate: 38634295d19aca6c63dc4a87a595c92a13838e5b
-  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
-  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
-  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+  MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
+  Pgyer: 94e52b954e7595c86fa5ba70a154cb1d31d4be0d
+  PgyUpdate: bad71685b91bba4aa520b7fe29356a476700fdf2
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
-  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: 015439d7eb5907e37bccfc8c440e213830cf33f9
+PODFILE CHECKSUM: 9766cfd48756163d8364096c14c77c9be3acea61
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

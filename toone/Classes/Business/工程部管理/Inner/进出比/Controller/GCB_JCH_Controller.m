@@ -13,7 +13,7 @@
 #import "BarModel.h"
 #import "NodeViewController.h"
 #import "GCB_JCH_1Cell.h"
-
+#import "AAChartView.h"
 @interface GCB_JCH_Controller ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -49,6 +49,7 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:AppJCH,self.departId,startTimeStamp,endTimeStamp];
+//    NSString *urlString = @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/AppWZJinChuChangController.do?list&departId=8a8ab0b246dc81120146dc8180ba0017&jinchangshijian1=1498876500&jinchangshijian2=1502073302";
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
@@ -60,54 +61,50 @@
                 }
             }
         }
-        NSMutableArray * bars = [NSMutableArray array];//y
-        NSMutableArray * names = [NSMutableArray array];
-//        for (GCB_JCH_Model * model in datas) {
-//            BarModel * bar = [[BarModel alloc] init];
-//            for (NSUInteger i = 0; i <= 3; i++) {
-//                switch (i) {
-//                    case 1:{
-//                        bar.value = model.xiaohao;
-//                        bar.name = model.cailiaoName;
-//                        [bars addObject:bar];
-//                        break;
-//                    }
-//                    case 2:{
-//                        bar.value = model.chuchang;
-//                        bar.name = model.cailiaoName;
-//                        [bars addObject:bar];
-//                        break;
-//                    }
-//                    case 3:{
-//                        bar.name = model.cailiaoName;
-//                        bar.value = model.jinchang;
-//                        [bars addObject:bar];
-//                        break;
-//                    }
-//                    default:
-//                        break;
-//                }
-//            }
-//        }
+        NSMutableArray * bars1 = [NSMutableArray array];
+        NSMutableArray * bars2 = [NSMutableArray array];
+        NSMutableArray * bars3 = [NSMutableArray array];
+        
+        NSMutableArray *name = [NSMutableArray array];
+        NSMutableArray *data = [NSMutableArray array];
+
         if (datas.count) {
             for (GCB_JCH_Model *model in datas) {
-                [bars addObject:model.xiaohao];
-                [bars addObject:model.chuchang];
-                [bars addObject:model.jinchang];
-                [names addObject:model.cailiaoName];
+                double value1 =  [(NSString*)model.xiaohao doubleValue];
+                NSNumber *num1 = [NSNumber numberWithDouble:value1];
+                [bars1 addObject:num1];
+                
+                double value2 =  [(NSString*)model.chuchang doubleValue];
+                NSNumber *num2 = [NSNumber numberWithDouble:value2];
+                [bars2 addObject:num2];
+                
+                double value3 =  [(NSString*)model.jinchang doubleValue];
+                NSNumber *num3 = [NSNumber numberWithDouble:value3];
+                [bars3 addObject:num3];
+                
+                [name addObject:model.cailiaoName];
             }
         }
-        NSMutableArray *a = [NSMutableArray array];
-        for (NSInteger j = 0; j<names.count; j++) {
-            for (NSInteger i=0; i<3; i++) {
-                [a addObject:names[j]];
-            }
-        }
-        weakSelf.ChartDatas = bars;
-        weakSelf.datas = a;
+        
+        AASeriesElement *mode1 = [[AASeriesElement alloc] init];
+        mode1.nameSet(@"消耗");
+        mode1.dataSet(bars1);
+        
+        AASeriesElement *mode2 = [[AASeriesElement alloc] init];
+        mode2.nameSet(@"出场");
+        mode2.dataSet(bars2);
+        
+        AASeriesElement *mode3 = [[AASeriesElement alloc] init];
+        mode3.nameSet(@"进场");
+        mode3.dataSet(bars3);
+        
+        [data addObject:mode1];
+        [data addObject:mode2];
+        [data addObject:mode3];
+        
+        weakSelf.ChartDatas = data;
+        weakSelf.datas = name;
         weakSelf.data = datas;
-//        weakSelf.ChartDatas = bars;
-//        weakSelf.datas = datas;
         [weakSelf.tableView reloadData];
         
         [Tools removeActivity];
@@ -129,7 +126,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         GCB_JCH_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"GCB_JCH_Cell" forIndexPath:indexPath];
-        //    cell.datas = _ChartDatas;
         [cell setchart:_ChartDatas add:_datas];
         cell.selectionStyle =UITableViewCellSelectionStyleNone;
         return cell;

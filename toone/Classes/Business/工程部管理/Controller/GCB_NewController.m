@@ -35,8 +35,6 @@
     [self loadUI];
     [self loadData];
     [self addPanGestureRecognizer];
-    self.view.backgroundColor = [UIColor colorWithRed:240/255.f green:240/255.f blue:244/255.f alpha:1];
-    
 }
 -(void)loadData{
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
@@ -80,6 +78,9 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tb.tableFooterView = [[UIView alloc] init];
+    self.tb.separatorStyle = NO;
+    self.tb.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tb.backgroundColor = [UIColor colorWithRed:240/255.f green:240/255.f blue:244/255.f alpha:1];
     self.tb.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [self.tb.mj_header beginRefreshing];
 }
@@ -102,6 +103,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     cell.textLabel.text = @"";
+    cell.contentView.backgroundColor = [UIColor colorWithRed:240/255.f green:240/255.f blue:244/255.f alpha:1];
     return cell;
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {

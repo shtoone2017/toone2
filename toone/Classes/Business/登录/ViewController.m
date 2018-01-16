@@ -25,6 +25,9 @@
  *被激活的textField
  */
 @property (nonatomic,copy) NSString * nameOfTheActivatedTextField;
+
+@property (nonatomic, copy) NSString *users;
+@property (nonatomic, copy) NSString *password;
 @end
 
 @implementation ViewController
@@ -123,7 +126,8 @@
     }
 //    hud.mode = MBProgressHUDModeCustomView;
 //    hud.label.text = NSLocalizedString(@"正在登录", @"HUD completed title");
-    
+    _users = _acountTextField.text;
+    _password = _passwordTextField.text;
     NSString * urlString = [NSString stringWithFormat:AppLogin_2,_acountTextField.text,_passwordTextField.text];
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {
@@ -131,8 +135,8 @@
                 //数据存储到本地
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
-                    setting.acount = _acountTextField.text;
-                    setting.password = _passwordTextField.text;
+                    setting.acount = _users;
+                    setting.password = _password;
                     setting.departId  = json[@"departId"];
                     setting.departName  = json[@"departName"];
                     setting.userPhoneNum = json[@"userPhoneNum"];
