@@ -45,6 +45,7 @@ static UserDefaultsSetting * setting = nil;
     setting.hntchaobiaoReal = [defaults boolForKey:@"hntchaobiaoRealKey"];
     setting.hntchaobiaoSp = [defaults boolForKey:@"hntchaobiaoSpKey"];
     setting.syschaobiaoReal = [defaults boolForKey:@"syschaobiaoRealKey"];
+    setting.sysqrcodeReal = [defaults boolForKey:@"sysqrcodeRealKey"];
     
     
     //存储时间
@@ -91,6 +92,7 @@ static UserDefaultsSetting * setting = nil;
     [defaults setBool:self.hntchaobiaoReal   forKey:@"hntchaobiaoRealKey"];
     [defaults setBool:self.hntchaobiaoSp     forKey:@"hntchaobiaoSpKey"];
     [defaults setBool:self.syschaobiaoReal   forKey:@"syschaobiaoRealKey"];
+    [defaults setBool:self.sysqrcodeReal   forKey:@"sysqrcodeRealKey"];
     
     //存储时间
     [defaults setBool:self.endTime     forKey:@"endTimeKey"];

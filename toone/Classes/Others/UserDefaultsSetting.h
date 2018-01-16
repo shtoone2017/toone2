@@ -36,6 +36,7 @@
 @property (nonatomic,assign) BOOL  hntchaobiaoReal;
 @property (nonatomic,assign) BOOL  hntchaobiaoSp;
 @property (nonatomic,assign) BOOL  syschaobiaoReal;
+@property (nonatomic,assign) BOOL  sysqrcodeReal;
 
 
 //存储开始时间和结束时间

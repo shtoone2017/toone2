@@ -143,6 +143,7 @@
                     setting.hntchaobiaoReal = [json[@"chuzhi"] boolValue];
                     setting.hntchaobiaoSp = [json[@"shenehe"] boolValue];
                     setting.syschaobiaoReal = [json[@"sysChuzhi"] boolValue];
+                    setting.sysqrcodeReal = [json[@"QrcodeUpload"] boolValue];
                     setting.login = YES;
                     
                     [setting saveToSandbox];

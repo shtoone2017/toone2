@@ -21,7 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     switch (_type) {
         case SBListTypeSJQD:{
-            self.title = @"选择设计强度";
+            self.title = @"选择屈服强度";
         }
             break;
         default:{

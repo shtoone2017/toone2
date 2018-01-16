@@ -85,14 +85,16 @@
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    if ([UserDefaultsSetting shareSetting].sysqrcodeReal) {
+        return 6;
+    }else {
+        return 5;
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 55;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"新增养护功能",@"今日试验提醒",@"养护试验查阅"];
-    NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ",@"SYS_XZ",@"SYS_TX",@"SYS_CK"];
     static NSString *cellId = @"CELLID";
     SYS_MAIN_Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell)
@@ -107,8 +109,17 @@
     }else {
         cell.numLabel.hidden = YES;
     }
-    cell.title.text = titleArr[indexPath.row];
-    cell.img.image = [UIImage imageNamed:imgArr[indexPath.row]];
+    if ([UserDefaultsSetting shareSetting].sysqrcodeReal) {
+        NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"新增养护功能",@"今日试验提醒",@"养护试验查阅"];
+        NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ",@"SYS_XZ",@"SYS_TX",@"SYS_CK"];
+        cell.title.text = titleArr[indexPath.row];
+        cell.img.image = [UIImage imageNamed:imgArr[indexPath.row]];
+    }else {
+        NSArray *titleArr = @[@"压力试验",@"万能试验",@"统计分析",@"今日试验提醒",@"养护试验查阅"];
+        NSArray *imgArr = @[@"SYS_YL",@"SYS_WN",@"SYS_TJ",@"SYS_TX",@"SYS_CK"];
+        cell.title.text = titleArr[indexPath.row];
+        cell.img.image = [UIImage imageNamed:imgArr[indexPath.row]];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -134,11 +145,20 @@
         }
             break;
         case 3:{//新增
-            [self.navigationController pushViewController:[[HNT_XZ_Controller alloc] init] animated:YES];
+            if (![UserDefaultsSetting shareSetting].sysqrcodeReal) {
+                [self.navigationController pushViewController:[[HNT_DQ_Controller alloc] init] animated:YES];
+            }else {
+                [self.navigationController pushViewController:[[HNT_XZ_Controller alloc] init] animated:YES];
+            }
         }
             break;
         case 4:{//提醒
-            [self.navigationController pushViewController:[[HNT_DQ_Controller alloc] init] animated:YES];
+            if (![UserDefaultsSetting shareSetting].sysqrcodeReal) {
+                XXCXViewController *vc = [[XXCXViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }else {
+                [self.navigationController pushViewController:[[HNT_DQ_Controller alloc] init] animated:YES];
+            }
         }
             break;
         case 5:{//查看
