@@ -195,12 +195,22 @@
     e.useLabel = @"组织机构";
     e.sbLabel = @"磅房设备";
     e.earthLabel = @"材料名称";
-    if ([_zt isEqualToString:@"1"]) {
-        e.frame = CGRectMake(0, 64, Screen_w, 270);
-        [e hiddenView];
-    }else if ([_zt isEqualToString:@"2"]) {
-        e.frame = CGRectMake(0, 64, Screen_w, 305);
+    if (kDevice_Is_iPhoneX) {
+        if ([_zt isEqualToString:@"1"]) {
+            e.frame = CGRectMake(0, 88, Screen_w, 270);
+            [e hiddenView];
+        }else if ([_zt isEqualToString:@"2"]) {
+            e.frame = CGRectMake(0, 88, Screen_w, 305);
+        }
+    }else {
+        if ([_zt isEqualToString:@"1"]) {
+            e.frame = CGRectMake(0, 64, Screen_w, 270);
+            [e hiddenView];
+        }else if ([_zt isEqualToString:@"2"]) {
+            e.frame = CGRectMake(0, 64, Screen_w, 305);
+        }
     }
+    
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         if (type == ExpButtonTypeCancel) {

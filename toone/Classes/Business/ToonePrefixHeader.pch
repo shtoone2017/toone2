@@ -9,12 +9,12 @@
 #define ToonePrefixHeader_pch
 
 //PGY_APP_ID
-//#define PGY_APP_ID @"848cb0e72ebd1d6713bee2f7b1c7d80d"   //中建四局
-#define PGY_APP_ID @"1f4d0d96e73756f0cfaf09a9f2b830d4" //中铁十一局
+#define PGY_APP_ID @"848cb0e72ebd1d6713bee2f7b1c7d80d"   //中建四局
+//#define PGY_APP_ID @"1f4d0d96e73756f0cfaf09a9f2b830d4" //中铁十一局
 
 //云部署地址
-//#define baseUrl      @"http://116.62.30.27:8081/zj4jymqms/"   //中建四局
-#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"  //中铁十一局
+#define baseUrl      @"http://116.62.30.27:8081/zj4jymqms/"   //中建四局
+//#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"  //中铁十一局
 
 //#define baseUrl      @"http://192.168.1.181:8082/jeecg/"
 
@@ -34,6 +34,8 @@
 #define SGCOLOR(r,g,b,a)        [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define Color1                  SGCOLOR(224,243,241,1.0)
 #define Color2                  SGCOLOR(232,232,253,1.0)
+
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define kPageSize 20
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self

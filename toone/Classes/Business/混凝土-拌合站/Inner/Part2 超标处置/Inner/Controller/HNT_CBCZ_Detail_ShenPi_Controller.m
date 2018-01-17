@@ -12,9 +12,20 @@
 @property (weak, nonatomic) IBOutlet SGTextView *txt1;//监理结果
 @property (weak, nonatomic) IBOutlet SGTextView *txt2;//监理审批
 - (IBAction)commitClick:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 @end
 
 @implementation HNT_CBCZ_Detail_ShenPi_Controller
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 98;
+    }else {
+        self.top.constant = 74;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -13,6 +13,7 @@
 #import "HNT_YLSY_DetailController.h"
 #import "HNT_BHZ_SB_Controller.h"
 #import "NodeViewController.h"
+#import "HNT_ChuZhi_Controller.h"
 
 @interface HNT_YLSY_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -585,6 +586,7 @@
         controller.title = @"详情";
     }
 }
+
 -(void)dealloc{
     FuncLog;
 }

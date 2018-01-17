@@ -11,11 +11,22 @@
 @interface HNT_ChuZhi_Controller ()
 @property (weak, nonatomic) IBOutlet SGTextView *txt;
 - (IBAction)commit:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 //指示器MB用
 @property (atomic, assign) BOOL canceled;
 @end
 
 @implementation HNT_ChuZhi_Controller
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 98;
+    }else {
+        self.top.constant = 74;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

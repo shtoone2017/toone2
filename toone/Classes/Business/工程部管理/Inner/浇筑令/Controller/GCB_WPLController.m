@@ -261,7 +261,11 @@
     
     //2.
     Exp51View * e = [[Exp51View alloc] init];
-    e.frame = CGRectMake(0, 64, Screen_w, 285);
+    if (kDevice_Is_iPhoneX) {
+        e.frame = CGRectMake(0, 88, Screen_w, 285);
+    }else {
+        e.frame = CGRectMake(0, 64, Screen_w, 285);
+    }
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         if (type == ExpButtonTypeCancel) {

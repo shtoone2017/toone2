@@ -14,10 +14,21 @@
 @property (weak, nonatomic) IBOutlet SGTextView *txt3;//结果
 - (IBAction)commitClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imgv;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
+
 @property (nonatomic,strong) UIImage * filePathImage;
 @end
 
 @implementation HNT_CBCZ_Detail_ChuLi_Controller
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 98;
+    }else {
+        self.top.constant = 74;
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

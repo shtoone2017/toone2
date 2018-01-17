@@ -46,7 +46,6 @@
     FuncLog;
 }
 -(void)loadUI{
-    
     UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
     btn3.tag  = 3;
     [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -55,7 +54,9 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerClass:[HNT_SYS_Cell class] forCellReuseIdentifier:@"HNT_SYS_Cell"];
 //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+}
+-(void)searchButtonClick:(UIButton *)sender {
+    [super pan];
 }
 #pragma mark - Table view data source
 

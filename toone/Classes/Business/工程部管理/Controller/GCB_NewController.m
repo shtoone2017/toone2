@@ -126,7 +126,11 @@
             
             //2.
             Exp1View * e = [[Exp1View alloc] init];
-            e.frame = CGRectMake(0, 64, Screen_w, 150);
+            if (kDevice_Is_iPhoneX) {
+                e.frame = CGRectMake(0, 88, Screen_w, 150);
+            }else {
+                e.frame = CGRectMake(0, 64, Screen_w, 150);
+            }
             e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
                 NSLog(@"%d",type);
                 if (type == ExpButtonTypeCancel) {

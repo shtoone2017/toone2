@@ -121,7 +121,8 @@
 }
 -(void)show{
     
-    UIWindow * window = [[UIApplication sharedApplication].windows lastObject];
+//    UIWindow * window = [[UIApplication sharedApplication].windows lastObject];
+    UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
     window.userInteractionEnabled = NO;
     self.control.hidden = YES;
     [window addSubview:self.control];
@@ -143,7 +144,8 @@
 
 }
 -(void)remove{
-    UIWindow * window = [[UIApplication sharedApplication].windows lastObject];
+//    UIWindow * window = [[UIApplication sharedApplication].windows lastObject];
+    UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
     self.control.hidden = YES;
     window.userInteractionEnabled = NO;
     [UIView animateWithDuration:0.35 animations:^{

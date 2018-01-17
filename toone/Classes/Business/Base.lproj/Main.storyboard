@@ -1628,12 +1628,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="top" destination="qri-eD-4Ih" id="gnr-N3-A5e"/>
                         <outlet property="txt" destination="VXg-2h-7zJ" id="Dq8-it-jSR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOq-nE-5ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4694" y="-1965"/>
+            <point key="canvasLocation" x="5010" y="-1986"/>
         </scene>
         <!--Detail Controller-->
         <scene sceneID="7z9-ah-3tU">
@@ -3912,7 +3913,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q1w-re-E9g" firstAttribute="leading" secondItem="Qks-GN-BZK" secondAttribute="leading" id="3FR-jf-R5x"/>
-                            <constraint firstItem="q1w-re-E9g" firstAttribute="top" secondItem="WLk-cE-4ie" secondAttribute="bottom" id="Xq5-Qu-anB"/>
+                            <constraint firstItem="q1w-re-E9g" firstAttribute="top" secondItem="WLk-cE-4ie" secondAttribute="bottom" id="IAq-Si-8uj"/>
                             <constraint firstAttribute="trailing" secondItem="q1w-re-E9g" secondAttribute="trailing" id="hhO-rM-t6l"/>
                         </constraints>
                     </view>
@@ -5007,9 +5008,9 @@
         <image name="white_SX" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="huJ-hq-5Ls"/>
+        <segue reference="OFf-sM-NiC"/>
         <segue reference="h6h-V1-R2o"/>
-        <segue reference="eyg-Cx-bjM"/>
-        <segue reference="2qa-au-FyR"/>
+        <segue reference="WQO-SS-2jJ"/>
+        <segue reference="fJ7-UZ-nBz"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -213,7 +213,14 @@
     
     [self.view addSubview:tableview];
     self.treeTableView = tableview;
-    
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    if (@available(iOS 11.0, *)) {
+        self.treeTableView.contentInset = UIEdgeInsetsMake(-24, 0, 49, 0);
+        self.treeTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.treeTableView.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 #pragma mark - 分层级
