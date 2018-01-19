@@ -15,10 +15,19 @@
 - (IBAction)commitClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imgv;
 @property (nonatomic,strong) UIImage * filePathImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 @end
 
 @implementation SW_CBCZ_Detail_ChuLi_Controller
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 98;
+    }else {
+        self.top.constant = 74;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"超标处置";

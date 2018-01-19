@@ -39,9 +39,20 @@
 
 @property (nonatomic, copy) NSString *baseUrlString;
 @property (nonatomic, assign) int wdIndex;//标记温度Label
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
+
+
 @end
 @implementation TP_NY_Controller
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 88;
+    }else {
+        self.top.constant = 64;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.wdIndex = 2;

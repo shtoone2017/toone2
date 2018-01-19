@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,7 @@
                 <navigationController id="Qff-ou-NCO" customClass="MyNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="试验室" image="ic_bhz" id="cGo-mG-Rf8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xzo-al-fMC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -174,42 +174,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKu-pg-V2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1367" y="2651"/>
-        </scene>
-        <!--栗子-->
-        <scene sceneID="aAn-l2-hTg">
-            <objects>
-                <navigationController hidesBottomBarWhenPushed="YES" id="Esn-Nf-7fj" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="栗子" id="vmd-k8-FXD"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yIA-6o-JWn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="tQ0-YT-Khr" kind="relationship" relationship="rootViewController" id="eax-H4-RyV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jAM-mU-Obl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-6684" y="3565"/>
-        </scene>
-        <!--Exmp2-->
-        <scene sceneID="vqa-mY-pfB">
-            <objects>
-                <viewController id="tQ0-YT-Khr" customClass="Exmp2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EUJ-zl-I4j"/>
-                        <viewControllerLayoutGuide type="bottom" id="VaK-ym-GdM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S3X-S9-btp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="NaA-Lr-5q1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3C-eN-q0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5583" y="3566"/>
         </scene>
         <!--Controller-->
         <scene sceneID="Ijg-Tk-BqD">
@@ -583,7 +547,7 @@
                 <navigationController id="fhn-Kh-DR2" customClass="MyNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="混凝土试验室" image="ic_lab" id="YeJ-1x-asO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5n-kS-FPJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -3605,7 +3569,7 @@
                 <navigationController id="loA-KU-Dd0" customClass="MyNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="水稳" image="resizeApi" id="183-mp-nzO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Txp-ke-ZNV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -3622,7 +3586,7 @@
                 <navigationController id="uAq-kk-dww" customClass="MyNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="沥青" image="factory" id="KKU-BH-R5e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="15f-It-ntK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -4629,7 +4593,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uKe-JD-giB" secondAttribute="trailing" id="Soo-KA-ffy"/>
-                            <constraint firstItem="mTp-QA-0Y5" firstAttribute="top" secondItem="uKe-JD-giB" secondAttribute="bottom" id="hFP-iV-xDU"/>
+                            <constraint firstAttribute="bottom" secondItem="uKe-JD-giB" secondAttribute="bottom" id="hFP-iV-xDU"/>
                             <constraint firstItem="uKe-JD-giB" firstAttribute="leading" secondItem="aeL-oc-Gyu" secondAttribute="leading" id="jxf-BA-SJ2"/>
                             <constraint firstItem="uKe-JD-giB" firstAttribute="top" secondItem="sA6-83-qf1" secondAttribute="bottom" id="ndc-g2-DOt"/>
                         </constraints>
@@ -4873,7 +4837,7 @@
                 <navigationController id="wUN-lB-kSO" customClass="MyNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="摊铺现场" image="Road" id="byL-ti-xwM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G1X-iV-rAP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -5126,7 +5090,7 @@
                 <navigationController id="Q6v-fY-cu3" customClass="MyNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="试验室" image="ic_lab" id="jlf-cy-No3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jrb-ay-EFk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -5976,10 +5940,10 @@
     <resources>
         <image name="99D58PICZNR_1024" width="29" height="29"/>
         <image name="Road" width="32" height="32"/>
-        <image name="black_SX" width="288" height="113"/>
-        <image name="circle_green" width="16" height="16"/>
-        <image name="circle_red" width="16" height="16"/>
-        <image name="circle_yellow" width="16" height="16"/>
+        <image name="black_SX" width="18" height="18"/>
+        <image name="circle_green" width="13" height="13"/>
+        <image name="circle_red" width="13" height="13"/>
+        <image name="circle_yellow" width="13" height="13"/>
         <image name="factory" width="32" height="32"/>
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
@@ -5988,13 +5952,13 @@
         <image name="sg22" width="64" height="56"/>
         <image name="sg33" width="64" height="64"/>
         <image name="sg44" width="64" height="64"/>
-        <image name="white_SX" width="60" height="60"/>
+        <image name="white_SX" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ClF-l9-kJF"/>
-        <segue reference="2qa-au-FyR"/>
+        <segue reference="tCK-of-Mkh"/>
+        <segue reference="QDb-Wk-kot"/>
         <segue reference="h6h-V1-R2o"/>
         <segue reference="WQO-SS-2jJ"/>
-        <segue reference="4UB-eZ-aeJ"/>
+        <segue reference="2qa-au-FyR"/>
     </inferredMetricsTieBreakers>
 </document>

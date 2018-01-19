@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,6 +19,7 @@
                 <outlet property="jiaozuobuwei_Label" destination="g1Y-T6-yCB" id="6FB-nr-CuQ"/>
                 <outlet property="qiangdudengji_Label" destination="Q0V-7j-6av" id="JZl-xt-GKH"/>
                 <outlet property="sigongdidian_Label" destination="w8x-eb-6Fi" id="ijk-nk-nv5"/>
+                <outlet property="top" destination="T5s-dX-UYu" id="LqW-bS-veT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yangName" destination="VMs-4J-oF6" id="AZZ-gl-Q9E"/>
                 <outlet property="ypmsLabel" destination="Dff-tt-THo" id="9sQ-kM-5ou"/>

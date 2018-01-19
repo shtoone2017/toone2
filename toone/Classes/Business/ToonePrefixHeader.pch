@@ -42,6 +42,8 @@
 #define Color1                  SGCOLOR(224,243,241,1.0)
 #define Color2                  SGCOLOR(232,232,253,1.0)
 
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
 #define PGY_APP_ID @"b46bdf4f72f9d1cdabd9c75563328dd2"
 
 #import "UserDefaultsSetting.h"
@@ -64,6 +66,7 @@
 #import "SGTextView.h"
 #import "DGActivityIndicatorView.h"
 #import "RATreeView.h"
+#import "AAGlobalMacro.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 #import "DWURunLoopWorkDistribution.h"

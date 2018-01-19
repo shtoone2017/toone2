@@ -24,9 +24,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *container2_label;
 @property (weak, nonatomic) IBOutlet UILabel *yd3;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
+
 @end
 @implementation LLQ_YD_DetailController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 88;
+    }else {
+        self.top.constant = 64;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadData];

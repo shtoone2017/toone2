@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -204,7 +204,7 @@
                             <constraint firstItem="2nS-7K-nio" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WyJ-Nb-3rn"/>
                             <constraint firstAttribute="trailing" secondItem="14e-qO-RKI" secondAttribute="trailing" id="Xmb-9c-9rh"/>
                             <constraint firstItem="L94-QT-F8n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dwW-ex-pcC"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="14e-qO-RKI" secondAttribute="bottom" id="iCN-me-p5I"/>
+                            <constraint firstAttribute="bottom" secondItem="14e-qO-RKI" secondAttribute="bottom" id="iCN-me-p5I"/>
                             <constraint firstItem="P5F-hX-OKK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="r3x-0N-LJZ"/>
                             <constraint firstItem="14e-qO-RKI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rIz-D0-sjb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P5F-hX-OKK" secondAttribute="bottom" constant="40" id="s7u-yb-0fo"/>
@@ -230,6 +230,6 @@
     <resources>
         <image name="ic_lock_outline_blue_500_18dp" width="54" height="54"/>
         <image name="ic_person_outline_blue_500_18dp" width="54" height="54"/>
-        <image name="icon-logo" width="16" height="16"/>
+        <image name="icon-logo" width="60" height="60"/>
     </resources>
 </document>

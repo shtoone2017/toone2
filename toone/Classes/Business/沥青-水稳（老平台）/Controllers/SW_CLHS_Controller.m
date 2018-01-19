@@ -12,6 +12,7 @@
 #import "SW_CLHS_Cell.h"
 #import "LQ_SB_Controller.h"
 #import "BarModel.h"
+#import "AAChartView.h"
 @interface SW_CLHS_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSMutableArray * datas;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -74,15 +75,19 @@
         NSMutableArray * bars1 = [NSMutableArray array];
         NSMutableArray * bars2 = [NSMutableArray array];
         for (SW_CLHS_Model * model in datas) {
-            BarModel * bar1 = [[BarModel alloc] init];
-            bar1.name = model.name;
-            bar1.value = model.mbpeibi;
-            [bars1 addObject:bar1];
+            AASeriesElement *mode1 = [[AASeriesElement alloc] init];
+            mode1.nameSet(model.name);
+            double value1 =  [(NSString*)model.mbpeibi doubleValue];
+            NSNumber *num1 = [NSNumber numberWithDouble:value1];
+            mode1.dataSet(@[num1]);
+            [bars1 addObject:mode1];
             
-            BarModel * bar2 = [[BarModel alloc] init];
-            bar2.name = model.name;
-            bar2.value = model.yongliang;
-            [bars2 addObject:bar2];
+            AASeriesElement *mode = [[AASeriesElement alloc] init];
+            mode.nameSet(model.name);
+            double value =  [(NSString*)model.yongliang doubleValue];
+            NSNumber *num = [NSNumber numberWithDouble:value];
+            mode.dataSet(@[num]);
+            [bars2 addObject:mode];
             
         }
         weakSelf.datas1 = bars1;

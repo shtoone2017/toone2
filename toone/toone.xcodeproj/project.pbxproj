@@ -54,7 +54,6 @@
 		18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DA1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib */; };
 		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
-		18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4FE61E1E15B800229C81 /* Exmp2.m */; };
 		42022F551EE7D1C000931544 /* LLQ_RH_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F541EE7D1C000931544 /* LLQ_RH_DetailController.m */; };
 		42022F581EE7D1E600931544 /* LLQ_RH_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F571EE7D1E600931544 /* LLQ_RH_Model.m */; };
 		42022F5C1EE7D39300931544 /* LLQ_RH_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42022F5A1EE7D39300931544 /* LLQ_RH_DetailCell.m */; };
@@ -256,6 +255,44 @@
 		42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC72031E30C576007D8F57 /* LqTreeTableView.m */; };
 		42AC721F1E30C668007D8F57 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AC721D1E30C668007D8F57 /* MySegmentedControl.m */; };
 		42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42AC721E1E30C668007D8F57 /* MySegmentedControl.xib */; };
+		42BD8F1620118BD2006A4779 /* AAChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8ED020118BD2006A4779 /* AAChartModel.m */; };
+		42BD8F1720118BD2006A4779 /* AAChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8ED220118BD2006A4779 /* AAChartView.m */; };
+		42BD8F1820118BD2006A4779 /* AAJsonConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8ED520118BD2006A4779 /* AAJsonConverter.m */; };
+		42BD8F1920118BD2006A4779 /* AAOptionsConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8ED720118BD2006A4779 /* AAOptionsConstructor.m */; };
+		42BD8F1A20118BD2006A4779 /* AAChartKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8ED820118BD2006A4779 /* AAChartKit.podspec */; };
+		42BD8F1B20118BD2006A4779 /* AAChartView.html in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EDA20118BD2006A4779 /* AAChartView.html */; };
+		42BD8F1C20118BD2006A4779 /* AADrilldown.js in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EDB20118BD2006A4779 /* AADrilldown.js */; };
+		42BD8F1D20118BD2006A4779 /* AAFunnel.js in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EDC20118BD2006A4779 /* AAFunnel.js */; };
+		42BD8F1E20118BD2006A4779 /* AAHighcharts-3d.js in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EDD20118BD2006A4779 /* AAHighcharts-3d.js */; };
+		42BD8F1F20118BD2006A4779 /* AAHighchartsLibrary.js in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EDE20118BD2006A4779 /* AAHighchartsLibrary.js */; };
+		42BD8F2020118BD2006A4779 /* AAHighchartsMore.js in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EDF20118BD2006A4779 /* AAHighchartsMore.js */; };
+		42BD8F2120118BD2006A4779 /* AAJQueryLibrary.js in Resources */ = {isa = PBXBuildFile; fileRef = 42BD8EE020118BD2006A4779 /* AAJQueryLibrary.js */; };
+		42BD8F2220118BD3006A4779 /* AAAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EE320118BD2006A4779 /* AAAnimation.m */; };
+		42BD8F2320118BD3006A4779 /* AAArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EE520118BD2006A4779 /* AAArea.m */; };
+		42BD8F2420118BD3006A4779 /* AAAreaspline.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EE720118BD2006A4779 /* AAAreaspline.m */; };
+		42BD8F2520118BD3006A4779 /* AABar.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EE920118BD2006A4779 /* AABar.m */; };
+		42BD8F2620118BD3006A4779 /* AAChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EEB20118BD2006A4779 /* AAChart.m */; };
+		42BD8F2720118BD3006A4779 /* AAColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EED20118BD2006A4779 /* AAColumn.m */; };
+		42BD8F2820118BD3006A4779 /* AADataLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EEF20118BD2006A4779 /* AADataLabels.m */; };
+		42BD8F2920118BD3006A4779 /* AAItemStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EF120118BD2006A4779 /* AAItemStyle.m */; };
+		42BD8F2A20118BD3006A4779 /* AALabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EF320118BD2006A4779 /* AALabels.m */; };
+		42BD8F2B20118BD3006A4779 /* AALegend.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EF520118BD2006A4779 /* AALegend.m */; };
+		42BD8F2C20118BD3006A4779 /* AALine.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EF720118BD2006A4779 /* AALine.m */; };
+		42BD8F2D20118BD3006A4779 /* AAMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EF920118BD2006A4779 /* AAMarker.m */; };
+		42BD8F2E20118BD3006A4779 /* AAOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EFB20118BD2006A4779 /* AAOptions.m */; };
+		42BD8F2F20118BD3006A4779 /* AAOptions3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EFD20118BD2006A4779 /* AAOptions3d.m */; };
+		42BD8F3020118BD3006A4779 /* AAPie.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8EFF20118BD2006A4779 /* AAPie.m */; };
+		42BD8F3120118BD3006A4779 /* AAPlotLinesElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0120118BD2006A4779 /* AAPlotLinesElement.m */; };
+		42BD8F3220118BD3006A4779 /* AAPlotOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0320118BD2006A4779 /* AAPlotOptions.m */; };
+		42BD8F3320118BD3006A4779 /* AASeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0520118BD2006A4779 /* AASeries.m */; };
+		42BD8F3420118BD3006A4779 /* AASeriesElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0720118BD2006A4779 /* AASeriesElement.m */; };
+		42BD8F3520118BD3006A4779 /* AASpline.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0920118BD2006A4779 /* AASpline.m */; };
+		42BD8F3620118BD3006A4779 /* AAStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0B20118BD2006A4779 /* AAStyle.m */; };
+		42BD8F3720118BD3006A4779 /* AASubtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0D20118BD2006A4779 /* AASubtitle.m */; };
+		42BD8F3820118BD3006A4779 /* AATitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F0F20118BD2006A4779 /* AATitle.m */; };
+		42BD8F3920118BD3006A4779 /* AATooltip.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F1120118BD2006A4779 /* AATooltip.m */; };
+		42BD8F3A20118BD3006A4779 /* AAXAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F1320118BD2006A4779 /* AAXAxis.m */; };
+		42BD8F3B20118BD3006A4779 /* AAYAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD8F1520118BD2006A4779 /* AAYAxis.m */; };
 		77506253F19948A1D132C0AE /* Pods_toone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53090449FE82B8AD028BA89 /* Pods_toone.framework */; };
 		8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C06E0A41E0D202E00EBD526 /* Assets.xcassets */; };
 		8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBD72D51E07A75000A0C991 /* HNT_SCCX_DetailController.m */; };
@@ -288,8 +325,6 @@
 		D20064461DFF86800021E293 /* CJShowTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D200633C1DFF86800021E293 /* CJShowTimeView.m */; };
 		D20064481DFF86800021E293 /* MJDIYHeader2.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063401DFF86800021E293 /* MJDIYHeader2.m */; };
 		D200645D1DFF86800021E293 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063721DFF86800021E293 /* AppDelegate.m */; };
-		D200645E1DFF86800021E293 /* Exmp1.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063751DFF86800021E293 /* Exmp1.m */; };
-		D200645F1DFF86800021E293 /* Exmp1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063771DFF86800021E293 /* Exmp1Cell.m */; };
 		D20064661DFF86800021E293 /* Drawer.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063841DFF86800021E293 /* Drawer.m */; };
 		D20064671DFF86800021E293 /* DrawerList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D20063851DFF86800021E293 /* DrawerList.plist */; };
 		D20064681DFF86800021E293 /* DrawerHeaderImgv.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063881DFF86800021E293 /* DrawerHeaderImgv.m */; };
@@ -360,62 +395,6 @@
 		D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064361DFF86800021E293 /* MPColorTools.m */; };
 		D20065141DFF86B30021E293 /* AxisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064BA1DFF86B30021E293 /* AxisModel.m */; };
 		D20065151DFF86B30021E293 /* BarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064BC1DFF86B30021E293 /* BarModel.m */; };
-		D20065161DFF86B30021E293 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20064BE1DFF86B30021E293 /* BalloonMarker.swift */; };
-		D20065171DFF86B30021E293 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20064BF1DFF86B30021E293 /* RadarMarkerView.swift */; };
-		D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064C01DFF86B30021E293 /* RadarMarkerView.xib */; };
-		D20065191DFF86B30021E293 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20064C11DFF86B30021E293 /* XYMarkerView.swift */; };
-		D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064C31DFF86B30021E293 /* DemoBaseViewController.m */; };
-		D200651B1DFF86B30021E293 /* AnotherBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064C61DFF86B30021E293 /* AnotherBarChartViewController.m */; };
-		D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064C71DFF86B30021E293 /* AnotherBarChartViewController.xib */; };
-		D200651D1DFF86B30021E293 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064C91DFF86B30021E293 /* BarChartViewController.m */; };
-		D200651E1DFF86B30021E293 /* BarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064CA1DFF86B30021E293 /* BarChartViewController.xib */; };
-		D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064CC1DFF86B30021E293 /* BubbleChartViewController.m */; };
-		D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064CD1DFF86B30021E293 /* BubbleChartViewController.xib */; };
-		D20065211DFF86B30021E293 /* CandleStickChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064CF1DFF86B30021E293 /* CandleStickChartViewController.m */; };
-		D20065221DFF86B30021E293 /* CandleStickChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064D01DFF86B30021E293 /* CandleStickChartViewController.xib */; };
-		D20065231DFF86B30021E293 /* ColoredLineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064D21DFF86B30021E293 /* ColoredLineChartViewController.m */; };
-		D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064D31DFF86B30021E293 /* ColoredLineChartViewController.xib */; };
-		D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064D51DFF86B30021E293 /* CombinedChartViewController.m */; };
-		D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064D61DFF86B30021E293 /* CombinedChartViewController.xib */; };
-		D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064D81DFF86B30021E293 /* CubicLineChartViewController.m */; };
-		D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064D91DFF86B30021E293 /* CubicLineChartViewController.xib */; };
-		D20065291DFF86B30021E293 /* HalfPieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064DB1DFF86B30021E293 /* HalfPieChartViewController.m */; };
-		D200652A1DFF86B30021E293 /* HalfPieChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064DC1DFF86B30021E293 /* HalfPieChartViewController.xib */; };
-		D200652B1DFF86B30021E293 /* HorizontalBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064DE1DFF86B30021E293 /* HorizontalBarChartViewController.m */; };
-		D200652C1DFF86B30021E293 /* HorizontalBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064DF1DFF86B30021E293 /* HorizontalBarChartViewController.xib */; };
-		D200652D1DFF86B30021E293 /* LineChart1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064E11DFF86B30021E293 /* LineChart1ViewController.m */; };
-		D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064E21DFF86B30021E293 /* LineChart1ViewController.xib */; };
-		D200652F1DFF86B30021E293 /* LineChart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064E41DFF86B30021E293 /* LineChart2ViewController.m */; };
-		D20065301DFF86B30021E293 /* LineChart2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064E51DFF86B30021E293 /* LineChart2ViewController.xib */; };
-		D20065311DFF86B30021E293 /* LineChartFilledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064E71DFF86B30021E293 /* LineChartFilledViewController.m */; };
-		D20065321DFF86B30021E293 /* LineChartFilledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064E81DFF86B30021E293 /* LineChartFilledViewController.xib */; };
-		D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064EA1DFF86B30021E293 /* LineChartTimeViewController.m */; };
-		D20065341DFF86B30021E293 /* LineChartTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064EB1DFF86B30021E293 /* LineChartTimeViewController.xib */; };
-		D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064ED1DFF86B30021E293 /* MultipleBarChartViewController.m */; };
-		D20065361DFF86B30021E293 /* MultipleBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064EE1DFF86B30021E293 /* MultipleBarChartViewController.xib */; };
-		D20065371DFF86B30021E293 /* MultipleLinesChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064F01DFF86B30021E293 /* MultipleLinesChartViewController.m */; };
-		D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064F11DFF86B30021E293 /* MultipleLinesChartViewController.xib */; };
-		D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064F31DFF86B30021E293 /* NegativeStackedBarChartViewController.m */; };
-		D200653A1DFF86B30021E293 /* NegativeStackedBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064F41DFF86B30021E293 /* NegativeStackedBarChartViewController.xib */; };
-		D200653B1DFF86B30021E293 /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064F61DFF86B30021E293 /* PieChartViewController.m */; };
-		D200653C1DFF86B30021E293 /* PieChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064F71DFF86B30021E293 /* PieChartViewController.xib */; };
-		D200653D1DFF86B30021E293 /* PiePolylineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064F91DFF86B30021E293 /* PiePolylineChartViewController.m */; };
-		D200653E1DFF86B30021E293 /* PiePolylineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064FA1DFF86B30021E293 /* PiePolylineChartViewController.xib */; };
-		D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064FC1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m */; };
-		D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20064FD1DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib */; };
-		D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20064FF1DFF86B30021E293 /* RadarChartViewController.m */; };
-		D20065421DFF86B30021E293 /* RadarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20065001DFF86B30021E293 /* RadarChartViewController.xib */; };
-		D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065021DFF86B30021E293 /* ScatterChartViewController.m */; };
-		D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20065031DFF86B30021E293 /* ScatterChartViewController.xib */; };
-		D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065051DFF86B30021E293 /* SinusBarChartViewController.m */; };
-		D20065461DFF86B30021E293 /* SinusBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20065061DFF86B30021E293 /* SinusBarChartViewController.xib */; };
-		D20065471DFF86B30021E293 /* StackedBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065081DFF86B30021E293 /* StackedBarChartViewController.m */; };
-		D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20065091DFF86B30021E293 /* StackedBarChartViewController.xib */; };
-		D20065491DFF86B30021E293 /* DateValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D200650C1DFF86B30021E293 /* DateValueFormatter.m */; };
-		D200654A1DFF86B30021E293 /* DayAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D200650E1DFF86B30021E293 /* DayAxisValueFormatter.m */; };
-		D200654B1DFF86B30021E293 /* IntAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065101DFF86B30021E293 /* IntAxisValueFormatter.m */; };
-		D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20065111DFF86B30021E293 /* LargeValueFormatter.swift */; };
-		D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065131DFF86B30021E293 /* XnameAxisValueFormatter.m */; };
 		D20065571DFF931B0021E293 /* HNT_BHZ_InnerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065561DFF931B0021E293 /* HNT_BHZ_InnerController.m */; };
 		D20065711DFF9DF40021E293 /* HNT_CBCZ_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065701DFF9DF40021E293 /* HNT_CBCZ_Controller.m */; };
 		D20065841DFFC5AB0021E293 /* HNT_SCCX_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D20065811DFFC5AB0021E293 /* HNT_SCCX_Controller.m */; };
@@ -681,8 +660,6 @@
 		18B871DD1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ChuLi_Cell2.h; sourceTree = "<group>"; };
 		18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ChuLi_Cell2.m; sourceTree = "<group>"; };
 		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
-		18DA4FE51E1E15B800229C81 /* Exmp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp2.h; sourceTree = "<group>"; };
-		18DA4FE61E1E15B800229C81 /* Exmp2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp2.m; sourceTree = "<group>"; };
 		42022F531EE7D1C000931544 /* LLQ_RH_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_DetailController.h; sourceTree = "<group>"; };
 		42022F541EE7D1C000931544 /* LLQ_RH_DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQ_RH_DetailController.m; sourceTree = "<group>"; };
 		42022F561EE7D1E600931544 /* LLQ_RH_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQ_RH_Model.h; sourceTree = "<group>"; };
@@ -1048,6 +1025,76 @@
 		42AC721C1E30C668007D8F57 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
 		42AC721D1E30C668007D8F57 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
 		42AC721E1E30C668007D8F57 /* MySegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySegmentedControl.xib; sourceTree = "<group>"; };
+		42BD8ECE20118BD2006A4779 /* AAChartKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChartKit.h; sourceTree = "<group>"; };
+		42BD8ECF20118BD2006A4779 /* AAChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChartModel.h; sourceTree = "<group>"; };
+		42BD8ED020118BD2006A4779 /* AAChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChartModel.m; sourceTree = "<group>"; };
+		42BD8ED120118BD2006A4779 /* AAChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChartView.h; sourceTree = "<group>"; };
+		42BD8ED220118BD2006A4779 /* AAChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChartView.m; sourceTree = "<group>"; };
+		42BD8ED320118BD2006A4779 /* AAGlobalMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGlobalMacro.h; sourceTree = "<group>"; };
+		42BD8ED420118BD2006A4779 /* AAJsonConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAJsonConverter.h; sourceTree = "<group>"; };
+		42BD8ED520118BD2006A4779 /* AAJsonConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAJsonConverter.m; sourceTree = "<group>"; };
+		42BD8ED620118BD2006A4779 /* AAOptionsConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAOptionsConstructor.h; sourceTree = "<group>"; };
+		42BD8ED720118BD2006A4779 /* AAOptionsConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAOptionsConstructor.m; sourceTree = "<group>"; };
+		42BD8ED820118BD2006A4779 /* AAChartKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AAChartKit.podspec; sourceTree = "<group>"; };
+		42BD8EDA20118BD2006A4779 /* AAChartView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AAChartView.html; sourceTree = "<group>"; };
+		42BD8EDB20118BD2006A4779 /* AADrilldown.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AADrilldown.js; sourceTree = "<group>"; };
+		42BD8EDC20118BD2006A4779 /* AAFunnel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AAFunnel.js; sourceTree = "<group>"; };
+		42BD8EDD20118BD2006A4779 /* AAHighcharts-3d.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "AAHighcharts-3d.js"; sourceTree = "<group>"; };
+		42BD8EDE20118BD2006A4779 /* AAHighchartsLibrary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AAHighchartsLibrary.js; sourceTree = "<group>"; };
+		42BD8EDF20118BD2006A4779 /* AAHighchartsMore.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AAHighchartsMore.js; sourceTree = "<group>"; };
+		42BD8EE020118BD2006A4779 /* AAJQueryLibrary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = AAJQueryLibrary.js; sourceTree = "<group>"; };
+		42BD8EE220118BD2006A4779 /* AAAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAnimation.h; sourceTree = "<group>"; };
+		42BD8EE320118BD2006A4779 /* AAAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAnimation.m; sourceTree = "<group>"; };
+		42BD8EE420118BD2006A4779 /* AAArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAArea.h; sourceTree = "<group>"; };
+		42BD8EE520118BD2006A4779 /* AAArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAArea.m; sourceTree = "<group>"; };
+		42BD8EE620118BD2006A4779 /* AAAreaspline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAreaspline.h; sourceTree = "<group>"; };
+		42BD8EE720118BD2006A4779 /* AAAreaspline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAreaspline.m; sourceTree = "<group>"; };
+		42BD8EE820118BD2006A4779 /* AABar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AABar.h; sourceTree = "<group>"; };
+		42BD8EE920118BD2006A4779 /* AABar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AABar.m; sourceTree = "<group>"; };
+		42BD8EEA20118BD2006A4779 /* AAChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChart.h; sourceTree = "<group>"; };
+		42BD8EEB20118BD2006A4779 /* AAChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChart.m; sourceTree = "<group>"; };
+		42BD8EEC20118BD2006A4779 /* AAColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAColumn.h; sourceTree = "<group>"; };
+		42BD8EED20118BD2006A4779 /* AAColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAColumn.m; sourceTree = "<group>"; };
+		42BD8EEE20118BD2006A4779 /* AADataLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataLabels.h; sourceTree = "<group>"; };
+		42BD8EEF20118BD2006A4779 /* AADataLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataLabels.m; sourceTree = "<group>"; };
+		42BD8EF020118BD2006A4779 /* AAItemStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAItemStyle.h; sourceTree = "<group>"; };
+		42BD8EF120118BD2006A4779 /* AAItemStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAItemStyle.m; sourceTree = "<group>"; };
+		42BD8EF220118BD2006A4779 /* AALabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALabels.h; sourceTree = "<group>"; };
+		42BD8EF320118BD2006A4779 /* AALabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALabels.m; sourceTree = "<group>"; };
+		42BD8EF420118BD2006A4779 /* AALegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALegend.h; sourceTree = "<group>"; };
+		42BD8EF520118BD2006A4779 /* AALegend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALegend.m; sourceTree = "<group>"; };
+		42BD8EF620118BD2006A4779 /* AALine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALine.h; sourceTree = "<group>"; };
+		42BD8EF720118BD2006A4779 /* AALine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALine.m; sourceTree = "<group>"; };
+		42BD8EF820118BD2006A4779 /* AAMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMarker.h; sourceTree = "<group>"; };
+		42BD8EF920118BD2006A4779 /* AAMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMarker.m; sourceTree = "<group>"; };
+		42BD8EFA20118BD2006A4779 /* AAOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAOptions.h; sourceTree = "<group>"; };
+		42BD8EFB20118BD2006A4779 /* AAOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAOptions.m; sourceTree = "<group>"; };
+		42BD8EFC20118BD2006A4779 /* AAOptions3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAOptions3d.h; sourceTree = "<group>"; };
+		42BD8EFD20118BD2006A4779 /* AAOptions3d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAOptions3d.m; sourceTree = "<group>"; };
+		42BD8EFE20118BD2006A4779 /* AAPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPie.h; sourceTree = "<group>"; };
+		42BD8EFF20118BD2006A4779 /* AAPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPie.m; sourceTree = "<group>"; };
+		42BD8F0020118BD2006A4779 /* AAPlotLinesElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPlotLinesElement.h; sourceTree = "<group>"; };
+		42BD8F0120118BD2006A4779 /* AAPlotLinesElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPlotLinesElement.m; sourceTree = "<group>"; };
+		42BD8F0220118BD2006A4779 /* AAPlotOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPlotOptions.h; sourceTree = "<group>"; };
+		42BD8F0320118BD2006A4779 /* AAPlotOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPlotOptions.m; sourceTree = "<group>"; };
+		42BD8F0420118BD2006A4779 /* AASeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASeries.h; sourceTree = "<group>"; };
+		42BD8F0520118BD2006A4779 /* AASeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASeries.m; sourceTree = "<group>"; };
+		42BD8F0620118BD2006A4779 /* AASeriesElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASeriesElement.h; sourceTree = "<group>"; };
+		42BD8F0720118BD2006A4779 /* AASeriesElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASeriesElement.m; sourceTree = "<group>"; };
+		42BD8F0820118BD2006A4779 /* AASpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASpline.h; sourceTree = "<group>"; };
+		42BD8F0920118BD2006A4779 /* AASpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASpline.m; sourceTree = "<group>"; };
+		42BD8F0A20118BD2006A4779 /* AAStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAStyle.h; sourceTree = "<group>"; };
+		42BD8F0B20118BD2006A4779 /* AAStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAStyle.m; sourceTree = "<group>"; };
+		42BD8F0C20118BD2006A4779 /* AASubtitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASubtitle.h; sourceTree = "<group>"; };
+		42BD8F0D20118BD2006A4779 /* AASubtitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASubtitle.m; sourceTree = "<group>"; };
+		42BD8F0E20118BD2006A4779 /* AATitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATitle.h; sourceTree = "<group>"; };
+		42BD8F0F20118BD2006A4779 /* AATitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AATitle.m; sourceTree = "<group>"; };
+		42BD8F1020118BD2006A4779 /* AATooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATooltip.h; sourceTree = "<group>"; };
+		42BD8F1120118BD2006A4779 /* AATooltip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AATooltip.m; sourceTree = "<group>"; };
+		42BD8F1220118BD2006A4779 /* AAXAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAXAxis.h; sourceTree = "<group>"; };
+		42BD8F1320118BD2006A4779 /* AAXAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAXAxis.m; sourceTree = "<group>"; };
+		42BD8F1420118BD2006A4779 /* AAYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAYAxis.h; sourceTree = "<group>"; };
+		42BD8F1520118BD2006A4779 /* AAYAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAYAxis.m; sourceTree = "<group>"; };
 		47DC9F7E87BDC347F9BE057C /* Pods-toone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-toone/Pods-toone.debug.xcconfig"; sourceTree = "<group>"; };
 		8C06E0A41E0D202E00EBD526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CBD72D41E07A75000A0C991 /* HNT_SCCX_DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_SCCX_DetailController.h; sourceTree = "<group>"; };
@@ -1108,10 +1155,6 @@
 		D20063401DFF86800021E293 /* MJDIYHeader2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDIYHeader2.m; sourceTree = "<group>"; };
 		D20063711DFF86800021E293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D20063721DFF86800021E293 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D20063741DFF86800021E293 /* Exmp1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp1.h; sourceTree = "<group>"; };
-		D20063751DFF86800021E293 /* Exmp1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp1.m; sourceTree = "<group>"; };
-		D20063761DFF86800021E293 /* Exmp1Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exmp1Cell.h; sourceTree = "<group>"; };
-		D20063771DFF86800021E293 /* Exmp1Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exmp1Cell.m; sourceTree = "<group>"; };
 		D200637B1DFF86800021E293 /* Toone-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toone-Bridging-Header.h"; sourceTree = "<group>"; };
 		D200637C1DFF86800021E293 /* ToonePrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToonePrefixHeader.pch; sourceTree = "<group>"; };
 		D20063831DFF86800021E293 /* Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawer.h; sourceTree = "<group>"; };
@@ -1244,90 +1287,6 @@
 		D20064BA1DFF86B30021E293 /* AxisModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisModel.m; sourceTree = "<group>"; };
 		D20064BB1DFF86B30021E293 /* BarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarModel.h; sourceTree = "<group>"; };
 		D20064BC1DFF86B30021E293 /* BarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarModel.m; sourceTree = "<group>"; };
-		D20064BE1DFF86B30021E293 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
-		D20064BF1DFF86B30021E293 /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
-		D20064C01DFF86B30021E293 /* RadarMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
-		D20064C11DFF86B30021E293 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
-		D20064C21DFF86B30021E293 /* DemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
-		D20064C31DFF86B30021E293 /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
-		D20064C51DFF86B30021E293 /* AnotherBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherBarChartViewController.h; sourceTree = "<group>"; };
-		D20064C61DFF86B30021E293 /* AnotherBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherBarChartViewController.m; sourceTree = "<group>"; };
-		D20064C71DFF86B30021E293 /* AnotherBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnotherBarChartViewController.xib; sourceTree = "<group>"; };
-		D20064C81DFF86B30021E293 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
-		D20064C91DFF86B30021E293 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
-		D20064CA1DFF86B30021E293 /* BarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartViewController.xib; sourceTree = "<group>"; };
-		D20064CB1DFF86B30021E293 /* BubbleChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleChartViewController.h; sourceTree = "<group>"; };
-		D20064CC1DFF86B30021E293 /* BubbleChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleChartViewController.m; sourceTree = "<group>"; };
-		D20064CD1DFF86B30021E293 /* BubbleChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BubbleChartViewController.xib; sourceTree = "<group>"; };
-		D20064CE1DFF86B30021E293 /* CandleStickChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandleStickChartViewController.h; sourceTree = "<group>"; };
-		D20064CF1DFF86B30021E293 /* CandleStickChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandleStickChartViewController.m; sourceTree = "<group>"; };
-		D20064D01DFF86B30021E293 /* CandleStickChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CandleStickChartViewController.xib; sourceTree = "<group>"; };
-		D20064D11DFF86B30021E293 /* ColoredLineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredLineChartViewController.h; sourceTree = "<group>"; };
-		D20064D21DFF86B30021E293 /* ColoredLineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredLineChartViewController.m; sourceTree = "<group>"; };
-		D20064D31DFF86B30021E293 /* ColoredLineChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColoredLineChartViewController.xib; sourceTree = "<group>"; };
-		D20064D41DFF86B30021E293 /* CombinedChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinedChartViewController.h; sourceTree = "<group>"; };
-		D20064D51DFF86B30021E293 /* CombinedChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinedChartViewController.m; sourceTree = "<group>"; };
-		D20064D61DFF86B30021E293 /* CombinedChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CombinedChartViewController.xib; sourceTree = "<group>"; };
-		D20064D71DFF86B30021E293 /* CubicLineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicLineChartViewController.h; sourceTree = "<group>"; };
-		D20064D81DFF86B30021E293 /* CubicLineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubicLineChartViewController.m; sourceTree = "<group>"; };
-		D20064D91DFF86B30021E293 /* CubicLineChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CubicLineChartViewController.xib; sourceTree = "<group>"; };
-		D20064DA1DFF86B30021E293 /* HalfPieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfPieChartViewController.h; sourceTree = "<group>"; };
-		D20064DB1DFF86B30021E293 /* HalfPieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfPieChartViewController.m; sourceTree = "<group>"; };
-		D20064DC1DFF86B30021E293 /* HalfPieChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HalfPieChartViewController.xib; sourceTree = "<group>"; };
-		D20064DD1DFF86B30021E293 /* HorizontalBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalBarChartViewController.h; sourceTree = "<group>"; };
-		D20064DE1DFF86B30021E293 /* HorizontalBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalBarChartViewController.m; sourceTree = "<group>"; };
-		D20064DF1DFF86B30021E293 /* HorizontalBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalBarChartViewController.xib; sourceTree = "<group>"; };
-		D20064E01DFF86B30021E293 /* LineChart1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChart1ViewController.h; sourceTree = "<group>"; };
-		D20064E11DFF86B30021E293 /* LineChart1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChart1ViewController.m; sourceTree = "<group>"; };
-		D20064E21DFF86B30021E293 /* LineChart1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChart1ViewController.xib; sourceTree = "<group>"; };
-		D20064E31DFF86B30021E293 /* LineChart2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChart2ViewController.h; sourceTree = "<group>"; };
-		D20064E41DFF86B30021E293 /* LineChart2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChart2ViewController.m; sourceTree = "<group>"; };
-		D20064E51DFF86B30021E293 /* LineChart2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChart2ViewController.xib; sourceTree = "<group>"; };
-		D20064E61DFF86B30021E293 /* LineChartFilledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartFilledViewController.h; sourceTree = "<group>"; };
-		D20064E71DFF86B30021E293 /* LineChartFilledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartFilledViewController.m; sourceTree = "<group>"; };
-		D20064E81DFF86B30021E293 /* LineChartFilledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartFilledViewController.xib; sourceTree = "<group>"; };
-		D20064E91DFF86B30021E293 /* LineChartTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartTimeViewController.h; sourceTree = "<group>"; };
-		D20064EA1DFF86B30021E293 /* LineChartTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartTimeViewController.m; sourceTree = "<group>"; };
-		D20064EB1DFF86B30021E293 /* LineChartTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartTimeViewController.xib; sourceTree = "<group>"; };
-		D20064EC1DFF86B30021E293 /* MultipleBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleBarChartViewController.h; sourceTree = "<group>"; };
-		D20064ED1DFF86B30021E293 /* MultipleBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleBarChartViewController.m; sourceTree = "<group>"; };
-		D20064EE1DFF86B30021E293 /* MultipleBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleBarChartViewController.xib; sourceTree = "<group>"; };
-		D20064EF1DFF86B30021E293 /* MultipleLinesChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleLinesChartViewController.h; sourceTree = "<group>"; };
-		D20064F01DFF86B30021E293 /* MultipleLinesChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleLinesChartViewController.m; sourceTree = "<group>"; };
-		D20064F11DFF86B30021E293 /* MultipleLinesChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleLinesChartViewController.xib; sourceTree = "<group>"; };
-		D20064F21DFF86B30021E293 /* NegativeStackedBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegativeStackedBarChartViewController.h; sourceTree = "<group>"; };
-		D20064F31DFF86B30021E293 /* NegativeStackedBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeStackedBarChartViewController.m; sourceTree = "<group>"; };
-		D20064F41DFF86B30021E293 /* NegativeStackedBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NegativeStackedBarChartViewController.xib; sourceTree = "<group>"; };
-		D20064F51DFF86B30021E293 /* PieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
-		D20064F61DFF86B30021E293 /* PieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
-		D20064F71DFF86B30021E293 /* PieChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartViewController.xib; sourceTree = "<group>"; };
-		D20064F81DFF86B30021E293 /* PiePolylineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiePolylineChartViewController.h; sourceTree = "<group>"; };
-		D20064F91DFF86B30021E293 /* PiePolylineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiePolylineChartViewController.m; sourceTree = "<group>"; };
-		D20064FA1DFF86B30021E293 /* PiePolylineChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PiePolylineChartViewController.xib; sourceTree = "<group>"; };
-		D20064FB1DFF86B30021E293 /* PositiveNegativeBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositiveNegativeBarChartViewController.h; sourceTree = "<group>"; };
-		D20064FC1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositiveNegativeBarChartViewController.m; sourceTree = "<group>"; };
-		D20064FD1DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositiveNegativeBarChartViewController.xib; sourceTree = "<group>"; };
-		D20064FE1DFF86B30021E293 /* RadarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarChartViewController.h; sourceTree = "<group>"; };
-		D20064FF1DFF86B30021E293 /* RadarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarChartViewController.m; sourceTree = "<group>"; };
-		D20065001DFF86B30021E293 /* RadarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarChartViewController.xib; sourceTree = "<group>"; };
-		D20065011DFF86B30021E293 /* ScatterChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScatterChartViewController.h; sourceTree = "<group>"; };
-		D20065021DFF86B30021E293 /* ScatterChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScatterChartViewController.m; sourceTree = "<group>"; };
-		D20065031DFF86B30021E293 /* ScatterChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScatterChartViewController.xib; sourceTree = "<group>"; };
-		D20065041DFF86B30021E293 /* SinusBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinusBarChartViewController.h; sourceTree = "<group>"; };
-		D20065051DFF86B30021E293 /* SinusBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinusBarChartViewController.m; sourceTree = "<group>"; };
-		D20065061DFF86B30021E293 /* SinusBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinusBarChartViewController.xib; sourceTree = "<group>"; };
-		D20065071DFF86B30021E293 /* StackedBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedBarChartViewController.h; sourceTree = "<group>"; };
-		D20065081DFF86B30021E293 /* StackedBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedBarChartViewController.m; sourceTree = "<group>"; };
-		D20065091DFF86B30021E293 /* StackedBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackedBarChartViewController.xib; sourceTree = "<group>"; };
-		D200650B1DFF86B30021E293 /* DateValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateValueFormatter.h; sourceTree = "<group>"; };
-		D200650C1DFF86B30021E293 /* DateValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateValueFormatter.m; sourceTree = "<group>"; };
-		D200650D1DFF86B30021E293 /* DayAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayAxisValueFormatter.h; sourceTree = "<group>"; };
-		D200650E1DFF86B30021E293 /* DayAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayAxisValueFormatter.m; sourceTree = "<group>"; };
-		D200650F1DFF86B30021E293 /* IntAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntAxisValueFormatter.h; sourceTree = "<group>"; };
-		D20065101DFF86B30021E293 /* IntAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntAxisValueFormatter.m; sourceTree = "<group>"; };
-		D20065111DFF86B30021E293 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
-		D20065121DFF86B30021E293 /* XnameAxisValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XnameAxisValueFormatter.h; sourceTree = "<group>"; };
-		D20065131DFF86B30021E293 /* XnameAxisValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XnameAxisValueFormatter.m; sourceTree = "<group>"; };
 		D20065551DFF931B0021E293 /* HNT_BHZ_InnerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_BHZ_InnerController.h; sourceTree = "<group>"; };
 		D20065561DFF931B0021E293 /* HNT_BHZ_InnerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_BHZ_InnerController.m; sourceTree = "<group>"; };
 		D200656F1DFF9DF40021E293 /* HNT_CBCZ_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Controller.h; sourceTree = "<group>"; };
@@ -3134,6 +3093,107 @@
 			path = View2;
 			sourceTree = "<group>";
 		};
+		42BD8ECC20118BD2006A4779 /* AAChartKitLib */ = {
+			isa = PBXGroup;
+			children = (
+				42BD8ECD20118BD2006A4779 /* AAChartConfiger */,
+				42BD8ED820118BD2006A4779 /* AAChartKit.podspec */,
+				42BD8ED920118BD2006A4779 /* AAJSFiles */,
+				42BD8EE120118BD2006A4779 /* AAOptionsModel */,
+			);
+			path = AAChartKitLib;
+			sourceTree = "<group>";
+		};
+		42BD8ECD20118BD2006A4779 /* AAChartConfiger */ = {
+			isa = PBXGroup;
+			children = (
+				42BD8ECE20118BD2006A4779 /* AAChartKit.h */,
+				42BD8ECF20118BD2006A4779 /* AAChartModel.h */,
+				42BD8ED020118BD2006A4779 /* AAChartModel.m */,
+				42BD8ED120118BD2006A4779 /* AAChartView.h */,
+				42BD8ED220118BD2006A4779 /* AAChartView.m */,
+				42BD8ED320118BD2006A4779 /* AAGlobalMacro.h */,
+				42BD8ED420118BD2006A4779 /* AAJsonConverter.h */,
+				42BD8ED520118BD2006A4779 /* AAJsonConverter.m */,
+				42BD8ED620118BD2006A4779 /* AAOptionsConstructor.h */,
+				42BD8ED720118BD2006A4779 /* AAOptionsConstructor.m */,
+			);
+			path = AAChartConfiger;
+			sourceTree = "<group>";
+		};
+		42BD8ED920118BD2006A4779 /* AAJSFiles */ = {
+			isa = PBXGroup;
+			children = (
+				42BD8EDA20118BD2006A4779 /* AAChartView.html */,
+				42BD8EDB20118BD2006A4779 /* AADrilldown.js */,
+				42BD8EDC20118BD2006A4779 /* AAFunnel.js */,
+				42BD8EDD20118BD2006A4779 /* AAHighcharts-3d.js */,
+				42BD8EDE20118BD2006A4779 /* AAHighchartsLibrary.js */,
+				42BD8EDF20118BD2006A4779 /* AAHighchartsMore.js */,
+				42BD8EE020118BD2006A4779 /* AAJQueryLibrary.js */,
+			);
+			path = AAJSFiles;
+			sourceTree = "<group>";
+		};
+		42BD8EE120118BD2006A4779 /* AAOptionsModel */ = {
+			isa = PBXGroup;
+			children = (
+				42BD8EE220118BD2006A4779 /* AAAnimation.h */,
+				42BD8EE320118BD2006A4779 /* AAAnimation.m */,
+				42BD8EE420118BD2006A4779 /* AAArea.h */,
+				42BD8EE520118BD2006A4779 /* AAArea.m */,
+				42BD8EE620118BD2006A4779 /* AAAreaspline.h */,
+				42BD8EE720118BD2006A4779 /* AAAreaspline.m */,
+				42BD8EE820118BD2006A4779 /* AABar.h */,
+				42BD8EE920118BD2006A4779 /* AABar.m */,
+				42BD8EEA20118BD2006A4779 /* AAChart.h */,
+				42BD8EEB20118BD2006A4779 /* AAChart.m */,
+				42BD8EEC20118BD2006A4779 /* AAColumn.h */,
+				42BD8EED20118BD2006A4779 /* AAColumn.m */,
+				42BD8EEE20118BD2006A4779 /* AADataLabels.h */,
+				42BD8EEF20118BD2006A4779 /* AADataLabels.m */,
+				42BD8EF020118BD2006A4779 /* AAItemStyle.h */,
+				42BD8EF120118BD2006A4779 /* AAItemStyle.m */,
+				42BD8EF220118BD2006A4779 /* AALabels.h */,
+				42BD8EF320118BD2006A4779 /* AALabels.m */,
+				42BD8EF420118BD2006A4779 /* AALegend.h */,
+				42BD8EF520118BD2006A4779 /* AALegend.m */,
+				42BD8EF620118BD2006A4779 /* AALine.h */,
+				42BD8EF720118BD2006A4779 /* AALine.m */,
+				42BD8EF820118BD2006A4779 /* AAMarker.h */,
+				42BD8EF920118BD2006A4779 /* AAMarker.m */,
+				42BD8EFA20118BD2006A4779 /* AAOptions.h */,
+				42BD8EFB20118BD2006A4779 /* AAOptions.m */,
+				42BD8EFC20118BD2006A4779 /* AAOptions3d.h */,
+				42BD8EFD20118BD2006A4779 /* AAOptions3d.m */,
+				42BD8EFE20118BD2006A4779 /* AAPie.h */,
+				42BD8EFF20118BD2006A4779 /* AAPie.m */,
+				42BD8F0020118BD2006A4779 /* AAPlotLinesElement.h */,
+				42BD8F0120118BD2006A4779 /* AAPlotLinesElement.m */,
+				42BD8F0220118BD2006A4779 /* AAPlotOptions.h */,
+				42BD8F0320118BD2006A4779 /* AAPlotOptions.m */,
+				42BD8F0420118BD2006A4779 /* AASeries.h */,
+				42BD8F0520118BD2006A4779 /* AASeries.m */,
+				42BD8F0620118BD2006A4779 /* AASeriesElement.h */,
+				42BD8F0720118BD2006A4779 /* AASeriesElement.m */,
+				42BD8F0820118BD2006A4779 /* AASpline.h */,
+				42BD8F0920118BD2006A4779 /* AASpline.m */,
+				42BD8F0A20118BD2006A4779 /* AAStyle.h */,
+				42BD8F0B20118BD2006A4779 /* AAStyle.m */,
+				42BD8F0C20118BD2006A4779 /* AASubtitle.h */,
+				42BD8F0D20118BD2006A4779 /* AASubtitle.m */,
+				42BD8F0E20118BD2006A4779 /* AATitle.h */,
+				42BD8F0F20118BD2006A4779 /* AATitle.m */,
+				42BD8F1020118BD2006A4779 /* AATooltip.h */,
+				42BD8F1120118BD2006A4779 /* AATooltip.m */,
+				42BD8F1220118BD2006A4779 /* AAXAxis.h */,
+				42BD8F1320118BD2006A4779 /* AAXAxis.m */,
+				42BD8F1420118BD2006A4779 /* AAYAxis.h */,
+				42BD8F1520118BD2006A4779 /* AAYAxis.m */,
+			);
+			path = AAOptionsModel;
+			sourceTree = "<group>";
+		};
 		66C512171871ECC57F6E7A5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -3320,6 +3380,7 @@
 		D20063151DFF86800021E293 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				42BD8ECC20118BD2006A4779 /* AAChartKitLib */,
 				42A888311EE6A9920010B053 /* WSLineChartView */,
 				42AC71991E30C423007D8F57 /* SGChart */,
 				42AC71B51E30C423007D8F57 /* XFSegementView */,
@@ -3423,23 +3484,9 @@
 				D20063941DFF86800021E293 /* 混凝土-拌合站 */,
 				D200639F1DFF86800021E293 /* 混凝土-试验室 */,
 				D20063F71DFF86800021E293 /* 登录 */,
-				D20063731DFF86800021E293 /* Example */,
 				D20063FA1DFF86800021E293 /* 组件 */,
 			);
 			path = Business;
-			sourceTree = "<group>";
-		};
-		D20063731DFF86800021E293 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				18DA4FE51E1E15B800229C81 /* Exmp2.h */,
-				18DA4FE61E1E15B800229C81 /* Exmp2.m */,
-				D20063741DFF86800021E293 /* Exmp1.h */,
-				D20063751DFF86800021E293 /* Exmp1.m */,
-				D20063761DFF86800021E293 /* Exmp1Cell.h */,
-				D20063771DFF86800021E293 /* Exmp1Cell.m */,
-			);
-			path = Example;
 			sourceTree = "<group>";
 		};
 		D200637E1DFF86800021E293 /* 抽屉 */ = {
@@ -3952,116 +3999,8 @@
 				D20064BA1DFF86B30021E293 /* AxisModel.m */,
 				D20064BB1DFF86B30021E293 /* BarModel.h */,
 				D20064BC1DFF86B30021E293 /* BarModel.m */,
-				D20064BD1DFF86B30021E293 /* Components */,
-				D20064C21DFF86B30021E293 /* DemoBaseViewController.h */,
-				D20064C31DFF86B30021E293 /* DemoBaseViewController.m */,
-				D20064C41DFF86B30021E293 /* Demos */,
-				D200650A1DFF86B30021E293 /* Formatters */,
-				D20065121DFF86B30021E293 /* XnameAxisValueFormatter.h */,
-				D20065131DFF86B30021E293 /* XnameAxisValueFormatter.m */,
 			);
 			path = ChartClasses;
-			sourceTree = "<group>";
-		};
-		D20064BD1DFF86B30021E293 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				D20064BE1DFF86B30021E293 /* BalloonMarker.swift */,
-				D20064BF1DFF86B30021E293 /* RadarMarkerView.swift */,
-				D20064C01DFF86B30021E293 /* RadarMarkerView.xib */,
-				D20064C11DFF86B30021E293 /* XYMarkerView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		D20064C41DFF86B30021E293 /* Demos */ = {
-			isa = PBXGroup;
-			children = (
-				D20064C51DFF86B30021E293 /* AnotherBarChartViewController.h */,
-				D20064C61DFF86B30021E293 /* AnotherBarChartViewController.m */,
-				D20064C71DFF86B30021E293 /* AnotherBarChartViewController.xib */,
-				D20064C81DFF86B30021E293 /* BarChartViewController.h */,
-				D20064C91DFF86B30021E293 /* BarChartViewController.m */,
-				D20064CA1DFF86B30021E293 /* BarChartViewController.xib */,
-				D20064CB1DFF86B30021E293 /* BubbleChartViewController.h */,
-				D20064CC1DFF86B30021E293 /* BubbleChartViewController.m */,
-				D20064CD1DFF86B30021E293 /* BubbleChartViewController.xib */,
-				D20064CE1DFF86B30021E293 /* CandleStickChartViewController.h */,
-				D20064CF1DFF86B30021E293 /* CandleStickChartViewController.m */,
-				D20064D01DFF86B30021E293 /* CandleStickChartViewController.xib */,
-				D20064D11DFF86B30021E293 /* ColoredLineChartViewController.h */,
-				D20064D21DFF86B30021E293 /* ColoredLineChartViewController.m */,
-				D20064D31DFF86B30021E293 /* ColoredLineChartViewController.xib */,
-				D20064D41DFF86B30021E293 /* CombinedChartViewController.h */,
-				D20064D51DFF86B30021E293 /* CombinedChartViewController.m */,
-				D20064D61DFF86B30021E293 /* CombinedChartViewController.xib */,
-				D20064D71DFF86B30021E293 /* CubicLineChartViewController.h */,
-				D20064D81DFF86B30021E293 /* CubicLineChartViewController.m */,
-				D20064D91DFF86B30021E293 /* CubicLineChartViewController.xib */,
-				D20064DA1DFF86B30021E293 /* HalfPieChartViewController.h */,
-				D20064DB1DFF86B30021E293 /* HalfPieChartViewController.m */,
-				D20064DC1DFF86B30021E293 /* HalfPieChartViewController.xib */,
-				D20064DD1DFF86B30021E293 /* HorizontalBarChartViewController.h */,
-				D20064DE1DFF86B30021E293 /* HorizontalBarChartViewController.m */,
-				D20064DF1DFF86B30021E293 /* HorizontalBarChartViewController.xib */,
-				D20064E01DFF86B30021E293 /* LineChart1ViewController.h */,
-				D20064E11DFF86B30021E293 /* LineChart1ViewController.m */,
-				D20064E21DFF86B30021E293 /* LineChart1ViewController.xib */,
-				D20064E31DFF86B30021E293 /* LineChart2ViewController.h */,
-				D20064E41DFF86B30021E293 /* LineChart2ViewController.m */,
-				D20064E51DFF86B30021E293 /* LineChart2ViewController.xib */,
-				D20064E61DFF86B30021E293 /* LineChartFilledViewController.h */,
-				D20064E71DFF86B30021E293 /* LineChartFilledViewController.m */,
-				D20064E81DFF86B30021E293 /* LineChartFilledViewController.xib */,
-				D20064E91DFF86B30021E293 /* LineChartTimeViewController.h */,
-				D20064EA1DFF86B30021E293 /* LineChartTimeViewController.m */,
-				D20064EB1DFF86B30021E293 /* LineChartTimeViewController.xib */,
-				D20064EC1DFF86B30021E293 /* MultipleBarChartViewController.h */,
-				D20064ED1DFF86B30021E293 /* MultipleBarChartViewController.m */,
-				D20064EE1DFF86B30021E293 /* MultipleBarChartViewController.xib */,
-				D20064EF1DFF86B30021E293 /* MultipleLinesChartViewController.h */,
-				D20064F01DFF86B30021E293 /* MultipleLinesChartViewController.m */,
-				D20064F11DFF86B30021E293 /* MultipleLinesChartViewController.xib */,
-				D20064F21DFF86B30021E293 /* NegativeStackedBarChartViewController.h */,
-				D20064F31DFF86B30021E293 /* NegativeStackedBarChartViewController.m */,
-				D20064F41DFF86B30021E293 /* NegativeStackedBarChartViewController.xib */,
-				D20064F51DFF86B30021E293 /* PieChartViewController.h */,
-				D20064F61DFF86B30021E293 /* PieChartViewController.m */,
-				D20064F71DFF86B30021E293 /* PieChartViewController.xib */,
-				D20064F81DFF86B30021E293 /* PiePolylineChartViewController.h */,
-				D20064F91DFF86B30021E293 /* PiePolylineChartViewController.m */,
-				D20064FA1DFF86B30021E293 /* PiePolylineChartViewController.xib */,
-				D20064FB1DFF86B30021E293 /* PositiveNegativeBarChartViewController.h */,
-				D20064FC1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m */,
-				D20064FD1DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib */,
-				D20064FE1DFF86B30021E293 /* RadarChartViewController.h */,
-				D20064FF1DFF86B30021E293 /* RadarChartViewController.m */,
-				D20065001DFF86B30021E293 /* RadarChartViewController.xib */,
-				D20065011DFF86B30021E293 /* ScatterChartViewController.h */,
-				D20065021DFF86B30021E293 /* ScatterChartViewController.m */,
-				D20065031DFF86B30021E293 /* ScatterChartViewController.xib */,
-				D20065041DFF86B30021E293 /* SinusBarChartViewController.h */,
-				D20065051DFF86B30021E293 /* SinusBarChartViewController.m */,
-				D20065061DFF86B30021E293 /* SinusBarChartViewController.xib */,
-				D20065071DFF86B30021E293 /* StackedBarChartViewController.h */,
-				D20065081DFF86B30021E293 /* StackedBarChartViewController.m */,
-				D20065091DFF86B30021E293 /* StackedBarChartViewController.xib */,
-			);
-			path = Demos;
-			sourceTree = "<group>";
-		};
-		D200650A1DFF86B30021E293 /* Formatters */ = {
-			isa = PBXGroup;
-			children = (
-				D200650B1DFF86B30021E293 /* DateValueFormatter.h */,
-				D200650C1DFF86B30021E293 /* DateValueFormatter.m */,
-				D200650D1DFF86B30021E293 /* DayAxisValueFormatter.h */,
-				D200650E1DFF86B30021E293 /* DayAxisValueFormatter.m */,
-				D200650F1DFF86B30021E293 /* IntAxisValueFormatter.h */,
-				D20065101DFF86B30021E293 /* IntAxisValueFormatter.m */,
-				D20065111DFF86B30021E293 /* LargeValueFormatter.swift */,
-			);
-			path = Formatters;
 			sourceTree = "<group>";
 		};
 		D20065531DFF931B0021E293 /* Inner */ = {
@@ -4672,7 +4611,7 @@
 					D20062F81DFF85CB0021E293 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = MWKKG6D7EX;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4713,44 +4652,36 @@
 				42AC71531E30C393007D8F57 /* EXPrimaryCell.xib in Resources */,
 				D2E838701EA75E81003E0A7B /* DataVC.xib in Resources */,
 				18B871D21E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
-				D20065381DFF86B30021E293 /* MultipleLinesChartViewController.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
 				D235E3111E84B49900EE4459 /* SW_LSSJ_Detail_Chart2Cell.xib in Resources */,
-				D20065201DFF86B30021E293 /* BubbleChartViewController.xib in Resources */,
+				42BD8F1E20118BD2006A4779 /* AAHighcharts-3d.js in Resources */,
 				D235E32E1E84C64900EE4459 /* LLQ_LSSJ_Detail_DataCell.xib in Resources */,
 				D2E04DDB1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D2E8387F1EA84466003E0A7B /* qr2.png in Resources */,
 				D2E8387D1EA8445F003E0A7B /* user2.png in Resources */,
 				42AC71471E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
-				D20065261DFF86B30021E293 /* CombinedChartViewController.xib in Resources */,
 				42A887451EDFEBBC0010B053 /* TP_SB_Controller.xib in Resources */,
 				42AC72091E30C576007D8F57 /* TheProjectCell.xib in Resources */,
 				D21944251E8120E000FC0B38 /* SW_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
-				D200651E1DFF86B30021E293 /* BarChartViewController.xib in Resources */,
 				42AC716F1E30C393007D8F57 /* LQ_CLHS_Cell.xib in Resources */,
 				18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20064441DFF86800021E293 /* CJMonthDayCollectionCell.xib in Resources */,
-				D200652C1DFF86B30021E293 /* HorizontalBarChartViewController.xib in Resources */,
-				D200653A1DFF86B30021E293 /* NegativeStackedBarChartViewController.xib in Resources */,
 				D2E8387B1EA83D7B003E0A7B /* user.png in Resources */,
 				D220E2B41E8CF54F001A1C14 /* BigChartViewController.xib in Resources */,
 				8CEB5BC91E0A6C0D00A5C4AA /* Login.storyboard in Resources */,
 				D235E32B1E84C64900EE4459 /* LLQ_LSSJ_Detail_ChartCell.xib in Resources */,
 				42A8881A1EE658120010B053 /* LLQ_SYS_Cell.xib in Resources */,
 				D2E04DDD1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
-				D20065281DFF86B30021E293 /* CubicLineChartViewController.xib in Resources */,
 				42A887431EDFEBBC0010B053 /* TP_DW_Controller.xib in Resources */,
 				42A887301EDFEBBC0010B053 /* TP_CL_Controller.xib in Resources */,
 				42022F791EE8F7CC00931544 /* LLQ_ZR_DetailController.xib in Resources */,
 				D200648D1DFF86800021E293 /* HNT_SYS_TestView.xib in Resources */,
 				D200646D1DFF86800021E293 /* HNT_BHZ_Cell.xib in Resources */,
 				42A887B61EE3E37A0010B053 /* LLQ_MXE_Cell.xib in Resources */,
-				D20065361DFF86B30021E293 /* MultipleBarChartViewController.xib in Resources */,
 				8CEB5BCA1E0A6C0D00A5C4AA /* Main.storyboard in Resources */,
 				42AC71491E30C393007D8F57 /* DCZ_CJ_Inner_Cell.xib in Resources */,
 				D2E838691EA75AF7003E0A7B /* sound.caf in Resources */,
-				D200652A1DFF86B30021E293 /* HalfPieChartViewController.xib in Resources */,
 				D2E04DDF1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_DataCell.xib in Resources */,
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
@@ -4759,21 +4690,18 @@
 				42A8872D1EDFEBBC0010B053 /* TP_CL_Cell.xib in Resources */,
 				D272EFC21E7BBE3A00D0991D /* SW_CBCZ_View.xib in Resources */,
 				D21944201E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
+				42BD8F2020118BD2006A4779 /* AAHighchartsMore.js in Resources */,
 				42A887E21EE583F90010B053 /* LLQ_RH_Cell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
-				D20065241DFF86B30021E293 /* ColoredLineChartViewController.xib in Resources */,
 				42AC714D1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell2.xib in Resources */,
 				D2E838931EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
 				42A887D01EE521D50010B053 /* LLQ_MXE_Detail_DataCell.xib in Resources */,
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
-				D20065441DFF86B30021E293 /* ScatterChartViewController.xib in Resources */,
 				42A8883E1EE6A9920010B053 /* SVProgressHUD.bundle in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
 				D226DC681E8215910042DCFA /* SW_CBCZ_Detail_DataCell.xib in Resources */,
-				D200653C1DFF86B30021E293 /* PieChartViewController.xib in Resources */,
 				D2E838811EA84C6F003E0A7B /* qr.png in Resources */,
-				D200653E1DFF86B30021E293 /* PiePolylineChartViewController.xib in Resources */,
 				D21944321E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.xib in Resources */,
 				42A887CB1EE51EF70010B053 /* LLQ_MXE_Detail_ChartCell.xib in Resources */,
 				D235E3091E84B2E900EE4459 /* SW_LSSJ_Detail_ChartCell.xib in Resources */,
@@ -4781,11 +4709,8 @@
 				D2E8388B1EAA1D7A003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib in Resources */,
 				42AC714F1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.xib in Resources */,
 				D200647B1DFF86800021E293 /* HNT_WNSY_Cell.xib in Resources */,
-				D20065341DFF86B30021E293 /* LineChartTimeViewController.xib in Resources */,
-				D20065221DFF86B30021E293 /* CandleStickChartViewController.xib in Resources */,
 				D21944041E81204800FC0B38 /* HNT_CLHS_ChatCell.xib in Resources */,
 				D26AE9A11E7A38BD0090761D /* LLQ_BHZ_Cell.xib in Resources */,
-				D20065421DFF86B30021E293 /* RadarChartViewController.xib in Resources */,
 				D20065A41DFFE12D0021E293 /* Exp5_Xib_View.xib in Resources */,
 				D200648F1DFF86800021E293 /* ZZJG_View.xib in Resources */,
 				42A887691EDFF4CB0010B053 /* icon_location@3x.png in Resources */,
@@ -4793,29 +4718,27 @@
 				D21944021E81204800FC0B38 /* HNT_CLHS_Cell.xib in Resources */,
 				42AC717A1E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Cell.xib in Resources */,
 				42A887391EDFEBBC0010B053 /* TP_NY_Controller.xib in Resources */,
-				D20065461DFF86B30021E293 /* SinusBarChartViewController.xib in Resources */,
 				D272EFC41E7BBE3A00D0991D /* SW_CLHS_Cell.xib in Resources */,
 				D20064951DFF86800021E293 /* Exp2_Xib_View.xib in Resources */,
 				D25977721E76B0BC00507BF2 /* SW_ZZJG_Cell.xib in Resources */,
-				D20065481DFF86B30021E293 /* StackedBarChartViewController.xib in Resources */,
 				42A8876C1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.xib in Resources */,
 				8CEB5BCB1E0A6C0D00A5C4AA /* Welcome.storyboard in Resources */,
+				42BD8F1F20118BD2006A4779 /* AAHighchartsLibrary.js in Resources */,
 				D2E8384A1EA75651003E0A7B /* PersonVC.xib in Resources */,
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
+				42BD8F1B20118BD2006A4779 /* AAChartView.html in Resources */,
 				42A8873F1EDFEBBC0010B053 /* TP_NYSDList_Cell1.xib in Resources */,
-				D20065301DFF86B30021E293 /* LineChart2ViewController.xib in Resources */,
 				D272EFC61E7BBE3A00D0991D /* SW_CLHS_ChatCell.xib in Resources */,
 				42A8873D1EDFEBBC0010B053 /* TP_NYSDList_Cell.xib in Resources */,
 				42AC71621E30C393007D8F57 /* LQ_ZCL_CB1_Cell.xib in Resources */,
 				D272EFD71E7BC36F00D0991D /* LLQ_CBCZ_View.xib in Resources */,
-				D20065321DFF86B30021E293 /* LineChartFilledViewController.xib in Resources */,
 				42AC714B1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */,
 				42022F621EE7E2A300931544 /* LLQ_RH_DetailsViewController.xib in Resources */,
 				D272EFBF1E7BBE3A00D0991D /* LQ_SW_Cell.xib in Resources */,
 				D235E3001E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
-				D20065181DFF86B30021E293 /* RadarMarkerView.xib in Resources */,
+				42BD8F1C20118BD2006A4779 /* AADrilldown.js in Resources */,
 				42A887761EE003140010B053 /* MySYSSegmentedControl.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
@@ -4823,30 +4746,30 @@
 				42022F5D1EE7D39300931544 /* LLQ_RH_DetailCell.xib in Resources */,
 				D235E3311E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.xib in Resources */,
 				D200647F1DFF86800021E293 /* HNT_TJFX_HeaderView.xib in Resources */,
+				42BD8F2120118BD2006A4779 /* AAJQueryLibrary.js in Resources */,
 				42022F7E1EE8FC9100931544 /* LLQ_YD_DetailController.xib in Resources */,
 				18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */,
 				D220E2C31E8D00E1001A1C14 /* DrawerController.xib in Resources */,
-				D200652E1DFF86B30021E293 /* LineChart1ViewController.xib in Resources */,
 				D2E8384F1EA756A9003E0A7B /* JumpVC.xib in Resources */,
 				42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */,
 				42A8874D1EDFEDF90010B053 /* MyTPSegmentedControl.xib in Resources */,
 				D219437C1E81006700FC0B38 /* Exp52_Xib_View.xib in Resources */,
 				42AC716A1E30C393007D8F57 /* DayQueryTableViewCell.xib in Resources */,
+				42BD8F1A20118BD2006A4779 /* AAChartKit.podspec in Resources */,
 				D20064811DFF86800021E293 /* HNT_TJFX_TxtView.xib in Resources */,
 				D235E3031E84A9B000EE4459 /* SW_LSSJ_Detail_HeadCell.xib in Resources */,
 				42AC71671E30C393007D8F57 /* DayDetailsCell.xib in Resources */,
 				8CBD72E81E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.xib in Resources */,
 				42A887351EDFEBBC0010B053 /* TP_TP_Controller.xib in Resources */,
 				42A887331EDFEBBC0010B053 /* TP_CLSB_Controller.xib in Resources */,
-				D200651C1DFF86B30021E293 /* AnotherBarChartViewController.xib in Resources */,
 				D2E838791EA83D7B003E0A7B /* arrow.png in Resources */,
 				42AC71911E30C3B6007D8F57 /* Exp8_Xib_View.xib in Resources */,
 				42022F6A1EE7ECD700931544 /* LLQ_ZR_Cell.xib in Resources */,
 				D24DE9221E80BF25006831A2 /* LLQ_CLHS_Cell.xib in Resources */,
 				D2E838861EAA1A84003E0A7B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
 				42A887C61EE50B7F0010B053 /* LLQ_MXE_Detail_HeadCell.xib in Resources */,
+				42BD8F1D20118BD2006A4779 /* AAFunnel.js in Resources */,
 				42A887681EDFF4CB0010B053 /* icon_location@2x.png in Resources */,
-				D20065401DFF86B30021E293 /* PositiveNegativeBarChartViewController.xib in Resources */,
 				D24DE9241E80BF25006831A2 /* LLQ_CLHS_ChatCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4860,9 +4783,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-toone/Pods-toone-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4875,9 +4801,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-toone/Pods-toone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RATreeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4890,13 +4827,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toone-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4923,7 +4863,6 @@
 				D226DC5D1E8211D90042DCFA /* SW_CBCZ_Detail_swHead.m in Sources */,
 				D235E3101E84B49900EE4459 /* SW_LSSJ_Detail_Chart2Cell.m in Sources */,
 				42A887321EDFEBBC0010B053 /* TP_CLSB_Controller.m in Sources */,
-				D20065191DFF86B30021E293 /* XYMarkerView.swift in Sources */,
 				42A8872E1EDFEBBC0010B053 /* TP_CL_ChartModel.m in Sources */,
 				42AC71BB1E30C423007D8F57 /* SGChartZBX.m in Sources */,
 				42AC71541E30C393007D8F57 /* TotalTableController.m in Sources */,
@@ -4942,21 +4881,18 @@
 				D272EFD61E7BC36F00D0991D /* LLQ_CBCZ_View.m in Sources */,
 				42AC71461E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D20064971DFF86800021E293 /* Exp3View.m in Sources */,
-				D200652F1DFF86B30021E293 /* LineChart2ViewController.m in Sources */,
+				42BD8F2D20118BD3006A4779 /* AAMarker.m in Sources */,
 				D25977751E76B19800507BF2 /* SW_ZZJG_Data.m in Sources */,
 				D2CF6B6C1E011D98003AE61D /* UIView+Shape.m in Sources */,
 				42A887441EDFEBBC0010B053 /* TP_SB_Controller.m in Sources */,
 				187C72F21E30B1810072F33A /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
-				D20065231DFF86B30021E293 /* ColoredLineChartViewController.m in Sources */,
-				D200654A1DFF86B30021E293 /* DayAxisValueFormatter.m in Sources */,
 				D20064861DFF86800021E293 /* SYS_testTypeModel.m in Sources */,
 				187C73041E30B1810072F33A /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				42AC71511E30C393007D8F57 /* EXPrimaryModel.m in Sources */,
 				42AC717D1E30C393007D8F57 /* LQ_CellModel.m in Sources */,
-				D200653D1DFF86B30021E293 /* PiePolylineChartViewController.m in Sources */,
-				D200651D1DFF86B30021E293 /* BarChartViewController.m in Sources */,
 				8CBD72E41E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsg.m in Sources */,
 				187C73091E30B1810072F33A /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
+				42BD8F2E20118BD3006A4779 /* AAOptions.m in Sources */,
 				42022F611EE7E2A300931544 /* LLQ_RH_DetailsViewController.m in Sources */,
 				42AC71481E30C393007D8F57 /* DCZ_CJ_Inner_Cell.m in Sources */,
 				D2E838661EA75AF7003E0A7B /* SGGenerateQRCodeVC.m in Sources */,
@@ -4975,7 +4911,6 @@
 				42A888191EE658120010B053 /* LLQ_SYS_Cell.m in Sources */,
 				42022F6D1EE7F0A500931544 /* LLQ_YD_Model.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
-				D20065211DFF86B30021E293 /* CandleStickChartViewController.m in Sources */,
 				D2E04DE71E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqjg.m in Sources */,
 				42AC72131E30C576007D8F57 /* View+MASAdditions.m in Sources */,
 				D219437D1E81006700FC0B38 /* Exp52View.m in Sources */,
@@ -4984,7 +4919,6 @@
 				187C73111E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
-				D200651A1DFF86B30021E293 /* DemoBaseViewController.m in Sources */,
 				187C72FE1E30B1810072F33A /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				42A887951EE2596E0010B053 /* LLQ_SYS_InnerController.m in Sources */,
 				42A887D71EE53CA90010B053 /* LLQ_MXE_Detail_Data.m in Sources */,
@@ -4994,21 +4928,21 @@
 				42A887341EDFEBBC0010B053 /* TP_TP_Controller.m in Sources */,
 				42A8873C1EDFEBBC0010B053 /* TP_NYSDList_Cell.m in Sources */,
 				D21944311E81278400FC0B38 /* SW_CBCZ_Detail_HeadCell.m in Sources */,
+				42BD8F2620118BD3006A4779 /* AAChart.m in Sources */,
 				D200647C1DFF86800021E293 /* HNT_TJFX_Controller.m in Sources */,
 				42AC714A1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				42AC71431E30C393007D8F57 /* EXPMiddleModel.m in Sources */,
 				D25977321E76715300507BF2 /* SW_ZZJG_Controller.m in Sources */,
 				42A8873B1EDFEBBC0010B053 /* TP_NYSDList_Model.m in Sources */,
 				42AC71741E30C393007D8F57 /* ProductionDetailsG.m in Sources */,
+				42BD8F1620118BD2006A4779 /* AAChartModel.m in Sources */,
 				D2E04DDC1E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				42A8876D1EDFF4CB0010B053 /* MonitoringRegionViewController.m in Sources */,
 				42AC71561E30C393007D8F57 /* SeniorExcessiveTableConller.m in Sources */,
 				42A887C01EE509D00010B053 /* LLQ_MXE_DetailController.m in Sources */,
-				D200651B1DFF86B30021E293 /* AnotherBarChartViewController.m in Sources */,
 				D272EFBD1E7BBE3A00D0991D /* SW_CLHS_Model.m in Sources */,
 				D20064961DFF86800021E293 /* Exp2View.m in Sources */,
-				D20065311DFF86B30021E293 /* LineChartFilledViewController.m in Sources */,
 				D235E32F1E84C64900EE4459 /* LLQ_LSSJ_Detail_Head.m in Sources */,
 				42A8872B1EDFEBBC0010B053 /* TP_Controller.m in Sources */,
 				D20064481DFF86800021E293 /* MJDIYHeader2.m in Sources */,
@@ -5018,6 +4952,7 @@
 				D2E8386F1EA75E81003E0A7B /* DataVC.m in Sources */,
 				42A8873A1EDFEBBC0010B053 /* TP_NY_ChartModel.m in Sources */,
 				42A887A81EE29E610010B053 /* LLQ_MXE_Model.m in Sources */,
+				42BD8F2F20118BD3006A4779 /* AAOptions3d.m in Sources */,
 				D200646B1DFF86800021E293 /* HNT_BHZ_Model.m in Sources */,
 				42A887401EDFEBBC0010B053 /* TP_NY_SB_Controller.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
@@ -5044,15 +4979,15 @@
 				D21944241E8120E000FC0B38 /* SW_CBCZ_Detail_ShenPi_Cell.m in Sources */,
 				D20065151DFF86B30021E293 /* BarModel.m in Sources */,
 				18B871C81E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m in Sources */,
+				42BD8F2420118BD3006A4779 /* AAAreaspline.m in Sources */,
 				D219436F1E80CE3700FC0B38 /* SW_LSSJ_Model.m in Sources */,
 				D20064911DFF86800021E293 /* Exp1_Xib_View.m in Sources */,
 				187C73001E30B1810072F33A /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				42A8881D1EE67AB60010B053 /* LLQ_SYS_Model.m in Sources */,
 				42022F7D1EE8FC9100931544 /* LLQ_YD_DetailController.m in Sources */,
-				D20065331DFF86B30021E293 /* LineChartTimeViewController.m in Sources */,
-				D20065271DFF86B30021E293 /* CubicLineChartViewController.m in Sources */,
 				42AC72191E30C576007D8F57 /* LqNodeModel.m in Sources */,
 				D2E8386B1EA75AF7003E0A7B /* SGScanningQRCodeView.m in Sources */,
+				42BD8F2A20118BD3006A4779 /* AALabels.m in Sources */,
 				D200649F1DFF86800021E293 /* MyModel.m in Sources */,
 				8CBD72E71E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsgCell.m in Sources */,
 				D20064421DFF86800021E293 /* CJDecisionView.m in Sources */,
@@ -5063,28 +4998,30 @@
 				187C72F11E30B1810072F33A /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
 				D219436C1E80CDA400FC0B38 /* SW_LSSJ_Controller.m in Sources */,
 				D20064691DFF86800021E293 /* WelcomeViewController.m in Sources */,
+				42BD8F2220118BD3006A4779 /* AAAnimation.m in Sources */,
 				42A887701EDFF4CB0010B053 /* SingleLocationViewController.m in Sources */,
 				D235E3381E85117F00EE4459 /* LQ_Peifang_Controller.m in Sources */,
 				D20064451DFF86800021E293 /* CJSelectTimeScrollView.m in Sources */,
 				D2E04DE21E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Cell.m in Sources */,
-				D200645F1DFF86800021E293 /* Exmp1Cell.m in Sources */,
 				D272EFBE1E7BBE3A00D0991D /* LQ_SW_Cell.m in Sources */,
+				42BD8F2320118BD3006A4779 /* AAArea.m in Sources */,
 				D20064881DFF86800021E293 /* HNT_SYS_Model.m in Sources */,
 				42AC71701E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Controller.m in Sources */,
 				42022F691EE7ECD700931544 /* LLQ_ZR_Cell.m in Sources */,
 				8CBD72EF1E07A84C00A0C991 /* HNT_CBCZ_DetailController.m in Sources */,
 				D20064801DFF86800021E293 /* HNT_TJFX_TxtView.m in Sources */,
 				D235E32D1E84C64900EE4459 /* LLQ_LSSJ_Detail_DataCell.m in Sources */,
+				42BD8F3820118BD3006A4779 /* AATitle.m in Sources */,
 				D200648C1DFF86800021E293 /* HNT_SYS_TestView.m in Sources */,
 				D20064731DFF86800021E293 /* HNT_YLSY_Model.m in Sources */,
 				D272EFBB1E7BBE3A00D0991D /* LQ_SW_Model.m in Sources */,
 				D2E04DE81E83ADCD009E9C6A /* LLQ_CBCZ_DetailController.m in Sources */,
-				D20065251DFF86B30021E293 /* CombinedChartViewController.m in Sources */,
 				42AC71BA1E30C423007D8F57 /* SGBarSuper.m in Sources */,
 				8CBD72E21E07A75000A0C991 /* HNT_SCCX_DetailController.m in Sources */,
 				D2E838941EAA243A003E0A7B /* SW_CBCZ_Detail_ZiXun_Controller.m in Sources */,
 				D20065A31DFFE12D0021E293 /* Exp5_Xib_View.m in Sources */,
 				D2E04DE41E83ADCD009E9C6A /* LLQ_CBCZ_Detail_ShenPi_Controller.m in Sources */,
+				42BD8F2820118BD3006A4779 /* AADataLabels.m in Sources */,
 				42A8872C1EDFEBBC0010B053 /* TP_CL_Cell.m in Sources */,
 				8CBD72E51E07A75000A0C991 /* HNT_SCCX_Detail_DataCell.m in Sources */,
 				42A887E11EE583F90010B053 /* LLQ_RH_Cell.m in Sources */,
@@ -5121,14 +5058,12 @@
 				42AC720D1E30C576007D8F57 /* MASConstraintMaker.m in Sources */,
 				42AC71731E30C393007D8F57 /* NQ_BHZ_SCCX_InneModel.m in Sources */,
 				187C730B1E30B1810072F33A /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
-				D20065471DFF86B30021E293 /* StackedBarChartViewController.m in Sources */,
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				42AC71441E30C393007D8F57 /* PrimaryExcessiveTableConller.m in Sources */,
 				D200647A1DFF86800021E293 /* HNT_WNSY_Cell.m in Sources */,
 				42AC71971E30C3F0007D8F57 /* MyInputController.m in Sources */,
 				422D692D1EE79C1F00820275 /* LLQ_SB_Controller.m in Sources */,
-				D20065411DFF86B30021E293 /* RadarChartViewController.m in Sources */,
 				42022F581EE7D1E600931544 /* LLQ_RH_Model.m in Sources */,
 				8CBD72E31E07A75000A0C991 /* HNT_SCCX_Detail_Data.m in Sources */,
 				42AC71C31E30C423007D8F57 /* SGSign.m in Sources */,
@@ -5139,8 +5074,10 @@
 				42A888421EE6A9920010B053 /* XAxisView.m in Sources */,
 				D25977711E76B0BC00507BF2 /* SW_ZZJG_Cell.m in Sources */,
 				42AC71C01E30C423007D8F57 /* SGLineDIY.m in Sources */,
+				42BD8F3520118BD3006A4779 /* AASpline.m in Sources */,
 				42AC72181E30C576007D8F57 /* LqNode.m in Sources */,
 				42A887CF1EE521D50010B053 /* LLQ_MXE_Detail_DataCell.m in Sources */,
+				42BD8F3720118BD3006A4779 /* AASubtitle.m in Sources */,
 				D235E2FF1E84A9B000EE4459 /* SW_LSSJ_Detail_DataCell.m in Sources */,
 				D20065841DFFC5AB0021E293 /* HNT_SCCX_Controller.m in Sources */,
 				42A888411EE6A9920010B053 /* WSLineChartView.m in Sources */,
@@ -5150,21 +5087,19 @@
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				D235E3321E84C64900EE4459 /* LLQ_LSSJ_DetailController.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
-				D20065351DFF86B30021E293 /* MultipleBarChartViewController.m in Sources */,
 				42AC71C51E30C423007D8F57 /* XFSegementView.m in Sources */,
 				187C73021E30B1810072F33A /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				D200646E1DFF86800021E293 /* HNT_SYS_Controller.m in Sources */,
 				D21944001E81204800FC0B38 /* HNT_CLHS_Model.m in Sources */,
-				D20065491DFF86B30021E293 /* DateValueFormatter.m in Sources */,
 				D272EFC11E7BBE3A00D0991D /* SW_CBCZ_View.m in Sources */,
 				D20064661DFF86800021E293 /* Drawer.m in Sources */,
-				D20065171DFF86B30021E293 /* RadarMarkerView.swift in Sources */,
 				42AC71751E30C393007D8F57 /* ProductionDetailsM.m in Sources */,
 				42AC716E1E30C393007D8F57 /* LQ_CLHS_Cell.m in Sources */,
 				D2E838491EA75651003E0A7B /* PersonVC.m in Sources */,
 				D20064931DFF86800021E293 /* Exp1View.m in Sources */,
 				D219437B1E81006700FC0B38 /* Exp52_Xib_View.m in Sources */,
 				42AC720A1E30C576007D8F57 /* TreeTableView.m in Sources */,
+				42BD8F3120118BD3006A4779 /* AAPlotLinesElement.m in Sources */,
 				D20062FE1DFF85CB0021E293 /* main.m in Sources */,
 				42A887311EDFEBBC0010B053 /* TP_CL_DataModel.m in Sources */,
 				D246B2AC1E00E0CD00E83159 /* HNT_CBCZ_Model.m in Sources */,
@@ -5185,6 +5120,7 @@
 				D20064711DFF86800021E293 /* HNT_YLSY_DetailController.m in Sources */,
 				D272EFC31E7BBE3A00D0991D /* SW_CLHS_Cell.m in Sources */,
 				187C73121E30B1810072F33A /* DGActivityIndicatorView.m in Sources */,
+				42BD8F1720118BD2006A4779 /* AAChartView.m in Sources */,
 				D226DC671E8215910042DCFA /* SW_CBCZ_Detail_DataCell.m in Sources */,
 				D235E2FE1E84A9B000EE4459 /* SW_LSSJ_Detail_Data.m in Sources */,
 				42AC715E1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.m in Sources */,
@@ -5195,18 +5131,15 @@
 				42AC71601E30C393007D8F57 /* LQ_ZCL_CBL_Controller.m in Sources */,
 				D200649E1DFF86800021E293 /* UIView+Frame.m in Sources */,
 				D20064A41DFF86800021E293 /* HTTP.m in Sources */,
-				18DA4FE71E1E15B800229C81 /* Exmp2.m in Sources */,
 				18B871D11E1F930600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Cell.m in Sources */,
-				D200654C1DFF86B30021E293 /* LargeValueFormatter.swift in Sources */,
-				D200654B1DFF86B30021E293 /* IntAxisValueFormatter.m in Sources */,
 				D272EFB91E7BBE3A00D0991D /* SW_CBCZ_Controller.m in Sources */,
 				42A8876B1EDFF4CB0010B053 /* MonitoringGeoFenceRegionViewController.m in Sources */,
 				D219435E1E80C12B00FC0B38 /* LLQ_CLHS_Model.m in Sources */,
 				42AC71681E30C393007D8F57 /* DayQueryModel.m in Sources */,
 				42AC715B1E30C393007D8F57 /* LQ_ZCL_CL_Model.m in Sources */,
+				42BD8F3620118BD3006A4779 /* AAStyle.m in Sources */,
 				D20065571DFF931B0021E293 /* HNT_BHZ_InnerController.m in Sources */,
 				42AC715C1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.m in Sources */,
-				D200652B1DFF86B30021E293 /* HorizontalBarChartViewController.m in Sources */,
 				D219435B1E80C10C00FC0B38 /* LLQ_CLHS_Controller.m in Sources */,
 				42AC71651E30C393007D8F57 /* DayDetailsController.m in Sources */,
 				42AC72061E30C576007D8F57 /* Node.m in Sources */,
@@ -5214,22 +5147,27 @@
 				42AC71451E30C393007D8F57 /* DCZ_CJ_Ineer_Controller.m in Sources */,
 				D20064721DFF86800021E293 /* HNT_YLSY_DetailModel.m in Sources */,
 				D21944031E81204800FC0B38 /* HNT_CLHS_ChatCell.m in Sources */,
+				42BD8F1820118BD2006A4779 /* AAJsonConverter.m in Sources */,
 				D2E838671EA75AF7003E0A7B /* SGScanningQRCodeVC.m in Sources */,
 				D21943941E810F6C00FC0B38 /* LLQ_LSSJ_Model.m in Sources */,
+				42BD8F3A20118BD3006A4779 /* AAXAxis.m in Sources */,
 				42AC721A1E30C576007D8F57 /* LqTreeTableView.m in Sources */,
 				187C73051E30B1810072F33A /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
 				187C72F91E30B1810072F33A /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
+				42BD8F3220118BD3006A4779 /* AAPlotOptions.m in Sources */,
+				42BD8F2920118BD3006A4779 /* AAItemStyle.m in Sources */,
 				42A887D41EE539CD0010B053 /* LLQ_MXE_Detail_Head.m in Sources */,
 				D20064A81DFF86800021E293 /* TimeTools.m in Sources */,
 				42AC71581E30C393007D8F57 /* ExcessiveModel.m in Sources */,
-				D20065161DFF86B30021E293 /* BalloonMarker.swift in Sources */,
 				42A887411EDFEBBC0010B053 /* NY_SB_Model.m in Sources */,
 				D20064A31DFF86800021E293 /* UserDefaultsSetting.m in Sources */,
+				42BD8F3B20118BD3006A4779 /* AAYAxis.m in Sources */,
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,
+				42BD8F3020118BD3006A4779 /* AAPie.m in Sources */,
 				8CE976551E0BF1FF0016A858 /* MySJView.m in Sources */,
 				42AC714E1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuliCell.m in Sources */,
-				D200645E1DFF86800021E293 /* Exmp1.m in Sources */,
+				42BD8F2720118BD3006A4779 /* AAColumn.m in Sources */,
 				42AC718D1E30C3B6007D8F57 /* Exp7_Xib_View.m in Sources */,
 				D20064941DFF86800021E293 /* Exp2_Xib_View.m in Sources */,
 				D2E04DE61E83ADCD009E9C6A /* LLQ_CBCZ_Detail_lqHead.m in Sources */,
@@ -5237,13 +5175,13 @@
 				42A888401EE6A9920010B053 /* TBActivityView.m in Sources */,
 				187C72FF1E30B1810072F33A /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				D2E8384E1EA756A9003E0A7B /* JumpVC.m in Sources */,
-				D200653F1DFF86B30021E293 /* PositiveNegativeBarChartViewController.m in Sources */,
 				42AC71C21E30C423007D8F57 /* SGPieChart.m in Sources */,
 				187C72F71E30B1810072F33A /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				D272EFC91E7BBE9B00D0991D /* LLQ_BHZ_InnerController.m in Sources */,
 				D235E3301E84C64900EE4459 /* LLQ_LSSJ_Detail_HeadCell.m in Sources */,
 				D20065711DFF9DF40021E293 /* HNT_CBCZ_Controller.m in Sources */,
 				D20064781DFF86800021E293 /* HNT_WNSY_DetailModel.m in Sources */,
+				42BD8F3920118BD3006A4779 /* AATooltip.m in Sources */,
 				42A8883F1EE6A9920010B053 /* SVProgressHUD.m in Sources */,
 				D20064701DFF86800021E293 /* HNT_YLSY_Controller.m in Sources */,
 				42A8874C1EDFEDF90010B053 /* MyTPSegmentedControl.m in Sources */,
@@ -5252,26 +5190,24 @@
 				D20064981DFF86800021E293 /* Exp4View.m in Sources */,
 				42AC71711E30C393007D8F57 /* NQ_BHZ_SCCX_Innel_Controller.m in Sources */,
 				D20064991DFF86800021E293 /* CALayer+Animation.m in Sources */,
-				D20065291DFF86B30021E293 /* HalfPieChartViewController.m in Sources */,
 				D272EFC01E7BBE3A00D0991D /* SW_CBCZ_Cell.m in Sources */,
 				D200643F1DFF86800021E293 /* CJMonthDayViewController.m in Sources */,
 				187C73011E30B1810072F33A /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
-				D200653B1DFF86B30021E293 /* PieChartViewController.m in Sources */,
 				D20064401DFF86800021E293 /* CJYearViewController.m in Sources */,
 				42AC716B1E30C393007D8F57 /* MaterialTableViewController.m in Sources */,
-				D200654D1DFF86B30021E293 /* XnameAxisValueFormatter.m in Sources */,
 				187C72F01E30B1810072F33A /* DGActivityIndicatorAnimation.m in Sources */,
 				187C730D1E30B1810072F33A /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				D220E2B31E8CF54F001A1C14 /* BigChartViewController.m in Sources */,
 				D2E04DE01E83ADCD009E9C6A /* LLQ_CBCZ_Detail_HeadCell.m in Sources */,
 				42AC71591E30C393007D8F57 /* MaterialViewController.m in Sources */,
-				D200652D1DFF86B30021E293 /* LineChart1ViewController.m in Sources */,
+				42BD8F3320118BD3006A4779 /* AASeries.m in Sources */,
 				D20064841DFF86800021E293 /* HNT_SYS_typeAndSB_Controller.m in Sources */,
 				D272EFB71E7BBE3A00D0991D /* LQ_SW_Controller.m in Sources */,
 				187C72FB1E30B1810072F33A /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				187C730C1E30B1810072F33A /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				D21943971E810FE200FC0B38 /* LLQ_LSSJ_Controller.m in Sources */,
+				42BD8F2C20118BD3006A4779 /* AALine.m in Sources */,
 				4285E79A1EF9303D00932F97 /* LLQ_MXE_Controller.m in Sources */,
 				8CBD72F71E07B1D200A0C991 /* HNT_CBCZ_Detail_HeadMsg.m in Sources */,
 				42AC72141E30C576007D8F57 /* ViewController+MASAdditions.m in Sources */,
@@ -5283,6 +5219,7 @@
 				42A887B51EE3E37A0010B053 /* LLQ_MXE_Cell.m in Sources */,
 				D200647E1DFF86800021E293 /* HNT_TJFX_HeaderView.m in Sources */,
 				D235E3041E84A9B000EE4459 /* SW_LSSJ_DetailController.m in Sources */,
+				42BD8F1920118BD2006A4779 /* AAOptionsConstructor.m in Sources */,
 				187C72FD1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				42AC717E1E30C393007D8F57 /* LQ_Model.m in Sources */,
 				D2E8386A1EA75AF7003E0A7B /* SGQRCodeTool.m in Sources */,
@@ -5303,10 +5240,10 @@
 				42AC71421E30C393007D8F57 /* MiddleExcessiveTableContller.m in Sources */,
 				42AC72051E30C576007D8F57 /* NetworkTool.m in Sources */,
 				D272EFCF1E7BBF4F00D0991D /* LLQ_CBCZ_Model.m in Sources */,
-				D20065371DFF86B30021E293 /* MultipleLinesChartViewController.m in Sources */,
 				D219441D1E8120E000FC0B38 /* SW_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D235E3021E84A9B000EE4459 /* SW_LSSJ_Detail_HeadCell.m in Sources */,
 				D226DC631E82121C0042DCFA /* SW_CBCZ_Detail_swjg.m in Sources */,
+				42BD8F2B20118BD3006A4779 /* AALegend.m in Sources */,
 				42AC72151E30C576007D8F57 /* NSObject+YYModel.m in Sources */,
 				42AC71901E30C3B6007D8F57 /* Exp8_Xib_View.m in Sources */,
 				D226DC601E8211F90042DCFA /* SW_CDCZ_Detail_swData.m in Sources */,
@@ -5314,20 +5251,18 @@
 				42AC715A1E30C393007D8F57 /* LQ_ZCL_CL_Controller.m in Sources */,
 				42A888431EE6A9920010B053 /* YAxisView.m in Sources */,
 				D20064791DFF86800021E293 /* HNT_WNSY_Model.m in Sources */,
-				D200651F1DFF86B30021E293 /* BubbleChartViewController.m in Sources */,
+				42BD8F2520118BD3006A4779 /* AABar.m in Sources */,
 				42AC71BE1E30C423007D8F57 /* SGLine.m in Sources */,
 				D2CF6B671E011728003AE61D /* Exp6View.m in Sources */,
 				D219438E1E8105F900FC0B38 /* LQ_UsePosition_Controller.m in Sources */,
 				42A8872F1EDFEBBC0010B053 /* TP_CL_Controller.m in Sources */,
 				D20064A01DFF86800021E293 /* MyNavigationController.m in Sources */,
 				187C72F81E30B1810072F33A /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				42BD8F3420118BD3006A4779 /* AASeriesElement.m in Sources */,
 				42A887AE1EE2BD4B0010B053 /* LLQ_RH_Controller.m in Sources */,
 				42A8876E1EDFF4CB0010B053 /* SerialLocationViewController.m in Sources */,
 				D200658B1DFFC5B30021E293 /* HNT_CLHS_Controller.m in Sources */,
-				D20065431DFF86B30021E293 /* ScatterChartViewController.m in Sources */,
 				D20064AB1DFF86800021E293 /* MPColorTools.m in Sources */,
-				D20065451DFF86B30021E293 /* SinusBarChartViewController.m in Sources */,
-				D20065391DFF86B30021E293 /* NegativeStackedBarChartViewController.m in Sources */,
 				18755BC31E238BB90033F2E7 /* SGTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5481,8 +5416,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				DEVELOPMENT_TEAM = MWKKG6D7EX;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
@@ -5490,8 +5426,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "047cb7df-d281-4c01-a90a-0d50802ecad2";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distuibution_hnym;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};
@@ -5504,8 +5440,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Toone Information Technology Co., Ltd.";
-				DEVELOPMENT_TEAM = MWKKG6D7EX;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Classes/Business/ToonePrefixHeader.pch";
 				INFOPLIST_FILE = toone/Info.plist;
@@ -5513,8 +5450,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.hnym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "047cb7df-d281-4c01-a90a-0d50802ecad2";
-				PROVISIONING_PROFILE_SPECIFIER = profile_distuibution_hnym;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Classes/Business/Toone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0.1;
 			};

@@ -20,13 +20,21 @@
 @property (nonatomic ,copy) NSString * machineType;
 @property (nonatomic ,copy) NSString * biaoshiid;
 @property (nonatomic,strong) NSArray * datas;
-@end
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
+
+@end
 @implementation TP_SB_Controller
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 88;
+    }else {
+        self.top.constant = 64;
+    }
     ((MyNavigationController*)self.navigationController).myColor = BLUECOLOR;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设备";

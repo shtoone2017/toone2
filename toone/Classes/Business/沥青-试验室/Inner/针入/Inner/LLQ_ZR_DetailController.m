@@ -24,10 +24,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *container2_label;
 @property (weak, nonatomic) IBOutlet UILabel *zr3;
 @property (nonatomic,strong) NSArray *datas;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 
 @end
 @implementation LLQ_ZR_DetailController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (kDevice_Is_iPhoneX) {
+        self.top.constant = 88;
+    }else {
+        self.top.constant = 64;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadData];
