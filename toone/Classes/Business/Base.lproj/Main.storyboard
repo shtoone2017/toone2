@@ -5996,7 +5996,7 @@
         <scene sceneID="IGu-Gb-LRj">
             <objects>
                 <navigationController id="9sv-rq-PKw" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="运输单" image="factory" id="WIb-Bn-fxF"/>
+                    <tabBarItem key="tabBarItem" title="运输单" image="fcd" id="WIb-Bn-fxF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6lM-H6-bTm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -6032,7 +6032,7 @@
         <scene sceneID="zRA-0r-Dwe">
             <objects>
                 <navigationController id="8T5-9p-6Xq" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="扫一扫" image="resizeApi" id="SZs-fJ-oCs"/>
+                    <tabBarItem key="tabBarItem" title="扫一扫" image="sys" id="SZs-fJ-oCs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mb9-60-hHb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -6192,7 +6192,7 @@
         <scene sceneID="Zt4-8Y-hIS">
             <objects>
                 <navigationController id="kuP-hB-PGi" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="本地" image="Road" id="iTt-CF-2ZR"/>
+                    <tabBarItem key="tabBarItem" title="本地" image="bdcx" id="iTt-CF-2ZR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pza-bm-6oX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -6229,11 +6229,13 @@
         <image name="99D58PICZNR_1024" width="29" height="29"/>
         <image name="Road" width="32" height="32"/>
         <image name="arrow.png" width="15" height="40"/>
+        <image name="bdcx" width="32" height="32"/>
         <image name="black_SX" width="288" height="113"/>
         <image name="circle_green" width="16" height="16"/>
         <image name="circle_red" width="16" height="16"/>
         <image name="circle_yellow" width="16" height="16"/>
         <image name="factory" width="32" height="32"/>
+        <image name="fcd" width="32" height="32"/>
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
         <image name="qr.png" width="118" height="120"/>
@@ -6242,6 +6244,7 @@
         <image name="sg22" width="64" height="56"/>
         <image name="sg33" width="64" height="64"/>
         <image name="sg44" width="64" height="64"/>
+        <image name="sys" width="37" height="32"/>
         <image name="user2.png" width="473" height="473"/>
         <image name="white_SX" width="60" height="60"/>
     </resources>

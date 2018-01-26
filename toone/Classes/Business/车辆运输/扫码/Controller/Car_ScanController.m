@@ -7,18 +7,18 @@
 //
 
 #import "Car_ScanController.h"
-#import "SGGenerateQRCodeVC.h"
+//#import "SGGenerateQRCodeVC.h"
 #import "SGScanningQRCodeVC.h"
 #import <AVFoundation/AVFoundation.h>
 #import "SGAlertView.h"
 
-#import <AMapFoundationKit/AMapFoundationKit.h>
-#import <AMapLocationKit/AMapLocationKit.h>
+//#import <AMapFoundationKit/AMapFoundationKit.h>/
+//#import <AMapLocationKit/AMapLocationKit.h>
 
 
 @interface Car_ScanController ()
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (nonatomic, strong) AMapLocationManager *locationManager;
+//@property (nonatomic, strong) AMapLocationManager *locationManager;
 
 @end
 @implementation Car_ScanController
