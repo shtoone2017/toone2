@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +28,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ouc-s4-Ufq" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cnA-JE-fJG"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Ouc-s4-Ufq" secondAttribute="bottom" id="gdD-si-uZI"/>
+                            <constraint firstAttribute="bottom" secondItem="Ouc-s4-Ufq" secondAttribute="bottom" id="gdD-si-uZI"/>
                             <constraint firstItem="Ouc-s4-Ufq" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="lvR-XR-Sbd"/>
                             <constraint firstAttribute="trailing" secondItem="Ouc-s4-Ufq" secondAttribute="trailing" id="y1T-iE-qOc"/>
                         </constraints>

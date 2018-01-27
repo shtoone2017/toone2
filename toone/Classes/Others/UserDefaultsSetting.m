@@ -72,6 +72,16 @@ static UserDefaultsSetting * setting = nil;
     setting.shebString = [defaults objectForKey:@"shebStringKey"];
     //    超标处置类型
     setting.CBczlx = [defaults objectForKey:@"CBczlxKey"];
+    
+    
+    //水稳本地存贮数据
+    setting.biaoshi   = [defaults objectForKey:@"biaoshi_SWKey"];
+    setting.userType   = [defaults objectForKey:@"userType_SWKey"];
+    setting.shenehe   = [defaults objectForKey:@"shenehe_SWKey"];
+    setting.chuzhi   = [defaults objectForKey:@"chuzhi_SWKey"];
+    setting.zxdwshenhe   = [defaults objectForKey:@"zxdwshenhe_SWKey"];
+    setting.userFullName   = [defaults objectForKey:@"userFullName_SWKey"];
+    setting.randomSeed = [defaults objectForKey:@"seed_SWKey"];
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -120,6 +130,19 @@ static UserDefaultsSetting * setting = nil;
     [defaults setObject:self.shebString forKey:@"shebStringKey"];
     //超标处置类型
     [defaults setObject:self.CBczlx forKey:@"CBczlxKey"];
+    
+    
+    
+    //水稳本地存贮数据
+    [defaults setObject:self.biaoshi   forKey:@"biaoshi_SWKey"];
+    [defaults setObject:self.userType   forKey:@"userType_SWKey"];
+    [defaults setObject:self.shenehe   forKey:@"shenehe_SWKey"];
+    [defaults setObject:self.chuzhi   forKey:@"chuzhi_SWKey"];
+    [defaults setObject:self.zxdwshenhe   forKey:@"zxdwshenhe_SWKey"];
+    //    [defaults setObject:self.zzjgName   forKey:@"zzjgName_SWKey"];
+//    [defaults setObject:self.userFullName   forKey:@"userFullName_SWKey"];
+    [defaults setObject:self.randomSeed   forKey:@"seed_SWKey"];
+    
     [defaults synchronize];
 }
 

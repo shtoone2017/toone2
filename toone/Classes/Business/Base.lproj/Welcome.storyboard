@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ba9-gj-qEO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ba9-gj-qEO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -98,9 +98,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xmo-cX-xg7" firstAttribute="centerX" secondItem="1ZX-Xx-8kO" secondAttribute="centerX" id="8u8-r3-WRF"/>
-                            <constraint firstItem="nIW-K3-kVo" firstAttribute="top" secondItem="XMR-nO-uwS" secondAttribute="bottom" id="B5Z-ae-Pxr"/>
+                            <constraint firstAttribute="bottom" secondItem="XMR-nO-uwS" secondAttribute="bottom" id="B5Z-ae-Pxr"/>
                             <constraint firstAttribute="trailing" secondItem="XMR-nO-uwS" secondAttribute="trailing" id="Bot-aR-Iqg"/>
-                            <constraint firstItem="nIW-K3-kVo" firstAttribute="top" secondItem="Xmo-cX-xg7" secondAttribute="bottom" constant="50" id="H2y-gV-CW2"/>
+                            <constraint firstAttribute="bottom" secondItem="Xmo-cX-xg7" secondAttribute="bottom" constant="50" id="H2y-gV-CW2"/>
                             <constraint firstItem="XMR-nO-uwS" firstAttribute="leading" secondItem="1ZX-Xx-8kO" secondAttribute="leading" id="qlA-wk-1HN"/>
                             <constraint firstItem="XMR-nO-uwS" firstAttribute="top" secondItem="1ZX-Xx-8kO" secondAttribute="top" id="yFR-af-nUg"/>
                         </constraints>

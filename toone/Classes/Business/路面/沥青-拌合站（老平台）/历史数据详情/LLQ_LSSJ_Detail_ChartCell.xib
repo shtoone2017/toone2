@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LLQ_LSSJ_Detail_ChartCell" rowHeight="226" id="KGk-i7-Jjw" customClass="LLQ_LSSJ_Detail_ChartCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-ay-UQM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2C-Sg-2sQ">
+                        <rect key="frame" x="0.0" y="179.5" width="320" height="10"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXs-3p-9uG">
+                                <rect key="frame" x="5" y="3" width="5" height="5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" id="22X-8q-3Ry"/>
+                                    <constraint firstAttribute="height" constant="5" id="4sk-MO-85i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="允许波动上限" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwH-TQ-QIE">
+                                <rect key="frame" x="15" y="0.0" width="60" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="WCC-Jl-zGg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGu-kA-UBX">
+                                <rect key="frame" x="80" y="2.5" width="5" height="5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" id="HiG-cP-x16"/>
+                                    <constraint firstAttribute="height" constant="5" id="ifj-DR-OUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="允许波动下限" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYT-PU-QOe">
+                                <rect key="frame" x="90" y="0.0" width="60" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="bUC-ed-dLJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wD-aq-63c">
+                                <rect key="frame" x="155" y="2" width="5" height="5"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" id="P2a-et-Vjg"/>
+                                    <constraint firstAttribute="height" constant="5" id="X6L-Tu-w29"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标准级配" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V89-oP-lJy">
+                                <rect key="frame" x="165" y="0.0" width="60" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="moQ-kk-SCv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VGu-kA-UBX" firstAttribute="centerY" secondItem="I2C-Sg-2sQ" secondAttribute="centerY" id="1Bc-St-n2G"/>
+                            <constraint firstAttribute="height" constant="10" id="1gG-9e-isK"/>
+                            <constraint firstAttribute="bottom" secondItem="V89-oP-lJy" secondAttribute="bottom" id="1rW-Wy-trm"/>
+                            <constraint firstItem="3wD-aq-63c" firstAttribute="leading" secondItem="aYT-PU-QOe" secondAttribute="trailing" constant="5" id="2Dn-vk-bLX"/>
+                            <constraint firstItem="3wD-aq-63c" firstAttribute="centerY" secondItem="I2C-Sg-2sQ" secondAttribute="centerY" id="2Kd-R5-Rtg"/>
+                            <constraint firstItem="aYT-PU-QOe" firstAttribute="top" secondItem="I2C-Sg-2sQ" secondAttribute="top" id="5oE-po-5c0"/>
+                            <constraint firstAttribute="bottom" secondItem="aYT-PU-QOe" secondAttribute="bottom" id="8lk-Ml-Pga"/>
+                            <constraint firstItem="bXs-3p-9uG" firstAttribute="centerY" secondItem="I2C-Sg-2sQ" secondAttribute="centerY" id="9Qv-Pm-xlb"/>
+                            <constraint firstItem="aYT-PU-QOe" firstAttribute="leading" secondItem="VGu-kA-UBX" secondAttribute="trailing" constant="5" id="EMl-fr-mrP"/>
+                            <constraint firstItem="dwH-TQ-QIE" firstAttribute="leading" secondItem="bXs-3p-9uG" secondAttribute="trailing" constant="5" id="NIi-Lt-yJX"/>
+                            <constraint firstAttribute="bottom" secondItem="dwH-TQ-QIE" secondAttribute="bottom" id="QaD-hN-Emv"/>
+                            <constraint firstItem="dwH-TQ-QIE" firstAttribute="top" secondItem="I2C-Sg-2sQ" secondAttribute="top" id="eua-DN-bSy"/>
+                            <constraint firstItem="V89-oP-lJy" firstAttribute="leading" secondItem="3wD-aq-63c" secondAttribute="trailing" constant="5" id="o0E-Gv-4nf"/>
+                            <constraint firstItem="bXs-3p-9uG" firstAttribute="leading" secondItem="I2C-Sg-2sQ" secondAttribute="leading" constant="5" id="pYP-Z9-WtV"/>
+                            <constraint firstItem="VGu-kA-UBX" firstAttribute="leading" secondItem="dwH-TQ-QIE" secondAttribute="trailing" constant="5" id="sZP-FC-MSN"/>
+                            <constraint firstItem="V89-oP-lJy" firstAttribute="top" secondItem="I2C-Sg-2sQ" secondAttribute="top" id="yoi-Lr-LWc"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRL-Ld-Us1">
+                        <rect key="frame" x="0.0" y="189.5" width="320" height="10"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nET-R8-8NY">
+                                <rect key="frame" x="5" y="3" width="5" height="5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" id="Of4-19-Akh"/>
+                                    <constraint firstAttribute="height" constant="5" id="Ope-3B-mR1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际级配" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY7-wP-VPI">
+                                <rect key="frame" x="15" y="0.0" width="60" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="T50-Fk-RaH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nET-R8-8NY" firstAttribute="centerY" secondItem="NRL-Ld-Us1" secondAttribute="centerY" id="1Em-ff-YW4"/>
+                            <constraint firstItem="nET-R8-8NY" firstAttribute="leading" secondItem="NRL-Ld-Us1" secondAttribute="leading" constant="5" id="7L6-rf-f4f"/>
+                            <constraint firstAttribute="height" constant="10" id="Dgi-ki-itu"/>
+                            <constraint firstItem="fY7-wP-VPI" firstAttribute="leading" secondItem="nET-R8-8NY" secondAttribute="trailing" constant="5" id="Hls-kG-T9w"/>
+                            <constraint firstItem="fY7-wP-VPI" firstAttribute="top" secondItem="NRL-Ld-Us1" secondAttribute="top" id="ZC7-YT-u6p"/>
+                            <constraint firstAttribute="bottom" secondItem="fY7-wP-VPI" secondAttribute="bottom" id="ovk-32-Csb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WCD-ay-UQM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2JN-W0-rPB"/>
+                    <constraint firstAttribute="trailing" secondItem="NRL-Ld-Us1" secondAttribute="trailing" id="BQT-pS-pdU"/>
+                    <constraint firstItem="I2C-Sg-2sQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BW1-99-kb7"/>
+                    <constraint firstItem="NRL-Ld-Us1" firstAttribute="top" secondItem="I2C-Sg-2sQ" secondAttribute="bottom" id="NAz-Ix-oKb"/>
+                    <constraint firstItem="NRL-Ld-Us1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Qh3-OS-xUT"/>
+                    <constraint firstAttribute="trailing" secondItem="WCD-ay-UQM" secondAttribute="trailing" id="a5v-xh-SVF"/>
+                    <constraint firstAttribute="trailing" secondItem="I2C-Sg-2sQ" secondAttribute="trailing" id="anT-vs-HZN"/>
+                    <constraint firstItem="I2C-Sg-2sQ" firstAttribute="top" secondItem="WCD-ay-UQM" secondAttribute="bottom" id="f5s-q6-r0X"/>
+                    <constraint firstAttribute="bottom" secondItem="WCD-ay-UQM" secondAttribute="bottom" constant="20" id="gDv-da-gHr"/>
+                    <constraint firstItem="WCD-ay-UQM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lBF-fq-el2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="chartParentView" destination="WCD-ay-UQM" id="7RH-rU-TJo"/>
+            </connections>
+            <point key="canvasLocation" x="-197" y="-78"/>
+        </tableViewCell>
+    </objects>
+</document>

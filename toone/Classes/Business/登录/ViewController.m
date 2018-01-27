@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "HNT_SYS_InnerController.h"
 #import "MyNavigationController.h"
+#import "MyTabBarController.h"
+#import "ChooseViewController.h"
 
 @interface ViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet NoCopyTextField *acountTextField;
@@ -147,11 +149,18 @@
                     setting.hntchaobiaoReal = [json[@"quanxian"][@"WZBHZ"] boolValue];
                     setting.syschaobiaoReal = [json[@"quanxian"][@"WZSYS"] boolValue];
                     setting.wzgcbReal = [json[@"quanxian"][@"WZGCB"] boolValue];
-                    setting.login = YES;
-                    setting.type = json[@"type"];
+                    /***益马***/
+                    setting.userType = json[@"userType"];
+                    setting.biaoshi = json[@"biaoshi"];
+                    setting.shenehe = Format(json[@"shenehe"]);
+                    setting.chuzhi = Format(json[@"chuzhi"]);
+                    setting.zxdwshenhe = Format(json[@"zxdwshenhe"]);
+                    setting.userFullName = json[@"userFullName"];
                     
-                    setting.loginDepartId  = json[@"departId"];
-                    setting.userRole  = json[@"userRole"];
+                    setting.login = YES;
+//                    setting.type = json[@"type"];
+//                    setting.loginDepartId  = json[@"departId"];
+//                    setting.userRole  = json[@"userRole"];
                     [setting saveToSandbox];
                 });
                 
@@ -170,6 +179,11 @@
                         id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
                         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                     }
+                    ChooseViewController * vc = (ChooseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChooseViewController"];
+//                    MyNavigationController * nvc = [[MyNavigationController alloc] initWithRootViewController:vc];
+                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    
+                    
                     [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });
             }else{

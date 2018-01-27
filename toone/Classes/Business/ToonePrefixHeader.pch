@@ -13,8 +13,9 @@
 //#define PGY_APP_ID @"1f4d0d96e73756f0cfaf09a9f2b830d4" //中铁十一局
 
 //云部署地址
-#define baseUrl      @"http://116.62.30.27:8081/zj4jymqms/"   //中建四局
+//#define baseUrl      @"http://116.62.30.27:8081/zj4jymqms/"   //中建四局
 //#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"  //中铁十一局
+#define baseUrl       @"http://112.124.12.254:8082/hnymmss/"    //湖南益马
 
 //#define baseUrl      @"http://192.168.1.181:8082/jeecg/"
 
@@ -58,6 +59,7 @@
 #import "SGTextView.h"
 #import "DGActivityIndicatorView.h"
 #import "AAGlobalMacro.h"
+#import "RATreeView.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 #import "SGChart.h"
@@ -65,6 +67,7 @@
 #import "TPKeyboardAvoidingTableView.h"
 #import "SVProgressHUD.h"
 #import "UpButton.h"
+#import "DWURunLoopWorkDistribution.h"
 
 
 /**************************摊铺*********************************/
@@ -126,12 +129,91 @@
 //施工队
 #define App_SGD  FormatString(baseUrl,@"appWZproject.do?AppWzshigongteam&departId=%@")
 
+        /******************水稳*********************/
+//登录
+#define AppLogin_2   FormatString(baseUrl,@"app/AppLogin?userName=%@&userPwd=%@&OSType=3")
+//水稳预警统计
+#define warningStatistics   FormatString(baseUrl,@"app/warningStatistics?")
+//组织机构接口
+#define departTree   FormatString(baseUrl,@"app/departTree?")
+//水稳历史数据查询
+#define appSwcllist   FormatString(baseUrl,@"app/appSwcllist?")
+//水稳超标查询
+#define chaoBiaoList   FormatString(baseUrl,@"app/chaoBiaoList?")
+//超标查询详情页
+#define chaoBiaoXQ   FormatString(baseUrl,@"app/chaoBiaoXQ?")
+//水稳历史数据查询详情页
+#define appSwclXQ   FormatString(baseUrl,@"app/appSwclXQ?")
+
+//水稳超标处置
+#define appSWChaobiaoChuzhi   FormatString(baseUrl,@"app/appSWChaobiaoChuzhi?")
+//水稳超标审批
+#define appHntChaobiaoShenpi   FormatString(baseUrl,@"app/appHntChaobiaoShenpi?")
+//水稳超标咨询
+#define appHntChaobiaoZXDWShenpi   FormatString(baseUrl,@"app/appHntChaobiaoZXDWShenpi?")
+
+//水稳材料统计
+#define swmaterial   FormatString(baseUrl,@"app/swmaterial?")
+//拌合站设备接口
+#define machineList   FormatString(baseUrl,@"app/machineList?")
+//水稳历史数据查询使用部位接口
+#define url_usePosition   FormatString(baseUrl,@"app/usePosition?")
+//沥青历史数据混合料型号接口
+#define appLq_usePosition   FormatString(baseUrl,@"appLq/usePosition?")
+//沥青预警统计
+#define lqWarningStatistics   FormatString(baseUrl,@"appLq/lqWarningStatistics?")
+//沥青超标查询
+#define lqchaoBiaoList   FormatString(baseUrl,@"appLq/lqchaoBiaoList?")
+//沥青材料统计
+#define lqmaterial   FormatString(baseUrl,@"appLq/lqmaterial?")
+
+//沥青超标查询详情页
+#define lqchaoBiaoXQ   FormatString(baseUrl,@"appLq/lqchaoBiaoXQ?")
+//沥青超标处置
+#define appLQChaobiaoChuzhi   FormatString(baseUrl,@"appLq/appLQChaobiaoChuzhi?")
+//沥青超标审批
+#define appLqChaobiaoShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoShenpi?")
+//沥青超标咨询
+#define appLqChaobiaoZXDWShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoZXDWShenpi?")
+//沥青历史数据查询详情页
+#define liqingxixx   FormatString(baseUrl,@"appLq/liqingxixx?")
+
+//沥青历史数据查询
+#define lqgallclList   FormatString(baseUrl,@"appLq/lqgallclList?")
+
+
+/**************************沥青试验室*********************************/
+//马歇尔列表
+#define MXEList FormatString(baseUrl,@"app/maxieerChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
+//马歇尔详情
+#define MXE_Datail FormatString(baseUrl,@"app/maxieerXX?F_GUID=%@")
+//软化度列表
+#define RHList FormatString(baseUrl,@"app/ruanhuadianChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
+//软化详情
+#define RH_Datail FormatString(baseUrl,@"app/ruanhuadianXX?F_GUID=%@")
+//试验室主页
+#define LLqSYSMain   FormatString(baseUrl,@"appXc/lqsysHome?")
+//摊铺温度
+#define TP_TPWD FormatString(baseUrl,@"appXc/tmpwenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
+//终压温度
+#define TP_ZYWD FormatString(baseUrl,@"appXc/nywenduchaxun?tmpno=%@&starttime=%@&endtime=%@&maxPageItems=%@&pageNo=%@&departType=%@&biaoshiid=%@")
+//设备列表
+#define LLQ_SYS_SB   FormatString(baseUrl,@"app/machineList?departType=%@&biaoshiid=%@&machineType=%@")
+//针入列表
+#define ZRList FormatString(baseUrl,@"app/zhenruduChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
+//针入详情
+#define ZR_Datail FormatString(baseUrl,@"app/zhenruduXX?F_GUID=%@")
+//延度列表
+#define YDList FormatString(baseUrl,@"app/yanduChaXun?F_SBBH=%@&isQualified=%@&pageNo=%@&maxPageItems=%@&startTime=%@&endTime=%@&departType=%@&biaoshiid=%@")
+//延度详情
+#define YD_Datail FormatString(baseUrl,@"app/yanduXX?F_GUID=%@")
+
 
 /*
- 2-----------------------
+ 2--------------------物资-------------------
  */
 //登录
-#define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
+//#define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
 //试验室列表
 #define sysHome_3    FormatString(baseUrl,@"sysController.do?sysHome&userGroupId=%@&startTime=%@&endTime=%@")
 //拌合站列表
