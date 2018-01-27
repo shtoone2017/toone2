@@ -288,7 +288,7 @@
         _biaoshiid = _headCell.biaoshiid;
     }
     
-    NSString *urlString = FormatString(baseUrl, @"appSys/QrcodeUpload");
+    NSString *urlString = FormatString(baseUrl, @"appSys/QrcodeUpdata");//appSys/QrcodeUpload
     NSDictionary *dic = @{
                           @"uuid":_uuid1?:@"",
                           @"userName":_userFullName?:@"",
@@ -375,6 +375,9 @@
             }
         }else {
             NSLog(@"Error: %@, %@, %@", error, response, responseObject);
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"服务器异常";
+            [hud hideAnimated:YES afterDelay:2.0];
         }
         
     }] resume];
