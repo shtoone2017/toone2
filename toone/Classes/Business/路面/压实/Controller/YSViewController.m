@@ -8,6 +8,7 @@
 
 #import "YSViewController.h"
 #import "YSView.h"
+#import "SSYSViewController.h"
 
 @interface YSViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tb;
@@ -27,7 +28,8 @@
     [self addPanGestureRecognizer];
 }
 
--(void)loadUI{
+-(void)loadUI
+{
     UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
     btn3.tag  = 3;
     [btn3 addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
@@ -41,7 +43,10 @@
     [self.tb.mj_header beginRefreshing];
 }
 -(void)searchButtonClick {
-    [super pan];
+//    [super pan];
+    SSYSViewController *vc = [SSYSViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark - tableView

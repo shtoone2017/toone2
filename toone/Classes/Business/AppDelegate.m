@@ -36,11 +36,11 @@
     
     //集成蒲公英自动更新版本
     //启动基本SDK
-    [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
-    //启动更新检查SDK
-    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
-    [[PgyUpdateManager sharedPgyManager] checkUpdateWithDelegete:self selector:@selector(updateMethod:)];
-    [[PgyUpdateManager sharedPgyManager] updateLocalBuildNumber];
+//    [[PgyManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+//    //启动更新检查SDK
+//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:PGY_APP_ID];
+//    [[PgyUpdateManager sharedPgyManager] checkUpdateWithDelegete:self selector:@selector(updateMethod:)];
+//    [[PgyUpdateManager sharedPgyManager] updateLocalBuildNumber];
     
     if ([UserDefaultsSetting shareSetting].isEnterApplication) {
 //        if ([UserDefaultsSetting shareSetting].isLogin) {

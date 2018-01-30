@@ -498,6 +498,10 @@
 		9C20240F1F38021200F79559 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C20240E1F38021200F79559 /* ScreenView.m */; };
 		9C40A2B81F7112E800E2A324 /* wsc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C40A2B61F7112E800E2A324 /* wsc.plist */; };
 		9C40A2B91F7112E800E2A324 /* scz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C40A2B71F7112E800E2A324 /* scz.plist */; };
+		9C548DBF201EC133009AB343 /* SSYSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DBD201EC133009AB343 /* SSYSViewController.m */; };
+		9C548DC0201EC133009AB343 /* SSYSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C548DBE201EC133009AB343 /* SSYSViewController.xib */; };
+		9C548DC4201EC16F009AB343 /* YSRoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC3201EC16F009AB343 /* YSRoadView.m */; };
+		9C548DC8201EC998009AB343 /* YS_ZhuangHao_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */; };
 		9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */; };
 		9CA7D9081F4BC07500BA2C91 /* TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */; };
 		9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */; };
@@ -1591,6 +1595,13 @@
 		9C20240E1F38021200F79559 /* ScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		9C40A2B61F7112E800E2A324 /* wsc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wsc.plist; sourceTree = "<group>"; };
 		9C40A2B71F7112E800E2A324 /* scz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scz.plist; sourceTree = "<group>"; };
+		9C548DBC201EC133009AB343 /* SSYSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSYSViewController.h; sourceTree = "<group>"; };
+		9C548DBD201EC133009AB343 /* SSYSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSYSViewController.m; sourceTree = "<group>"; };
+		9C548DBE201EC133009AB343 /* SSYSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSYSViewController.xib; sourceTree = "<group>"; };
+		9C548DC2201EC16F009AB343 /* YSRoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSRoadView.h; sourceTree = "<group>"; };
+		9C548DC3201EC16F009AB343 /* YSRoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSRoadView.m; sourceTree = "<group>"; };
+		9C548DC6201EC998009AB343 /* YS_ZhuangHao_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_ZhuangHao_Model.h; sourceTree = "<group>"; };
+		9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_ZhuangHao_Model.m; sourceTree = "<group>"; };
 		9CA7D9031F4BBF5100BA2C91 /* TZD_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailModel.h; sourceTree = "<group>"; };
 		9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailModel.m; sourceTree = "<group>"; };
 		9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailViewController.h; sourceTree = "<group>"; };
@@ -4022,6 +4033,7 @@
 		42F9923D201B09E00044B77B /* 压实 */ = {
 			isa = PBXGroup;
 			children = (
+				9C548DBB201EC112009AB343 /* 实时压实 */,
 				42F9923E201B09E00044B77B /* Controller */,
 				42F99241201B09E00044B77B /* View */,
 			);
@@ -4525,6 +4537,36 @@
 				9C1AB46B1F95D2E900CFE673 /* Exp72View.m */,
 			);
 			path = EXP72;
+			sourceTree = "<group>";
+		};
+		9C548DBB201EC112009AB343 /* 实时压实 */ = {
+			isa = PBXGroup;
+			children = (
+				9C548DBC201EC133009AB343 /* SSYSViewController.h */,
+				9C548DBD201EC133009AB343 /* SSYSViewController.m */,
+				9C548DBE201EC133009AB343 /* SSYSViewController.xib */,
+				9C548DC5201EC956009AB343 /* model */,
+				9C548DC1201EC138009AB343 /* View */,
+			);
+			path = "实时压实";
+			sourceTree = "<group>";
+		};
+		9C548DC1201EC138009AB343 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C548DC2201EC16F009AB343 /* YSRoadView.h */,
+				9C548DC3201EC16F009AB343 /* YSRoadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C548DC5201EC956009AB343 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9C548DC6201EC998009AB343 /* YS_ZhuangHao_Model.h */,
+				9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		9CAAAF8A1F43D9DB008F43BA /* Part4(配合比) */ = {
@@ -5584,6 +5626,7 @@
 				42F9919B201AD3760044B77B /* LQ_SW_Cell.xib in Resources */,
 				D20064751DFF86800021E293 /* HNT_YLSY_Cell.xib in Resources */,
 				42E2886D1F4565FB0002AF72 /* GCB_RWD_Cell.xib in Resources */,
+				9C548DC0201EC133009AB343 /* SSYSViewController.xib in Resources */,
 				42F9919E201AD3760044B77B /* SW_CBCZ_View.xib in Resources */,
 				18B871CD1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				42F99124201AD35C0044B77B /* LLQ_CBCZ_Detail_ZiXun_Cell.xib in Resources */,
@@ -5758,7 +5801,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -5775,6 +5818,7 @@
 				42F99194201AD3760044B77B /* SW_CLHS_Controller.m in Sources */,
 				42E288391F43E0AC0002AF72 /* GCB_JZL_Controller.m in Sources */,
 				D200646A1DFF86800021E293 /* HNT_BHZ_Controller.m in Sources */,
+				9C548DBF201EC133009AB343 /* SSYSViewController.m in Sources */,
 				42AC72171E30C576007D8F57 /* LqNodeViewController.m in Sources */,
 				42AC721F1E30C668007D8F57 /* MySegmentedControl.m in Sources */,
 				D200645D1DFF86800021E293 /* AppDelegate.m in Sources */,
@@ -6009,6 +6053,7 @@
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				9C05F07F1F3BFC4400BF4627 /* JSONKeyMapper.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
+				9C548DC8201EC998009AB343 /* YS_ZhuangHao_Model.m in Sources */,
 				9C05F0771F3BFC4400BF4627 /* JSONModel.m in Sources */,
 				9C20240F1F38021200F79559 /* ScreenView.m in Sources */,
 				9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */,
@@ -6151,6 +6196,7 @@
 				187C72F01E30B1810072F33A /* DGActivityIndicatorAnimation.m in Sources */,
 				42E288D91F4BCF110002AF72 /* MyInputController.m in Sources */,
 				42F991AD201AD3760044B77B /* SW_LSSJ_Detail_HeadCell.m in Sources */,
+				9C548DC4201EC16F009AB343 /* YSRoadView.m in Sources */,
 				187C730D1E30B1810072F33A /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				42F99245201B0C9C0044B77B /* YSViewController.m in Sources */,
 				42E288711F4578920002AF72 /* GCB_JCB_Cell.m in Sources */,
@@ -6407,7 +6453,7 @@
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.wzgl;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.wzgl0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -6430,7 +6476,7 @@
 				INFOPLIST_FILE = toone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.wzgl;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.shtoone.wzgl0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
