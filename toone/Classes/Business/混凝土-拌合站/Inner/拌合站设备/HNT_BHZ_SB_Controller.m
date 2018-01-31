@@ -150,6 +150,7 @@
         {
             urlString = [NSString stringWithFormat:App_SGD,departId];
         }
+
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
             NSMutableArray * datas = [NSMutableArray array];

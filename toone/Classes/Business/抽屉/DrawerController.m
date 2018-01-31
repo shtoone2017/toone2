@@ -97,12 +97,6 @@
             [[UserDefaultsSetting shareSetting] saveToSandbox];
         });
     }
-//    if(EqualToString(@"版本", drawer.title)){
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 200ull*NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
-//            NSString * address = @"https://www.pgyer.com/3uSz";
-//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:address]];
-//        });
-//    }
 }
 
 -(void)dealloc{
@@ -121,7 +115,6 @@
 }
 -(void)show{
     
-//    UIWindow * window = [[UIApplication sharedApplication].windows lastObject];
     UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
     window.userInteractionEnabled = NO;
     self.control.hidden = YES;
@@ -144,7 +137,6 @@
 
 }
 -(void)remove{
-//    UIWindow * window = [[UIApplication sharedApplication].windows lastObject];
     UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
     self.control.hidden = YES;
     window.userInteractionEnabled = NO;

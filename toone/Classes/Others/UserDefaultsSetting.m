@@ -82,6 +82,8 @@ static UserDefaultsSetting * setting = nil;
     setting.zxdwshenhe   = [defaults objectForKey:@"zxdwshenhe_SWKey"];
     setting.userFullName   = [defaults objectForKey:@"userFullName_SWKey"];
     setting.randomSeed = [defaults objectForKey:@"seed_SWKey"];
+    //路线id
+    setting.road_id = [defaults objectForKey:@"road_idKey"];
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -142,6 +144,9 @@ static UserDefaultsSetting * setting = nil;
     //    [defaults setObject:self.zzjgName   forKey:@"zzjgName_SWKey"];
 //    [defaults setObject:self.userFullName   forKey:@"userFullName_SWKey"];
     [defaults setObject:self.randomSeed   forKey:@"seed_SWKey"];
+    
+    //路线id
+    [defaults setObject:self.road_id   forKey:@"road_idKey"];
     
     [defaults synchronize];
 }
