@@ -17,6 +17,9 @@
 //#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"  //中铁十一局
 #define baseUrl       @"http://112.124.12.254:8082/hnymmss/"    //湖南益马
 
+//压实服务器地址
+#define baseUrl2       @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/"
+
 //#define baseUrl      @"http://192.168.1.181:8082/jeecg/"
 
 #define FuncLog                            // NSLog(@"%s",__func__)
@@ -68,6 +71,8 @@
 #import "SVProgressHUD.h"
 #import "UpButton.h"
 #import "DWURunLoopWorkDistribution.h"
+
+#import "JSONModel.h"
 
 
 /**************************摊铺*********************************/
@@ -281,4 +286,9 @@
 
 //沥青拌合站材料用量查询
 #define LQMaterial FormatString(baseUrl,@"lqSCcounController.do?materialcount&shebeibianhao=%@&startTime=%@&endTime=%@&userGroupId=%@")
+
+/**************************压实*********************************/
+//压实桩号
+#define YS_ZhuangHao FormatString(baseUrl2,@"rs_DeviceController/GetStake")
+
 #endif /* ToonePrefixHeader_pch */
