@@ -502,6 +502,10 @@
 		9C548DC0201EC133009AB343 /* SSYSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C548DBE201EC133009AB343 /* SSYSViewController.xib */; };
 		9C548DC4201EC16F009AB343 /* YSRoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC3201EC16F009AB343 /* YSRoadView.m */; };
 		9C548DC8201EC998009AB343 /* YS_ZhuangHao_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */; };
+		9C79A4892022B495002F41AC /* YSMJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A4872022B495002F41AC /* YSMJViewController.m */; };
+		9C79A48A2022B495002F41AC /* YSMJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C79A4882022B495002F41AC /* YSMJViewController.xib */; };
+		9C79A48E2022B7AB002F41AC /* Exp9View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A48D2022B7AB002F41AC /* Exp9View.m */; };
+		9C79A4902022B7BF002F41AC /* Exp9View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C79A48F2022B7BF002F41AC /* Exp9View.xib */; };
 		9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */; };
 		9CA7D9081F4BC07500BA2C91 /* TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */; };
 		9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */; };
@@ -523,6 +527,7 @@
 		9CB851CE1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB851CC1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib */; };
 		9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */; };
 		9CD8DDB31F417ADB00F67C8B /* LCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDB21F417ADB00F67C8B /* LCDetailViewController.m */; };
+		9CDF80D92021685B00650228 /* YS_BianshuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF80D82021685B00650228 /* YS_BianshuModel.m */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1602,6 +1607,12 @@
 		9C548DC3201EC16F009AB343 /* YSRoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSRoadView.m; sourceTree = "<group>"; };
 		9C548DC6201EC998009AB343 /* YS_ZhuangHao_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_ZhuangHao_Model.h; sourceTree = "<group>"; };
 		9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_ZhuangHao_Model.m; sourceTree = "<group>"; };
+		9C79A4862022B495002F41AC /* YSMJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSMJViewController.h; sourceTree = "<group>"; };
+		9C79A4872022B495002F41AC /* YSMJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSMJViewController.m; sourceTree = "<group>"; };
+		9C79A4882022B495002F41AC /* YSMJViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YSMJViewController.xib; sourceTree = "<group>"; };
+		9C79A48C2022B7AB002F41AC /* Exp9View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exp9View.h; sourceTree = "<group>"; };
+		9C79A48D2022B7AB002F41AC /* Exp9View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Exp9View.m; sourceTree = "<group>"; };
+		9C79A48F2022B7BF002F41AC /* Exp9View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Exp9View.xib; sourceTree = "<group>"; };
 		9CA7D9031F4BBF5100BA2C91 /* TZD_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailModel.h; sourceTree = "<group>"; };
 		9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailModel.m; sourceTree = "<group>"; };
 		9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailViewController.h; sourceTree = "<group>"; };
@@ -1640,6 +1651,8 @@
 		9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_TZD_DetailViewController.m; sourceTree = "<group>"; };
 		9CD8DDB11F417ADB00F67C8B /* LCDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDetailViewController.h; sourceTree = "<group>"; };
 		9CD8DDB21F417ADB00F67C8B /* LCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailViewController.m; sourceTree = "<group>"; };
+		9CDF80D72021685B00650228 /* YS_BianshuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_BianshuModel.h; sourceTree = "<group>"; };
+		9CDF80D82021685B00650228 /* YS_BianshuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_BianshuModel.m; sourceTree = "<group>"; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -4033,6 +4046,8 @@
 		42F9923D201B09E00044B77B /* 压实 */ = {
 			isa = PBXGroup;
 			children = (
+				9C79A4852022B469002F41AC /* 压实距离 */,
+				9C79A4842022B455002F41AC /* 压实面积 */,
 				9C548DBB201EC112009AB343 /* 实时压实 */,
 				42F9923E201B09E00044B77B /* Controller */,
 				42F99241201B09E00044B77B /* View */,
@@ -4565,8 +4580,37 @@
 			children = (
 				9C548DC6201EC998009AB343 /* YS_ZhuangHao_Model.h */,
 				9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */,
+				9CDF80D72021685B00650228 /* YS_BianshuModel.h */,
+				9CDF80D82021685B00650228 /* YS_BianshuModel.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		9C79A4842022B455002F41AC /* 压实面积 */ = {
+			isa = PBXGroup;
+			children = (
+				9C79A4862022B495002F41AC /* YSMJViewController.h */,
+				9C79A4872022B495002F41AC /* YSMJViewController.m */,
+				9C79A4882022B495002F41AC /* YSMJViewController.xib */,
+			);
+			path = "压实面积";
+			sourceTree = "<group>";
+		};
+		9C79A4852022B469002F41AC /* 压实距离 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "压实距离";
+			sourceTree = "<group>";
+		};
+		9C79A48B2022B775002F41AC /* EXP9 */ = {
+			isa = PBXGroup;
+			children = (
+				9C79A48C2022B7AB002F41AC /* Exp9View.h */,
+				9C79A48D2022B7AB002F41AC /* Exp9View.m */,
+				9C79A48F2022B7BF002F41AC /* Exp9View.xib */,
+			);
+			path = EXP9;
 			sourceTree = "<group>";
 		};
 		9CAAAF8A1F43D9DB008F43BA /* Part4(配合比) */ = {
@@ -5194,6 +5238,7 @@
 		D20063FA1DFF86800021E293 /* 组件 */ = {
 			isa = PBXGroup;
 			children = (
+				9C79A48B2022B775002F41AC /* EXP9 */,
 				9C1AB4661F95D2E900CFE673 /* EXP72 */,
 				42E288731F4592DB0002AF72 /* EXP71 */,
 				42E2884F1F442A700002AF72 /* EXP51 */,
@@ -5608,6 +5653,7 @@
 				42F99126201AD35C0044B77B /* LLQ_CBCZ_Detail_ZiXun_Controller.xib in Resources */,
 				9CA7D90D1F4BC2B000BA2C91 /* TZD_DetailCell.xib in Resources */,
 				42AC716F1E30C393007D8F57 /* LQ_CLHS_Cell.xib in Resources */,
+				9C79A4902022B7BF002F41AC /* Exp9View.xib in Resources */,
 				42F991AB201AD3760044B77B /* SW_LSSJ_Detail_DataCell.xib in Resources */,
 				18B871D71E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.xib in Resources */,
 				D20064441DFF86800021E293 /* CJMonthDayCollectionCell.xib in Resources */,
@@ -5640,6 +5686,7 @@
 				42F991B9201AD3760044B77B /* SW_CBCZ_Detail_HeadCell.xib in Resources */,
 				42F99110201AD35C0044B77B /* LLQ_LSSJ_Detail_DataCell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
+				9C79A48A2022B495002F41AC /* YSMJViewController.xib in Resources */,
 				8C2840691EB1127500440413 /* TP_NY_Controller.xib in Resources */,
 				42F99109201AD35C0044B77B /* LLQ_CLHS_ChatCell.xib in Resources */,
 				42F991BB201AD3760044B77B /* SW_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
@@ -6003,6 +6050,7 @@
 				42E288551F442A700002AF72 /* Exp51_Xib_View.m in Sources */,
 				18B871CC1E1F92CA00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell.m in Sources */,
 				D20064AA1DFF86800021E293 /* Colours.m in Sources */,
+				9C79A4892022B495002F41AC /* YSMJViewController.m in Sources */,
 				9C05F0801F3BFC4400BF4627 /* JSONValueTransformer.m in Sources */,
 				42F991AF201AD3760044B77B /* SW_LSSJ_DetailController.m in Sources */,
 				18B871DB1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.m in Sources */,
@@ -6200,6 +6248,7 @@
 				187C730D1E30B1810072F33A /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				42F99245201B0C9C0044B77B /* YSViewController.m in Sources */,
 				42E288711F4578920002AF72 /* GCB_JCB_Cell.m in Sources */,
+				9C79A48E2022B7AB002F41AC /* Exp9View.m in Sources */,
 				18B871D61E1F933F00F9DD53 /* HNT_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				8C283F471EB0A01C00440413 /* BackgroundLocationViewController.m in Sources */,
 				426E90D6200CD129001FF8AE /* AAAreaspline.m in Sources */,
@@ -6229,6 +6278,7 @@
 				187C72FD1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				42AC717E1E30C393007D8F57 /* LQ_Model.m in Sources */,
 				42E288C31F49856E0002AF72 /* GCB_RWD_Detail_DataCell.m in Sources */,
+				9CDF80D92021685B00650228 /* YS_BianshuModel.m in Sources */,
 				425AE0E81F341C360048D96B /* GCB_Controller.m in Sources */,
 				42F991A7201AD3760044B77B /* SW_LSSJ_Detail_ChartCell.m in Sources */,
 				42E7CA4B1F53BB9600708235 /* YMTimePicker.m in Sources */,

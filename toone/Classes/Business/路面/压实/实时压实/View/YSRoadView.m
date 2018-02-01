@@ -18,22 +18,35 @@
 @end
 
 @implementation YSRoadView
++ (Class)layerClass
+{
+    return  [CAShapeLayer class];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1];
+    }
+    return self;
+}
+
 
 - (void)drawRect:(CGRect)rect {
-    self.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1];
-//    self.backgroundColor = [UIColor yellowColor];
-    [self creteBezierPathWithData:_leftData];
-    [self creteBezierPathWithData:_rightData];
+    [super drawRect:rect];
+    if(_leftData&&_leftData.count>0 && _rightData&&_rightData.count > 0)
+    {
+        [self creteBezierPathWithData:_leftData];
+        [self creteBezierPathWithData:_rightData];
+    }
+    //    [self drawBianshu];
 }
+
 
 - (void)creteBezierPathWithData:(NSArray *)data
 {
-    UIColor *color = [UIColor blackColor];
-    [color set]; //设置线条颜色
     path = [UIBezierPath bezierPath];
-    path.lineWidth = 1.5;
-    path.lineCapStyle = kCGLineCapButt; //线条拐角
-    path.lineJoinStyle = kCGLineCapSquare; //终点处理
     if (data && data.count >0)
     {
         YS_ZhuangHao_Model * model = data.firstObject;
@@ -54,24 +67,50 @@
             
         }
     }
-    [path stroke];
+    CAShapeLayer *roadLayer = [CAShapeLayer layer];
+    roadLayer.frame =  self.bounds;
+    [roadLayer setFillColor:[UIColor clearColor].CGColor];
+    [roadLayer setStrokeColor:[UIColor blackColor].CGColor];
+    [roadLayer setLineWidth:1.0f];
+    [roadLayer setLineJoin:kCALineJoinMiter];
+    roadLayer.path = path.CGPath;
+    [self.layer addSublayer:roadLayer];
 }
 
-- (void)setLeftData:(NSArray *)leftData
+- (void)drawBianshu
 {
-    _leftData = leftData;
-    [self setNeedsDisplay];
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    if(_bianshuData && _bianshuData.count>0)
+    {
+        for (int i = 0; i < _bianshuData.count; i++)
+        {
+            YS_BianshuModel *model = _bianshuData[i];
+            CGContextAddEllipseInRect(ctx, CGRectMake(model.lng*YS_Scale+StartPoint_x,model.lat*YS_Scale+StartPoint_y, 1, 1));
+        }
+    }
+    CGContextSetStrokeColorWithColor(ctx,[UIColor blackColor].CGColor);
+    CGContextSetLineWidth(ctx, 1);
+    CGContextStrokePath(ctx);
 }
 
-- (void)setRightData:(NSArray *)rightData
-{
-    _rightData = rightData;
-    [self setNeedsDisplay];
 
-}
-
-//+ (Class)layerClass {
-//    return [CATiledLayer class];
+//- (void)setLeftData:(NSArray *)leftData
+//{
+//    _leftData = leftData;
+//
 //}
+//
+//- (void)setRightData:(NSArray *)rightData
+//{
+//    _rightData = rightData;
+//    [self setNeedsDisplay];
+//}
+//
+//- (void)setBianshuData:(NSArray *)bianshuData
+//{
+//    _bianshuData = bianshuData;
+//
+//}
+
 
 @end

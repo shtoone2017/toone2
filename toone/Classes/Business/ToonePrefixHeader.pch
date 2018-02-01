@@ -290,5 +290,12 @@
 /**************************压实*********************************/
 //压实桩号
 #define YS_ZhuangHao FormatString(baseUrl2,@"rs_DeviceController/GetStake")
+//遍数
+#define YS_Bianshu FormatString(baseUrl2,@"rs_DeviceController/GetGrid")
+
+
+//面积统计
+#define YS_Mianji FormatString(baseUrl2,@"rs_DeviceController/AreaStatistics")
+
 
 #endif /* ToonePrefixHeader_pch */

@@ -19,14 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.bgview.minimumZoomScale = 0.1;
-    self.bgview.maximumZoomScale = 10;
-    self.bgview.zoomScale = 0.5;
-    self.bgview.delegate = self;
     
-    self.road = [YSRoadView new];
-    _road.frame = CGRectMake(0, 0, 6000, 2000);
-    [self.bgview addSubview:_road];
+    
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:[NSString stringWithFormat:@"%@?road_id=f9a816c15f7aa4ca015f7cbf18aa004d",YS_ZhuangHao] parameter:nil success:^(id json) {
         NSMutableArray *leftArr = [NSMutableArray array];
         NSMutableArray *rightArr = [NSMutableArray array];
@@ -67,19 +61,41 @@
             
         }
         
+        
+        CGFloat a_width = (max_x+fabsf(min_x)) * YS_Scale+100;
+        CGFloat a_height = (max_y+fabsf(min_y)) * YS_Scale+100;
+        
+        
+        self.bgview = [UIScrollView new];
+        _bgview.frame = CGRectMake(0, 0, Screen_w, Screen_h);
+        self.bgview.contentSize = CGSizeMake(a_width, a_height);
+        self.bgview.backgroundColor = [UIColor redColor];
+        self.bgview.minimumZoomScale = 0.3;
+        self.bgview.maximumZoomScale = 10;
+        self.bgview.zoomScale = 0.3;
+        self.bgview.delegate = self;
+        [self.view addSubview:_bgview];
+        
+        self.road = [[YSRoadView alloc] initWithFrame:CGRectMake(0, 0, a_width, a_height)];
         _road.leftData = leftArr;
         _road.rightData = rightArr;
         _road.gardenData = gardenArr;
         _road.bridgeData = bridgeArr;
-        CGFloat a_width = (max_x+fabsf(min_x)) * YS_Scale+100;
-        CGFloat a_height = (max_y+fabsf(min_y)) * YS_Scale+100;
-        _road.frame = CGRectMake(0, 0, a_width, a_height);
-        _bgview.contentSize = CGSizeMake(a_width, a_height);
+        [self.bgview addSubview:_road];
         self.bgview.contentOffset = CGPointMake(0, _bgview.contentSize.height);
 
     } failure:^(NSError *error) {
         
     }];
+    
+//    [[HTTP shareAFNNetworking] requestMethod:GET urlString:[NSString stringWithFormat:@"%@?road_id=f9a816c15e50be21015e566322495fe0&pressLayer=2&x_min=-6&x_max=-317&y_min=0&y_max=1455",YS_Bianshu] parameter:nil success:^(id json) {
+//        NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
+//        _road.bianshuData = datas;
+//        
+//    } failure:^(NSError *error) {
+//        
+//    }];
+    
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

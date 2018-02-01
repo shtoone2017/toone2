@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YS_ZhuangHao_Model.h"
+#import "YS_BianshuModel.h"
 #define YS_Scale 2
 
 @interface YSRoadView : UIView
@@ -20,5 +21,9 @@
 
 @property (nonatomic,strong)NSArray *bridgeData;
 
+//遍数数组
+@property (nonatomic,strong)NSArray *bianshuData;
+
+- (instancetype)initWithFrame:(CGRect)frame;
 
 @end

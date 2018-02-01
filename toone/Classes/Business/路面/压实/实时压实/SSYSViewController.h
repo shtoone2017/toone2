@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "YSRoadView.h"
 @interface SSYSViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *bgview;
+@property (strong, nonatomic)  UIScrollView *bgview;
 
 @end
