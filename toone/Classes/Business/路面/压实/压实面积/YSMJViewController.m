@@ -8,6 +8,9 @@
 
 #import "YSMJViewController.h"
 #import "Exp_Final.h"
+#import "AAChartView.h"
+#import "YS_MJModel.h"
+
 #define grid_layer @"grid_layer"
 #define road_id @"road_id"
 #define start_stake @"start_stake"
@@ -16,12 +19,16 @@
 
 @interface YSMJViewController ()
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
+@property (nonatomic,strong) YS_MJModel *model;
+@property (nonatomic,strong) AAChartView *aaChartView;
+
 @end
 
 @implementation YSMJViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self requestArea];
     [self setUpUI];
 }
 
@@ -32,11 +39,16 @@
     btn.tag  = 2;
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    _aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(0, 80, Screen_w, Screen_h-80-20)];
+    [self.view addSubview:_aaChartView];
+    [self drawChartWithModel:nil];
 }
 
 - (void)searchButtonClick
 {
     NSMutableArray *tempArr = [NSMutableArray array];
+    NSArray *keyArr = @[road_id,start_stake,end_stake,grid_layer];
     NSArray *titleArr = @[@"线路选择",@"起始桩号",@"结束桩号",@"面层选择"];
     NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartStack],[NSNumber numberWithInteger:YS_Search_Type_EndStack],[NSNumber numberWithInteger:YS_Search_Type_Layer]];
     for (int i = 0; i<titleArr.count; i++)
@@ -44,25 +56,83 @@
         Exp_FinalModel *model = [[Exp_FinalModel alloc] init];
         model.title = titleArr[i];
         model.type = [typeArr[i] integerValue];
+        model.para_key = keyArr[i];
         [tempArr addObject:model];
     }
     Exp_Final *expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
     expView.dataArr = tempArr;
     expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
     [self.view addSubview:expView];
+    __weak typeof(self) weakself = self;
+    expView.SearchBlock = ^(NSArray *arr)
+    {
+        for (Exp_FinalModel *model in arr)
+        {
+            if (!model.contentId)
+            {
+                [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+            }
+            else
+            {
+                [weakself.paraDic setObject:model.contentId forKey:model.para_key];
+            }
+        }
+        [weakself requestArea];
+    };
 }
 
 - (void)requestArea
 {
     //?road_id=%@&start_stake=%@&end_stake=%@&grid_layer=%@
     //[_paraDic objectForKey:road_id],[_paraDic objectForKey:start_stake],[_paraDic objectForKey:end_stake],[_paraDic objectForKey:grid_layer]
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Mianji parameter:_paraDic success:^(id json) {
-        
-    } failure:^(NSError *error) {
-        
-    }];
+    __weak typeof(self) weakself = self;
+    if (_paraDic)
+    {
+        [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Mianji parameter:_paraDic success:^(id json)
+         {
+             _model = [[YS_MJModel alloc] initWithDictionary:json error:nil];
+             [weakself drawChartWithModel:_model];
+         } failure:^(NSError *error) {
+             
+         }];
+    }
 }
 
+- (void)drawChartWithModel:(YS_MJModel *)model
+{
+    if (!model)
+    {
+        model = [YS_MJModel new];
+        model.gy = 0.3;
+        model.qy = 0.3;
+        model.zc = 0.4;
+    }
+    AAChartModel *chartModel= AAObject(AAChartModel)
+    .chartTypeSet(AAChartTypePie)
+    .titleSet(@"压实情况统计")
+    .dataLabelEnabledSet(true)//是否直接显示扇形图数据
+    .seriesSet(
+               @[AAObject(AASeriesElement)
+                 .dataSet(@[
+                            @[@"过压"  , @(model.gy)],
+                            @[@"欠压"  , @(model.qy)],
+                            @[@"正常"  , @(model.zc)]
+                            ]),
+                 ]
+               );
+    
+    /*图表视图对象调用图表模型对象,绘制最终图形*/
+    [_aaChartView aa_drawChartWithChartModel:chartModel];
+}
+
+- (NSMutableDictionary *)paraDic
+{
+    if (!_paraDic)
+    {
+        _paraDic = [NSMutableDictionary dictionary];
+    }
+    return _paraDic;
+}
 
 
 - (void)didReceiveMemoryWarning {

@@ -124,4 +124,12 @@
     return nil;
 }
 
+- (void)searchAction
+{
+    if (_SearchBlock)
+    {
+        _SearchBlock(_dataArr);
+    }
+}
+
 @end

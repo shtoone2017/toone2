@@ -521,6 +521,7 @@
 		9C79A49A2022C1C7002F41AC /* Exp_FinalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A4982022C1C7002F41AC /* Exp_FinalCell.m */; };
 		9C79A49B2022C1C7002F41AC /* Exp_FinalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C79A4992022C1C7002F41AC /* Exp_FinalCell.xib */; };
 		9C79A49E2022F4EB002F41AC /* Exp_FinalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A49D2022F4EB002F41AC /* Exp_FinalModel.m */; };
+		9C79A4A120230042002F41AC /* YS_MJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A4A020230042002F41AC /* YS_MJModel.m */; };
 		9CA7D9051F4BBF5100BA2C91 /* TZD_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */; };
 		9CA7D9081F4BC07500BA2C91 /* TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D9071F4BC07500BA2C91 /* TZD_DetailViewController.m */; };
 		9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA7D90A1F4BC2B000BA2C91 /* TZD_DetailCell.m */; };
@@ -1654,6 +1655,8 @@
 		9C79A4992022C1C7002F41AC /* Exp_FinalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Exp_FinalCell.xib; sourceTree = "<group>"; };
 		9C79A49C2022F4EB002F41AC /* Exp_FinalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exp_FinalModel.h; sourceTree = "<group>"; };
 		9C79A49D2022F4EB002F41AC /* Exp_FinalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Exp_FinalModel.m; sourceTree = "<group>"; };
+		9C79A49F20230042002F41AC /* YS_MJModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_MJModel.h; sourceTree = "<group>"; };
+		9C79A4A020230042002F41AC /* YS_MJModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_MJModel.m; sourceTree = "<group>"; };
 		9CA7D9031F4BBF5100BA2C91 /* TZD_DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailModel.h; sourceTree = "<group>"; };
 		9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_DetailModel.m; sourceTree = "<group>"; };
 		9CA7D9061F4BC07500BA2C91 /* TZD_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZD_DetailViewController.h; sourceTree = "<group>"; };
@@ -4738,6 +4741,8 @@
 				9C79A4862022B495002F41AC /* YSMJViewController.h */,
 				9C79A4872022B495002F41AC /* YSMJViewController.m */,
 				9C79A4882022B495002F41AC /* YSMJViewController.xib */,
+				9C79A49F20230042002F41AC /* YS_MJModel.h */,
+				9C79A4A020230042002F41AC /* YS_MJModel.m */,
 			);
 			path = "压实面积";
 			sourceTree = "<group>";
@@ -6255,6 +6260,7 @@
 				187C73071E30B1810072F33A /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				42F991A9201AD3760044B77B /* SW_LSSJ_Detail_Data.m in Sources */,
 				8C28406B1EB1127500440413 /* TP_NYSDList_Model.m in Sources */,
+				9C79A4A120230042002F41AC /* YS_MJModel.m in Sources */,
 				42AC71BC1E30C423007D8F57 /* SGChartZBX_X.m in Sources */,
 				9CA7D90C1F4BC2B000BA2C91 /* TZD_DetailCell.m in Sources */,
 				42E60981201F3FFB002E7C6A /* ExpYS1View.m in Sources */,

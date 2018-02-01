@@ -16,6 +16,8 @@
 
 @property (nonatomic,strong) NSString *contentId;
 
+@property (nonatomic,strong) NSString *para_key;
+
 @property (nonatomic,assign) NSInteger type;
 
 @end

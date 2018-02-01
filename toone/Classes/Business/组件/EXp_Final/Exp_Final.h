@@ -24,4 +24,6 @@ typedef NS_OPTIONS(NSInteger, YS_Search_Type)
 
 @property (strong, nonatomic) NSMutableArray *dataArr;
 
+@property (nonatomic , copy) void (^SearchBlock) (NSArray *);
+
 @end
