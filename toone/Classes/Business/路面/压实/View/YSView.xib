@@ -66,29 +66,38 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyp-Vm-VnP">
                                                     <rect key="frame" x="56" y="0.0" width="319" height="85"/>
                                                     <subviews>
-                                                        <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-1G-sGC" customClass="UpButton">
+                                                        <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-1G-sGC" customClass="UpButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <state key="normal" title="压实度统计" image="gcb_ck">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="LW2-7B-AbM"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUc-pb-EIQ" customClass="UpButton">
+                                                        <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUc-pb-EIQ" customClass="UpButton">
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <state key="normal" title="压实成果" image="gcb_jd">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="GZO-Wo-m1q"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVZ-b9-2aJ" customClass="UpButton">
+                                                        <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVZ-b9-2aJ" customClass="UpButton">
                                                             <rect key="frame" x="106" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <state key="normal" title="实时压实" image="gcb_fx">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="fdk-15-TZk"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,21 +122,27 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apF-Dx-hCN">
                                                     <rect key="frame" x="56" y="86" width="319" height="85"/>
                                                     <subviews>
-                                                        <button opaque="NO" tag="401" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mox-9W-Xue" customClass="UpButton">
+                                                        <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mox-9W-Xue" customClass="UpButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <state key="normal" title="压实回放" image="gcb_jc">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="0Dv-Z7-Msu"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvy-yi-Ugp" customClass="UpButton">
+                                                        <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvy-yi-Ugp" customClass="UpButton">
                                                             <rect key="frame" x="106.5" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <state key="normal" title="路面厚度" image="gcb_cc">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cc4-MG-upv"/>
+                                                            </connections>
                                                         </button>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiJ-c3-v81">
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>
@@ -173,7 +188,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4n-OV-sxi">
-                                            <rect key="frame" x="0.0" y="171" width="375" height="171"/>
+                                            <rect key="frame" x="0.0" y="172" width="375" height="171"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUD-mk-Lh7">
                                                     <rect key="frame" x="0.0" y="0.0" width="55" height="171"/>
@@ -205,6 +220,9 @@
                                                             <state key="normal" title="压实面积" image="gcb_ck">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="2hL-bX-2FM"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlm-qV-Eqr" customClass="UpButton">
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>
@@ -213,6 +231,9 @@
                                                             <state key="normal" title="摊铺温度" image="gcb_jd">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="3fo-dE-slm"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkS-NG-SfQ" customClass="UpButton">
                                                             <rect key="frame" x="106" y="0.0" width="106.5" height="85"/>
@@ -221,6 +242,9 @@
                                                             <state key="normal" title="压路距离" image="gcb_fx">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9mm-aa-moZ"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,6 +276,9 @@
                                                             <state key="normal" title="摊铺速度" image="gcb_jc">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cPe-Tc-d7J"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-ji-s3L" customClass="UpButton">
                                                             <rect key="frame" x="106.5" y="0.0" width="106" height="85"/>
@@ -260,6 +287,9 @@
                                                             <state key="normal" title="环境检测" image="gcb_cc">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="T7V-Gw-VSc"/>
+                                                            </connections>
                                                         </button>
                                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suy-dc-gWE">
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>

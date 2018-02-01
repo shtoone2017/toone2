@@ -53,6 +53,21 @@ static HTTP *networking = nil;
             }];
             break;
         }
+        case GETS:{
+            [manager GET:encodePath parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSString *responseStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+//                NSData *resData = [responseStr dataUsingEncoding:NSUTF8StringEncoding];
+//                NSDictionary*dic = [NSJSONSerialization JSONObjectWithData:resData options:0 error:nil];
+                if (successBlock)
+                {
+                    successBlock(responseStr);
+                }
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                if(failureBlock) failureBlock(error);
+            }];
+            break;
+        }
         case POST:{
             [manager POST:encodePath parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id jsondata = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];

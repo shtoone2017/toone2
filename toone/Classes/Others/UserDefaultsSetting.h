@@ -58,13 +58,17 @@
 
 @property (nonatomic,copy) NSString * type;
 
-//水稳本地存贮数据
+/**水稳本地存贮数据**/
 @property (nonatomic,copy) NSString * biaoshi;
 //用户类型 业主：1 标段：2 项目部：3 拌合站：5  (如果是业主，标示为空)
 @property (nonatomic,copy) NSString * userType;
 @property (nonatomic,copy) NSString * shenehe;
 @property (nonatomic,copy) NSString * chuzhi;
 @property (nonatomic,copy) NSString * zxdwshenhe;
+
+
+/**压实**/
+@property (nonatomic, copy) NSString *road_id;//路线id
 
 
 @property (nonatomic) NSString * randomSeed;

@@ -11,6 +11,7 @@
 
 typedef enum{
     GET,
+    GETS,
     POST,
     PUT
 }HTTPRequestMethod;

@@ -25,6 +25,7 @@ typedef enum{
     ExpButtonTypeZTText,//浇筑令状态
     ExpButtonTypeSJQDText,//设计强度
     ExpButtonTypeLQText,//龄期
+    ExpButtonTypeYSMC,//面层
     
 } ExpButtonType;
 
