@@ -7,6 +7,7 @@
 //
 
 #import "YSMJViewController.h"
+#import "Exp_Final.h"
 #define grid_layer @"grid_layer"
 #define road_id @"road_id"
 #define start_stake @"start_stake"
@@ -21,7 +22,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setUpUI];
+}
+
+- (void)setUpUI
+{
+    self.title = @"压实面积统计";
+    UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
+    btn.tag  = 2;
+    [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
+- (void)searchButtonClick
+{
+    NSMutableArray *tempArr = [NSMutableArray array];
+    NSArray *titleArr = @[@"线路选择",@"起始桩号",@"结束桩号",@"面层选择"];
+    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartStack],[NSNumber numberWithInteger:YS_Search_Type_EndStack],[NSNumber numberWithInteger:YS_Search_Type_Layer]];
+    for (int i = 0; i<titleArr.count; i++)
+    {
+        Exp_FinalModel *model = [[Exp_FinalModel alloc] init];
+        model.title = titleArr[i];
+        model.type = [typeArr[i] integerValue];
+        [tempArr addObject:model];
+    }
+    Exp_Final *expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
+    expView.dataArr = tempArr;
+    expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
+    [self.view addSubview:expView];
 }
 
 - (void)requestArea
