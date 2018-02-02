@@ -11,6 +11,9 @@
 #import "YS_YSCG_Controller.h"
 #import "YSMJViewController.h"
 #import "YS_JLViewController.h"
+#import "YS_WebViewController.h"
+#import "YS_YLJViewController.h"
+#import "YS_TPWDViewController.h"
 
 @implementation YSView
 
@@ -26,11 +29,15 @@
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
         case 101:{
-            
+            YS_WebViewController *vc = [YS_WebViewController new];
+            vc.type = YS_WebTypeYSD;
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 102:{
-            
+            YS_WebViewController *vc = [YS_WebViewController new];
+            vc.type = YS_WebTypeBS;
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 103:{//成果
@@ -60,11 +67,15 @@
         }
             break;
         case 303:{
-            
+            //压路机
+            YS_YLJViewController *vc = [YS_YLJViewController new];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 401:{
-            
+            //摊铺机
+            YS_TPWDViewController *vc = [YS_TPWDViewController new];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 402:{

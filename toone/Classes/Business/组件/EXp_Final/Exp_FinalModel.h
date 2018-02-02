@@ -12,12 +12,12 @@
 
 @property (nonatomic,strong) NSString *title;
 
-@property (nonatomic,strong) NSString *contentName;
+@property (nonatomic,strong) NSString *contentName; //选择后展示的名字
 
-@property (nonatomic,strong) NSString *contentId;
+@property (nonatomic,strong) NSString *contentId; //选择后获得对应的参数  value
 
-@property (nonatomic,strong) NSString *para_key;
+@property (nonatomic,strong) NSString *para_key;  //对应的参数  key
 
-@property (nonatomic,assign) NSInteger type;
+@property (nonatomic,assign) NSInteger type;     //根据type来展示对应跳转的页面
 
 @end
