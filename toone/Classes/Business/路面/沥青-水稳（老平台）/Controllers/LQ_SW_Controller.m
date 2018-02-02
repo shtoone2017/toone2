@@ -160,9 +160,6 @@
                 }
             };
             [self.view addSubview:e];
-            
-            
-            
             break;
         }
         case 3:{
@@ -171,7 +168,6 @@
         }
         default:
             FuncLog;//组织机构代码块
-//            [self performSegueWithIdentifier:@"SW_ZZJG_Controller" sender:nil];
             NodeViewController *vc = [[NodeViewController alloc] init];
             vc.type = NodeTypeZZJG;
             vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {

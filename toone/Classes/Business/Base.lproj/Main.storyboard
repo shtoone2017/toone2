@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -5331,7 +5331,7 @@
                             <constraint firstItem="EcP-ef-SN6" firstAttribute="centerX" secondItem="RwW-pr-79L" secondAttribute="centerX" id="Qqj-gp-kXn"/>
                             <constraint firstItem="EcP-ef-SN6" firstAttribute="top" secondItem="eOh-2m-BiK" secondAttribute="bottom" constant="120" id="XLb-s5-OeQ"/>
                             <constraint firstItem="1eb-HW-c08" firstAttribute="centerX" secondItem="RwW-pr-79L" secondAttribute="centerX" id="Y65-vd-A7c"/>
-                            <constraint firstItem="sRl-LC-7Pd" firstAttribute="top" secondItem="qnT-ye-kAh" secondAttribute="bottom" id="eDG-P9-SLi"/>
+                            <constraint firstAttribute="bottom" secondItem="qnT-ye-kAh" secondAttribute="bottom" id="eDG-P9-SLi"/>
                             <constraint firstItem="qnT-ye-kAh" firstAttribute="leading" secondItem="RwW-pr-79L" secondAttribute="leading" id="eib-G5-vb7"/>
                             <constraint firstAttribute="trailing" secondItem="qnT-ye-kAh" secondAttribute="trailing" id="iug-PK-lpl"/>
                             <constraint firstItem="qnT-ye-kAh" firstAttribute="top" secondItem="RwW-pr-79L" secondAttribute="top" id="unz-Yl-xJE"/>
@@ -7409,14 +7409,10 @@
         <image name="sg33" width="64" height="64"/>
         <image name="sg44" width="64" height="64"/>
         <image name="white_SX" width="18" height="18"/>
-        <image name="压实" width="45" height="45"/>
+        <image name="压实" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nGo-8m-b2v"/>
-        <segue reference="tVt-Rb-04C"/>
-        <segue reference="OFf-sM-NiC"/>
-        <segue reference="h6h-V1-R2o"/>
-        <segue reference="WQO-SS-2jJ"/>
         <segue reference="SE4-nV-rCS"/>
         <segue reference="huJ-hq-5Ls"/>
         <segue reference="Gjo-VC-zkj"/>
