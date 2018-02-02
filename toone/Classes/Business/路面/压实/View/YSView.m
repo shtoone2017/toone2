@@ -9,6 +9,8 @@
 #import "YSView.h"
 #import "YS_HD_Controller.h"
 #import "YS_YSCG_Controller.h"
+#import "YSMJViewController.h"
+#import "YS_JLViewController.h"
 
 @implementation YSView
 
@@ -46,11 +48,15 @@
         }
             break;
         case 301:{
-            
+            //面积统计
+            YSMJViewController *vc = [YSMJViewController new];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 302:{
-            
+            //距离
+            YS_JLViewController *vc = [YS_JLViewController new];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 303:{

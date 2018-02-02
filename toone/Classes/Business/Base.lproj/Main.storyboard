@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFY-ao-V2G">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -5281,26 +5281,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mianBg" translatesAutoresizingMaskIntoConstraints="NO" id="qnT-ye-kAh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择模块" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-HW-c08">
+                                <rect key="frame" x="116.5" y="85" width="142" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="ACp-NY-iuY"/>
+                                    <constraint firstAttribute="height" constant="49" id="fRa-qU-TOs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-ef-SN6">
-                                <rect key="frame" x="87" y="140" width="200" height="150"/>
+                                <rect key="frame" x="87" y="140" width="200" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="WIv-XF-pdb"/>
-                                    <constraint firstAttribute="height" constant="150" id="n0D-t6-38O"/>
+                                    <constraint firstAttribute="height" constant="113" id="n0D-t6-38O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="路基"/>
+                                <state key="normal" title="路基">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="clickBut:" destination="PHl-JP-yVM" eventType="touchUpInside" id="WPa-x1-4zz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wri-JT-D18">
-                                <rect key="frame" x="87" y="340" width="200" height="150"/>
+                                <rect key="frame" x="87" y="261" width="200" height="122"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="5aQ-vy-Qga"/>
+                                    <constraint firstAttribute="height" constant="122" id="5aQ-vy-Qga"/>
                                     <constraint firstAttribute="width" constant="200" id="9d0-DC-opk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="路面"/>
+                                <state key="normal" title="路面">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="clickBut:" destination="PHl-JP-yVM" eventType="touchUpInside" id="CAH-9R-5GH"/>
                                 </connections>
@@ -5308,16 +5325,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Wri-JT-D18" firstAttribute="top" secondItem="EcP-ef-SN6" secondAttribute="bottom" constant="50" id="1dc-t4-uyt"/>
+                            <constraint firstItem="Wri-JT-D18" firstAttribute="top" secondItem="EcP-ef-SN6" secondAttribute="bottom" constant="8" id="1dc-t4-uyt"/>
                             <constraint firstItem="Wri-JT-D18" firstAttribute="leading" secondItem="EcP-ef-SN6" secondAttribute="leading" id="9Sp-MC-0tN"/>
+                            <constraint firstItem="1eb-HW-c08" firstAttribute="top" secondItem="eOh-2m-BiK" secondAttribute="bottom" constant="65" id="PNs-N5-dm2"/>
                             <constraint firstItem="EcP-ef-SN6" firstAttribute="centerX" secondItem="RwW-pr-79L" secondAttribute="centerX" id="Qqj-gp-kXn"/>
                             <constraint firstItem="EcP-ef-SN6" firstAttribute="top" secondItem="eOh-2m-BiK" secondAttribute="bottom" constant="120" id="XLb-s5-OeQ"/>
+                            <constraint firstItem="1eb-HW-c08" firstAttribute="centerX" secondItem="RwW-pr-79L" secondAttribute="centerX" id="Y65-vd-A7c"/>
+                            <constraint firstItem="sRl-LC-7Pd" firstAttribute="top" secondItem="qnT-ye-kAh" secondAttribute="bottom" id="eDG-P9-SLi"/>
+                            <constraint firstItem="qnT-ye-kAh" firstAttribute="leading" secondItem="RwW-pr-79L" secondAttribute="leading" id="eib-G5-vb7"/>
+                            <constraint firstAttribute="trailing" secondItem="qnT-ye-kAh" secondAttribute="trailing" id="iug-PK-lpl"/>
+                            <constraint firstItem="qnT-ye-kAh" firstAttribute="top" secondItem="RwW-pr-79L" secondAttribute="top" id="unz-Yl-xJE"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ6-ej-Ld2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2922" y="-1735"/>
+            <point key="canvasLocation" x="-2922.4000000000001" y="-1735.6821589205399"/>
         </scene>
         <!--试验室-->
         <scene sceneID="2tL-34-PO0">
@@ -7180,11 +7203,11 @@
             </objects>
             <point key="canvasLocation" x="7409" y="-6529"/>
         </scene>
-        <!--Item-->
+        <!--压实-->
         <scene sceneID="bQF-vB-zby">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WWd-DH-maR" customClass="MyNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="x2x-lw-C0S"/>
+                    <tabBarItem key="tabBarItem" title="压实" image="压实" id="x2x-lw-C0S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fjk-Fg-AiL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -7379,15 +7402,21 @@
         <image name="ic_bhz" width="32" height="32"/>
         <image name="ic_lab" width="32" height="32"/>
         <image name="lq_bhz" width="32" height="32"/>
+        <image name="mianBg" width="512" height="767"/>
         <image name="resizeApi" width="32" height="32"/>
         <image name="sg11" width="64" height="64"/>
         <image name="sg22" width="64" height="56"/>
         <image name="sg33" width="64" height="64"/>
         <image name="sg44" width="64" height="64"/>
         <image name="white_SX" width="18" height="18"/>
+        <image name="压实" width="45" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nGo-8m-b2v"/>
+        <segue reference="tVt-Rb-04C"/>
+        <segue reference="OFf-sM-NiC"/>
+        <segue reference="h6h-V1-R2o"/>
+        <segue reference="WQO-SS-2jJ"/>
         <segue reference="SE4-nV-rCS"/>
         <segue reference="huJ-hq-5Ls"/>
         <segue reference="Gjo-VC-zkj"/>

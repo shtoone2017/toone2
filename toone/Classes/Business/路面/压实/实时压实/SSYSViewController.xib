@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSYSViewController">
             <connections>
-                <outlet property="bgview" destination="iZk-uF-SbB" id="SZ5-L7-Ghk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +18,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZk-uF-SbB">
-                    <rect key="frame" x="0.0" y="100" width="375" height="467"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </scrollView>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="iZk-uF-SbB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mCM-PK-Rng"/>
-                <constraint firstAttribute="trailing" secondItem="iZk-uF-SbB" secondAttribute="trailing" id="qPR-lI-4Ox"/>
-                <constraint firstAttribute="bottom" secondItem="iZk-uF-SbB" secondAttribute="bottom" constant="100" id="uB8-vd-fdv"/>
-                <constraint firstItem="iZk-uF-SbB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="wWh-dS-SNe"/>
-            </constraints>
             <point key="canvasLocation" x="-166.5" y="35.5"/>
         </view>
     </objects>
