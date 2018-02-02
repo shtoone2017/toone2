@@ -17,7 +17,8 @@ typedef NS_OPTIONS(NSInteger, YS_Search_Type)
     YS_Search_Type_RoadID,
     YS_Search_Type_StartTime,
     YS_Search_Type_EndTime,
-    YS_Search_Type_Layer
+    YS_Search_Type_Layer,
+    YS_Search_Type_Divce
 };
 
 @interface Exp_Final : UIView

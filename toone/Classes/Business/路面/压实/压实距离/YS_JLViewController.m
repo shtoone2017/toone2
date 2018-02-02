@@ -1,40 +1,41 @@
 //
-//  YSMJViewController.m
+//  YS_JLViewController.m
 //  toone
 //
-//  Created by 景晓峰 on 2018/2/1.
+//  Created by 景晓峰 on 2018/2/2.
 //  Copyright © 2018年 shtoone. All rights reserved.
 //
 
-#import "YSMJViewController.h"
+#import "YS_JLViewController.h"
+
 #import "Exp_Final.h"
 #import "AAChartView.h"
-#import "YS_MJModel.h"
+#import "YS_JLModel.h"
 
-#define grid_layer @"grid_layer"
+#define start_time @"start_time"
 #define road_id @"road_id"
-#define start_stake @"start_stake"
-#define end_stake @"end_stake"
+#define end_time @"end_time"
+#define device_code @"device_code"
 
 
-@interface YSMJViewController ()
+@interface YS_JLViewController ()
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
-@property (nonatomic,strong) YS_MJModel *model;
+@property (nonatomic,strong) YS_JLModel *model;
 @property (nonatomic,strong) AAChartView *aaChartView;
 @property (nonatomic,strong) Exp_Final *expView;
 @end
 
-@implementation YSMJViewController
+@implementation YS_JLViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestArea];
+    [self requestData];
     [self setUpUI];
 }
 
 - (void)setUpUI
 {
-    self.title = @"压实面积统计";
+    self.title = @"压路机距离统计";
     self.view.backgroundColor = [UIColor whiteColor];
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
@@ -42,7 +43,7 @@
     
     _aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(0, 80, Screen_w, Screen_h-80-20)];
     [self.view addSubview:_aaChartView];
-    [self drawChartWithModel:nil];
+    [self drawChartWithData:nil];
 }
 
 - (void)searchButtonClick
@@ -53,9 +54,9 @@
 - (Exp_Final *)get_expView
 {
     NSMutableArray *tempArr = [NSMutableArray array];
-    NSArray *keyArr = @[road_id,start_stake,end_stake,grid_layer];
-    NSArray *titleArr = @[@"线路选择",@"起始桩号",@"结束桩号",@"面层选择"];
-    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartStack],[NSNumber numberWithInteger:YS_Search_Type_EndStack],[NSNumber numberWithInteger:YS_Search_Type_Layer]];
+    NSArray *keyArr = @[road_id,start_time,end_time,device_code];
+    NSArray *titleArr = @[@"线路选择",@"开始时间",@"结束时间",@"设备选择"];
+    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartTime],[NSNumber numberWithInteger:YS_Search_Type_EndTime],[NSNumber numberWithInteger:YS_Search_Type_Divce]];
     for (int i = 0; i<titleArr.count; i++)
     {
         Exp_FinalModel *model = [[Exp_FinalModel alloc] init];
@@ -84,50 +85,48 @@
                     [weakself.paraDic setObject:model.contentId forKey:model.para_key];
                 }
             }
-            [weakself requestArea];
+            [weakself requestData];
         };
     }
     return _expView;
 }
 
 
-- (void)requestArea
+- (void)requestData
 {
     __weak typeof(self) weakself = self;
     if (_paraDic)
     {
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Mianji parameter:_paraDic success:^(id json)
          {
-             _model = [[YS_MJModel alloc] initWithDictionary:json error:nil];
-             [weakself drawChartWithModel:_model];
+             NSArray *data = [YS_JLModel arrayOfModelsFromDictionaries:json error:nil];
+             [weakself drawChartWithData:data];
          } failure:^(NSError *error) {
              
          }];
     }
 }
 
-- (void)drawChartWithModel:(YS_MJModel *)model
+- (void)drawChartWithData:(NSArray *)datas
 {
-    if (!model)
+    NSMutableArray *names = [NSMutableArray array];
+    NSMutableArray *values = [NSMutableArray array];
+
+    for (YS_JLModel *model in datas)
     {
-        model = [YS_MJModel new];
-        model.gy = 0.3;
-        model.qy = 0.3;
-        model.zc = 0.4;
+        [names addObject:model.date];
+        [values addObject:[NSNumber numberWithFloat:model.statistics]];
     }
     AAChartModel *chartModel= AAObject(AAChartModel)
-    .chartTypeSet(AAChartTypePie)
-    .titleSet(@"压实情况统计")
-    .dataLabelEnabledSet(true)//是否直接显示扇形图数据
+    .chartTypeSet(AAChartTypeLine)
+    .titleSet(@"运行距离统计")
+    .categoriesSet(names)//设置图表横轴的内容
+    .yAxisTitleSet(@"km")//设置图表 y 轴的单位
+    .dataLabelEnabledSet(true)//是否直接显示图数据
     .seriesSet(
                @[AAObject(AASeriesElement)
-                 .dataSet(@[
-                            @[@"过压"  , @(model.gy)],
-                            @[@"欠压"  , @(model.qy)],
-                            @[@"正常"  , @(model.zc)]
-                            ]),
-                 ]
-               );
+                 .dataSet(values)
+               ]);
     
     /*图表视图对象调用图表模型对象,绘制最终图形*/
     [_aaChartView aa_drawChartWithChartModel:chartModel];
@@ -141,7 +140,6 @@
     }
     return _paraDic;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

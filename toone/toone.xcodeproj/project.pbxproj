@@ -513,7 +513,6 @@
 		9C548DC4201EC16F009AB343 /* YSRoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC3201EC16F009AB343 /* YSRoadView.m */; };
 		9C548DC8201EC998009AB343 /* YS_ZhuangHao_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */; };
 		9C79A4892022B495002F41AC /* YSMJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A4872022B495002F41AC /* YSMJViewController.m */; };
-		9C79A48A2022B495002F41AC /* YSMJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C79A4882022B495002F41AC /* YSMJViewController.xib */; };
 		9C79A48E2022B7AB002F41AC /* Exp9View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A48D2022B7AB002F41AC /* Exp9View.m */; };
 		9C79A4902022B7BF002F41AC /* Exp9View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C79A48F2022B7BF002F41AC /* Exp9View.xib */; };
 		9C79A4942022C01D002F41AC /* Exp_Final.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C79A4932022C01D002F41AC /* Exp_Final.m */; };
@@ -544,6 +543,8 @@
 		9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */; };
 		9CD8DDB31F417ADB00F67C8B /* LCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DDB21F417ADB00F67C8B /* LCDetailViewController.m */; };
 		9CDF80D92021685B00650228 /* YS_BianshuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF80D82021685B00650228 /* YS_BianshuModel.m */; };
+		9CF32E9B2023F85400D8F4B5 /* YS_JLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF32E992023F85400D8F4B5 /* YS_JLViewController.m */; };
+		9CF32E9F2023F92100D8F4B5 /* YS_JLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF32E9E2023F92100D8F4B5 /* YS_JLModel.m */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1643,7 +1644,6 @@
 		9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_ZhuangHao_Model.m; sourceTree = "<group>"; };
 		9C79A4862022B495002F41AC /* YSMJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSMJViewController.h; sourceTree = "<group>"; };
 		9C79A4872022B495002F41AC /* YSMJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSMJViewController.m; sourceTree = "<group>"; };
-		9C79A4882022B495002F41AC /* YSMJViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YSMJViewController.xib; sourceTree = "<group>"; };
 		9C79A48C2022B7AB002F41AC /* Exp9View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Exp9View.h; sourceTree = "<group>"; };
 		9C79A48D2022B7AB002F41AC /* Exp9View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Exp9View.m; sourceTree = "<group>"; };
 		9C79A48F2022B7BF002F41AC /* Exp9View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Exp9View.xib; sourceTree = "<group>"; };
@@ -1697,6 +1697,10 @@
 		9CD8DDB21F417ADB00F67C8B /* LCDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailViewController.m; sourceTree = "<group>"; };
 		9CDF80D72021685B00650228 /* YS_BianshuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_BianshuModel.h; sourceTree = "<group>"; };
 		9CDF80D82021685B00650228 /* YS_BianshuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_BianshuModel.m; sourceTree = "<group>"; };
+		9CF32E982023F85400D8F4B5 /* YS_JLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_JLViewController.h; sourceTree = "<group>"; };
+		9CF32E992023F85400D8F4B5 /* YS_JLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_JLViewController.m; sourceTree = "<group>"; };
+		9CF32E9D2023F92100D8F4B5 /* YS_JLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_JLModel.h; sourceTree = "<group>"; };
+		9CF32E9E2023F92100D8F4B5 /* YS_JLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_JLModel.m; sourceTree = "<group>"; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -4740,7 +4744,6 @@
 			children = (
 				9C79A4862022B495002F41AC /* YSMJViewController.h */,
 				9C79A4872022B495002F41AC /* YSMJViewController.m */,
-				9C79A4882022B495002F41AC /* YSMJViewController.xib */,
 				9C79A49F20230042002F41AC /* YS_MJModel.h */,
 				9C79A4A020230042002F41AC /* YS_MJModel.m */,
 			);
@@ -4750,6 +4753,10 @@
 		9C79A4852022B469002F41AC /* 压实距离 */ = {
 			isa = PBXGroup;
 			children = (
+				9CF32E982023F85400D8F4B5 /* YS_JLViewController.h */,
+				9CF32E992023F85400D8F4B5 /* YS_JLViewController.m */,
+				9CF32E9D2023F92100D8F4B5 /* YS_JLModel.h */,
+				9CF32E9E2023F92100D8F4B5 /* YS_JLModel.m */,
 			);
 			path = "压实距离";
 			sourceTree = "<group>";
@@ -5854,7 +5861,6 @@
 				42F991B9201AD3760044B77B /* SW_CBCZ_Detail_HeadCell.xib in Resources */,
 				42F99110201AD35C0044B77B /* LLQ_LSSJ_Detail_DataCell.xib in Resources */,
 				42AC715D1E30C393007D8F57 /* LQ_ZCL_CL1_Cell.xib in Resources */,
-				9C79A48A2022B495002F41AC /* YSMJViewController.xib in Resources */,
 				8C2840691EB1127500440413 /* TP_NY_Controller.xib in Resources */,
 				42F99109201AD35C0044B77B /* LLQ_CLHS_ChatCell.xib in Resources */,
 				42F991BB201AD3760044B77B /* SW_CBCZ_Detail_ShenPi_Cell.xib in Resources */,
@@ -6135,6 +6141,7 @@
 				42A7A07A1F36F5C600290DB8 /* TreeTableView.m in Sources */,
 				427DB96B201C62A100F46900 /* LCListModel.m in Sources */,
 				42F991BF201AD3760044B77B /* SW_CBCZ_Detail_swjg.m in Sources */,
+				9CF32E9F2023F92100D8F4B5 /* YS_JLModel.m in Sources */,
 				187C72F51E30B1810072F33A /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				D20064641DFF86800021E293 /* DrawerController.m in Sources */,
 				8C2840811EB1130D00440413 /* TP_SB_Model.m in Sources */,
@@ -6366,6 +6373,7 @@
 				D2CF6B651E011728003AE61D /* Exp6_Xib_View.m in Sources */,
 				187C72F91E30B1810072F33A /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				426E90D8200CD129001FF8AE /* AAChart.m in Sources */,
+				9CF32E9B2023F85400D8F4B5 /* YS_JLViewController.m in Sources */,
 				D20064A81DFF86800021E293 /* TimeTools.m in Sources */,
 				42E288601F4447E80002AF72 /* GCB_JCH_Model.m in Sources */,
 				42AC71581E30C393007D8F57 /* ExcessiveModel.m in Sources */,
