@@ -21,7 +21,7 @@
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
 @property (nonatomic,strong) YS_MJModel *model;
 @property (nonatomic,strong) AAChartView *aaChartView;
-
+@property (nonatomic,strong) Exp_Final *expView;
 @end
 
 @implementation YSMJViewController
@@ -47,6 +47,11 @@
 
 - (void)searchButtonClick
 {
+    [self get_expView];
+}
+
+- (Exp_Final *)get_expView
+{
     NSMutableArray *tempArr = [NSMutableArray array];
     NSArray *keyArr = @[road_id,start_stake,end_stake,grid_layer];
     NSArray *titleArr = @[@"线路选择",@"起始桩号",@"结束桩号",@"面层选择"];
@@ -59,32 +64,35 @@
         model.para_key = keyArr[i];
         [tempArr addObject:model];
     }
-    Exp_Final *expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
-    expView.dataArr = tempArr;
-    expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
-    [self.view addSubview:expView];
-    __weak typeof(self) weakself = self;
-    expView.SearchBlock = ^(NSArray *arr)
-    {
-        for (Exp_FinalModel *model in arr)
+    ;
+    if (!_expView) {
+        _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
+        _expView.dataArr = tempArr;
+        _expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
+        [self.view addSubview:_expView];
+        __weak typeof(self) weakself = self;
+        _expView.SearchBlock = ^(NSArray *arr)
         {
-            if (!model.contentId)
+            for (Exp_FinalModel *model in arr)
             {
-                [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                if (!model.contentId)
+                {
+                    [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                }
+                else
+                {
+                    [weakself.paraDic setObject:model.contentId forKey:model.para_key];
+                }
             }
-            else
-            {
-                [weakself.paraDic setObject:model.contentId forKey:model.para_key];
-            }
-        }
-        [weakself requestArea];
-    };
+            [weakself requestArea];
+        };
+    }
+    return _expView;
 }
+
 
 - (void)requestArea
 {
-    //?road_id=%@&start_stake=%@&end_stake=%@&grid_layer=%@
-    //[_paraDic objectForKey:road_id],[_paraDic objectForKey:start_stake],[_paraDic objectForKey:end_stake],[_paraDic objectForKey:grid_layer]
     __weak typeof(self) weakself = self;
     if (_paraDic)
     {
