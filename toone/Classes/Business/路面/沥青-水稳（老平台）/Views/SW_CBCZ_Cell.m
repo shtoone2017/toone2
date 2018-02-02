@@ -83,7 +83,7 @@
             childrenCell.label1.text = [NSString stringWithFormat:@"%@ :",[model.fieldDict objectForKey:dict.allKeys.firstObject]];
             if ([dict.allKeys.firstObject hasPrefix:@"sjf"] || [dict.allKeys.firstObject hasPrefix:@"sjg"]) {
                 int count = [[model.dataDict objectForKey:dict.allKeys.firstObject] intValue];
-                if(count >=1 && count <= 3){
+                if(count >=1 && count <= 3){    
                     for (int i = 1; i<=count; i++) {
                         if (count==2 && i==2) {
                             break;

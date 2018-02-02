@@ -57,29 +57,25 @@
 
 -(void)setModel:(LQ_SW_Model *)model{
 
-    self.departNameLabel.text = model.banhezhanminchen;
 //    self.bhzCountLabel.text = model.bhzCount;
 //    self.bhjCountLabel.text = model.bhjCount;
-    self.totalFangliangLabel.text = model.totalFangliang;
-    self.totalPanshuLabel.text = model.totalPanshu;
+    self.departNameLabel.text = model.banhezhanminchen;
+    self.totalFangliangLabel.text = [NSString stringWithFormat:@"%@",model.gujifangshu];
+    self.totalPanshuLabel.text = [NSString stringWithFormat:@"%@",model.pangshu];
     //初级
-    self.cbpanshuLabel.text = model.cbpanshu;
-    self.cblvLabel.text = model.cblv;
-    self.cczpanshuLabel.text = model.cczpanshu;
-    self.czlvLabel.text = model.czlv;
-//    self.cbpanshuLabel.text = model.mcbpanshu;
-//    self.cblvLabel.text = model.mcblv;
-//    self.cczpanshuLabel.text = model.mczpanshu;
-//    self.czlvLabel.text = model.mczlv;
+    self.cbpanshuLabel.text = [NSString stringWithFormat:@"%@",model.lowcbps];
+    self.cblvLabel.text = [NSString stringWithFormat:@"%@",model.lowcbper];
+    self.cczpanshuLabel.text = [NSString stringWithFormat:@"%@",model.cczpanshu];
+    self.czlvLabel.text = [NSString stringWithFormat:@"%@",model.czper];
     //中级
-    self.mcbpanshuLabel.text = model.mcbpanshu;
-    self.mcblvLabel.text = model.mcblv;
-    self.mczpanshuLabel.text = model.mczpanshu;
-    self.mczlvLabel.text = model.mczlv;
+//    self.mcbpanshuLabel.text = model.mcbpanshu;
+//    self.mcblvLabel.text = model.mcblv;
+//    self.mczpanshuLabel.text = model.mczpanshu;
+//    self.mczlvLabel.text = model.mczlv;
     //高级
-    self.hcbpanshuLabel.text = model.hcbpanshu;
-    self.hcblvLabel.text = model.hcblv;
-    self.hczpanshuLabel.text = model.hczpanshu;
-    self.hczlvLabel.text = model.hczlv;
+    self.hcbpanshuLabel.text = [NSString stringWithFormat:@"%@",model.highcbps];
+    self.hcblvLabel.text = [NSString stringWithFormat:@"%@",model.highcbper];
+    self.hczpanshuLabel.text = [NSString stringWithFormat:@"%@",model.hczpanshu];
+    self.hczlvLabel.text = [NSString stringWithFormat:@"%@",model.hczper];
 }
 @end

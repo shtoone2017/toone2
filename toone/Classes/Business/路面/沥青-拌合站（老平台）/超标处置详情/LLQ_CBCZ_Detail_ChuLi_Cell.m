@@ -25,11 +25,11 @@
 
 -(void)setModel:(LLQ_CBCZ_Detail_lqjg *)model{
     _model = model;
-    self.lb1.text = model.chuliren;
-    self.lb2.text = model.shenpidate;
-    self.lb3.text = model.wentiyuanyin;
+    self.lb1.text = model.chuzhiren;
+    self.lb2.text = model.chuzhishijian;
+    self.lb3.text = model.chaobiaoyuanyin;
     self.lb4.text = model.chulifangshi;
-    self.lb5.text = model.chulijieguo;
+    self.lb5.text = model.chuzhijieguo;
 
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        if (self.filePathImage == nil) {

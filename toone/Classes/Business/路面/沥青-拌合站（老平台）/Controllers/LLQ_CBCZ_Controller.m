@@ -7,7 +7,7 @@
 //
 
 #import "LLQ_CBCZ_Controller.h"
-//#import "LQ_SB_Controller.h"
+#import "LQ_SB_Controller.h"
 #import "LLQ_CBCZ_DetailController.h"
 
 #import "LLQ_CBCZ_Model.h"
@@ -44,6 +44,7 @@
 @property (nonatomic,copy) NSString * shebeibianhao                         ;//设备编号
 @property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
 @property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
+@property (nonatomic, copy) NSString *departId;
 
 
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
@@ -64,9 +65,10 @@
         
         self.pageNo = _pageNo1;
         self.maxPageItems = @"30";
-        self.chaobiaolx = @"2";//全部
-        self.shebeibianhao = @"";
+        self.chaobiaolx = @"1";//全部
+        self.shebeibianhao = @"test1";
         self.cllx = @"0";
+        _departId = self.conditonDict[@"departType"];
         self.tableViewSigner = @"1";
         
     }
@@ -214,20 +216,20 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqchaoBiaoList;
-    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":self.shebeibianhao,
-                            @"chaobiaolx":self.chaobiaolx,
-                            @"cllx":self.cllx,
-                            @"pageNo":self.pageNo,
-                            @"maxPageItems":self.maxPageItems,
-                            };
+    NSString * urlString = [NSString stringWithFormat:lqchaoBiaoList,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_chaobiaolx,_cllx,_pageNo,_maxPageItems];
+//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":self.shebeibianhao,
+//                            @"chaobiaolx":self.chaobiaolx,
+//                            @"cllx":self.cllx,
+//                            @"pageNo":self.pageNo,
+//                            @"maxPageItems":self.maxPageItems,
+//                            };
     
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -345,16 +347,19 @@
 -(CGFloat)rowHeightWithModel:(LLQ_CBCZ_Model*)model{
     int index = 0;
     for (NSString * key in model.dataDict.allKeys) {
-        if ([key hasPrefix:@"bhzName"] ||
-            [key hasPrefix:@"clTime"] ||
-            [key hasPrefix:@"clwd"] ||
-            [key hasPrefix:@"lqwd"] ||
-            [key hasPrefix:@"glwd"] ||
-            [key hasPrefix:@"sjtjj"] ||
-            [key hasPrefix:@"sjysb"] ||
-            [key hasPrefix:@"sjlq"] ||
-            (([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
-            index++;
+        NSString *results = [model.dataDict objectForKey:key];
+        if (![results  isKindOfClass:[NSNull class]]) {//判断不为空
+            if ([key hasPrefix:@"bhzName"] ||
+                [key hasPrefix:@"clTime"] ||
+                [key hasPrefix:@"clwd"] ||
+                [key hasPrefix:@"lqwd"] ||
+                [key hasPrefix:@"glwd"] ||
+                [key hasPrefix:@"sjtjj"] ||
+                [key hasPrefix:@"sjysb"] ||
+                [key hasPrefix:@"sjlq"] ||
+                (([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
+                index++;
+            }
         }
     }
     return index*15.0;
@@ -382,11 +387,11 @@
     if (tableView == self.tableView3) {
         model = self.datas3[indexPath.row];
     }
-    NSDictionary * dic=@{@"bianhao":model.bianhao,
-                         @"shebeibianhao":model.sbbh,
-                         @"chuli":model.chuli,
-                         @"shenhe":model.shenhe,
-                         @"zxdwshenhe":model.zxdwshenhe
+    NSDictionary * dic=@{@"bianhao":model.bianhao?:@"",
+//                         @"shebeibianhao":model.sbbh,
+                         @"chuli":model.chuli?:@"",
+                         @"shenhe":model.shenhe?:@"",
+                         @"zxdwshenhe":model.zxdwshenhe?:@""
                          };
     
     
@@ -452,7 +457,16 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller3" sender:btn];
+            LQ_SB_Controller *controller = [[LQ_SB_Controller alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            controller.title = @"选择设备";
+            controller.conditonDict = @{@"userGroupId":_departId,
+                                        @"bhjtype":@"2",
+                                        };
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                self.shebeibianhao = gprsbianhao;
+            };
         }
     };
     [self.view addSubview:e];
@@ -489,7 +503,7 @@
         controller.shenpi = [sender objectForKey:@"shenhe"];
         controller.zxdwshenhe = [sender objectForKey:@"zxdwshenhe"];
         controller.bianhao = [sender objectForKey:@"bianhao"];
-        controller.shebeibianhao = [sender objectForKey:@"shebeibianhao"];
+//        controller.shebeibianhao = [sender objectForKey:@"shebeibianhao"];
         controller.title = @"详情";
     }
 

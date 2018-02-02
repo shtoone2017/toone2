@@ -9,10 +9,15 @@
 #import "MyModel.h"
 
 @interface SW_LSSJ_Model : MyModel
-@property (nonatomic ,strong) NSDictionary * dataDict;
-@property (nonatomic ,strong) NSDictionary * fieldDict;
-@property (nonatomic ,strong) NSDictionary * isShow;
+//@property (nonatomic ,strong) NSDictionary * dataDict;
+//@property (nonatomic ,strong) NSDictionary * fieldDict;
+//@property (nonatomic ,strong) NSDictionary * isShow;
+
+@property (nonatomic, copy) NSString *banhezhanminchen;
+@property (nonatomic, copy) NSString *shijian;
+@property (nonatomic, strong) NSNumber *glchangliang;
+@property (nonatomic, strong) NSNumber *sjshui;
 
 @property (nonatomic,copy) NSString * bianhao;
-@property (nonatomic,copy) NSString * sbbh;
+@property (nonatomic,copy) NSString * shebeibianhao;
 @end

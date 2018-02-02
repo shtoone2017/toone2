@@ -9,9 +9,11 @@
 #import "SW_LSSJ_Controller.h"
 #import "SW_LSSJ_Model.h"
 #import "SW_LSSJ_Cell.h"
-//#import "LQ_SB_Controller.h"
+#import "SW_LSSJ_Cell1.h"
+#import "LQ_SB_Controller.h"
 //#import "LQ_UsePosition_Controller.h"
 #import "SW_LSSJ_DetailController.h"
+#import "NodeViewController.h"
 @interface SW_LSSJ_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -24,6 +26,7 @@
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * usePosition;//使用部位
+@property (nonatomic, copy) NSString *departId;
 @end
 
 @implementation SW_LSSJ_Controller
@@ -34,6 +37,7 @@
     self.maxPageItems = @"30";
     self.shebeibianhao = @"";
     self.usePosition = @"";
+    _departId = self.conditonDict[@"departType"];
     [self loadUI];
     [self loadData];
 }
@@ -55,37 +59,40 @@
         [weakSelf loadData];
     }];
 
-    [self.tableView registerClass:[SW_LSSJ_Cell class] forCellReuseIdentifier:@"SW_LSSJ_Cell"];
+//    [self.tableView registerClass:[SW_LSSJ_Cell class] forCellReuseIdentifier:@"SW_LSSJ_Cell"];
+    self.tableView.rowHeight = 80;
+    [self.tableView registerNib:[UINib nibWithNibName:@"SW_LSSJ_Cell1" bundle:nil] forCellReuseIdentifier:@"SW_LSSJ_Cell1"];
 }
 #pragma mark - 网络请求
 -(void)loadData{
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = appSwcllist;
-    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":self.shebeibianhao,
-                            @"usePosition":self.usePosition,
-                            @"pageNo":self.pageNo,
-                            @"maxPageItems":self.maxPageItems,
-                            };
+    NSString * urlString = [NSString stringWithFormat:appSwcllist,startTimeStamp,endTimeStamp,_departId,_shebeibianhao,_pageNo,_maxPageItems];
+    
+//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":self.shebeibianhao,
+//                            @"usePosition":self.usePosition,
+//                            @"pageNo":self.pageNo,
+//                            @"maxPageItems":self.maxPageItems,
+//                            };
     
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
-                    SW_LSSJ_Model * model =  [[SW_LSSJ_Model alloc] init];
-                    model.dataDict = dict;
-                    model.fieldDict = json[@"field"];
-                    model.isShow    = json[@"isShow"];
+                    SW_LSSJ_Model * model =  [SW_LSSJ_Model modelWithDict:dict];
+//                    model.dataDict = dict;
+//                    model.fieldDict = dict;
+//                    model.isShow    = dict;
                     
-                    model.sbbh = dict[@"sbbh"];
-                    model.bianhao = dict[@"bianhao"];
+//                    model.shebeibianhao = dict[@"sbbh"];
+                    model.bianhao = dict[@"id"];
                     [datas addObject:model];
                 }
             }
@@ -114,11 +121,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datas.count;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 5*15.0;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 4*15.0;
+//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SW_LSSJ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Cell" forIndexPath:indexPath];
+    SW_LSSJ_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_LSSJ_Cell1" forIndexPath:indexPath];
     SW_LSSJ_Model * model = self.datas[indexPath.row];
     cell.model = model;
     return cell;
@@ -126,9 +133,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SW_LSSJ_Model * model = self.datas[indexPath.row];
-    self.usePosition=[model.dataDict  objectForKey:@"usePosition"];
+//    self.usePosition=[model.dataDict  objectForKey:@"usePosition"];
     NSDictionary * dic=@{@"bianhao":model.bianhao,
-                         @"shebeibianhao":model.sbbh};
+                         @"shebeibianhao":model.shebeibianhao};
     [self performSegueWithIdentifier:@"SW_LSSJ_DetailController" sender:dic];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -146,6 +153,8 @@
     
     //2.
     Exp52View * e = [[Exp52View alloc] init];
+    e.sbLabel = @"选择设备";
+    [e hiddEarthView];
     e.frame = CGRectMake(0, 64+35, Screen_w, 240);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
@@ -170,52 +179,37 @@
             UIButton * btn = (UIButton*)obj1;
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
+        if (type == ExpButtonTypeChoiceSBButton) {//设备
+            UIButton * btn = (UIButton*)obj1;
+            LQ_SB_Controller *controller = [[LQ_SB_Controller alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            controller.title = @"选择设备";
+            controller.conditonDict = @{@"userGroupId":_departId,
+                                        @"bhjtype":@"5",
+                                        };
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                self.shebeibianhao = gprsbianhao;
+            };
+            
+        }
+        if (type == ExpButtonTypeUsePosition) {//组织
+            UIButton * btn = (UIButton*)obj1;
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                [btn setTitle:name forState:UIControlStateNormal];
+                weakSelf.departId = identifier;
+            };
+            [self.navigationController pushViewController:vc animated:YES];
+        }
         
-        if (type == ExpButtonTypeChoiceSBButton) {
-            UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller5" sender:btn];
-        }
-        if (type == ExpButtonTypeUsePosition) {
-            UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_UsePosition_Controller" sender:btn];
-        }
     };
     [self.view addSubview:e];
     
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
-//    if ([vc isKindOfClass:[LQ_SB_Controller class]]) {
-//        LQ_SB_Controller * controller = vc;
-//        __weak UIButton * weakBtn = sender;
-//        __weak __typeof(self)  weakSelf = self;
-//        controller.title = @"选择设备";
-//        controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
-//                                    @"biaoshiid":self.conditonDict[@"biaoshiid"],
-//                                    @"machineType":@"6",
-//                                    };
-//        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
-//            [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
-//            weakSelf.shebeibianhao = gprsbianhao;
-//        };
-//
-//    }
-//
-//    if ([vc isKindOfClass:[LQ_UsePosition_Controller class]]) {
-//        LQ_UsePosition_Controller * controller = vc;
-//        __weak UIButton * weakBtn = sender;
-//        __weak __typeof(self)  weakSelf = self;
-//        controller.title = @"选择设备";
-//        controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
-//                                    @"biaoshiid":self.conditonDict[@"biaoshiid"],
-//                                    };
-//        controller.callBlock = ^(NSString * usePosition){
-//            [weakBtn setTitle:usePosition forState:UIControlStateNormal];
-//            weakSelf.usePosition = usePosition;
-//        };
-//
-//    }
-    
     if ([vc isKindOfClass:[SW_LSSJ_DetailController class]]) {
         SW_LSSJ_DetailController * controller = vc;
         /**
@@ -227,7 +221,7 @@
         //        NSDictionary * dict = (NSDictionary*)sender;
         controller.bianhao = [sender objectForKey:@"bianhao"];
         controller.shebeibianhao = [sender objectForKey:@"shebeibianhao"];
-        controller.position = self.usePosition;
+//        controller.position = self.usePosition;
         controller.title = @"详情";
     }
 }

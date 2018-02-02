@@ -12,6 +12,7 @@
 #import "LLQ_BHZ_Model.h"
 #import "LLQ_BHZ_Cell.h"
 #import "LLQ_BHZ_InnerController.h"
+#import "NodeViewController.h"
 @interface LLQ_BHZ_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -19,6 +20,12 @@
 @property (nonatomic,strong)  SW_ZZJG_Data * condition;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray * datas;
+
+@property (nonatomic, copy) NSString *departId;
+@property (nonatomic, copy) NSString *shebeibianhao;
+@property (nonatomic, copy) NSString *fzlx;//类型：0，全局；1，下属部门；3，拌合机
+@property (nonatomic, copy) NSString *hhllx;//混合料类型
+
 @end
 
 @implementation LLQ_BHZ_Controller
@@ -26,6 +33,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addPanGestureRecognizer];
+    
+    _departId = [UserDefaultsSetting shareSetting].departId;
+    _fzlx = @"";
+    _shebeibianhao = @"";
+    _hhllx = @"";
     [self loadUI];
     [self loadData];
 }
@@ -51,33 +63,28 @@
 -(void)loadData{
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqWarningStatistics;
-    if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
-        SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
-        condition.departType = [UserDefaultsSetting shareSetting].userType;
-        condition.biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
-        condition.shebeibianhao = @"";
-        self.condition = condition;
-    }
-    if (!self.condition.shebeibianhao) {
-        self.condition.shebeibianhao = @"";
-    }
     
     
-    NSDictionary * dict = @{@"departType":self.condition.departType,
-                            @"biaoshiid":self.condition.biaoshiid,
-                            @"startTime":startTimeStamp,
-                            @"endTime":endTimeStamp,
-                            @"shebeibianhao":self.condition.shebeibianhao
-                            };
+//    if (!self.condition || [self.condition.name isEqualToString:@"组织机构"]) {
+//        SW_ZZJG_Data * condition = [[SW_ZZJG_Data alloc] init];
+//        condition.departType = [UserDefaultsSetting shareSetting].userType;
+//        condition.biaoshiid = [UserDefaultsSetting shareSetting].biaoshi;
+//        condition.shebeibianhao = @"";
+//        self.condition = condition;
+//    }
+//    if (!self.condition.shebeibianhao) {
+//        self.condition.shebeibianhao = @"";
+//    }
+    
+    
     __weak typeof(self)  weakSelf = self;
+//    if(self.datas){
+//        self.datas = nil;
+//        [self.tableView reloadData];
+//    }
     
-    
-    if(self.datas){
-        self.datas = nil;
-        [self.tableView reloadData];
-    }
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    NSString *urlString = [NSString stringWithFormat:lqWarningStat,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_fzlx,_hhllx];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -109,31 +116,14 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString * departType;
-    switch ([self.condition.departType intValue]) {
-        case 1:
-            departType = @"2";
-            break;
-        case 2:
-            departType = @"3";
-            break;
-        case 3:
-        case 5:
-            departType = @"5";
-            break;
-        default:
-            departType =@"1";
-            break;
-    }
-    
-    LLQ_BHZ_Model * model = self.datas[indexPath.row];
-    NSDictionary * dict =@{@"biaoshiid":model.bsId,
-                           @"departType":departType
+    NSDictionary * dict =@{//@"biaoshiid":model.bsId,
+                           @"departType":_departId
                            };
     [self performSegueWithIdentifier:@"LLQ_BHZ_InnerController" sender:dict];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (IBAction)searchButtonClick:(UIButton *)sender {
+    __weak __typeof(self)  weakSelf = self;
     switch (sender.tag) {
         case 1:{
             sender.enabled = NO;
@@ -150,7 +140,6 @@
             //2.
             Exp1View * e = [[Exp1View alloc] init];
             e.frame = CGRectMake(0, 64+35, Screen_w, 150);
-            __weak __typeof(self)  weakSelf = self;
             e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
                 NSLog(@"%d",type);
                 if (type == ExpButtonTypeCancel) {
@@ -183,7 +172,20 @@
         }
         default:
             FuncLog;//组织机构代码块
-            [self performSegueWithIdentifier:@"SW_ZZJG_Controller2" sender:nil];
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                NSString * zjjg = FormatString(@"组织机构 : ", name);
+                weakSelf.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+                weakSelf.departName_Label.textColor = [UIColor whiteColor];
+                weakSelf.departName_Label.font = [UIFont systemFontOfSize:12.0];
+                weakSelf.departName_Label.speed = BBFlashCtntSpeedSlow;
+                
+                weakSelf.departId = identifier;
+                //                weakSelf.depName = name;
+                [self loadData];
+            };
+            [self.navigationController pushViewController:vc animated:YES];
             
             break;
     }
@@ -191,22 +193,6 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
-    if ([vc isKindOfClass:[SW_ZZJG_Controller class]]) {
-        SW_ZZJG_Controller * controller = vc;
-        __weak typeof(self) weakSelf = self;
-        controller.modelType = @"2";
-        controller.zzjgCallBackBlock = ^(SW_ZZJG_Data * data){
-            weakSelf.condition = data;
-            NSString * zjjg = FormatString(@"组织机构 : ", data.name);
-            weakSelf.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
-            weakSelf.departName_Label.textColor = [UIColor whiteColor];
-            weakSelf.departName_Label.font = [UIFont systemFontOfSize:12.0];
-            weakSelf.departName_Label.speed = BBFlashCtntSpeedSlow;
-            
-            [weakSelf loadData];
-        };
-    }
-    
     if ([vc isKindOfClass:[LLQ_BHZ_InnerController class]]) {
         LLQ_BHZ_InnerController * controller = vc;
         controller.conditonDict = (NSDictionary*)sender;

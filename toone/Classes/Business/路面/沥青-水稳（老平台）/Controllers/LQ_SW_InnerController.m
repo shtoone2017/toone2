@@ -41,7 +41,7 @@
     __weak typeof(self) weakSelf = self;
     seg.segBlock = ^(int tag){
         switch (tag) {
-            case 1:{//压力试验
+            case 1:{//历史
                 if (weakSelf.index !=1){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
@@ -57,7 +57,7 @@
                 break;
             }
             case 2:{
-                //万能试验
+                //超标
                 if (weakSelf.index != 2){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
@@ -73,7 +73,7 @@
                 break;
             }
             case 3:{
-                //统计分析
+                //统计
                 if (weakSelf.index != 3){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];

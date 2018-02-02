@@ -49,6 +49,11 @@
 -(void)setEarthLabel:(NSString *)earthLabel {
     self.xib.earthLabel.text = earthLabel;
 }
+-(void)hiddEarthView {
+    self.xib.top.constant = 10;
+    self.xib.earthView.hidden = YES;
+}
+
 -(void)click:(UIButton*)sender{
     if (sender == self.xib.startTimeButton) {
         if (self.expBlock) {

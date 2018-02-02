@@ -60,26 +60,22 @@
     self.departNameLabel.text = model.banhezhanminchen;
 //    self.bhzCountLabel.text = model.bhzCount;
 //    self.bhjCountLabel.text = model.bhjCount;
-    self.totalFangliangLabel.text = model.totalFangliang;
-    self.totalPanshuLabel.text = model.totalPanshu;
+    self.totalFangliangLabel.text = model.zongchanliang;
+    self.totalPanshuLabel.text = model.pangshu;
     //初级
-    self.cbpanshuLabel.text = model.cbpanshu;
-    self.cblvLabel.text = model.cblv;
+    self.cbpanshuLabel.text = model.lowcbps;
+    self.cblvLabel.text = model.lowcbper;
     self.cczpanshuLabel.text = model.cczpanshu;
-    self.czlvLabel.text = model.czlv;
-//    self.cbpanshuLabel.text = model.mcbpanshu;
-//    self.cblvLabel.text = model.mcblv;
-//    self.cczpanshuLabel.text = model.mczpanshu;
-//    self.czlvLabel.text = model.mczlv;
+    self.czlvLabel.text = model.czper;
     //中级
-    self.mcbpanshuLabel.text = model.mcbpanshu;
-    self.mcblvLabel.text = model.mcblv;
-    self.mczpanshuLabel.text = model.mczpanshu;
-    self.mczlvLabel.text = model.mczlv;
+//    self.mcbpanshuLabel.text = model.mcbpanshu;
+//    self.mcblvLabel.text = model.mcblv;
+//    self.mczpanshuLabel.text = model.mczpanshu;
+//    self.mczlvLabel.text = model.mczlv;
     //高级
-    self.hcbpanshuLabel.text = model.hcbpanshu;
-    self.hcblvLabel.text = model.hcblv;
+    self.hcbpanshuLabel.text = model.highcbps;
+    self.hcblvLabel.text = model.highcbper;
     self.hczpanshuLabel.text = model.hczpanshu;
-    self.hczlvLabel.text = model.hczlv;
+    self.hczlvLabel.text = model.hczper;
 }
 @end

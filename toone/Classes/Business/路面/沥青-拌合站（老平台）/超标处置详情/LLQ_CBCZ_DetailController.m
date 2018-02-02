@@ -52,12 +52,12 @@
     //添加指示器
     [Tools showActivityToView:self.view];
     
-    NSString * urlString = lqchaoBiaoXQ;
-    NSDictionary * dict = @{@"bianhao":self.bianhao,
-                            @"shebeibianhao":self.shebeibianhao
-                            };
+    NSString * urlString = [NSString stringWithFormat:lqchaoBiaoXQ,_bianhao];
+//    NSDictionary * dict = @{@"bianhao":self.bianhao,
+//                            @"shebeibianhao":self.shebeibianhao
+//                            };
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         
         if ([json[@"success"] boolValue]) {
             NSMutableArray * datas = [NSMutableArray array];
@@ -67,12 +67,12 @@
                     [datas addObject:data];
                 }
             }
-            if ([json[@"lqHead"] isKindOfClass:[NSDictionary class]]) {
-                LLQ_CBCZ_Detail_lqHead * headModel = [LLQ_CBCZ_Detail_lqHead modelWithDict:json[@"lqHead"]];
+            if ([json[@"liqingxixxPage"] isKindOfClass:[NSDictionary class]]) {
+                LLQ_CBCZ_Detail_lqHead * headModel = [LLQ_CBCZ_Detail_lqHead modelWithDict:json[@"liqingxixxPage"]];
                 weakSelf.headModel = headModel;
             }
-            if ([json[@"lqjg"] isKindOfClass:[NSDictionary class]]) {
-                LLQ_CBCZ_Detail_lqjg * swjgModel = [LLQ_CBCZ_Detail_lqjg modelWithDict:json[@"lqjg"]];
+            if ([json[@"liqingxixxPage"] isKindOfClass:[NSDictionary class]]) {
+                LLQ_CBCZ_Detail_lqjg * swjgModel = [LLQ_CBCZ_Detail_lqjg modelWithDict:json[@"liqingxixxPage"]];
                 weakSelf.swjgModel = swjgModel;
             }
             
@@ -174,7 +174,7 @@
         }else{
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
             cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-            if (EqualToString([UserDefaultsSetting shareSetting].chuzhi, @"1")) {
+//            if (EqualToString([UserDefaultsSetting shareSetting].chuzhi, @"1")) {
                 UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
                 btn.frame = CGRectMake(0, 0, Screen_w, 40);
                 [btn setTitle:@"点击这里开始处置..." forState:UIControlStateNormal];
@@ -182,15 +182,15 @@
                 btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
                 [cell.contentView addSubview:btn];
                 [btn addTarget:self action:@selector(goto_chuzhi) forControlEvents:UIControlEventTouchUpInside];
-            }else{
-                UILabel * label = [[UILabel alloc] init];
-                label.frame = CGRectMake(0, 0, Screen_w, 40);
-                label.text = @"您没有处置权限";
-                label.textAlignment = NSTextAlignmentCenter;
-                label.font = [UIFont systemFontOfSize:12.0f];
-                label.textColor = [UIColor blueColor];
-                [cell.contentView addSubview:label];
-            }
+//            }else{
+//                UILabel * label = [[UILabel alloc] init];
+//                label.frame = CGRectMake(0, 0, Screen_w, 40);
+//                label.text = @"您没有处置权限";
+//                label.textAlignment = NSTextAlignmentCenter;
+//                label.font = [UIFont systemFontOfSize:12.0f];
+//                label.textColor = [UIColor blueColor];
+//                [cell.contentView addSubview:label];
+//            }
             return cell;
         }
     }

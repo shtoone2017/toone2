@@ -21,6 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *earthworkButton;//设计强度
 @property (weak, nonatomic) IBOutlet UILabel *earthLabel;
+@property (weak, nonatomic) IBOutlet UIView *earthView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 
 
 

@@ -100,9 +100,9 @@
     NSDictionary * dic = @{@"jieguobianhao":self.jieguobianhao,
                            @"chaobiaoyuanyin":self.txt1.text,
                            @"chuzhifangshi":self.txt2.text,
+                           @"chuzhijieguo":self.txt3.text,
                            @"chuzhiren":[UserDefaultsSetting shareSetting].userFullName,
                            @"chuzhishijian":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
-                           @"chuzhijieguo":self.txt3.text,
                            };
     
     

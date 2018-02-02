@@ -292,6 +292,13 @@
 		42E60985201F4D24002E7C6A /* YS_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60984201F4D24002E7C6A /* YS_SB_Controller.m */; };
 		42E60988201F4ECA002E7C6A /* YS_SB_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60987201F4ECA002E7C6A /* YS_SB_Model.m */; };
 		42E6098B2020110D002E7C6A /* YS_YSCG_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E6098A2020110D002E7C6A /* YS_YSCG_Controller.m */; };
+		42E60A342022E210002E7C6A /* LQ_Peifang_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60A322022E210002E7C6A /* LQ_Peifang_Controller.m */; };
+		42E60A392022E696002E7C6A /* LQ_SB_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60A352022E695002E7C6A /* LQ_SB_Model.m */; };
+		42E60A3A2022E696002E7C6A /* LQ_SB_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60A372022E695002E7C6A /* LQ_SB_Controller.m */; };
+		42E60A3E20240A72002E7C6A /* SW_LSSJ_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60A3C20240A72002E7C6A /* SW_LSSJ_Cell1.m */; };
+		42E60A3F20240A72002E7C6A /* SW_LSSJ_Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E60A3D20240A72002E7C6A /* SW_LSSJ_Cell1.xib */; };
+		42E60A4320243AE2002E7C6A /* SW_CBCZ_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E60A4120243AE2002E7C6A /* SW_CBCZ_Cell1.m */; };
+		42E60A4420243AE2002E7C6A /* SW_CBCZ_Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E60A4220243AE2002E7C6A /* SW_CBCZ_Cell1.xib */; };
 		42E7CA1D1F4E6BBC00708235 /* YBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */; };
 		42E7CA1E1F4E6BBC00708235 /* YBPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA1A1F4E6BBC00708235 /* YBPopupMenuPath.m */; };
 		42E7CA1F1F4E6BBC00708235 /* YBRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E7CA1C1F4E6BBC00708235 /* YBRectConst.m */; };
@@ -1196,6 +1203,18 @@
 		42E60987201F4ECA002E7C6A /* YS_SB_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_SB_Model.m; sourceTree = "<group>"; };
 		42E609892020110D002E7C6A /* YS_YSCG_Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_YSCG_Controller.h; sourceTree = "<group>"; };
 		42E6098A2020110D002E7C6A /* YS_YSCG_Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_YSCG_Controller.m; sourceTree = "<group>"; };
+		42E60A322022E210002E7C6A /* LQ_Peifang_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_Peifang_Controller.m; sourceTree = "<group>"; };
+		42E60A332022E210002E7C6A /* LQ_Peifang_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_Peifang_Controller.h; sourceTree = "<group>"; };
+		42E60A352022E695002E7C6A /* LQ_SB_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_SB_Model.m; sourceTree = "<group>"; };
+		42E60A362022E695002E7C6A /* LQ_SB_Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_SB_Controller.h; sourceTree = "<group>"; };
+		42E60A372022E695002E7C6A /* LQ_SB_Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQ_SB_Controller.m; sourceTree = "<group>"; };
+		42E60A382022E695002E7C6A /* LQ_SB_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQ_SB_Model.h; sourceTree = "<group>"; };
+		42E60A3B20240A72002E7C6A /* SW_LSSJ_Cell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SW_LSSJ_Cell1.h; sourceTree = "<group>"; };
+		42E60A3C20240A72002E7C6A /* SW_LSSJ_Cell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SW_LSSJ_Cell1.m; sourceTree = "<group>"; };
+		42E60A3D20240A72002E7C6A /* SW_LSSJ_Cell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SW_LSSJ_Cell1.xib; sourceTree = "<group>"; };
+		42E60A4020243AE2002E7C6A /* SW_CBCZ_Cell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SW_CBCZ_Cell1.h; sourceTree = "<group>"; };
+		42E60A4120243AE2002E7C6A /* SW_CBCZ_Cell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SW_CBCZ_Cell1.m; sourceTree = "<group>"; };
+		42E60A4220243AE2002E7C6A /* SW_CBCZ_Cell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SW_CBCZ_Cell1.xib; sourceTree = "<group>"; };
 		42E7CA171F4E6BBC00708235 /* YBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenu.h; sourceTree = "<group>"; };
 		42E7CA181F4E6BBC00708235 /* YBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBPopupMenu.m; sourceTree = "<group>"; };
 		42E7CA191F4E6BBC00708235 /* YBPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBPopupMenuPath.h; sourceTree = "<group>"; };
@@ -3541,6 +3560,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		42E60A312022E1D5002E7C6A /* 沥青-设备（老平台） */ = {
+			isa = PBXGroup;
+			children = (
+				42E60A332022E210002E7C6A /* LQ_Peifang_Controller.h */,
+				42E60A322022E210002E7C6A /* LQ_Peifang_Controller.m */,
+				42E60A362022E695002E7C6A /* LQ_SB_Controller.h */,
+				42E60A372022E695002E7C6A /* LQ_SB_Controller.m */,
+				42E60A382022E695002E7C6A /* LQ_SB_Model.h */,
+				42E60A352022E695002E7C6A /* LQ_SB_Model.m */,
+			);
+			path = "沥青-设备（老平台）";
+			sourceTree = "<group>";
+		};
 		42E7CA161F4E6BBC00708235 /* YBPopupMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -3805,6 +3837,9 @@
 				42F9914A201AD3760044B77B /* LQ_SW_Cell.xib */,
 				42F9914B201AD3760044B77B /* SW_CBCZ_Cell.h */,
 				42F9914C201AD3760044B77B /* SW_CBCZ_Cell.m */,
+				42E60A4020243AE2002E7C6A /* SW_CBCZ_Cell1.h */,
+				42E60A4120243AE2002E7C6A /* SW_CBCZ_Cell1.m */,
+				42E60A4220243AE2002E7C6A /* SW_CBCZ_Cell1.xib */,
 				42F9914D201AD3760044B77B /* SW_CBCZ_View.h */,
 				42F9914E201AD3760044B77B /* SW_CBCZ_View.m */,
 				42F9914F201AD3760044B77B /* SW_CBCZ_View.xib */,
@@ -3816,6 +3851,9 @@
 				42F99155201AD3760044B77B /* SW_CLHS_ChatCell.xib */,
 				42F99156201AD3760044B77B /* SW_LSSJ_Cell.h */,
 				42F99157201AD3760044B77B /* SW_LSSJ_Cell.m */,
+				42E60A3B20240A72002E7C6A /* SW_LSSJ_Cell1.h */,
+				42E60A3C20240A72002E7C6A /* SW_LSSJ_Cell1.m */,
+				42E60A3D20240A72002E7C6A /* SW_LSSJ_Cell1.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -4194,6 +4232,7 @@
 				42F9923D201B09E00044B77B /* 压实 */,
 				42F99132201AD3760044B77B /* 沥青-水稳（老平台） */,
 				42F9909F201AD35C0044B77B /* 沥青-拌合站（老平台） */,
+				42E60A312022E1D5002E7C6A /* 沥青-设备（老平台） */,
 				42F991C6201AD3C00044B77B /* 沥青-试验室 */,
 			);
 			path = "路面";
@@ -5952,6 +5991,7 @@
 				42AC717A1E30C393007D8F57 /* NQ_BHZ_SCCX_Inner_Cell.xib in Resources */,
 				426E90D1200CD129001FF8AE /* AAHighchartsLibrary.js in Resources */,
 				426E90D0200CD129001FF8AE /* AAHighcharts-3d.js in Resources */,
+				42E60A3F20240A72002E7C6A /* SW_LSSJ_Cell1.xib in Resources */,
 				D20064951DFF86800021E293 /* Exp2_Xib_View.xib in Resources */,
 				42E288801F45AF8A0002AF72 /* states.plist in Resources */,
 				8C28404B1EB1123600440413 /* TP_DW_Controller.xib in Resources */,
@@ -5978,6 +6018,7 @@
 				426037E21F8F67420053A2C3 /* WTJ_DetailsController.xib in Resources */,
 				D20064651DFF86800021E293 /* DrawerController.xib in Resources */,
 				42AC71771E30C393007D8F57 /* NQ_BHZ_SCCX_Inne_Cell.xib in Resources */,
+				42E60A4420243AE2002E7C6A /* SW_CBCZ_Cell1.xib in Resources */,
 				8C2840471EB1123600440413 /* TP_CLSB_Controller.xib in Resources */,
 				8C28404D1EB1123600440413 /* TP_SB_Controller.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
@@ -6132,6 +6173,7 @@
 				42AC71461E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Controller.m in Sources */,
 				42F9911F201AD35C0044B77B /* LLQ_CBCZ_Detail_ShenPi_Cell.m in Sources */,
 				D20064971DFF86800021E293 /* Exp3View.m in Sources */,
+				42E60A3A2022E696002E7C6A /* LQ_SB_Controller.m in Sources */,
 				426E90E4200CD129001FF8AE /* AAPlotOptions.m in Sources */,
 				42E6098B2020110D002E7C6A /* YS_YSCG_Controller.m in Sources */,
 				D2CF6B6C1E011D98003AE61D /* UIView+Shape.m in Sources */,
@@ -6201,6 +6243,7 @@
 				D20064641DFF86800021E293 /* DrawerController.m in Sources */,
 				8C2840811EB1130D00440413 /* TP_SB_Model.m in Sources */,
 				42F99112201AD35C0044B77B /* LLQ_LSSJ_Detail_HeadCell.m in Sources */,
+				42E60A342022E210002E7C6A /* LQ_Peifang_Controller.m in Sources */,
 				42AC71561E30C393007D8F57 /* SeniorExcessiveTableConller.m in Sources */,
 				D20064961DFF86800021E293 /* Exp2View.m in Sources */,
 				42E288CF1F4AD9A80002AF72 /* GCB_JZL_DetailCell.m in Sources */,
@@ -6217,6 +6260,7 @@
 				426E90DC200CD129001FF8AE /* AALabels.m in Sources */,
 				42F991BC201AD3760044B77B /* SW_CBCZ_Detail_ShenPi_Controller.m in Sources */,
 				42F991AC201AD3760044B77B /* SW_LSSJ_Detail_Head.m in Sources */,
+				42E60A4320243AE2002E7C6A /* SW_CBCZ_Cell1.m in Sources */,
 				42AC720E1E30C576007D8F57 /* MASLayoutConstraint.m in Sources */,
 				42AC71B81E30C423007D8F57 /* SGBar.m in Sources */,
 				42AC71401E30C393007D8F57 /* ManageViewController.m in Sources */,
@@ -6283,6 +6327,7 @@
 				4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */,
 				42AC71661E30C393007D8F57 /* DayDetailsCell.m in Sources */,
 				42E288C71F4AB7900002AF72 /* GCB_RWD_HeadModel.m in Sources */,
+				42E60A392022E696002E7C6A /* LQ_SB_Model.m in Sources */,
 				9CAAAF911F43DEF6008F43BA /* SYS_PHBListModel.m in Sources */,
 				D20064891DFF86800021E293 /* HNT_SYS_Cell.m in Sources */,
 				42AC71521E30C393007D8F57 /* EXPrimaryCell.m in Sources */,
@@ -6525,6 +6570,7 @@
 				42F99239201B04460044B77B /* ChooseViewController.m in Sources */,
 				42F99198201AD3760044B77B /* SW_CLHS_Model.m in Sources */,
 				187C72FD1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
+				42E60A3E20240A72002E7C6A /* SW_LSSJ_Cell1.m in Sources */,
 				42AC717E1E30C393007D8F57 /* LQ_Model.m in Sources */,
 				42E288C31F49856E0002AF72 /* GCB_RWD_Detail_DataCell.m in Sources */,
 				9CDF80D92021685B00650228 /* YS_BianshuModel.m in Sources */,
