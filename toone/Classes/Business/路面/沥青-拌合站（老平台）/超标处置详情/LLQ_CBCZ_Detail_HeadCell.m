@@ -18,10 +18,10 @@
 @implementation LLQ_CBCZ_Detail_HeadCell
 
 -(void)setModel:(LLQ_CBCZ_Detail_lqHead *)model{
-    self.lb1.text = model.bhjName;
+    self.lb1.text = model.banhezhanminchen;
     self.lb2.text = model.caijishijian;
-    self.lb3.text = model.chuliaoshijian;
-    self.lb4.text = model.cl;
+    self.lb3.text = model.shijian;
+    self.lb4.text = model.changliang;
 }
 
 @end

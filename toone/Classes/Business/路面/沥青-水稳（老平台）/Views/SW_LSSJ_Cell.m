@@ -48,19 +48,24 @@
     }
 #pragma mark - 数据处理
     NSMutableArray * datas = [NSMutableArray array];
-    [datas addObject:@{@"bzhName":[model.dataDict  objectForKey:@"bzhName"]}];
-    [datas addObject:@{@"zcl":    [model.dataDict  objectForKey:@"zcl"]}];
-    [datas addObject:@{@"sjshui":    [model.dataDict  objectForKey:@"sjshui"]}];
-    [datas addObject:@{@"usePosition": [model.dataDict  objectForKey:@"usePosition"]}];
-    [datas addObject:@{@"clTime": [model.dataDict  objectForKey:@"clTime"]}];
+    NSArray * name = @[@"拌合站名称",@"总产量",@"实际水",@"时间"];
+    [datas addObject:model.banhezhanminchen];
+    [datas addObject:[NSString stringWithFormat:@"%@",model.glchangliang]];
+    [datas addObject:[NSString stringWithFormat:@"%@",model.sjshui]];
+    [datas addObject:model.shijian];
+//    [datas addObject:@{@"banhezhanminchen":model.banhezhanminchen}];
+//    [datas addObject:@{@"glchangliang": [NSString stringWithFormat:@"%@",model.glchangliang]}];
+//    [datas addObject:@{@"sjshui": [NSString stringWithFormat:@"%@",model.sjshui]}];
+//    [datas addObject:@{@"shijian": model.shijian}];
     
     int index = 0;
     for (NSDictionary * dict in datas) {
         SW_CBCZ_View * childrenCell  = [[NSBundle mainBundle] loadNibNamed:@"SW_CBCZ_View" owner:nil options:nil][0];
         childrenCell.frame = CGRectMake(0,index*15, self.containerView.frame.size.width, 15);
         [self.containerView addSubview:childrenCell];
-        childrenCell.label1.text = [NSString stringWithFormat:@"%@ :",[model.fieldDict objectForKey:dict.allKeys.firstObject]];
-        childrenCell.label2.text = [model.dataDict  objectForKey:dict.allKeys.firstObject];
+//        childrenCell.label1.text = [NSString stringWithFormat:@"%@ :",[model.fieldDict objectForKey:dict.allKeys.firstObject]];
+        childrenCell.label1.text = name[index];
+        childrenCell.label2.text = datas[index];
         index++ ;
     }
 }

@@ -23,9 +23,9 @@ static NetworkTool *_instance;
 
 - (void)getObjectWithURLString:(NSString *)URLString completeBlock:(CompleteBlock)completeBlock{
     [self GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *responseStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        NSString *responseStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         if (completeBlock) {
-            completeBlock(responseStr);
+            completeBlock(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        if (completeBlock) {

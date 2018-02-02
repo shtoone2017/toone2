@@ -1,54 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SW_CLHS_ChatCell" rowHeight="880" id="KGk-i7-Jjw" customClass="SW_CLHS_ChatCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="865"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="864.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="459.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RT-F6-iFz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="理论用量图(单位:kg)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzd-jW-s97">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="bwI-Cu-JJv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-O4-DiU">
-                                <rect key="frame" x="0.0" y="35" width="320" height="360"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dzd-jW-s97" firstAttribute="leading" secondItem="3RT-F6-iFz" secondAttribute="leading" id="0VT-iY-ha1"/>
-                            <constraint firstAttribute="trailing" secondItem="dzd-jW-s97" secondAttribute="trailing" id="1Z8-Li-wHM"/>
-                            <constraint firstAttribute="trailing" secondItem="KIF-O4-DiU" secondAttribute="trailing" id="FOH-xk-7gn"/>
-                            <constraint firstItem="KIF-O4-DiU" firstAttribute="leading" secondItem="3RT-F6-iFz" secondAttribute="leading" id="ZKj-R7-aNf"/>
-                            <constraint firstItem="dzd-jW-s97" firstAttribute="top" secondItem="3RT-F6-iFz" secondAttribute="top" id="jda-WU-sIP"/>
-                            <constraint firstAttribute="height" constant="395" id="pSH-0D-ang"/>
-                            <constraint firstItem="KIF-O4-DiU" firstAttribute="top" secondItem="dzd-jW-s97" secondAttribute="bottom" id="pW3-5W-Ej0"/>
-                            <constraint firstAttribute="bottom" secondItem="KIF-O4-DiU" secondAttribute="bottom" id="sj0-1S-FlB"/>
-                        </constraints>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-Hc-xPS">
-                        <rect key="frame" x="0.0" y="405" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际用量图(单位:kg)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-vs-uYC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
@@ -77,7 +48,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sez-fK-W4P">
-                        <rect key="frame" x="0.0" y="810" width="320" height="54"/>
+                        <rect key="frame" x="0.0" y="405" width="320" height="54"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="核算表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3US-DS-yXY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
@@ -164,19 +135,15 @@
                 </subviews>
                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="Byt-Hc-xPS" firstAttribute="top" secondItem="3RT-F6-iFz" secondAttribute="bottom" constant="10" id="2ua-el-WCh"/>
                     <constraint firstItem="Byt-Hc-xPS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Q9t-Wq-j0A"/>
                     <constraint firstAttribute="trailing" secondItem="sez-fK-W4P" secondAttribute="trailing" id="Qou-LW-1VL"/>
                     <constraint firstAttribute="trailing" secondItem="Byt-Hc-xPS" secondAttribute="trailing" id="Xnd-jF-Oj5"/>
+                    <constraint firstItem="Byt-Hc-xPS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cGh-cv-gW4"/>
                     <constraint firstItem="sez-fK-W4P" firstAttribute="top" secondItem="Byt-Hc-xPS" secondAttribute="bottom" constant="10" id="e29-tO-hlT"/>
-                    <constraint firstItem="3RT-F6-iFz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jfW-7k-Tde"/>
-                    <constraint firstAttribute="trailing" secondItem="3RT-F6-iFz" secondAttribute="trailing" id="mbl-Ws-TPN"/>
-                    <constraint firstItem="3RT-F6-iFz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nbJ-yc-DPy"/>
                     <constraint firstItem="sez-fK-W4P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rvi-IT-d9c"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="chartContrainer1" destination="KIF-O4-DiU" id="hJj-kg-czM"/>
                 <outlet property="chartContrainer2" destination="k0F-c2-Yls" id="Y5l-uV-0fe"/>
                 <outlet property="hsLabel" destination="3US-DS-yXY" id="IV6-rg-Qee"/>
                 <outlet property="unitButton" destination="Xwe-No-aN2" id="I38-vo-1Px"/>

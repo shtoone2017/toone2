@@ -10,7 +10,7 @@
 #import "SW_CLHS_Model.h"
 #import "SW_CLHS_ChatCell.h"
 #import "SW_CLHS_Cell.h"
-//#import "LQ_SB_Controller.h"
+#import "LQ_SB_Controller.h"
 #import "BarModel.h"
 #import "AAChartView.h"
 @interface SW_CLHS_Controller ()<UITableViewDelegate,UITableViewDataSource>
@@ -24,6 +24,7 @@
 //***************
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * sbName;//设备
+@property (nonatomic, copy) NSString *departId;
 @end
 
 @implementation SW_CLHS_Controller
@@ -31,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.shebeibianhao = @"";
+    _departId = self.conditonDict[@"departType"];
     
     [self loadUi];
     [self loadData];
@@ -52,17 +54,16 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = swmaterial;
-    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":self.shebeibianhao,
-                            };
+    NSString * urlString = [NSString stringWithFormat:swmaterial,startTimeStamp,endTimeStamp,_departId,_shebeibianhao];
+//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":self.shebeibianhao,
+//                            };
     __weak typeof(self)  weakSelf = self;
     
-    
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -90,7 +91,7 @@
             [bars2 addObject:mode];
             
         }
-        weakSelf.datas1 = bars1;
+//        weakSelf.datas1 = bars1;
         weakSelf.datas2 = bars2;
         //1.
         weakSelf.datas = datas;
@@ -109,7 +110,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        return 865;
+        return 460;
     }
         
     return 20;
@@ -118,7 +119,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         SW_CLHS_ChatCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CLHS_ChatCell"];
-        cell.datas1 = self.datas1;
+//        cell.datas1 = self.datas1;
         cell.datas2 = self.datas2;
         [cell.unitButton addTarget:self action:@selector(choiceUnit:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
@@ -199,7 +200,16 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller2" sender:btn];
+            LQ_SB_Controller *controller = [[LQ_SB_Controller alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            controller.title = @"选择设备";
+            controller.conditonDict = @{@"userGroupId":_departId,
+                                        @"bhjtype":@"5",
+                                        };
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                self.shebeibianhao = gprsbianhao;
+            };
         }
     };
     [self.view addSubview:e];

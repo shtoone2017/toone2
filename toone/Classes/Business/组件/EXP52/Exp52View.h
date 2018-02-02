@@ -18,4 +18,5 @@ typedef void(^Exp52Block_t) (ExpButtonType,id,id);
 @property (nonatomic,copy) NSString * sbLabel;
 @property (nonatomic,copy) NSString * earthLabel;
 
+-(void)hiddEarthView;
 @end

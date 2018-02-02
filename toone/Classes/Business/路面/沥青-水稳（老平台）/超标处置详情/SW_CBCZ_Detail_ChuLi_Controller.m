@@ -101,6 +101,7 @@
                            @"chuzhiren":[UserDefaultsSetting shareSetting].userFullName,
                            @"chuzhishijian":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
                            @"chuzhijieguo":self.txt3.text,
+                           @"isIos":@"1"
                            };
     
     

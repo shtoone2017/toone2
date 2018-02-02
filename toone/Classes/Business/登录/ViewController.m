@@ -158,9 +158,9 @@
                     setting.userFullName = json[@"userFullName"];
                     
                     setting.login = YES;
-//                    setting.type = json[@"type"];
+                    setting.type = json[@"type"];
 //                    setting.loginDepartId  = json[@"departId"];
-//                    setting.userRole  = json[@"userRole"];
+                    setting.userRole  = json[@"userRole"];
                     [setting saveToSandbox];
                 });
                 
@@ -176,12 +176,12 @@
                         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                     }
                     if ([json[@"type"]  isEqualToString: @"GL"]){//管理层
-                        id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+                        ChooseViewController * vc = (ChooseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChooseViewController"];
+                        //                    MyNavigationController * nvc = [[MyNavigationController alloc] initWithRootViewController:vc];
                         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                     }
-                    ChooseViewController * vc = (ChooseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChooseViewController"];
-//                    MyNavigationController * nvc = [[MyNavigationController alloc] initWithRootViewController:vc];
-                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+//                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+//                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                     
                     
                     [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];

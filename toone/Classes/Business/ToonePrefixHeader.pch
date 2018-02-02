@@ -15,7 +15,9 @@
 //云部署地址
 //#define baseUrl      @"http://116.62.30.27:8081/zj4jymqms/"   //中建四局
 //#define baseUrl         @"http://121.40.150.65:8083/zt11j5gs3.6.6WZ/"  //中铁十一局
-#define baseUrl       @"http://112.124.12.254:8082/hnymmss/"    //湖南益马
+#define baseUrl       @"http://192.168.1.182:8081/jeecg/"
+//#define baseUrl       @"http://192.168.1.167:8081/jeecg/"//徐浩
+
 
 //压实服务器地址
 #define baseUrl2       @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/"
@@ -136,55 +138,55 @@
 
         /******************水稳*********************/
 //登录
-#define AppLogin_2   FormatString(baseUrl,@"app/AppLogin?userName=%@&userPwd=%@&OSType=3")
-//水稳预警统计
-#define warningStatistics   FormatString(baseUrl,@"app/warningStatistics?")
+//#define AppLogin_2   FormatString(baseUrl,@"app/AppLogin?userName=%@&userPwd=%@&OSType=3")
+//水稳预警统计---改
+#define warningStatistics   FormatString(baseUrl,@"AppSwController.do?warningStatistics&startTime=%@&endTime=%@&userGroupId=%@&shebeibianhao=%@&fzlx=%@")
 //组织机构接口
 #define departTree   FormatString(baseUrl,@"app/departTree?")
-//水稳历史数据查询
-#define appSwcllist   FormatString(baseUrl,@"app/appSwcllist?")
-//水稳超标查询
-#define chaoBiaoList   FormatString(baseUrl,@"app/chaoBiaoList?")
-//超标查询详情页
-#define chaoBiaoXQ   FormatString(baseUrl,@"app/chaoBiaoXQ?")
-//水稳历史数据查询详情页
-#define appSwclXQ   FormatString(baseUrl,@"app/appSwclXQ?")
+//水稳历史数据查询---改
+#define appSwcllist   FormatString(baseUrl,@"AppSwController.do?appSwcllist&startTime=%@&endTime=%@&departId=%@&shebeibianhao=%@&pageNo=%@&maxPageItems=%@")
+//水稳超标查询----改
+#define chaoBiaoList   FormatString(baseUrl,@"AppSwController.do?chaoBiaoList&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&leixing=%@&cllx=%@&pageNo=%@&maxPageItems=%@")
+//超标查询详情页----改
+#define chaoBiaoXQ   FormatString(baseUrl,@"AppSwController.do?chaoBiaoXQ&shebeibianhao=%@&bianhao=%@")
+//水稳历史数据查询详情页---改
+#define appSwclXQ   FormatString(baseUrl,@"AppSwController.do?appSwclXQ&shebeibianhao=%@&bianhao=%@")
 
-//水稳超标处置
-#define appSWChaobiaoChuzhi   FormatString(baseUrl,@"app/appSWChaobiaoChuzhi?")
+//水稳超标处置----改
+#define appSWChaobiaoChuzhi   FormatString(baseUrl,@"AppSwController.do?appSWChaobiaoChuzhi")
 //水稳超标审批
 #define appHntChaobiaoShenpi   FormatString(baseUrl,@"app/appHntChaobiaoShenpi?")
 //水稳超标咨询
 #define appHntChaobiaoZXDWShenpi   FormatString(baseUrl,@"app/appHntChaobiaoZXDWShenpi?")
 
-//水稳材料统计
-#define swmaterial   FormatString(baseUrl,@"app/swmaterial?")
-//拌合站设备接口
-#define machineList   FormatString(baseUrl,@"app/machineList?")
+//水稳材料统计---改
+#define swmaterial   FormatString(baseUrl,@"AppSwController.do?swmaterial&startTime=%@&endTime=%@&userGroupId=%@&shebeibianhao=%@")
+//拌合站设备接口---改
+#define machineList   FormatString(baseUrl,@"AppSwController.do?banhejiSearch&bhjtype=%@&userGroupId=%@")
 //水稳历史数据查询使用部位接口
 #define url_usePosition   FormatString(baseUrl,@"app/usePosition?")
-//沥青历史数据混合料型号接口
-#define appLq_usePosition   FormatString(baseUrl,@"appLq/usePosition?")
-//沥青预警统计
-#define lqWarningStatistics   FormatString(baseUrl,@"appLq/lqWarningStatistics?")
-//沥青超标查询
-#define lqchaoBiaoList   FormatString(baseUrl,@"appLq/lqchaoBiaoList?")
+//沥青历史数据混合料型号接口---改
+#define appLq_usePosition   FormatString(baseUrl,@"Appliqing.do?usePosition")
+//沥青预警统计---改
+#define lqWarningStat   FormatString(baseUrl,@"Appliqing.do?lqWarningStatistics&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&fzlx=%@&hhllx=%@")
+//沥青超标查询---改
+#define lqchaoBiaoList   FormatString(baseUrl,@"Appliqing.do?lqchaoBiaoList&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&chaobiaolx=%@&cllx=%@&pageNo=%@&maxPageItems=%@")
 //沥青材料统计
 #define lqmaterial   FormatString(baseUrl,@"appLq/lqmaterial?")
 
-//沥青超标查询详情页
-#define lqchaoBiaoXQ   FormatString(baseUrl,@"appLq/lqchaoBiaoXQ?")
-//沥青超标处置
-#define appLQChaobiaoChuzhi   FormatString(baseUrl,@"appLq/appLQChaobiaoChuzhi?")
+//沥青超标查询详情页---改
+#define lqchaoBiaoXQ   FormatString(baseUrl,@"Appliqing.do?LqchaoBiaoXQ&id=%@")
+//沥青超标处置---改
+#define appLQChaobiaoChuzhi   FormatString(baseUrl,@"Appliqing.do?appLQChaobiaoChuzhi")
 //沥青超标审批
 #define appLqChaobiaoShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoShenpi?")
 //沥青超标咨询
 #define appLqChaobiaoZXDWShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoZXDWShenpi?")
-//沥青历史数据查询详情页
-#define liqingxixx   FormatString(baseUrl,@"appLq/liqingxixx?")
+//沥青历史数据查询详情页---改
+#define liqingxixx   FormatString(baseUrl,@"Appliqing.do?liqingxixx")
 
-//沥青历史数据查询
-#define lqgallclList   FormatString(baseUrl,@"appLq/lqgallclList?")
+//沥青历史数据查询---改
+#define lqgallclList   FormatString(baseUrl,@"Appliqing.do?lqgallclList&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&peifan=%@&pageNo=%@&maxPageItems=%@")
 
 
 /**************************沥青试验室*********************************/
@@ -218,7 +220,7 @@
  2--------------------物资-------------------
  */
 //登录
-//#define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
+#define AppLogin_2   FormatString(baseUrl,@"app.do?AppLogin&userName=%@&userPwd=%@&OSType=3")
 //试验室列表
 #define sysHome_3    FormatString(baseUrl,@"sysController.do?sysHome&userGroupId=%@&startTime=%@&endTime=%@")
 //拌合站列表

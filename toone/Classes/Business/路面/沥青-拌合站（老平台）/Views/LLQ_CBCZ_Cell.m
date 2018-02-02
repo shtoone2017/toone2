@@ -72,8 +72,11 @@
     [datas addObject:@{@"clwd":   [model.dataDict  objectForKey:@"clwd"]}];
     [datas addObject:@{@"glwd":   [model.dataDict  objectForKey:@"glwd"]}];
     for (NSString * key in model.dataDict.allKeys) {
-        if ((([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
-            [datas addObject:@{key:[model.dataDict  objectForKey:key]}];
+        NSString *results = [model.dataDict objectForKey:key];
+        if (![results  isKindOfClass:[NSNull class]]) {
+            if ((([key hasPrefix:@"sjf"] || [key hasPrefix:@"sjg"]) && [[model.dataDict objectForKey:key] intValue]>=1)) {
+                [datas addObject:@{key:[model.dataDict  objectForKey:key]}];
+            }
         }
     }
     int index = 0;
@@ -111,7 +114,10 @@
                 
                 childrenCell.label2.text = nil;
             }else{
-                childrenCell.label2.text = [model.dataDict  objectForKey:dict.allKeys.firstObject];
+                NSString *results = [model.dataDict  objectForKey:dict.allKeys.firstObject];
+                if (![results  isKindOfClass:[NSNull class]]) {
+                    childrenCell.label2.text = [model.dataDict  objectForKey:dict.allKeys.firstObject];
+                }
                 childrenCell.label2.backgroundColor = [UIColor clearColor];
                 childrenCell.label2.font = [UIFont systemFontOfSize:12];
                 childrenCell.label2.textColor = [UIColor blackColor];

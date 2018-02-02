@@ -9,11 +9,12 @@
 #import "SW_CBCZ_Controller.h"
 //#import "HNT_CBCZ_Cell.h"
 //#import "HNT_CBCZ_Model.h"
-//#import "LQ_SB_Controller.h"
+#import "LQ_SB_Controller.h"
 #import "SW_CBCZ_DetailController.h"
 
 #import "SW_CBCZ_Model.h"
 #import "SW_CBCZ_Cell.h"
+#import "SW_CBCZ_Cell1.h"
 @interface SW_CBCZ_Controller ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)searchButtonClick:(UIButton *)sender;
 //@property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -46,6 +47,7 @@
 @property (nonatomic,copy) NSString * shebeibianhao                         ;//设备编号
 @property (nonatomic,copy) NSString * chaobiaolx;//超标类型 0 全部 1 初级 2 中级 3 高级 dengji
 @property (nonatomic,copy) NSString * cllx;//处理类型 0 全部 1 未处理 2 已处理 chuzhileixing
+@property (nonatomic, copy) NSString *departId;
 
 
 @property (nonatomic,copy) NSString * tableViewSigner                       ;//列表标记
@@ -64,9 +66,10 @@
         self.pageNo2 = @"1";
         self.pageNo3 = @"1";
         
+        _departId = self.conditonDict[@"departType"];
         self.pageNo = _pageNo1;
         self.maxPageItems = @"30";
-        self.chaobiaolx = @"2";//全部
+        self.chaobiaolx = @"1";//全部
         self.shebeibianhao = @"";
         self.cllx = @"0";
         self.tableViewSigner = @"1";
@@ -134,7 +137,9 @@
     }];
     
     
-    [tableView registerClass:[SW_CBCZ_Cell class] forCellReuseIdentifier:@"SW_CBCZ_Cell"];
+//    [tableView registerClass:[SW_CBCZ_Cell class] forCellReuseIdentifier:@"SW_CBCZ_Cell"];
+    tableView.rowHeight = 100;
+    [tableView registerNib:[UINib nibWithNibName:@"SW_CBCZ_Cell1" bundle:nil] forCellReuseIdentifier:@"SW_CBCZ_Cell1"];
 }
 #pragma mark - 顶部title的点击事件
 - (IBAction)titleButtonClick:(UIButton *)sender {
@@ -217,33 +222,34 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = chaoBiaoList;
-    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":self.shebeibianhao,
-                            @"chaobiaolx":self.chaobiaolx,
-                            @"cllx":self.cllx,
-                            @"pageNo":self.pageNo,
-                            @"maxPageItems":self.maxPageItems,
-                            };
+    NSString * urlString = [NSString stringWithFormat:chaoBiaoList,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_chaobiaolx,_cllx,_pageNo,_maxPageItems];
+//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":self.shebeibianhao,
+//                            @"chaobiaolx":self.chaobiaolx,
+//                            @"cllx":self.cllx,
+//                            @"pageNo":self.pageNo,
+//                            @"maxPageItems":self.maxPageItems,
+//                            };
     
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
                 for (NSDictionary * dict in json[@"data"]) {
-                    SW_CBCZ_Model * model =  [[SW_CBCZ_Model alloc] init];
-                    model.dataDict = dict;
-                    model.fieldDict = json[@"field"];
-                    model.isShow    = json[@"isShow"];
-                    model.shenhe = dict[@"shenhe"];
-                    model.chuli = dict[@"chuli"];
-                    model.zxdwshenhe = dict[@"zxdwshenhe"];
-                    model.sbbh = dict[@"sbbh"];
-                    model.bianhao = dict[@"bianhao"];
+                    SW_CBCZ_Model * model =  [SW_CBCZ_Model modelWithDict:dict];
+                    model.bhId = dict[@"id"];
+//                    model.dataDict = dict;
+//                    model.fieldDict = json[@"field"];
+//                    model.isShow    = json[@"isShow"];
+//                    model.shenhe = dict[@"shenhe"];
+//                    model.chuli = dict[@"chuli"];
+//                    model.zxdwshenhe = dict[@"zxdwshenhe"];
+//                    model.sbbh = dict[@"sbbh"];
+//                    model.bianhao = dict[@"bianhao"];
                     
                     [datas addObject:model];
                 }
@@ -315,25 +321,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableView1) {
-        SW_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Cell" forIndexPath:indexPath];
+        SW_CBCZ_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Cell1" forIndexPath:indexPath];
         SW_CBCZ_Model * model = self.datas1[indexPath.row];
         cell.model = model;
         return cell;
     }
     if (tableView == self.tableView2) {
-        SW_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Cell" forIndexPath:indexPath];
+        SW_CBCZ_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Cell1" forIndexPath:indexPath];
         SW_CBCZ_Model * model = self.datas2[indexPath.row];
         cell.model = model;
         return cell;
     }
     if (tableView == self.tableView3) {
-        SW_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Cell" forIndexPath:indexPath];
+        SW_CBCZ_Cell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"SW_CBCZ_Cell1" forIndexPath:indexPath];
         SW_CBCZ_Model * model = self.datas3[indexPath.row];
         cell.model = model;
         return cell;
     }
     return nil;
 }
+/*
 -(CGFloat)rowHeightWithModel:(SW_CBCZ_Model*)model{
     int index = 0;
     for (NSString * key in model.dataDict.allKeys) {
@@ -359,6 +366,7 @@
     }
     return 0.1;
 }
+*/
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SW_CBCZ_Model * model;
     if (tableView == self.tableView1) {
@@ -370,8 +378,8 @@
     if (tableView == self.tableView3) {
         model = self.datas3[indexPath.row];
     }
-  NSDictionary * dic=@{@"bianhao":model.bianhao,
-                       @"shebeibianhao":model.sbbh,
+  NSDictionary * dic=@{@"bianhao":[NSString stringWithFormat:@"%@",model.bhId],
+                       @"shebeibianhao":model.shebeibianhao,
                        @"chuli":model.chuli,
                        @"shenhe":model.shenhe,
                        @"zxdwshenhe":model.zxdwshenhe,
@@ -438,7 +446,16 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller" sender:btn];
+            LQ_SB_Controller *controller = [[LQ_SB_Controller alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            controller.title = @"选择设备";
+            controller.conditonDict = @{@"userGroupId":_departId,
+                                        @"bhjtype":@"5",
+                                        };
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                self.shebeibianhao = gprsbianhao;
+            };
         }
     };
     [self.view addSubview:e];

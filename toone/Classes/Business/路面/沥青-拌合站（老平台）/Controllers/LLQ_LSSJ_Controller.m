@@ -9,9 +9,10 @@
 #import "LLQ_LSSJ_Controller.h"
 #import "LLQ_LSSJ_Model.h"
 #import "LLQ_LSSJ_Cell.h"
-//#import "LQ_SB_Controller.h"
-//#import "LQ_Peifang_Controller.h"
+#import "LQ_SB_Controller.h"
+#import "LQ_Peifang_Controller.h"
 #import "LLQ_LSSJ_DetailController.h"
+#import "NodeViewController.h"
 @interface LLQ_LSSJ_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)searchButtonClick:(UIButton *)sender;
@@ -24,6 +25,8 @@
 @property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * peifan;//沥青混合料型号
+@property (nonatomic, copy) NSString *departId;
+
 @end
 
 @implementation LLQ_LSSJ_Controller
@@ -32,8 +35,9 @@
     [super viewDidLoad];
     self.pageNo = @"1";
     self.maxPageItems = @"30";
-    self.shebeibianhao = @"";
+    self.shebeibianhao = @"test1";
     self.peifan = @"";
+    _departId = self.conditonDict[@"departType"];
     [self loadUI];
     [self loadData];
 }
@@ -62,19 +66,19 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqgallclList;
-    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":self.shebeibianhao,
-                            @"peifan":self.peifan,
-                            @"pageNo":self.pageNo,
-                            @"maxPageItems":self.maxPageItems,
-                            };
+    NSString * urlString = [NSString stringWithFormat:lqgallclList,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_peifan,_pageNo,_maxPageItems];
+//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":self.shebeibianhao,
+//                            @"peifan":self.peifan,
+//                            @"pageNo":self.pageNo,
+//                            @"maxPageItems":self.maxPageItems,
+//                            };
     
     __weak typeof(self)  weakSelf = self;
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -144,8 +148,10 @@
     
     //2.
     Exp52View * e = [[Exp52View alloc] init];
-    e.useLabel = @"沥青混合料型号";
-    e.frame = CGRectMake(0, 64+36, Screen_w, 240);
+    e.sbLabel = @"沥青混合料型号";
+    e.earthLabel = @"选择设备";
+    
+    e.frame = CGRectMake(0, 64+36, Screen_w, 275);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){
         //        NSLog(@"ExpButtonType~~~ %d",type);
@@ -170,13 +176,39 @@
             [weakSelf calendarWithTimeString:btn.currentTitle obj:btn];
         }
         
-        if (type == ExpButtonTypeChoiceSBButton) {
+        if (type == ExpButtonTypeChoiceSBButton) {//混合
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller6" sender:btn];
+            LQ_Peifang_Controller *sbVc = [[LQ_Peifang_Controller alloc] init];
+            [self.navigationController pushViewController:sbVc animated:YES];
+            sbVc.callBlock = ^(NSString *name) {
+                [btn setTitle:name forState:UIControlStateNormal];
+                _peifan = name;
+            };
+
         }
-        if (type == ExpButtonTypeUsePosition) {
+        if (type == ExpButtonTypeUsePosition) {//组织
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_Peifang_Controller" sender:btn];
+            NodeViewController *vc = [[NodeViewController alloc] init];
+            vc.type = NodeTypeZZJG;
+            vc.ZZJGBlock = ^(NSString *name, NSString *identifier) {
+                [btn setTitle:name forState:UIControlStateNormal];
+                weakSelf.departId = identifier;
+            };
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        if (type == ExpButtonTypeEarthwork) {//设备
+            UIButton * btn = (UIButton*)obj1;
+            LQ_SB_Controller *controller = [[LQ_SB_Controller alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            controller.title = @"选择设备";
+            controller.conditonDict = @{@"userGroupId":_departId,
+                                        @"bhjtype":@"2",
+                                        };
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                self.shebeibianhao = gprsbianhao;
+            };
+
         }
     };
     [self.view addSubview:e];
@@ -184,37 +216,6 @@
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     id vc = segue.destinationViewController;
-//    if ([vc isKindOfClass:[LQ_SB_Controller class]]) {
-//        LQ_SB_Controller * controller = vc;
-//        __weak UIButton * weakBtn = sender;
-//        __weak __typeof(self)  weakSelf = self;
-//        controller.title = @"选择设备";
-//        controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
-//                                    @"biaoshiid":self.conditonDict[@"biaoshiid"],
-//                                    @"machineType":@"2",
-//                                    };
-//        controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
-//            [weakBtn setTitle:banhezhanminchen forState:UIControlStateNormal];
-//            weakSelf.shebeibianhao = gprsbianhao;
-//        };
-//
-//    }
-//
-//    if ([vc isKindOfClass:[LQ_Peifang_Controller class]]) {
-//        LQ_Peifang_Controller * controller = vc;
-//        __weak UIButton * weakBtn = sender;
-//        __weak __typeof(self)  weakSelf = self;
-//        controller.title = @"混合料型号";
-////        controller.conditonDict = @{@"departType":self.conditonDict[@"departType"],
-////                                    @"biaoshiid":self.conditonDict[@"biaoshiid"],
-////                                    };
-//        controller.callBlock = ^(NSString * peifang){
-//            [weakBtn setTitle:peifang forState:UIControlStateNormal];
-//            weakSelf.peifan = peifang;
-//        };
-//
-//    }
-    
     if ([vc isKindOfClass:[LLQ_LSSJ_DetailController class]]) {
         LLQ_LSSJ_DetailController * controller = vc;
         /**

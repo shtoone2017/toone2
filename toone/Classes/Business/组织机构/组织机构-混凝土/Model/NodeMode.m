@@ -15,13 +15,15 @@
 
 -(void)channelBlock:(ChannelBlock)channelBlock {
     
-    NSString *dataTime = [SGDate getDay];
+    NSString *dataTime = [SGDate getDay];//物资
+    NSString *loginDepartId = [UserDefaultsSetting shareSetting].loginDepartId;//物资
     
-    NSString *loginDepartId = [UserDefaultsSetting shareSetting].loginDepartId;
+    NSString *time = [TimeTools timeStampWithTimeString:[TimeTools currentTime]];
+    NSString *departId = [UserDefaultsSetting shareSetting].departId;//沥青&&水稳
     
-    NSString *userRole = [UserDefaultsSetting shareSetting].userRole;
+//    NSString *userRole = [UserDefaultsSetting shareSetting].userRole;
     
-    NSString *urlString = [NSString stringWithFormat:AppDepartTree_gcb,dataTime,loginDepartId];
+    NSString *urlString = [NSString stringWithFormat:AppDepartTree_gcb,time,departId];
 
     [[NetworkTool sharedNetworkTool] getObjectWithURLString:urlString completeBlock:^(id result) {
         

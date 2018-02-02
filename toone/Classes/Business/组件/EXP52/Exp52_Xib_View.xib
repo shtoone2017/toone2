@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -277,8 +277,8 @@
                 <constraint firstAttribute="trailing" secondItem="XjA-kQ-hua" secondAttribute="trailing" constant="20" id="di7-Hn-FNS"/>
                 <constraint firstItem="fwz-bz-nUW" firstAttribute="top" secondItem="CGk-kH-2JP" secondAttribute="bottom" id="dzh-NR-EmT"/>
                 <constraint firstItem="Xmh-dD-e8A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="gVV-yK-zw6"/>
-                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="uOa-8j-mJI" secondAttribute="bottom" constant="5" id="gjW-lJ-ely"/>
                 <constraint firstItem="vjO-AD-idK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwd-HD-Qzb"/>
+                <constraint firstItem="cVs-dD-c0D" firstAttribute="top" secondItem="XjA-kQ-hua" secondAttribute="bottom" constant="50" id="q5o-ya-bdF"/>
                 <constraint firstAttribute="trailing" secondItem="uOa-8j-mJI" secondAttribute="trailing" constant="20" id="xal-qY-wAE"/>
                 <constraint firstAttribute="trailing" secondItem="KK1-QP-yjV" secondAttribute="trailing" constant="20" id="yLz-EC-CXw"/>
                 <constraint firstItem="XjA-kQ-hua" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="zdL-HW-1sA"/>
@@ -287,12 +287,14 @@
             <connections>
                 <outlet property="cancelButton" destination="vjO-AD-idK" id="UeD-e5-syH"/>
                 <outlet property="earthLabel" destination="WX6-Se-alg" id="Fw4-XU-6sd"/>
+                <outlet property="earthView" destination="uOa-8j-mJI" id="AAx-1i-eg5"/>
                 <outlet property="earthworkButton" destination="Tai-Fx-TNo" id="8tY-1L-DCG"/>
                 <outlet property="endTimeButton" destination="o7W-2d-q6J" id="GfA-c9-xQc"/>
                 <outlet property="okButton" destination="cVs-dD-c0D" id="l4Q-Tp-vbd"/>
                 <outlet property="sbButton" destination="5bK-95-J1A" id="b6Q-cE-yPp"/>
                 <outlet property="sbLabel" destination="ohT-xP-w2s" id="xoz-Ws-Jjf"/>
                 <outlet property="startTimeButton" destination="wyS-R0-S0o" id="5fb-gU-tKk"/>
+                <outlet property="top" destination="q5o-ya-bdF" id="RrF-D6-6Xw"/>
                 <outlet property="useLabel" destination="t15-xa-bfC" id="YzZ-Do-VpT"/>
                 <outlet property="usePositionButton" destination="gGR-KS-O8n" id="lXk-iH-NQI"/>
             </connections>

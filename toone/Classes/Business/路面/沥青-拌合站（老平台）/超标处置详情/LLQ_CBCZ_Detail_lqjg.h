@@ -10,13 +10,13 @@
 
 @interface LLQ_CBCZ_Detail_lqjg : MyModel
 @property (nonatomic, copy) NSString * beizhu ;// string 备注信息
-@property (nonatomic, copy) NSString * chulifangshi ;// string 处理方式
-@property (nonatomic, copy) NSString * chulijieguo ;// string 处理结果
-@property (nonatomic, copy) NSString * chuliren ;// string 处理人
+@property (nonatomic, copy) NSString * chulifangshi ;// 处理方式
+@property (nonatomic, copy) NSString * chuzhijieguo ;// 处理结果
+@property (nonatomic, copy) NSString * chuzhiren ;// 处理人
+@property (nonatomic, copy) NSString * chuzhishijian ;// 处理时间
+@property (nonatomic, copy) NSString * chaobiaoyuanyin ;// 处置原因
 @property (nonatomic, copy) NSString * confirmdate ;// string 审核时间
 @property (nonatomic, copy) NSString * filePath ;// string 文件路径
-@property (nonatomic, copy) NSString * shenpidate ;// string 处理时间
-@property (nonatomic, copy) NSString * wentiyuanyin ;// string 处置内容
 @property (nonatomic, copy) NSString * yezhuren ;// string 审批人
 @property (nonatomic, copy) NSString * yezhuyijian ;// string 审批意见
 @property (nonatomic, copy) NSString * zxdw ;// string 咨询单位签名
