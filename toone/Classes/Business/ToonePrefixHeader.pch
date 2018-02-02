@@ -293,9 +293,14 @@
 //遍数
 #define YS_Bianshu FormatString(baseUrl2,@"rs_DeviceController/GetGrid")
 
-
 //面积统计
 #define YS_Mianji FormatString(baseUrl2,@"rs_DeviceController/AreaStatistics")
+
+//摊铺机运行数据-温湿度等
+#define YS_TPJ FormatString(baseUrl2,@"rs_DeviceController/GetTpjData")
+
+//压路机运行数据
+#define YS_YLJ FormatString(baseUrl2,@"rs_DeviceController/GetYljData")
 
 
 #endif /* ToonePrefixHeader_pch */
