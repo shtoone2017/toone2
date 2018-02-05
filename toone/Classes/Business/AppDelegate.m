@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
-#define PGY_APPID @"f08aac06fc0b628949348dc449851e64"
+//#define PGY_APPID @"f08aac06fc0b628949348dc449851e64"//舟山
+#define PGY_APPID @"9b421a089443f7cd15af6f07f1397dea"//大戛高速
+
 
 @interface AppDelegate ()<UIAlertViewDelegate>
 
