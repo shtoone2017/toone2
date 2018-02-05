@@ -558,6 +558,8 @@
 		9CDF80D92021685B00650228 /* YS_BianshuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF80D82021685B00650228 /* YS_BianshuModel.m */; };
 		9CF32E9B2023F85400D8F4B5 /* YS_JLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF32E992023F85400D8F4B5 /* YS_JLViewController.m */; };
 		9CF32E9F2023F92100D8F4B5 /* YS_JLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF32E9E2023F92100D8F4B5 /* YS_JLModel.m */; };
+		9CF495292027EB75003070D5 /* YS_YLJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF495272027EB75003070D5 /* YS_YLJCell.m */; };
+		9CF4952A2027EB75003070D5 /* YS_YLJCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF495282027EB75003070D5 /* YS_YLJCell.xib */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1737,6 +1739,9 @@
 		9CF32E992023F85400D8F4B5 /* YS_JLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_JLViewController.m; sourceTree = "<group>"; };
 		9CF32E9D2023F92100D8F4B5 /* YS_JLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_JLModel.h; sourceTree = "<group>"; };
 		9CF32E9E2023F92100D8F4B5 /* YS_JLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_JLModel.m; sourceTree = "<group>"; };
+		9CF495262027EB75003070D5 /* YS_YLJCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_YLJCell.h; sourceTree = "<group>"; };
+		9CF495272027EB75003070D5 /* YS_YLJCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_YLJCell.m; sourceTree = "<group>"; };
+		9CF495282027EB75003070D5 /* YS_YLJCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YS_YLJCell.xib; sourceTree = "<group>"; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -4826,6 +4831,9 @@
 				9C5AE5F0202451EC00420C64 /* YS_YLJModel.m */,
 				9C5AE5F52024521600420C64 /* YS_YLJViewController.h */,
 				9C5AE5F62024521600420C64 /* YS_YLJViewController.m */,
+				9CF495262027EB75003070D5 /* YS_YLJCell.h */,
+				9CF495272027EB75003070D5 /* YS_YLJCell.m */,
+				9CF495282027EB75003070D5 /* YS_YLJCell.xib */,
 			);
 			path = "压路机运行数据";
 			sourceTree = "<group>";
@@ -6009,6 +6017,7 @@
 				42AC71801E30C393007D8F57 /* LQ_ZJM_Cell.xib in Resources */,
 				42AC71621E30C393007D8F57 /* LQ_ZCL_CB1_Cell.xib in Resources */,
 				42E60971201EFA4D002E7C6A /* YS_HD_Cell.xib in Resources */,
+				9CF4952A2027EB75003070D5 /* YS_YLJCell.xib in Resources */,
 				42AC714B1E30C393007D8F57 /* LQ_CBCZ_Detail_ChuLi_Cell.xib in Resources */,
 				42E288721F4578920002AF72 /* GCB_JCB_Cell.xib in Resources */,
 				D246B2A91E00DEBA00E83159 /* HNT_CBCZ_Cell.xib in Resources */,
@@ -6605,6 +6614,7 @@
 				42AC72151E30C576007D8F57 /* NSObject+YYModel.m in Sources */,
 				9C05F07B1F3BFC4400BF4627 /* NSArray+JSONModel.m in Sources */,
 				42AC71901E30C3B6007D8F57 /* Exp8_Xib_View.m in Sources */,
+				9CF495292027EB75003070D5 /* YS_YLJCell.m in Sources */,
 				42AC71571E30C393007D8F57 /* EXPSeniorModel.m in Sources */,
 				8C2840421EB1123600440413 /* TP_CL_ChartModel.m in Sources */,
 				42AC715A1E30C393007D8F57 /* LQ_ZCL_CL_Controller.m in Sources */,

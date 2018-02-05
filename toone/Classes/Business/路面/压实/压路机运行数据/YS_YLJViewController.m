@@ -10,6 +10,7 @@
 #import "Exp_Final.h"
 #import "AAChartView.h"
 #import "YS_YLJModel.h"
+#import "YS_YLJCell.h"
 
 #define start_time @"start_time"
 #define road_id @"road_id"
@@ -17,23 +18,25 @@
 #define device_code @"device_code"
 #define pressLayer @"pressLayer"
 
-@interface YS_YLJViewController ()
+@interface YS_YLJViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    NSArray *datas;
+    NSMutableArray *datas;
 }
 
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
 @property (nonatomic,strong) YS_YLJModel *model;
 @property (nonatomic,strong) AAChartView *aaChartView;
 @property (nonatomic,strong) Exp_Final *expView;
-@property (nonatomic,assign) NSInteger currentIndex;
+@property (nonatomic,assign) NSInteger currentIndex;  //选中的模块
+@property (nonatomic,strong) UITableView *tabview;
+@property (nonatomic,assign) NSInteger currentPage;  //当前页数
+
 @end
 
 @implementation YS_YLJViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestData];
     [self setUpUI];
 }
 
@@ -46,9 +49,6 @@
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
-    _aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(0, 80, Screen_w, Screen_h-80-20)];
-    [self.view addSubview:_aaChartView];
-    [self drawChartWithData:nil index:_currentIndex];
     NSArray *titles = @[@"温度",@"速度",@"环境温度",@"风速",@"湿度"];
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:titles];
     seg.frame = CGRectMake(0,0,150,20);
@@ -69,6 +69,29 @@
     [seg setTitleTextAttributes:dic1 forState:UIControlStateNormal];
     [seg addTarget:self action:@selector(segmentControlAction:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = seg;
+    
+    _tabview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 200, 300) style:UITableViewStylePlain];
+    _tabview.delegate = self;
+    _tabview.dataSource = self;
+    _tabview.rowHeight = UITableViewAutomaticDimension;
+    _tabview.estimatedRowHeight = 40;
+    _tabview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_tabview];
+    [_tabview registerNib:[UINib nibWithNibName:@"YS_YLJCell" bundle:nil] forCellReuseIdentifier:@"YS_YLJCell"];
+    
+    __weak typeof(self) weakself = self;
+    MJRefreshHeader *header = [MJRefreshHeader headerWithRefreshingBlock:^{
+        _currentPage = 1;
+        [weakself requestDataWithTag:0];
+    }];
+    _tabview.mj_header = header;
+    [header beginRefreshing];
+    
+    MJRefreshFooter *footer = [MJRefreshFooter footerWithRefreshingBlock:^{
+        _currentPage ++;
+        [weakself requestDataWithTag:1];
+    }];
+    _tabview.mj_footer = footer;
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)seg
@@ -121,21 +144,37 @@
                     [weakself.paraDic setObject:model.contentId forKey:model.para_key];
                 }
             }
-            [weakself requestData];
+            [weakself requestDataWithTag:0];
         };
     }
     return _expView;
 }
 
 
-- (void)requestData
+- (void)requestDataWithTag:(NSInteger)tag
 {
+    //tag 0下拉刷新  1上拉加载
     __weak typeof(self) weakself = self;
     if (_paraDic)
     {
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_YLJ parameter:_paraDic success:^(id json)
          {
-             datas = [YS_YLJModel arrayOfModelsFromDictionaries:json error:nil];
+             NSArray *tempArr = [YS_YLJModel arrayOfModelsFromDictionaries:json error:nil];
+             if (tag == 0)
+             {
+                 if(datas)
+                 {
+                     [datas removeAllObjects];
+                 }
+                 datas = [NSMutableArray arrayWithArray:tempArr];
+             }
+             else
+             {
+                 if (datas)
+                 {
+                     [datas addObjectsFromArray:tempArr];
+                 }
+             }
              [weakself drawChartWithData:datas index:_currentIndex];
          } failure:^(NSError *error) {
              
@@ -190,6 +229,51 @@
     }
     return _paraDic;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return datas.count+1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YS_YLJCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YS_YLJCell"];
+    if (indexPath.row == 0)
+    {
+        cell.wenduLab.text = @"温度";
+        cell.shidulab.text = @"湿度";
+        cell.timelab.text = @"时间";
+        cell.huangjingwenduLab.text = @"环境温度";
+        cell.fengsuLab.text = @"风速";
+        cell.suduLab.text = @"速度";
+        return cell;
+    }
+    else
+    {
+        YS_YLJModel *model = datas[indexPath.row];
+        cell.wenduLab.text = [NSString stringWithFormat:@"%f",model.wendu];
+        cell.shidulab.text = [NSString stringWithFormat:@"%f",model.shidu];
+        cell.timelab.text = [NSString stringWithFormat:@"%f",model.dinweishijian];
+        cell.huangjingwenduLab.text = [NSString stringWithFormat:@"%f",model.huanjingwendu];
+        cell.fengsuLab.text = [NSString stringWithFormat:@"%f",model.fengsu];
+        cell.suduLab.text = [NSString stringWithFormat:@"%f",model.sudu];
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 250;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    _aaChartView = [[AAChartView alloc]init];
+    [self.view addSubview:_aaChartView];
+    [self drawChartWithData:datas?:nil index:_currentIndex];
+    return _aaChartView;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

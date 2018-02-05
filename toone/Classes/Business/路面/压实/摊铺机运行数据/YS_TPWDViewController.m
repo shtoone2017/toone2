@@ -9,7 +9,7 @@
 #import "YS_TPWDViewController.h"
 #import "Exp_Final.h"
 #import "AAChartView.h"
-#import "YS_JLModel.h"
+#import "YS_YLJModel.h"
 
 #define start_time @"start_time"
 #define road_id @"road_id"
@@ -18,10 +18,15 @@
 #define pressLayer @"pressLayer"
 
 @interface YS_TPWDViewController ()
+{
+    NSArray *datas;
+}
+
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
-@property (nonatomic,strong) YS_JLModel *model;
+@property (nonatomic,strong) YS_YLJModel *model;
 @property (nonatomic,strong) AAChartView *aaChartView;
 @property (nonatomic,strong) Exp_Final *expView;
+@property (nonatomic,assign) NSInteger currentIndex;
 @end
 
 @implementation YS_TPWDViewController
@@ -34,6 +39,7 @@
 
 - (void)setUpUI
 {
+    _currentIndex = 0;
     self.title = @"摊铺机运行数据";
     self.view.backgroundColor = [UIColor whiteColor];
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
@@ -42,7 +48,32 @@
     
     _aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(0, 80, Screen_w, Screen_h-80-20)];
     [self.view addSubview:_aaChartView];
-    [self drawChartWithData:nil];
+    [self drawChartWithData:nil index:_currentIndex];
+    NSArray *titles = @[@"温度",@"速度"];
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:titles];
+    seg.frame = CGRectMake(0,0,150,20);
+    seg.selectedSegmentIndex = _currentIndex;
+    seg.tintColor = [UIColor whiteColor];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor],
+                         NSForegroundColorAttributeName,
+                         [UIFont systemFontOfSize:10],
+                         NSFontAttributeName,nil];
+    
+    [seg setTitleTextAttributes:dic forState:UIControlStateSelected];
+    
+    NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                          NSForegroundColorAttributeName,
+                          [UIFont systemFontOfSize:10],
+                          NSFontAttributeName,nil];
+    
+    [seg setTitleTextAttributes:dic1 forState:UIControlStateNormal];
+    [seg addTarget:self action:@selector(segmentControlAction:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = seg;
+}
+
+- (void)segmentControlAction:(UISegmentedControl *)seg
+{
+    [self drawChartWithData:datas index:seg.selectedSegmentIndex];
 }
 
 - (void)searchButtonClick
@@ -53,7 +84,7 @@
 - (Exp_Final *)get_expView
 {
     NSMutableArray *tempArr = [NSMutableArray array];
-    NSArray *keyArr = @[road_id,start_time,end_time,device_code];
+    NSArray *keyArr = @[road_id,start_time,end_time,pressLayer,device_code];
     NSArray *titleArr = @[@"线路选择",@"开始时间",@"结束时间",@"面层选择",@"设备选择"];
     NSArray *typeArr = @[
                          [NSNumber numberWithInteger:YS_Search_Type_RoadID],
@@ -104,35 +135,42 @@
     {
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_TPJ parameter:_paraDic success:^(id json)
          {
-             NSArray *data = [YS_JLModel arrayOfModelsFromDictionaries:json error:nil];
-             [weakself drawChartWithData:data];
+             datas = [YS_YLJModel arrayOfModelsFromDictionaries:json error:nil];
+             [weakself drawChartWithData:datas index:_currentIndex];
          } failure:^(NSError *error) {
              
          }];
     }
 }
 
-- (void)drawChartWithData:(NSArray *)datas
+- (void)drawChartWithData:(NSArray *)datas index:(NSInteger)index
 {
-    NSMutableArray *names = [NSMutableArray array];
-    NSMutableArray *values = [NSMutableArray array];
-    
-    for (YS_JLModel *model in datas)
+    if (!datas || datas.count <=0)
     {
-        [names addObject:model.date];
-        [values addObject:[NSNumber numberWithFloat:model.statistics]];
+        return;
     }
+    NSArray *danweis = @[@"℃",@"m/min"];
+    NSMutableArray *x_name = [NSMutableArray array];
+    NSMutableArray *wendus = [NSMutableArray array];
+    NSMutableArray *sudus = [NSMutableArray array];
+    
+    for (YS_YLJModel *model in datas)
+    {
+        [wendus addObject:[NSNumber numberWithFloat:model.wendu]];
+        [sudus addObject:[NSNumber numberWithFloat:model.sudu]];
+        [x_name addObject:model.dinweishijian];
+    }
+    NSMutableArray *allDatas = [NSMutableArray arrayWithObjects:@[wendus,sudus], nil];
     AAChartModel *chartModel= AAObject(AAChartModel)
     .chartTypeSet(AAChartTypeLine)
-    .titleSet(@"运行距离统计")
-    .categoriesSet(names)//设置图表横轴的内容
-    .yAxisTitleSet(@"km")//设置图表 y 轴的单位
+    .titleSet(@"摊铺机运行数据")
+    .categoriesSet(x_name)//设置图表横轴的内容
+    .yAxisTitleSet(danweis[index])//设置图表 y 轴的单位
     .dataLabelEnabledSet(true)//是否直接显示图数据
     .seriesSet(
                @[AAObject(AASeriesElement)
-                 .dataSet(values)
+                 .dataSet(allDatas[index])
                  ]);
-    
     /*图表视图对象调用图表模型对象,绘制最终图形*/
     [_aaChartView aa_drawChartWithChartModel:chartModel];
 }
@@ -145,7 +183,6 @@
     }
     return _paraDic;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
