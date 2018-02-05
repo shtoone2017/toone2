@@ -172,7 +172,7 @@
 //沥青超标查询---改
 #define lqchaoBiaoList   FormatString(baseUrl,@"Appliqing.do?lqchaoBiaoList&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&chaobiaolx=%@&cllx=%@&pageNo=%@&maxPageItems=%@")
 //沥青材料统计----改
-#define lqmaterial   FormatString(baseUrl,@"Appliqing.do?lqmaterial&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@")
+#define lqmaterial   FormatString(baseUrl,@"Appliqing.do?lqmaterial&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&hhllx=%@&pageNo=%@&maxPageItems=%@")
 
 //沥青超标查询详情页---改
 #define lqchaoBiaoXQ   FormatString(baseUrl,@"Appliqing.do?LqchaoBiaoXQ&id=%@")

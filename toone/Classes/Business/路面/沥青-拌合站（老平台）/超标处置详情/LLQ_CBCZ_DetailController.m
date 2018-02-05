@@ -13,6 +13,7 @@
 
 #import "LLQ_CBCZ_Detail_HeadCell.h"
 #import "LLQ_CBCZ_Detail_DataCell.h"
+#import "LLQ_CBCZ_Detail_DataCell1.h"
 #import "LLQ_CBCZ_Detail_ChuLi_Cell.h"
 #import "LLQ_CBCZ_Detail_ShenPi_Cell.h"
 #import "LLQ_CBCZ_Detail_ZiXun_Cell.h"
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tb;
 @property (nonatomic,strong) LLQ_CBCZ_Detail_lqHead * headModel;
 @property (nonatomic,strong) LLQ_CBCZ_Detail_lqjg   * swjgModel;
+@property (nonatomic, strong) LLQ_CDCZ_Detail_lqData * cjModel;
 @end
 
 @implementation LLQ_CBCZ_DetailController
@@ -43,7 +45,8 @@
     self.tb.separatorColor = [UIColor clearColor];
     [self.tb registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_HeadCell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_HeadCell"];
-    [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_DataCell"];
+//    [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_DataCell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_DataCell"];
+    [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_DataCell1" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_DataCell1"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_ChuLi_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_ChuLi_Cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_ShenPi_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_ShenPi_Cell"];
     [self.tb registerNib:[UINib nibWithNibName:@"LLQ_CBCZ_Detail_ZiXun_Cell" bundle:nil] forCellReuseIdentifier:@"LLQ_CBCZ_Detail_ZiXun_Cell"];
@@ -61,11 +64,16 @@
         
         if ([json[@"success"] boolValue]) {
             NSMutableArray * datas = [NSMutableArray array];
-            if ([json[@"lqData"] isKindOfClass:[NSArray class]]) {
-                for (NSDictionary * dict in json[@"lqData"]) {
-                    LLQ_CDCZ_Detail_lqData * data = [LLQ_CDCZ_Detail_lqData modelWithDict:dict];
-                    [datas addObject:data];
-                }
+//            if ([json[@"liqingxixxPage"] isKindOfClass:[NSArray class]]) {
+//                for (NSDictionary * dict in json[@"liqingxixxPage"]) {
+//                    LLQ_CDCZ_Detail_lqData * data = [LLQ_CDCZ_Detail_lqData modelWithDict:dict];
+////                    [datas addObject:data];
+//                    weakSelf.cjModel = data;
+//                }
+//            }
+            if ([json[@"liqingxixxPage"] isKindOfClass:[NSDictionary class]]) {
+                LLQ_CDCZ_Detail_lqData * data = [LLQ_CDCZ_Detail_lqData modelWithDict:json[@"liqingxixxPage"]];
+                weakSelf.cjModel = data;
             }
             if ([json[@"liqingxixxPage"] isKindOfClass:[NSDictionary class]]) {
                 LLQ_CBCZ_Detail_lqHead * headModel = [LLQ_CBCZ_Detail_lqHead modelWithDict:json[@"liqingxixxPage"]];
@@ -102,9 +110,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 1) {
-        return self.datas.count+1;
-    }
+//    if (section == 1) {
+//        return self.datas.count+1;
+//    }
     return 1;
 }
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -122,7 +130,7 @@
         return 140.0f;
     }
     if (indexPath.section == 1) {
-        return 20;
+        return 260;
     }
     if (indexPath.section == 2) {
         if (EqualToString(self.chuli, @"1")) {
@@ -155,14 +163,14 @@
         return cell;
     }
     if (indexPath.section == 1) {
-        LLQ_CBCZ_Detail_DataCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Detail_DataCell"];
+        LLQ_CBCZ_Detail_DataCell1 * cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Detail_DataCell1"];
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-        if (indexPath.row > 0) {
-            LLQ_CDCZ_Detail_lqData * data = indexPath.row ==0 ? nil :self.datas[indexPath.row-1];
-            //cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
-            cell.color = [UIColor blackColor];
-            cell.model= data;
-        }
+        cell.model= self.cjModel;
+//        if (indexPath.row > 0) {
+//            LLQ_CDCZ_Detail_lqData * data = indexPath.row ==0 ? nil :self.datas[indexPath.row-1];
+////            cell.contentView.backgroundColor = indexPath.row%2==0 ? Color1: Color2;
+////            cell.color = [UIColor blackColor];
+//        }
         return cell;
     }
     if (indexPath.section == 2) {

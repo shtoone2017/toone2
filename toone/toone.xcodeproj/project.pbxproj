@@ -54,6 +54,8 @@
 		18B871DC1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DA1E1F935600F9DD53 /* HNT_CBCZ_Detail_ShenPi_Controller.xib */; };
 		18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */; };
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
+		423444F02027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 423444EE2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m */; };
+		423444F12027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423444EF2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib */; };
 		4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C29E1F8B0DC700FA321F /* GCB_NewController.m */; };
 		4255C2A21F8B450A00FA321F /* GCB_WPLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A11F8B450A00FA321F /* GCB_WPLController.m */; };
 		4255C2A51F8B574D00FA321F /* GCB_WC_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */; };
@@ -772,6 +774,9 @@
 		18B871DD1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNT_CBCZ_Detail_ChuLi_Cell2.h; sourceTree = "<group>"; };
 		18B871DE1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNT_CBCZ_Detail_ChuLi_Cell2.m; sourceTree = "<group>"; };
 		18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNT_CBCZ_Detail_ChuLi_Cell2.xib; sourceTree = "<group>"; };
+		423444ED2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLQ_CBCZ_Detail_DataCell1.h; sourceTree = "<group>"; };
+		423444EE2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLQ_CBCZ_Detail_DataCell1.m; sourceTree = "<group>"; };
+		423444EF2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LLQ_CBCZ_Detail_DataCell1.xib; sourceTree = "<group>"; };
 		4255C29D1F8B0DC700FA321F /* GCB_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_NewController.h; sourceTree = "<group>"; };
 		4255C29E1F8B0DC700FA321F /* GCB_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_NewController.m; sourceTree = "<group>"; };
 		4255C2A01F8B450A00FA321F /* GCB_WPLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_WPLController.h; sourceTree = "<group>"; };
@@ -3755,6 +3760,9 @@
 				42F990DB201AD35C0044B77B /* LLQ_CBCZ_Detail_ChuLi_Controller.h */,
 				42F990DC201AD35C0044B77B /* LLQ_CBCZ_Detail_ChuLi_Controller.m */,
 				42F990DD201AD35C0044B77B /* LLQ_CBCZ_Detail_ChuLi_Controller.xib */,
+				423444ED2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.h */,
+				423444EE2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m */,
+				423444EF2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib */,
 				42F990DE201AD35C0044B77B /* LLQ_CBCZ_Detail_DataCell.h */,
 				42F990DF201AD35C0044B77B /* LLQ_CBCZ_Detail_DataCell.m */,
 				42F990E0201AD35C0044B77B /* LLQ_CBCZ_Detail_DataCell.xib */,
@@ -5905,6 +5913,7 @@
 				42E2889A1F4963450002AF72 /* GCB_WSC_Cell.xib in Resources */,
 				D20065901DFFC9F10021E293 /* HNT_SCCX_Cell.xib in Resources */,
 				D200648B1DFF86800021E293 /* HNT_SYS_HeaderView.xib in Resources */,
+				423444F12027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib in Resources */,
 				4255C2B31F8B85DA00FA321F /* SeView.xib in Resources */,
 				8C283F491EB0A01C00440413 /* MonitoringGeoFenceRegionViewController.xib in Resources */,
 				42E288B51F4984E30002AF72 /* GCB_RWD_Detail_ZYCell.xib in Resources */,
@@ -6207,6 +6216,7 @@
 				9CADC9A61F6A58DC0051BD8A /* QR_Tool.m in Sources */,
 				D200649C1DFF86800021E293 /* NSString+Separate.m in Sources */,
 				187C72F61E30B1810072F33A /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				423444F02027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m in Sources */,
 				9C79A4942022C01D002F41AC /* Exp_Final.m in Sources */,
 				8C2840681EB1127500440413 /* TP_NY_Controller.m in Sources */,
 				426E90CB200CD129001FF8AE /* AAOptionsConstructor.m in Sources */,

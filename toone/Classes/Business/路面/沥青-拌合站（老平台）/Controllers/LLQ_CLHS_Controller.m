@@ -10,7 +10,7 @@
 #import "LLQ_CLHS_Model.h"
 #import "LLQ_CLHS_ChatCell.h"
 #import "LLQ_CLHS_Cell.h"
-//#import "LQ_SB_Controller.h"
+#import "LQ_SB_Controller.h"
 #import "BarModel.h"
 #import "AAChartView.h"
 @interface LLQ_CLHS_Controller ()<UITableViewDelegate,UITableViewDataSource>
@@ -24,6 +24,10 @@
 //***************
 @property (nonatomic,copy) NSString * shebeibianhao;//设备编号
 @property (nonatomic,copy) NSString * sbName;//设备
+@property (nonatomic, copy) NSString *departId;
+@property (nonatomic, copy) NSString *hhllx;//混合料类型
+@property (nonatomic,copy) NSString * pageNo;//当前页数
+@property (nonatomic,copy) NSString * maxPageItems;//一页最多显示条数
 @end
 
 @implementation LLQ_CLHS_Controller
@@ -31,6 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.shebeibianhao = @"";
+    _departId = self.conditonDict[@"departType"];
+    _hhllx = @"";
+    _pageNo = @"1";
+    _maxPageItems = @"30";
     
     [self loadUi];
     [self loadData];
@@ -52,17 +60,15 @@
     
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
-    NSString * urlString = lqmaterial;
-    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-                            @"endTime":endTimeStamp,
-                            @"startTime":startTimeStamp,
-                            @"shebeibianhao":self.shebeibianhao,
-                            };
+    NSString * urlString = [NSString stringWithFormat:lqmaterial,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_hhllx,_pageNo,_maxPageItems];
+//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
+//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
+//                            @"endTime":endTimeStamp,
+//                            @"startTime":startTimeStamp,
+//                            @"shebeibianhao":self.shebeibianhao,
+//                            }; 
     __weak typeof(self)  weakSelf = self;
-    
-    
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:dict success:^(id json) {
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
         if ([json[@"success"] boolValue]) {
             if ([json[@"data"] isKindOfClass:[NSArray class]]) {
@@ -199,7 +205,17 @@
         
         if (type == ExpButtonTypeChoiceSBButton) {
             UIButton * btn = (UIButton*)obj1;
-            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller4" sender:btn];
+            LQ_SB_Controller *controller = [[LQ_SB_Controller alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
+            controller.title = @"选择设备";
+            controller.conditonDict = @{@"userGroupId":_departId,
+                                        @"bhjtype":@"2",
+                                        };
+            controller.callBlock = ^(NSString * banhezhanminchen,NSString*gprsbianhao){
+                [btn setTitle:banhezhanminchen forState:UIControlStateNormal];
+                self.shebeibianhao = gprsbianhao;
+            };
+//            [weakSelf performSegueWithIdentifier:@"LQ_SB_Controller4" sender:btn];
         }
     };
     [self.view addSubview:e];
