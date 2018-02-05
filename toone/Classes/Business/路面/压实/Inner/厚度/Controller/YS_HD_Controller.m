@@ -19,8 +19,8 @@
 @property (nonatomic,strong) NSMutableArray * data;
 @property (nonatomic,strong) NSMutableArray * name;
 
-@property (nonatomic, strong) NSNumber *start;//桩号
-@property (nonatomic, strong) NSNumber *end;
+@property (nonatomic, copy) NSString *start;//桩号
+@property (nonatomic, copy) NSString *end;
 @property (nonatomic, copy) NSString *road_id;//路线id
 @property (nonatomic, copy) NSString *roadName;
 
@@ -33,6 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _road_id = @"";
+    _start = @"";
+    _end = @"";
     _roadName = @"";
     
     [self loadUI];
@@ -49,16 +51,8 @@
 
 -(void)loadData {
     [Tools showActivityToView:self.view];
-    NSString *urlString = @"";
-    if (_start) {
-        urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@&start=%@",_road_id,_start];
-    }else if (_end) {
-        urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@&end=%@",_road_id,_end];
-    }else if (_start && _end) {
-        urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@&start=%@&end=%@",_road_id,_start,_end];
-    }else {
-        urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@",_road_id];
-    }
+    NSString *urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@&start=%@&end=%@",_road_id,_start,_end];
+    
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
         NSMutableArray * datas = [NSMutableArray array];
@@ -161,7 +155,7 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSLX;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.callBlock = ^(NSString *name, NSString *num) {
+            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
                 [btn setTitle:name forState:UIControlStateNormal];
                 _roadName = name;
                 _road_id = num;
@@ -172,7 +166,7 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSZH;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.YScallBlock = ^(NSString *name, NSNumber *num) {
+            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
                 [btn setTitle:name forState:UIControlStateNormal];
                 _start = num;
             };
@@ -182,7 +176,7 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSZH;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.YScallBlock = ^(NSString *name, NSNumber *num) {
+            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
                 [btn setTitle:name forState:UIControlStateNormal];
                 _end = num;
             };

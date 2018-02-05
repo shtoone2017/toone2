@@ -23,13 +23,13 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *redLine_x;
 - (IBAction)titleButtonClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *button1                      ;//初级
-@property (weak, nonatomic) IBOutlet UIButton *button2                      ;//中级
+//@property (weak, nonatomic) IBOutlet UIButton *button2                      ;//中级
 @property (weak, nonatomic) IBOutlet UIButton *button3                      ;//高级
 
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView1                ;//初级
-@property (weak, nonatomic) IBOutlet UITableView *tableView2                ;//中级
+//@property (weak, nonatomic) IBOutlet UITableView *tableView2                ;//中级
 @property (weak, nonatomic) IBOutlet UITableView *tableView3                ;//高级
 
 //******************************************************************
@@ -66,7 +66,7 @@
         self.pageNo = _pageNo1;
         self.maxPageItems = @"30";
         self.chaobiaolx = @"1";//全部
-        self.shebeibianhao = @"test1";
+        self.shebeibianhao = @"";
         self.cllx = @"0";
         _departId = self.conditonDict[@"departType"];
         self.tableViewSigner = @"1";
@@ -80,13 +80,13 @@
 }
 
 -(void)loadUI{
-    self.ContainerWidth.constant = Screen_w*3;
+    self.ContainerWidth.constant = Screen_w*2;
     self.title_sc.backgroundColor = [UIColor snowColor];
     //self.searchButton.backgroundColor = [UIColor snowColor];//black75PercentColor
     
     
     [self registerTableView:self.tableView1];
-    [self registerTableView:self.tableView2];
+//    [self registerTableView:self.tableView2];
     [self registerTableView:self.tableView3];
 
 }
@@ -98,10 +98,10 @@
             case 1:
                 weakSelf.pageNo1 = @"1";
                 break;
+//            case 2:
+//                weakSelf.pageNo2 = @"1";
+//                break;
             case 2:
-                weakSelf.pageNo2 = @"1";
-                break;
-            case 3:
                 weakSelf.pageNo3 = @"1";
                 break;
             default:
@@ -119,12 +119,12 @@
                 weakSelf.pageNo1 = FormatInt([weakSelf.pageNo1 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo1;
                 break;
+//            case 2:
+//                weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
+//                weakSelf.pageNo = weakSelf.pageNo2;
+//                //NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
+//                break;
             case 2:
-                weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
-                weakSelf.pageNo = weakSelf.pageNo2;
-                //NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
-                break;
-            case 3:
                 weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo3;
                 break;
@@ -155,15 +155,15 @@
                 [self loadData];
             }
             break;
-        case 2://中级
-            self.pageNo = self.pageNo2;
-            self.chaobiaolx =@"2";
-            if(self.datas2==nil) {
-                [self loadData];
-                [self loadData];
-            }
-            break;
-        case 3://高级
+//        case 2://中级
+//            self.pageNo = self.pageNo2;
+//            self.chaobiaolx =@"2";
+//            if(self.datas2==nil) {
+//                [self loadData];
+//                [self loadData];
+//            }
+//            break;
+        case 2://高级
             self.pageNo = self.pageNo3;
             self.chaobiaolx =@"3";
             if(self.datas3==nil) {
@@ -178,10 +178,10 @@
 }
 -(void)addTitleButtonAnimaiton:(UIButton*)sender{
     [self.button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [self.button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.button3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.button1 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
-    self.button2 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
+//    self.button2 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     self.button3 .titleLabel.font = [UIFont systemFontOfSize:11.0f];
     
     [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -217,16 +217,6 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:lqchaoBiaoList,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_chaobiaolx,_cllx,_pageNo,_maxPageItems];
-//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-//                            @"endTime":endTimeStamp,
-//                            @"startTime":startTimeStamp,
-//                            @"shebeibianhao":self.shebeibianhao,
-//                            @"chaobiaolx":self.chaobiaolx,
-//                            @"cllx":self.cllx,
-//                            @"pageNo":self.pageNo,
-//                            @"maxPageItems":self.maxPageItems,
-//                            };
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -270,20 +260,20 @@
                     [weakSelf.tableView1.mj_footer endRefreshingWithNoMoreData];
                 }
                 break;
+//            case 2:
+//                if ([weakSelf.pageNo2 intValue] == 1) {
+//                    weakSelf.datas2 = datas;
+//                }else{
+//                    [weakSelf.datas2 addObjectsFromArray:datas];
+//                }
+//                [weakSelf.tableView2 reloadData];
+//                [weakSelf.tableView2.mj_header endRefreshing];
+//                [weakSelf.tableView2.mj_footer endRefreshing];
+//                if (weakSelf.datas2.count < ([weakSelf.pageNo2 intValue]* [weakSelf.maxPageItems intValue])) {
+//                    [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
+//                }
+//                break;
             case 2:
-                if ([weakSelf.pageNo2 intValue] == 1) {
-                    weakSelf.datas2 = datas;
-                }else{
-                    [weakSelf.datas2 addObjectsFromArray:datas];
-                }
-                [weakSelf.tableView2 reloadData];
-                [weakSelf.tableView2.mj_header endRefreshing];
-                [weakSelf.tableView2.mj_footer endRefreshing];
-                if (weakSelf.datas2.count < ([weakSelf.pageNo2 intValue]* [weakSelf.maxPageItems intValue])) {
-                    [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
-                }
-                break;
-            case 3:
                 if ([weakSelf.pageNo3 intValue] == 1) {
                     weakSelf.datas3 = datas;
                 }else{
@@ -307,9 +297,9 @@
     if (tableView == self.tableView1) {
         return self.datas1.count;
     }
-    if (tableView == self.tableView2) {
-        return self.datas2.count;
-    }
+//    if (tableView == self.tableView2) {
+//        return self.datas2.count;
+//    }
     if (tableView == self.tableView3) {
         return self.datas3.count;
     }
@@ -325,14 +315,14 @@
 //        [cell setModel:model indexPath:indexPath];
         return cell;
     }
-    if (tableView == self.tableView2) {
-        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
-        cell.currentIndexPath = indexPath;
-        LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
-        cell.model = model;
-//        [cell setModel:model indexPath:indexPath];
-        return cell;
-    }
+//    if (tableView == self.tableView2) {
+//        LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
+//        cell.currentIndexPath = indexPath;
+//        LLQ_CBCZ_Model * model = self.datas2[indexPath.row];
+//        cell.model = model;
+////        [cell setModel:model indexPath:indexPath];
+//        return cell;
+//    }
     if (tableView == self.tableView3) {
         LLQ_CBCZ_Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"LLQ_CBCZ_Cell" forIndexPath:indexPath];
         cell.currentIndexPath = indexPath;
@@ -368,9 +358,9 @@
     if (tableView == self.tableView1) {
         return [self rowHeightWithModel:self.datas1[indexPath.row]];
     }
-    if (tableView == self.tableView2) {
-        return [self rowHeightWithModel:self.datas2[indexPath.row]];
-    }
+//    if (tableView == self.tableView2) {
+//        return [self rowHeightWithModel:self.datas2[indexPath.row]];
+//    }
     if (tableView == self.tableView3) {
         return [self rowHeightWithModel:self.datas3[indexPath.row]];
     }
@@ -381,9 +371,9 @@
     if (tableView == self.tableView1) {
         model = self.datas1[indexPath.row];
     }
-    if (tableView == self.tableView2) {
-        model = self.datas2[indexPath.row];
-    }
+//    if (tableView == self.tableView2) {
+//        model = self.datas2[indexPath.row];
+//    }
     if (tableView == self.tableView3) {
         model = self.datas3[indexPath.row];
     }

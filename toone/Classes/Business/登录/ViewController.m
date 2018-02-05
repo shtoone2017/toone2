@@ -177,12 +177,10 @@
                     }
                     if ([json[@"type"]  isEqualToString: @"GL"]){//管理层
                         ChooseViewController * vc = (ChooseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChooseViewController"];
-                        //                    MyNavigationController * nvc = [[MyNavigationController alloc] initWithRootViewController:vc];
                         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                     }
 //                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
 //                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-                    
                     
                     [[UIApplication sharedApplication].keyWindow.layer addTransitionWithType:@"fade"];
                 });

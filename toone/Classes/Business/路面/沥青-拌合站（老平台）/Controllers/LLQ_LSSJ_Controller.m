@@ -35,7 +35,7 @@
     [super viewDidLoad];
     self.pageNo = @"1";
     self.maxPageItems = @"30";
-    self.shebeibianhao = @"test1";
+    self.shebeibianhao = @"";
     self.peifan = @"";
     _departId = self.conditonDict[@"departType"];
     [self loadUI];
@@ -67,15 +67,6 @@
     NSString * startTimeStamp = [TimeTools timeStampWithTimeString:self.startTime];
     NSString * endTimeStamp = [TimeTools timeStampWithTimeString:self.endTime];
     NSString * urlString = [NSString stringWithFormat:lqgallclList,_departId,startTimeStamp,endTimeStamp,_shebeibianhao,_peifan,_pageNo,_maxPageItems];
-//    NSDictionary * dict = @{@"departType":self.conditonDict[@"departType"],
-//                            @"biaoshiid":self.conditonDict[@"biaoshiid"],
-//                            @"endTime":endTimeStamp,
-//                            @"startTime":startTimeStamp,
-//                            @"shebeibianhao":self.shebeibianhao,
-//                            @"peifan":self.peifan,
-//                            @"pageNo":self.pageNo,
-//                            @"maxPageItems":self.maxPageItems,
-//                            };
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {

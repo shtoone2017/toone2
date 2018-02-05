@@ -88,7 +88,7 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSLX;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.callBlock = ^(NSString *name, NSString *num) {
+            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
                 [btn setTitle:name forState:UIControlStateNormal];
                 _roadName = name;
                 _road_id = num;
@@ -107,9 +107,9 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSZH;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.YScallBlock = ^(NSString *name, NSNumber *num) {
+            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
                 [btn setTitle:name forState:UIControlStateNormal];
-                _start = [NSString stringWithFormat:@"%@",num];
+                _start = num;
             };
         }
         if (type == ExpButtonTypeYSMC) {//面层
@@ -117,7 +117,7 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSMC;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.callBlock = ^(NSString *name, NSString *num) {
+            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
                 [btn setTitle:name forState:UIControlStateNormal];
                 _mc = num;
             };

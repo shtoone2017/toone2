@@ -136,19 +136,20 @@
     if (_type == SBListTypeYSZH) {//桩号
         YS_SB_Model * model = self.datas[indexPath.row];
         if (self.YScallBlock) {
-            self.YScallBlock(model.stake_name,model.stake_no);
+            NSString *str = [NSString stringWithFormat:@"%@",model.stake_no];
+            self.YScallBlock(model.stake_name,str);
         }
     }
     else if (_type == SBListTypeYSLX) {
         YS_SB_Model * model = self.datas[indexPath.row];
-        if (self.callBlock) {
-            self.callBlock(model.road_name, model.roadId);
+        if (self.YScallBlock) {
+            self.YScallBlock(model.road_name, model.roadId);
         }
     }
     else if (_type == SBListTypeYSMC) {
         YS_SB_Model * model = self.data[indexPath.row];
-        if (self.callBlock) {
-            self.callBlock(model.mcName, model.mcNum);
+        if (self.YScallBlock) {
+            self.YScallBlock(model.mcName, model.mcNum);
         }
     }
     [self.navigationController popViewControllerAnimated:YES];
