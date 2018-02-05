@@ -81,7 +81,7 @@
 }
 
 -(void)loadUI{
-    self.ContainerWidth.constant = Screen_w*3;
+    self.ContainerWidth.constant = Screen_w*2;
     self.title_sc.backgroundColor = [UIColor snowColor];
     //self.searchButton.backgroundColor = [UIColor snowColor];//black75PercentColor
     
@@ -99,10 +99,10 @@
             case 1:
                 weakSelf.pageNo1 = @"1";
                 break;
+//            case 2:
+//                weakSelf.pageNo2 = @"1";
+//                break;
             case 2:
-                weakSelf.pageNo2 = @"1";
-                break;
-            case 3:
                 weakSelf.pageNo3 = @"1";
                 break;
             default:
@@ -120,12 +120,12 @@
                 weakSelf.pageNo1 = FormatInt([weakSelf.pageNo1 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo1;
                 break;
+//            case 2:
+//                weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
+//                weakSelf.pageNo = weakSelf.pageNo2;
+//                //NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
+//                break;
             case 2:
-                weakSelf.pageNo2 = FormatInt([weakSelf.pageNo2 intValue]+1);
-                weakSelf.pageNo = weakSelf.pageNo2;
-                //NSLog(@"_pageNo=%@~~~_pageNo2=%@",weakSelf.pageNo,weakSelf.pageNo2);
-                break;
-            case 3:
                 weakSelf.pageNo3 = FormatInt([weakSelf.pageNo3 intValue]+1);
                 weakSelf.pageNo = weakSelf.pageNo3;
                 break;
@@ -159,15 +159,15 @@
                 [self loadData];
             }
             break;
-        case 2://中级
-            self.pageNo = self.pageNo2;
-            self.chaobiaolx =@"2";
-            if(self.datas2==nil) {
-                self.cllx = @"0";
-                [self loadData];
-            }
-            break;
-        case 3://高级
+//        case 2://中级
+//            self.pageNo = self.pageNo2;
+//            self.chaobiaolx =@"2";
+//            if(self.datas2==nil) {
+//                self.cllx = @"0";
+//                [self loadData];
+//            }
+//            break;
+        case 2://高级
             self.pageNo = self.pageNo3;
             self.chaobiaolx =@"3";
             if(self.datas3==nil) {
@@ -274,20 +274,20 @@
                     [weakSelf.tableView1.mj_footer endRefreshingWithNoMoreData];
                 }
                 break;
+//            case 2:
+//                if ([weakSelf.pageNo2 intValue] == 1) {
+//                    weakSelf.datas2 = datas;
+//                }else{
+//                    [weakSelf.datas2 addObjectsFromArray:datas];
+//                }
+//                [weakSelf.tableView2 reloadData];
+//                [weakSelf.tableView2.mj_header endRefreshing];
+//                [weakSelf.tableView2.mj_footer endRefreshing];
+//                if (weakSelf.datas2.count < ([weakSelf.pageNo2 intValue]* [weakSelf.maxPageItems intValue])) {
+//                    [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
+//                }
+//                break;
             case 2:
-                if ([weakSelf.pageNo2 intValue] == 1) {
-                    weakSelf.datas2 = datas;
-                }else{
-                    [weakSelf.datas2 addObjectsFromArray:datas];
-                }
-                [weakSelf.tableView2 reloadData];
-                [weakSelf.tableView2.mj_header endRefreshing];
-                [weakSelf.tableView2.mj_footer endRefreshing];
-                if (weakSelf.datas2.count < ([weakSelf.pageNo2 intValue]* [weakSelf.maxPageItems intValue])) {
-                    [weakSelf.tableView2.mj_footer endRefreshingWithNoMoreData];
-                }
-                break;
-            case 3:
                 if ([weakSelf.pageNo3 intValue] == 1) {
                     weakSelf.datas3 = datas;
                 }else{

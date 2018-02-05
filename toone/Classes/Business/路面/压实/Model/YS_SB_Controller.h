@@ -15,7 +15,6 @@ typedef NS_ENUM(NSInteger,SBListType) {
 };
 
 @interface YS_SB_Controller : UIViewController
-@property (nonatomic,copy) void (^YScallBlock)(NSString*,NSNumber*);
-@property (nonatomic,copy) void (^callBlock)(NSString*,NSString*);
+@property (nonatomic,copy) void (^YScallBlock)(NSString*,NSString*);
 @property (nonatomic,assign) NSInteger type;
 @end

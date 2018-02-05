@@ -81,9 +81,10 @@
         default:
             break;
     }
-    sbVc.YScallBlock = ^(NSString *name, NSNumber *num) {
+    sbVc.YScallBlock = ^(NSString *name, NSString *num) {
         model.contentName = name;
-        model.contentId = [NSString stringWithFormat:@"%@",num];
+//        model.contentId = [NSString stringWithFormat:@"%@",num];
+        model.contentId = num;
         [_dataArr setObject:model atIndexedSubscript:indexPath.row];
         [_tabview reloadData];
     };
