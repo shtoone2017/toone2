@@ -58,6 +58,16 @@
 //     DebugLog(@"---前两个月 =%@",beforDate);
     return beforDate;
 }
+
++(NSString*)dateStampWithDateString:(NSString*)dateString{
+    NSDateFormatter  * dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [dateFormater dateFromString:dateString];
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];  //转化为UNIX时间戳
+    //    NSLog(@"timeSp:%@",timeSp); //时间戳的值
+    return timeSp;
+}
+
 +(NSString*)timeStampWithTimeString:(NSString*)timeString{
     NSDateFormatter  * dateFormater = [[NSDateFormatter alloc] init];
     [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm"];

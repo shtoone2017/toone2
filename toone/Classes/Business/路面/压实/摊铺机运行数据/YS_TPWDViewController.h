@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YS_TPWDViewController : UIViewController
+@interface YS_TPWDViewController : MyViewController
 
 @end

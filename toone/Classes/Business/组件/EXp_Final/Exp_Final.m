@@ -51,19 +51,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-     YS_Search_Type_StartStack = 0,
-     YS_Search_Type_EndStack,
-     YS_Search_Type_RoadID,
-     YS_Search_Type_StartTime,
-     YS_Search_Type_EndTime,
-     YS_Search_Type_Layer
-     */
     Exp_FinalModel *model = [_dataArr objectAtIndex:indexPath.row];
 
     if (model.type == YS_Search_Type_StartTime || model.type == YS_Search_Type_EndTime)
     {
         //时间选择
+        NSDate *date = [NSDate date];
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        NSString *dateStr = [formatter stringFromDate:date];
+        ((MyViewController *)[self viewController]).isDetailSecond = YES;
+         [(MyViewController *)[self viewController] calendarWithTimeString:dateStr obj:nil];
+        ((MyViewController *)[self viewController]).dateBlock = ^(NSString *dateStr) {
+            model.contentName = dateStr;
+            model.contentId = dateStr;
+            [_dataArr setObject:model atIndexedSubscript:indexPath.row];
+            [_tabview reloadData];
+        };
+        return;
     }
     //其他压实选择
     YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
@@ -78,12 +82,17 @@
         case YS_Search_Type_Layer:
             sbVc.type = SBListTypeYSMC;
             break;
+        case YS_Search_Type_Divce_YLJ:
+            sbVc.type = SBListTypeYSSB_YLJ;
+            break;
+        case YS_Search_Type_Divce_TPJ:
+            sbVc.type = SBListTypeYSSB_TPJ;
+            break;
         default:
             break;
     }
     sbVc.YScallBlock = ^(NSString *name, NSString *num) {
         model.contentName = name;
-//        model.contentId = [NSString stringWithFormat:@"%@",num];
         model.contentId = num;
         [_dataArr setObject:model atIndexedSubscript:indexPath.row];
         [_tabview reloadData];
@@ -127,6 +136,7 @@
 
 - (void)searchAction
 {
+    [self removeFromSuperview];
     if (_SearchBlock)
     {
         _SearchBlock(_dataArr);

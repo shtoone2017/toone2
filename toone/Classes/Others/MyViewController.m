@@ -150,27 +150,50 @@
     __block NSString * timeString = [NSString stringWithFormat:@"%@-%@-%@", year, month, day];
     
     __block CJCalendarViewController * weakcontroller = controller;
-    //2.添加SJ
-    MySJView * c = [[MySJView alloc] init];
-    c.callBack = ^(SJButtonClickType type,NSString * time){
-        if (type == SJOkClick) {
-            timeString = [NSString stringWithFormat:@"%@ %@",timeString,time];
-            if ([weakcontroller.obj isKindOfClass:[UIButton class]])
-            {
-                [(UIButton*)weakcontroller.obj setTitle:timeString forState:UIControlStateNormal];
-            }
-            else
-            {
-                UITextField *txtF = (UITextField *)weakcontroller.obj;
-                txtF.text = timeString;
-            }
-
-            if (_block)
-            {
-                _block();
-            }
+    if (_onlyDate)
+    {
+        if (_dateBlock)
+        {
+            _dateBlock(timeString);
         }
-    };
+    }
+    else
+    {
+        //2.添加SJ
+        MySJView * c = [[MySJView alloc] init];
+        if (_isDetailSecond == YES)
+        {
+            c.isDetailSecond = YES;
+        }
+        c.callBack = ^(SJButtonClickType type,NSString * time){
+            if (type == SJOkClick) {
+                timeString = [NSString stringWithFormat:@"%@ %@",timeString,time];
+                if ([weakcontroller.obj isKindOfClass:[UIButton class]])
+                {
+                    [(UIButton*)weakcontroller.obj setTitle:timeString forState:UIControlStateNormal];
+                }
+                else if ([weakcontroller.obj isKindOfClass:[UILabel class]])
+                {
+                    UILabel *lab = (UILabel *)weakcontroller.obj;
+                    lab.text = timeString;
+                }
+                else
+                {
+                    UITextField *txtF = (UITextField *)weakcontroller.obj;
+                    txtF.text = timeString;
+                }
+                
+                if (_block)
+                {
+                    _block();
+                }
+                if (_dateBlock)
+                {
+                    _dateBlock(timeString);
+                }
+            }
+        };
+    }
     FuncLog;
 }
 //--------------------------------------------------------------------

@@ -36,7 +36,16 @@
             [self loadData];
         }
             break;
-            
+        case SBListTypeYSSB_YLJ:{
+            self.title = @"选择压路机设备";
+            [self datas];
+        }
+            break;
+        case SBListTypeYSSB_TPJ:{
+            self.title = @"选择摊铺机设备";
+            [self datas];
+        }
+            break;
         default:
             break;
     }
@@ -82,6 +91,14 @@
         }else if (_type == SBListTypeYSLX) {
             urlString = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetRoad";
         }
+        else if (_type == SBListTypeYSSB_YLJ)//1压路机 2摊铺机
+        {
+            urlString = [NSString stringWithFormat:@"%@?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&device_type=1",YS_Device];
+        }
+        else if (_type == SBListTypeYSSB_TPJ)
+        {
+            urlString = [NSString stringWithFormat:@"%@?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&device_type=2",YS_Device];
+        }
         
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
@@ -126,6 +143,11 @@
         YS_SB_Model * model = self.data[indexPath.row];
         cell.textLabel.text = model.mcName;
     }
+    else if (_type == SBListTypeYSSB_YLJ || _type == SBListTypeYSSB_TPJ)
+    {
+        YS_SB_Model * model = self.datas[indexPath.row];
+        cell.textLabel.text = model.device_name;
+    }
     cell.textLabel.font = [UIFont systemFontOfSize:12.0f];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor oldLaceColor];
@@ -150,6 +172,13 @@
         YS_SB_Model * model = self.data[indexPath.row];
         if (self.YScallBlock) {
             self.YScallBlock(model.mcName, model.mcNum);
+        }
+    }
+    else if (_type == SBListTypeYSSB_YLJ || _type == SBListTypeYSSB_TPJ)
+    {
+        YS_SB_Model * model = self.datas[indexPath.row];
+        if (self.YScallBlock) {
+            self.YScallBlock(model.device_name, model.device_code);
         }
     }
     [self.navigationController popViewControllerAnimated:YES];

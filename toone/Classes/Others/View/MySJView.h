@@ -21,5 +21,10 @@ typedef void(^callBackBlock_t)(SJButtonClickType,NSString*);
 
 
 @interface MySJView : UIView
+
 @property (nonatomic,copy) callBackBlock_t callBack;
+
+@property (nonatomic,assign) BOOL isDetailSecond;  //压实中需要获取到秒
+
+
 @end

@@ -37,4 +37,7 @@
 
 //时间戳转换为时间
 +(NSString*)timeWithTimeStampString:(NSString*)timeStampString;
+
+//日期转换为时间戳
++(NSString*)dateStampWithDateString:(NSString*)dateString;
 @end

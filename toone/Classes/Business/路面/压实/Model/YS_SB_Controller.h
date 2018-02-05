@@ -11,7 +11,8 @@ typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeYSZH = 0,    //桩号
     SBListTypeYSLX,    //路线
     SBListTypeYSMC,    //面层
-    
+    SBListTypeYSSB_YLJ,     //压路机设备
+    SBListTypeYSSB_TPJ    //摊铺机设备
 };
 
 @interface YS_SB_Controller : UIViewController
