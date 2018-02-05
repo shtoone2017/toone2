@@ -51,7 +51,14 @@
 - (void)click:(UIButton *)sender {
     NSDate *select = [self.xib.picker date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    if (_isDetailSecond == YES)
+    {
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+    }
+    else
+    {
+        [dateFormatter setDateFormat:@"HH:mm"];
+    }
     NSString *dateAndTime =  [dateFormatter stringFromDate:select];
     if (sender == self.xib.cancelButton) {
         if (self.callBack) {

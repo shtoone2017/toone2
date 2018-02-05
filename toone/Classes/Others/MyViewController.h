@@ -12,6 +12,8 @@
 
 typedef void(^SendTimeBlock)();
 
+typedef void(^SendDateStrBlock)(NSString *dateStr);
+
 @interface MyViewController : UIViewController<UIGestureRecognizerDelegate,CalendarViewControllerDelegate>
 @property (nonatomic,copy)NSString * startTime;
 @property (nonatomic,copy)NSString * endTime;
@@ -23,6 +25,12 @@ typedef void(^SendTimeBlock)();
 @property (nonatomic,strong) ScreenView *scView;
 
 @property (nonatomic,copy) SendTimeBlock block;
+
+@property (nonatomic,copy) SendDateStrBlock dateBlock;
+
+@property (nonatomic,assign) BOOL onlyDate;//只有日期,没有具体几点
+
+@property (nonatomic,assign) BOOL isDetailSecond;//压实具体到秒
 
 /**
  * 提供一个可供子类继承/重写的buttonClick:

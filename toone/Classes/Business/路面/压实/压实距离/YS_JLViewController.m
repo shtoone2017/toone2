@@ -56,7 +56,7 @@
     NSMutableArray *tempArr = [NSMutableArray array];
     NSArray *keyArr = @[road_id,start_time,end_time,device_code];
     NSArray *titleArr = @[@"线路选择",@"开始时间",@"结束时间",@"设备选择"];
-    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartTime],[NSNumber numberWithInteger:YS_Search_Type_EndTime],[NSNumber numberWithInteger:YS_Search_Type_Divce]];
+    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartTime],[NSNumber numberWithInteger:YS_Search_Type_EndTime],[NSNumber numberWithInteger:YS_Search_Type_Divce_YLJ]];
     for (int i = 0; i<titleArr.count; i++)
     {
         Exp_FinalModel *model = [[Exp_FinalModel alloc] init];
@@ -79,6 +79,7 @@
                 if (!model.contentId)
                 {
                     [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                    return;
                 }
                 else
                 {

@@ -17,5 +17,4 @@
 @property (nonatomic,assign) float fengsu;
 @property (nonatomic,assign) float shidu;
 
-//@property (nonatomic,assign) float statistics;
 @end

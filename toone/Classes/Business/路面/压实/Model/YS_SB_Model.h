@@ -19,4 +19,7 @@
 @property (nonatomic, copy) NSString *mcName;//面层
 @property (nonatomic, copy) NSString *mcNum;
 
+
+@property (nonatomic, copy) NSString *device_name;//
+@property (nonatomic, copy) NSString *device_code;//
 @end

@@ -78,6 +78,7 @@
                 if (!model.contentId)
                 {
                     [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                    return;
                 }
                 else
                 {

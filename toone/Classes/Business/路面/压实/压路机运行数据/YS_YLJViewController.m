@@ -12,10 +12,10 @@
 #import "YS_YLJModel.h"
 #import "YS_YLJCell.h"
 
-#define start_time @"start_time"
-#define road_id @"road_id"
-#define end_time @"end_time"
-#define device_code @"device_code"
+#define start_time @"startTime"
+#define road_id @"roadId"
+#define end_time @"endTime"
+#define device_code @"deviceCode"
 #define pressLayer @"pressLayer"
 
 @interface YS_YLJViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -70,7 +70,7 @@
     [seg addTarget:self action:@selector(segmentControlAction:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = seg;
     
-    _tabview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 200, 300) style:UITableViewStylePlain];
+    _tabview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_w, Screen_h) style:UITableViewStyleGrouped];
     _tabview.delegate = self;
     _tabview.dataSource = self;
     _tabview.rowHeight = UITableViewAutomaticDimension;
@@ -80,18 +80,16 @@
     [_tabview registerNib:[UINib nibWithNibName:@"YS_YLJCell" bundle:nil] forCellReuseIdentifier:@"YS_YLJCell"];
     
     __weak typeof(self) weakself = self;
-    MJRefreshHeader *header = [MJRefreshHeader headerWithRefreshingBlock:^{
+    _tabview.mj_header  = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         _currentPage = 1;
         [weakself requestDataWithTag:0];
     }];
-    _tabview.mj_header = header;
-    [header beginRefreshing];
+    [_tabview.mj_header beginRefreshing];
     
-    MJRefreshFooter *footer = [MJRefreshFooter footerWithRefreshingBlock:^{
+    _tabview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         _currentPage ++;
         [weakself requestDataWithTag:1];
     }];
-    _tabview.mj_footer = footer;
 }
 
 - (void)segmentControlAction:(UISegmentedControl *)seg
@@ -114,7 +112,7 @@
                          [NSNumber numberWithInteger:YS_Search_Type_StartTime],
                          [NSNumber numberWithInteger:YS_Search_Type_EndTime],
                          [NSNumber numberWithInteger:YS_Search_Type_Layer],
-                         [NSNumber numberWithInteger:YS_Search_Type_Divce]
+                         [NSNumber numberWithInteger:YS_Search_Type_Divce_YLJ]
                          ];
     for (int i = 0; i<titleArr.count; i++)
     {
@@ -138,6 +136,7 @@
                 if (!model.contentId)
                 {
                     [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                    return;
                 }
                 else
                 {
@@ -146,6 +145,10 @@
             }
             [weakself requestDataWithTag:0];
         };
+    }
+    else
+    {
+        [self.view addSubview:_expView];
     }
     return _expView;
 }
@@ -157,9 +160,11 @@
     __weak typeof(self) weakself = self;
     if (_paraDic)
     {
-        [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_YLJ parameter:_paraDic success:^(id json)
+        [_paraDic setObject:@(20) forKey:@"row"];
+        [_paraDic setObject:@(_currentPage) forKey:@"page"];
+        [[HTTP shareAFNNetworking] requestMethod:GET urlString:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetYljData?roadId=f9a816c15f7aa4ca015f7cbf18aa004d&pressLayer=2&deviceCode=4953BCCD90659BB7356727C2FC58A8F5&startTime=2017-11-26 09:31:28&endTime=2018-02-05 14:51:24&page=1&row=10" parameter:nil success:^(id json)
          {
-             NSArray *tempArr = [YS_YLJModel arrayOfModelsFromDictionaries:json error:nil];
+             NSArray *tempArr = [YS_YLJModel arrayOfModelsFromDictionaries:[json objectForKey:@"rows"] error:nil];
              if (tag == 0)
              {
                  if(datas)
@@ -176,6 +181,7 @@
                  }
              }
              [weakself drawChartWithData:datas index:_currentIndex];
+             [_tabview reloadData];
          } failure:^(NSError *error) {
              
          }];
@@ -206,7 +212,7 @@
         
         [x_name addObject:model.dinweishijian];
     }
-    NSMutableArray *allDatas = [NSMutableArray arrayWithObjects:@[wendus,sudus,huanjingwendus,fengsus,shidus], nil];
+    NSArray *allDatas = @[wendus,sudus,huanjingwendus,fengsus,shidus];
     AAChartModel *chartModel= AAObject(AAChartModel)
     .chartTypeSet(AAChartTypeLine)
     .titleSet(@"压路机运行数据")
@@ -250,25 +256,25 @@
     }
     else
     {
-        YS_YLJModel *model = datas[indexPath.row];
-        cell.wenduLab.text = [NSString stringWithFormat:@"%f",model.wendu];
-        cell.shidulab.text = [NSString stringWithFormat:@"%f",model.shidu];
-        cell.timelab.text = [NSString stringWithFormat:@"%f",model.dinweishijian];
-        cell.huangjingwenduLab.text = [NSString stringWithFormat:@"%f",model.huanjingwendu];
-        cell.fengsuLab.text = [NSString stringWithFormat:@"%f",model.fengsu];
-        cell.suduLab.text = [NSString stringWithFormat:@"%f",model.sudu];
+        YS_YLJModel *model = datas[indexPath.row-1];
+        cell.wenduLab.text = [NSString stringWithFormat:@"%.2f",model.wendu];
+        cell.shidulab.text = [NSString stringWithFormat:@"%.2f",model.shidu];
+        cell.timelab.text = [NSString stringWithFormat:@"%@",model.dinweishijian];
+        cell.huangjingwenduLab.text = [NSString stringWithFormat:@"%.2f",model.huanjingwendu];
+        cell.fengsuLab.text = [NSString stringWithFormat:@"%.2f",model.fengsu];
+        cell.suduLab.text = [NSString stringWithFormat:@"%.2f",model.sudu];
         return cell;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 250;
+    return 250.00001;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    _aaChartView = [[AAChartView alloc]init];
+    _aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(0, 0, Screen_w, 240)];
     [self.view addSubview:_aaChartView];
     [self drawChartWithData:datas?:nil index:_currentIndex];
     return _aaChartView;

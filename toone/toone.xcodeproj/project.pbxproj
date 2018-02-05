@@ -560,6 +560,8 @@
 		9CF32E9F2023F92100D8F4B5 /* YS_JLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF32E9E2023F92100D8F4B5 /* YS_JLModel.m */; };
 		9CF495292027EB75003070D5 /* YS_YLJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF495272027EB75003070D5 /* YS_YLJCell.m */; };
 		9CF4952A2027EB75003070D5 /* YS_YLJCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF495282027EB75003070D5 /* YS_YLJCell.xib */; };
+		9CF4952E202841D5003070D5 /* YS_TPJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4952C202841D5003070D5 /* YS_TPJCell.m */; };
+		9CF4952F202841D5003070D5 /* YS_TPJCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4952D202841D5003070D5 /* YS_TPJCell.xib */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1742,6 +1744,9 @@
 		9CF495262027EB75003070D5 /* YS_YLJCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_YLJCell.h; sourceTree = "<group>"; };
 		9CF495272027EB75003070D5 /* YS_YLJCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_YLJCell.m; sourceTree = "<group>"; };
 		9CF495282027EB75003070D5 /* YS_YLJCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YS_YLJCell.xib; sourceTree = "<group>"; };
+		9CF4952B202841D5003070D5 /* YS_TPJCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_TPJCell.h; sourceTree = "<group>"; };
+		9CF4952C202841D5003070D5 /* YS_TPJCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_TPJCell.m; sourceTree = "<group>"; };
+		9CF4952D202841D5003070D5 /* YS_TPJCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YS_TPJCell.xib; sourceTree = "<group>"; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -4818,6 +4823,9 @@
 			children = (
 				9C5AE5EB20244E2700420C64 /* YS_TPWDViewController.h */,
 				9C5AE5EC20244E2700420C64 /* YS_TPWDViewController.m */,
+				9CF4952B202841D5003070D5 /* YS_TPJCell.h */,
+				9CF4952C202841D5003070D5 /* YS_TPJCell.m */,
+				9CF4952D202841D5003070D5 /* YS_TPJCell.xib */,
 				9C5AE5F22024520000420C64 /* YS_TPJModel.h */,
 				9C5AE5F32024520000420C64 /* YS_TPJModel.m */,
 			);
@@ -6045,6 +6053,7 @@
 				8CBD73451E091EF600A0C991 /* HNT_CLHS_Cell.xib in Resources */,
 				42E288BA1F4985110002AF72 /* GCB_RWD_Detail_XGCell.xib in Resources */,
 				42E60980201F3FFB002E7C6A /* ExpYS1_Xib_View.xib in Resources */,
+				9CF4952F202841D5003070D5 /* YS_TPJCell.xib in Resources */,
 				9CAAAF971F43E106008F43BA /* PHBListCell.xib in Resources */,
 				42AC72201E30C668007D8F57 /* MySegmentedControl.xib in Resources */,
 				42AC716A1E30C393007D8F57 /* DayQueryTableViewCell.xib in Resources */,
@@ -6493,6 +6502,7 @@
 				426E90E8200CD129001FF8AE /* AAStyle.m in Sources */,
 				42F99100201AD35C0044B77B /* LLQ_LSSJ_Model.m in Sources */,
 				42E2887B1F4592DB0002AF72 /* Exp71View.m in Sources */,
+				9CF4952E202841D5003070D5 /* YS_TPJCell.m in Sources */,
 				42E288D61F4AE6800002AF72 /* GCB_JZL_DetailController.m in Sources */,
 				D20064A31DFF86800021E293 /* UserDefaultsSetting.m in Sources */,
 				42AC71611E30C393007D8F57 /* LQ_ZCL_CB1_Cell.m in Sources */,

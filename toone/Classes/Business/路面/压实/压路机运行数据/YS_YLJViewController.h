@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YS_YLJViewController : UIViewController
+@interface YS_YLJViewController : MyViewController
 
 @end

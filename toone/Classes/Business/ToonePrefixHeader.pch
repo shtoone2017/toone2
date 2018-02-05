@@ -65,6 +65,7 @@
 #import "DGActivityIndicatorView.h"
 #import "AAGlobalMacro.h"
 #import "RATreeView.h"
+#import "MyViewController.h"
 //zing定义组件
 #import "ExpViewHeader.h"
 #import "SGChart.h"
@@ -304,5 +305,7 @@
 //压路机运行数据
 #define YS_YLJ FormatString(baseUrl2,@"rs_DeviceController/GetYljData")
 
+//压路机摊铺机设备列表
+#define YS_Device FormatString(baseUrl2,@"rs_DeviceController/GetDevice")
 
 #endif /* ToonePrefixHeader_pch */
