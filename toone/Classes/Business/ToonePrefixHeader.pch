@@ -155,10 +155,10 @@
 
 //水稳超标处置----改
 #define appSWChaobiaoChuzhi   FormatString(baseUrl,@"AppSwController.do?appSWChaobiaoChuzhi")
-//水稳超标审批
-#define appHntChaobiaoShenpi   FormatString(baseUrl,@"app/appHntChaobiaoShenpi?")
-//水稳超标咨询
-#define appHntChaobiaoZXDWShenpi   FormatString(baseUrl,@"app/appHntChaobiaoZXDWShenpi?")
+//水稳超标审批---改
+#define appHntChaobiaoShenpi   FormatString(baseUrl,@"AppSwController.do?appSWChaobiaoShenpi")
+//水稳超标咨询----改
+#define appHntChaobiaoZXDWShenpi   FormatString(baseUrl,@"AppSwController.do?appSWChaobiaoZXDWShenpi")
 
 //水稳材料统计---改
 #define swmaterial   FormatString(baseUrl,@"AppSwController.do?swmaterial&startTime=%@&endTime=%@&userGroupId=%@&shebeibianhao=%@")
