@@ -24,4 +24,12 @@
     self.lb4.text = model.cl;
 }
 
+-(void)setModel1:(LLQ_LSSJ_Detail_Head *)model1 {
+    _model1 = model1;
+    self.lb1.text = model1.banhezhanminchen;
+    self.lb2.text = model1.caijishijian;
+    self.lb3.text = model1.shijian;
+    self.lb4.text = model1.changliang;
+}
+
 @end

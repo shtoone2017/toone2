@@ -228,7 +228,7 @@
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="摊铺温度" image="gcb_jd">
+                                                            <state key="normal" title="压路机" image="gcb_jd">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -273,14 +273,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="摊铺速度" image="gcb_jc">
+                                                            <state key="normal" title="摊铺机" image="gcb_jc">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cPe-Tc-d7J"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-ji-s3L" customClass="UpButton">
+                                                        <button hidden="YES" opaque="NO" tag="402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-ji-s3L" customClass="UpButton">
                                                             <rect key="frame" x="106.5" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

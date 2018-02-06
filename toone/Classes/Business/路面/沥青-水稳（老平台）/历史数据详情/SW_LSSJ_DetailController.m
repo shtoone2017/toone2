@@ -148,7 +148,7 @@
     switch (section) {
         case 0:return @"基本信息";
         case 1:return @"采集数据";
-        case 2:return [NSString stringWithFormat:@"%@%@",self.position,@"合成级配曲线图"];
+        case 2:return [NSString stringWithFormat:@"%@%@",self.position?:@"",@"合成级配曲线图"];
         case 3:return @"合成后各筛孔尺寸的通过百分率(%)";
     }
     return nil;

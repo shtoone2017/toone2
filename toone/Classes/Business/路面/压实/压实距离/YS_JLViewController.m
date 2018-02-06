@@ -89,6 +89,10 @@
             [weakself requestData];
         };
     }
+    else{
+        [self.view addSubview:_expView];
+        
+    }
     return _expView;
 }
 

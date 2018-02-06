@@ -19,8 +19,8 @@
 
 -(void)setModel:(LLQ_CBCZ_Detail_lqjg *)model{
     _model = model;
-    self.lb1.text = model.yezhuren;
-    self.lb2.text = model.confirmdate;
-    self.lb3.text = model.yezhuyijian;
+    self.lb1.text = model.jianliren;
+    self.lb2.text = model.shenpisj;
+    self.lb3.text = model.jianlisp;
 }
 @end

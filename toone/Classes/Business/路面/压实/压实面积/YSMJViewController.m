@@ -63,8 +63,7 @@
         model.type = [typeArr[i] integerValue];
         model.para_key = keyArr[i];
         [tempArr addObject:model];
-    }
-    ;
+    };
     if (!_expView) {
         _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
         _expView.dataArr = tempArr;
@@ -87,6 +86,10 @@
             }
             [weakself requestArea];
         };
+    }
+    else{
+        [self.view addSubview:_expView];
+
     }
     return _expView;
 }

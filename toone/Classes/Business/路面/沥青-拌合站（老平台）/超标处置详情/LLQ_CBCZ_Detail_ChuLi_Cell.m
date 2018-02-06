@@ -44,7 +44,7 @@
 //            });
 //        }
 //    });
-    NSString * urlString = FormatString(baseUrl, model.filePath);
+    NSString * urlString = FormatString(baseUrl, model.filepath);
     NSURL * url = [NSURL URLWithString:urlString];
     [self.imgv sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"loading.jgeg"] options:SDWebImageProgressiveDownload];
 }

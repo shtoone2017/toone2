@@ -10,4 +10,6 @@
 @class LLQ_LSSJ_Detail_Head;
 @interface LLQ_LSSJ_Detail_HeadCell : UITableViewCell
 @property (nonatomic,strong) LLQ_LSSJ_Detail_Head * model;
+@property (nonatomic, strong) LLQ_LSSJ_Detail_Head *model1;
+
 @end

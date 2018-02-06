@@ -75,6 +75,7 @@ static HTTP *networking = nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if(failureBlock) failureBlock(error);
             }];
+            break;
         }
         case PUT:{
             [manager PUT:encodePath parameters:parameter success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

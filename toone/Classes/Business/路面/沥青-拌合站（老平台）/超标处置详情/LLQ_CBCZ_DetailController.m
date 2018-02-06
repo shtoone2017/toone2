@@ -211,7 +211,7 @@
         }else{
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
             cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-            if (EqualToString([UserDefaultsSetting shareSetting].shenehe, @"1")) {
+//            if (EqualToString([UserDefaultsSetting shareSetting].shenehe, @"1")) {
                 if (!EqualToString(self.chuli, @"1")) {
                     UILabel * label = [[UILabel alloc] init];
                     label.frame = CGRectMake(0, 0, Screen_w, 40);
@@ -230,15 +230,15 @@
                     [btn addTarget:self action:@selector(goto_shenpi) forControlEvents:UIControlEventTouchUpInside];
                 }
 
-            }else{
-                UILabel * label = [[UILabel alloc] init];
-                label.frame = CGRectMake(0, 0, Screen_w, 40);
-                label.text = @"没有审批权限..";
-                label.textAlignment = NSTextAlignmentCenter;
-                label.font = [UIFont systemFontOfSize:12.0f];
-                label.textColor = [UIColor blueColor];
-                [cell.contentView addSubview:label];
-            }
+//            }else{
+//                UILabel * label = [[UILabel alloc] init];
+//                label.frame = CGRectMake(0, 0, Screen_w, 40);
+//                label.text = @"没有审批权限..";
+//                label.textAlignment = NSTextAlignmentCenter;
+//                label.font = [UIFont systemFontOfSize:12.0f];
+//                label.textColor = [UIColor blueColor];
+//                [cell.contentView addSubview:label];
+//            }
             return cell;
         }
     }
@@ -251,7 +251,7 @@
         }else{
             UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
             cell.selectionStyle = UITableViewCellSeparatorStyleNone;
-            if (EqualToString([UserDefaultsSetting shareSetting].zxdwshenhe, @"1")) {
+//            if (EqualToString([UserDefaultsSetting shareSetting].zxdwshenhe, @"1")) {
 
                 UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
                 btn.frame = CGRectMake(0, 0, Screen_w, 40);
@@ -260,15 +260,15 @@
                 btn.titleLabel.font = [UIFont systemFontOfSize:12.0f];
                 [cell.contentView addSubview:btn];
                 [btn addTarget:self action:@selector(goto_zixun) forControlEvents:UIControlEventTouchUpInside];
-            }else{
-                UILabel * label = [[UILabel alloc] init];
-                label.frame = CGRectMake(0, 0, Screen_w, 40);
-                label.text = @"没有咨询信息..";
-                label.textAlignment = NSTextAlignmentCenter;
-                label.font = [UIFont systemFontOfSize:12.0f];
-                label.textColor = [UIColor blueColor];
-                [cell.contentView addSubview:label];
-            }
+//            }else{
+//                UILabel * label = [[UILabel alloc] init];
+//                label.frame = CGRectMake(0, 0, Screen_w, 40);
+//                label.text = @"没有咨询信息..";
+//                label.textAlignment = NSTextAlignmentCenter;
+//                label.font = [UIFont systemFontOfSize:12.0f];
+//                label.textColor = [UIColor blueColor];
+//                [cell.contentView addSubview:label];
+//            }
             return cell;
         }
     }

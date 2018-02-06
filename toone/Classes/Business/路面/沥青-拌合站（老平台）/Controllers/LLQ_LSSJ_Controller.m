@@ -170,6 +170,7 @@
         if (type == ExpButtonTypeChoiceSBButton) {//混合
             UIButton * btn = (UIButton*)obj1;
             LQ_Peifang_Controller *sbVc = [[LQ_Peifang_Controller alloc] init];
+            sbVc.title = @"选择混合料信号";
             [self.navigationController pushViewController:sbVc animated:YES];
             sbVc.callBlock = ^(NSString *name) {
                 [btn setTitle:name forState:UIControlStateNormal];

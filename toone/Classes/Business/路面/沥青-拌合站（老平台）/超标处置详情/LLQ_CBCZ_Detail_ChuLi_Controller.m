@@ -103,8 +103,8 @@
                            @"chuzhijieguo":self.txt3.text,
                            @"chuzhiren":[UserDefaultsSetting shareSetting].userFullName,
                            @"chuzhishijian":[TimeTools timeStampWithTimeString:[TimeTools currentTime]],
+                           @"isIos":@"1"
                            };
-    
     
     NSData *  data =[Tools compressOriginalImage:self.filePathImage toMaxDataSizeKBytes:200];
     

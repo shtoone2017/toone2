@@ -174,15 +174,17 @@
 #define lqchaoBiaoList   FormatString(baseUrl,@"Appliqing.do?lqchaoBiaoList&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&chaobiaolx=%@&cllx=%@&pageNo=%@&maxPageItems=%@")
 //沥青材料统计----改
 #define lqmaterial   FormatString(baseUrl,@"Appliqing.do?lqmaterial&departId=%@&startTime=%@&endTime=%@&shebeibianhao=%@&hhllx=%@&pageNo=%@&maxPageItems=%@")
+//沥青材料统计----增
+#define lqmaterialxq   FormatString(baseUrl,@"Appliqing.do?lqmaterialxq&id=%@")
 
 //沥青超标查询详情页---改
 #define lqchaoBiaoXQ   FormatString(baseUrl,@"Appliqing.do?LqchaoBiaoXQ&id=%@")
 //沥青超标处置---改
 #define appLQChaobiaoChuzhi   FormatString(baseUrl,@"Appliqing.do?appLQChaobiaoChuzhi")
-//沥青超标审批
-#define appLqChaobiaoShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoShenpi?")
-//沥青超标咨询
-#define appLqChaobiaoZXDWShenpi   FormatString(baseUrl,@"appLq/appLqChaobiaoZXDWShenpi?")
+//沥青超标审批---改
+#define appLqChaobiaoShenpi   FormatString(baseUrl,@"Appliqing.do?appLqChaobiaoShenpi")
+//沥青超标咨询---- 改
+#define appLqChaobiaoZXDWShenpi   FormatString(baseUrl,@"Appliqing.do?appLqChaobiaoZXDWShenpi")
 //沥青历史数据查询详情页---改
 #define liqingxixx   FormatString(baseUrl,@"Appliqing.do?liqingxixx")
 

@@ -56,6 +56,9 @@
 		18B871E11E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B871DF1E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.xib */; };
 		423444F02027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 423444EE2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m */; };
 		423444F12027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423444EF2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib */; };
+		424B87FB20287681009A7332 /* LLQ_CLHS_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 424B87F920287681009A7332 /* LLQ_CLHS_Cell1.m */; };
+		424B87FC20287681009A7332 /* LLQ_CLHS_Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424B87FA20287681009A7332 /* LLQ_CLHS_Cell1.xib */; };
+		424B880220287F66009A7332 /* LLQ_CLHS_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 424B880120287F66009A7332 /* LLQ_CLHS_DetailController.m */; };
 		4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C29E1F8B0DC700FA321F /* GCB_NewController.m */; };
 		4255C2A21F8B450A00FA321F /* GCB_WPLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A11F8B450A00FA321F /* GCB_WPLController.m */; };
 		4255C2A51F8B574D00FA321F /* GCB_WC_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */; };
@@ -781,6 +784,11 @@
 		423444ED2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLQ_CBCZ_Detail_DataCell1.h; sourceTree = "<group>"; };
 		423444EE2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLQ_CBCZ_Detail_DataCell1.m; sourceTree = "<group>"; };
 		423444EF2027FD7D00C83D96 /* LLQ_CBCZ_Detail_DataCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LLQ_CBCZ_Detail_DataCell1.xib; sourceTree = "<group>"; };
+		424B87F820287681009A7332 /* LLQ_CLHS_Cell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLQ_CLHS_Cell1.h; sourceTree = "<group>"; };
+		424B87F920287681009A7332 /* LLQ_CLHS_Cell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLQ_CLHS_Cell1.m; sourceTree = "<group>"; };
+		424B87FA20287681009A7332 /* LLQ_CLHS_Cell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LLQ_CLHS_Cell1.xib; sourceTree = "<group>"; };
+		424B880020287F66009A7332 /* LLQ_CLHS_DetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLQ_CLHS_DetailController.h; sourceTree = "<group>"; };
+		424B880120287F66009A7332 /* LLQ_CLHS_DetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLQ_CLHS_DetailController.m; sourceTree = "<group>"; };
 		4255C29D1F8B0DC700FA321F /* GCB_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_NewController.h; sourceTree = "<group>"; };
 		4255C29E1F8B0DC700FA321F /* GCB_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_NewController.m; sourceTree = "<group>"; };
 		4255C2A01F8B450A00FA321F /* GCB_WPLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_WPLController.h; sourceTree = "<group>"; };
@@ -2061,6 +2069,15 @@
 				18B871C71E1F71FC00F9DD53 /* HNT_ChuZhi_Controller.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		424B87FF20287F14009A7332 /* 材料核算详情 */ = {
+			isa = PBXGroup;
+			children = (
+				424B880020287F66009A7332 /* LLQ_CLHS_DetailController.h */,
+				424B880120287F66009A7332 /* LLQ_CLHS_DetailController.m */,
+			);
+			path = "材料核算详情";
 			sourceTree = "<group>";
 		};
 		425AE0DA1F3418AE0048D96B /* 磅房管理 */ = {
@@ -3676,6 +3693,7 @@
 				42F990A0201AD35C0044B77B /* Controllers */,
 				42F990AB201AD35C0044B77B /* Models */,
 				42F990B4201AD35C0044B77B /* Views */,
+				424B87FF20287F14009A7332 /* 材料核算详情 */,
 				42F990C5201AD35C0044B77B /* 历史数据详情 */,
 				42F990D7201AD35C0044B77B /* 超标处置详情 */,
 			);
@@ -3728,6 +3746,9 @@
 				42F990BD201AD35C0044B77B /* LLQ_CLHS_Cell.h */,
 				42F990BE201AD35C0044B77B /* LLQ_CLHS_Cell.m */,
 				42F990BF201AD35C0044B77B /* LLQ_CLHS_Cell.xib */,
+				424B87F820287681009A7332 /* LLQ_CLHS_Cell1.h */,
+				424B87F920287681009A7332 /* LLQ_CLHS_Cell1.m */,
+				424B87FA20287681009A7332 /* LLQ_CLHS_Cell1.xib */,
 				42F990C0201AD35C0044B77B /* LLQ_CLHS_ChatCell.h */,
 				42F990C1201AD35C0044B77B /* LLQ_CLHS_ChatCell.m */,
 				42F990C2201AD35C0044B77B /* LLQ_CLHS_ChatCell.xib */,
@@ -5994,6 +6015,7 @@
 				426E90D2200CD129001FF8AE /* AAHighchartsMore.js in Resources */,
 				8CBD73401E091C7E00A0C991 /* HNT_CLHS_ChatCell.xib in Resources */,
 				8CEB5BC81E0A6C0D00A5C4AA /* LaunchScreen.storyboard in Resources */,
+				424B87FC20287681009A7332 /* LLQ_CLHS_Cell1.xib in Resources */,
 				9C79A49B2022C1C7002F41AC /* Exp_FinalCell.xib in Resources */,
 				42A7A07C1F36F5C600290DB8 /* TreeTableViewCell.xib in Resources */,
 				42F9910D201AD35C0044B77B /* LLQ_LSSJ_Detail_ChartCell.xib in Resources */,
@@ -6158,6 +6180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187C72F31E30B1810072F33A /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
+				424B87FB20287681009A7332 /* LLQ_CLHS_Cell1.m in Sources */,
 				42A7A07B1F36F5C600290DB8 /* TreeTableViewCell.m in Sources */,
 				D20064A71DFF86800021E293 /* SGDate.m in Sources */,
 				42AC717F1E30C393007D8F57 /* LQ_ZJM_Cell.m in Sources */,
@@ -6217,6 +6240,7 @@
 				187C73091E30B1810072F33A /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				42AC71481E30C393007D8F57 /* DCZ_CJ_Inner_Cell.m in Sources */,
 				42E288D31F4AE5480002AF72 /* GCB_JZL_DetailModel.m in Sources */,
+				424B880220287F66009A7332 /* LLQ_CLHS_DetailController.m in Sources */,
 				D200647D1DFF86800021E293 /* HNT_TJFX_Model.m in Sources */,
 				9C5AE5ED20244E2700420C64 /* YS_TPWDViewController.m in Sources */,
 				9C05F07A1F3BFC4400BF4627 /* JSONModelError.m in Sources */,

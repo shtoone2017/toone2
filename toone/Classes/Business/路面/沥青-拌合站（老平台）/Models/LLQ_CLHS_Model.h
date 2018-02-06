@@ -16,4 +16,13 @@
 @property (nonatomic,copy) NSString * sgpeibi ;// string 没用
 @property (nonatomic,copy) NSString * wucha ;// string 误差值
 @property (nonatomic,copy) NSString * yongliang ;// string 用量
+
+@property (nonatomic, copy) NSString *banhezhanminchen;//
+@property (nonatomic, copy) NSString *shijian;
+@property (nonatomic, copy) NSString *sjysb;//油石比
+@property (nonatomic, copy) NSString *jbsj;//搅拌时间
+@property (nonatomic, copy) NSString *sjg1;
+
+@property (nonatomic, copy) NSString *detaId;
+
 @end
