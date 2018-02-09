@@ -43,9 +43,9 @@
     [self.tb.mj_header beginRefreshing];
 }
 -(void)searchButtonClick {
-    [super pan];
-//    SSYSViewController *vc = [SSYSViewController new];
-//    [self.navigationController pushViewController:vc animated:YES];
+//    [super pan];
+    SSYSViewController *vc = [SSYSViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

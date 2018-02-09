@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "YS_ZhuangHao_Model.h"
 #import "YS_BianshuModel.h"
-#define YS_Scale 2
+#define YS_Scale 5
+
+#define StartPoint_x self.frame.origin.x
+#define StartPoint_y self.frame.origin.y
+#define Formula(a) (a+StartPoint_x)*YS_Scale
+#define Formula_GetPoint(a) a/YS_Scale
 
 @interface YSRoadView : UIView
 
