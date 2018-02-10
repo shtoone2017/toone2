@@ -14,6 +14,7 @@
 #import "YS_WebViewController.h"
 #import "YS_YLJViewController.h"
 #import "YS_TPWDViewController.h"
+#import "SSYSViewController.h"
 
 @implementation YSView
 
@@ -29,8 +30,9 @@
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
         case 101:{
-            YS_WebViewController *vc = [YS_WebViewController new];
-            vc.type = YS_WebTypeYSD;
+//            YS_WebViewController *vc = [YS_WebViewController new];
+//            vc.type = YS_WebTypeYSD;
+            SSYSViewController *vc = [[SSYSViewController alloc] init];
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
