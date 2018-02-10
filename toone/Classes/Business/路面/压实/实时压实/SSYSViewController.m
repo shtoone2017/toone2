@@ -62,39 +62,44 @@
         }
         
         
-        CGFloat a_width = (max_x+fabsf(min_x)) * YS_Scale+100;
-        CGFloat a_height = (max_y+fabsf(min_y)) * YS_Scale+100;
+        CGFloat a_width = (max_x+fabsf(min_x))*YS_Scale+100;
+        CGFloat a_height = (max_y+fabsf(min_y))*YS_Scale+100;
         
         
         self.bgview = [UIScrollView new];
         _bgview.frame = CGRectMake(0, 0, Screen_w, Screen_h);
+        _bgview.bounces = YES;
         self.bgview.contentSize = CGSizeMake(a_width, a_height);
-        self.bgview.backgroundColor = [UIColor redColor];
         self.bgview.minimumZoomScale = 0.3;
         self.bgview.maximumZoomScale = 10;
-        self.bgview.zoomScale = 0.3;
+        self.bgview.contentOffset = CGPointMake(0, 0);
+        [self.bgview setZoomScale:5 animated:NO];
+//        [self.bgview zoomToRect:CGRectMake(0, 0, 50000, 2000) animated:NO];
+
         self.bgview.delegate = self;
         [self.view addSubview:_bgview];
-        
+
         self.road = [[YSRoadView alloc] initWithFrame:CGRectMake(0, 0, a_width, a_height)];
         _road.leftData = leftArr;
         _road.rightData = rightArr;
         _road.gardenData = gardenArr;
         _road.bridgeData = bridgeArr;
         [self.bgview addSubview:_road];
-        self.bgview.contentOffset = CGPointMake(0, _bgview.contentSize.height);
 
     } failure:^(NSError *error) {
         
     }];
     
-//    [[HTTP shareAFNNetworking] requestMethod:GET urlString:[NSString stringWithFormat:@"%@?road_id=f9a816c15e50be21015e566322495fe0&pressLayer=2&x_min=-6&x_max=-317&y_min=0&y_max=1455",YS_Bianshu] parameter:nil success:^(id json) {
-//        NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
-//        _road.bianshuData = datas;
-//        
-//    } failure:^(NSError *error) {
-//        
-//    }];
+    NSString *url = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetGrid?Road_id=f9a816c15f7aa4ca015f7cbf18aa004d&pressLevel=1&pressLayer=2&x_min=%f&x_max=%f&y_max=%f&y_min=%f",Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];
+    
+    
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:nil success:^(id json) {
+        NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
+        _road.bianshuData = datas;
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
 }
 
@@ -113,6 +118,12 @@
     
     self.bgview.contentSize = CGSizeMake(self.road.frame.size.width + 30, self.road.frame.size.height + 30);
 }
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    NSLog(@"--------------x:%f --------------  y:%f -----------",targetContentOffset->x,targetContentOffset->y);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

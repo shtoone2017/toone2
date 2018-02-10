@@ -8,13 +8,10 @@
 
 #import "YSRoadView.h"
 
-#define StartPoint_x self.frame.origin.x +100
-#define StartPoint_y self.frame.origin.y+self.frame.size.height -100
+
+
 @interface YSRoadView ()<UIGestureRecognizerDelegate>
-{
-    UIBezierPath *path;
-    UIBezierPath *path1;
-}
+
 @end
 
 @implementation YSRoadView
@@ -32,38 +29,26 @@
     return self;
 }
 
-
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    if(_leftData&&_leftData.count>0 && _rightData&&_rightData.count > 0)
-    {
-        [self creteBezierPathWithData:_leftData];
-        [self creteBezierPathWithData:_rightData];
-    }
-    //    [self drawBianshu];
-}
-
-
 - (void)creteBezierPathWithData:(NSArray *)data
 {
-    path = [UIBezierPath bezierPath];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     if (data && data.count >0)
     {
         YS_ZhuangHao_Model * model = data.firstObject;
-        [path moveToPoint:CGPointMake(model.Stake_dx*YS_Scale+StartPoint_x, model.Stake_dy*YS_Scale+StartPoint_y)];
+        [path moveToPoint:CGPointMake(Formula(model.Stake_dx), -(Formula(model.Stake_dy)))];
         for (int i = 0; i<data.count; i++)
         {
             YS_ZhuangHao_Model * model = [data objectAtIndex:i];
-            [path addLineToPoint:CGPointMake(model.Stake_dx*YS_Scale+StartPoint_x,model.Stake_dy*YS_Scale+StartPoint_y)];
+            [path addLineToPoint:CGPointMake(Formula(model.Stake_dx),-(Formula(model.Stake_dy)))];
             
-            CATextLayer *textLayer = [CATextLayer layer];
-            textLayer.string = model.stake_name;
-            textLayer.frame = CGRectMake(model.Stake_dx*YS_Scale+StartPoint_x,model.Stake_dy*YS_Scale+StartPoint_y, 50, 50);
-            textLayer.fontSize = 10.0f;
-            textLayer.wrapped = YES;//默认为No.  当Yes时，字符串自动适应layer的bounds大小
-            textLayer.contentsScale = [UIScreen mainScreen].scale;//解决文字模糊 以Retina方式来渲染，防止画出来的文本像素化
-            textLayer.foregroundColor =[UIColor blackColor].CGColor;
-            [self.layer addSublayer:textLayer];
+//            CATextLayer *textLayer = [CATextLayer layer];
+//            textLayer.string = model.stake_name;
+//            textLayer.frame = CGRectMake(model.Stake_dx*YS_Scale+StartPoint_x,-(model.Stake_dy*YS_Scale+StartPoint_y), 50, 50);
+//            textLayer.fontSize = 10.0f;
+//            textLayer.wrapped = YES;//默认为No.  当Yes时，字符串自动适应layer的bounds大小
+//            textLayer.contentsScale = [UIScreen mainScreen].scale;//解决文字模糊 以Retina方式来渲染，防止画出来的文本像素化
+//            textLayer.foregroundColor =[UIColor blackColor].CGColor;
+//            [self.layer addSublayer:textLayer];
             
         }
     }
@@ -79,38 +64,49 @@
 
 - (void)drawBianshu
 {
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+
     if(_bianshuData && _bianshuData.count>0)
     {
         for (int i = 0; i < _bianshuData.count; i++)
         {
             YS_BianshuModel *model = _bianshuData[i];
-            CGContextAddEllipseInRect(ctx, CGRectMake(model.lng*YS_Scale+StartPoint_x,model.lat*YS_Scale+StartPoint_y, 1, 1));
+            CAShapeLayer *roadLayer = [CAShapeLayer layer];
+            [roadLayer setFillColor:[UIColor blackColor].CGColor];
+//            [roadLayer setStrokeColor:[UIColor blackColor].CGColor];
+            [roadLayer setLineWidth:1.0f];
+            [roadLayer setLineJoin:kCALineJoinMiter];
+            CGRect frame = CGRectMake(Formula(model.lng),-(Formula(model.lat)), 1, 1);
+            UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:frame];
+            roadLayer.path = circlePath.CGPath;
+            [self.layer addSublayer:roadLayer];
+            
         }
     }
-    CGContextSetStrokeColorWithColor(ctx,[UIColor blackColor].CGColor);
-    CGContextSetLineWidth(ctx, 1);
-    CGContextStrokePath(ctx);
+    
+    [self setNeedsDisplay];
 }
 
 
-//- (void)setLeftData:(NSArray *)leftData
-//{
-//    _leftData = leftData;
-//
-//}
-//
-//- (void)setRightData:(NSArray *)rightData
-//{
-//    _rightData = rightData;
-//    [self setNeedsDisplay];
-//}
-//
-//- (void)setBianshuData:(NSArray *)bianshuData
-//{
-//    _bianshuData = bianshuData;
-//
-//}
+- (void)setLeftData:(NSArray *)leftData
+{
+    _leftData = leftData;
+    [self creteBezierPathWithData:_leftData];
+    [self setNeedsDisplay];
+}
+
+- (void)setRightData:(NSArray *)rightData
+{
+    _rightData = rightData;
+    [self creteBezierPathWithData:_rightData];
+    [self setNeedsDisplay];
+}
+
+
+- (void)setBianshuData:(NSArray *)bianshuData
+{
+    _bianshuData = bianshuData;
+    [self drawBianshu];
+}
 
 
 @end

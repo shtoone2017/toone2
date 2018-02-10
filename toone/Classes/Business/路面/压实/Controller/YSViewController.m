@@ -46,6 +46,7 @@
 //    self.tb.mj_header = [MJDIYHeader2 headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     [self.tb.mj_header beginRefreshing];
 }
+
 -(void)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
         case 2:{
@@ -65,6 +66,13 @@
         default:
             break;
     }
+}
+
+-(void)searchButtonClick {
+//    [super pan];
+    SSYSViewController *vc = [SSYSViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 #pragma mark - tableView
