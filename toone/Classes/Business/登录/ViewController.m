@@ -136,7 +136,7 @@
             if ([json[@"success"] boolValue]) {
                 //数据存储到本地
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting] ;
+                    UserDefaultsSetting  * setting = [UserDefaultsSetting shareSetting];
                     setting.acount = _users;
                     setting.password = _password;
                     setting.departId  = json[@"departId"];
