@@ -19,7 +19,8 @@ typedef NS_OPTIONS(NSInteger, YS_Search_Type)
     YS_Search_Type_EndTime,
     YS_Search_Type_Layer,
     YS_Search_Type_Divce_YLJ,// 压路机设备列表
-    YS_Search_Type_Divce_TPJ// 摊铺机设备列表
+    YS_Search_Type_Divce_TPJ,// 摊铺机设备列表
+    YS_Search_Type_Divce_YLJ_Zuobiao//压路机设备最新坐标
 };
 
 @interface Exp_Final : UIView

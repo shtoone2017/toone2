@@ -7,8 +7,8 @@
 //
 
 #import <JSONModel/JSONModel.h>
-
-@interface Exp_FinalModel : JSONModel
+#import "YS_deviceModel.h"
+@interface Exp_FinalModel : BaseModel
 
 @property (nonatomic,strong) NSString *title;
 
@@ -19,5 +19,8 @@
 @property (nonatomic,strong) NSString *para_key;  //对应的参数  key
 
 @property (nonatomic,assign) NSInteger type;     //根据type来展示对应跳转的页面
+
+@property (nonatomic,strong) YS_deviceModel *tempModel;     //实时选择设备后传的含坐标的model
+
 
 @end

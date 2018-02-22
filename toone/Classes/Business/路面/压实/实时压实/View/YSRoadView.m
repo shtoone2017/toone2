@@ -8,8 +8,6 @@
 
 #import "YSRoadView.h"
 
-
-
 @interface YSRoadView ()<UIGestureRecognizerDelegate>
 
 @end
@@ -29,26 +27,26 @@
     return self;
 }
 
-- (void)creteBezierPathWithData:(NSArray *)data
+- (void)drawRoadData:(NSArray *)data
 {
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     if (data && data.count >0)
     {
         YS_ZhuangHao_Model * model = data.firstObject;
-        [path moveToPoint:CGPointMake(Formula(model.Stake_dx), -(Formula(model.Stake_dy)))];
+        [path moveToPoint:CGPointMake(Formula_x(model.Stake_dx), -(Formula_y(model.Stake_dy)))];
         for (int i = 0; i<data.count; i++)
         {
             YS_ZhuangHao_Model * model = [data objectAtIndex:i];
-            [path addLineToPoint:CGPointMake(Formula(model.Stake_dx),-(Formula(model.Stake_dy)))];
+            [path addLineToPoint:CGPointMake(Formula_x(model.Stake_dx),-(Formula_y(model.Stake_dy)))];
             
-//            CATextLayer *textLayer = [CATextLayer layer];
-//            textLayer.string = model.stake_name;
-//            textLayer.frame = CGRectMake(model.Stake_dx*YS_Scale+StartPoint_x,-(model.Stake_dy*YS_Scale+StartPoint_y), 50, 50);
-//            textLayer.fontSize = 10.0f;
-//            textLayer.wrapped = YES;//默认为No.  当Yes时，字符串自动适应layer的bounds大小
-//            textLayer.contentsScale = [UIScreen mainScreen].scale;//解决文字模糊 以Retina方式来渲染，防止画出来的文本像素化
-//            textLayer.foregroundColor =[UIColor blackColor].CGColor;
-//            [self.layer addSublayer:textLayer];
+            CATextLayer *textLayer = [CATextLayer layer];
+            textLayer.string = model.stake_name;
+            textLayer.frame = CGRectMake(Formula_x(model.Stake_dx),-(Formula_y(model.Stake_dy)), 50, 50);
+            textLayer.fontSize = 10.0f;
+            textLayer.wrapped = YES;//默认为No.  当Yes时，字符串自动适应layer的bounds大小
+            textLayer.contentsScale = [UIScreen mainScreen].scale;//解决文字模糊 以Retina方式来渲染，防止画出来的文本像素化
+            textLayer.foregroundColor =[UIColor blackColor].CGColor;
+            [self.layer addSublayer:textLayer];
             
         }
     }
@@ -71,11 +69,11 @@
         {
             YS_BianshuModel *model = _bianshuData[i];
             CAShapeLayer *roadLayer = [CAShapeLayer layer];
-            [roadLayer setFillColor:[UIColor blackColor].CGColor];
+            [roadLayer setFillColor:[self getPointColorBianshu:model.grid_count]];
 //            [roadLayer setStrokeColor:[UIColor blackColor].CGColor];
             [roadLayer setLineWidth:1.0f];
             [roadLayer setLineJoin:kCALineJoinMiter];
-            CGRect frame = CGRectMake(Formula(model.lng),-(Formula(model.lat)), 1, 1);
+            CGRect frame = CGRectMake(Formula_x(model.lng),-(Formula_y(model.lat)), 2, 2);
             UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:frame];
             roadLayer.path = circlePath.CGPath;
             [self.layer addSublayer:roadLayer];
@@ -86,26 +84,83 @@
     [self setNeedsDisplay];
 }
 
+- (CGColorRef)getPointColorBianshu:(NSInteger)a
+{
+    switch (a) {
+        case 1:
+            return SGCOLOR(11, 36, 252, 1).CGColor;
+            break;
+        case 2:
+            return SGCOLOR(7, 27, 201, 1).CGColor;
+            break;
+        case 3:
+            return SGCOLOR(3, 15, 150, 1).CGColor;
+            break;
+        case 4:
+            return SGCOLOR(1, 7, 100, 1).CGColor;
+            break;
+        case 5:
+            return SGCOLOR(4, 62, 4, 1).CGColor;
+            break;
+        case 6:
+            return SGCOLOR(14, 126, 18, 1).CGColor;
+            break;
+        case 7:
+            return SGCOLOR(27, 189, 32, 1).CGColor;
+            break;
+        case 8:
+            return SGCOLOR(41, 253, 47, 1).CGColor;
+            break;
+        default:
+            return SGCOLOR(252, 13, 27, 1).CGColor;
+            break;
+    }
+}
+
+- (void)drawDevice
+{
+    for (id subview in self.subviews)
+    {
+        if ([subview isKindOfClass:[UIImageView class]])
+        {
+            [subview removeFromSuperview];
+        }
+    }
+    for (int i = 0; i<_deviceData.count; i++)
+    {
+        YS_deviceModel *model = _deviceData[i];
+        UIImageView * deviceImg = [UIImageView new];
+        deviceImg.image = [UIImage imageNamed:@"跑车"];
+        deviceImg.center = CGPointMake(Formula_x(model.Actual_dx), Formula_y(model.Actual_dy));
+        deviceImg.bounds = CGRectMake(0, 0, 50, 50);
+        [self addSubview:deviceImg];
+    }
+}
 
 - (void)setLeftData:(NSArray *)leftData
 {
     _leftData = leftData;
-    [self creteBezierPathWithData:_leftData];
+    [self drawRoadData:_leftData];
     [self setNeedsDisplay];
 }
 
 - (void)setRightData:(NSArray *)rightData
 {
     _rightData = rightData;
-    [self creteBezierPathWithData:_rightData];
+    [self drawRoadData:_rightData];
     [self setNeedsDisplay];
 }
-
 
 - (void)setBianshuData:(NSArray *)bianshuData
 {
     _bianshuData = bianshuData;
     [self drawBianshu];
+}
+
+- (void)setDeviceData:(NSArray *)deviceData
+{
+    _deviceData = deviceData;
+    [self drawDevice];
 }
 
 

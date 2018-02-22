@@ -12,10 +12,11 @@ typedef NS_ENUM(NSInteger,SBListType) {
     SBListTypeYSLX,    //路线
     SBListTypeYSMC,    //面层
     SBListTypeYSSB_YLJ,     //压路机设备
-    SBListTypeYSSB_TPJ    //摊铺机设备
+    SBListTypeYSSB_TPJ,    //摊铺机设备
+    SBListTypeYSSB_YLJ_Zuobiao//压路机坐标列表
 };
 
 @interface YS_SB_Controller : UIViewController
-@property (nonatomic,copy) void (^YScallBlock)(NSString*,NSString*);
+@property (nonatomic,copy) void (^YScallBlock)(NSString*,id);
 @property (nonatomic,assign) NSInteger type;
 @end
