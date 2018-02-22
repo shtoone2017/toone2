@@ -75,7 +75,7 @@
 #import "UpButton.h"
 #import "DWURunLoopWorkDistribution.h"
 
-#import "JSONModel.h"
+#import "BaseModel.h"
 
 
 /**************************摊铺*********************************/
@@ -309,5 +309,8 @@
 
 //压路机摊铺机设备列表
 #define YS_Device FormatString(baseUrl2,@"rs_DeviceController/GetDevice")
+
+//实时的设备坐标列表
+#define YS_Device_Zuobiao FormatString(baseUrl2,@"rs_StakeController/getAPByRoad")
 
 #endif /* ToonePrefixHeader_pch */

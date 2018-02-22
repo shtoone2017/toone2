@@ -8,7 +8,7 @@
 
 #import <JSONModel/JSONModel.h>
 
-@interface YS_BianshuModel : JSONModel
+@interface YS_BianshuModel : BaseModel
 
 @property (nonatomic,assign) float lng;
 @property (nonatomic,assign) float lat;

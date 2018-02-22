@@ -8,6 +8,7 @@
 
 #import "YS_SB_Controller.h"
 #import "YS_SB_Model.h"
+#import "YS_deviceModel.h"
 
 @interface YS_SB_Controller ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tbleView;
@@ -43,6 +44,11 @@
             break;
         case SBListTypeYSSB_TPJ:{
             self.title = @"选择摊铺机设备";
+            [self datas];
+        }
+            break;
+        case SBListTypeYSSB_YLJ_Zuobiao:{
+            self.title = @"选择设备";
             [self datas];
         }
             break;
@@ -99,17 +105,29 @@
         {
             urlString = [NSString stringWithFormat:@"%@?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&device_type=2",YS_Device];
         }
+        else if (_type == SBListTypeYSSB_YLJ_Zuobiao)
+        {
+            urlString = [NSString stringWithFormat:@"%@?Road_id=f9a816c15f7aa4ca015f7cbf18aa004d",YS_Device_Zuobiao];
+        }
         
         __weak typeof(self)  weakSelf = self;
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
             NSMutableArray * datas = [NSMutableArray array];
+            if (_type == SBListTypeYSSB_YLJ_Zuobiao)
+            {
+                datas = [YS_deviceModel arrayOfModelsFromDictionaries:[json valueForKey:@"data"]];
+            }
+            else
+            {
                 if ([json isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * dict in json) {
+                        
                         YS_SB_Model * model = [YS_SB_Model modelWithDict:dict];
                         model.roadId = dict[@"id"];
                         [datas addObject:model];
                     }
                 }
+            }
 
             weakSelf.datas = datas;
             [weakSelf.tbleView reloadData];
@@ -148,6 +166,11 @@
         YS_SB_Model * model = self.datas[indexPath.row];
         cell.textLabel.text = model.device_name;
     }
+    else if (_type == SBListTypeYSSB_YLJ_Zuobiao)
+    {
+        YS_deviceModel *model = self.datas[indexPath.row];
+        cell.textLabel.text = model.device_name;
+    }
     cell.textLabel.font = [UIFont systemFontOfSize:12.0f];
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor oldLaceColor];
@@ -179,6 +202,13 @@
         YS_SB_Model * model = self.datas[indexPath.row];
         if (self.YScallBlock) {
             self.YScallBlock(model.device_name, model.device_code);
+        }
+    }
+    else if (_type == SBListTypeYSSB_YLJ_Zuobiao)
+    {
+        YS_deviceModel *model = self.datas[indexPath.row];
+        if (self.YScallBlock) {
+            self.YScallBlock(model.device_name,model);
         }
     }
     [self.navigationController popViewControllerAnimated:YES];

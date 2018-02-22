@@ -88,12 +88,24 @@
         case YS_Search_Type_Divce_TPJ:
             sbVc.type = SBListTypeYSSB_TPJ;
             break;
+        case YS_Search_Type_Divce_YLJ_Zuobiao:
+            sbVc.type = SBListTypeYSSB_YLJ_Zuobiao;
+            break;
+
         default:
             break;
     }
-    sbVc.YScallBlock = ^(NSString *name, NSString *num) {
+    sbVc.YScallBlock = ^(NSString *name,  id num) {
+        //设备实时坐标 传model,其他传id字符串
+        if (sbVc.type == SBListTypeYSSB_YLJ_Zuobiao)
+        {
+            model.tempModel = num;
+        }
+        else
+        {
+            model.contentId = num;
+        }
         model.contentName = name;
-        model.contentId = num;
         [_dataArr setObject:model atIndexedSubscript:indexPath.row];
         [_tabview reloadData];
     };

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 shtoone. All rights reserved.
 //
 
-@interface YS_ZhuangHao_Model : JSONModel
+@interface YS_ZhuangHao_Model : BaseModel
 
 @property (nonatomic,strong) NSString *stake_name;
 

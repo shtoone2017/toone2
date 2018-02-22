@@ -88,7 +88,7 @@
             YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
             sbVc.type = SBListTypeYSLX;
             [self.navigationController pushViewController:sbVc animated:YES];
-            sbVc.YScallBlock = ^(NSString *name, NSString *num) {
+            sbVc.YScallBlock = ^(NSString *name, id num) {
                 [btn setTitle:name forState:UIControlStateNormal];
                 _roadName = name;
                 _road_id = num;
