@@ -14,10 +14,15 @@
 #define device_Num @"device_Num"
 
 @interface SSYSViewController ()<UIScrollViewDelegate>
+{
+    float road_min_x;
+    float road_min_y;
+}
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *colorImg_Cons_height;
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
 @property (nonatomic,strong) YSRoadView *road;
 @property (nonatomic,strong) Exp_Final *expView;
+
 
 @end
 
@@ -168,12 +173,12 @@
                     {
                         YS_deviceModel *amodel = model.tempModel;
                         //滚动视图做出偏移
-                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx-Screen_w/2), Formula_y(amodel.Actual_dy-Screen_h/2));
+                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx-Screen_w/2,road_min_x), Formula_y(amodel.Actual_dy-Screen_h/2,road_min_y));
                         //获取请求需要的真实路面坐标值
-                        CGFloat min_x = Formula_min_x(amodel.Actual_dx);
-                        CGFloat max_x = Formula_max_x(amodel.Actual_dx);
-                        CGFloat min_y = Formula_min_y(amodel.Actual_dy);
-                        CGFloat max_y = Formula_max_y(amodel.Actual_dy);
+                        CGFloat min_x = Formula_min_x(amodel.Actual_dx,road_min_x);
+                        CGFloat max_x = Formula_max_x(amodel.Actual_dx,road_min_x);
+                        CGFloat min_y = Formula_min_y(amodel.Actual_dy,road_min_y);
+                        CGFloat max_y = Formula_max_y(amodel.Actual_dy,road_min_y);
                         [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_x] forKey:@"x_min"];
                         [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_x] forKey:@"x_max"];
                         [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_y] forKey:@"y_min"];
@@ -256,8 +261,7 @@
         NSArray *datas = [YS_ZhuangHao_Model arrayOfModelsFromDictionaries:json];
         float max_x = 0;
         float max_y = 0;
-        float min_x = 0;
-        float min_y = 0;
+        
         
         for (YS_ZhuangHao_Model *model in datas)
         {
@@ -283,13 +287,15 @@
             max_x = model.Stake_dx > max_x ? model.Stake_dx : max_x;
             max_y = model.Stake_dy > max_y ? model.Stake_dy : max_y;
             
-            min_x = model.Stake_dx < min_x ? model.Stake_dx : min_x;
-            min_y = model.Stake_dy < min_y ? model.Stake_dy : min_y;
+            road_min_x = model.Stake_dx < road_min_x ? model.Stake_dx : road_min_x;
+            road_min_y = model.Stake_dy < road_min_y ? model.Stake_dy : road_min_y;
             
+            _road.offsetNum_x = road_min_x;
+            _road.offsetNum_y = road_min_y;            
         }
         
-        CGFloat a_width = (max_x+fabsf(min_x))*YS_Scale;
-        CGFloat a_height = (max_y+fabsf(min_y))*YS_Scale;
+        CGFloat a_width = (max_x+fabsf(road_min_x))*YS_Scale;
+        CGFloat a_height = (max_y+fabsf(road_min_y))*YS_Scale;
         
         self.bgScroll.contentSize = CGSizeMake(a_width, a_height);
 
