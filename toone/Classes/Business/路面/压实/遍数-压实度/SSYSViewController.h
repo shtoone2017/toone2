@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "YSRoadView.h"
 @interface SSYSViewController : UIViewController
-@property (strong, nonatomic)  UIScrollView *bgview;
+@property (weak, nonatomic) IBOutlet UIScrollView *bgScroll;
 
 //type 1= 遍数   2=压实度
 @property (assign,nonatomic) NSInteger type;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *label3;
+@property (weak, nonatomic) IBOutlet UIImageView *colorImg;
 
 @end

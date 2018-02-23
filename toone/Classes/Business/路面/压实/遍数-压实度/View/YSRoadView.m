@@ -86,7 +86,22 @@
 
 - (CGColorRef)getPointColorBianshu:(NSInteger)a
 {
-    switch (a) {
+    if (_type == 2)
+    {
+        //压实度
+        if (a<_baojingModel.smc_qy || a>_baojingModel.smc_gy)
+        {
+            return SGCOLOR(252, 13, 27, 1).CGColor;   //红色
+        }
+        else
+        {
+            return SGCOLOR(41, 253, 47, 1).CGColor;  //绿色
+        }
+    }
+    else
+    {
+        switch (a)
+        {
         case 1:
             return SGCOLOR(11, 36, 252, 1).CGColor;
             break;
@@ -114,6 +129,7 @@
         default:
             return SGCOLOR(252, 13, 27, 1).CGColor;
             break;
+        }
     }
 }
 
@@ -161,6 +177,11 @@
 {
     _deviceData = deviceData;
     [self drawDevice];
+}
+
+- (void)setBaojingModel:(YS_BaojingModel *)baojingModel
+{
+    _baojingModel = baojingModel;
 }
 
 

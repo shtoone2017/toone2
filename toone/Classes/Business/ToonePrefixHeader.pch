@@ -315,4 +315,7 @@
 //实时的设备坐标列表
 #define YS_Device_Zuobiao FormatString(baseUrl2,@"rs_StakeController/getAPByRoad")
 
+//报警标准
+#define YS_Biaozhun FormatString(baseUrl2,@"rs_DeviceController/GetAlert")
+
 #endif /* ToonePrefixHeader_pch */

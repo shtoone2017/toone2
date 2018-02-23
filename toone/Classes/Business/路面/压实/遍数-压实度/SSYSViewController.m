@@ -14,6 +14,7 @@
 #define device_Num @"device_Num"
 
 @interface SSYSViewController ()<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *colorImg_Cons_height;
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
 @property (nonatomic,strong) YSRoadView *road;
 @property (nonatomic,strong) Exp_Final *expView;
@@ -24,30 +25,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.bgview = [UIScrollView new];
-    _bgview.frame = CGRectMake(0, 0, Screen_w, Screen_h);
-    _bgview.bounces = YES;
-    self.bgview.contentSize = CGSizeMake(Screen_w, Screen_h);
-    self.bgview.minimumZoomScale = 0.3;
-    self.bgview.maximumZoomScale = 10;
-    self.bgview.contentOffset = CGPointMake(0, 0);
-    [self.bgview setZoomScale:5 animated:NO];
-    //        [self.bgview zoomToRect:CGRectMake(0, 0, 50000, 2000) animated:NO];
-    self.bgview.delegate = self;
-    [self.view addSubview:_bgview];
+    self.bgScroll.contentSize = CGSizeMake(Screen_w, Screen_h);
+    self.bgScroll.minimumZoomScale = 0.3;
+    self.bgScroll.maximumZoomScale = 10;
+    self.bgScroll.contentOffset = CGPointMake(0, 0);
+    [self.bgScroll setZoomScale:5 animated:NO];
+    self.bgScroll.delegate = self;
     self.road = [[YSRoadView alloc] initWithFrame:CGRectMake(0, 0, Screen_w, Screen_h)];
-    [self.bgview addSubview:_road];
+    self.road.type = _type;
+    [self.bgScroll addSubview:_road];
     self.view.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1];
-    
     if (_type == 1)
     {
         //遍数
+        _label1.text = [NSString stringWithFormat:@"当前路线 :%@",[UserDefaultsSetting shareSetting].road_name];
+        _label2.text = [NSString stringWithFormat:@"当前面层 :上面层"];
+        _label3.text = [NSString stringWithFormat:@"当前设备 : "];
+        self.colorImg.image = [UIImage imageNamed:@"色条"];
         [self bianshuTypeRequest];
     }
     else
     {
         //压实度
-        [self yashiduTypeRequest];
+        self.colorImg.image = [UIImage imageNamed:@"压实度色条"];
+        _label2.text = [NSString stringWithFormat:@"当前路线 :%@",[UserDefaultsSetting shareSetting].road_name];
+        _label3.text = [NSString stringWithFormat:@"当前面层 :上面层"];
+        _colorImg_Cons_height.constant = 60;
+        [self biaozhunRequest];
     }
     
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
@@ -101,11 +105,21 @@
         _expView.dataArr = tempArr;
         _expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
         [self.view addSubview:_expView];
+        NSArray *labels;
+        if (_type == 1)
+        {
+            labels = @[_label1,_label2,_label3];
+        }
+        else
+        {
+            labels = @[_label2,_label3];
+        }
         __weak typeof(self) weakself = self;
         _expView.SearchBlock = ^(NSArray *arr)
         {
-            for (Exp_FinalModel *model in arr)
+            for (int i = 0;i<arr.count;i++)
             {
+                Exp_FinalModel *model = arr[i];
                 if (!model.contentId && !model.tempModel)
                 {
                     [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
@@ -113,12 +127,48 @@
                 }
                 else
                 {
+                    //界面改变
+                    UILabel *lab = labels[i];
+                    if (weakself.type == 1)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                lab.text = [NSString stringWithFormat:@"当前路线 :%@",model.contentName];
+                                break;
+                            case 1:
+                                lab.text = [NSString stringWithFormat:@"当前面层 :%@",model.contentName];
+                                break;
+                            case 2:
+                                lab.text = [NSString stringWithFormat:@"当前设备 :%@",model.contentName];
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                lab.text = [NSString stringWithFormat:@"当前路线 :%@",model.contentName];
+                                break;
+                            case 1:
+                                lab.text = [NSString stringWithFormat:@"当前面层 :%@",model.contentName];
+                                break;
+                                
+                            default:
+                                break;
+                        }
+                        
+                    }
+                    
                     //这里做判断因为其他筛选条件都传的是name和id,而设备传的是name和model,获取model中的x,y从而确定设备位置,做出请求
                     if ([model.title isEqualToString:@"设备选择"])
                     {
                         YS_deviceModel *amodel = model.tempModel;
                         //滚动视图做出偏移
-                        weakself.bgview.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx-Screen_w/2), Formula_y(amodel.Actual_dy-Screen_h/2));
+                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx-Screen_w/2), Formula_y(amodel.Actual_dy-Screen_h/2));
                         //获取请求需要的真实路面坐标值
                         CGFloat min_x = Formula_min_x(amodel.Actual_dx);
                         CGFloat max_x = Formula_max_x(amodel.Actual_dx);
@@ -137,20 +187,19 @@
                 }
             }
             
-//            for (CALayer *layer in weakself.road.layer.sublayers)
-//            {
-//                [layer removeFromSuperlayer];
-//            }
+            //移除之前的界面,重新绘制
             [weakself.road removeFromSuperview];
             weakself.road = nil;
             weakself.road = [[YSRoadView alloc] init];
-            [weakself.bgview addSubview:weakself.road];
-//            [weakself.road.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
+            [weakself.bgScroll addSubview:weakself.road];
+            
+            
             
             if (_type == 1)
             {
                 //遍数
                 [weakself bianshuTypeRequest];
+                
             }
             else
             {
@@ -180,6 +229,20 @@
     [self roadRequest];
     [self bianshuOrYashiduRequest];
     [self deviceRequest];
+}
+
+//是否合格的标准
+- (void)biaozhunRequest
+{
+    __weak typeof(self) weakself = self;
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Biaozhun parameter:@{@"road_id":[UserDefaultsSetting shareSetting].road_id} success:^(id json)
+    {
+        weakself.road.baojingModel = [[YS_BaojingModel alloc] initWithDictionary:json error:nil];
+        [self yashiduTypeRequest];
+        
+    }failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)roadRequest
@@ -228,7 +291,7 @@
         CGFloat a_width = (max_x+fabsf(min_x))*YS_Scale;
         CGFloat a_height = (max_y+fabsf(min_y))*YS_Scale;
         
-        self.bgview.contentSize = CGSizeMake(a_width, a_height);
+        self.bgScroll.contentSize = CGSizeMake(a_width, a_height);
 
         self.road.frame = CGRectMake(0, 0, a_width, a_height);
         _road.leftData = leftArr;
@@ -251,11 +314,11 @@
         if (_type == 1)
         {
             //遍数
-            url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=1&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Bianshu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];        }
+            url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=2&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Bianshu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];        }
         else
         {
             //压实度
-            url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=1&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Yashidu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];
+            url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=2&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Yashidu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];
         }
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:nil success:^(id json) {
             NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
@@ -313,11 +376,11 @@
     
     CGRect frame = self.road.frame;
     
-    frame.origin.y = (self.bgview.frame.size.height - self.road.frame.size.height) > 0 ? (self.bgview.frame.size.height - self.road.frame.size.height) * 0.5 : 0;
-    frame.origin.x = (self.bgview.frame.size.width - self.road.frame.size.width) > 0 ? (self.bgview.frame.size.width - self.road.frame.size.width) * 0.5 : 0;
+    frame.origin.y = (self.bgScroll.frame.size.height - self.road.frame.size.height) > 0 ? (self.bgScroll.frame.size.height - self.road.frame.size.height) * 0.5 : 0;
+    frame.origin.x = (self.bgScroll.frame.size.width - self.road.frame.size.width) > 0 ? (self.bgScroll.frame.size.width - self.road.frame.size.width) * 0.5 : 0;
     self.road.frame = frame;
     
-    self.bgview.contentSize = CGSizeMake(self.road.frame.size.width + 30, self.road.frame.size.height + 30);
+    self.bgScroll.contentSize = CGSizeMake(self.road.frame.size.width + 30, self.road.frame.size.height + 30);
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset

@@ -555,6 +555,7 @@
 		9CAB0FA31F4A6CB700F47B92 /* TZD_ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA11F4A6CB700F47B92 /* TZD_ListCell.xib */; };
 		9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */; };
 		9CADC9A61F6A58DC0051BD8A /* QR_Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */; };
+		9CB42F86203FFDD3000AA9D0 /* YS_BaojingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB42F85203FFDD3000AA9D0 /* YS_BaojingModel.m */; };
 		9CB851CD1F7F2C1E0057FE6D /* SYS_MAIN_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB851CB1F7F2C1E0057FE6D /* SYS_MAIN_Cell.m */; };
 		9CB851CE1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB851CC1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib */; };
 		9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */; };
@@ -1738,6 +1739,8 @@
 		9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZD_ListModel.m; sourceTree = "<group>"; };
 		9CADC9A41F6A58DC0051BD8A /* QR_Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QR_Tool.h; sourceTree = "<group>"; };
 		9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QR_Tool.m; sourceTree = "<group>"; };
+		9CB42F84203FFDD3000AA9D0 /* YS_BaojingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_BaojingModel.h; sourceTree = "<group>"; };
+		9CB42F85203FFDD3000AA9D0 /* YS_BaojingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_BaojingModel.m; sourceTree = "<group>"; };
 		9CB851CA1F7F2C1E0057FE6D /* SYS_MAIN_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_MAIN_Cell.h; sourceTree = "<group>"; };
 		9CB851CB1F7F2C1E0057FE6D /* SYS_MAIN_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_MAIN_Cell.m; sourceTree = "<group>"; };
 		9CB851CC1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYS_MAIN_Cell.xib; sourceTree = "<group>"; };
@@ -4832,6 +4835,8 @@
 				9CDF80D82021685B00650228 /* YS_BianshuModel.m */,
 				9C2EC2CA203E53C80010676C /* YS_deviceModel.h */,
 				9C2EC2CB203E53C80010676C /* YS_deviceModel.m */,
+				9CB42F84203FFDD3000AA9D0 /* YS_BaojingModel.h */,
+				9CB42F85203FFDD3000AA9D0 /* YS_BaojingModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -6557,6 +6562,7 @@
 				4261D2821F135D99003FD8AA /* HNT_SCCX_Detail_HeadModel.m in Sources */,
 				42F99101201AD35C0044B77B /* LLQ_BHZ_Cell.m in Sources */,
 				42AC71711E30C393007D8F57 /* NQ_BHZ_SCCX_Innel_Controller.m in Sources */,
+				9CB42F86203FFDD3000AA9D0 /* YS_BaojingModel.m in Sources */,
 				42E7CA1E1F4E6BBC00708235 /* YBPopupMenuPath.m in Sources */,
 				D20064991DFF86800021E293 /* CALayer+Animation.m in Sources */,
 				42E60985201F4D24002E7C6A /* YS_SB_Controller.m in Sources */,

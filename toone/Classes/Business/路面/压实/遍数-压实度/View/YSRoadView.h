@@ -10,6 +10,7 @@
 #import "YS_ZhuangHao_Model.h"
 #import "YS_BianshuModel.h"
 #import "YS_deviceModel.h"
+#import "YS_BaojingModel.h"
 
 #define YS_Scale 5
 
@@ -47,6 +48,12 @@
 
 //设备数组
 @property (nonatomic,strong)NSArray *deviceData;
+
+@property (nonatomic,strong) YS_BaojingModel *baojingModel;
+
+//遍数1  压实度2
+@property (nonatomic,assign)NSInteger type;
+
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
