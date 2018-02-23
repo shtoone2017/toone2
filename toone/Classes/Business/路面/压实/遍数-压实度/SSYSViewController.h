@@ -11,4 +11,7 @@
 @interface SSYSViewController : UIViewController
 @property (strong, nonatomic)  UIScrollView *bgview;
 
+//type 1= 遍数   2=压实度
+@property (assign,nonatomic) NSInteger type;
+
 @end

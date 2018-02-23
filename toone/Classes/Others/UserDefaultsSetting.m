@@ -84,6 +84,8 @@ static UserDefaultsSetting * setting = nil;
     setting.randomSeed = [defaults objectForKey:@"seed_SWKey"];
     //路线id
     setting.road_id = [defaults objectForKey:@"road_idKey"];
+    setting.road_name = [defaults objectForKey:@"road_nameKey"];
+
 }
 -(void)saveToSandbox{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -147,7 +149,8 @@ static UserDefaultsSetting * setting = nil;
     
     //路线id
     [defaults setObject:self.road_id   forKey:@"road_idKey"];
-    
+    [defaults setObject:self.road_name  forKey:@"road_nameKey"];
+
     [defaults synchronize];
 }
 

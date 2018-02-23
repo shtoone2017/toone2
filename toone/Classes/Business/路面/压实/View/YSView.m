@@ -11,7 +11,6 @@
 #import "YS_YSCG_Controller.h"
 #import "YSMJViewController.h"
 #import "YS_JLViewController.h"
-#import "YS_WebViewController.h"
 #import "YS_YLJViewController.h"
 #import "YS_TPWDViewController.h"
 #import "SSYSViewController.h"
@@ -30,15 +29,16 @@
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
         case 101:{
-//            YS_WebViewController *vc = [YS_WebViewController new];
-//            vc.type = YS_WebTypeYSD;
+            //压实度
             SSYSViewController *vc = [[SSYSViewController alloc] init];
+            vc.type =2;
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 102:{
-            YS_WebViewController *vc = [YS_WebViewController new];
-            vc.type = YS_WebTypeBS;
+            //遍数
+            SSYSViewController *vc = [[SSYSViewController alloc] init];
+            vc.type =1;
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;

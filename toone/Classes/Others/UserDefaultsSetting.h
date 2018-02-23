@@ -69,6 +69,8 @@
 
 /**压实**/
 @property (nonatomic, copy) NSString *road_id;//路线id
+@property (nonatomic, copy) NSString *road_name;//路线名字
+
 
 
 @property (nonatomic) NSString * randomSeed;

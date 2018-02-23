@@ -187,6 +187,8 @@
     }
     else if (_type == SBListTypeYSLX) {
         YS_SB_Model * model = self.datas[indexPath.row];
+        [UserDefaultsSetting shareSetting].road_id =  model.roadId;
+        [UserDefaultsSetting shareSetting].road_name =  model.road_name;
         if (self.YScallBlock) {
             self.YScallBlock(model.road_name, model.roadId);
         }

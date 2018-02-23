@@ -298,6 +298,8 @@
 //遍数
 #define YS_Bianshu FormatString(baseUrl2,@"rs_DeviceController/GetGrid")
 
+//压实度
+#define YS_Yashidu FormatString(baseUrl2,@"rs_DeviceController/GetAmplitudeGrid")
 //面积统计
 #define YS_Mianji FormatString(baseUrl2,@"rs_DeviceController/AreaStatistics")
 

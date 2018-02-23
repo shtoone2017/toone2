@@ -20,6 +20,18 @@
 @end
 @implementation YSViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([UserDefaultsSetting shareSetting].road_id == nil)
+    {
+        //选择线路
+        [UserDefaultsSetting shareSetting].road_id = @"f9a816c15f7aa4ca015f7cbf18aa004d";
+        [UserDefaultsSetting shareSetting].road_name = @"贵阳-花石";
+    }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.ysView = [[YSView alloc] init];

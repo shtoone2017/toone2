@@ -525,8 +525,6 @@
 		9C548DC0201EC133009AB343 /* SSYSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C548DBE201EC133009AB343 /* SSYSViewController.xib */; };
 		9C548DC4201EC16F009AB343 /* YSRoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC3201EC16F009AB343 /* YSRoadView.m */; };
 		9C548DC8201EC998009AB343 /* YS_ZhuangHao_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */; };
-		9C5AE5E820243E7D00420C64 /* YS_WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AE5E620243E7D00420C64 /* YS_WebViewController.m */; };
-		9C5AE5E920243E7D00420C64 /* YS_WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5AE5E720243E7D00420C64 /* YS_WebViewController.xib */; };
 		9C5AE5ED20244E2700420C64 /* YS_TPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AE5EC20244E2700420C64 /* YS_TPWDViewController.m */; };
 		9C5AE5F1202451EC00420C64 /* YS_YLJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AE5F0202451EC00420C64 /* YS_YLJModel.m */; };
 		9C5AE5F42024520000420C64 /* YS_TPJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AE5F32024520000420C64 /* YS_TPJModel.m */; };
@@ -1687,9 +1685,6 @@
 		9C548DC3201EC16F009AB343 /* YSRoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSRoadView.m; sourceTree = "<group>"; };
 		9C548DC6201EC998009AB343 /* YS_ZhuangHao_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_ZhuangHao_Model.h; sourceTree = "<group>"; };
 		9C548DC7201EC998009AB343 /* YS_ZhuangHao_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_ZhuangHao_Model.m; sourceTree = "<group>"; };
-		9C5AE5E520243E7D00420C64 /* YS_WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_WebViewController.h; sourceTree = "<group>"; };
-		9C5AE5E620243E7D00420C64 /* YS_WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_WebViewController.m; sourceTree = "<group>"; };
-		9C5AE5E720243E7D00420C64 /* YS_WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YS_WebViewController.xib; sourceTree = "<group>"; };
 		9C5AE5EB20244E2700420C64 /* YS_TPWDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_TPWDViewController.h; sourceTree = "<group>"; };
 		9C5AE5EC20244E2700420C64 /* YS_TPWDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_TPWDViewController.m; sourceTree = "<group>"; };
 		9C5AE5EF202451EC00420C64 /* YS_YLJModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_YLJModel.h; sourceTree = "<group>"; };
@@ -4297,12 +4292,11 @@
 			children = (
 				9C5AE5EE202451AF00420C64 /* 压路机运行数据 */,
 				9C5AE5EA20244E0900420C64 /* 摊铺机运行数据 */,
-				9C5AE5E420243E4600420C64 /* 压实度-遍数 */,
 				9C79A4852022B469002F41AC /* 压实距离 */,
 				9C79A4842022B455002F41AC /* 压实面积 */,
 				42E60965201EF0D7002E7C6A /* Inner */,
 				42E60982201F4CE6002E7C6A /* Model */,
-				9C548DBB201EC112009AB343 /* 实时压实 */,
+				9C548DBB201EC112009AB343 /* 遍数-压实度 */,
 				42F9923E201B09E00044B77B /* Controller */,
 				42F99241201B09E00044B77B /* View */,
 			);
@@ -4808,7 +4802,7 @@
 			path = EXP72;
 			sourceTree = "<group>";
 		};
-		9C548DBB201EC112009AB343 /* 实时压实 */ = {
+		9C548DBB201EC112009AB343 /* 遍数-压实度 */ = {
 			isa = PBXGroup;
 			children = (
 				9C548DBC201EC133009AB343 /* SSYSViewController.h */,
@@ -4817,7 +4811,7 @@
 				9C548DC5201EC956009AB343 /* model */,
 				9C548DC1201EC138009AB343 /* View */,
 			);
-			path = "实时压实";
+			path = "遍数-压实度";
 			sourceTree = "<group>";
 		};
 		9C548DC1201EC138009AB343 /* View */ = {
@@ -4840,16 +4834,6 @@
 				9C2EC2CB203E53C80010676C /* YS_deviceModel.m */,
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		9C5AE5E420243E4600420C64 /* 压实度-遍数 */ = {
-			isa = PBXGroup;
-			children = (
-				9C5AE5E520243E7D00420C64 /* YS_WebViewController.h */,
-				9C5AE5E620243E7D00420C64 /* YS_WebViewController.m */,
-				9C5AE5E720243E7D00420C64 /* YS_WebViewController.xib */,
-			);
-			path = "压实度-遍数";
 			sourceTree = "<group>";
 		};
 		9C5AE5EA20244E0900420C64 /* 摊铺机运行数据 */ = {
@@ -6013,7 +5997,6 @@
 				427DB96C201C62A100F46900 /* LCListCell.xib in Resources */,
 				42AC715F1E30C393007D8F57 /* LQ_ZCL_Cl_Cell.xib in Resources */,
 				42E288561F442A700002AF72 /* Exp51_Xib_View.xib in Resources */,
-				9C5AE5E920243E7D00420C64 /* YS_WebViewController.xib in Resources */,
 				8C06E0A51E0D202E00EBD526 /* Assets.xcassets in Resources */,
 				D2938B921EAC91A900770D90 /* arrow_02.png in Resources */,
 				426E90CD200CD129001FF8AE /* AAChartView.html in Resources */,
@@ -6446,7 +6429,6 @@
 				D20064A91DFF86800021E293 /* Tools.m in Sources */,
 				9C05F07F1F3BFC4400BF4627 /* JSONKeyMapper.m in Sources */,
 				42AC71981E30C3F0007D8F57 /* MyTableViewController.m in Sources */,
-				9C5AE5E820243E7D00420C64 /* YS_WebViewController.m in Sources */,
 				9C548DC8201EC998009AB343 /* YS_ZhuangHao_Model.m in Sources */,
 				9C05F0771F3BFC4400BF4627 /* JSONModel.m in Sources */,
 				9C20240F1F38021200F79559 /* ScreenView.m in Sources */,
