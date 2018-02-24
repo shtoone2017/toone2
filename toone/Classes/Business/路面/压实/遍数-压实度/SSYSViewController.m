@@ -15,8 +15,9 @@
 
 @interface SSYSViewController ()<UIScrollViewDelegate>
 {
+    //线路上y轴是负方向最小为-1800左右,最大为26,因此我们取最大值,同时绘图要将y取反加负号
     float road_min_x;
-    float road_min_y;
+    float road_max_y;
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *colorImg_Cons_height;
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
@@ -173,12 +174,12 @@
                     {
                         YS_deviceModel *amodel = model.tempModel;
                         //滚动视图做出偏移
-                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx-Screen_w/2,road_min_x), Formula_y(amodel.Actual_dy-Screen_h/2,road_min_y));
+                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx,road_min_x)-Screen_w/2, Formula_y(amodel.Actual_dy,road_max_y)-Screen_h/2);
                         //获取请求需要的真实路面坐标值
                         CGFloat min_x = Formula_min_x(amodel.Actual_dx,road_min_x);
                         CGFloat max_x = Formula_max_x(amodel.Actual_dx,road_min_x);
-                        CGFloat min_y = Formula_min_y(amodel.Actual_dy,road_min_y);
-                        CGFloat max_y = Formula_max_y(amodel.Actual_dy,road_min_y);
+                        CGFloat min_y = Formula_min_y(amodel.Actual_dy,road_max_y);
+                        CGFloat max_y = Formula_max_y(amodel.Actual_dy,road_max_y);
                         [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_x] forKey:@"x_min"];
                         [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_x] forKey:@"x_max"];
                         [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_y] forKey:@"y_min"];
@@ -260,8 +261,9 @@
         NSMutableArray *bridgeArr = [NSMutableArray array];
         NSArray *datas = [YS_ZhuangHao_Model arrayOfModelsFromDictionaries:json];
         float max_x = 0;
-        float max_y = 0;
-        
+        float min_y = 0;
+        road_min_x = 0;
+        road_max_y = 0;
         
         for (YS_ZhuangHao_Model *model in datas)
         {
@@ -285,17 +287,16 @@
             
             //筛选出最大x轴值,y轴值
             max_x = model.Stake_dx > max_x ? model.Stake_dx : max_x;
-            max_y = model.Stake_dy > max_y ? model.Stake_dy : max_y;
+            road_max_y = model.Stake_dy > road_max_y ? model.Stake_dy : road_max_y;
             
             road_min_x = model.Stake_dx < road_min_x ? model.Stake_dx : road_min_x;
-            road_min_y = model.Stake_dy < road_min_y ? model.Stake_dy : road_min_y;
-            
-            _road.offsetNum_x = road_min_x;
-            _road.offsetNum_y = road_min_y;            
+            min_y = model.Stake_dy < min_y ? model.Stake_dy : min_y;
         }
-        
-        CGFloat a_width = (max_x+fabsf(road_min_x))*YS_Scale;
-        CGFloat a_height = (max_y+fabsf(road_min_y))*YS_Scale;
+        //设置roadview的偏移量,以免溢出屏外,x方向取最小值,  y方向取最大值大概为26左右
+        _road.offsetNum_x = road_min_x;
+        _road.offsetNum_y = road_max_y;
+        CGFloat a_width = (fabsf(max_x)+fabsf(road_min_x))*YS_Scale;
+        CGFloat a_height = (fabsf(road_max_y)+fabsf(min_y))*YS_Scale;
         
         self.bgScroll.contentSize = CGSizeMake(a_width, a_height);
 
@@ -345,8 +346,9 @@
         else
         {
             //压实度
-            url = YS_Yashidu;
+//            url = YS_Yashidu;
 
+             url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=2&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Yashidu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];
         }
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:self.paraDic success:^(id json) {
             NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
@@ -391,7 +393,42 @@
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    NSLog(@"--------------x:%f --------------  y:%f -----------",targetContentOffset->x,targetContentOffset->y);
+    CGFloat min_x = targetContentOffset->x/scrollView.zoomScale/YS_Scale-road_min_x;
+    CGFloat max_x = (targetContentOffset->x+Screen_w)/scrollView.zoomScale/YS_Scale-road_min_x;
+    
+    CGFloat max_y = targetContentOffset->y/scrollView.zoomScale/YS_Scale;
+    CGFloat min_y = -(targetContentOffset->y+Screen_w)/scrollView.zoomScale/YS_Scale+road_max_y;
+    NSLog(@"--------------min_x:%f -----max_x:%f---------  max_y:%f ----min_y:%f-------",min_x,max_x,max_y,min_y);
+    if (!_paraDic)
+    {
+        [self.paraDic setObject:[UserDefaultsSetting shareSetting].road_id forKey:RoadID];
+        [self.paraDic setObject:@"2" forKey:pressLayer_Num];
+        [self.paraDic setObject:@"1" forKey:@"pressLevel"];
+    }
+    [self.paraDic setObject:[NSString stringWithFormat:@"%f",min_x] forKey:@"x_min"];
+    [self.paraDic setObject:[NSString stringWithFormat:@"%f",max_x] forKey:@"x_max"];
+    [self.paraDic setObject:[NSString stringWithFormat:@"%f",min_y] forKey:@"y_min"];
+    [self.paraDic setObject:[NSString stringWithFormat:@"%f",max_y] forKey:@"y_max"];
+    
+    NSString *url;
+    if (_type == 1)
+    {
+        //遍数
+        url = YS_Bianshu;
+    }
+    else
+    {
+        //压实度
+        url = YS_Yashidu;
+        
+    }
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:self.paraDic success:^(id json) {
+        NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
+        _road.bianshuData = datas;
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 

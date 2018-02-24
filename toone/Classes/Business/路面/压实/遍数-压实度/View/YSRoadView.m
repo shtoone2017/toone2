@@ -33,15 +33,15 @@
     if (data && data.count >0)
     {
         YS_ZhuangHao_Model * model = data.firstObject;
-        [path moveToPoint:CGPointMake(Formula_x(model.Stake_dx,_offsetNum_x), -(Formula_y(model.Stake_dy,_offsetNum_y)))];
+        [path moveToPoint:CGPointMake(Formula_x(model.Stake_dx,_offsetNum_x), (Formula_y(model.Stake_dy,_offsetNum_y)))];
         for (int i = 0; i<data.count; i++)
         {
             YS_ZhuangHao_Model * model = [data objectAtIndex:i];
-            [path addLineToPoint:CGPointMake(Formula_x(model.Stake_dx,_offsetNum_x),-(Formula_y(model.Stake_dy,_offsetNum_y)))];
+            [path addLineToPoint:CGPointMake(Formula_x(model.Stake_dx,_offsetNum_x),(Formula_y(model.Stake_dy,_offsetNum_y)))];
             
             CATextLayer *textLayer = [CATextLayer layer];
             textLayer.string = model.stake_name;
-            textLayer.frame = CGRectMake(Formula_x(model.Stake_dx,_offsetNum_x),-(Formula_y(model.Stake_dy,_offsetNum_y)), 50, 50);
+            textLayer.frame = CGRectMake(Formula_x(model.Stake_dx,_offsetNum_x),(Formula_y(model.Stake_dy,_offsetNum_y)), 50, 50);
             textLayer.fontSize = 10.0f;
             textLayer.wrapped = YES;//默认为No.  当Yes时，字符串自动适应layer的bounds大小
             textLayer.contentsScale = [UIScreen mainScreen].scale;//解决文字模糊 以Retina方式来渲染，防止画出来的文本像素化
@@ -73,7 +73,7 @@
 //            [roadLayer setStrokeColor:[UIColor blackColor].CGColor];
             [roadLayer setLineWidth:1.0f];
             [roadLayer setLineJoin:kCALineJoinMiter];
-            CGRect frame = CGRectMake(Formula_x(model.lng,_offsetNum_x),-(Formula_y(model.lat,_offsetNum_y)), 2, 2);
+            CGRect frame = CGRectMake(Formula_x(model.lng,_offsetNum_x),(Formula_y(model.lat,_offsetNum_y)), 2, 2);
             UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:frame];
             roadLayer.path = circlePath.CGPath;
             [self.layer addSublayer:roadLayer];
