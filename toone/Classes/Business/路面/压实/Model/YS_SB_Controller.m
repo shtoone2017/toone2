@@ -99,15 +99,15 @@
         }
         else if (_type == SBListTypeYSSB_YLJ)//1压路机 2摊铺机
         {
-            urlString = [NSString stringWithFormat:@"%@?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&device_type=1",YS_Device];
+            urlString = [NSString stringWithFormat:@"%@?road_id=%@&device_type=1",YS_Device,[UserDefaultsSetting shareSetting].road_id];
         }
         else if (_type == SBListTypeYSSB_TPJ)
         {
-            urlString = [NSString stringWithFormat:@"%@?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&device_type=2",YS_Device];
+            urlString = [NSString stringWithFormat:@"%@?road_id=%@&device_type=2",YS_Device,[UserDefaultsSetting shareSetting].road_id];
         }
         else if (_type == SBListTypeYSSB_YLJ_Zuobiao)
         {
-            urlString = [NSString stringWithFormat:@"%@?Road_id=f9a816c15f7aa4ca015f7cbf18aa004d",YS_Device_Zuobiao];
+            urlString = [NSString stringWithFormat:@"%@?Road_id=%@",YS_Device_Zuobiao,[UserDefaultsSetting shareSetting].road_id];
         }
         
         __weak typeof(self)  weakSelf = self;
@@ -187,6 +187,8 @@
     }
     else if (_type == SBListTypeYSLX) {
         YS_SB_Model * model = self.datas[indexPath.row];
+        [UserDefaultsSetting shareSetting].road_id =  model.roadId;
+        [UserDefaultsSetting shareSetting].road_name =  model.road_name;
         if (self.YScallBlock) {
             self.YScallBlock(model.road_name, model.roadId);
         }
