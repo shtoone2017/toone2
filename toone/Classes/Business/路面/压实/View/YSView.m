@@ -14,6 +14,7 @@
 #import "YS_YLJViewController.h"
 #import "YS_TPWDViewController.h"
 #import "SSYSViewController.h"
+#import "YS_HFViewController.h"
 
 @implementation YSView
 
@@ -48,7 +49,9 @@
         }
             break;
         case 201:{
-            
+            //压实回放
+            YS_HFViewController *vc = [YS_HFViewController new];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 202:{//厚度

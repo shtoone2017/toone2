@@ -8,8 +8,12 @@
 
 #import "YSRoadView.h"
 
-@interface YSRoadView ()<UIGestureRecognizerDelegate>
-
+#define AnimationTime 0.01
+@interface YSRoadView ()<UIGestureRecognizerDelegate,CAAnimationDelegate>
+{
+    int z; //回放计数
+    UIImageView *car_huifangImg; //回放车子
+}
 @end
 
 @implementation YSRoadView
@@ -62,7 +66,6 @@
 
 - (void)drawBianshu
 {
-
     if(_bianshuData && _bianshuData.count>0)
     {
         for (int i = 0; i < _bianshuData.count; i++)
@@ -82,6 +85,77 @@
     }
     
     [self setNeedsDisplay];
+}
+
+- (void)drawHuiFang
+{
+    z = 0;
+    YS_HFModel * s_model = [_huifangArr objectAtIndex:z];
+    CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
+    YS_HFModel * e_model = [_huifangArr objectAtIndex:z+1];
+    CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
+    
+//    CGPoint start_p = CGPointMake(100,100);
+//    CGPoint end_p = CGPointMake(300,300);
+
+    car_huifangImg = [UIImageView new];
+    car_huifangImg.bounds =CGRectMake(0, 0, 30, 30);
+    car_huifangImg.center = start_p;
+    car_huifangImg.backgroundColor = [UIColor greenColor];
+    [self addSubview:car_huifangImg];
+    [self animationLoopWithPoint:start_p point1:end_p];
+}
+
+- (void)animationLoopWithPoint:(CGPoint)start_point point1:(CGPoint)end_point
+{
+    if (z<_huifangArr.count-2)
+    {
+//        float time = 3600/_huifangArr.count;
+
+        CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position"];
+        anima.delegate = self;
+        // 动画结束后不变回初始状态
+        anima.removedOnCompletion = NO;
+        anima.fillMode = kCAFillModeForwards;
+//        anima.autoreverses = YES; //逆动画效果
+        anima.duration = AnimationTime;
+//        anima.duration = time;
+        anima.repeatCount = 1;
+        anima.fromValue = [NSValue valueWithCGPoint:start_point]; // 起始帧
+        anima.toValue = [NSValue valueWithCGPoint:end_point]; // 终了帧
+        [car_huifangImg.layer addAnimation:anima forKey:@"move-layer"];
+        
+        UIBezierPath *path = [UIBezierPath new];
+        [path moveToPoint:start_point];
+        [path addLineToPoint:end_point];
+        CAShapeLayer *layer = [CAShapeLayer layer];
+        layer.path = path.CGPath;
+        layer.strokeColor = [UIColor redColor].CGColor;
+        [layer setFillColor:[UIColor clearColor].CGColor];
+        layer.lineWidth = 2.5*YS_Scale;
+        CABasicAnimation *anim1 = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
+        anim1.fromValue = @0;
+        anim1.toValue = @1;
+        anim1.duration = AnimationTime;
+        //        anima.duration = time;
+        [layer addAnimation:anim1 forKey:NSStringFromSelector(@selector(strokeEnd))];
+        
+        [self.layer addSublayer:layer];
+    }
+}
+
+/**
+ * 动画结束时
+ */
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
+{
+    z++;
+    YS_HFModel * s_model = [_huifangArr objectAtIndex:z];
+    CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
+    YS_HFModel * e_model = [_huifangArr objectAtIndex:z+1];
+    CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
+    [self animationLoopWithPoint:start_p point1:end_p];
+    
 }
 
 - (CGColorRef)getPointColorBianshu:(NSInteger)a
@@ -184,5 +258,10 @@
     _baojingModel = baojingModel;
 }
 
+- (void)setHuifangArr:(NSArray *)huifangArr
+{
+    _huifangArr = huifangArr;
+    [self drawHuiFang];
+}
 
 @end
