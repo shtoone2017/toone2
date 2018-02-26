@@ -8,6 +8,7 @@
 
 #import "YSView.h"
 #import "YS_HD_Controller.h"
+#import "YS_HD_Controller1.h"
 #import "YS_YSCG_Controller.h"
 #import "YSMJViewController.h"
 #import "YS_JLViewController.h"
