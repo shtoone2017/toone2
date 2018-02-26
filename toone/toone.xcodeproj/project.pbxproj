@@ -115,6 +115,7 @@
 		427DB96A201C62A100F46900 /* LCListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 427DB965201C62A000F46900 /* LCListCell.m */; };
 		427DB96B201C62A100F46900 /* LCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 427DB966201C62A100F46900 /* LCListModel.m */; };
 		427DB96C201C62A100F46900 /* LCListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427DB968201C62A100F46900 /* LCListCell.xib */; };
+		428DAFE2203FF73600E001AE /* YS_HD_Controller1.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFE1203FF73600E001AE /* YS_HD_Controller1.m */; };
 		42A0D8A21F7D17E300500540 /* lq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A01F7D17E300500540 /* lq.plist */; };
 		42A0D8A31F7D17E300500540 /* sjqd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A11F7D17E300500540 /* sjqd.plist */; };
 		42A7A07A1F36F5C600290DB8 /* TreeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A7A0761F36F5C600290DB8 /* TreeTableView.m */; };
@@ -894,6 +895,8 @@
 		427DB967201C62A100F46900 /* LCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListModel.h; path = "Classes/Business/路基/磅房管理/Controller/LCListModel.h"; sourceTree = SOURCE_ROOT; };
 		427DB968201C62A100F46900 /* LCListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LCListCell.xib; path = "Classes/Business/路基/磅房管理/Controller/LCListCell.xib"; sourceTree = SOURCE_ROOT; };
 		427DB969201C62A100F46900 /* LCListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListCell.h; path = "Classes/Business/路基/磅房管理/Controller/LCListCell.h"; sourceTree = SOURCE_ROOT; };
+		428DAFE0203FF73600E001AE /* YS_HD_Controller1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HD_Controller1.h; sourceTree = "<group>"; };
+		428DAFE1203FF73600E001AE /* YS_HD_Controller1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HD_Controller1.m; sourceTree = "<group>"; };
 		42A0D8A01F7D17E300500540 /* lq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lq.plist; sourceTree = "<group>"; };
 		42A0D8A11F7D17E300500540 /* sjqd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sjqd.plist; sourceTree = "<group>"; };
 		42A7A0751F36F5C600290DB8 /* TreeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableView.h; sourceTree = "<group>"; };
@@ -3522,6 +3525,8 @@
 			children = (
 				42E6096A201EF4BA002E7C6A /* YS_HD_Controller.h */,
 				42E6096B201EF4BA002E7C6A /* YS_HD_Controller.m */,
+				428DAFE0203FF73600E001AE /* YS_HD_Controller1.h */,
+				428DAFE1203FF73600E001AE /* YS_HD_Controller1.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6208,6 +6213,7 @@
 				42AC721F1E30C668007D8F57 /* MySegmentedControl.m in Sources */,
 				D200645D1DFF86800021E293 /* AppDelegate.m in Sources */,
 				9C05F07D1F3BFC4400BF4627 /* JSONHTTPClient.m in Sources */,
+				428DAFE2203FF73600E001AE /* YS_HD_Controller1.m in Sources */,
 				42F9919C201AD3760044B77B /* SW_CBCZ_Cell.m in Sources */,
 				9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */,
 				42E6096C201EF4BA002E7C6A /* YS_HD_Controller.m in Sources */,
