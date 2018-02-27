@@ -65,7 +65,7 @@
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压实成果" image="gcb_jd">
+                                                            <state key="normal" title="压实成果" image="成果">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -76,7 +76,7 @@
                                                             <rect key="frame" x="106" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="实时压实" image="gcb_fx">
+                                                            <state key="normal" title="实时压实" image="实时压实">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -110,7 +110,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压实回放" image="gcb_jc">
+                                                            <state key="normal" title="压实回放" image="回放">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -121,7 +121,7 @@
                                                             <rect key="frame" x="106.5" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="路面厚度" image="gcb_cc">
+                                                            <state key="normal" title="路面厚度" image="厚度">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -201,7 +201,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压实面积" image="gcb_ck">
+                                                            <state key="normal" title="压实面积" image="面积">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -212,7 +212,7 @@
                                                             <rect key="frame" x="212.5" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压路机" image="gcb_jd">
+                                                            <state key="normal" title="压路机" image="gcb_jc">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -223,7 +223,7 @@
                                                             <rect key="frame" x="106" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压路距离" image="gcb_fx">
+                                                            <state key="normal" title="压路距离" image="距离">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -380,9 +380,13 @@
     <resources>
         <image name="gcb_cc" width="32" height="32"/>
         <image name="gcb_ck" width="32" height="32"/>
-        <image name="gcb_fx" width="32" height="32"/>
         <image name="gcb_head" width="600" height="236"/>
         <image name="gcb_jc" width="32" height="32"/>
-        <image name="gcb_jd" width="32" height="32"/>
+        <image name="厚度" width="32" height="32"/>
+        <image name="回放" width="32" height="32"/>
+        <image name="实时压实" width="32" height="32"/>
+        <image name="成果" width="32" height="32"/>
+        <image name="距离" width="45" height="32"/>
+        <image name="面积" width="32" height="32"/>
     </resources>
 </document>

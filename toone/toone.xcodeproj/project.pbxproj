@@ -116,6 +116,9 @@
 		427DB96B201C62A100F46900 /* LCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 427DB966201C62A100F46900 /* LCListModel.m */; };
 		427DB96C201C62A100F46900 /* LCListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427DB968201C62A100F46900 /* LCListCell.xib */; };
 		428DAFE2203FF73600E001AE /* YS_HD_Controller1.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFE1203FF73600E001AE /* YS_HD_Controller1.m */; };
+		428DAFE72043B0AA00E001AE /* YS_ActualController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFE62043B0AA00E001AE /* YS_ActualController.m */; };
+		428DAFEA2043DEAB00E001AE /* YS_TJ_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFE92043DEAB00E001AE /* YS_TJ_Controller.m */; };
+		428DAFED20442FFA00E001AE /* YS_HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFEC20442FFA00E001AE /* YS_HomeController.m */; };
 		42A0D8A21F7D17E300500540 /* lq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A01F7D17E300500540 /* lq.plist */; };
 		42A0D8A31F7D17E300500540 /* sjqd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A11F7D17E300500540 /* sjqd.plist */; };
 		42A7A07A1F36F5C600290DB8 /* TreeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A7A0761F36F5C600290DB8 /* TreeTableView.m */; };
@@ -898,6 +901,12 @@
 		427DB969201C62A100F46900 /* LCListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCListCell.h; path = "Classes/Business/路基/磅房管理/Controller/LCListCell.h"; sourceTree = SOURCE_ROOT; };
 		428DAFE0203FF73600E001AE /* YS_HD_Controller1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HD_Controller1.h; sourceTree = "<group>"; };
 		428DAFE1203FF73600E001AE /* YS_HD_Controller1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HD_Controller1.m; sourceTree = "<group>"; };
+		428DAFE52043B0AA00E001AE /* YS_ActualController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_ActualController.h; sourceTree = "<group>"; };
+		428DAFE62043B0AA00E001AE /* YS_ActualController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_ActualController.m; sourceTree = "<group>"; };
+		428DAFE82043DEAB00E001AE /* YS_TJ_Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_TJ_Controller.h; sourceTree = "<group>"; };
+		428DAFE92043DEAB00E001AE /* YS_TJ_Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_TJ_Controller.m; sourceTree = "<group>"; };
+		428DAFEB20442FFA00E001AE /* YS_HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HomeController.h; sourceTree = "<group>"; };
+		428DAFEC20442FFA00E001AE /* YS_HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HomeController.m; sourceTree = "<group>"; };
 		42A0D8A01F7D17E300500540 /* lq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lq.plist; sourceTree = "<group>"; };
 		42A0D8A11F7D17E300500540 /* sjqd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sjqd.plist; sourceTree = "<group>"; };
 		42A7A0751F36F5C600290DB8 /* TreeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableView.h; sourceTree = "<group>"; };
@@ -2325,6 +2334,19 @@
 				426E90C7200CD129001FF8AE /* AAYAxis.m */,
 			);
 			path = AAOptionsModel;
+			sourceTree = "<group>";
+		};
+		428DAFE32043AFB700E001AE /* 单个压实 */ = {
+			isa = PBXGroup;
+			children = (
+				428DAFE52043B0AA00E001AE /* YS_ActualController.h */,
+				428DAFE62043B0AA00E001AE /* YS_ActualController.m */,
+				428DAFE82043DEAB00E001AE /* YS_TJ_Controller.h */,
+				428DAFE92043DEAB00E001AE /* YS_TJ_Controller.m */,
+				428DAFEB20442FFA00E001AE /* YS_HomeController.h */,
+				428DAFEC20442FFA00E001AE /* YS_HomeController.m */,
+			);
+			path = "单个压实";
 			sourceTree = "<group>";
 		};
 		42AC708E1E30C392007D8F57 /* 沥青-拌合站 */ = {
@@ -4285,6 +4307,7 @@
 		42F9923B201B090A0044B77B /* 路面 */ = {
 			isa = PBXGroup;
 			children = (
+				428DAFE32043AFB700E001AE /* 单个压实 */,
 				42F9923D201B09E00044B77B /* 压实 */,
 				42F99132201AD3760044B77B /* 沥青-水稳（老平台） */,
 				42F9909F201AD35C0044B77B /* 沥青-拌合站（老平台） */,
@@ -6262,6 +6285,7 @@
 				42AC717D1E30C393007D8F57 /* LQ_CellModel.m in Sources */,
 				42F99123201AD35C0044B77B /* LLQ_CBCZ_Detail_ZiXun_Cell.m in Sources */,
 				42F9919A201AD3760044B77B /* LQ_SW_Cell.m in Sources */,
+				428DAFE72043B0AA00E001AE /* YS_ActualController.m in Sources */,
 				42E288461F43F2A20002AF72 /* Exp52_Xib_View.m in Sources */,
 				8CBD72E41E07A75000A0C991 /* HNT_SCCX_Detail_HeadMsg.m in Sources */,
 				187C73091E30B1810072F33A /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
@@ -6363,6 +6387,7 @@
 				42E2883C1F43E0CA0002AF72 /* GCB_JCB_Controller.m in Sources */,
 				426E90C8200CD129001FF8AE /* AAChartModel.m in Sources */,
 				D20064411DFF86800021E293 /* CJUseTime.m in Sources */,
+				428DAFED20442FFA00E001AE /* YS_HomeController.m in Sources */,
 				18B871E01E1F941500F9DD53 /* HNT_CBCZ_Detail_ChuLi_Cell2.m in Sources */,
 				D20064851DFF86800021E293 /* SYS_SB_Model.m in Sources */,
 				D20065151DFF86B30021E293 /* BarModel.m in Sources */,
@@ -6675,6 +6700,7 @@
 				42AC72041E30C576007D8F57 /* NodeViewController.m in Sources */,
 				D20064A21DFF86800021E293 /* MyViewController.m in Sources */,
 				42E60970201EFA4D002E7C6A /* YS_HD_Cell.m in Sources */,
+				428DAFEA2043DEAB00E001AE /* YS_TJ_Controller.m in Sources */,
 				D200648E1DFF86800021E293 /* ZZJG_View.m in Sources */,
 				42E7CA3F1F50175500708235 /* UIColor+Hex.m in Sources */,
 				9CAB0FA21F4A6CB700F47B92 /* TZD_ListCell.m in Sources */,
