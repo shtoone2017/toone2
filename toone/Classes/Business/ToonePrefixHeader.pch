@@ -318,4 +318,13 @@
 //报警标准
 #define YS_Biaozhun FormatString(baseUrl2,@"rs_DeviceController/GetAlert")
 
+//有效工作日期
+#define YS_Date FormatString(baseUrl2,@"rs_DeviceController/GetEffectiveDate")
+
+//有效工作时间
+#define YS_Time FormatString(baseUrl2,@"rs_DeviceController/GetEffectiveTime")
+
+//回放原始数据
+#define YS_Huifang FormatString(baseUrl2,@"rs_DeviceController/GetPlayBackActual")
+
 #endif /* ToonePrefixHeader_pch */

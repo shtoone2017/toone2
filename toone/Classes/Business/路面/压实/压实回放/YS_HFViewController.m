@@ -64,7 +64,7 @@
     NSArray *keyArr;
     NSArray *titleArr;
     NSArray *typeArr;
-    keyArr = @[@"",@"",@"",@"结束时间"];
+    keyArr = @[@"",@"grid_layer",@"date",@"结束时间"];
     titleArr = @[@"面层选择",@"日期",@"起始时间",@"结束时间"];
     typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_Layer],];
     for (int i = 0; i<titleArr.count; i++)
