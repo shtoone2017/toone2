@@ -32,10 +32,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _road_id = @"";
+    _road_id = [UserDefaultsSetting shareSetting].road_id?:@"";
     _start = @"";
     _end = @"";
-    _roadName = @"";
+    _roadName = [UserDefaultsSetting shareSetting].road_name?:@"";
     
     
     [self loadUI];
@@ -136,6 +136,7 @@
     
     //2.
     ExpYS1View * e = [[ExpYS1View alloc] init];
+//    [e setLabel1:nil Label2:@"开始桩号" Label3:@"结束桩号"];
     e.frame = CGRectMake(0, 64+36, Screen_w, 195);
     __weak __typeof(self)  weakSelf = self;
     e.expBlock = ^(ExpButtonType type,id obj1,id obj2){

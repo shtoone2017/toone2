@@ -8,6 +8,7 @@
 
 #import "SSYSViewController.h"
 #import "YSRoadView.h"
+#import "YS_SB_Controller.h"
 #import "Exp_Final.h"
 #define RoadID @"Road_id"
 #define pressLayer_Num @"pressLayer"
@@ -28,7 +29,17 @@
 @end
 
 @implementation SSYSViewController
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([UserDefaultsSetting shareSetting].road_id == nil)
+    {
+        //选择线路
+        YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
+        sbVc.type = SBListTypeYSLX;
+        [self.navigationController pushViewController:sbVc animated:YES];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.bgScroll.contentSize = CGSizeMake(Screen_w, Screen_h);

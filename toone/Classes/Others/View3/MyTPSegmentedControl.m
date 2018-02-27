@@ -24,7 +24,10 @@
     self.layer.borderColor = [UIColor whiteColor].CGColor;
     self.layer.borderWidth = 1.0;
 }
-
+-(void)switchToYS{
+    [self.button1 setTitle:@"实时遍数" forState:UIControlStateNormal];
+    [self.button2 setTitle:@"压实度" forState:UIControlStateNormal];
+}
 -(void)switchToNY{
     [self.button1 setTitle:@"碾压速度" forState:UIControlStateNormal];
     [self.button2 setTitle:@"碾压温度" forState:UIControlStateNormal];

@@ -17,4 +17,5 @@ typedef  void (^SegBlock_t)(int  tag);
 
 -(void)switchToNY;
 -(void)switchToTP;
+-(void)switchToYS;
 @end

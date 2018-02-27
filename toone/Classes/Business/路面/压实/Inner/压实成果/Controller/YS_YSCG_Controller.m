@@ -28,8 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _roadName = @"";
-    _road_id = @"";
+    _roadName = [UserDefaultsSetting shareSetting].road_name?:@"";
+    _road_id = [UserDefaultsSetting shareSetting].road_id?:@"";
     
     [self loadUI];
     [self loadData];

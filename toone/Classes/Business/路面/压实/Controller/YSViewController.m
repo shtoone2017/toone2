@@ -26,8 +26,12 @@
     if ([UserDefaultsSetting shareSetting].road_id == nil)
     {
         //选择线路
-        [UserDefaultsSetting shareSetting].road_id = @"f9a816c15f7aa4ca015f7cbf18aa004d";
-        [UserDefaultsSetting shareSetting].road_name = @"贵阳-花石";
+        YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
+        sbVc.type = SBListTypeYSLX;
+        [self.navigationController pushViewController:sbVc animated:YES];
+        
+//        [UserDefaultsSetting shareSetting].road_id = @"f9a816c15f7aa4ca015f7cbf18aa004d";
+//        [UserDefaultsSetting shareSetting].road_name = @"贵阳-花石";
     }
 }
 

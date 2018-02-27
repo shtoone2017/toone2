@@ -93,7 +93,7 @@
         
         NSString * urlString;
         if (_type == SBListTypeYSZH) {
-            urlString = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetStake?road_id=f9a816c15f7aa4ca015f7cbf18aa004d";
+            urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetStake?road_id=%@",[UserDefaultsSetting shareSetting].road_id];
         }else if (_type == SBListTypeYSLX) {
             urlString = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetRoad";
         }
@@ -185,7 +185,7 @@
             self.YScallBlock(model.stake_name,str);
         }
     }
-    else if (_type == SBListTypeYSLX) {
+    else if (_type == SBListTypeYSLX) {//路线
         YS_SB_Model * model = self.datas[indexPath.row];
         [UserDefaultsSetting shareSetting].road_id =  model.roadId;
         [UserDefaultsSetting shareSetting].road_name =  model.road_name;
