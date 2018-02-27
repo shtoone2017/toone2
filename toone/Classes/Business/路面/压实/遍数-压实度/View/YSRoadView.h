@@ -11,7 +11,7 @@
 #import "YS_BianshuModel.h"
 #import "YS_deviceModel.h"
 #import "YS_BaojingModel.h"
-
+#import "YS_HFModel.h"
 #define YS_Scale 5
 
 
@@ -53,6 +53,10 @@
 
 @property (nonatomic,assign)float offsetNum_x; //偏移x
 @property (nonatomic,assign)float offsetNum_y; //偏移
+
+//回放数据
+@property (nonatomic,strong)NSArray *huifangArr;
+
 
 
 - (instancetype)initWithFrame:(CGRect)frame;

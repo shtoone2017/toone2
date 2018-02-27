@@ -560,6 +560,9 @@
 		9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB0FA61F4A704900F47B92 /* TZD_ListModel.m */; };
 		9CADC9A61F6A58DC0051BD8A /* QR_Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */; };
 		9CB42F86203FFDD3000AA9D0 /* YS_BaojingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB42F85203FFDD3000AA9D0 /* YS_BaojingModel.m */; };
+		9CB6351B20439A3000FCB1C4 /* YS_HFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6351920439A3000FCB1C4 /* YS_HFViewController.m */; };
+		9CB6351C20439A3000FCB1C4 /* YS_HFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB6351A20439A3000FCB1C4 /* YS_HFViewController.xib */; };
+		9CB6351F2043A53000FCB1C4 /* YS_HFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6351E2043A53000FCB1C4 /* YS_HFModel.m */; };
 		9CB851CD1F7F2C1E0057FE6D /* SYS_MAIN_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB851CB1F7F2C1E0057FE6D /* SYS_MAIN_Cell.m */; };
 		9CB851CE1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB851CC1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib */; };
 		9CCBDBD61F67818700A86267 /* SYS_TZD_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBDBD51F67818700A86267 /* SYS_TZD_DetailViewController.m */; };
@@ -1753,6 +1756,11 @@
 		9CADC9A51F6A58DC0051BD8A /* QR_Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QR_Tool.m; sourceTree = "<group>"; };
 		9CB42F84203FFDD3000AA9D0 /* YS_BaojingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_BaojingModel.h; sourceTree = "<group>"; };
 		9CB42F85203FFDD3000AA9D0 /* YS_BaojingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_BaojingModel.m; sourceTree = "<group>"; };
+		9CB6351820439A3000FCB1C4 /* YS_HFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HFViewController.h; sourceTree = "<group>"; };
+		9CB6351920439A3000FCB1C4 /* YS_HFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HFViewController.m; sourceTree = "<group>"; };
+		9CB6351A20439A3000FCB1C4 /* YS_HFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YS_HFViewController.xib; sourceTree = "<group>"; };
+		9CB6351D2043A53000FCB1C4 /* YS_HFModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HFModel.h; sourceTree = "<group>"; };
+		9CB6351E2043A53000FCB1C4 /* YS_HFModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HFModel.m; sourceTree = "<group>"; };
 		9CB851CA1F7F2C1E0057FE6D /* SYS_MAIN_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYS_MAIN_Cell.h; sourceTree = "<group>"; };
 		9CB851CB1F7F2C1E0057FE6D /* SYS_MAIN_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYS_MAIN_Cell.m; sourceTree = "<group>"; };
 		9CB851CC1F7F2C1E0057FE6D /* SYS_MAIN_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYS_MAIN_Cell.xib; sourceTree = "<group>"; };
@@ -4321,6 +4329,7 @@
 		42F9923D201B09E00044B77B /* 压实 */ = {
 			isa = PBXGroup;
 			children = (
+				9CB6351720439A0B00FCB1C4 /* 压实回放 */,
 				9C5AE5EE202451AF00420C64 /* 压路机运行数据 */,
 				9C5AE5EA20244E0900420C64 /* 摊铺机运行数据 */,
 				9C79A4852022B469002F41AC /* 压实距离 */,
@@ -4865,6 +4874,8 @@
 				9C2EC2CB203E53C80010676C /* YS_deviceModel.m */,
 				9CB42F84203FFDD3000AA9D0 /* YS_BaojingModel.h */,
 				9CB42F85203FFDD3000AA9D0 /* YS_BaojingModel.m */,
+				9CB6351D2043A53000FCB1C4 /* YS_HFModel.h */,
+				9CB6351E2043A53000FCB1C4 /* YS_HFModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -5019,6 +5030,16 @@
 				9CA7D9041F4BBF5100BA2C91 /* TZD_DetailModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9CB6351720439A0B00FCB1C4 /* 压实回放 */ = {
+			isa = PBXGroup;
+			children = (
+				9CB6351820439A3000FCB1C4 /* YS_HFViewController.h */,
+				9CB6351920439A3000FCB1C4 /* YS_HFViewController.m */,
+				9CB6351A20439A3000FCB1C4 /* YS_HFViewController.xib */,
+			);
+			path = "压实回放";
 			sourceTree = "<group>";
 		};
 		D20062F01DFF85CB0021E293 = {
@@ -6090,6 +6111,7 @@
 				42E60A4420243AE2002E7C6A /* SW_CBCZ_Cell1.xib in Resources */,
 				8C2840471EB1123600440413 /* TP_CLSB_Controller.xib in Resources */,
 				8C28404D1EB1123600440413 /* TP_SB_Controller.xib in Resources */,
+				9CB6351C20439A3000FCB1C4 /* YS_HFViewController.xib in Resources */,
 				8CE976571E0BF1FF0016A858 /* MySJxib.xib in Resources */,
 				42565DDB1F678DAA00D21620 /* GCB_JCH_1Cell.xib in Resources */,
 				42AC718E1E30C3B6007D8F57 /* Exp7_Xib_View.xib in Resources */,
@@ -6250,6 +6272,7 @@
 				42E6098B2020110D002E7C6A /* YS_YSCG_Controller.m in Sources */,
 				D2CF6B6C1E011D98003AE61D /* UIView+Shape.m in Sources */,
 				187C72F21E30B1810072F33A /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
+				9CB6351F2043A53000FCB1C4 /* YS_HFModel.m in Sources */,
 				D20064861DFF86800021E293 /* SYS_testTypeModel.m in Sources */,
 				187C73041E30B1810072F33A /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				42E2885D1F4441050002AF72 /* GCB_JC_Model.m in Sources */,
@@ -6382,6 +6405,7 @@
 				8C28406A1EB1127500440413 /* TP_NY_ChartModel.m in Sources */,
 				D20064691DFF86800021E293 /* WelcomeViewController.m in Sources */,
 				42F99196201AD3760044B77B /* LQ_SW_Model.m in Sources */,
+				9CB6351B20439A3000FCB1C4 /* YS_HFViewController.m in Sources */,
 				D20064451DFF86800021E293 /* CJSelectTimeScrollView.m in Sources */,
 				42E288B41F4984E30002AF72 /* GCB_RWD_Detail_ZYCell.m in Sources */,
 				426E90D4200CD129001FF8AE /* AAAnimation.m in Sources */,

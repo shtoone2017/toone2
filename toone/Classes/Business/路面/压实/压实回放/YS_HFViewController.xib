@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YS_HFViewController">
+            <connections>
+                <outlet property="bgScroll" destination="2Sy-xj-Bh4" id="OVH-yN-EL2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-xj-Bh4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ2-7l-n0e">
+                    <rect key="frame" x="295" y="587" width="60" height="60"/>
+                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="8kH-3D-lKf"/>
+                        <constraint firstAttribute="height" constant="60" id="fg3-SD-h4d"/>
+                    </constraints>
+                    <state key="normal" title="停止">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="stopAction:" destination="-1" eventType="touchUpInside" id="cnI-DK-fhh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywy-0A-N8k">
+                    <rect key="frame" x="205" y="587" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.22475105519999999" green="0.55761235949999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="naf-3Z-KYM"/>
+                        <constraint firstAttribute="height" constant="60" id="ypS-fQ-V5U"/>
+                    </constraints>
+                    <state key="normal" title="回放">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="huifangAction:" destination="-1" eventType="touchUpInside" id="GNX-OM-2HF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ywy-0A-N8k" secondAttribute="bottom" constant="20" id="F5x-tY-mhh"/>
+                <constraint firstItem="eQ2-7l-n0e" firstAttribute="leading" secondItem="ywy-0A-N8k" secondAttribute="trailing" constant="30" id="MfF-Lt-QE1"/>
+                <constraint firstAttribute="bottom" secondItem="2Sy-xj-Bh4" secondAttribute="bottom" id="QYE-bQ-ORD"/>
+                <constraint firstAttribute="bottom" secondItem="eQ2-7l-n0e" secondAttribute="bottom" constant="20" id="ad5-tF-pg6"/>
+                <constraint firstAttribute="trailing" secondItem="eQ2-7l-n0e" secondAttribute="trailing" constant="20" id="cb0-bc-qcO"/>
+                <constraint firstItem="2Sy-xj-Bh4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jtU-Aw-SXB"/>
+                <constraint firstAttribute="trailing" secondItem="2Sy-xj-Bh4" secondAttribute="trailing" id="kuw-gB-sBI"/>
+                <constraint firstItem="2Sy-xj-Bh4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r2i-qy-4vy"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="70.5"/>
+        </view>
+    </objects>
+</document>
