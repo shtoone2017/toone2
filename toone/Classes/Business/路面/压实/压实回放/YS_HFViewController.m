@@ -188,7 +188,7 @@
         if (((NSArray *)json).count > 0)
         {
             
-            weakself.pickView.alpha = 1;
+            weakself.pickBgView.alpha = 1;
         }
         
         else
