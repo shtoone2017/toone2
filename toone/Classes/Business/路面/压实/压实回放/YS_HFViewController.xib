@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YS_HFViewController">
             <connections>
                 <outlet property="bgScroll" destination="2Sy-xj-Bh4" id="OVH-yN-EL2"/>
+                <outlet property="pickBgView" destination="ewN-HO-kci" id="AQi-kx-DsG"/>
+                <outlet property="pickView" destination="GH7-qB-byh" id="gqC-pC-C7f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -63,12 +65,67 @@
                         <action selector="huifangAction:" destination="-1" eventType="touchUpInside" id="GNX-OM-2HF"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewN-HO-kci">
+                    <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-4u-4Q1">
+                            <rect key="frame" x="25" y="0.0" width="70" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="BsL-E0-SEz"/>
+                                <constraint firstAttribute="width" constant="70" id="aPv-xS-XFL"/>
+                                <constraint firstAttribute="height" constant="40" id="hKK-sw-ER5"/>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="hvP-qA-r3Q"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="lYG-Nk-VZy"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="ofH-OA-6aX"/>
+                            </constraints>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="cancleBtnAction:" destination="-1" eventType="touchUpInside" id="mX7-k9-Un1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hat-aW-Kf4">
+                            <rect key="frame" x="280" y="0.0" width="70" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="8v5-Ca-k1g"/>
+                                <constraint firstAttribute="height" constant="40" id="yHx-RE-qzE"/>
+                            </constraints>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="okBtnAction:" destination="-1" eventType="touchUpInside" id="CjX-rc-zaz"/>
+                            </connections>
+                        </button>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH7-qB-byh">
+                            <rect key="frame" x="0.0" y="50" width="375" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="eoL-Ec-hMY"/>
+                            </constraints>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="9nU-8A-hfR"/>
+                        <constraint firstItem="GH7-qB-byh" firstAttribute="leading" secondItem="ewN-HO-kci" secondAttribute="leading" id="9tx-0K-rnQ"/>
+                        <constraint firstItem="hat-aW-Kf4" firstAttribute="top" secondItem="ewN-HO-kci" secondAttribute="top" id="PIz-Ri-3R5"/>
+                        <constraint firstAttribute="trailing" secondItem="hat-aW-Kf4" secondAttribute="trailing" constant="25" id="RDM-WE-ZPe"/>
+                        <constraint firstItem="Rde-4u-4Q1" firstAttribute="top" secondItem="ewN-HO-kci" secondAttribute="top" id="RPL-KY-0VF"/>
+                        <constraint firstAttribute="trailing" secondItem="GH7-qB-byh" secondAttribute="trailing" id="T6f-mv-YPN"/>
+                        <constraint firstItem="Rde-4u-4Q1" firstAttribute="leading" secondItem="ewN-HO-kci" secondAttribute="leading" constant="25" id="aXl-QX-LSC"/>
+                        <constraint firstAttribute="bottom" secondItem="GH7-qB-byh" secondAttribute="bottom" id="gEs-RR-nkt"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="ewN-HO-kci" secondAttribute="bottom" id="9HR-en-MSn"/>
                 <constraint firstAttribute="bottom" secondItem="ywy-0A-N8k" secondAttribute="bottom" constant="20" id="F5x-tY-mhh"/>
                 <constraint firstItem="eQ2-7l-n0e" firstAttribute="leading" secondItem="ywy-0A-N8k" secondAttribute="trailing" constant="30" id="MfF-Lt-QE1"/>
                 <constraint firstAttribute="bottom" secondItem="2Sy-xj-Bh4" secondAttribute="bottom" id="QYE-bQ-ORD"/>
+                <constraint firstAttribute="trailing" secondItem="ewN-HO-kci" secondAttribute="trailing" id="SLe-DQ-UiV"/>
+                <constraint firstItem="ewN-HO-kci" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UlV-4e-Dhn"/>
                 <constraint firstAttribute="bottom" secondItem="eQ2-7l-n0e" secondAttribute="bottom" constant="20" id="ad5-tF-pg6"/>
                 <constraint firstAttribute="trailing" secondItem="eQ2-7l-n0e" secondAttribute="trailing" constant="20" id="cb0-bc-qcO"/>
                 <constraint firstItem="2Sy-xj-Bh4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jtU-Aw-SXB"/>

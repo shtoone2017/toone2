@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Exp_FinalCell.h"
 #import "Exp_FinalModel.h"
+#define Notification_HuiFang @"Notification_HuiFang"
 
 typedef NS_OPTIONS(NSInteger, YS_Search_Type)
 {

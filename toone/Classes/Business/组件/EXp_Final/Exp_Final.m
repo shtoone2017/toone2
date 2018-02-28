@@ -32,6 +32,17 @@
     _tabview.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tabview.rowHeight = cell_rowHeight;
     [_tabview  registerNib:[UINib nibWithNibName:@"Exp_FinalCell" bundle:nil] forCellReuseIdentifier:@"Exp_FinalCell"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(huifangReloadTableview:) name:Notification_HuiFang object:nil];
+}
+
+- (void)huifangReloadTableview:(NSNotification *)noti
+{
+    NSDictionary *dic = noti.userInfo;
+    Exp_FinalModel *model = [_dataArr objectAtIndex:[[dic objectForKey:@"rowNum"] integerValue]];
+    model.contentName = [dic objectForKey:@"time"];
+    [_dataArr setObject:model atIndexedSubscript:[[dic objectForKey:@"rowNum"] integerValue]];
+    [_tabview reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
