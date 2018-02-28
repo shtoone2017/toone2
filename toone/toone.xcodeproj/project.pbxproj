@@ -576,6 +576,7 @@
 		9CF4952A2027EB75003070D5 /* YS_YLJCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF495282027EB75003070D5 /* YS_YLJCell.xib */; };
 		9CF4952E202841D5003070D5 /* YS_TPJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4952C202841D5003070D5 /* YS_TPJCell.m */; };
 		9CF4952F202841D5003070D5 /* YS_TPJCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4952D202841D5003070D5 /* YS_TPJCell.xib */; };
+		9CFE8AB7204544FF009EB0D9 /* YS_DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFE8AB6204544FE009EB0D9 /* YS_DateModel.m */; };
 		D20062FE1DFF85CB0021E293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D20062FD1DFF85CB0021E293 /* main.m */; };
 		D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D20063261DFF86800021E293 /* BBFlashCtntLabel.m */; };
 		D200643E1DFF86800021E293 /* CJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D200632A1DFF86800021E293 /* CJCalendarViewController.m */; };
@@ -1787,6 +1788,8 @@
 		9CF4952B202841D5003070D5 /* YS_TPJCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_TPJCell.h; sourceTree = "<group>"; };
 		9CF4952C202841D5003070D5 /* YS_TPJCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_TPJCell.m; sourceTree = "<group>"; };
 		9CF4952D202841D5003070D5 /* YS_TPJCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YS_TPJCell.xib; sourceTree = "<group>"; };
+		9CFE8AB5204544FE009EB0D9 /* YS_DateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_DateModel.h; sourceTree = "<group>"; };
+		9CFE8AB6204544FE009EB0D9 /* YS_DateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_DateModel.m; sourceTree = "<group>"; };
 		B53090449FE82B8AD028BA89 /* Pods_toone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062F91DFF85CB0021E293 /* toone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20062FD1DFF85CB0021E293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -5048,6 +5051,8 @@
 				9CB6351820439A3000FCB1C4 /* YS_HFViewController.h */,
 				9CB6351920439A3000FCB1C4 /* YS_HFViewController.m */,
 				9CB6351A20439A3000FCB1C4 /* YS_HFViewController.xib */,
+				9CFE8AB5204544FE009EB0D9 /* YS_DateModel.h */,
+				9CFE8AB6204544FE009EB0D9 /* YS_DateModel.m */,
 			);
 			path = "压实回放";
 			sourceTree = "<group>";
@@ -6324,6 +6329,7 @@
 				187C73111E30B1810072F33A /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				187C73101E30B1810072F33A /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				D200643D1DFF86800021E293 /* BBFlashCtntLabel.m in Sources */,
+				9CFE8AB7204544FF009EB0D9 /* YS_DateModel.m in Sources */,
 				42F9910F201AD35C0044B77B /* LLQ_LSSJ_Detail_DataCell.m in Sources */,
 				42F990F8201AD35C0044B77B /* LLQ_BHZ_Controller.m in Sources */,
 				42F99128201AD35C0044B77B /* LLQ_CDCZ_Detail_lqData.m in Sources */,

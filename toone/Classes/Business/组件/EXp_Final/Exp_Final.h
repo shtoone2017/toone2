@@ -20,7 +20,8 @@ typedef NS_OPTIONS(NSInteger, YS_Search_Type)
     YS_Search_Type_Layer,
     YS_Search_Type_Divce_YLJ,// 压路机设备列表
     YS_Search_Type_Divce_TPJ,// 摊铺机设备列表
-    YS_Search_Type_Divce_YLJ_Zuobiao//压路机设备最新坐标
+    YS_Search_Type_Divce_YLJ_Zuobiao,//压路机设备最新坐标
+    YS_Search_Type_None //无任何操作,但是调用block
 };
 
 @interface Exp_Final : UIView
@@ -28,5 +29,7 @@ typedef NS_OPTIONS(NSInteger, YS_Search_Type)
 @property (strong, nonatomic) NSMutableArray *dataArr;
 
 @property (nonatomic , copy) void (^SearchBlock) (NSArray *);
+
+@property (nonatomic , copy) void (^CellBlock) (NSInteger cellNum);
 
 @end

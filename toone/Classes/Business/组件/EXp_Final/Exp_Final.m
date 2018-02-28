@@ -70,46 +70,59 @@
         return;
     }
     //其他压实选择
-    YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
-    switch (model.type)
+    if (model.type == YS_Search_Type_None)
     {
-        case YS_Search_Type_StartStack||YS_Search_Type_EndStack:
-            sbVc.type = SBListTypeYSZH;
-            break;
-        case YS_Search_Type_RoadID:
-            sbVc.type = SBListTypeYSLX;
-            break;
-        case YS_Search_Type_Layer:
-            sbVc.type = SBListTypeYSMC;
-            break;
-        case YS_Search_Type_Divce_YLJ:
-            sbVc.type = SBListTypeYSSB_YLJ;
-            break;
-        case YS_Search_Type_Divce_TPJ:
-            sbVc.type = SBListTypeYSSB_TPJ;
-            break;
-        case YS_Search_Type_Divce_YLJ_Zuobiao:
-            sbVc.type = SBListTypeYSSB_YLJ_Zuobiao;
-            break;
-
-        default:
-            break;
+        //不跳转
+        if (_CellBlock)
+        {
+            _CellBlock(indexPath.row);
+        }
     }
-    sbVc.YScallBlock = ^(NSString *name,  id num) {
-        //设备实时坐标 传model,其他传id字符串
-        if (sbVc.type == SBListTypeYSSB_YLJ_Zuobiao)
+    else
+    {
+        YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
+        switch (model.type)
         {
-            model.tempModel = num;
+            case YS_Search_Type_StartStack||YS_Search_Type_EndStack:
+                sbVc.type = SBListTypeYSZH;
+                break;
+            case YS_Search_Type_RoadID:
+                sbVc.type = SBListTypeYSLX;
+                break;
+            case YS_Search_Type_Layer:
+                sbVc.type = SBListTypeYSMC;
+                break;
+            case YS_Search_Type_Divce_YLJ:
+                sbVc.type = SBListTypeYSSB_YLJ;
+                break;
+            case YS_Search_Type_Divce_TPJ:
+                sbVc.type = SBListTypeYSSB_TPJ;
+                break;
+            case YS_Search_Type_Divce_YLJ_Zuobiao:
+                sbVc.type = SBListTypeYSSB_YLJ_Zuobiao;
+                break;
+            default:
+                break;
         }
-        else
-        {
-            model.contentId = num;
-        }
-        model.contentName = name;
-        [_dataArr setObject:model atIndexedSubscript:indexPath.row];
-        [_tabview reloadData];
-    };
-    [[self viewController].navigationController pushViewController:sbVc animated:YES];
+        [[self viewController].navigationController pushViewController:sbVc animated:YES];
+        sbVc.YScallBlock = ^(NSString *name,  id num) {
+            //设备实时坐标 传model,其他传id字符串
+            if (sbVc.type == SBListTypeYSSB_YLJ_Zuobiao)
+            {
+                model.tempModel = num;
+            }
+            else
+            {
+                model.contentId = num;
+            }
+            model.contentName = name;
+            [self.dataArr setObject:model atIndexedSubscript:indexPath.row];
+            [_tabview reloadData];
+        };
+    }
+    
+    
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
