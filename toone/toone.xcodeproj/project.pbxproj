@@ -59,6 +59,7 @@
 		424B87FB20287681009A7332 /* LLQ_CLHS_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 424B87F920287681009A7332 /* LLQ_CLHS_Cell1.m */; };
 		424B87FC20287681009A7332 /* LLQ_CLHS_Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424B87FA20287681009A7332 /* LLQ_CLHS_Cell1.xib */; };
 		424B880220287F66009A7332 /* LLQ_CLHS_DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 424B880120287F66009A7332 /* LLQ_CLHS_DetailController.m */; };
+		4253D78520456EA50075144E /* YS_HFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4253D78420456EA50075144E /* YS_HFController.m */; };
 		4255C29F1F8B0DC700FA321F /* GCB_NewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C29E1F8B0DC700FA321F /* GCB_NewController.m */; };
 		4255C2A21F8B450A00FA321F /* GCB_WPLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A11F8B450A00FA321F /* GCB_WPLController.m */; };
 		4255C2A51F8B574D00FA321F /* GCB_WC_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4255C2A41F8B574D00FA321F /* GCB_WC_Controller.m */; };
@@ -119,6 +120,7 @@
 		428DAFE72043B0AA00E001AE /* YS_ActualController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFE62043B0AA00E001AE /* YS_ActualController.m */; };
 		428DAFEA2043DEAB00E001AE /* YS_TJ_Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFE92043DEAB00E001AE /* YS_TJ_Controller.m */; };
 		428DAFED20442FFA00E001AE /* YS_HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFEC20442FFA00E001AE /* YS_HomeController.m */; };
+		428DAFF02045488900E001AE /* YS_SSYSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428DAFEF2045488900E001AE /* YS_SSYSController.m */; };
 		42A0D8A21F7D17E300500540 /* lq.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A01F7D17E300500540 /* lq.plist */; };
 		42A0D8A31F7D17E300500540 /* sjqd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42A0D8A11F7D17E300500540 /* sjqd.plist */; };
 		42A7A07A1F36F5C600290DB8 /* TreeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A7A0761F36F5C600290DB8 /* TreeTableView.m */; };
@@ -796,6 +798,8 @@
 		424B87FA20287681009A7332 /* LLQ_CLHS_Cell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LLQ_CLHS_Cell1.xib; sourceTree = "<group>"; };
 		424B880020287F66009A7332 /* LLQ_CLHS_DetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLQ_CLHS_DetailController.h; sourceTree = "<group>"; };
 		424B880120287F66009A7332 /* LLQ_CLHS_DetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLQ_CLHS_DetailController.m; sourceTree = "<group>"; };
+		4253D78320456EA40075144E /* YS_HFController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HFController.h; sourceTree = "<group>"; };
+		4253D78420456EA50075144E /* YS_HFController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HFController.m; sourceTree = "<group>"; };
 		4255C29D1F8B0DC700FA321F /* GCB_NewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_NewController.h; sourceTree = "<group>"; };
 		4255C29E1F8B0DC700FA321F /* GCB_NewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCB_NewController.m; sourceTree = "<group>"; };
 		4255C2A01F8B450A00FA321F /* GCB_WPLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCB_WPLController.h; sourceTree = "<group>"; };
@@ -906,6 +910,8 @@
 		428DAFE92043DEAB00E001AE /* YS_TJ_Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_TJ_Controller.m; sourceTree = "<group>"; };
 		428DAFEB20442FFA00E001AE /* YS_HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_HomeController.h; sourceTree = "<group>"; };
 		428DAFEC20442FFA00E001AE /* YS_HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_HomeController.m; sourceTree = "<group>"; };
+		428DAFEE2045488900E001AE /* YS_SSYSController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YS_SSYSController.h; sourceTree = "<group>"; };
+		428DAFEF2045488900E001AE /* YS_SSYSController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YS_SSYSController.m; sourceTree = "<group>"; };
 		42A0D8A01F7D17E300500540 /* lq.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lq.plist; sourceTree = "<group>"; };
 		42A0D8A11F7D17E300500540 /* sjqd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sjqd.plist; sourceTree = "<group>"; };
 		42A7A0751F36F5C600290DB8 /* TreeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableView.h; sourceTree = "<group>"; };
@@ -4845,6 +4851,8 @@
 		9C548DBB201EC112009AB343 /* 遍数-压实度 */ = {
 			isa = PBXGroup;
 			children = (
+				428DAFEE2045488900E001AE /* YS_SSYSController.h */,
+				428DAFEF2045488900E001AE /* YS_SSYSController.m */,
 				9C548DBC201EC133009AB343 /* SSYSViewController.h */,
 				9C548DBD201EC133009AB343 /* SSYSViewController.m */,
 				9C548DBE201EC133009AB343 /* SSYSViewController.xib */,
@@ -5035,6 +5043,8 @@
 		9CB6351720439A0B00FCB1C4 /* 压实回放 */ = {
 			isa = PBXGroup;
 			children = (
+				4253D78320456EA40075144E /* YS_HFController.h */,
+				4253D78420456EA50075144E /* YS_HFController.m */,
 				9CB6351820439A3000FCB1C4 /* YS_HFViewController.h */,
 				9CB6351920439A3000FCB1C4 /* YS_HFViewController.m */,
 				9CB6351A20439A3000FCB1C4 /* YS_HFViewController.xib */,
@@ -6634,6 +6644,7 @@
 				42AC716B1E30C393007D8F57 /* MaterialTableViewController.m in Sources */,
 				426037E11F8F67420053A2C3 /* WTJ_DetailsController.m in Sources */,
 				8CBD73391E091B8800A0C991 /* HNT_CLHS_Model.m in Sources */,
+				428DAFF02045488900E001AE /* YS_SSYSController.m in Sources */,
 				42E7CA2D1F4EE06D00708235 /* JZL_JZBW_Cell.m in Sources */,
 				8C2840701EB1127500440413 /* TP_NY_SB_Controller.m in Sources */,
 				187C72F01E30B1810072F33A /* DGActivityIndicatorAnimation.m in Sources */,
@@ -6690,6 +6701,7 @@
 				8C2840451EB1123600440413 /* TP_CL_DataModel.m in Sources */,
 				42F99111201AD35C0044B77B /* LLQ_LSSJ_Detail_Head.m in Sources */,
 				9CAB0FA71F4A704900F47B92 /* TZD_ListModel.m in Sources */,
+				4253D78520456EA50075144E /* YS_HFController.m in Sources */,
 				187C72FC1E30B1810072F33A /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				42AC72041E30C576007D8F57 /* NodeViewController.m in Sources */,
 				D20064A21DFF86800021E293 /* MyViewController.m in Sources */,

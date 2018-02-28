@@ -1,16 +1,16 @@
 //
-//  YS_HFViewController.m
+//  YS_HFController.m
 //  toone
 //
-//  Created by 景晓峰 on 2018/2/26.
+//  Created by 上海同望 on 2018/2/27.
 //  Copyright © 2018年 shtoone. All rights reserved.
 //
 
-#import "YS_HFViewController.h"
+#import "YS_HFController.h"
 #import "YSRoadView.h"
 #import "Exp_Final.h"
 
-@interface YS_HFViewController ()<UIScrollViewDelegate>
+@interface YS_HFController ()<UIScrollViewDelegate>
 {
     //线路上y轴是负方向最小为-1800左右,最大为26,因此我们取最大值,同时绘图要将y取反加负号
     float road_min_x;
@@ -21,10 +21,8 @@
 @property (nonatomic,strong) YSRoadView *road;
 @property (nonatomic,strong) Exp_Final *expView;
 
-
 @end
-
-@implementation YS_HFViewController
+@implementation YS_HFController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,26 +92,26 @@
                 else
                 {
                     //这里做判断因为其他筛选条件都传的是name和id,而设备传的是name和model,获取model中的x,y从而确定设备位置,做出请求
-//                    if ([model.title isEqualToString:@"设备选择"])
-//                    {
-//                        YS_deviceModel *amodel = model.tempModel;
-//                        //滚动视图做出偏移
-//                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx,road_min_x)-Screen_w/2, Formula_y(amodel.Actual_dy,road_max_y)-Screen_h/2);
-//                        //获取请求需要的真实路面坐标值
-//                        CGFloat min_x = Formula_min_x(amodel.Actual_dx,road_min_x);
-//                        CGFloat max_x = Formula_max_x(amodel.Actual_dx,road_min_x);
-//                        CGFloat min_y = Formula_min_y(amodel.Actual_dy,road_max_y);
-//                        CGFloat max_y = Formula_max_y(amodel.Actual_dy,road_max_y);
-//                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_x] forKey:@"x_min"];
-//                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_x] forKey:@"x_max"];
-//                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_y] forKey:@"y_min"];
-//                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_y] forKey:@"y_max"];
-//                    }
-//                    else
-//                    {
-//                        [weakself.paraDic setObject:model.contentId forKey:model.para_key];
-//                        [weakself.paraDic setObject:@"1" forKey:@"pressLevel"];
-//                    }
+                    //                    if ([model.title isEqualToString:@"设备选择"])
+                    //                    {
+                    //                        YS_deviceModel *amodel = model.tempModel;
+                    //                        //滚动视图做出偏移
+                    //                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx,road_min_x)-Screen_w/2, Formula_y(amodel.Actual_dy,road_max_y)-Screen_h/2);
+                    //                        //获取请求需要的真实路面坐标值
+                    //                        CGFloat min_x = Formula_min_x(amodel.Actual_dx,road_min_x);
+                    //                        CGFloat max_x = Formula_max_x(amodel.Actual_dx,road_min_x);
+                    //                        CGFloat min_y = Formula_min_y(amodel.Actual_dy,road_max_y);
+                    //                        CGFloat max_y = Formula_max_y(amodel.Actual_dy,road_max_y);
+                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_x] forKey:@"x_min"];
+                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_x] forKey:@"x_max"];
+                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_y] forKey:@"y_min"];
+                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_y] forKey:@"y_max"];
+                    //                    }
+                    //                    else
+                    //                    {
+                    //                        [weakself.paraDic setObject:model.contentId forKey:model.para_key];
+                    //                        [weakself.paraDic setObject:@"1" forKey:@"pressLevel"];
+                    //                    }
                 }
             }
             
@@ -211,20 +209,5 @@
     
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

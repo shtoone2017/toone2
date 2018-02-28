@@ -16,6 +16,7 @@
 #import "YS_TPWDViewController.h"
 #import "SSYSViewController.h"
 #import "YS_HFViewController.h"
+#import "YS_ActualController.h"
 
 @implementation YSView
 
@@ -86,6 +87,8 @@
             break;
         case 402:{
             
+            YS_ActualController *vc = [[YS_ActualController alloc] init];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         default:
