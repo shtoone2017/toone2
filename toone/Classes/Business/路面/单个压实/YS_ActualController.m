@@ -20,6 +20,7 @@
 @implementation YS_ActualController
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _type = @"1";
     if ([UserDefaultsSetting shareSetting].road_id == nil) {//选择线路
         YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
         sbVc.type = SBListTypeYSLX;
@@ -28,6 +29,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (EqualToString(_type, @"1")) {
+        [self addPanGestureRecognizer];
+        UIButton * btn3 = [UIButton img_20WithName:@"sg_person"];
+        btn3.tag  = 3;
+        [btn3 addTarget:self action:@selector(searchButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn3];
+    }
     self.view.backgroundColor = [UIColor whiteColor];
     self.index =1;
     self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_SSYSController"];
@@ -86,5 +94,15 @@
     //切换到拌合站
     [seg switchToYS];
 }
-
+-(void)searchButtonClick:(UIButton*)sender{
+    switch (sender.tag) {
+        case 3:{
+            [super pan];
+            break;
+        }
+        default:
+            FuncLog;
+            break;
+    }
+}
 @end

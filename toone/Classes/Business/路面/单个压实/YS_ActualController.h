@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface YS_ActualController : UIViewController
-
+#import "MyViewController.h"
+@interface YS_ActualController : MyViewController
+@property (nonatomic, copy) NSString *type;
 @end

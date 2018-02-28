@@ -32,6 +32,7 @@
     _tabview.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tabview.rowHeight = cell_rowHeight;
     [_tabview  registerNib:[UINib nibWithNibName:@"Exp_FinalCell" bundle:nil] forCellReuseIdentifier:@"Exp_FinalCell"];
+//    [SGAnimationType show:self animation:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -144,6 +145,13 @@
 }
 
 - (IBAction)closeAction:(id)sender {
+//    [UIView animateWithDuration:0.15 animations:^{
+//
+//        self.transform = CGAffineTransformMakeScale(1, 0.0001);
+//    } completion:^(BOOL finished) {
+//
+//        [self removeFromSuperview];
+//    }];
     [self removeFromSuperview];
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 shtoone. All rights reserved.
 //
 
-#import "Exp1_Xib_View.H"
+#import "Exp1_Xib_View.h"
 #import "UserDefaultsSetting.h"
 @implementation Exp1_Xib_View
 

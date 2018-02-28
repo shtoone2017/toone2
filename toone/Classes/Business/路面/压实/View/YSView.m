@@ -33,15 +33,20 @@
     switch (sender.tag) {
         case 101:{
             //压实度
-            SSYSViewController *vc = [[SSYSViewController alloc] init];
-            vc.type =2;
-            [self.viewController.navigationController pushViewController:vc animated:YES];
+//            SSYSViewController *vc = [[SSYSViewController alloc] init];
+//            vc.type =2;
+//            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 102:{
             //遍数
-            SSYSViewController *vc = [[SSYSViewController alloc] init];
-            vc.type =1;
+//            SSYSViewController *vc = [[SSYSViewController alloc] init];
+//            vc.type =1;
+//            [self.viewController.navigationController pushViewController:vc animated:YES];
+            
+            
+            YS_ActualController *vc = [[YS_ActualController alloc] init];
+            vc.type = @"2";
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -87,8 +92,6 @@
             break;
         case 402:{
             
-            YS_ActualController *vc = [[YS_ActualController alloc] init];
-            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         default:
