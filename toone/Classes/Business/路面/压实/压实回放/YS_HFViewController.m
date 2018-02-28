@@ -18,11 +18,11 @@
     float road_max_y;
     NSInteger currentPickerNum;
 }
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *colorImg_Cons_height;
+@property (weak, nonatomic) IBOutlet UIView *pickBgView;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
 @property (nonatomic,strong) YSRoadView *road;
 @property (nonatomic,strong) Exp_Final *expView;
-@property (nonatomic,strong) UIPickerView *pickView;
 @property (nonatomic,strong) NSArray *pickArr;
 
 
@@ -43,14 +43,12 @@
     self.view.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1];
     
     _pickArr = [NSArray array];
-    _pickView = [UIPickerView new];
     _pickView.backgroundColor = [UIColor lightGrayColor];
-    _pickView.alpha = 0;
-    _pickView.frame = CGRectMake(0, Screen_h-200, Screen_w, 200);
     _pickView.delegate = self;
     _pickView.dataSource = self;
-    [self.view addSubview:_pickView];
-    
+    [_pickView selectRow:0 inComponent:0 animated:YES];
+    _pickBgView.alpha = 0;
+
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
@@ -98,53 +96,72 @@
     if (!_expView) {
         _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
         _expView.dataArr = tempArr;
-        _expView.frame = CGRectMake(0, 88, Screen_w, 46*5);
+        _expView.frame = CGRectMake(0, 64, Screen_w, 46*6);
         [self.view addSubview:_expView];
         
         __weak typeof(self) weakself = self;
         _expView.SearchBlock = ^(NSArray *arr)
         {
-            for (int i = 0;i<arr.count;i++)
+            if ([self.paraDic allKeys].count<4)
             {
-                Exp_FinalModel *model = arr[i];
-                if (!model.contentId && !model.tempModel)
-                {
-                    [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
-                    return;
-                }
-                else
-                {
-                    
-                }
+                [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                return;
             }
-            
-            //移除之前的界面,重新绘制
-            [weakself.road removeFromSuperview];
-            weakself.road = nil;
-            weakself.road = [[YSRoadView alloc] init];
-            [weakself.bgScroll addSubview:weakself.road];
-            
+            else
+            {
+                //移除之前的界面,重新绘制
+                [weakself.road removeFromSuperview];
+                weakself.road = nil;
+                weakself.road = [[YSRoadView alloc] init];
+                [weakself.bgScroll addSubview:weakself.road];
+                [weakself roadRequest];
+                [weakself huifangRequest];
+                
+            }
         };
         
         _expView.CellBlock = ^(NSInteger cellNum) {
-            weakself.pickView.alpha = 1;
             currentPickerNum = cellNum;
             if (cellNum == 1)
             {
                 Exp_FinalModel *model = weakself.expView.dataArr[0];
-                [weakself.paraDic setObject:model.contentId forKey:model.para_key];
-                //日期
-                [weakself requestTimeWithDate:nil cellNum:1 layer:[model.contentId integerValue]];
+                if (model.contentId != nil)
+                {
+                    [weakself.paraDic setObject:model.contentId forKey:model.para_key];
+                    //日期
+                    [weakself requestTimeWithDate:nil cellNum:1 layer:[model.contentId integerValue]];
+                    weakself.pickBgView.alpha = 1;
+                }
+                else
+                {
+                    [SVProgressHUD showErrorWithStatus:@"请先选择面层"];
+                }
             }
             else if (cellNum == 2)
             {
                 //开始时间
-                 [weakself requestTimeWithDate:nil cellNum:2 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
+                if ([weakself.paraDic objectForKey:@"date"] != nil)
+                {
+                    [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:2 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
+                    weakself.pickBgView.alpha = 1;
+                }
+                else
+                {
+                    [SVProgressHUD showErrorWithStatus:@"请先选择日期"];
+                }
             }
             else
             {
                 //结束时间
-                [weakself requestTimeWithDate:nil cellNum:2 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
+                if ([weakself.paraDic objectForKey:@"date"] != nil)
+                {
+                    [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:3 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
+                    weakself.pickBgView.alpha = 1;
+                }
+                else
+                {
+                    [SVProgressHUD showErrorWithStatus:@"请先选择日期"];
+                }
             }
         };
     }
@@ -238,9 +255,16 @@
     }];
 }
 
-- (IBAction)huifangAction:(id)sender {
-    NSString *urlStr = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetPlayBackActual?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&grid_layer=2&date=2017-12-04&start=10&end=11";
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlStr parameter:nil success:^(id json) {
+- (void)huifangRequest
+{
+//    NSString *urlStr = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetPlayBackActual?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&grid_layer=2&date=2017-12-04&start=10&end=11";
+    [self.paraDic setObject:[UserDefaultsSetting shareSetting].road_id forKey:@"road_id"];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Huifang parameter:self.paraDic success:^(id json) {
+        if (((NSArray *)json).count<=0)
+        {
+            [SVProgressHUD showErrorWithStatus:@"暂无数据"];
+            return ;
+        }
         _road.huifangArr = [YS_HFModel arrayOfModelsFromDictionaries:json error:nil];
         
         YS_HFModel *start_model = _road.huifangArr[0];
@@ -248,10 +272,23 @@
         _bgScroll.contentOffset = startPoint;
     } failure:^(NSError *error) {
     }];
-    
+}
+
+- (IBAction)huifangAction:(id)sender {
+    [self.road removeFromSuperview];
+    self.road = nil;
+    self.road = [[YSRoadView alloc] init];
+    [self.bgScroll addSubview:self.road];
+    [self roadRequest];
+    [self huifangRequest];
 }
 - (IBAction)stopAction:(id)sender {
-    
+    //移除之前的界面,重新绘制
+    [self.road removeFromSuperview];
+    self.road = nil;
+    self.road = [[YSRoadView alloc] init];
+    [self.bgScroll addSubview:self.road];
+    [self roadRequest];
 }
 
 #pragma mark uipickviewdelegate
@@ -287,22 +324,40 @@
     return 30;
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    if (currentPickerNum == 1)
+- (IBAction)cancleBtnAction:(id)sender {
+    _pickBgView.alpha = 0;
+}
+- (IBAction)okBtnAction:(id)sender {
+    NSInteger selectNum;
+    if ([_pickView selectedRowInComponent:0]==nil)
     {
-        [self.paraDic setObject:[_pickArr objectAtIndex:row] forKey:@"date"];
-    }
-    else if (currentPickerNum == 2)
-    {
-        [self.paraDic setObject:[_pickArr objectAtIndex:row] forKey:@"start"];
+        selectNum = 0;
     }
     else
     {
-        [self.paraDic setObject:[_pickArr objectAtIndex:row] forKey:@"end"];
+        selectNum = [_pickView selectedRowInComponent:0];
     }
+    NSString *timeValue;
+    YS_DateModel *model = [_pickArr objectAtIndex:selectNum];
+    if (currentPickerNum == 1)
+    {
+        [self.paraDic setObject:model.date forKey:@"date"];
+        timeValue = model.date;
+    }
+    else if (currentPickerNum == 2)
+    {
+        [self.paraDic setObject:@(model.time) forKey:@"start"];
+        timeValue = [NSString stringWithFormat:@"%ld",(long)model.time];
+    }
+    else
+    {
+        [self.paraDic setObject:@(model.time) forKey:@"end"];
+        timeValue = [NSString stringWithFormat:@"%ld",(long)model.time];
+    }
+    _pickBgView.alpha = 0;
+    NSDictionary *dic = @{@"rowNum":@(currentPickerNum),@"time":timeValue};
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_HuiFang object:nil userInfo:dic];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

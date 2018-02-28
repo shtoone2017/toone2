@@ -8,7 +8,7 @@
 
 #import "YSRoadView.h"
 
-#define AnimationTime 0.5
+#define AnimationTime 0.001
 @interface YSRoadView ()<UIGestureRecognizerDelegate,CAAnimationDelegate>
 {
     int z; //回放计数
