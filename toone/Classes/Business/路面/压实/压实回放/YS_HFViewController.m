@@ -187,8 +187,10 @@
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:dic success:^(id json) {
         if (((NSArray *)json).count > 0)
         {
+            
             weakself.pickView.alpha = 1;
         }
+        
         else
         {
             [SVProgressHUD showErrorWithStatus:@"暂无数据"];
