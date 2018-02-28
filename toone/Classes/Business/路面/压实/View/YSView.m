@@ -31,22 +31,15 @@
 
 - (IBAction)searchButtonClick:(UIButton *)sender {
     switch (sender.tag) {
-        case 101:{
-            //压实度
-//            SSYSViewController *vc = [[SSYSViewController alloc] init];
-//            vc.type =2;
-//            [self.viewController.navigationController pushViewController:vc animated:YES];
+        case 101:{//实时压实
+            YS_ActualController *vc = [[YS_ActualController alloc] init];
+            vc.type = @"2";
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 102:{
-            //遍数
-//            SSYSViewController *vc = [[SSYSViewController alloc] init];
-//            vc.type =1;
-//            [self.viewController.navigationController pushViewController:vc animated:YES];
-            
-            
-            YS_ActualController *vc = [[YS_ActualController alloc] init];
-            vc.type = @"2";
+            //压实回放
+            YS_HFViewController *vc = [YS_HFViewController new];
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -55,15 +48,13 @@
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
-        case 201:{
-            //压实回放
-            YS_HFViewController *vc = [YS_HFViewController new];
+        case 201:{//厚度
+            YS_HD_Controller *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_HD_Controller"];
             [self.viewController.navigationController pushViewController:vc animated:YES];
         }
             break;
-        case 202:{//厚度
-            YS_HD_Controller *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_HD_Controller"];
-            [self.viewController.navigationController pushViewController:vc animated:YES];
+        case 202:{
+            
         }
             break;
         case 301:{

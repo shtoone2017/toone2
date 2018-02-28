@@ -182,10 +182,6 @@
 //                        MyTabBarController * vc = (MyTabBarController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_MyTabBarController"];
 //                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                         
-                    
-//                        MyTabBarController * vc = (MyTabBarController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_MyTabBarController"];
-//                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-                        
                     }
 //                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
 //                    [UIApplication sharedApplication].keyWindow.rootViewController = vc;

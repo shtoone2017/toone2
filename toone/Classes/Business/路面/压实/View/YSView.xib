@@ -54,7 +54,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压实度统计" image="gcb_ck">
+                                                            <state key="normal" title="实时压实" image="实时压实">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -76,7 +76,7 @@
                                                             <rect key="frame" x="106" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="实时压实" image="实时压实">
+                                                            <state key="normal" title="压实回放" image="回放">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
@@ -110,14 +110,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="106.5" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="压实回放" image="回放">
+                                                            <state key="normal" title="路面厚度" image="厚度">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="0Dv-Z7-Msu"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvy-yi-Ugp" customClass="UpButton">
+                                                        <button hidden="YES" opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvy-yi-Ugp" customClass="UpButton">
                                                             <rect key="frame" x="106.5" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -264,7 +264,7 @@
                                                                 <action selector="searchButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cPe-Tc-d7J"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-ji-s3L" customClass="UpButton">
+                                                        <button hidden="YES" opaque="NO" tag="402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-ji-s3L" customClass="UpButton">
                                                             <rect key="frame" x="106.5" y="0.0" width="106" height="85"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -379,7 +379,6 @@
     </objects>
     <resources>
         <image name="gcb_cc" width="32" height="32"/>
-        <image name="gcb_ck" width="32" height="32"/>
         <image name="gcb_head" width="600" height="236"/>
         <image name="gcb_jc" width="32" height="32"/>
         <image name="厚度" width="32" height="32"/>

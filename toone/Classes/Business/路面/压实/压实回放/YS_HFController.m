@@ -9,17 +9,21 @@
 #import "YS_HFController.h"
 #import "YSRoadView.h"
 #import "Exp_Final.h"
+#import "YS_DateModel.h"
 
-@interface YS_HFController ()<UIScrollViewDelegate>
+@interface YS_HFController ()<UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
     //线路上y轴是负方向最小为-1800左右,最大为26,因此我们取最大值,同时绘图要将y取反加负号
     float road_min_x;
     float road_max_y;
+    NSInteger currentPickerNum;
 }
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *colorImg_Cons_height;
+@property (weak, nonatomic) IBOutlet UIView *pickBgView;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickView;
 @property (nonatomic,strong) NSMutableDictionary *paraDic;
 @property (nonatomic,strong) YSRoadView *road;
 @property (nonatomic,strong) Exp_Final *expView;
+@property (nonatomic,strong) NSArray *pickArr;
 
 @end
 @implementation YS_HFController
@@ -35,6 +39,13 @@
     self.road = [[YSRoadView alloc] initWithFrame:CGRectMake(0, 0, Screen_w, Screen_h)];
     [self.bgScroll addSubview:_road];
     self.view.backgroundColor = [UIColor colorWithRed:242/255.0f green:242/255.0f blue:242/255.0f alpha:1];
+    
+    _pickArr = [NSArray array];
+    _pickView.backgroundColor = [UIColor lightGrayColor];
+    _pickView.delegate = self;
+    _pickView.dataSource = self;
+    [_pickView selectRow:0 inComponent:0 animated:YES];
+    _pickBgView.alpha = 0;
     
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
@@ -58,72 +69,98 @@
 - (Exp_Final *)get_expView
 {
     NSMutableArray *tempArr = [NSMutableArray array];
-    NSArray *keyArr;
+    //    NSArray *keyArr;
     NSArray *titleArr;
-    NSArray *typeArr;
-    keyArr = @[@"",@"grid_layer",@"date",@"结束时间"];
+    //    NSArray *typeArr;
+    //    keyArr = @[@"",@"grid_layer",@"date",@"结束时间"];
     titleArr = @[@"面层选择",@"日期",@"起始时间",@"结束时间"];
-    typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_Layer],];
+    //    typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_Layer]];
     for (int i = 0; i<titleArr.count; i++)
     {
         Exp_FinalModel *model = [[Exp_FinalModel alloc] init];
         model.title = titleArr[i];
-        model.type = [typeArr[i] integerValue];
-        model.para_key = keyArr[i];
+        if (i == 0)
+        {
+            model.type = YS_Search_Type_Layer;
+            model.para_key = @"grid_layer";
+        }
+        else
+        {
+            model.type = YS_Search_Type_None;
+        }
+        //        model.para_key = keyArr[i];
         [tempArr addObject:model];
     };
     if (!_expView) {
         _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
         _expView.dataArr = tempArr;
-        _expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
+        _expView.frame = CGRectMake(0, 64, Screen_w, 46*6);
         [self.view addSubview:_expView];
         
         __weak typeof(self) weakself = self;
         _expView.SearchBlock = ^(NSArray *arr)
         {
-            for (int i = 0;i<arr.count;i++)
+            if ([self.paraDic allKeys].count<4)
             {
-                Exp_FinalModel *model = arr[i];
-                if (!model.contentId && !model.tempModel)
+                [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
+                return;
+            }
+            else
+            {
+                //移除之前的界面,重新绘制
+                [weakself.road removeFromSuperview];
+                weakself.road = nil;
+                weakself.road = [[YSRoadView alloc] init];
+                [weakself.bgScroll addSubview:weakself.road];
+                [weakself roadRequest];
+                [weakself huifangRequest];
+                
+            }
+        };
+        
+        _expView.CellBlock = ^(NSInteger cellNum) {
+            currentPickerNum = cellNum;
+            if (cellNum == 1)
+            {
+                Exp_FinalModel *model = weakself.expView.dataArr[0];
+                if (model.contentId != nil)
                 {
-                    [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
-                    return;
+                    [weakself.paraDic setObject:model.contentId forKey:model.para_key];
+                    //日期
+                    [weakself requestTimeWithDate:nil cellNum:1 layer:[model.contentId integerValue]];
+                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
-                    //这里做判断因为其他筛选条件都传的是name和id,而设备传的是name和model,获取model中的x,y从而确定设备位置,做出请求
-                    //                    if ([model.title isEqualToString:@"设备选择"])
-                    //                    {
-                    //                        YS_deviceModel *amodel = model.tempModel;
-                    //                        //滚动视图做出偏移
-                    //                        weakself.bgScroll.contentOffset = CGPointMake(Formula_x(amodel.Actual_dx,road_min_x)-Screen_w/2, Formula_y(amodel.Actual_dy,road_max_y)-Screen_h/2);
-                    //                        //获取请求需要的真实路面坐标值
-                    //                        CGFloat min_x = Formula_min_x(amodel.Actual_dx,road_min_x);
-                    //                        CGFloat max_x = Formula_max_x(amodel.Actual_dx,road_min_x);
-                    //                        CGFloat min_y = Formula_min_y(amodel.Actual_dy,road_max_y);
-                    //                        CGFloat max_y = Formula_max_y(amodel.Actual_dy,road_max_y);
-                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_x] forKey:@"x_min"];
-                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_x] forKey:@"x_max"];
-                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",min_y] forKey:@"y_min"];
-                    //                        [weakself.paraDic setObject:[NSString stringWithFormat:@"%f",max_y] forKey:@"y_max"];
-                    //                    }
-                    //                    else
-                    //                    {
-                    //                        [weakself.paraDic setObject:model.contentId forKey:model.para_key];
-                    //                        [weakself.paraDic setObject:@"1" forKey:@"pressLevel"];
-                    //                    }
+                    [SVProgressHUD showErrorWithStatus:@"请先选择面层"];
                 }
             }
-            
-            //移除之前的界面,重新绘制
-            [weakself.road removeFromSuperview];
-            weakself.road = nil;
-            weakself.road = [[YSRoadView alloc] init];
-            [weakself.bgScroll addSubview:weakself.road];
-            
-            
-            
-            
+            else if (cellNum == 2)
+            {
+                //开始时间
+                if ([weakself.paraDic objectForKey:@"date"] != nil)
+                {
+                    [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:2 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
+                    weakself.pickBgView.alpha = 1;
+                }
+                else
+                {
+                    [SVProgressHUD showErrorWithStatus:@"请先选择日期"];
+                }
+            }
+            else
+            {
+                //结束时间
+                if ([weakself.paraDic objectForKey:@"date"] != nil)
+                {
+                    [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:3 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
+                    weakself.pickBgView.alpha = 1;
+                }
+                else
+                {
+                    [SVProgressHUD showErrorWithStatus:@"请先选择日期"];
+                }
+            }
         };
     }
     else{
@@ -131,6 +168,29 @@
         
     }
     return _expView;
+}
+
+- (void)requestTimeWithDate:(NSString *)date cellNum:(NSInteger)cellNum layer:(NSInteger)layer
+{
+    NSString *url;
+    NSDictionary *dic;
+    if (cellNum == 1)
+    {
+        url = YS_Date;
+        dic = @{@"road_id":[UserDefaultsSetting shareSetting].road_id,@"grid_layer":@(layer)};
+    }
+    else
+    {
+        url = YS_Time;
+        dic = @{@"road_id":[UserDefaultsSetting shareSetting].road_id,@"grid_layer":@(layer),@"date":date};
+    }
+    __weak typeof(self) weakself = self;
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:dic success:^(id json) {
+        weakself.pickArr = [YS_DateModel arrayOfModelsFromDictionaries:json error:nil];
+        [weakself.pickView reloadAllComponents];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)roadRequest
@@ -193,9 +253,16 @@
     }];
 }
 
-- (IBAction)huifangAction:(id)sender {
-    NSString *urlStr = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetPlayBackActual?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&grid_layer=2&date=2017-12-04&start=10&end=11";
-    [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlStr parameter:nil success:^(id json) {
+- (void)huifangRequest
+{
+    //    NSString *urlStr = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetPlayBackActual?road_id=f9a816c15f7aa4ca015f7cbf18aa004d&grid_layer=2&date=2017-12-04&start=10&end=11";
+    [self.paraDic setObject:[UserDefaultsSetting shareSetting].road_id forKey:@"road_id"];
+    [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Huifang parameter:self.paraDic success:^(id json) {
+        if (((NSArray *)json).count<=0)
+        {
+            [SVProgressHUD showErrorWithStatus:@"暂无数据"];
+            return ;
+        }
         _road.huifangArr = [YS_HFModel arrayOfModelsFromDictionaries:json error:nil];
         
         YS_HFModel *start_model = _road.huifangArr[0];
@@ -203,10 +270,94 @@
         _bgScroll.contentOffset = startPoint;
     } failure:^(NSError *error) {
     }];
-    
+}
+
+- (IBAction)huifangAction:(id)sender {
+    [self.road removeFromSuperview];
+    self.road = nil;
+    self.road = [[YSRoadView alloc] init];
+    [self.bgScroll addSubview:self.road];
+    [self roadRequest];
+    [self huifangRequest];
 }
 - (IBAction)stopAction:(id)sender {
-    
+    //移除之前的界面,重新绘制
+    [self.road removeFromSuperview];
+    self.road = nil;
+    self.road = [[YSRoadView alloc] init];
+    [self.bgScroll addSubview:self.road];
+    [self roadRequest];
+}
+
+#pragma mark uipickviewdelegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return _pickArr.count;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UILabel *lab = [UILabel new];
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.frame = CGRectMake(Screen_w/2-75, 0, 150, 25);
+    YS_DateModel *model = _pickArr[row];
+    if (currentPickerNum == 1)
+    {
+        lab.text = model.date;
+    }
+    else
+    {
+        lab.text = [NSString stringWithFormat:@"%ld",(long)model.time];
+    }
+    return lab;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 30;
+}
+
+- (IBAction)cancleBtnAction:(id)sender {
+    _pickBgView.alpha = 0;
+}
+- (IBAction)okBtnAction:(id)sender {
+    NSInteger selectNum;
+    if ([_pickView selectedRowInComponent:0]==nil)
+    {
+        selectNum = 0;
+    }
+    else
+    {
+        selectNum = [_pickView selectedRowInComponent:0];
+    }
+    NSString *timeValue;
+    YS_DateModel *model;
+    if (_pickArr.count > 0) {
+        model = [_pickArr objectAtIndex:selectNum];
+        if (currentPickerNum == 1)
+        {
+            [self.paraDic setObject:model.date forKey:@"date"];
+            timeValue = model.date;
+        }
+    }
+    else if (currentPickerNum == 2)
+    {
+        [self.paraDic setObject:@(model.time) forKey:@"start"];
+        timeValue = [NSString stringWithFormat:@"%ld",(long)model.time];
+    }
+    else
+    {
+        [self.paraDic setObject:@(model.time) forKey:@"end"];
+        timeValue = [NSString stringWithFormat:@"%ld",(long)model.time];
+    }
+    _pickBgView.alpha = 0;
+    NSDictionary *dic = @{@"rowNum":@(currentPickerNum),@"time":timeValue};
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_HuiFang object:nil userInfo:dic];
 }
 
 

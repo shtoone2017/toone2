@@ -130,7 +130,6 @@
                     [weakself.paraDic setObject:model.contentId forKey:model.para_key];
                     //日期
                     [weakself requestTimeWithDate:nil cellNum:1 layer:[model.contentId integerValue]];
-                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
@@ -143,7 +142,6 @@
                 if ([weakself.paraDic objectForKey:@"date"] != nil)
                 {
                     [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:2 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
-                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
@@ -156,7 +154,6 @@
                 if ([weakself.paraDic objectForKey:@"date"] != nil)
                 {
                     [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:3 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
-                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
@@ -188,6 +185,15 @@
     }
     __weak typeof(self) weakself = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:dic success:^(id json) {
+        if (((NSArray *)json).count > 0)
+        {
+            weakself.pickView.alpha = 1;
+        }
+        else
+        {
+            [SVProgressHUD showErrorWithStatus:@"暂无数据"];
+        }
+        
         weakself.pickArr = [YS_DateModel arrayOfModelsFromDictionaries:json error:nil];
         [weakself.pickView reloadAllComponents];
     } failure:^(NSError *error) {
@@ -338,11 +344,14 @@
         selectNum = [_pickView selectedRowInComponent:0];
     }
     NSString *timeValue;
-    YS_DateModel *model = [_pickArr objectAtIndex:selectNum];
-    if (currentPickerNum == 1)
-    {
-        [self.paraDic setObject:model.date forKey:@"date"];
-        timeValue = model.date;
+    YS_DateModel *model;
+    if (_pickArr.count > 0) {
+        model = [_pickArr objectAtIndex:selectNum];
+        if (currentPickerNum == 1)
+        {
+            [self.paraDic setObject:model.date forKey:@"date"];
+            timeValue = model.date;
+        }
     }
     else if (currentPickerNum == 2)
     {
