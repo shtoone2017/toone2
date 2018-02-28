@@ -176,11 +176,11 @@
                         [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                     }
                     if ([json[@"type"]  isEqualToString: @"GL"]){//管理层
-                        ChooseViewController * vc = (ChooseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChooseViewController"];
-                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
-                    
-//                        MyTabBarController * vc = (MyTabBarController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_MyTabBarController"];
+//                        ChooseViewController * vc = (ChooseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChooseViewController"];
 //                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+                    
+                        MyTabBarController * vc = (MyTabBarController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_MyTabBarController"];
+                        [UIApplication sharedApplication].keyWindow.rootViewController = vc;
                         
                     }
 //                    id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];

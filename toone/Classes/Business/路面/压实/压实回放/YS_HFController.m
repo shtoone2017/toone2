@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"压实回放";
     self.bgScroll.contentSize = CGSizeMake(Screen_w, Screen_h);
     self.bgScroll.minimumZoomScale = 0.3;
     self.bgScroll.maximumZoomScale = 10;
@@ -94,7 +95,8 @@
     if (!_expView) {
         _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
         _expView.dataArr = tempArr;
-        _expView.frame = CGRectMake(0, 64, Screen_w, 46*6);
+//        _expView.frame = CGRectMake(0, 64, Screen_w, 46*6);
+        
         [self.view addSubview:_expView];
         
         __weak typeof(self) weakself = self;
@@ -128,7 +130,6 @@
                     [weakself.paraDic setObject:model.contentId forKey:model.para_key];
                     //日期
                     [weakself requestTimeWithDate:nil cellNum:1 layer:[model.contentId integerValue]];
-                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
@@ -141,7 +142,6 @@
                 if ([weakself.paraDic objectForKey:@"date"] != nil)
                 {
                     [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:2 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
-                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
@@ -154,7 +154,6 @@
                 if ([weakself.paraDic objectForKey:@"date"] != nil)
                 {
                     [weakself requestTimeWithDate:[weakself.paraDic objectForKey:@"date"] cellNum:3 layer:[[weakself.paraDic objectForKey:@"grid_layer"] integerValue]];
-                    weakself.pickBgView.alpha = 1;
                 }
                 else
                 {
@@ -169,6 +168,7 @@
     }
     return _expView;
 }
+
 
 - (void)requestTimeWithDate:(NSString *)date cellNum:(NSInteger)cellNum layer:(NSInteger)layer
 {
@@ -186,6 +186,15 @@
     }
     __weak typeof(self) weakself = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:dic success:^(id json) {
+        if (((NSArray *)json).count > 0)
+        {
+            weakself.pickBgView.alpha = 1;
+        }
+        else
+        {
+            [SVProgressHUD showErrorWithStatus:@"暂无数据"];
+        }
+        
         weakself.pickArr = [YS_DateModel arrayOfModelsFromDictionaries:json error:nil];
         [weakself.pickView reloadAllComponents];
     } failure:^(NSError *error) {

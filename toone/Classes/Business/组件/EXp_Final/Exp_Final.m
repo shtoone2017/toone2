@@ -25,6 +25,11 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    if (kDevice_Is_iPhoneX) {
+        self.frame = CGRectMake(0, 88, Screen_w, Screen_h-64);
+    }else {
+        self.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
+    }
     self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
     _tabview.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
     _tabview.delegate = self;

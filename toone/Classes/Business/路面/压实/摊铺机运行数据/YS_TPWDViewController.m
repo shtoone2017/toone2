@@ -126,7 +126,7 @@
     if (!_expView) {
         _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
         _expView.dataArr = tempArr;
-        _expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
+//        _expView.frame = CGRectMake(0, 64, Screen_w, Screen_h-64);
         [self.view addSubview:_expView];
         __weak typeof(self) weakself = self;
         _expView.SearchBlock = ^(NSArray *arr)
