@@ -1,12 +1,12 @@
 //
-//  SSYSViewController.m
+//  YS_SSYSController.m
 //  toone
 //
-//  Created by 景晓峰 on 2018/1/29.
+//  Created by 上海同望 on 2018/2/27.
 //  Copyright © 2018年 shtoone. All rights reserved.
 //
 
-#import "SSYSViewController.h"
+#import "YS_SSYSController.h"
 #import "YSRoadView.h"
 #import "YS_SB_Controller.h"
 #import "Exp_Final.h"
@@ -14,7 +14,7 @@
 #define pressLayer_Num @"pressLayer"
 #define device_Num @"device_Num"
 
-@interface SSYSViewController ()<UIScrollViewDelegate>
+@interface YS_SSYSController ()<UIScrollViewDelegate>
 {
     //线路上y轴是负方向最小为-1800左右,最大为26,因此我们取最大值,同时绘图要将y取反加负号
     float road_min_x;
@@ -25,10 +25,21 @@
 @property (nonatomic,strong) YSRoadView *road;
 @property (nonatomic,strong) Exp_Final *expView;
 
+@property (weak, nonatomic) IBOutlet BBFlashCtntLabel *departName_Label;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
+@implementation YS_SSYSController
 
-@implementation SSYSViewController
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.containerView.backgroundColor= BLUECOLOR;
+    NSString * zjjg = FormatString(@"当前路线 : ",[UserDefaultsSetting shareSetting].road_name);
+    self.departName_Label.text = FormatString(zjjg, @"\t\t\t\t\t\t\t\t\t\t");
+    self.departName_Label.textColor = [UIColor whiteColor];
+    self.departName_Label.font = [UIFont systemFontOfSize:12.0];
+    self.departName_Label.speed = BBFlashCtntSpeedSlow;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +56,7 @@
     if (_type == 1)
     {
         //遍数
-        _label1.text = [NSString stringWithFormat:@"当前路线 :%@",[UserDefaultsSetting shareSetting].road_name];
+//        _label1.text = [NSString stringWithFormat:@"当前路线 :%@",[UserDefaultsSetting shareSetting].road_name]; 
         _label2.text = [NSString stringWithFormat:@"当前面层 :上面层"];
         _label3.text = [NSString stringWithFormat:@"当前设备 : "];
         self.colorImg.image = [UIImage imageNamed:@"色条"];
@@ -55,7 +66,7 @@
     {
         //压实度
         self.colorImg.image = [UIImage imageNamed:@"压实度色条"];
-        _label2.text = [NSString stringWithFormat:@"当前路线 :%@",[UserDefaultsSetting shareSetting].road_name];
+//        _label2.text = [NSString stringWithFormat:@"当前路线 :%@",[UserDefaultsSetting shareSetting].road_name];
         _label3.text = [NSString stringWithFormat:@"当前面层 :上面层"];
         _colorImg_Cons_height.constant = 60;
         [self biaozhunRequest];
@@ -65,6 +76,7 @@
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
+
 - (NSMutableDictionary *)paraDic
 {
     if (!_paraDic)
@@ -243,13 +255,13 @@
 {
     __weak typeof(self) weakself = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Biaozhun parameter:@{@"road_id":[UserDefaultsSetting shareSetting].road_id} success:^(id json)
-    {
-        weakself.road.baojingModel = [[YS_BaojingModel alloc] initWithDictionary:json error:nil];
-        [self yashiduTypeRequest];
-        
-    }failure:^(NSError *error) {
-        
-    }];
+     {
+         weakself.road.baojingModel = [[YS_BaojingModel alloc] initWithDictionary:json error:nil];
+         [self yashiduTypeRequest];
+         
+     }failure:^(NSError *error) {
+         
+     }];
 }
 
 - (void)roadRequest
@@ -300,7 +312,7 @@
         CGFloat a_height = (fabsf(road_max_y)+fabsf(min_y))*YS_Scale;
         
         self.bgScroll.contentSize = CGSizeMake(a_width, a_height);
-
+        
         self.road.frame = CGRectMake(0, 0, a_width, a_height);
         _road.leftData = leftArr;
         _road.rightData = rightArr;
@@ -347,9 +359,9 @@
         else
         {
             //压实度
-//            url = YS_Yashidu;
-
-             url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=2&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Yashidu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];
+            //            url = YS_Yashidu;
+            
+            url = [NSString stringWithFormat:@"%@?Road_id=%@&pressLevel=1&pressLayer=2&x_min=%f&x_max=%f&y_max=%f&y_min=%f",YS_Yashidu,[UserDefaultsSetting shareSetting].road_id,Formula_GetPoint(self.view.frame.origin.x),Formula_GetPoint(self.view.frame.size.width),Formula_GetPoint(self.view.frame.origin.y),Formula_GetPoint(-self.view.frame.size.height)];
         }
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:url parameter:self.paraDic success:^(id json) {
             NSArray *datas = [YS_BianshuModel arrayOfModelsFromDictionaries:json];
@@ -431,21 +443,10 @@
         
     }];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)searchButtonClick:(UIButton *)sender {
+    [self searchButtonClick];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,6 +9,8 @@
 #import "YS_ActualController.h"
 #import "MyTPSegmentedControl.h"
 #import "SSYSViewController.h"
+#import "YS_SSYSController.h"
+#import "YS_SB_Controller.h"
 
 @interface YS_ActualController ()
 @property (nonatomic,strong) UIViewController * vc;
@@ -16,20 +18,21 @@
 
 @end
 @implementation YS_ActualController
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([UserDefaultsSetting shareSetting].road_id == nil) {//选择线路
+        YS_SB_Controller *sbVc = [[YS_SB_Controller alloc] init];
+        sbVc.type = SBListTypeYSLX;
+        [self.navigationController pushViewController:sbVc animated:YES];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([UserDefaultsSetting shareSetting].road_id == nil)
-    {
-        //选择线路
-        [UserDefaultsSetting shareSetting].road_id = @"f9a816c15f7aa4ca015f7cbf18aa004d";
-        [UserDefaultsSetting shareSetting].road_name = @"贵阳-花石";
-    }
     self.view.backgroundColor = [UIColor whiteColor];
     self.index =1;
-    self.vc = [[SSYSViewController alloc] init];;
-    if ([self.vc isKindOfClass:[SSYSViewController class]]) {
-        SSYSViewController * controller = (SSYSViewController *)self.vc;
+    self.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_SSYSController"];
+    if ([self.vc isKindOfClass:[YS_SSYSController class]]) {
+        YS_SSYSController * controller = (YS_SSYSController *)self.vc;
         controller.type = 1;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
@@ -45,13 +48,15 @@
     __weak typeof(self) weakSelf = self;
     seg.segBlock = ^(int tag){
         switch (tag) {
-            case 1:{//压力试验
+            case 1:{
                 if (weakSelf.index !=1){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
-                    weakSelf.vc = [[SSYSViewController alloc] init];
-                    if ([self.vc isKindOfClass:[SSYSViewController class]]) {
-                        SSYSViewController * controller = (SSYSViewController *)self.vc;
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_SSYSController"];
+                    //weakSelf.vc = [[YS_SSYSController alloc] init];
+                    if ([self.vc isKindOfClass:[YS_SSYSController class]]) {
+                        YS_SSYSController * controller = (YS_SSYSController *)self.vc;
+                        
                         controller.type = 1;
                         [self addChildViewController:controller];
                         [self.view addSubview:controller.view];
@@ -61,13 +66,13 @@
                 break;
             }
             case 2:{
-                //万能试验
                 if (weakSelf.index != 2){
                     [weakSelf.vc removeFromParentViewController];
                     [weakSelf.vc.view removeFromSuperview];
-                    weakSelf.vc = [[SSYSViewController alloc] init];
-                    if ([self.vc isKindOfClass:[SSYSViewController class]]) {
-                        SSYSViewController * controller = (SSYSViewController *)self.vc;
+                    weakSelf.vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"YS_SSYSController"];
+                    //weakSelf.vc = [[YS_SSYSController alloc] init];
+                    if ([self.vc isKindOfClass:[YS_SSYSController class]]) {
+                        YS_SSYSController * controller = (YS_SSYSController *)self.vc;
                         controller.type = 2;
                         [self addChildViewController:controller];
                         [self.view addSubview:controller.view];

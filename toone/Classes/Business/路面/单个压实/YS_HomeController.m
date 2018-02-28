@@ -7,6 +7,7 @@
 //
 
 #import "YS_HomeController.h"
+#import "YS_HFViewController.h"
 
 @interface YS_HomeController ()
 
@@ -16,9 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
 }
-
 
 
 @end

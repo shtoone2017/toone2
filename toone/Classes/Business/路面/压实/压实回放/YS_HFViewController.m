@@ -52,7 +52,6 @@
     UIButton * btn = [UIButton img_20WithName:@"ic_format_list_numbered_white_24dp"];
     [btn addTarget:self action:@selector(searchButtonClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    
     [self roadRequest];
 }
 - (NSMutableDictionary *)paraDic
