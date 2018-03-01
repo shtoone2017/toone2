@@ -20,7 +20,7 @@
 
 //#define baseUrl       @"http://112.124.12.254:8082/hnymmss/"
 //压实服务器地址
-#define baseUrl2       @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/"
+#define baseUrl2       @"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/"
 
 //#define baseUrl      @"http://192.168.1.181:8082/jeecg/"
 
@@ -302,6 +302,9 @@
 #define YS_Yashidu FormatString(baseUrl2,@"rs_DeviceController/GetAmplitudeGrid")
 //面积统计
 #define YS_Mianji FormatString(baseUrl2,@"rs_DeviceController/AreaStatistics")
+
+//距离
+#define YS_JuLi FormatString(baseUrl2,@"rs_DeviceController/DistanceStatistics")
 
 //摊铺机运行数据-温湿度等
 #define YS_TPJ FormatString(baseUrl2,@"rs_DeviceController/GetTpjData")
