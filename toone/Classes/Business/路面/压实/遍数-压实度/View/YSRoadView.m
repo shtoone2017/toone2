@@ -8,7 +8,7 @@
 
 #import "YSRoadView.h"
 
-#define AnimationTime 5
+#define AnimationTime 0.01
 @interface YSRoadView ()<UIGestureRecognizerDelegate,CAAnimationDelegate>
 {
 
@@ -17,7 +17,8 @@
     
     NSMutableArray *numArr; //计数集合
     NSMutableArray *carImgArr; //车子集合
-
+    NSInteger tag;
+    NSArray *tempArr;
 }
 @end
 
@@ -95,8 +96,14 @@
 
 
 //回放
+- (void)huifangInit
+{
+    
+}
+
 - (void)drawHuiFang
 {
+    
     newData_huifang = [NSMutableArray array];
     [newData_huifang addObject:@[_huifangArr[0]]];
     for (YS_HFModel * tempModel in _huifangArr)
@@ -105,28 +112,52 @@
     }
     numArr = [NSMutableArray array];
     carImgArr = [NSMutableArray array];
-    for (int i = 0; i < newData_huifang.count; ++i) {
+#warning     newData_huifang.count
+    for (int i = 0; i < 1; ++i) {
         [numArr addObject:[NSNumber numberWithInt:0]];
         
         UIImageView * car_huifangImg = [UIImageView new];
-        car_huifangImg.bounds =CGRectMake(0, 0, 30, 30);
-        car_huifangImg.backgroundColor = [UIColor greenColor];
+        car_huifangImg.bounds =CGRectMake(0, 0, 50, 50);
+        car_huifangImg.image = [UIImage imageNamed:@"跑车"];
+//        car_huifangImg.backgroundColor = [UIColor greenColor];
         [self addSubview:car_huifangImg];
         
         [carImgArr addObject:car_huifangImg];
     }
     
-    for (int i = 0; i < newData_huifang.count; i++) {
-        NSArray *arr2 = [newData_huifang objectAtIndex:i];
-        YS_HFModel * s_model = arr2[0];
-        CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
-        YS_HFModel * e_model = arr2[1];
-        CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
-        
-        UIImageView *img = [carImgArr objectAtIndex:i];
-        img.center = start_p;
+//    for (int i = 0; i < newData_huifang.count; i++) {
+//        NSArray *arr2 = [newData_huifang objectAtIndex:i];
+//        YS_HFModel * s_model = arr2[0];
+//        CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
+//        YS_HFModel * e_model = arr2[1];
+//        CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
+//
+//        UIImageView *img = [carImgArr objectAtIndex:i];
+//        img.center = start_p;
+//
+//        tag = i;
+//        [self animationLoopWithPoint:start_p point1:end_p];
+//
+//    }
+    tempArr = [newData_huifang firstObject];;
+    for (NSArray * arr in newData_huifang)
+    {
+        if (arr.count > tempArr.count)
+        {
+            tempArr = arr;
+        }
+    }
+    
+    YS_HFModel * s_model = tempArr[0];
+    CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
+    YS_HFModel * e_model = tempArr[1];
+    CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
 
-        [self animationLoopWithPoint:start_p point1:end_p];    }
+    UIImageView *img = [carImgArr objectAtIndex:0];
+    img.center = start_p;
+
+    [self animationLoopWithPoint:start_p point1:end_p];
+
 }
 
 - (void)doForModel:(YS_HFModel *)tempModel
@@ -154,76 +185,75 @@
 
 - (UIColor *)huifangGetColorWithCount:(NSInteger)a
 {
-//    NSArray *tempColors;
-//    //取色范围调整
-//    if (newData_huifang.count < 200)
-//    {
-//        tempColors = [colorArr subarrayWithRange:NSMakeRange(0, 3)];
-//    }
-//    else if (newData_huifang.count > 200&&newData_huifang.count<400)
-//    {
-//        tempColors = [colorArr subarrayWithRange:NSMakeRange(0, 6)];
-//    }
-//    else
-//    {
-//        tempColors = [colorArr subarrayWithRange:NSMakeRange(0, 9)];
-//    }
-//
-//    NSInteger b = floor(a/(newData_huifang.count/tempColors.count));
-//    UIColor *aColor;
-//    if (b>= tempColors.count)
-//    {
-//        aColor = [tempColors lastObject];
-//    }
-//    else
-//    {
-//        aColor = tempColors[a];
-//    }
-    return [UIColor redColor];
+    NSArray *tempColors;
+    //取色范围调整
+    if (tempArr.count < 200)
+    {
+        tempColors = [colorArr subarrayWithRange:NSMakeRange(0, 3)];
+    }
+    else if (tempArr.count > 200&&tempArr.count<400)
+    {
+        tempColors = [colorArr subarrayWithRange:NSMakeRange(0, 6)];
+    }
+    else
+    {
+        tempColors = [colorArr subarrayWithRange:NSMakeRange(0, 9)];
+    }
+
+    NSInteger b = floor(a/(tempArr.count/tempColors.count));
+    UIColor *aColor;
+    if (b>= tempColors.count)
+    {
+        aColor = [tempColors lastObject];
+    }
+    else
+    {
+        aColor = tempColors[b];
+    }
+    return aColor;
 }
 
 - (void)animationLoopWithPoint:(CGPoint)start_point point1:(CGPoint)end_point
 {
-    for (int i = 0; i < newData_huifang.count; ++i) {
-        NSInteger a = [[numArr objectAtIndex:i] integerValue];
-        UIImageView *imgview = (UIImageView *)carImgArr[i];
-        NSArray *arr = newData_huifang[i];
-        if (a<arr.count-2)
-        {
-            float time = 3600/newData_huifang.count;
-            
-            CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position"];
-            anima.delegate = self;
-            // 动画结束后不变回初始状态
-            anima.removedOnCompletion = NO;
-            anima.fillMode = kCAFillModeForwards;
-            //        anima.autoreverses = YES; //逆动画效果
-            anima.duration = AnimationTime;
-            //        anima.duration = time;
-            anima.repeatCount = 1;
-            anima.fromValue = [NSValue valueWithCGPoint:start_point]; // 起始帧
-            anima.toValue = [NSValue valueWithCGPoint:end_point]; // 终了帧
-            [imgview.layer addAnimation:anima forKey:@"move-layer"];
-            
-            UIBezierPath *path = [UIBezierPath new];
-            [path moveToPoint:start_point];
-            [path addLineToPoint:end_point];
-            CAShapeLayer *layer = [CAShapeLayer layer];
-            layer.path = path.CGPath;
-            layer.strokeColor = [self huifangGetColorWithCount:a].CGColor;
-            [layer setFillColor:[UIColor clearColor].CGColor];
-            layer.lineWidth = 2.5*YS_Scale;
-            CABasicAnimation *anim1 = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
-            anim1.fromValue = @0;
-            anim1.toValue = @1;
-            anim1.duration = AnimationTime;
-            //        anima.duration = time;
-            [layer addAnimation:anim1 forKey:NSStringFromSelector(@selector(strokeEnd))];
-            
-            [self.layer addSublayer:layer];
-        }
+    NSInteger a = [[numArr objectAtIndex:0] integerValue];
+    UIImageView *imgview = (UIImageView *)carImgArr[0];
+    NSArray *arr = tempArr;
+    if (a<arr.count-2)
+    {
+        float time = 1800/newData_huifang.count;
+        
+        CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position"];
+        anima.delegate = self;
+        // 动画结束后不变回初始状态
+        anima.removedOnCompletion = NO;
+        anima.fillMode = kCAFillModeForwards;
+        //        anima.autoreverses = YES; //逆动画效果
+//        anima.duration = AnimationTime;
+                anima.duration = time;
+        anima.repeatCount = 1;
+        anima.fromValue = [NSValue valueWithCGPoint:start_point]; // 起始帧
+        anima.toValue = [NSValue valueWithCGPoint:end_point]; // 终了帧
+        [imgview.layer addAnimation:anima forKey:@"move-layer"];
+        [self bringSubviewToFront:imgview];
+        
+        UIBezierPath *path = [UIBezierPath new];
+        [path moveToPoint:start_point];
+        [path addLineToPoint:end_point];
+        CAShapeLayer *layer = [CAShapeLayer layer];
+        layer.path = path.CGPath;
+        layer.strokeColor = [self huifangGetColorWithCount:a].CGColor;
+        [layer setFillColor:[UIColor clearColor].CGColor];
+        layer.lineWidth = 2.5*YS_Scale;
+        CABasicAnimation *anim1 = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
+        anim1.fromValue = @0;
+        anim1.toValue = @1;
+//        anim1.duration = AnimationTime;
+                anima.duration = time;
+        [layer addAnimation:anim1 forKey:NSStringFromSelector(@selector(strokeEnd))];
+        
+        [self.layer addSublayer:layer];
+        
     }
-    
 }
 
 /**
@@ -231,21 +261,20 @@
  */
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
-    for (int i = 0; i < newData_huifang.count; ++i) {
-        NSArray *arr = newData_huifang[i];
-
-        NSInteger a = [[numArr objectAtIndex:i] integerValue];
-        if (a<arr.count-2)
-        {
-            a ++;
-            [numArr setObject:[NSNumber numberWithInteger:a] atIndexedSubscript:i];
-            YS_HFModel * s_model = [arr objectAtIndex:a];
-            CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
-            YS_HFModel * e_model = [arr objectAtIndex:a+1];
-            CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
-            [self animationLoopWithPoint:start_p point1:end_p];
-        }
+//    NSArray *arr = newData_huifang[tag];
+    
+    NSInteger a = [[numArr objectAtIndex:0] integerValue];
+    if (a<tempArr.count-2)
+    {
+        a ++;
+        [numArr setObject:[NSNumber numberWithInteger:a] atIndexedSubscript:tag];
+        YS_HFModel * s_model = [tempArr objectAtIndex:a];
+        CGPoint start_p = CGPointMake(Formula_x(s_model.Actual_dx,_offsetNum_x),Formula_y(s_model.Actual_dy, _offsetNum_y));
+        YS_HFModel * e_model = [tempArr objectAtIndex:a+1];
+        CGPoint end_p = CGPointMake(Formula_x(e_model.Actual_dx,_offsetNum_x),Formula_y(e_model.Actual_dy, _offsetNum_y));
+        [self animationLoopWithPoint:start_p point1:end_p];
     }
+    
 }
 
 - (CGColorRef)getPointColorBianshu:(NSInteger)a
