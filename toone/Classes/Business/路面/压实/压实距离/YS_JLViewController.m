@@ -102,7 +102,7 @@
     __weak typeof(self) weakself = self;
     if (_paraDic)
     {
-        [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_Mianji parameter:_paraDic success:^(id json)
+        [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_JuLi parameter:_paraDic success:^(id json)
          {
              NSArray *data = [YS_JLModel arrayOfModelsFromDictionaries:json error:nil];
              [weakself drawChartWithData:data];

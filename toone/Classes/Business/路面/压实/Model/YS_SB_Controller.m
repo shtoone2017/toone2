@@ -93,9 +93,9 @@
         
         NSString * urlString;
         if (_type == SBListTypeYSZH) {
-            urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetStake?road_id=%@",[UserDefaultsSetting shareSetting].road_id];
+            urlString = [NSString stringWithFormat:@"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetStake?road_id=%@",[UserDefaultsSetting shareSetting].road_id];
         }else if (_type == SBListTypeYSLX) {
-            urlString = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetRoad";
+            urlString = @"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetRoad";
         }
         else if (_type == SBListTypeYSSB_YLJ)//1压路机 2摊铺机
         {

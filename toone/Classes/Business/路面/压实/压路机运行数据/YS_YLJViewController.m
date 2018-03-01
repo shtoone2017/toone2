@@ -162,7 +162,7 @@
     {
         [_paraDic setObject:@(20) forKey:@"row"];
         [_paraDic setObject:@(_currentPage) forKey:@"page"];
-        [[HTTP shareAFNNetworking] requestMethod:GET urlString:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetYljData?roadId=f9a816c15f7aa4ca015f7cbf18aa004d&pressLayer=2&deviceCode=4953BCCD90659BB7356727C2FC58A8F5&startTime=2017-11-26 09:31:28&endTime=2018-02-05 14:51:24&page=1&row=10" parameter:nil success:^(id json)
+        [[HTTP shareAFNNetworking] requestMethod:GET urlString:@"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetYljData?roadId=f9a816c15f7aa4ca015f7cbf18aa004d&pressLayer=2&deviceCode=4953BCCD90659BB7356727C2FC58A8F5&startTime=2017-11-26 09:31:28&endTime=2018-02-05 14:51:24&page=1&row=10" parameter:nil success:^(id json)
          {
              NSArray *tempArr = [YS_YLJModel arrayOfModelsFromDictionaries:[json objectForKey:@"rows"] error:nil];
              if (tag == 0)

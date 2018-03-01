@@ -52,7 +52,7 @@
 
 -(void)loadData {
     [Tools showActivityToView:self.view];
-    NSString *urlString = [NSString stringWithFormat:@"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@&start=%@&end=%@",_road_id,_start,_end];
+    NSString *urlString = [NSString stringWithFormat:@"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetThickness?road_id=%@&start=%@&end=%@",_road_id,_start,_end];
     
     __weak typeof(self)  weakSelf = self;
     [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:nil success:^(id json) {
