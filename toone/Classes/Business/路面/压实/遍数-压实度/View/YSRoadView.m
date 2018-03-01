@@ -228,8 +228,8 @@
         anima.removedOnCompletion = NO;
         anima.fillMode = kCAFillModeForwards;
         //        anima.autoreverses = YES; //逆动画效果
-//        anima.duration = AnimationTime;
-                anima.duration = time;
+        anima.duration = AnimationTime;
+//                anima.duration = time;
         anima.repeatCount = 1;
         anima.fromValue = [NSValue valueWithCGPoint:start_point]; // 起始帧
         anima.toValue = [NSValue valueWithCGPoint:end_point]; // 终了帧
@@ -247,8 +247,8 @@
         CABasicAnimation *anim1 = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
         anim1.fromValue = @0;
         anim1.toValue = @1;
-//        anim1.duration = AnimationTime;
-                anima.duration = time;
+        anim1.duration = AnimationTime;
+//                anima.duration = time;
         [layer addAnimation:anim1 forKey:NSStringFromSelector(@selector(strokeEnd))];
         
         [self.layer addSublayer:layer];

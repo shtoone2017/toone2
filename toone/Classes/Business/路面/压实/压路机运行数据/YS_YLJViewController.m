@@ -189,6 +189,7 @@
              }
              [weakself drawChartWithData:datas index:_currentIndex];
              [_tabview reloadData];
+             [_tabview.mj_header endRefreshing];
          } failure:^(NSError *error) {
              
          }];
