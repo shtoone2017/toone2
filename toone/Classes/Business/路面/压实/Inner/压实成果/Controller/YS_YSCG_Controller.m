@@ -43,7 +43,7 @@
 
 -(void)loadData {
 //    NSString *urlString = @"http://121.40.150.65:8083/gxzjzqms3.6.6LQYS/rest/drawRoadController?drawData&roadid=f9a816c15e50be21015e566322495fe0&id=2&mc=3&dates=2018-01-09";
-    NSString *urlString = [NSString stringWithFormat:@"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/drawRoadController?drawData&roadid=%@&id=%@&mc=%@&dates=%@",_road_id,_start,_mc,_time];
+    NSString *urlString = [NSString stringWithFormat:@"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/drawRoadController?drawData&roadid=%@&id=%@&mc=%@&dates=%@",_road_id,_start,_mc,_time];//id为桩号中的编号，对应的key值为stake_no
     __weak typeof(self)  weakSelf = self;
     
     [[HTTP shareAFNNetworking] requestMethod:GETS urlString:urlString parameter:nil success:^(id json) {

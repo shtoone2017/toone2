@@ -8,7 +8,7 @@
 
 #import <JSONModel/JSONModel.h>
 
-@interface YS_YLJModel : JSONModel
+@interface YS_YLJModel : BaseModel
 
 @property (nonatomic,assign) float wendu;
 @property (nonatomic,assign) float sudu;

@@ -13,7 +13,7 @@
 #import "YS_TPJCell.h"
 
 #define start_time @"startTime"
-#define road_id @"roadId"
+#define roadid @"roadId"
 #define end_time @"endTime"
 #define device_code @"deviceCode"
 #define pressLayer @"pressLayer"
@@ -37,6 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.paraDic setObject:[UserDefaultsSetting shareSetting].road_id forKey:@"roadId"];
     [self setUpUI];
 }
 
@@ -105,7 +106,7 @@
 - (Exp_Final *)get_expView
 {
     NSMutableArray *tempArr = [NSMutableArray array];
-    NSArray *keyArr = @[road_id,start_time,end_time,pressLayer,device_code];
+    NSArray *keyArr = @[roadid,start_time,end_time,pressLayer,device_code];
     NSArray *titleArr = @[@"线路选择",@"开始时间",@"结束时间",@"面层选择",@"设备选择"];
     NSArray *typeArr = @[
                          [NSNumber numberWithInteger:YS_Search_Type_RoadID],
@@ -133,6 +134,8 @@
         {
             for (Exp_FinalModel *model in arr)
             {
+                Exp_FinalModel *model1 = [[Exp_FinalModel alloc] init];
+                model1 = arr[0];
                 if (!model.contentId)
                 {
                     [SVProgressHUD showErrorWithStatus:@"请完善查询条件"];
@@ -158,11 +161,14 @@
 {
     //tag 0下拉刷新  1上拉加载
     __weak typeof(self) weakself = self;
-    if (_paraDic)
+    NSString *roadId = [_paraDic objectForKey:@"roadId"];
+    if (roadId)
     {
         [_paraDic setObject:@(20) forKey:@"row"];
         [_paraDic setObject:@(_currentPage) forKey:@"page"];
-        [[HTTP shareAFNNetworking] requestMethod:GET urlString:@"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetTpjData?roadId=f9a816c15f7aa4ca015f7cbf18aa004d&pressLayer=2&deviceCode=4953BCCD90659BB7356727C2FC58A8F5&startTime=2017-11-26 09:31:28&endTime=2018-02-05 14:51:24&page=1&row=10" parameter:nil success:^(id json)
+//        NSString *url = @"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetTpjData?roadId=f9a816c15f7aa4ca015f7cbf18aa004d&pressLayer=2&deviceCode=4953BCCD90659BB7356727C2FC58A8F5&startTime=2017-11-26 09:31:28&endTime=2018-02-05 14:51:24&page=1&row=10";
+        NSString *urlString = @"http://112.124.114.47:8088/gxzjzqms3.6.6LQYS/rest/rs_DeviceController/GetTpjData";
+        [[HTTP shareAFNNetworking] requestMethod:GET urlString:urlString parameter:_paraDic success:^(id json)
          {
              NSArray *tempArr = [YS_YLJModel arrayOfModelsFromDictionaries:[json objectForKey:@"rows"] error:nil];
              if (tag == 0)
@@ -206,6 +212,8 @@
         [x_name addObject:model.dinweishijian];
     }
     NSArray *allDatas = @[wendus,sudus];
+    NSArray *titles = @[@"温度",@"速度"];
+    NSString *name = titles[index];
     AAChartModel *chartModel= AAObject(AAChartModel)
     .chartTypeSet(AAChartTypeLine)
     .titleSet(@"摊铺机运行数据")
@@ -214,6 +222,7 @@
     .dataLabelEnabledSet(true)//是否直接显示图数据
     .seriesSet(
                @[AAObject(AASeriesElement)
+                 .nameSet(name)
                  .dataSet(allDatas[index])
                  ]);
     /*图表视图对象调用图表模型对象,绘制最终图形*/
@@ -253,7 +262,18 @@
         return cell;
     }
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 250.00001;
+}
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    _aaChartView = [[AAChartView alloc]initWithFrame:CGRectMake(0, 0, Screen_w, 240)];
+    [self.view addSubview:_aaChartView];
+    [self drawChartWithData:datas?:nil index:_currentIndex];
+    return _aaChartView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

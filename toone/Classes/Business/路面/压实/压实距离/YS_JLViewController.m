@@ -56,7 +56,7 @@
     NSMutableArray *tempArr = [NSMutableArray array];
     NSArray *keyArr = @[road_id,start_time,end_time,device_code];
     NSArray *titleArr = @[@"线路选择",@"开始时间",@"结束时间",@"设备选择"];
-    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StartTime],[NSNumber numberWithInteger:YS_Search_Type_EndTime],[NSNumber numberWithInteger:YS_Search_Type_Divce_YLJ]];
+    NSArray *typeArr = @[[NSNumber numberWithInteger:YS_Search_Type_RoadID],[NSNumber numberWithInteger:YS_Search_Type_StarTime],[NSNumber numberWithInteger:YS_Search_Type_EndTimes],[NSNumber numberWithInteger:YS_Search_Type_Divce_YLJ]];
     for (int i = 0; i<titleArr.count; i++)
     {
         Exp_FinalModel *model = [[Exp_FinalModel alloc] init];
@@ -104,7 +104,7 @@
     {
         [[HTTP shareAFNNetworking] requestMethod:GET urlString:YS_JuLi parameter:_paraDic success:^(id json)
          {
-             NSArray *data = [YS_JLModel arrayOfModelsFromDictionaries:json error:nil];
+             NSArray *data = [YS_JLModel arrayOfModelsFromDictionaries:[json objectForKey:@"obj"] error:nil];
              [weakself drawChartWithData:data];
          } failure:^(NSError *error) {
              

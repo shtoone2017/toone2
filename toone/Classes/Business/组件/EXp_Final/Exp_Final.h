@@ -15,10 +15,12 @@ typedef NS_OPTIONS(NSInteger, YS_Search_Type)
 {
     YS_Search_Type_StartStack = 0,
     YS_Search_Type_EndStack,
-    YS_Search_Type_RoadID,
+    YS_Search_Type_RoadID,//路线
     YS_Search_Type_StartTime,
     YS_Search_Type_EndTime,
-    YS_Search_Type_Layer,
+    YS_Search_Type_StarTime,//年月日
+    YS_Search_Type_EndTimes,//年月日
+    YS_Search_Type_Layer,//面层
     YS_Search_Type_Divce_YLJ,// 压路机设备列表
     YS_Search_Type_Divce_TPJ,// 摊铺机设备列表
     YS_Search_Type_Divce_YLJ_Zuobiao,//压路机设备最新坐标

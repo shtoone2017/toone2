@@ -8,6 +8,8 @@
 
 #import "Exp_Final.h"
 #import "YS_SB_Controller.h"
+#import "SGymd.h"
+
 #define cell_rowHeight 46
 @interface Exp_Final()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tabview;
@@ -80,6 +82,16 @@
         ((MyViewController *)[self viewController]).dateBlock = ^(NSString *dateStr) {
             model.contentName = dateStr;
             model.contentId = dateStr;
+            [_dataArr setObject:model atIndexedSubscript:indexPath.row];
+            [_tabview reloadData];
+        };
+        return;
+    }
+    if (model.type == YS_Search_Type_StarTime || model.type == YS_Search_Type_EndTimes) {
+        SGymd *ymd = [[SGymd alloc] init];
+        ymd.block = ^(NSString * string){
+            model.contentName = string;
+            model.contentId = string;
             [_dataArr setObject:model atIndexedSubscript:indexPath.row];
             [_tabview reloadData];
         };
