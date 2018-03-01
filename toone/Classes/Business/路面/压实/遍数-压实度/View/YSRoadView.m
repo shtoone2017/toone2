@@ -117,8 +117,9 @@
         [numArr addObject:[NSNumber numberWithInt:0]];
         
         UIImageView * car_huifangImg = [UIImageView new];
-        car_huifangImg.bounds =CGRectMake(0, 0, 30, 30);
-        car_huifangImg.backgroundColor = [UIColor greenColor];
+        car_huifangImg.bounds =CGRectMake(0, 0, 50, 50);
+        car_huifangImg.image = [UIImage imageNamed:@"跑车"];
+//        car_huifangImg.backgroundColor = [UIColor greenColor];
         [self addSubview:car_huifangImg];
         
         [carImgArr addObject:car_huifangImg];
@@ -219,7 +220,7 @@
     NSArray *arr = tempArr;
     if (a<arr.count-2)
     {
-        float time = 3600/newData_huifang.count;
+        float time = 1800/newData_huifang.count;
         
         CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position"];
         anima.delegate = self;
@@ -227,12 +228,13 @@
         anima.removedOnCompletion = NO;
         anima.fillMode = kCAFillModeForwards;
         //        anima.autoreverses = YES; //逆动画效果
-        anima.duration = AnimationTime;
-        //        anima.duration = time;
+//        anima.duration = AnimationTime;
+                anima.duration = time;
         anima.repeatCount = 1;
         anima.fromValue = [NSValue valueWithCGPoint:start_point]; // 起始帧
         anima.toValue = [NSValue valueWithCGPoint:end_point]; // 终了帧
         [imgview.layer addAnimation:anima forKey:@"move-layer"];
+        [self bringSubviewToFront:imgview];
         
         UIBezierPath *path = [UIBezierPath new];
         [path moveToPoint:start_point];
@@ -245,8 +247,8 @@
         CABasicAnimation *anim1 = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
         anim1.fromValue = @0;
         anim1.toValue = @1;
-        anim1.duration = AnimationTime;
-        //        anima.duration = time;
+//        anim1.duration = AnimationTime;
+                anima.duration = time;
         [layer addAnimation:anim1 forKey:NSStringFromSelector(@selector(strokeEnd))];
         
         [self.layer addSublayer:layer];
