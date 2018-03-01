@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-xj-Bh4">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ2-7l-n0e">
                     <rect key="frame" x="295" y="587" width="60" height="60"/>
@@ -130,7 +130,7 @@
                 <constraint firstAttribute="trailing" secondItem="eQ2-7l-n0e" secondAttribute="trailing" constant="20" id="cb0-bc-qcO"/>
                 <constraint firstItem="2Sy-xj-Bh4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jtU-Aw-SXB"/>
                 <constraint firstAttribute="trailing" secondItem="2Sy-xj-Bh4" secondAttribute="trailing" id="kuw-gB-sBI"/>
-                <constraint firstItem="2Sy-xj-Bh4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="r2i-qy-4vy"/>
+                <constraint firstItem="2Sy-xj-Bh4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="r2i-qy-4vy"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="70.5"/>
         </view>

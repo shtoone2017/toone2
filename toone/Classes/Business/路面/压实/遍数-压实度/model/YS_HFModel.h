@@ -13,4 +13,6 @@
 @property (nonatomic, assign) double Actual_dx;
 @property (nonatomic, assign) double Actual_dy;
 @property (nonatomic, assign) double Actual_angle;
+@property (nonatomic, strong) NSString *device_code;
+
 @end

@@ -96,7 +96,7 @@
     if (!_expView) {
         _expView = [[[NSBundle mainBundle] loadNibNamed:@"Exp_Final" owner:self options:nil] objectAtIndex:0];
         _expView.dataArr = tempArr;
-//        _expView.frame = CGRectMake(0, 64, Screen_w, 46*6);
+        _expView.frame = CGRectMake(0, 64, Screen_w, 46*6);
         [self.view addSubview:_expView];
         
         __weak typeof(self) weakself = self;
@@ -276,7 +276,7 @@
         _road.huifangArr = [YS_HFModel arrayOfModelsFromDictionaries:json error:nil];
         
         YS_HFModel *start_model = _road.huifangArr[0];
-        CGPoint startPoint = CGPointMake(Formula_x(start_model.Actual_dx, road_min_x), Formula_y(start_model.Actual_dy, road_max_y));
+        CGPoint startPoint = CGPointMake(Formula_x(start_model.Actual_dx, road_min_x)-Screen_w/2, Formula_y(start_model.Actual_dy, road_max_y)-Screen_h/2);
         _bgScroll.contentOffset = startPoint;
     } failure:^(NSError *error) {
     }];
@@ -347,13 +347,11 @@
     }
     NSString *timeValue;
     YS_DateModel *model;
-    if (_pickArr.count > 0) {
-        model = [_pickArr objectAtIndex:selectNum];
-        if (currentPickerNum == 1)
-        {
-            [self.paraDic setObject:model.date forKey:@"date"];
-            timeValue = model.date;
-        }
+    model = [_pickArr objectAtIndex:selectNum];
+    if (currentPickerNum == 1)
+    {
+        [self.paraDic setObject:model.date forKey:@"date"];
+        timeValue = model.date;
     }
     else if (currentPickerNum == 2)
     {
