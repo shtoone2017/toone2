@@ -7,8 +7,7 @@
 //
 
 #import "YSRoadView.h"
-
-#define AnimationTime 0.01
+static float const totalTime = 3600;
 @interface YSRoadView ()<UIGestureRecognizerDelegate,CAAnimationDelegate>
 {
 
@@ -19,10 +18,13 @@
     NSMutableArray *carImgArr; //车子集合
     NSInteger tag;
     NSArray *tempArr;
+    
+    float animationTime; //单个动画时间
 }
 @end
 
 @implementation YSRoadView
+
 + (Class)layerClass
 {
     return  [CAShapeLayer class];
@@ -95,12 +97,6 @@
 }
 
 
-//回放
-- (void)huifangInit
-{
-    
-}
-
 - (void)drawHuiFang
 {
     
@@ -155,7 +151,10 @@
 
     UIImageView *img = [carImgArr objectAtIndex:0];
     img.center = start_p;
-
+    
+    //时间计算
+    //总时间totalTime秒
+    animationTime = totalTime/tempArr.count;
     [self animationLoopWithPoint:start_p point1:end_p];
 
 }
@@ -220,22 +219,19 @@
     NSArray *arr = tempArr;
     if (a<arr.count-2)
     {
-        float time = 1800/newData_huifang.count;
-        
         CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"position"];
         anima.delegate = self;
         // 动画结束后不变回初始状态
         anima.removedOnCompletion = NO;
         anima.fillMode = kCAFillModeForwards;
         //        anima.autoreverses = YES; //逆动画效果
-        anima.duration = AnimationTime;
-//                anima.duration = time;
+        anima.duration = animationTime;
         anima.repeatCount = 1;
         anima.fromValue = [NSValue valueWithCGPoint:start_point]; // 起始帧
         anima.toValue = [NSValue valueWithCGPoint:end_point]; // 终了帧
         [imgview.layer addAnimation:anima forKey:@"move-layer"];
         [self bringSubviewToFront:imgview];
-        
+
         UIBezierPath *path = [UIBezierPath new];
         [path moveToPoint:start_point];
         [path addLineToPoint:end_point];
@@ -247,8 +243,7 @@
         CABasicAnimation *anim1 = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
         anim1.fromValue = @0;
         anim1.toValue = @1;
-        anim1.duration = AnimationTime;
-//                anima.duration = time;
+        anima.duration = animationTime;
         [layer addAnimation:anim1 forKey:NSStringFromSelector(@selector(strokeEnd))];
         
         [self.layer addSublayer:layer];
@@ -361,6 +356,12 @@
 {
     _huifangArr = huifangArr;
     [self drawHuiFang];
+}
+
+- (void)setSuduNum:(float)suduNum
+{
+    //速度调整
+    animationTime = totalTime/suduNum/tempArr.count;
 }
 
 @end

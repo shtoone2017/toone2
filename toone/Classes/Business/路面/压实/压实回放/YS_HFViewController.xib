@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,6 +25,16 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-xj-Bh4">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                 </scrollView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="ydV-i6-ydh">
+                    <rect key="frame" x="13" y="618" width="124" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="CVG-qY-oP0"/>
+                        <constraint firstAttribute="width" constant="120" id="VUf-S3-Kzh"/>
+                    </constraints>
+                    <connections>
+                        <action selector="bofangSuduSlider:" destination="-1" eventType="valueChanged" id="sVN-Rn-0Mg"/>
+                    </connections>
+                </slider>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ2-7l-n0e">
                     <rect key="frame" x="295" y="587" width="60" height="60"/>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,7 +131,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ewN-HO-kci" secondAttribute="bottom" id="9HR-en-MSn"/>
+                <constraint firstItem="ydV-i6-ydh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="AwO-By-fMI"/>
                 <constraint firstAttribute="bottom" secondItem="ywy-0A-N8k" secondAttribute="bottom" constant="20" id="F5x-tY-mhh"/>
+                <constraint firstAttribute="bottom" secondItem="ydV-i6-ydh" secondAttribute="bottom" constant="20" id="GvN-lh-1mY"/>
                 <constraint firstItem="eQ2-7l-n0e" firstAttribute="leading" secondItem="ywy-0A-N8k" secondAttribute="trailing" constant="30" id="MfF-Lt-QE1"/>
                 <constraint firstAttribute="bottom" secondItem="2Sy-xj-Bh4" secondAttribute="bottom" id="QYE-bQ-ORD"/>
                 <constraint firstAttribute="trailing" secondItem="ewN-HO-kci" secondAttribute="trailing" id="SLe-DQ-UiV"/>

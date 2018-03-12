@@ -57,7 +57,7 @@
 //回放数据
 @property (nonatomic,strong)NSArray *huifangArr;
 
-
+@property (nonatomic,assign) float suduNum;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 

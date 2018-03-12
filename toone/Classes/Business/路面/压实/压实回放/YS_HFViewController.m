@@ -367,6 +367,12 @@
     NSDictionary *dic = @{@"rowNum":@(currentPickerNum),@"time":timeValue};
     [[NSNotificationCenter defaultCenter] postNotificationName:Notification_HuiFang object:nil userInfo:dic];
 }
+//播放速度
+
+- (IBAction)bofangSuduSlider:(UISlider *)sender {
+    _road.suduNum = sender.value;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
