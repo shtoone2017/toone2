@@ -69,8 +69,11 @@
 #import "SGChart.h"
 #import "WSLineChartView.h"
 
+//新博高速
+#define baseUrl       @"http://112.124.12.254:8082/xbgsmss/"
+
 //
-#define baseUrl       @"http://112.124.12.254:8082/lygsmss/"
+//#define baseUrl       @"http://112.124.12.254:8082/lygsmss/"
 //#define baseUrl     @"http://192.168.11.115:8080/lygsmss/"
 //@"http://192.168.11.107:8080/jbgsmss/"
 
