@@ -21,7 +21,8 @@
 #define FormatFloat(obj)                    [NSString stringWithFormat:@"%.0f",obj]
 #define FormatString(obj1,obj2)             [NSString stringWithFormat:@"%@%@",obj1,obj2]
 
-#define PGY_APP_ID @"84a3642c6af5fb7e889194644ea6862e"
+//#define PGY_APP_ID @"84a3642c6af5fb7e889194644ea6862e" //合宁
+#define PGY_APP_ID @"0facdfb5ae4c467ef1621fddda8c19f2" //宣郎
 /*
  + (instancetype)goldenrodColor;
  + (instancetype)yellowGreenColor;
@@ -71,8 +72,8 @@
 
 //
 //#define baseUrl       @"http://112.124.12.254:8082/lygsmss/"    //连英
-#define baseUrl       @"http://112.124.12.254:8083/zlgsmss/"    //合宁
-
+//#define baseUrl       @"http://112.124.12.254:8083/zlgsmss/"    //合宁
+#define baseUrl        @"http://112.124.12.254:8083/g318xlmss"    //宣城
 
 
 
